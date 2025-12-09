@@ -328,7 +328,7 @@ TTS 최적화:
 
     def generate_image_prompts(self, character: Dict, synopsis: Dict, visual_age: int) -> Optional[Dict]:
         """
-        캐릭터 이미지 프롬프트 5종류 생성
+        캐릭터 이미지 프롬프트 7종류 생성 (JSON 구조)
 
         Args:
             character: 캐릭터 데이터
@@ -395,23 +395,33 @@ TTS 최적화:
         system_prompt = """당신은 이미지 생성을 위한 전문 프롬프트 엔지니어입니다.
 주어진 인물 정보를 바탕으로 동일한 인물의 동일성을 반드시 유지하며 7가지 다른 스타일의 상세한 이미지 생성 프롬프트를 영어로 작성해주세요.
 
-** 이미지 생성 프롬프트 최적화 원칙**:
-1. 모든 프롬프트는 **한국인 (Korean, East Asian)** 으로 명시해야 합니다
-2. **매우 중요: 각 캐릭터마다 다른 나이를 사용해야 합니다. 절대로 모든 캐릭터에 동일한 나이를 사용하지 마세요.**
-3. **반드시 youth age를 먼저 표시하고, 실제 나이를 괄호 안에 표시해야 합니다**
-   - 형식: "Korean man/woman, [youth나이]-year-old ([실제나이]-year-old), ..."
-   - 예시: "Korean man, 27-year-old (35-year-old), ..."
-   - 예시: "Korean woman, 25-year-old (28-year-old), ..."
-4. Youth age는 건강하고 젊어보이고 세련된 외모를 표현하기 위한 나이이며, 실제 나이는 괄호 안에 참고용으로만 표시합니다
-5. **중요**: 이미지 생성 시 youth age가 우선 적용되므로, youth age를 기본 표현으로 사용하세요
-6. **캐릭터 이름과 나이는 반드시 일치해야 합니다. 다른 캐릭터의 나이를 사용하지 마세요.**
-6. 모든 프롬프트에서 동일한 인물의 일관성 유지
-7. 각 프롬프트는 다른 각도, 포즈, 복장이지만 기본 외모는 동일해야 합니다
-8. 카메라 설정 포함: 렌즈 타입, 조명, 구도
-9. 부정적 요소 제거: no cartoon, no anime, no distortion
-10. 반드시 JSON 형식으로만 응답해주세요"""
+**중요 원칙**:
+1. 이미지 프롬프트는 반드시 JSON 구조(character, clothing, pose, background, situation, combined)로 작성해야 합니다.
+2. 모든 키워드는 영어로 작성해야 합니다.
+3. 각 등장인물마다 별도의 JSON 구조를 문자열로 포함시켜야 합니다.
+4. 반드시 유효한 JSON 형식으로만 출력하고, 추가 설명이나 마크다운은 포함하지 마세요.
+5. 한국인은 60대면 15~20살 어린 모습으로 이미지 프롬프트 작성
+6. 멋진 모습 중심으로 작성
+7. 인물 정보(character)는 고정하고, 동작(pose), 옷(clothing), 배경(background), 상황(situation)은 쉽게 변경 가능하도록 JSON 구조로 구분
 
-        user_prompt = f"""다음 인물에 대한 상세 정보를 바탕으로 동일한 인물의 동일성을 유지하며 7가지 이미지 생성 프롬프트를 작성해주세요:
+**JSON 구조 형식**:
+각 등장인물마다 다음과 같은 JSON 구조로 작성:
+{
+  "character": "인물의 고정된 외모 특징 (나이, 체형, 얼굴, 헤어 등) - 영어로 작성",
+  "clothing": "의상 및 스타일 (옷 종류, 색상, 액세서리 등) - 영어로 작성",
+  "pose": "포즈 및 표정 (서 있는, 앉은, 표정, 시선 등) - 영어로 작성",
+  "background": "배경 설정 (실내/실외, 장소, 조명 등) - 영어로 작성",
+  "situation": "상황 및 분위기 (로맨틱, 드라마틱, 일상적 등) - 영어로 작성",
+  "combined": "위의 모든 요소를 쉼표와 줄바꿈(\\n)으로 구분하여 합친 최종 프롬프트. 각 요소(character, clothing, pose, background, situation)는 줄바꿈으로 구분하고, 각 요소 내부는 쉼표로 구분"
+}
+
+**나이 표현 규칙**:
+- 반드시 youth age를 먼저 표시하고, 실제 나이를 괄호 안에 표시해야 합니다
+- 형식: "Korean man/woman, [youth나이]-year-old ([실제나이]-year-old), ..."
+- 예시: "Korean man, 27-year-old (35-year-old), ..."
+- Youth age는 건강하고 젊어보이고 세련된 외모를 표현하기 위한 나이입니다."""
+
+        user_prompt = f"""다음 인물에 대한 상세 정보를 바탕으로 동일한 인물의 동일성을 유지하며 7가지 이미지 생성 프롬프트를 JSON 구조로 작성해주세요:
 
 **중요: 이 캐릭터의 정보만 사용하세요. 다른 캐릭터의 정보를 혼용하지 마세요.**
 
@@ -449,24 +459,21 @@ TTS 최적화:
 5. **Side Profile** (초상화 옆모습)(자연스러운 배경)
 6. **Action** (액션)
 7. **Natural Background** (자연스러운 배경)
-**반드시 다음 JSON 형식으로만 응답하세요:**
 
-**중요**: 모든 프롬프트에서 youth age({final_visual_age}세)를 먼저 표시하고, 실제 나이({char_age}세)를 괄호 안에 표시해야 합니다.
+**반드시 다음 JSON 형식으로만 응답하세요. 다른 설명이나 마크다운은 포함하지 마세요:**
 
-```json
 {{
   "character_name": "{char_name}",
   "prompts": {{
-    "full_body_shot": "Korean man/woman, {final_visual_age}-year-old ({char_age}-year-old), 정면에서 본 모습...",
-    "side_profile_full_body_shot": "Korean man/woman, {final_visual_age}-year-old ({char_age}-year-old), 옆에서 본 모습...",
-    "diagonal_side_profile_full_body_shot": "Korean man/woman, {final_visual_age}-year-old ({char_age}-year-old), 대각선 옆에서 앞에서 본 모습...",
-    "portrait": "Korean man/woman, {final_visual_age}-year-old ({char_age}-year-old), 초상화...",
-    "side_profile": "Korean man/woman, {final_visual_age}-year-old ({char_age}-year-old), 옆모습 초상화...",
-    "action": "Korean man/woman, {final_visual_age}-year-old ({char_age}-year-old), 액션 장면...",
-    "natural_background": "Korean man/woman, {final_visual_age}-year-old ({char_age}-year-old), 자연스러운 배경..."
+    "full_body_shot": "{{\\"character\\": \\"Korean man/woman, {final_visual_age}-year-old ({char_age}-year-old), [외모 특징 상세 설명 - 영어]\\", \\"clothing\\": \\"[의상 및 스타일 - 영어]\\", \\"pose\\": \\"[포즈 및 표정 - 영어]\\", \\"background\\": \\"[배경 설정 - 영어]\\", \\"situation\\": \\"[상황 및 분위기 - 영어]\\", \\"combined\\": \\"[character 내용]\\\\n[clothing 내용]\\\\n[pose 내용]\\\\n[background 내용]\\\\n[situation 내용]\\"}}",
+    "side_profile_full_body_shot": "{{\\"character\\": \\"Korean man/woman, {final_visual_age}-year-old ({char_age}-year-old), [외모 특징 상세 설명 - 영어]\\", \\"clothing\\": \\"[의상 및 스타일 - 영어]\\", \\"pose\\": \\"[포즈 및 표정 - 영어]\\", \\"background\\": \\"[배경 설정 - 영어]\\", \\"situation\\": \\"[상황 및 분위기 - 영어]\\", \\"combined\\": \\"[character 내용]\\\\n[clothing 내용]\\\\n[pose 내용]\\\\n[background 내용]\\\\n[situation 내용]\\"}}",
+    "diagonal_side_profile_full_body_shot": "{{\\"character\\": \\"Korean man/woman, {final_visual_age}-year-old ({char_age}-year-old), [외모 특징 상세 설명 - 영어]\\", \\"clothing\\": \\"[의상 및 스타일 - 영어]\\", \\"pose\\": \\"[포즈 및 표정 - 영어]\\", \\"background\\": \\"[배경 설정 - 영어]\\", \\"situation\\": \\"[상황 및 분위기 - 영어]\\", \\"combined\\": \\"[character 내용]\\\\n[clothing 내용]\\\\n[pose 내용]\\\\n[background 내용]\\\\n[situation 내용]\\"}}",
+    "portrait": "{{\\"character\\": \\"Korean man/woman, {final_visual_age}-year-old ({char_age}-year-old), [외모 특징 상세 설명 - 영어]\\", \\"clothing\\": \\"[의상 및 스타일 - 영어]\\", \\"pose\\": \\"[포즈 및 표정 - 영어]\\", \\"background\\": \\"[배경 설정 - 영어]\\", \\"situation\\": \\"[상황 및 분위기 - 영어]\\", \\"combined\\": \\"[character 내용]\\\\n[clothing 내용]\\\\n[pose 내용]\\\\n[background 내용]\\\\n[situation 내용]\\"}}",
+    "side_profile": "{{\\"character\\": \\"Korean man/woman, {final_visual_age}-year-old ({char_age}-year-old), [외모 특징 상세 설명 - 영어]\\", \\"clothing\\": \\"[의상 및 스타일 - 영어]\\", \\"pose\\": \\"[포즈 및 표정 - 영어]\\", \\"background\\": \\"[배경 설정 - 영어]\\", \\"situation\\": \\"[상황 및 분위기 - 영어]\\", \\"combined\\": \\"[character 내용]\\\\n[clothing 내용]\\\\n[pose 내용]\\\\n[background 내용]\\\\n[situation 내용]\\"}}",
+    "action": "{{\\"character\\": \\"Korean man/woman, {final_visual_age}-year-old ({char_age}-year-old), [외모 특징 상세 설명 - 영어]\\", \\"clothing\\": \\"[의상 및 스타일 - 영어]\\", \\"pose\\": \\"[포즈 및 표정 - 영어]\\", \\"background\\": \\"[배경 설정 - 영어]\\", \\"situation\\": \\"[상황 및 분위기 - 영어]\\", \\"combined\\": \\"[character 내용]\\\\n[clothing 내용]\\\\n[pose 내용]\\\\n[background 내용]\\\\n[situation 내용]\\"}}",
+    "natural_background": "{{\\"character\\": \\"Korean man/woman, {final_visual_age}-year-old ({char_age}-year-old), [외모 특징 상세 설명 - 영어]\\", \\"clothing\\": \\"[의상 및 스타일 - 영어]\\", \\"pose\\": \\"[포즈 및 표정 - 영어]\\", \\"background\\": \\"[배경 설정 - 영어]\\", \\"situation\\": \\"[상황 및 분위기 - 영어]\\", \\"combined\\": \\"[character 내용]\\\\n[clothing 내용]\\\\n[pose 내용]\\\\n[background 내용]\\\\n[situation 내용]\\"}}"
   }}
-}}
-```"""
+}}"""
 
         try:
             response = self.llm.call(user_prompt, system_prompt)

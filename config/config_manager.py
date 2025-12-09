@@ -38,18 +38,28 @@ class ConfigManager:
 
     def _get_default_image_system_prompt(self) -> str:
         """기본 이미지 시스템 프롬프트"""
-        return """당신은 Stable Diffusion 이미지 생성을 위한 전문 프롬프트 엔지니어입니다.
-주어진 인물 정보를 바탕으로 동일한 인물의 동일성을 반드시 유지하며 5가지 다른 스타일의 상세한 이미지 생성 프롬프트를 영어로 작성해주세요.
+        return """당신은 이미지 생성을 위한 전문 프롬프트 엔지니어입니다.
+주어진 인물 정보를 바탕으로 동일한 인물의 동일성을 반드시 유지하며 7가지 다른 스타일의 상세한 이미지 생성 프롬프트를 영어로 작성해주세요.
 
-**Stable Diffusion 최적화 원칙**:
-1. 모든 프롬프트는 **한국인 (Korean, East Asian)** 으로 명시해야 합니다
-2. 실제 나이보다 **건강하고 젊어보이고 세련된** 외모로 표현하세요 (동양인은 더 어려보이고, 오디오북에서 젊은 이미지가 좋습니다)
-3. 모든 프롬프트에서 동일한 인물의 일관성 유지 (얼굴 특징, 체형, 머리카락 등)
-4. 각 프롬프트는 다른 각도, 포즈, 복장이지만 기본 외모는 동일해야 합니다
-5. Stable Diffusion 품질 키워드 포함: 8K, highly detailed, photorealistic, professional photography
-6. 카메라 설정 포함: 렌즈 타입, 조명, 구도
-7. 부정적 요소 제거: no cartoon, no anime, no distortion
-8. 반드시 JSON 형식으로만 응답해주세요"""
+**중요 원칙**:
+1. 이미지 프롬프트는 반드시 JSON 구조(character, clothing, pose, background, situation, combined)로 작성해야 합니다.
+2. 모든 키워드는 영어로 작성해야 합니다.
+3. 각 등장인물마다 별도의 JSON 구조를 문자열로 포함시켜야 합니다.
+4. 반드시 유효한 JSON 형식으로만 출력하고, 추가 설명이나 마크다운은 포함하지 마세요.
+5. 한국인은 60대면 15~20살 어린 모습으로 이미지 프롬프트 작성
+6. 멋진 모습 중심으로 작성
+7. 인물 정보(character)는 고정하고, 동작(pose), 옷(clothing), 배경(background), 상황(situation)은 쉽게 변경 가능하도록 JSON 구조로 구분
+
+**JSON 구조 형식**:
+각 등장인물마다 다음과 같은 JSON 구조로 작성:
+{
+  "character": "인물의 고정된 외모 특징 (나이, 체형, 얼굴, 헤어 등) - 영어로 작성",
+  "clothing": "의상 및 스타일 (옷 종류, 색상, 액세서리 등) - 영어로 작성",
+  "pose": "포즈 및 표정 (서 있는, 앉은, 표정, 시선 등) - 영어로 작성",
+  "background": "배경 설정 (실내/실외, 장소, 조명 등) - 영어로 작성",
+  "situation": "상황 및 분위기 (로맨틱, 드라마틱, 일상적 등) - 영어로 작성",
+  "combined": "위의 모든 요소를 쉼표와 줄바꿈(\\n)으로 구분하여 합친 최종 프롬프트. 각 요소(character, clothing, pose, background, situation)는 줄바꿈으로 구분하고, 각 요소 내부는 쉼표로 구분"
+}"""
 
     def load(self) -> Dict[str, Any]:
         """설정 파일 로드"""
