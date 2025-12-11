@@ -36,29 +36,18 @@ class CharactersTab(BaseTab):
         toolbar = ttk.Frame(self.frame)
         toolbar.grid(row=0, column=0, sticky=(tk.W, tk.E), padx=5, pady=5)
         ttk.Label(toolbar, text="캐릭터 관리:", font=("맑은 고딕", 10, "bold")).pack(side=tk.LEFT, padx=5)
-        
+
         # 인물별 탭 버튼 프레임
         self.character_tabs_frame = ttk.Frame(toolbar)
         self.character_tabs_frame.pack(side=tk.LEFT, padx=5)
 
-        # PanedWindow로 크기 조절 가능하게 (세로 분할)
-        paned_vertical = ttk.PanedWindow(self.frame, orient=tk.VERTICAL)
-        paned_vertical.grid(row=1, column=0, sticky=(tk.W, tk.E, tk.N, tk.S), padx=5, pady=5)
-
-        # 중간: 좌우 분할 영역
-        content_container = ttk.Frame(paned_vertical)
-        paned_vertical.add(content_container, weight=2)
-        content_container.columnconfigure(0, weight=1)
-        content_container.columnconfigure(1, weight=1)
-        content_container.rowconfigure(0, weight=1)
-
         # 좌우 분할 PanedWindow
-        paned_horizontal = ttk.PanedWindow(content_container, orient=tk.HORIZONTAL)
-        paned_horizontal.grid(row=0, column=0, columnspan=2, sticky=(tk.W, tk.E, tk.N, tk.S))
+        self.paned_horizontal = ttk.PanedWindow(self.frame, orient=tk.HORIZONTAL)
+        self.paned_horizontal.grid(row=1, column=0, sticky=(tk.W, tk.E, tk.N, tk.S), padx=5, pady=5)
 
         # 왼쪽: 읽기 전용 뷰어
-        viewer_frame = ttk.LabelFrame(paned_horizontal, text="뷰어", padding=10)
-        paned_horizontal.add(viewer_frame, weight=1)
+        viewer_frame = ttk.LabelFrame(self.paned_horizontal, text="뷰어", padding=10)
+        self.paned_horizontal.add(viewer_frame, weight=1)
         viewer_frame.columnconfigure(0, weight=1)
         viewer_frame.rowconfigure(0, weight=1)
 
@@ -68,18 +57,21 @@ class CharactersTab(BaseTab):
         scrollbar_viewer.grid(row=0, column=1, sticky=(tk.N, tk.S))
 
         # 오른쪽: 편집 가능한 영역
-        editor_container = ttk.LabelFrame(paned_horizontal, text="편집", padding=10)
-        paned_horizontal.add(editor_container, weight=1)
-        editor_container.columnconfigure(0, weight=1)
-        editor_container.rowconfigure(0, weight=1)
+        self.editor_container = ttk.LabelFrame(self.paned_horizontal, text="편집", padding=10)
+        self.paned_horizontal.add(self.editor_container, weight=1)
+        self.editor_container.columnconfigure(0, weight=1)
+        self.editor_container.rowconfigure(0, weight=1)
+        
+        # 편집 영역의 최소 너비 설정 (일관된 크기 유지)
+        self.editor_container.config(width=400)  # 최소 너비 설정
 
         # 스크롤 가능한 편집 영역
-        canvas_editor, self.editor_frame, scrollbar_editor = create_scrollable_frame(editor_container)
+        canvas_editor, self.editor_frame, scrollbar_editor = create_scrollable_frame(self.editor_container)
         canvas_editor.grid(row=0, column=0, sticky=(tk.W, tk.E, tk.N, tk.S))
         scrollbar_editor.grid(row=0, column=1, sticky=(tk.N, tk.S))
 
         # 저장 버튼 프레임 (편집 영역 하단)
-        save_button_frame = ttk.Frame(editor_container)
+        save_button_frame = ttk.Frame(self.editor_container)
         save_button_frame.grid(row=1, column=0, columnspan=2, sticky=(tk.W, tk.E), pady=5)
         
         save_btn = ttk.Button(
@@ -89,25 +81,17 @@ class CharactersTab(BaseTab):
         )
         save_btn.pack(side=tk.RIGHT, padx=5)
 
-        # 하단: 원본 JSON 에디터
-        json_editor_frame = ttk.LabelFrame(paned_vertical, text="원본 JSON 에디터", padding=10)
-        paned_vertical.add(json_editor_frame, weight=1)
-        json_editor_frame.columnconfigure(0, weight=1)
-        json_editor_frame.rowconfigure(0, weight=1)
-
-        self.editor = scrolledtext.ScrolledText(
-            json_editor_frame,
-            width=120,
-            height=25,
-            wrap=tk.WORD,
-            font=("Consolas", 10)
-        )
-        self.editor.grid(row=0, column=0, sticky=(tk.W, tk.E, tk.N, tk.S))
-        self.editor.bind('<KeyRelease>', lambda e: self.mark_unsaved())
-
     def update_display(self):
         """화면 업데이트"""
-        characters = self.project_data.get_characters()
+        # 파일에서 최신 데이터 다시 로드 (인물 세부정보 입력 탭에서 저장한 데이터 반영)
+        try:
+            all_data = self.file_service.load_all_data()
+            self.project_data.data = all_data
+        except Exception as e:
+            print(f"데이터 로드 오류: {e}")
+
+        # 시놉시스에서 등장인물 정보를 우선적으로 가져오기
+        characters = self._get_characters_from_synopsis_or_data()
 
         if not characters:
             # 뷰어와 편집 영역 초기화
@@ -118,12 +102,9 @@ class CharactersTab(BaseTab):
             
             ttk.Label(
                 self.viewer_frame,
-                text="인물 정보가 없습니다.",
+                text="인물 정보가 없습니다.\n시놉시스 입력 탭에서 등장인물을 입력해주세요.",
                 font=("맑은 고딕", 11)
             ).pack(pady=20)
-            
-            self.editor.delete(1.0, tk.END)
-            self.editor.insert(1.0, "[]")
             
             # 인물 탭 버튼 제거
             for widget in self.character_tabs_frame.winfo_children():
@@ -145,10 +126,55 @@ class CharactersTab(BaseTab):
         self._create_viewer_widget(selected_char)
         self._create_editor_widget(selected_char)
 
-        # JSON 에디터에 선택된 인물만 표시
-        self.editor.delete(1.0, tk.END)
-        json_str = format_json(selected_char)
-        self.editor.insert(1.0, json_str)
+    def _get_characters_from_synopsis_or_data(self):
+        """
+        기존 인물 데이터(세부 정보 포함)를 우선 사용하고, 시놉시스의 기본 정보로 업데이트
+        시놉시스에 등장인물이 있으면 이름을 기준으로 매칭하여 기본 정보만 업데이트하고,
+        세부 정보는 기존 인물 데이터의 것을 유지합니다.
+        """
+        # 기존 인물 데이터를 먼저 가져옴 (세부 정보 포함)
+        characters = self.project_data.get_characters()
+        
+        synopsis = self.project_data.get_synopsis()
+        synopsis_characters = synopsis.get('characters', [])
+        
+        if synopsis_characters:
+            # 인물 이름을 키로 하는 딕셔너리 생성 (빠른 검색을 위해)
+            character_dict = {char.get('name', ''): char for char in characters}
+            
+            # 시놉시스의 등장인물로 기본 정보만 업데이트
+            for syn_char in synopsis_characters:
+                name = syn_char.get('name', '')
+                if not name:
+                    continue
+                
+                if name in character_dict:
+                    # 기존 인물이 있으면 기본 정보만 업데이트 (세부 정보 유지)
+                    existing_char = character_dict[name]
+                    # 기본 정보 필드만 업데이트 (시놉시스에 값이 있으면 사용, 없으면 기존 값 유지)
+                    existing_char.update({
+                        'age': syn_char.get('age', existing_char.get('age', '')),
+                        'occupation': syn_char.get('occupation', existing_char.get('occupation', '')),
+                        'personality': syn_char.get('personality', existing_char.get('personality', '')),
+                        'appearance': syn_char.get('appearance', existing_char.get('appearance', '')),
+                        'traits': syn_char.get('traits', existing_char.get('traits', '')),
+                        'desire': syn_char.get('desire', existing_char.get('desire', '')),
+                        'role': syn_char.get('role', existing_char.get('role', ''))
+                    })
+                else:
+                    # 새 인물이면 시놉시스 정보로 추가
+                    characters.append({
+                        'name': name,
+                        'age': syn_char.get('age', ''),
+                        'occupation': syn_char.get('occupation', ''),
+                        'personality': syn_char.get('personality', ''),
+                        'appearance': syn_char.get('appearance', ''),
+                        'traits': syn_char.get('traits', ''),
+                        'desire': syn_char.get('desire', ''),
+                        'role': syn_char.get('role', '')
+                    })
+        
+        return characters
 
     def _create_character_tabs(self, characters):
         """인물별 탭 버튼 생성"""
@@ -189,13 +215,125 @@ class CharactersTab(BaseTab):
         self.update_display()
 
     def _create_viewer_widget(self, char: dict):
-        """읽기 전용 뷰어 위젯 생성"""
+        """읽기 전용 뷰어 위젯 생성 - 기본 정보와 세부 정보로 분리"""
         # 기존 위젯 제거
         for widget in self.viewer_frame.winfo_children():
             widget.destroy()
 
-        # 인물 정보를 키값과 함께 세로로 나열
-        self._display_dict_recursive(self.viewer_frame, char, "")
+        # 기본 정보 필드 (시놉시스에서 가져온 정보)
+        basic_info_fields = ['name', 'age', 'occupation', 'personality', 'appearance', 'traits', 'desire', 'role']
+        
+        # 기본 정보 섹션
+        basic_info_frame = ttk.LabelFrame(self.viewer_frame, text="기본 정보", padding=10)
+        basic_info_frame.pack(fill=tk.X, padx=5, pady=5)
+        
+        for field in basic_info_fields:
+            if field in char:
+                value = char[field]
+                value_str = str(value) if value is not None else ""
+                
+                if len(value_str) > 100:
+                    label = ttk.Label(
+                        basic_info_frame,
+                        text=f"{field}:",
+                        font=("맑은 고딕", 9, "bold")
+                    )
+                    label.pack(anchor=tk.W, padx=5, pady=2)
+                    
+                    text_widget = scrolledtext.ScrolledText(
+                        basic_info_frame,
+                        height=3,
+                        wrap=tk.WORD,
+                        font=("맑은 고딕", 9),
+                        state=tk.DISABLED
+                    )
+                    text_widget.pack(fill=tk.X, padx=10, pady=2)
+                    text_widget.insert(1.0, value_str)
+                else:
+                    label = ttk.Label(
+                        basic_info_frame,
+                        text=f"{field}: {value_str}",
+                        font=("맑은 고딕", 9)
+                    )
+                    label.pack(anchor=tk.W, padx=5, pady=2)
+        
+        # 세부 정보 섹션
+        detail_info_frame = ttk.LabelFrame(self.viewer_frame, text="세부 정보", padding=10)
+        detail_info_frame.pack(fill=tk.X, padx=5, pady=5)
+        
+        # 세부 정보 필드 목록
+        detail_info_fields = [
+            'id', 'role_type', 'relation_to_protagonist',
+            'appearance_visual', 'sensory_scent', 'sensory_touch', 'fashion_style',
+            'personality_surface', 'personality_deep', 'trauma_or_lack',
+            'desire_conscious', 'desire_unconscious',
+            'voice_tone', 'speech_habit', 'breathing_sound'
+        ]
+        
+        for field in detail_info_fields:
+            if field in char:
+                value = char[field]
+                value_str = str(value) if value is not None else ""
+                
+                if len(value_str) > 100:
+                    label = ttk.Label(
+                        detail_info_frame,
+                        text=f"{field}:",
+                        font=("맑은 고딕", 9, "bold")
+                    )
+                    label.pack(anchor=tk.W, padx=5, pady=2)
+                    
+                    text_widget = scrolledtext.ScrolledText(
+                        detail_info_frame,
+                        height=3,
+                        wrap=tk.WORD,
+                        font=("맑은 고딕", 9),
+                        state=tk.DISABLED
+                    )
+                    text_widget.pack(fill=tk.X, padx=10, pady=2)
+                    text_widget.insert(1.0, value_str)
+                else:
+                    label = ttk.Label(
+                        detail_info_frame,
+                        text=f"{field}: {value_str}",
+                        font=("맑은 고딕", 9)
+                    )
+                    label.pack(anchor=tk.W, padx=5, pady=2)
+        
+        # 나머지 필드들 (기본 정보와 세부 정보에 포함되지 않은 필드)
+        remaining_fields = {k: v for k, v in char.items() 
+                          if k not in basic_info_fields + detail_info_fields + ['_filename']}
+        
+        if remaining_fields:
+            other_info_frame = ttk.LabelFrame(self.viewer_frame, text="기타 정보", padding=10)
+            other_info_frame.pack(fill=tk.X, padx=5, pady=5)
+            
+            for key, value in remaining_fields.items():
+                value_str = str(value) if value is not None else ""
+                if len(value_str) > 100:
+                    label = ttk.Label(
+                        other_info_frame,
+                        text=f"{key}:",
+                        font=("맑은 고딕", 9, "bold")
+                    )
+                    label.pack(anchor=tk.W, padx=5, pady=2)
+                    
+                    text_widget = scrolledtext.ScrolledText(
+                        other_info_frame,
+                        height=3,
+                        wrap=tk.WORD,
+                        font=("맑은 고딕", 9),
+                        state=tk.DISABLED
+                    )
+                    text_widget.pack(fill=tk.X, padx=10, pady=2)
+                    text_widget.insert(1.0, value_str)
+                else:
+                    label = ttk.Label(
+                        other_info_frame,
+                        text=f"{key}: {value_str}",
+                        font=("맑은 고딕", 9)
+                    )
+                    label.pack(anchor=tk.W, padx=5, pady=2)
 
     def _display_dict_recursive(self, parent, data, prefix=""):
         """딕셔너리를 재귀적으로 표시"""
@@ -271,104 +409,170 @@ class CharactersTab(BaseTab):
             label.pack(anchor=tk.W, padx=5, pady=2)
 
     def _create_editor_widget(self, char: dict):
-        """편집 가능한 위젯 생성"""
+        """편집 가능한 위젯 생성 - 키값과 밸류값을 나눠서 표시"""
         # 기존 위젯 제거
         for widget in self.editor_frame.winfo_children():
             widget.destroy()
         self.edit_fields.clear()
+        
+        # 편집 영역의 너비를 일관되게 유지하기 위해 최소 너비 설정
+        # PanedWindow의 sash 위치를 조정하여 편집 영역 크기 유지
+        if hasattr(self, 'paned_horizontal'):
+            # 편집 영역의 너비를 일정하게 유지 (전체의 약 40% 정도)
+            try:
+                # PanedWindow의 sash 위치 조정 (전체 너비의 60% 지점)
+                paned_width = self.paned_horizontal.winfo_width()
+                if paned_width > 0:
+                    sash_pos = int(paned_width * 0.6)
+                    self.paned_horizontal.sashpos(0, sash_pos)
+            except:
+                pass  # sash 위치 조정 실패 시 무시
 
-        # 인물 정보를 키값과 함께 세로로 나열하고 편집 필드 생성
-        self._create_edit_fields_recursive(self.editor_frame, char, "")
-
-    def _create_edit_fields_recursive(self, parent, data, prefix=""):
-        """편집 필드를 재귀적으로 생성"""
-        if isinstance(data, dict):
-            for key, value in data.items():
-                # _filename 같은 내부 키는 제외
-                if key == '_filename':
-                    continue
-                    
-                current_key = f"{prefix}.{key}" if prefix else key
+        # 기본 정보 필드 (시놉시스에서 가져온 정보)
+        basic_info_fields = ['name', 'age', 'occupation', 'personality', 'appearance', 'traits', 'desire', 'role']
+        
+        # 기본 정보 섹션
+        basic_info_frame = ttk.LabelFrame(self.editor_frame, text="기본 정보", padding=10)
+        basic_info_frame.pack(fill=tk.X, padx=5, pady=5)
+        
+        for field in basic_info_fields:
+            value = char.get(field, '')
+            value_str = str(value) if value is not None else ""
+            
+            frame = ttk.Frame(basic_info_frame)
+            frame.pack(fill=tk.X, padx=5, pady=2)
+            
+            # 키값 라벨
+            label = ttk.Label(
+                frame,
+                text=f"{field}:",
+                font=("맑은 고딕", 9, "bold"),
+                width=20,
+                anchor=tk.W
+            )
+            label.pack(side=tk.LEFT, padx=5)
+            
+            # 밸류값 입력 필드
+            if len(value_str) > 50 or '\n' in value_str:
+                text_widget = scrolledtext.ScrolledText(
+                    frame,
+                    height=3,
+                    wrap=tk.WORD,
+                    font=("맑은 고딕", 9),
+                    width=50  # 최소 너비 설정
+                )
+                text_widget.pack(side=tk.LEFT, fill=tk.BOTH, expand=True, padx=5)
+                text_widget.insert(1.0, value_str)
+                self.edit_fields[field] = ('text', text_widget)
+            else:
+                entry = ttk.Entry(frame, font=("맑은 고딕", 9), width=50)  # 최소 너비 설정
+                entry.pack(side=tk.LEFT, fill=tk.X, expand=True, padx=5)
+                entry.insert(0, value_str)
+                self.edit_fields[field] = ('entry', entry)
+        
+        # 세부 정보 섹션
+        detail_info_frame = ttk.LabelFrame(self.editor_frame, text="세부 정보", padding=10)
+        detail_info_frame.pack(fill=tk.X, padx=5, pady=5)
+        
+        # 세부 정보 필드 목록
+        detail_info_fields = [
+            'id', 'role_type', 'relation_to_protagonist',
+            'appearance_visual', 'sensory_scent', 'sensory_touch', 'fashion_style',
+            'personality_surface', 'personality_deep', 'trauma_or_lack',
+            'desire_conscious', 'desire_unconscious',
+            'voice_tone', 'speech_habit', 'breathing_sound'
+        ]
+        
+        for field in detail_info_fields:
+            value = char.get(field, '')
+            value_str = str(value) if value is not None else ""
+            
+            frame = ttk.Frame(detail_info_frame)
+            frame.pack(fill=tk.X, padx=5, pady=2)
+            
+            # 키값 라벨
+            label = ttk.Label(
+                frame,
+                text=f"{field}:",
+                font=("맑은 고딕", 9, "bold"),
+                width=20,
+                anchor=tk.W
+            )
+            label.pack(side=tk.LEFT, padx=5)
+            
+            # 밸류값 입력 필드
+            if len(value_str) > 50 or '\n' in value_str:
+                text_widget = scrolledtext.ScrolledText(
+                    frame,
+                    height=3,
+                    wrap=tk.WORD,
+                    font=("맑은 고딕", 9),
+                    width=50  # 최소 너비 설정
+                )
+                text_widget.pack(side=tk.LEFT, fill=tk.BOTH, expand=True, padx=5)
+                text_widget.insert(1.0, value_str)
+                self.edit_fields[field] = ('text', text_widget)
+            else:
+                entry = ttk.Entry(frame, font=("맑은 고딕", 9), width=50)  # 최소 너비 설정
+                entry.pack(side=tk.LEFT, fill=tk.X, expand=True, padx=5)
+                entry.insert(0, value_str)
+                self.edit_fields[field] = ('entry', entry)
+        
+        # 나머지 필드들 (기본 정보와 세부 정보에 포함되지 않은 필드)
+        remaining_fields = {k: v for k, v in char.items() 
+                          if k not in basic_info_fields + detail_info_fields + ['_filename']}
+        
+        if remaining_fields:
+            other_info_frame = ttk.LabelFrame(self.editor_frame, text="기타 정보", padding=10)
+            other_info_frame.pack(fill=tk.X, padx=5, pady=5)
+            
+            for key, value in remaining_fields.items():
+                value_str = str(value) if value is not None else ""
                 
-                if isinstance(value, dict):
-                    # 딕셔너리인 경우 - JSON 형식으로 편집
-                    frame = ttk.LabelFrame(parent, text=f"{key}:", padding=5)
-                    frame.pack(fill=tk.X, padx=5, pady=2)
-                    
-                    label = ttk.Label(frame, text="(JSON 형식으로 편집)", font=("맑은 고딕", 8))
-                    label.pack(anchor=tk.W, padx=5)
-                    
+                frame = ttk.Frame(other_info_frame)
+                frame.pack(fill=tk.X, padx=5, pady=2)
+                
+                # 키값 라벨
+                label = ttk.Label(
+                    frame,
+                    text=f"{key}:",
+                    font=("맑은 고딕", 9, "bold"),
+                    width=20,
+                    anchor=tk.W
+                )
+                label.pack(side=tk.LEFT, padx=5)
+                
+                # 밸류값 입력 필드
+                if len(value_str) > 50 or '\n' in value_str:
                     text_widget = scrolledtext.ScrolledText(
                         frame,
-                        height=5,
+                        height=3,
                         wrap=tk.WORD,
-                        font=("Consolas", 9)
+                        font=("맑은 고딕", 9),
+                        width=50  # 최소 너비 설정
                     )
-                    text_widget.pack(fill=tk.X, padx=5, pady=2)
-                    text_widget.insert(1.0, format_json(value))
-                    self.edit_fields[current_key] = ('dict', text_widget)
-                    
-                elif isinstance(value, list):
-                    # 리스트인 경우 - JSON 형식으로 편집
-                    label = ttk.Label(
-                        parent,
-                        text=f"{key}:",
-                        font=("맑은 고딕", 9, "bold")
-                    )
-                    label.pack(anchor=tk.W, padx=5, pady=2)
-                    
-                    label2 = ttk.Label(parent, text="(JSON 형식으로 편집)", font=("맑은 고딕", 8))
-                    label2.pack(anchor=tk.W, padx=10)
-                    
-                    text_widget = scrolledtext.ScrolledText(
-                        parent,
-                        height=4,
-                        wrap=tk.WORD,
-                        font=("Consolas", 9)
-                    )
-                    text_widget.pack(fill=tk.X, padx=10, pady=2)
-                    text_widget.insert(1.0, format_json(value))
-                    self.edit_fields[current_key] = ('list', text_widget)
-                    
+                    text_widget.pack(side=tk.LEFT, fill=tk.BOTH, expand=True, padx=5)
+                    text_widget.insert(1.0, value_str)
+                    self.edit_fields[key] = ('text', text_widget)
                 else:
-                    # 단순 값인 경우
-                    value_str = str(value) if value is not None else ""
-                    
-                    # 긴 텍스트는 ScrolledText, 짧은 것은 Entry
-                    if len(value_str) > 50 or '\n' in value_str:
-                        label = ttk.Label(
-                            parent,
-                            text=f"{key}:",
-                            font=("맑은 고딕", 9, "bold")
-                        )
-                        label.pack(anchor=tk.W, padx=5, pady=2)
-                        
-                        text_widget = scrolledtext.ScrolledText(
-                            parent,
-                            height=3,
-                            wrap=tk.WORD,
-                            font=("맑은 고딕", 9)
-                        )
-                        text_widget.pack(fill=tk.X, padx=10, pady=2)
-                        text_widget.insert(1.0, value_str)
-                        self.edit_fields[current_key] = ('text', text_widget)
-                    else:
-                        frame = ttk.Frame(parent)
-                        frame.pack(fill=tk.X, padx=5, pady=2)
-                        
-                        label = ttk.Label(
-                            frame,
-                            text=f"{key}:",
-                            font=("맑은 고딕", 9, "bold"),
-                            width=15,
-                            anchor=tk.W
-                        )
-                        label.pack(side=tk.LEFT, padx=5)
-                        
-                        entry = ttk.Entry(frame, font=("맑은 고딕", 9))
-                        entry.pack(side=tk.LEFT, fill=tk.X, expand=True, padx=5)
-                        entry.insert(0, value_str)
-                        self.edit_fields[current_key] = ('entry', entry)
+                    entry = ttk.Entry(frame, font=("맑은 고딕", 9), width=50)  # 최소 너비 설정
+                    entry.pack(side=tk.LEFT, fill=tk.X, expand=True, padx=5)
+                    entry.insert(0, value_str)
+                    self.edit_fields[key] = ('entry', entry)
+        
+        # 편집 영역 크기 일관성 유지를 위한 업데이트
+        self.frame.update_idletasks()
+        if hasattr(self, 'paned_horizontal'):
+            try:
+                # PanedWindow의 sash 위치를 조정하여 편집 영역 크기 유지
+                paned_width = self.paned_horizontal.winfo_width()
+                if paned_width > 100:  # 최소 너비 확인
+                    # 편집 영역이 전체의 약 40% 정도 되도록 설정
+                    sash_pos = int(paned_width * 0.6)
+                    self.paned_horizontal.sashpos(0, sash_pos)
+            except:
+                pass  # sash 위치 조정 실패 시 무시
+
 
     def _save_character_edits(self):
         """편집된 인물 정보 저장"""
@@ -383,25 +587,16 @@ class CharactersTab(BaseTab):
             char = characters[self.current_character_index].copy()
             
             # 편집 필드에서 값 읽어서 업데이트
-            for key_path, (field_type, widget) in self.edit_fields.items():
+            for key, (field_type, widget) in self.edit_fields.items():
                 if field_type == 'entry':
                     value = widget.get()
                 elif field_type == 'text':
                     value = widget.get(1.0, tk.END).strip()
-                elif field_type in ('dict', 'list'):
-                    json_str = widget.get(1.0, tk.END).strip()
-                    try:
-                        value = safe_json_loads(json_str)
-                        if value is None:
-                            continue
-                    except:
-                        messagebox.showerror("오류", f"{key_path}의 JSON 형식이 올바르지 않습니다.")
-                        return
                 else:
                     continue
                 
-                # 키 경로를 따라 딕셔너리 업데이트
-                self._update_nested_dict(char, key_path, value)
+                # 값 업데이트
+                char[key] = value
             
             # 인물 리스트 업데이트
             characters[self.current_character_index] = char
@@ -419,36 +614,6 @@ class CharactersTab(BaseTab):
         except Exception as e:
             messagebox.showerror("오류", f"저장 중 오류가 발생했습니다: {e}")
 
-    def _update_nested_dict(self, data: dict, key_path: str, value):
-        """중첩된 딕셔너리의 값을 업데이트"""
-        keys = key_path.split('.')
-        current = data
-        
-        # 마지막 키를 제외한 모든 키를 따라가기
-        for key in keys[:-1]:
-            if key not in current:
-                current[key] = {}
-            current = current[key]
-        
-        # 마지막 키에 값 설정
-        final_key = keys[-1]
-        current[final_key] = value
-
     def save(self) -> bool:
-        """데이터 저장 (JSON 에디터에서)"""
-        json_str = self.editor.get(1.0, tk.END).strip()
-        if json_str:
-            try:
-                char_data = safe_json_loads(json_str)
-                if char_data is not None:
-                    characters = self.project_data.get_characters()
-                    if characters and self.current_character_index < len(characters):
-                        characters[self.current_character_index] = char_data
-                        self.project_data.set_characters(characters)
-                        if self.file_service.save_characters(characters):
-                            # 화면 업데이트
-                            self.update_display()
-                            return True
-            except Exception as e:
-                messagebox.showerror("오류", f"JSON 파싱 오류: {e}")
-        return False
+        """데이터 저장 (편집 필드에서)"""
+        return self._save_character_edits()

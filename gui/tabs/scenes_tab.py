@@ -612,7 +612,7 @@ class ScenesTab(BaseTab):
                         f"10개의 장면이 생성되지 않았습니다. (생성된 장면: {len(scenes)}개)"
                     )
 
-            # 챕터 데이터에 장면 저장
+            # 챕터 데이터에 장면 저장 (참조용)
             chapter['scenes'] = scenes
             chapter['scenes_generated_at'] = datetime.now().isoformat()
 
@@ -621,12 +621,21 @@ class ScenesTab(BaseTab):
             chapters[chapter_index] = chapter
             self.project_data.set_chapters(chapters)
 
-            # 파일에 즉시 자동 저장
+            # 대본 파일에 장면 정보 저장 (04_scripts/ 폴더)
+            try:
+                self.file_service.save_scenes_to_script(
+                    chapter_number=chapter_num,
+                    scenes=scenes
+                )
+            except Exception as save_error:
+                print(f"경고: 대본 파일에 장면 저장 중 오류 발생: {save_error}")
+            
+            # 챕터 파일도 저장 (참조용)
             try:
                 single_chapter_list = [chapter]
                 self.file_service.save_chapters(single_chapter_list)
             except Exception as save_error:
-                print(f"경고: 장면은 생성되었으나 저장 중 오류 발생: {save_error}")
+                print(f"경고: 챕터 파일 저장 중 오류 발생: {save_error}")
 
             if show_message:
                 messagebox.showinfo("완료", f"챕터 {chapter_num}의 장면이 생성되고 자동 저장되었습니다.\n생성된 장면: {len(scenes)}개")

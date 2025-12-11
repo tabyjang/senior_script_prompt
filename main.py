@@ -24,16 +24,50 @@ def main():
     parser = argparse.ArgumentParser(description="프로젝트 뷰어/에디터")
     parser.add_argument(
         '--project',
-        default='../001_gym_romance',
-        help='프로젝트 경로 (기본값: ../001_gym_romance)'
+        default=None,
+        help='프로젝트 경로 (지정하지 않으면 마지막 프로젝트 또는 기본값 사용)'
     )
     args = parser.parse_args()
 
-    # 프로젝트 경로 설정
-    project_path = Path(args.project)
-
     # 설정 관리자 생성
     config_manager = ConfigManager()
+
+    # 프로젝트 경로 결정
+    project_path = None
+    
+    # 1. 명령줄 인자로 프로젝트 경로가 지정된 경우
+    if args.project:
+        project_path = Path(args.project)
+    else:
+        # 2. 설정 파일에서 마지막 프로젝트 경로 읽기
+        last_project_path = config_manager.get_last_project_path()
+        if last_project_path:
+            last_path = Path(last_project_path)
+            if last_path.exists() and (last_path / "synopsis.json").exists():
+                project_path = last_path
+                print(f"[프로젝트 로드] 마지막 프로젝트 자동 로드: {project_path}")
+    
+    # 3. 프로젝트 경로가 없거나 유효하지 않은 경우 기본값 사용
+    if project_path is None or not project_path.exists():
+        default_path = Path("../001_gym_romance")
+        if default_path.exists():
+            project_path = default_path
+            print(f"[프로젝트 로드] 기본 프로젝트 사용: {project_path}")
+        else:
+            # 기본 경로도 없으면 현재 디렉토리 기준으로 상대 경로 생성
+            import os
+            current_dir = Path(os.getcwd())
+            # editors_app에서 실행 중이면 상위 폴더로
+            if current_dir.name == "editors_app":
+                project_path = current_dir.parent / "001_gym_romance"
+            else:
+                project_path = default_path
+            print(f"[프로젝트 로드] 프로젝트 경로 설정: {project_path}")
+    
+    # 프로젝트 경로를 절대 경로로 변환
+    if not project_path.is_absolute():
+        import os
+        project_path = (Path(os.getcwd()) / project_path).resolve()
 
     # 프로젝트 데이터 모델 생성
     project_data = ProjectData(str(project_path))

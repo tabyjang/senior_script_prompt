@@ -7,6 +7,7 @@
 import tkinter as tk
 from tkinter import ttk, scrolledtext, messagebox
 from datetime import datetime
+import re
 from .base_tab import BaseTab
 from utils.json_utils import format_json, safe_json_loads
 
@@ -161,7 +162,18 @@ class ChaptersTab(BaseTab):
         """
         화면 업데이트
         원본 update_chapters_display() 메서드의 로직을 완전히 이식
+        시놉시스 기반으로 인물 프로필 파일과 챕터 파일 생성
         """
+        # 파일에서 최신 데이터 다시 로드 (챕터 세부정보 입력 탭에서 저장한 데이터 반영)
+        try:
+            all_data = self.file_service.load_all_data()
+            self.project_data.data = all_data
+        except Exception as e:
+            print(f"데이터 로드 오류: {e}")
+
+        # 시놉시스 기반으로 파일 생성
+        self._create_files_from_synopsis()
+
         # 기존 위젯 제거
         for widget in self.chapters_viewer_frame.winfo_children():
             widget.destroy()
@@ -171,7 +183,7 @@ class ChaptersTab(BaseTab):
         if not chapters:
             ttk.Label(
                 self.chapters_viewer_frame,
-                text="챕터 정보가 없습니다.",
+                text="챕터 정보가 없습니다.\n시놉시스 입력 탭에서 챕터를 입력해주세요.",
                 font=("맑은 고딕", 11)
             ).pack(pady=20)
             self.editor.delete(1.0, tk.END)
@@ -197,8 +209,9 @@ class ChaptersTab(BaseTab):
 
         각 챕터를 카드 형식으로 표시:
         - 챕터 번호와 제목
-        - 요약 (스크롤 가능한 텍스트)
-        - 분위기
+        - 내용 (content)
+        - 세부 정보 (detailed_content)
+        - 분위기 (mood) - 있으면 표시
         """
         num = chapter.get('chapter_number', idx + 1)
         frame = ttk.LabelFrame(
@@ -223,50 +236,81 @@ class ChaptersTab(BaseTab):
             font=("맑은 고딕", 10)
         ).pack(side=tk.LEFT)
 
-        # 요약 (스크롤 가능한 텍스트)
-        summary_frame = ttk.Frame(frame)
-        summary_frame.pack(fill=tk.X, pady=5)
-        ttk.Label(
-            summary_frame,
-            text="요약:",
-            font=("맑은 고딕", 10, "bold"),
-            width=12
-        ).pack(side=tk.LEFT, anchor=tk.N)
+        # 내용 (content) - 시놉시스에서 파싱된 기본 내용
+        content = chapter.get('content', '') or chapter.get('summary', '')
+        if content:
+            content_frame = ttk.Frame(frame)
+            content_frame.pack(fill=tk.X, pady=5)
+            ttk.Label(
+                content_frame,
+                text="내용:",
+                font=("맑은 고딕", 10, "bold"),
+                width=12
+            ).pack(side=tk.LEFT, anchor=tk.N)
 
-        summary_text = scrolledtext.ScrolledText(
-            summary_frame,
-            width=80,
-            height=6,
-            wrap=tk.WORD,
-            font=("맑은 고딕", 10),
-            state=tk.DISABLED
-        )
-        summary_text.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
+            content_text = scrolledtext.ScrolledText(
+                content_frame,
+                width=80,
+                height=4,
+                wrap=tk.WORD,
+                font=("맑은 고딕", 10),
+                state=tk.DISABLED
+            )
+            content_text.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
 
-        # 요약 내용 삽입 (읽기 전용으로 설정하기 전에)
-        summary_text.config(state=tk.NORMAL)
-        summary_text.insert(1.0, chapter.get('summary', ''))
-        summary_text.config(state=tk.DISABLED)
+            # 내용 삽입
+            content_text.config(state=tk.NORMAL)
+            content_text.insert(1.0, content)
+            content_text.config(state=tk.DISABLED)
 
-        # 분위기
-        mood_frame = ttk.Frame(frame)
-        mood_frame.pack(fill=tk.X, pady=5)
-        ttk.Label(
-            mood_frame,
-            text="분위기:",
-            font=("맑은 고딕", 10, "bold"),
-            width=12
-        ).pack(side=tk.LEFT)
-        ttk.Label(
-            mood_frame,
-            text=chapter.get('mood', ''),
-            font=("맑은 고딕", 10)
-        ).pack(side=tk.LEFT)
+        # 세부 정보 (detailed_content) - 챕터 세부정보 입력 탭에서 추가된 내용
+        detailed_content = chapter.get('detailed_content', '')
+        if detailed_content:
+            detailed_frame = ttk.Frame(frame)
+            detailed_frame.pack(fill=tk.X, pady=5)
+            ttk.Label(
+                detailed_frame,
+                text="세부 정보:",
+                font=("맑은 고딕", 10, "bold"),
+                width=12
+            ).pack(side=tk.LEFT, anchor=tk.N)
+
+            detailed_text = scrolledtext.ScrolledText(
+                detailed_frame,
+                width=80,
+                height=10,
+                wrap=tk.WORD,
+                font=("맑은 고딕", 10),
+                state=tk.DISABLED
+            )
+            detailed_text.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
+
+            # 세부 정보 삽입
+            detailed_text.config(state=tk.NORMAL)
+            detailed_text.insert(1.0, detailed_content)
+            detailed_text.config(state=tk.DISABLED)
+
+        # 분위기 (있으면 표시)
+        mood = chapter.get('mood', '')
+        if mood:
+            mood_frame = ttk.Frame(frame)
+            mood_frame.pack(fill=tk.X, pady=5)
+            ttk.Label(
+                mood_frame,
+                text="분위기:",
+                font=("맑은 고딕", 10, "bold"),
+                width=12
+            ).pack(side=tk.LEFT)
+            ttk.Label(
+                mood_frame,
+                text=mood,
+                font=("맑은 고딕", 10)
+            ).pack(side=tk.LEFT)
 
         # 대본 생성 버튼
         button_frame = ttk.Frame(frame)
         button_frame.pack(fill=tk.X, pady=10)
-        
+
         generate_btn = ttk.Button(
             button_frame,
             text="📝 대본 생성",
@@ -274,7 +318,7 @@ class ChaptersTab(BaseTab):
             width=15
         )
         generate_btn.pack(side=tk.LEFT, padx=5)
-        
+
         # 대본 보기 버튼 (오른쪽 영역에 표시)
         view_script_btn = ttk.Button(
             button_frame,
@@ -523,6 +567,107 @@ class ChaptersTab(BaseTab):
             result.append(char_info)
 
         return '\n'.join(result)
+
+    def _create_files_from_synopsis(self):
+        """시놉시스 기반으로 인물 프로필 파일과 챕터 파일 생성"""
+        synopsis = self.project_data.get_synopsis()
+        
+        if not synopsis:
+            return
+        
+        # 1. 등장인물 파일 생성
+        synopsis_characters = synopsis.get('characters', [])
+        if synopsis_characters:
+            characters = []
+            for syn_char in synopsis_characters:
+                # 시놉시스 구조를 그대로 사용
+                character = {
+                    'name': syn_char.get('name', ''),
+                    'age': syn_char.get('age', ''),
+                    'occupation': syn_char.get('occupation', ''),
+                    'personality': syn_char.get('personality', ''),
+                    'appearance': syn_char.get('appearance', ''),
+                    'traits': syn_char.get('traits', ''),
+                    'desire': syn_char.get('desire', ''),
+                    'role': syn_char.get('role', '')
+                }
+                # 파일명 생성 (정규화 함수 사용)
+                from utils.file_utils import get_character_filename
+                char_name = character.get('name', 'character')
+                character['_filename'] = get_character_filename(char_name)
+                characters.append(character)
+            
+            # 인물 데이터 설정 및 저장
+            self.project_data.set_characters(characters)
+            self.file_service.save_characters(characters)
+        
+        # 2. 챕터 파일 생성
+        synopsis_chapters = synopsis.get('chapters', {})
+        if synopsis_chapters:
+            chapters = []
+            
+            # 챕터 번호 순서대로 정렬
+            sorted_keys = sorted(synopsis_chapters.keys(), key=lambda x: int(x.split('_')[1]) if '_' in x else 0)
+            
+            for key in sorted_keys:
+                chapter_content = synopsis_chapters[key]
+                
+                # 챕터 내용에서 번호, 단계, 내용 추출
+                chapter_number = None
+                chapter_stage = None
+                chapter_title = None
+                content = str(chapter_content)
+                
+                # 패턴 1: "챕터 1 (도입): 내용" 형식
+                pattern1 = r'챕터\s*(\d+)\s*\(([^)]+)\)\s*[:：]\s*(.+)'
+                match1 = re.match(pattern1, content, re.DOTALL)
+                if match1:
+                    chapter_number = int(match1.group(1))
+                    chapter_stage = match1.group(2).strip()
+                    content = match1.group(3).strip()
+                else:
+                    # 패턴 2: "[도입] 제목: 내용" 형식
+                    pattern2 = r'\[([^\]]+)\]\s*([^:：]+?)\s*[:：]\s*(.+)'
+                    match2 = re.match(pattern2, content, re.DOTALL)
+                    if match2:
+                        chapter_stage = match2.group(1).strip()
+                        chapter_title = match2.group(2).strip()
+                        content = match2.group(3).strip()
+                    else:
+                        # 패턴 3: "chapter_1" 키에서 번호 추출
+                        if '_' in key:
+                            try:
+                                chapter_number = int(key.split('_')[1])
+                            except:
+                                pass
+                
+                # 챕터 번호가 없으면 순서대로 할당
+                if chapter_number is None:
+                    chapter_number = len(chapters) + 1
+                
+                # 제목 결정
+                if chapter_title:
+                    title = chapter_title
+                elif chapter_stage:
+                    title = chapter_stage
+                else:
+                    title = f'챕터 {chapter_number}'
+                
+                # 챕터 데이터 생성
+                chapter = {
+                    'chapter_number': chapter_number,
+                    'title': title,
+                    'content': content,
+                    'script': ''
+                }
+                # 파일명 생성 (정규화 함수 사용)
+                from utils.file_utils import get_chapter_filename
+                chapter['_filename'] = get_chapter_filename(chapter_number)
+                chapters.append(chapter)
+            
+            # 챕터 데이터 설정 및 저장
+            self.project_data.set_chapters(chapters)
+            self.file_service.save_chapters(chapters)
 
     def save(self) -> bool:
         """

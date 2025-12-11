@@ -5,6 +5,7 @@
 
 import tkinter as tk
 from tkinter import ttk, scrolledtext, messagebox
+import json
 from .base_tab import BaseTab
 
 
@@ -57,14 +58,27 @@ class CopyPasteTab(BaseTab):
         )
         characters_radio.pack(side=tk.LEFT, padx=10)
 
+        # 오른쪽 버튼 영역
+        button_frame = ttk.Frame(top_frame)
+        button_frame.pack(side=tk.RIGHT, padx=10)
+
+        # 새로고침 버튼
+        refresh_btn = ttk.Button(
+            button_frame,
+            text="🔄 새로고침",
+            command=self._refresh_data,
+            width=15
+        )
+        refresh_btn.pack(side=tk.LEFT, padx=(0, 5))
+
         # 전체 복사 버튼
         copy_btn = ttk.Button(
-            top_frame,
+            button_frame,
             text="📋 전체 복사",
             command=self._copy_to_clipboard,
             width=15
         )
-        copy_btn.pack(side=tk.RIGHT, padx=10)
+        copy_btn.pack(side=tk.LEFT, padx=5)
 
         # 중간: TSV 데이터 표시 영역
         data_frame = ttk.LabelFrame(self.frame, text="구글 스프레드시트 붙여넣기용 데이터 (TSV 형식)", padding=10)
@@ -171,12 +185,101 @@ class CopyPasteTab(BaseTab):
                     prompt_content = char.get('image_generation_prompt', '')
                 
                 if prompt_content:
+                    # JSON 형식의 중괄호 제거
+                    prompt_clean = self._remove_json_braces(prompt_content)
                     # TSV 형식: 탭으로 구분, 줄바꿈 제거
-                    prompt_clean = prompt_content.replace('\n', ' ').replace('\r', ' ').replace('\t', ' ')
+                    prompt_clean = prompt_clean.replace('\n', ' ').replace('\r', ' ').replace('\t', ' ')
                     line = f"{char_name}\t{prompt_num}\t{prompt_clean}"
                     lines.append(line)
 
         return '\n'.join(lines)
+
+    def _refresh_data(self):
+        """데이터 새로고침"""
+        try:
+            # 데이터 다시 로드
+            self.update_display()
+            messagebox.showinfo("새로고침 완료", "데이터가 새로고침되었습니다.")
+        except Exception as e:
+            messagebox.showerror("오류", f"데이터 새로고침 중 오류 발생:\n{e}")
+
+    def _remove_json_braces(self, prompt_content: str) -> str:
+        """
+        JSON 형식의 프롬프트에서 중괄호를 제거하고 내용만 추출
+        예: {"character": "...", "combined": "..."} -> combined 내용만
+        """
+        if not prompt_content or not prompt_content.strip():
+            return prompt_content
+        
+        content_stripped = prompt_content.strip()
+        
+        # 1차 시도: 직접 JSON 파싱 (중괄호로 시작/끝나는 경우)
+        if content_stripped.startswith('{') and content_stripped.endswith('}'):
+            try:
+                prompt_json = json.loads(content_stripped)
+                return self._extract_content_from_json(prompt_json)
+            except (json.JSONDecodeError, TypeError):
+                pass
+        
+        # 2차 시도: 이스케이프된 JSON 문자열 (예: "{\"character\": ...}")
+        if content_stripped.startswith('"') and content_stripped.endswith('"'):
+            try:
+                # 이스케이프 제거 후 파싱
+                unescaped = json.loads(content_stripped)  # 이스케이프된 문자열을 파싱
+                if isinstance(unescaped, str):
+                    # 파싱 결과가 문자열이면 다시 JSON 파싱 시도
+                    if unescaped.strip().startswith('{') and unescaped.strip().endswith('}'):
+                        prompt_json = json.loads(unescaped)
+                        return self._extract_content_from_json(prompt_json)
+            except (json.JSONDecodeError, TypeError, ValueError):
+                pass
+        
+        # 3차 시도: 중괄호가 포함된 문자열에서 JSON 추출 시도
+        # 첫 번째 { 와 마지막 } 찾기
+        first_brace = content_stripped.find('{')
+        last_brace = content_stripped.rfind('}')
+        if first_brace >= 0 and last_brace > first_brace:
+            try:
+                json_str = content_stripped[first_brace:last_brace + 1]
+                prompt_json = json.loads(json_str)
+                return self._extract_content_from_json(prompt_json)
+            except (json.JSONDecodeError, TypeError):
+                pass
+        
+        # 모든 시도 실패 시 원본 반환
+        return prompt_content
+    
+    def _extract_content_from_json(self, prompt_json: dict) -> str:
+        """
+        JSON 딕셔너리에서 내용 추출
+        combined 필드 우선, 없으면 모든 필드 조합
+        """
+        if not isinstance(prompt_json, dict):
+            return str(prompt_json)
+        
+        # combined 필드가 있으면 그것만 사용
+        if 'combined' in prompt_json and prompt_json['combined']:
+            combined = prompt_json['combined']
+            # combined가 문자열이면 그대로 반환
+            if isinstance(combined, str):
+                return combined
+            # combined가 다른 타입이면 문자열로 변환
+            return str(combined)
+        
+        # combined가 없으면 모든 필드를 조합
+        parts = []
+        for key, value in prompt_json.items():
+            if key != 'combined' and value:  # combined는 이미 처리했으므로 제외
+                if isinstance(value, str):
+                    parts.append(value)
+                else:
+                    parts.append(str(value))
+        
+        if parts:
+            return ' '.join(parts)
+        
+        # 내용이 없으면 빈 문자열 반환
+        return ''
 
     def _copy_to_clipboard(self):
         """전체 데이터를 클립보드에 복사"""

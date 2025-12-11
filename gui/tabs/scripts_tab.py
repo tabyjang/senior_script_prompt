@@ -304,7 +304,7 @@ class ScriptsTab(BaseTab):
                     messagebox.showerror("오류", "대본 생성에 실패했습니다.")
                 return False
 
-            # 챕터 데이터에 대본 저장
+            # 챕터 데이터에 대본 저장 (참조용)
             chapter['script'] = script.strip()
             chapter['script_length'] = len(script.strip())
             chapter['script_generated_at'] = datetime.now().isoformat()
@@ -313,13 +313,21 @@ class ScriptsTab(BaseTab):
             chapters[chapter_index] = chapter
             self.project_data.set_chapters(chapters)
 
-            # 파일에 즉시 자동 저장
+            # 대본 파일에 별도 저장 (04_scripts/ 폴더)
             try:
-                # 단일 챕터만 저장
+                self.file_service.save_script_file(
+                    chapter_number=chapter_num,
+                    script=script.strip()
+                )
+            except Exception as save_error:
+                print(f"경고: 대본 파일 저장 중 오류 발생: {save_error}")
+            
+            # 챕터 파일도 저장 (참조용)
+            try:
                 single_chapter_list = [chapter]
                 self.file_service.save_chapters(single_chapter_list)
             except Exception as save_error:
-                print(f"경고: 대본은 생성되었으나 저장 중 오류 발생: {save_error}")
+                print(f"경고: 챕터 파일 저장 중 오류 발생: {save_error}")
 
             # 화면 업데이트
             self._on_chapter_selected()
@@ -377,7 +385,7 @@ class ScriptsTab(BaseTab):
             chapters = self.project_data.get_chapters()
             for i, ch in enumerate(chapters):
                 if ch.get('chapter_number') == chapter_num:
-                    # 챕터 데이터 업데이트
+                    # 챕터 데이터 업데이트 (참조용)
                     ch['script'] = script_text
                     ch['script_length'] = len(script_text)
                     ch['script_generated_at'] = datetime.now().isoformat()
@@ -386,9 +394,16 @@ class ScriptsTab(BaseTab):
                     chapters[i] = ch
                     self.project_data.set_chapters(chapters)
 
-                    # 파일 저장 (단일 챕터만)
-                    single_chapter_list = [ch]
-                    return self.file_service.save_chapters(single_chapter_list)
+                    # 대본 파일에 별도 저장 (04_scripts/ 폴더)
+                    script_saved = self.file_service.save_script_file(
+                        chapter_number=chapter_num,
+                        script=script_text
+                    )
+                    
+                    # 챕터 파일도 저장 (참조용)
+                    chapter_saved = self.file_service.save_chapters([ch])
+                    
+                    return script_saved and chapter_saved
 
             return False
         except Exception as e:

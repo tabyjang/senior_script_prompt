@@ -416,10 +416,11 @@ TTS 최적화:
 }
 
 **나이 표현 규칙**:
-- 반드시 youth age를 먼저 표시하고, 실제 나이를 괄호 안에 표시해야 합니다
-- 형식: "Korean man/woman, [youth나이]-year-old ([실제나이]-year-old), ..."
-- 예시: "Korean man, 27-year-old (35-year-old), ..."
-- Youth age는 건강하고 젊어보이고 세련된 외모를 표현하기 위한 나이입니다."""
+- 반드시 youth age만 사용하고, 실제 나이는 절대 표시하지 마세요
+- 형식: "Korean man/woman, [youth나이]-year-old, ..."
+- 예시: "Korean man, 27-year-old, ..." 또는 "Korean woman, 25-year-old, ..."
+- Youth age는 건강하고 젊어보이고 세련된 외모를 표현하기 위한 나이입니다.
+- 실제 나이는 이미지 프롬프트에 포함하지 마세요."""
 
         user_prompt = f"""다음 인물에 대한 상세 정보를 바탕으로 동일한 인물의 동일성을 유지하며 7가지 이미지 생성 프롬프트를 JSON 구조로 작성해주세요:
 
@@ -430,15 +431,14 @@ TTS 최적화:
 
 ## 인물 상세 정보
 **캐릭터 이름: {char_name}**
-**이 캐릭터의 실제 나이: {char_age}세 (반드시 프롬프트에 포함해야 함)**
 **이 캐릭터의 Youth age: {final_visual_age}세 (건강하고 젊어보이고 세련된 외모를 표현하기 위한 나이)**
 
 **매우 중요**: 
-- 이 캐릭터({char_name})의 실제 나이는 {char_age}세입니다.
-- 이 캐릭터의 youth age는 {final_visual_age}세입니다.
+- 이 캐릭터({char_name})의 youth age는 {final_visual_age}세입니다.
 - 절대로 다른 캐릭터의 나이를 사용하지 마세요.
-- 모든 프롬프트에서 반드시 "{final_visual_age}-year-old ({char_age}-year-old)" 형식을 사용하세요.
-- Youth age를 기본 표현으로 사용하고, 실제 나이는 괄호 안에 넣으세요.
+- 모든 프롬프트에서 반드시 "{final_visual_age}-year-old" 형식만 사용하세요.
+- 실제 나이({char_age}세)는 절대 프롬프트에 포함하지 마세요.
+- Youth age만 사용하여 이미지 프롬프트를 작성하세요.
 
 - 직업: {char_occupation}
 - 역할: {char_role}
@@ -465,13 +465,13 @@ TTS 최적화:
 {{
   "character_name": "{char_name}",
   "prompts": {{
-    "full_body_shot": "{{\\"character\\": \\"Korean man/woman, {final_visual_age}-year-old ({char_age}-year-old), [외모 특징 상세 설명 - 영어]\\", \\"clothing\\": \\"[의상 및 스타일 - 영어]\\", \\"pose\\": \\"[포즈 및 표정 - 영어]\\", \\"background\\": \\"[배경 설정 - 영어]\\", \\"situation\\": \\"[상황 및 분위기 - 영어]\\", \\"combined\\": \\"[character 내용]\\\\n[clothing 내용]\\\\n[pose 내용]\\\\n[background 내용]\\\\n[situation 내용]\\"}}",
-    "side_profile_full_body_shot": "{{\\"character\\": \\"Korean man/woman, {final_visual_age}-year-old ({char_age}-year-old), [외모 특징 상세 설명 - 영어]\\", \\"clothing\\": \\"[의상 및 스타일 - 영어]\\", \\"pose\\": \\"[포즈 및 표정 - 영어]\\", \\"background\\": \\"[배경 설정 - 영어]\\", \\"situation\\": \\"[상황 및 분위기 - 영어]\\", \\"combined\\": \\"[character 내용]\\\\n[clothing 내용]\\\\n[pose 내용]\\\\n[background 내용]\\\\n[situation 내용]\\"}}",
-    "diagonal_side_profile_full_body_shot": "{{\\"character\\": \\"Korean man/woman, {final_visual_age}-year-old ({char_age}-year-old), [외모 특징 상세 설명 - 영어]\\", \\"clothing\\": \\"[의상 및 스타일 - 영어]\\", \\"pose\\": \\"[포즈 및 표정 - 영어]\\", \\"background\\": \\"[배경 설정 - 영어]\\", \\"situation\\": \\"[상황 및 분위기 - 영어]\\", \\"combined\\": \\"[character 내용]\\\\n[clothing 내용]\\\\n[pose 내용]\\\\n[background 내용]\\\\n[situation 내용]\\"}}",
-    "portrait": "{{\\"character\\": \\"Korean man/woman, {final_visual_age}-year-old ({char_age}-year-old), [외모 특징 상세 설명 - 영어]\\", \\"clothing\\": \\"[의상 및 스타일 - 영어]\\", \\"pose\\": \\"[포즈 및 표정 - 영어]\\", \\"background\\": \\"[배경 설정 - 영어]\\", \\"situation\\": \\"[상황 및 분위기 - 영어]\\", \\"combined\\": \\"[character 내용]\\\\n[clothing 내용]\\\\n[pose 내용]\\\\n[background 내용]\\\\n[situation 내용]\\"}}",
-    "side_profile": "{{\\"character\\": \\"Korean man/woman, {final_visual_age}-year-old ({char_age}-year-old), [외모 특징 상세 설명 - 영어]\\", \\"clothing\\": \\"[의상 및 스타일 - 영어]\\", \\"pose\\": \\"[포즈 및 표정 - 영어]\\", \\"background\\": \\"[배경 설정 - 영어]\\", \\"situation\\": \\"[상황 및 분위기 - 영어]\\", \\"combined\\": \\"[character 내용]\\\\n[clothing 내용]\\\\n[pose 내용]\\\\n[background 내용]\\\\n[situation 내용]\\"}}",
-    "action": "{{\\"character\\": \\"Korean man/woman, {final_visual_age}-year-old ({char_age}-year-old), [외모 특징 상세 설명 - 영어]\\", \\"clothing\\": \\"[의상 및 스타일 - 영어]\\", \\"pose\\": \\"[포즈 및 표정 - 영어]\\", \\"background\\": \\"[배경 설정 - 영어]\\", \\"situation\\": \\"[상황 및 분위기 - 영어]\\", \\"combined\\": \\"[character 내용]\\\\n[clothing 내용]\\\\n[pose 내용]\\\\n[background 내용]\\\\n[situation 내용]\\"}}",
-    "natural_background": "{{\\"character\\": \\"Korean man/woman, {final_visual_age}-year-old ({char_age}-year-old), [외모 특징 상세 설명 - 영어]\\", \\"clothing\\": \\"[의상 및 스타일 - 영어]\\", \\"pose\\": \\"[포즈 및 표정 - 영어]\\", \\"background\\": \\"[배경 설정 - 영어]\\", \\"situation\\": \\"[상황 및 분위기 - 영어]\\", \\"combined\\": \\"[character 내용]\\\\n[clothing 내용]\\\\n[pose 내용]\\\\n[background 내용]\\\\n[situation 내용]\\"}}"
+    "full_body_shot": "{{\\"character\\": \\"Korean man/woman, {final_visual_age}-year-old, [외모 특징 상세 설명 - 영어]\\", \\"clothing\\": \\"[의상 및 스타일 - 영어]\\", \\"pose\\": \\"[포즈 및 표정 - 영어]\\", \\"background\\": \\"[배경 설정 - 영어]\\", \\"situation\\": \\"[상황 및 분위기 - 영어]\\", \\"combined\\": \\"[character 내용]\\\\n[clothing 내용]\\\\n[pose 내용]\\\\n[background 내용]\\\\n[situation 내용]\\"}}",
+    "side_profile_full_body_shot": "{{\\"character\\": \\"Korean man/woman, {final_visual_age}-year-old, [외모 특징 상세 설명 - 영어]\\", \\"clothing\\": \\"[의상 및 스타일 - 영어]\\", \\"pose\\": \\"[포즈 및 표정 - 영어]\\", \\"background\\": \\"[배경 설정 - 영어]\\", \\"situation\\": \\"[상황 및 분위기 - 영어]\\", \\"combined\\": \\"[character 내용]\\\\n[clothing 내용]\\\\n[pose 내용]\\\\n[background 내용]\\\\n[situation 내용]\\"}}",
+    "diagonal_side_profile_full_body_shot": "{{\\"character\\": \\"Korean man/woman, {final_visual_age}-year-old, [외모 특징 상세 설명 - 영어]\\", \\"clothing\\": \\"[의상 및 스타일 - 영어]\\", \\"pose\\": \\"[포즈 및 표정 - 영어]\\", \\"background\\": \\"[배경 설정 - 영어]\\", \\"situation\\": \\"[상황 및 분위기 - 영어]\\", \\"combined\\": \\"[character 내용]\\\\n[clothing 내용]\\\\n[pose 내용]\\\\n[background 내용]\\\\n[situation 내용]\\"}}",
+    "portrait": "{{\\"character\\": \\"Korean man/woman, {final_visual_age}-year-old, [외모 특징 상세 설명 - 영어]\\", \\"clothing\\": \\"[의상 및 스타일 - 영어]\\", \\"pose\\": \\"[포즈 및 표정 - 영어]\\", \\"background\\": \\"[배경 설정 - 영어]\\", \\"situation\\": \\"[상황 및 분위기 - 영어]\\", \\"combined\\": \\"[character 내용]\\\\n[clothing 내용]\\\\n[pose 내용]\\\\n[background 내용]\\\\n[situation 내용]\\"}}",
+    "side_profile": "{{\\"character\\": \\"Korean man/woman, {final_visual_age}-year-old, [외모 특징 상세 설명 - 영어]\\", \\"clothing\\": \\"[의상 및 스타일 - 영어]\\", \\"pose\\": \\"[포즈 및 표정 - 영어]\\", \\"background\\": \\"[배경 설정 - 영어]\\", \\"situation\\": \\"[상황 및 분위기 - 영어]\\", \\"combined\\": \\"[character 내용]\\\\n[clothing 내용]\\\\n[pose 내용]\\\\n[background 내용]\\\\n[situation 내용]\\"}}",
+    "action": "{{\\"character\\": \\"Korean man/woman, {final_visual_age}-year-old, [외모 특징 상세 설명 - 영어]\\", \\"clothing\\": \\"[의상 및 스타일 - 영어]\\", \\"pose\\": \\"[포즈 및 표정 - 영어]\\", \\"background\\": \\"[배경 설정 - 영어]\\", \\"situation\\": \\"[상황 및 분위기 - 영어]\\", \\"combined\\": \\"[character 내용]\\\\n[clothing 내용]\\\\n[pose 내용]\\\\n[background 내용]\\\\n[situation 내용]\\"}}",
+    "natural_background": "{{\\"character\\": \\"Korean man/woman, {final_visual_age}-year-old, [외모 특징 상세 설명 - 영어]\\", \\"clothing\\": \\"[의상 및 스타일 - 영어]\\", \\"pose\\": \\"[포즈 및 표정 - 영어]\\", \\"background\\": \\"[배경 설정 - 영어]\\", \\"situation\\": \\"[상황 및 분위기 - 영어]\\", \\"combined\\": \\"[character 내용]\\\\n[clothing 내용]\\\\n[pose 내용]\\\\n[background 내용]\\\\n[situation 내용]\\"}}"
   }}
 }}"""
 
@@ -483,7 +483,22 @@ TTS 최적화:
                 data = safe_json_loads(json_text)
                 if data:
                     return data.get('prompts', {})
+            else:
+                raise ValueError("LLM 응답이 비어있습니다. API 연결을 확인해주세요.")
+        except ImportError as e:
+            # 패키지 미설치 오류
+            error_msg = str(e)
+            print(f"이미지 프롬프트 생성 오류 ({char_name}): {error_msg}")
+            raise Exception(f"필요한 패키지가 설치되지 않았습니다.\n\n{error_msg}\n\n설정에서 API 제공자를 확인하거나 필요한 패키지를 설치해주세요.")
+        except ValueError as e:
+            # API 키 오류 등
+            error_msg = str(e)
+            print(f"이미지 프롬프트 생성 오류 ({char_name}): {error_msg}")
+            raise Exception(f"API 설정 오류:\n\n{error_msg}\n\n설정 메뉴에서 API 키와 모델을 확인해주세요.")
         except Exception as e:
-            print(f"이미지 프롬프트 생성 오류 ({char_name}): {e}")
+            # 기타 오류
+            error_msg = str(e)
+            print(f"이미지 프롬프트 생성 오류 ({char_name}): {error_msg}")
+            raise Exception(f"이미지 프롬프트 생성 중 오류가 발생했습니다:\n\n{error_msg}\n\nAPI 연결 상태와 설정을 확인해주세요.")
 
         return None

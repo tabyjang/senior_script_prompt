@@ -11,6 +11,18 @@ from .base_tab import BaseTab
 from utils.json_utils import format_json, safe_json_loads, extract_json_from_text
 
 
+# 이미지 타입 번호 및 제목 매핑
+IMAGE_TYPE_TITLES = {
+    1: "전신샷",
+    2: "옆모습 전신샷",
+    3: "대각선 옆모습 전신샷",
+    4: "초상화",
+    5: "초상화 옆모습",
+    6: "액션",
+    7: "자연스러운 배경"
+}
+
+
 class ImagePromptsTab(BaseTab):
     """이미지 프롬프트 탭 클래스 - 원본 로직 완전 이식"""
 
@@ -308,11 +320,15 @@ class ImagePromptsTab(BaseTab):
         """
         이미지 프롬프트 뷰어 위젯 생성
         한 인물의 프롬프트 1~7을 모두 표시
-        (인물 이름은 탭에서 이미 구분되므로 표시하지 않음)
+        형식: "인물1, 1. 제목: 전신샷"
         """
         prompts_obj = char.get('image_generation_prompts', {})
-        
-        # 메인 프레임 (인물 이름 없이)
+        char_name = char.get('name', '알 수 없음')
+
+        # 인물 번호 (현재 선택된 인덱스 + 1)
+        char_number = self.current_character_index + 1
+
+        # 메인 프레임
         main_frame = ttk.Frame(self.image_prompts_viewer_frame)
         main_frame.pack(fill=tk.X, padx=15, pady=10)
 
@@ -320,19 +336,25 @@ class ImagePromptsTab(BaseTab):
         for prompt_num in range(1, 8):
             prompt_key = f"prompt_{prompt_num}"
             prompt_content = prompts_obj.get(prompt_key, '')
-            
+
             # 프롬프트 1이 없고 기존 image_generation_prompt가 있으면 사용
             if prompt_num == 1 and not prompt_content:
                 prompt_content = char.get('image_generation_prompt', '')
-            
+
             # 프롬프트가 없으면 건너뛰기
             if not prompt_content:
                 continue
-            
+
+            # 이미지 타입 제목 가져오기
+            image_type_title = IMAGE_TYPE_TITLES.get(prompt_num, f"이미지 타입 {prompt_num}")
+
             # 각 프롬프트를 위한 서브 프레임
+            # 제목 형식: "인물1, 1. 제목: 전신샷"
+            frame_title = f"인물{char_number}, {prompt_num}. 제목: {image_type_title}"
+
             prompt_frame = ttk.LabelFrame(
                 main_frame,
-                text=f"프롬프트 {prompt_num}",
+                text=frame_title,
                 padding=10
             )
             prompt_frame.pack(fill=tk.X, pady=5)
@@ -396,15 +418,15 @@ class ImagePromptsTab(BaseTab):
         # 설정 파일에서 로드 시도
         # ConfigManager를 사용하려면 main_window에서 전달받아야 함
         # 임시로 기본 프롬프트 사용
-        default_prompt = """당신은 Stable Diffusion 이미지 생성을 위한 전문 프롬프트 엔지니어입니다.
+        default_prompt = """당신은 이미지 생성을 위한 전문 프롬프트 엔지니어입니다.
 주어진 인물 정보를 바탕으로 동일한 인물의 동일성을 반드시 유지하며 7가지 다른 스타일의 상세한 이미지 생성 프롬프트를 영어로 작성해주세요.
 
-**Stable Diffusion 최적화 원칙**:
+** 최적화 원칙**:
 1. 모든 프롬프트는 **한국인 (Korean, East Asian)** 으로 명시해야 합니다
 2. 실제 나이보다 **건강하고 젊어보이고 세련된** 외모로 표현하세요 (동양인은 더 어려보이고, 오디오북에서 젊은 이미지가 좋습니다)
 3. 모든 프롬프트에서 동일한 인물의 일관성 유지 (얼굴 특징, 체형, 머리카락 등)
 4. 각 프롬프트는 다른 각도, 포즈, 복장이지만 기본 외모는 동일해야 합니다
-5. Stable Diffusion 품질 키워드 포함: 8K, highly detailed, photorealistic, professional photography
+5. 품질 키워드 : professional photography
 6. 카메라 설정 포함: 렌즈 타입, 조명, 구도
 7. 부정적 요소 제거: no cartoon, no anime, no distortion
 8. 반드시 JSON 형식으로만 응답해주세요"""

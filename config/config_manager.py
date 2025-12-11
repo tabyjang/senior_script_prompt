@@ -33,7 +33,9 @@ class ConfigManager:
             "google_sheets_credentials_path": str(Path.home() / ".senior_contents_google_credentials.json"),
             "google_sheets_token_path": str(Path.home() / ".senior_contents_google_token.json"),
             "google_sheets_client_id": "",
-            "google_sheets_client_secret": ""
+            "google_sheets_client_secret": "",
+            # 마지막 프로젝트 경로
+            "last_project_path": ""
         }
 
     def _get_default_image_system_prompt(self) -> str:
@@ -93,3 +95,12 @@ class ConfigManager:
     def update(self, updates: Dict[str, Any]):
         """설정 일괄 업데이트"""
         self.config.update(updates)
+
+    def get_last_project_path(self) -> str:
+        """마지막 프로젝트 경로 가져오기"""
+        return self.config.get("last_project_path", "")
+
+    def set_last_project_path(self, path: str) -> bool:
+        """마지막 프로젝트 경로 설정 및 저장"""
+        self.config["last_project_path"] = path
+        return self.save()

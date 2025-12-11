@@ -9,11 +9,15 @@ from pathlib import Path
 
 # 탭들 import
 from gui.tabs.synopsis_tab import SynopsisTab
+from gui.tabs.synopsis_input_tab import SynopsisInputTab
 from gui.tabs.characters_tab import CharactersTab
+from gui.tabs.character_details_input_tab import CharacterDetailsInputTab
 from gui.tabs.chapters_tab import ChaptersTab
+from gui.tabs.chapter_details_input_tab import ChapterDetailsInputTab
 from gui.tabs.scripts_tab import ScriptsTab
 from gui.tabs.scenes_tab import ScenesTab
 from gui.tabs.image_prompts_tab import ImagePromptsTab
+from gui.tabs.image_generation_tab import ImageGenerationTab
 from gui.tabs.copy_paste_tab import CopyPasteTab
 
 # 다이얼로그 import
@@ -106,8 +110,22 @@ class MainWindow:
         toolbar.grid(row=0, column=0, columnspan=2, sticky=(tk.W, tk.E), pady=(0, 10))
         toolbar.columnconfigure(0, weight=1)
 
-        settings_btn = ttk.Button(toolbar, text="⚙ 설정", command=self._open_settings, width=12)
-        settings_btn.grid(row=0, column=1, sticky=tk.E)
+        # 버튼 프레임 (오른쪽 정렬)
+        button_frame = ttk.Frame(toolbar)
+        button_frame.grid(row=0, column=1, sticky=tk.E)
+
+        # 프로젝트 열기 버튼
+        open_project_btn = ttk.Button(
+            button_frame,
+            text="📁 프로젝트 열기",
+            command=self._open_project,
+            width=18
+        )
+        open_project_btn.pack(side=tk.LEFT, padx=(0, 5))
+
+        # 설정 버튼
+        settings_btn = ttk.Button(button_frame, text="⚙ 설정", command=self._open_settings, width=12)
+        settings_btn.pack(side=tk.LEFT)
 
         # 왼쪽 사이드바 (탭 목록)
         self._create_sidebar(main_frame)
@@ -129,11 +147,15 @@ class MainWindow:
         # 탭 버튼들
         tab_names = [
             ("synopsis", "시놉시스"),
+            ("synopsis_input", "시놉시스 입력"),
             ("characters", "인물"),
+            ("character_details_input", "인물 세부정보 입력"),
             ("image_prompts", "이미지 프롬프트"),
             ("chapters", "챕터"),
+            ("chapter_details_input", "챕터 세부정보 입력"),
             ("scripts", "대본"),
             ("scenes", "장면 생성"),
+            ("image_generation", "이미지 생성"),
             ("copy_paste", "복사/붙여넣기")
         ]
 
@@ -171,11 +193,15 @@ class MainWindow:
         # 탭 인스턴스 생성
         self.tabs = {
             'synopsis': SynopsisTab(self.notebook, self.project_data, self.file_service, self.content_generator),
+            'synopsis_input': SynopsisInputTab(self.notebook, self.project_data, self.file_service, self.content_generator),
             'characters': CharactersTab(self.notebook, self.project_data, self.file_service, self.content_generator),
+            'character_details_input': CharacterDetailsInputTab(self.notebook, self.project_data, self.file_service, self.content_generator),
             'chapters': ChaptersTab(self.notebook, self.project_data, self.file_service, self.content_generator),
+            'chapter_details_input': ChapterDetailsInputTab(self.notebook, self.project_data, self.file_service, self.content_generator),
             'scripts': ScriptsTab(self.notebook, self.project_data, self.file_service, self.content_generator),
             'scenes': ScenesTab(self.notebook, self.project_data, self.file_service, self.content_generator),
             'image_prompts': ImagePromptsTab(self.notebook, self.project_data, self.file_service, self.content_generator),
+            'image_generation': ImageGenerationTab(self.notebook, self.project_data, self.file_service, self.content_generator),
             'copy_paste': CopyPasteTab(self.notebook, self.project_data, self.file_service, self.content_generator)
         }
 
@@ -202,14 +228,32 @@ class MainWindow:
     def _load_project_data(self):
         """프로젝트 데이터 로드"""
         try:
+            # 프로젝트 폴더 존재 확인
+            if not self.project_path.exists():
+                self.status_var.set(f"프로젝트 폴더가 존재하지 않습니다: {self.project_path}")
+                return
+
+            # 모든 데이터 로드
             data = self.file_service.load_all_data()
             self.project_data.data = data
+            
+            # 프로젝트 경로 업데이트
+            self.project_data.project_path = self.project_path
+            
+            # 상태바에 프로젝트 정보 표시
+            char_count = len(data.get('characters', []))
+            chapter_count = len(data.get('chapters', []))
+            synopsis_title = data.get('synopsis', {}).get('title', '제목 없음')
             self.status_var.set(
-                f"데이터 로드 완료: {len(data.get('characters', []))}명, {len(data.get('chapters', []))}개 챕터"
+                f"프로젝트: {synopsis_title} | 캐릭터: {char_count}명, 챕터: {chapter_count}개 | 경로: {self.project_path}"
             )
         except Exception as e:
-            messagebox.showerror("오류", f"데이터 로드 실패: {e}")
+            error_msg = f"데이터 로드 실패: {e}"
+            messagebox.showerror("오류", error_msg)
             self.status_var.set(f"오류: {e}")
+            print(f"[프로젝트 로드 오류] {error_msg}")
+            import traceback
+            traceback.print_exc()
 
     def _save_all(self):
         """모든 변경사항 저장"""
@@ -235,16 +279,56 @@ class MainWindow:
 
     def _open_project(self):
         """프로젝트 열기"""
-        project_dir = filedialog.askdirectory(title="프로젝트 폴더 선택")
+        # 초기 디렉토리 설정 (마지막 프로젝트 경로 또는 현재 프로젝트 경로)
+        initial_dir = None
+        last_path = self.config.get_last_project_path()
+        if last_path and Path(last_path).exists():
+            initial_dir = str(Path(last_path).parent)
+        elif self.project_path.exists():
+            initial_dir = str(self.project_path.parent)
+        
+        project_dir = filedialog.askdirectory(
+            title="프로젝트 폴더 선택",
+            initialdir=initial_dir
+        )
+        
         if project_dir:
-            self.project_path = Path(project_dir)
-            self.file_service.project_path = self.project_path
-            self.project_data.project_path = self.project_path
+            project_path = Path(project_dir).resolve()
+            
+            # 프로젝트 폴더 유효성 확인 (synopsis.json이 있는지 확인)
+            synopsis_file = project_path / "synopsis.json"
+            if not synopsis_file.exists():
+                # synopsis.json이 없어도 경고만 표시하고 계속 진행
+                response = messagebox.askyesno(
+                    "경고",
+                    f"선택한 폴더에 synopsis.json 파일이 없습니다.\n"
+                    f"계속 진행하시겠습니까?\n\n"
+                    f"경로: {project_path}"
+                )
+                if not response:
+                    return
+            
+            # 프로젝트 경로 업데이트
+            self.project_path = project_path
+            self.file_service.project_path = project_path
+            self.project_data.project_path = project_path
+            
+            # 마지막 프로젝트 경로를 설정 파일에 저장
+            self.config.set_last_project_path(str(project_path))
+            
+            # 데이터 로드
             self._load_project_data()
 
             # 모든 탭 업데이트
             for tab in self.tabs.values():
                 tab.update_display()
+            
+            # 윈도우 제목 업데이트
+            synopsis = self.project_data.get_synopsis()
+            title = synopsis.get('title', '제목 없음') if synopsis else '제목 없음'
+            self.root.title(f"프로젝트 뷰어/에디터 - {title}")
+            
+            messagebox.showinfo("프로젝트 열기", f"프로젝트를 성공적으로 불러왔습니다.\n\n{project_path}")
 
     def _open_settings(self):
         """설정 창 열기"""
