@@ -8,6 +8,7 @@ import sys
 import tkinter as tk
 from pathlib import Path
 import argparse
+from tkinter import filedialog, messagebox
 
 # 모듈 import
 from config.config_manager import ConfigManager
@@ -48,21 +49,53 @@ def main():
                 print(f"[프로젝트 로드] 마지막 프로젝트 자동 로드: {project_path}")
     
     # 3. 프로젝트 경로가 없거나 유효하지 않은 경우 기본값 사용
+    # 3. 프로젝트 경로가 없거나 유효하지 않은 경우:
+    #    더 이상 임의의 기본 폴더로 저장하지 않고, 사용자가 프로젝트 폴더를 선택하도록 강제
     if project_path is None or not project_path.exists():
-        default_path = Path("../001_gym_romance")
-        if default_path.exists():
-            project_path = default_path
-            print(f"[프로젝트 로드] 기본 프로젝트 사용: {project_path}")
-        else:
-            # 기본 경로도 없으면 현재 디렉토리 기준으로 상대 경로 생성
-            import os
-            current_dir = Path(os.getcwd())
-            # editors_app에서 실행 중이면 상위 폴더로
-            if current_dir.name == "editors_app":
-                project_path = current_dir.parent / "001_gym_romance"
-            else:
-                project_path = default_path
-            print(f"[프로젝트 로드] 프로젝트 경로 설정: {project_path}")
+        # Tk 초기화(폴더 선택 다이얼로그용)
+        picker_root = tk.Tk()
+        picker_root.withdraw()
+        picker_root.update_idletasks()
+
+        messagebox.showinfo(
+            "프로젝트 선택",
+            "작업할 프로젝트 폴더를 선택해주세요.\n\n"
+            "선택한 폴더 안에서만 저장/로딩이 수행됩니다."
+        )
+
+        # 처음 폴더 로딩 시 기본 위치를 01_man 폴더로 설정
+        initial_dir = None
+        try:
+            last_project_path = config_manager.get_last_project_path()
+            if last_project_path and Path(last_project_path).exists():
+                # 마지막 프로젝트가 있으면 그 부모(대개 01_man)로
+                initial_dir = str(Path(last_project_path).resolve().parent)
+        except Exception:
+            initial_dir = None
+
+        if not initial_dir:
+            try:
+                # editors_app/main.py 기준: .../01_man/editors_app/main.py -> parent of editors_app is 01_man
+                candidate = Path(__file__).resolve().parent.parent
+                if candidate.exists():
+                    initial_dir = str(candidate)
+            except Exception:
+                initial_dir = None
+
+        selected_dir = filedialog.askdirectory(
+            title="프로젝트 폴더 선택",
+            initialdir=initial_dir
+        )
+        picker_root.destroy()
+
+        if not selected_dir:
+            print("[프로젝트 로드] 프로젝트 선택이 취소되었습니다. 종료합니다.")
+            return
+
+        project_path = Path(selected_dir)
+        print(f"[프로젝트 로드] 사용자 선택 프로젝트: {project_path}")
+        # 다음 실행을 위해 저장
+        config_manager.set_last_project_path(str(project_path))
     
     # 프로젝트 경로를 절대 경로로 변환
     if not project_path.is_absolute():

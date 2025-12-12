@@ -230,7 +230,7 @@ class ChapterDetailsInputTab(BaseTab):
                 chapter_info = {
                     "chapter_number": chapter_number,
                     "title": title,
-                    "detailed_content": detailed_content
+                    "content_detail": detailed_content
                 }
 
                 chapter_details.append(chapter_info)
@@ -245,11 +245,15 @@ class ChapterDetailsInputTab(BaseTab):
         """
         기존 챕터 데이터에 세부 정보 병합 및 저장
 
+        파일에서 최신 챕터 데이터를 먼저 로드하여 메모리 데이터가 아닌
+        실제 파일의 최신 정보를 반영합니다.
+
         Args:
             chapter_details: 파싱된 챕터 세부 정보 리스트
         """
-        # 현재 챕터 데이터 가져오기
-        chapters = self.project_data.get_chapters()
+        # 파일에서 최신 챕터 데이터 먼저 로드 (메모리 데이터가 아닌 실제 파일에서)
+        # 이렇게 하면 다른 탭에서 저장한 최신 정보를 반영할 수 있습니다.
+        chapters = self.file_service.load_chapters()
 
         # 챕터가 없으면 빈 리스트로 초기화
         if not chapters:
@@ -271,8 +275,8 @@ class ChapterDetailsInputTab(BaseTab):
                 if detail.get('title'):
                     existing_chapter['title'] = detail['title']
                 # 상세 내용 추가/업데이트
-                if detail.get('detailed_content'):
-                    existing_chapter['detailed_content'] = detail['detailed_content']
+                if detail.get('content_detail'):
+                    existing_chapter['content_detail'] = detail['content_detail']
 
                 # _filename이 없으면 추가
                 if '_filename' not in existing_chapter:
@@ -287,7 +291,7 @@ class ChapterDetailsInputTab(BaseTab):
                     'chapter_number': chapter_number,
                     'title': detail.get('title', f'챕터 {chapter_number}'),
                     'content': '',  # 기본 content는 빈 문자열
-                    'detailed_content': detail.get('detailed_content', ''),
+                    'content_detail': detail.get('content_detail', ''),
                     'script': '',  # 대본도 빈 문자열로 초기화
                     '_filename': get_chapter_filename(chapter_number)
                 }

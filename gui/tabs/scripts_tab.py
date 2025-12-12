@@ -56,6 +56,25 @@ class ScriptsTab(BaseTab):
         self.script_chapter_combo.pack(side=tk.LEFT, padx=5)
         self.script_chapter_combo.bind('<<ComboboxSelected>>', lambda e: self._on_chapter_selected())
 
+        # 대본 저장/불러오기 버튼
+        ttk.Separator(toolbar, orient=tk.VERTICAL).pack(side=tk.LEFT, padx=10, fill=tk.Y)
+
+        save_btn = ttk.Button(
+            toolbar,
+            text="💾 대본 저장",
+            command=self._save_current_script,
+            width=14
+        )
+        save_btn.pack(side=tk.LEFT, padx=5)
+
+        reload_btn = ttk.Button(
+            toolbar,
+            text="📂 대본 불러오기",
+            command=self._reload_current_script_from_file,
+            width=16
+        )
+        reload_btn.pack(side=tk.LEFT, padx=5)
+
         # 대본 생성 버튼
         ttk.Separator(toolbar, orient=tk.VERTICAL).pack(side=tk.LEFT, padx=10, fill=tk.Y)
         generate_btn = ttk.Button(
@@ -162,8 +181,18 @@ class ScriptsTab(BaseTab):
         if not chapter:
             return
 
-        # 대본 표시
-        script = chapter.get('script', '')
+        # 대본 표시 (04_scripts 파일 우선)
+        script = ""
+        try:
+            script_data = self.file_service.load_script_file(chapter_num)
+            if isinstance(script_data, dict):
+                script = (script_data.get("script") or "").strip()
+        except Exception:
+            script = ""
+
+        # fallback: 챕터 파일에 저장된 script
+        if not script:
+            script = (chapter.get('script', '') or "").strip()
 
         # 뷰어 업데이트 (읽기 전용)
         if self.script_viewer:
@@ -172,7 +201,7 @@ class ScriptsTab(BaseTab):
             if script:
                 self.script_viewer.insert(1.0, script)
             else:
-                self.script_viewer.insert(1.0, "대본이 아직 생성되지 않았습니다.\n\n'대본 생성 (LLM)' 버튼을 눌러 자동 생성하세요.")
+                self.script_viewer.insert(1.0, "대본이 아직 없습니다.\n\n- '대본 저장'으로 직접 입력한 내용을 저장하거나\n- '대본 생성 (LLM)'으로 자동 생성하세요.")
             self.script_viewer.config(state=tk.DISABLED)
 
         # 에디터 업데이트
@@ -190,6 +219,56 @@ class ScriptsTab(BaseTab):
                 self.script_char_count_label.config(text=f"📝 {char_count:,}자")
             else:
                 self.script_char_count_label.config(text="")
+
+    def _save_current_script(self):
+        """대본 에디터 내용을 파일로 저장 (04_scripts/)"""
+        ok = self.save()
+        if ok:
+            messagebox.showinfo("완료", "대본이 저장되었습니다. (04_scripts 폴더)")
+            # 저장 후 화면 재로딩(파일 기준 표시)
+            self._on_chapter_selected()
+        else:
+            messagebox.showerror("오류", "대본 저장에 실패했습니다.\n\n챕터 선택/파일 경로를 확인해주세요.")
+
+    def _reload_current_script_from_file(self):
+        """현재 선택된 챕터의 대본을 04_scripts 파일에서 다시 로드"""
+        selected = self.script_chapter_var.get()
+        if not selected:
+            messagebox.showwarning("경고", "챕터를 선택해주세요.")
+            return
+
+        try:
+            chapter_num = int(selected.split(':')[0].replace('챕터', '').strip())
+        except Exception:
+            messagebox.showerror("오류", "챕터 번호를 추출할 수 없습니다.")
+            return
+
+        script_data = None
+        try:
+            script_data = self.file_service.load_script_file(chapter_num)
+        except Exception as e:
+            messagebox.showerror("오류", f"대본 파일 로드 중 오류:\n{e}")
+            return
+
+        if not script_data or not isinstance(script_data, dict):
+            messagebox.showwarning("경고", "저장된 대본 파일이 없습니다. (04_scripts)")
+            return
+
+        script = (script_data.get("script") or "").strip()
+
+        # 뷰어/에디터 동시 업데이트
+        if self.script_viewer:
+            self.script_viewer.config(state=tk.NORMAL)
+            self.script_viewer.delete(1.0, tk.END)
+            self.script_viewer.insert(1.0, script)
+            self.script_viewer.config(state=tk.DISABLED)
+
+        if self.script_editor:
+            self.script_editor.delete(1.0, tk.END)
+            self.script_editor.insert(1.0, script)
+
+        if self.script_char_count_label:
+            self.script_char_count_label.config(text=f"📝 {len(script):,}자" if script else "")
 
     def _generate_current_chapter(self):
         """

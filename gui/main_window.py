@@ -17,6 +17,7 @@ from gui.tabs.chapter_details_input_tab import ChapterDetailsInputTab
 from gui.tabs.scripts_tab import ScriptsTab
 from gui.tabs.scenes_tab import ScenesTab
 from gui.tabs.image_prompts_tab import ImagePromptsTab
+from gui.tabs.image_prompts_input_tab import ImagePromptsInputTab
 from gui.tabs.image_generation_tab import ImageGenerationTab
 from gui.tabs.copy_paste_tab import CopyPasteTab
 
@@ -110,6 +111,15 @@ class MainWindow:
         toolbar.grid(row=0, column=0, columnspan=2, sticky=(tk.W, tk.E), pady=(0, 10))
         toolbar.columnconfigure(0, weight=1)
 
+        # 프로젝트 표시(왼쪽) - 현재 작업 폴더명/경로를 항상 보여줌
+        self.project_title_var = tk.StringVar(value="")
+        project_title = ttk.Label(
+            toolbar,
+            textvariable=self.project_title_var,
+            font=("맑은 고딕", 11, "bold")
+        )
+        project_title.grid(row=0, column=0, sticky=tk.W, padx=(5, 10))
+
         # 버튼 프레임 (오른쪽 정렬)
         button_frame = ttk.Frame(toolbar)
         button_frame.grid(row=0, column=1, sticky=tk.E)
@@ -151,6 +161,7 @@ class MainWindow:
             ("characters", "인물"),
             ("character_details_input", "인물 세부정보 입력"),
             ("image_prompts", "이미지 프롬프트"),
+            ("image_prompts_input", "이미지 프롬프트 입력"),
             ("chapters", "챕터"),
             ("chapter_details_input", "챕터 세부정보 입력"),
             ("scripts", "대본"),
@@ -201,6 +212,7 @@ class MainWindow:
             'scripts': ScriptsTab(self.notebook, self.project_data, self.file_service, self.content_generator),
             'scenes': ScenesTab(self.notebook, self.project_data, self.file_service, self.content_generator),
             'image_prompts': ImagePromptsTab(self.notebook, self.project_data, self.file_service, self.content_generator),
+            'image_prompts_input': ImagePromptsInputTab(self.notebook, self.project_data, self.file_service, self.content_generator),
             'image_generation': ImageGenerationTab(self.notebook, self.project_data, self.file_service, self.content_generator),
             'copy_paste': CopyPasteTab(self.notebook, self.project_data, self.file_service, self.content_generator)
         }
@@ -247,6 +259,10 @@ class MainWindow:
             self.status_var.set(
                 f"프로젝트: {synopsis_title} | 캐릭터: {char_count}명, 챕터: {chapter_count}개 | 경로: {self.project_path}"
             )
+
+            # 상단 툴바에 현재 작업 폴더 표시 (폴더명 + 전체 경로)
+            folder_name = self.project_path.name
+            self.project_title_var.set(f"📁 {folder_name}   ({self.project_path})")
         except Exception as e:
             error_msg = f"데이터 로드 실패: {e}"
             messagebox.showerror("오류", error_msg)
@@ -260,19 +276,36 @@ class MainWindow:
         try:
             success_count = 0
             fail_count = 0
+            failed_tabs = []
 
             # 각 탭의 저장 메서드 호출
             for tab_id, tab in self.tabs.items():
                 try:
-                    if tab.save():
+                    ok = tab.save()
+                    if ok:
                         success_count += 1
+                    else:
+                        fail_count += 1
+                        failed_tabs.append(tab_id)
                 except Exception as e:
                     print(f"{tab_id} 탭 저장 오류: {e}")
                     fail_count += 1
+                    failed_tabs.append(tab_id)
 
             self.project_data.clear_unsaved()
             self.status_var.set(f"저장 완료! (성공: {success_count}, 실패: {fail_count})")
-            messagebox.showinfo("저장", "모든 변경사항이 저장되었습니다.")
+
+            if fail_count > 0:
+                messagebox.showwarning(
+                    "저장 결과",
+                    "일부 탭 저장에 실패했습니다.\n\n"
+                    f"- 성공: {success_count}\n"
+                    f"- 실패: {fail_count}\n\n"
+                    "실패 탭:\n"
+                    + "\n".join(f"- {t}" for t in failed_tabs)
+                )
+            else:
+                messagebox.showinfo("저장", "모든 변경사항이 저장되었습니다.")
         except Exception as e:
             messagebox.showerror("저장 오류", f"저장 중 오류가 발생했습니다: {e}")
             self.status_var.set(f"저장 오류: {e}")
@@ -327,6 +360,13 @@ class MainWindow:
             synopsis = self.project_data.get_synopsis()
             title = synopsis.get('title', '제목 없음') if synopsis else '제목 없음'
             self.root.title(f"프로젝트 뷰어/에디터 - {title}")
+
+            # 상단 툴바 표시도 갱신
+            try:
+                folder_name = self.project_path.name
+                self.project_title_var.set(f"📁 {folder_name}   ({self.project_path})")
+            except Exception:
+                pass
             
             messagebox.showinfo("프로젝트 열기", f"프로젝트를 성공적으로 불러왔습니다.\n\n{project_path}")
 

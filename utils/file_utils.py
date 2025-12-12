@@ -46,6 +46,18 @@ def normalize_filename(name: str) -> str:
     return normalized
 
 
+def normalize_character_name(name: str) -> str:
+    """
+    캐릭터 이름 정규화
+    - 공백(스페이스/탭/줄바꿈 등)은 모두 제거
+    - '_'는 사용자가 의도적으로 넣는 구분자로 남김
+    """
+    if not name:
+        return ""
+    # 모든 whitespace 제거
+    return re.sub(r"\s+", "", str(name))
+
+
 def normalize_project_folder_name(project_number: int, title: str) -> str:
     """
     프로젝트 폴더 이름 정규화
@@ -107,10 +119,62 @@ def get_character_filename(character_name: str) -> str:
         >>> get_character_filename("캐릭터: 이름")
         '캐릭터_이름_profile.json'
     """
-    normalized_name = normalize_filename(character_name)
+    normalized_name = normalize_filename(normalize_character_name(character_name))
     if not normalized_name:
         normalized_name = "character"
     return f"{normalized_name}_profile.json"
+
+
+def get_numbered_character_profile_filename(character_index: int, character_name: str) -> str:
+    """
+    넘버링된 캐릭터 프로필 파일명 생성
+
+    예: 1, "김태주" -> "01_김태주_profile.json"
+    """
+    normalized_name = normalize_filename(normalize_character_name(character_name))
+    if not normalized_name:
+        normalized_name = "character"
+    return f"{character_index:02d}_{normalized_name}_profile.json"
+
+
+def get_character_detail_filename(character_name: str) -> str:
+    """
+    캐릭터 디테일 파일명 생성
+
+    Args:
+        character_name: 캐릭터 이름
+
+    Returns:
+        정규화된 파일명 (예: "김태주_detail.json")
+    """
+    normalized_name = normalize_filename(normalize_character_name(character_name))
+    if not normalized_name:
+        normalized_name = "character"
+    return f"{normalized_name}_detail.json"
+
+
+def get_numbered_character_detail_filename(character_index: int, character_name: str) -> str:
+    """
+    넘버링된 캐릭터 디테일 파일명 생성
+
+    예: 1, "김태주" -> "01_김태주_detail.json"
+    """
+    normalized_name = normalize_filename(normalize_character_name(character_name))
+    if not normalized_name:
+        normalized_name = "character"
+    return f"{character_index:02d}_{normalized_name}_detail.json"
+
+
+def get_numbered_character_image_prompts_filename(character_index: int, character_name: str) -> str:
+    """
+    넘버링된 캐릭터 이미지 프롬프트 파일명 생성
+
+    예: 1, "김태주" -> "01_김태주_image_prompts.json"
+    """
+    normalized_name = normalize_filename(normalize_character_name(character_name))
+    if not normalized_name:
+        normalized_name = "character"
+    return f"{character_index:02d}_{normalized_name}_image_prompts.json"
 
 
 def get_chapter_filename(chapter_number: int) -> str:

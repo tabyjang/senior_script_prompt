@@ -217,39 +217,39 @@ class CharacterDetailsInputTab(BaseTab):
 
     def _merge_and_save_character_details(self, character_details: List[Dict[str, Any]]):
         """
-        기존 인물 데이터에 세부 정보 병합 및 저장
+        캐릭터 디테일 파일로 저장하고, 필요 시 캐릭터 프로필(인포) 파일을 최소 생성
 
         Args:
             character_details: 파싱된 인물 세부 정보 리스트
         """
-        # 현재 인물 데이터 가져오기
-        characters = self.project_data.get_characters()
+        # 1) 기존 캐릭터 프로필(인포) 로드
+        characters = self.file_service.load_characters()
+        character_dict = {("".join((char.get("name", "") or "").split())): char for char in characters}
 
-        # 인물 이름을 키로 하는 딕셔너리 생성 (빠른 검색을 위해)
-        character_dict = {char.get('name', ''): char for char in characters}
+        # 2) 디테일은 별도 파일로 저장 (02_characters/details/)
+        details_to_save: List[Dict[str, Any]] = []
 
-        # 세부 정보 병합
         for detail in character_details:
-            # 키 정규화: 하이픈을 언더스코어로, 소문자로 변환
             normalized_detail = self._normalize_keys(detail)
-
-            name = normalized_detail.get('name', '')
+            name = normalized_detail.get("name", "")
             if not name:
                 continue
+            # 이름 공백 제거(김회장 == 김 회장)
+            name = "".join(str(name).split())
+            normalized_detail["name"] = name
 
-            if name in character_dict:
-                # 기존 인물이 있으면 세부 정보 병합
-                existing_char = character_dict[name]
-                # 기본 정보는 유지하고 세부 정보만 업데이트
-                existing_char.update(normalized_detail)
-            else:
-                # 새 인물이면 추가
-                characters.append(normalized_detail)
-                character_dict[name] = normalized_detail
+            details_to_save.append(normalized_detail)
 
-        # 인물 데이터 설정 및 저장
+            # 디테일만 들어오고 프로필 파일이 없는 경우, 최소 프로필 파일 생성(이름만)
+            if name not in character_dict:
+                minimal_profile = {"name": name}
+                characters.append(minimal_profile)
+                character_dict[name] = minimal_profile
+
+        # 3) 저장 (프로필 + 디테일)
         self.project_data.set_characters(characters)
         self.file_service.save_characters(characters)
+        self.file_service.save_character_details(details_to_save)
 
         # 인물 탭 업데이트
         if hasattr(self.parent, 'master') and hasattr(self.parent.master, 'tabs'):

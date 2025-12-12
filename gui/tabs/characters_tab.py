@@ -83,15 +83,22 @@ class CharactersTab(BaseTab):
 
     def update_display(self):
         """화면 업데이트"""
-        # 파일에서 최신 데이터 다시 로드 (인물 세부정보 입력 탭에서 저장한 데이터 반영)
+        # 파일에서 최신 데이터 다시 로드 (인물/세부정보 입력 탭에서 저장한 데이터 반영)
         try:
             all_data = self.file_service.load_all_data()
             self.project_data.data = all_data
         except Exception as e:
             print(f"데이터 로드 오류: {e}")
 
-        # 시놉시스에서 등장인물 정보를 우선적으로 가져오기
+        # 캐릭터 프로필(인포) + 캐릭터 디테일 로드 후 통합
         characters = self._get_characters_from_synopsis_or_data()
+        details_list = []
+        try:
+            details_list = self.file_service.load_character_details()
+        except Exception as e:
+            print(f"캐릭터 디테일 로드 오류: {e}")
+
+        self._details_by_name = self._build_details_map(details_list)
 
         if not characters:
             # 뷰어와 편집 영역 초기화
@@ -121,10 +128,33 @@ class CharactersTab(BaseTab):
 
         # 선택된 인물만 표시
         selected_char = characters[self.current_character_index]
+        selected_detail = self._details_by_name.get(self._normalize_name(selected_char.get("name", "")), {})
         
         # 뷰어와 편집 영역 업데이트
-        self._create_viewer_widget(selected_char)
-        self._create_editor_widget(selected_char)
+        self._create_viewer_widget(selected_char, selected_detail)
+        self._create_editor_widget(selected_char, selected_detail)
+
+    def _normalize_name(self, name: str) -> str:
+        # 공백(스페이스/탭/줄바꿈 등) 제거: "김회장" == "김 회장"
+        return "".join((name or "").split())
+
+    def _build_details_map(self, details_list):
+        """
+        디테일 리스트를 name 기준으로 매핑
+        - 파일에서 온 _detail_filename은 유지
+        """
+        details_by_name = {}
+        if not isinstance(details_list, list):
+            return details_by_name
+
+        for d in details_list:
+            if not isinstance(d, dict):
+                continue
+            name = self._normalize_name(d.get("name", ""))
+            if not name:
+                continue
+            details_by_name[name] = d
+        return details_by_name
 
     def _get_characters_from_synopsis_or_data(self):
         """
@@ -140,17 +170,21 @@ class CharactersTab(BaseTab):
         
         if synopsis_characters:
             # 인물 이름을 키로 하는 딕셔너리 생성 (빠른 검색을 위해)
-            character_dict = {char.get('name', ''): char for char in characters}
+            character_dict = {self._normalize_name(char.get('name', '')): char for char in characters}
             
             # 시놉시스의 등장인물로 기본 정보만 업데이트
             for syn_char in synopsis_characters:
                 name = syn_char.get('name', '')
                 if not name:
                     continue
+                name_key = self._normalize_name(name)
+                name_clean = name_key
                 
-                if name in character_dict:
+                if name_key in character_dict:
                     # 기존 인물이 있으면 기본 정보만 업데이트 (세부 정보 유지)
-                    existing_char = character_dict[name]
+                    existing_char = character_dict[name_key]
+                    # 저장 이름도 공백 제거 형태로 통일
+                    existing_char['name'] = name_clean
                     # 기본 정보 필드만 업데이트 (시놉시스에 값이 있으면 사용, 없으면 기존 값 유지)
                     existing_char.update({
                         'age': syn_char.get('age', existing_char.get('age', '')),
@@ -164,7 +198,7 @@ class CharactersTab(BaseTab):
                 else:
                     # 새 인물이면 시놉시스 정보로 추가
                     characters.append({
-                        'name': name,
+                        'name': name_clean,
                         'age': syn_char.get('age', ''),
                         'occupation': syn_char.get('occupation', ''),
                         'personality': syn_char.get('personality', ''),
@@ -214,8 +248,8 @@ class CharactersTab(BaseTab):
         # 화면 업데이트
         self.update_display()
 
-    def _create_viewer_widget(self, char: dict):
-        """읽기 전용 뷰어 위젯 생성 - 기본 정보와 세부 정보로 분리"""
+    def _create_viewer_widget(self, char: dict, detail: dict):
+        """읽기 전용 뷰어 위젯 생성 - 캐릭터 인포(프로필) + 캐릭터 디테일 분리 표시"""
         # 기존 위젯 제거
         for widget in self.viewer_frame.winfo_children():
             widget.destroy()
@@ -223,8 +257,8 @@ class CharactersTab(BaseTab):
         # 기본 정보 필드 (시놉시스에서 가져온 정보)
         basic_info_fields = ['name', 'age', 'occupation', 'personality', 'appearance', 'traits', 'desire', 'role']
         
-        # 기본 정보 섹션
-        basic_info_frame = ttk.LabelFrame(self.viewer_frame, text="기본 정보", padding=10)
+        # 캐릭터 인포 섹션(프로필)
+        basic_info_frame = ttk.LabelFrame(self.viewer_frame, text="캐릭터 인포 (프로필)", padding=10)
         basic_info_frame.pack(fill=tk.X, padx=5, pady=5)
         
         for field in basic_info_fields:
@@ -257,10 +291,17 @@ class CharactersTab(BaseTab):
                     )
                     label.pack(anchor=tk.W, padx=5, pady=2)
         
-        # 세부 정보 섹션
-        detail_info_frame = ttk.LabelFrame(self.viewer_frame, text="세부 정보", padding=10)
+        # 캐릭터 디테일 섹션(별도 파일)
+        detail_info_frame = ttk.LabelFrame(self.viewer_frame, text="캐릭터 디테일", padding=10)
         detail_info_frame.pack(fill=tk.X, padx=5, pady=5)
         
+        if not detail:
+            ttk.Label(
+                detail_info_frame,
+                text="(캐릭터 디테일 파일이 없습니다. '인물 세부정보 입력' 탭에서 입력/저장하면 생성됩니다.)",
+                font=("맑은 고딕", 9),
+                foreground="gray"
+            ).pack(anchor=tk.W, padx=5, pady=2)
         # 세부 정보 필드 목록
         detail_info_fields = [
             'id', 'role_type', 'relation_to_protagonist',
@@ -271,8 +312,8 @@ class CharactersTab(BaseTab):
         ]
         
         for field in detail_info_fields:
-            if field in char:
-                value = char[field]
+            if field in detail:
+                value = detail[field]
                 value_str = str(value) if value is not None else ""
                 
                 if len(value_str) > 100:
@@ -302,7 +343,7 @@ class CharactersTab(BaseTab):
         
         # 나머지 필드들 (기본 정보와 세부 정보에 포함되지 않은 필드)
         remaining_fields = {k: v for k, v in char.items() 
-                          if k not in basic_info_fields + detail_info_fields + ['_filename']}
+                          if k not in basic_info_fields + ['_filename']}
         
         if remaining_fields:
             other_info_frame = ttk.LabelFrame(self.viewer_frame, text="기타 정보", padding=10)
@@ -408,8 +449,8 @@ class CharactersTab(BaseTab):
             )
             label.pack(anchor=tk.W, padx=5, pady=2)
 
-    def _create_editor_widget(self, char: dict):
-        """편집 가능한 위젯 생성 - 키값과 밸류값을 나눠서 표시"""
+    def _create_editor_widget(self, char: dict, detail: dict):
+        """편집 가능한 위젯 생성 - 캐릭터 인포(프로필) + 캐릭터 디테일을 분리하여 표시"""
         # 기존 위젯 제거
         for widget in self.editor_frame.winfo_children():
             widget.destroy()
@@ -431,8 +472,8 @@ class CharactersTab(BaseTab):
         # 기본 정보 필드 (시놉시스에서 가져온 정보)
         basic_info_fields = ['name', 'age', 'occupation', 'personality', 'appearance', 'traits', 'desire', 'role']
         
-        # 기본 정보 섹션
-        basic_info_frame = ttk.LabelFrame(self.editor_frame, text="기본 정보", padding=10)
+        # 캐릭터 인포 섹션(프로필)
+        basic_info_frame = ttk.LabelFrame(self.editor_frame, text="캐릭터 인포 (프로필)", padding=10)
         basic_info_frame.pack(fill=tk.X, padx=5, pady=5)
         
         for field in basic_info_fields:
@@ -453,6 +494,14 @@ class CharactersTab(BaseTab):
             label.pack(side=tk.LEFT, padx=5)
             
             # 밸류값 입력 필드
+            # name은 매칭 키이므로 여기서는 변경 불가(디테일 파일과 연결이 깨질 수 있음)
+            if field == "name":
+                entry = ttk.Entry(frame, font=("맑은 고딕", 9), width=50, state="disabled")
+                entry.pack(side=tk.LEFT, fill=tk.X, expand=True, padx=5)
+                entry.insert(0, value_str)
+                self.edit_fields[field] = ('profile_entry_disabled', entry)
+                continue
+
             if len(value_str) > 50 or '\n' in value_str:
                 text_widget = scrolledtext.ScrolledText(
                     frame,
@@ -463,15 +512,15 @@ class CharactersTab(BaseTab):
                 )
                 text_widget.pack(side=tk.LEFT, fill=tk.BOTH, expand=True, padx=5)
                 text_widget.insert(1.0, value_str)
-                self.edit_fields[field] = ('text', text_widget)
+                self.edit_fields[field] = ('profile_text', text_widget)
             else:
                 entry = ttk.Entry(frame, font=("맑은 고딕", 9), width=50)  # 최소 너비 설정
                 entry.pack(side=tk.LEFT, fill=tk.X, expand=True, padx=5)
                 entry.insert(0, value_str)
-                self.edit_fields[field] = ('entry', entry)
+                self.edit_fields[field] = ('profile_entry', entry)
         
-        # 세부 정보 섹션
-        detail_info_frame = ttk.LabelFrame(self.editor_frame, text="세부 정보", padding=10)
+        # 캐릭터 디테일 섹션(별도 파일)
+        detail_info_frame = ttk.LabelFrame(self.editor_frame, text="캐릭터 디테일", padding=10)
         detail_info_frame.pack(fill=tk.X, padx=5, pady=5)
         
         # 세부 정보 필드 목록
@@ -484,7 +533,7 @@ class CharactersTab(BaseTab):
         ]
         
         for field in detail_info_fields:
-            value = char.get(field, '')
+            value = (detail or {}).get(field, '')
             value_str = str(value) if value is not None else ""
             
             frame = ttk.Frame(detail_info_frame)
@@ -511,16 +560,16 @@ class CharactersTab(BaseTab):
                 )
                 text_widget.pack(side=tk.LEFT, fill=tk.BOTH, expand=True, padx=5)
                 text_widget.insert(1.0, value_str)
-                self.edit_fields[field] = ('text', text_widget)
+                self.edit_fields[field] = ('detail_text', text_widget)
             else:
                 entry = ttk.Entry(frame, font=("맑은 고딕", 9), width=50)  # 최소 너비 설정
                 entry.pack(side=tk.LEFT, fill=tk.X, expand=True, padx=5)
                 entry.insert(0, value_str)
-                self.edit_fields[field] = ('entry', entry)
+                self.edit_fields[field] = ('detail_entry', entry)
         
         # 나머지 필드들 (기본 정보와 세부 정보에 포함되지 않은 필드)
         remaining_fields = {k: v for k, v in char.items() 
-                          if k not in basic_info_fields + detail_info_fields + ['_filename']}
+                          if k not in basic_info_fields + ['_filename']}
         
         if remaining_fields:
             other_info_frame = ttk.LabelFrame(self.editor_frame, text="기타 정보", padding=10)
@@ -553,12 +602,12 @@ class CharactersTab(BaseTab):
                     )
                     text_widget.pack(side=tk.LEFT, fill=tk.BOTH, expand=True, padx=5)
                     text_widget.insert(1.0, value_str)
-                    self.edit_fields[key] = ('text', text_widget)
+                    self.edit_fields[key] = ('profile_text', text_widget)
                 else:
                     entry = ttk.Entry(frame, font=("맑은 고딕", 9), width=50)  # 최소 너비 설정
                     entry.pack(side=tk.LEFT, fill=tk.X, expand=True, padx=5)
                     entry.insert(0, value_str)
-                    self.edit_fields[key] = ('entry', entry)
+                    self.edit_fields[key] = ('profile_entry', entry)
         
         # 편집 영역 크기 일관성 유지를 위한 업데이트
         self.frame.update_idletasks()
@@ -583,28 +632,50 @@ class CharactersTab(BaseTab):
             return
 
         try:
-            # 현재 인물 데이터 복사
+            # 현재 인물(프로필) 데이터 복사
             char = characters[self.current_character_index].copy()
+            char_name = self._normalize_name(char.get("name", ""))
+            if not char_name:
+                messagebox.showerror("오류", "캐릭터 이름(name)이 없어 저장할 수 없습니다.")
+                return
+
+            # 기존 디테일 로드
+            existing_detail = {}
+            try:
+                details_list = self.file_service.load_character_details()
+                details_by_name = self._build_details_map(details_list)
+                existing_detail = details_by_name.get(char_name, {})
+            except Exception:
+                existing_detail = {}
+
+            detail_to_save = existing_detail.copy() if isinstance(existing_detail, dict) else {}
+            detail_to_save["name"] = char.get("name", "")
             
             # 편집 필드에서 값 읽어서 업데이트
             for key, (field_type, widget) in self.edit_fields.items():
-                if field_type == 'entry':
+                if field_type in ["profile_entry", "detail_entry"]:
                     value = widget.get()
-                elif field_type == 'text':
+                elif field_type in ["profile_text", "detail_text"]:
                     value = widget.get(1.0, tk.END).strip()
                 else:
+                    # profile_entry_disabled 등
                     continue
                 
-                # 값 업데이트
-                char[key] = value
+                if field_type.startswith("profile_"):
+                    char[key] = value
+                elif field_type.startswith("detail_"):
+                    detail_to_save[key] = value
             
             # 인물 리스트 업데이트
             characters[self.current_character_index] = char
             self.project_data.set_characters(characters)
             
             # 파일 저장
-            if self.file_service.save_characters(characters):
-                messagebox.showinfo("완료", "인물 정보가 저장되었습니다.")
+            profile_ok = self.file_service.save_characters(characters)
+            detail_ok = self.file_service.save_character_detail(detail_to_save, character_index=self.current_character_index + 1)
+
+            if profile_ok and detail_ok:
+                messagebox.showinfo("완료", "인물(프로필)과 캐릭터 디테일이 저장되었습니다.")
                 self.mark_unsaved()
                 # 화면 업데이트
                 self.update_display()

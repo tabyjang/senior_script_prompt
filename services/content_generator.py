@@ -384,10 +384,23 @@ TTS 최적화:
         # 디버깅: 각 캐릭터의 나이 정보 출력
         print(f"[이미지 프롬프트 생성] 캐릭터: {char_name}, 실제 나이: {char_age}세, 차감: {age_deduction}세, Youth age: {final_visual_age}세")
         
+        # 인물의 모든 정보 읽기
         char_occupation = syn_char.get('occupation', '') or character.get('occupation', '')
         char_role = syn_char.get('role', '') or character.get('role', '')
         char_appearance_text = syn_char.get('appearance', '') or character.get('appearance_text', '')
         char_personality_text = syn_char.get('personality', '') or character.get('personality', '')
+        char_traits = syn_char.get('traits', '') or character.get('traits', '')
+        char_desire = syn_char.get('desire', '') or character.get('desire', '')
+        char_background = character.get('background', '')
+        
+        # 성격 상세 정보
+        char_personality = character.get('personality', {})
+        if isinstance(char_personality, dict):
+            char_personality_traits = ', '.join(char_personality.get('traits', [])) if char_personality.get('traits') else ''
+            char_speech_style = char_personality.get('speech_style', '')
+        else:
+            char_personality_traits = ''
+            char_speech_style = ''
 
         char_appearance = character.get('appearance', {})
         char_visual_ref = character.get('visual_reference', '')
@@ -448,8 +461,14 @@ TTS 최적화:
   - 체형: {char_appearance.get('body', '정보 없음')}
   - 복장 스타일: {char_appearance.get('clothing', '정보 없음')}
   - 특징: {', '.join(char_appearance.get('features', [])) if char_appearance.get('features') else '정보 없음'}
-- 성격: {char_personality_text}
-- 시각적 참고: {char_visual_ref}
+- 성격 (기본): {char_personality_text}
+- 성격 (상세):
+  - 특성: {char_personality_traits if char_personality_traits else '정보 없음'}
+  - 말투: {char_speech_style if char_speech_style else '정보 없음'}
+- 특성/특징: {char_traits if char_traits else '정보 없음'}
+- 욕구/동기: {char_desire if char_desire else '정보 없음'}
+- 배경 스토리: {char_background if char_background else '정보 없음'}
+- 시각적 참고: {char_visual_ref if char_visual_ref else '정보 없음'}
 
 **7가지 스타일**:
 1. **Full Body Shot** (전신샷)(자연스러운 배경)

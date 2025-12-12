@@ -175,8 +175,8 @@ class CopyPasteTab(BaseTab):
             char_name = char.get('name', '알 수 없음')
             prompts_obj = char.get('image_generation_prompts', {})
             
-            # 프롬프트 1~7
-            for prompt_num in range(1, 8):
+            # 프롬프트 1~8
+            for prompt_num in range(1, 9):
                 prompt_key = f"prompt_{prompt_num}"
                 prompt_content = prompts_obj.get(prompt_key, '')
                 

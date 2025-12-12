@@ -1,6 +1,6 @@
 """
 이미지 프롬프트 탭
-캐릭터별 7종류 이미지 프롬프트 뷰어 및 에디터를 제공합니다.
+캐릭터별 1~8 이미지 프롬프트 뷰어 및 에디터를 제공합니다.
 원본 viewer_editor.py의 로직을 완전히 이식한 버전
 """
 
@@ -19,7 +19,8 @@ IMAGE_TYPE_TITLES = {
     4: "초상화",
     5: "초상화 옆모습",
     6: "액션",
-    7: "자연스러운 배경"
+    7: "자연스러운 배경",
+    8: "추가 프롬프트"
 }
 
 
@@ -227,7 +228,7 @@ class ImagePromptsTab(BaseTab):
     def update_display(self):
         """
         화면 업데이트
-        선택된 인물의 프롬프트 1~7만 표시
+        선택된 인물의 프롬프트 1~8 표시
         """
         # 기존 위젯 제거
         for widget in self.image_prompts_viewer_frame.winfo_children():
@@ -271,8 +272,8 @@ class ImagePromptsTab(BaseTab):
         char_name = selected_char.get('name', '알 수 없음')
         prompts_obj = selected_char.get('image_generation_prompts', {})
         
-        # 각 프롬프트 1~7 추출
-        for prompt_num in range(1, 8):
+        # 각 프롬프트 1~8 추출 (에디터에서 8개 슬롯을 항상 보이도록 모두 포함)
+        for prompt_num in range(1, 9):
             prompt_key = f"prompt_{prompt_num}"
             prompt_text = prompts_obj.get(prompt_key, '')
             
@@ -280,12 +281,11 @@ class ImagePromptsTab(BaseTab):
             if prompt_num == 1 and not prompt_text:
                 prompt_text = selected_char.get('image_generation_prompt', '')
             
-            if prompt_text:  # 프롬프트가 있는 경우만 추가
-                prompts_data.append({
-                    "character_name": char_name,
-                    "prompt_number": prompt_num,
-                    "prompt": prompt_text
-                })
+            prompts_data.append({
+                "character_name": char_name,
+                "prompt_number": prompt_num,
+                "prompt": prompt_text or ""
+            })
 
         json_str = format_json(prompts_data)
         self.editor.insert(1.0, json_str)
@@ -319,10 +319,19 @@ class ImagePromptsTab(BaseTab):
     def _create_prompt_widget(self, idx: int, char: dict):
         """
         이미지 프롬프트 뷰어 위젯 생성
-        한 인물의 프롬프트 1~7을 모두 표시
+        한 인물의 프롬프트 1~8을 모두 표시
         형식: "인물1, 1. 제목: 전신샷"
         """
+        # image_generation_prompts는 dict가 정상이며,
+        # 과거 데이터/수동 편집으로 문자열(JSON)로 저장된 경우가 있어 방어적으로 정규화한다.
         prompts_obj = char.get('image_generation_prompts', {})
+        if isinstance(prompts_obj, str):
+            parsed = safe_json_loads(prompts_obj)
+            prompts_obj = parsed if isinstance(parsed, dict) else {}
+            char['image_generation_prompts'] = prompts_obj
+        elif not isinstance(prompts_obj, dict):
+            prompts_obj = {}
+            char['image_generation_prompts'] = prompts_obj
         char_name = char.get('name', '알 수 없음')
 
         # 인물 번호 (현재 선택된 인덱스 + 1)
@@ -332,8 +341,8 @@ class ImagePromptsTab(BaseTab):
         main_frame = ttk.Frame(self.image_prompts_viewer_frame)
         main_frame.pack(fill=tk.X, padx=15, pady=10)
 
-        # 각 프롬프트 1~7 표시
-        for prompt_num in range(1, 8):
+        # 각 프롬프트 1~8 표시 (없어도 슬롯은 표시)
+        for prompt_num in range(1, 9):
             prompt_key = f"prompt_{prompt_num}"
             prompt_content = prompts_obj.get(prompt_key, '')
 
@@ -341,12 +350,19 @@ class ImagePromptsTab(BaseTab):
             if prompt_num == 1 and not prompt_content:
                 prompt_content = char.get('image_generation_prompt', '')
 
-            # 프롬프트가 없으면 건너뛰기
-            if not prompt_content:
-                continue
+            # 프롬프트가 없으면 표시용 placeholder
+            display_content = prompt_content if prompt_content else "(비어있음)"
 
-            # 이미지 타입 제목 가져오기
+            # 이미지 타입 제목 가져오기 (프롬프트 JSON에 shot_name이 있으면 우선 사용)
             image_type_title = IMAGE_TYPE_TITLES.get(prompt_num, f"이미지 타입 {prompt_num}")
+            try:
+                prompt_json = safe_json_loads(prompt_content)
+                if isinstance(prompt_json, dict):
+                    shot_name = prompt_json.get('shot_name')
+                    if isinstance(shot_name, str) and shot_name.strip():
+                        image_type_title = shot_name.strip()
+            except Exception:
+                pass
 
             # 각 프롬프트를 위한 서브 프레임
             # 제목 형식: "인물1, 1. 제목: 전신샷"
@@ -372,7 +388,7 @@ class ImagePromptsTab(BaseTab):
 
             # 프롬프트 내용 삽입
             prompt_text.config(state=tk.NORMAL)
-            prompt_text.insert(1.0, prompt_content)
+            prompt_text.insert(1.0, display_content)
             prompt_text.config(state=tk.DISABLED)
 
     def _rebind_mousewheel(self):
@@ -444,10 +460,14 @@ class ImagePromptsTab(BaseTab):
         모든 인물에 대해 이미지 프롬프트 7종류 자동 생성
         원본 generate_image_prompts_for_all_characters() 메서드의 로직을 완전히 이식
         """
-        characters = self.project_data.get_characters()
+        # 파일에서 최신 인물 정보 모두 로드 (이미지 정보 포함)
+        characters = self.file_service.load_characters()
         if not characters:
             messagebox.showwarning("경고", "인물 정보가 없습니다.")
             return
+        
+        # 프로젝트 데이터도 업데이트
+        self.project_data.set_characters(characters)
 
         # 확인 대화상자
         result = messagebox.askyesno(
@@ -569,15 +589,26 @@ class ImagePromptsTab(BaseTab):
                     prompt_text = prompt_item.get('prompt', '')
                     prompt_key = f"prompt_{prompt_num}"
 
+                    # 프롬프트 번호 유효 범위 (1~8)
+                    if not isinstance(prompt_num, int) or prompt_num < 1 or prompt_num > 8:
+                        continue
+
                     # 해당 인물 찾기
                     for char in characters:
                         if char.get('name') == char_name:
-                            # 프롬프트 저장
-                            char['image_generation_prompts'][prompt_key] = prompt_text
+                            # 프롬프트 저장/삭제(빈 문자열이면 제거)
+                            if isinstance(prompt_text, str) and prompt_text.strip():
+                                char['image_generation_prompts'][prompt_key] = prompt_text
+                            else:
+                                if prompt_key in char['image_generation_prompts']:
+                                    char['image_generation_prompts'].pop(prompt_key, None)
                             
                             # 프롬프트 1을 기본값으로도 설정
-                            if prompt_num == 1 and prompt_text:
-                                char['image_generation_prompt'] = prompt_text
+                            if prompt_num == 1:
+                                if isinstance(prompt_text, str) and prompt_text.strip():
+                                    char['image_generation_prompt'] = prompt_text
+                                else:
+                                    char['image_generation_prompt'] = ""
                             break
 
                 # 데이터 업데이트 및 저장
