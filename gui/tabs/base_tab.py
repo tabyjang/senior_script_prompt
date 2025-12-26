@@ -5,13 +5,24 @@
 
 import tkinter as tk
 from tkinter import ttk
-from typing import Any
+from typing import Any, TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from models.project_data import ProjectData
+    from services.file_service import FileService
+    from services.content_generator import ContentGenerator
 
 
 class BaseTab:
     """모든 탭의 베이스 클래스"""
 
-    def __init__(self, parent: ttk.Notebook, project_data, file_service, content_generator):
+    def __init__(
+        self,
+        parent: ttk.Notebook,
+        project_data: "ProjectData",
+        file_service: "FileService",
+        content_generator: "ContentGenerator"
+    ):
         """
         Args:
             parent: 부모 노트북 위젯

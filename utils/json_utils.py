@@ -4,7 +4,7 @@ JSON 파싱, 포맷팅 등의 유틸리티 함수를 제공합니다.
 """
 
 import json
-from typing import Any, Dict
+from typing import Any, Dict, Optional
 
 
 def extract_json_from_text(text: str) -> str:

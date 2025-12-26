@@ -9,6 +9,7 @@ from tkinter import ttk, scrolledtext, messagebox
 from datetime import datetime
 import re
 from .base_tab import BaseTab
+from utils.file_utils import get_chapter_filename, get_character_filename
 
 
 class ChaptersTab(BaseTab):
@@ -270,8 +271,6 @@ class ChaptersTab(BaseTab):
                 continue
 
         new_num = max_num + 1
-        from utils.file_utils import get_chapter_filename
-
         new_chapter = {
             "chapter_number": new_num,
             "title": f"챕터 {new_num}",
@@ -857,7 +856,6 @@ class ChaptersTab(BaseTab):
                     'role': syn_char.get('role', '')
                 }
                 # 파일명 생성 (정규화 함수 사용)
-                from utils.file_utils import get_character_filename
                 char_name = character.get('name', 'character')
                 character['_filename'] = get_character_filename(char_name)
                 characters.append(character)
@@ -934,7 +932,6 @@ class ChaptersTab(BaseTab):
                         existing_chapter['title'] = title
                     # _filename이 없으면 추가
                     if '_filename' not in existing_chapter:
-                        from utils.file_utils import get_chapter_filename
                         existing_chapter['_filename'] = get_chapter_filename(chapter_number)
                     # 기존 챕터를 리스트에 추가 (content_detail, script 등이 보존됨)
                     chapters.append(existing_chapter)
@@ -947,7 +944,6 @@ class ChaptersTab(BaseTab):
                         'script': ''
                     }
                     # 파일명 생성 (정규화 함수 사용)
-                    from utils.file_utils import get_chapter_filename
                     chapter['_filename'] = get_chapter_filename(chapter_number)
                     chapters.append(chapter)
             

@@ -8,7 +8,7 @@ from tkinter import ttk, scrolledtext, messagebox
 from .base_tab import BaseTab
 from utils.json_utils import format_json, safe_json_loads
 from utils.ui_helpers import create_scrollable_frame
-import json
+from utils.file_utils import normalize_character_name
 
 
 class CharactersTab(BaseTab):
@@ -135,8 +135,8 @@ class CharactersTab(BaseTab):
         self._create_editor_widget(selected_char, selected_detail)
 
     def _normalize_name(self, name: str) -> str:
-        # 공백(스페이스/탭/줄바꿈 등) 제거: "김회장" == "김 회장"
-        return "".join((name or "").split())
+        """캐릭터 이름 정규화 - file_utils의 함수 사용"""
+        return normalize_character_name(name)
 
     def _build_details_map(self, details_list):
         """

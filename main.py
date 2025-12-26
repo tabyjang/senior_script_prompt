@@ -4,6 +4,7 @@
 모듈화된 안전하고 튼튼한 구조로 재작성된 버전
 """
 
+import os
 import sys
 import tkinter as tk
 from pathlib import Path
@@ -99,7 +100,6 @@ def main():
     
     # 프로젝트 경로를 절대 경로로 변환
     if not project_path.is_absolute():
-        import os
         project_path = (Path(os.getcwd()) / project_path).resolve()
 
     # 프로젝트 데이터 모델 생성

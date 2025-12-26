@@ -4,6 +4,7 @@
 """
 
 import json
+import os
 import shutil
 from pathlib import Path
 from datetime import datetime
@@ -90,8 +91,8 @@ class FileService:
                         # image_prompts 파일이 있으면 프로필에 복원(누락된 prompt만 채움)
                         try:
                             self._sync_image_prompts_into_profile_from_file(char_data, character_index=idx)
-                        except Exception:
-                            pass
+                        except Exception as e:
+                            print(f"이미지 프롬프트 동기화 오류 ({char_file.name}): {e}")
 
                         # 중복(공백만 다른 이름 등) 병합: 첫 항목 유지 + 빈 값만 채우기
                         key = normalize_character_name(char_data.get("name", ""))
@@ -131,8 +132,8 @@ class FileService:
             if needs_cleanup:
                 try:
                     self.save_characters(characters)
-                except Exception:
-                    pass
+                except Exception as e:
+                    print(f"캐릭터 자동 정리 저장 오류: {e}")
 
         return characters
 
@@ -166,10 +167,10 @@ class FileService:
                     if f.name not in expected_files:
                         try:
                             f.unlink()
-                        except Exception:
-                            pass
-            except Exception:
-                pass
+                        except Exception as e:
+                            print(f"파일 삭제 오류 ({f.name}): {e}")
+            except Exception as e:
+                print(f"캐릭터 파일 정리 중 오류: {e}")
 
             # (추가) 캐릭터 프로필 저장 시 image_prompts 파일도 동기화 저장 (2중 저장)
             try:
@@ -411,10 +412,10 @@ class FileService:
                 if f.name not in expected:
                     try:
                         f.unlink()
-                    except Exception:
-                        pass
-        except Exception:
-            pass
+                    except Exception as e:
+                        print(f"이미지 프롬프트 파일 삭제 오류 ({f.name}): {e}")
+        except Exception as e:
+            print(f"이미지 프롬프트 폴더 정리 중 오류: {e}")
 
     def _sync_details_into_profiles(self, details: List[Dict[str, Any]]) -> bool:
         """
@@ -503,10 +504,10 @@ class FileService:
                     if f.name not in expected:
                         try:
                             f.unlink()
-                        except Exception:
-                            pass
-            except Exception:
-                pass
+                        except Exception as e:
+                            print(f"디테일 파일 삭제 오류 ({f.name}): {e}")
+            except Exception as e:
+                print(f"디테일 폴더 정리 중 오류: {e}")
 
             # 저장 후 프로필 파일에도 디테일을 추가로 기록
             self._sync_details_into_profiles(details)
@@ -545,8 +546,8 @@ class FileService:
             # 저장 후 프로필 파일에도 디테일을 추가로 기록
             try:
                 self._sync_details_into_profiles([detail])
-            except Exception:
-                pass
+            except Exception as e:
+                print(f"프로필 동기화 오류: {e}")
             return True
         except Exception as e:
             print(f"캐릭터 디테일 저장 오류: {e}")
@@ -735,7 +736,6 @@ class FileService:
         try:
             # 프로젝트 루트 경로 결정
             if base_path is None:
-                import os
                 # 현재 실행 중인 파일의 위치를 기준으로 찾기
                 # main.py 또는 editors_app 폴더에서 실행 중
                 current_file = Path(__file__).resolve()  # file_service.py의 위치
