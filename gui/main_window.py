@@ -144,6 +144,10 @@ class MainWindow:
         self.notebook = ttk.Notebook(main_frame)
         self.notebook.grid(row=1, column=1, sticky=(tk.W, tk.E, tk.N, tk.S))
 
+        # Notebook 탭 헤더 숨기기 (왼쪽 사이드바로 탭 전환)
+        style = ttk.Style()
+        style.layout("TNotebook.Tab", [])  # 탭 헤더 제거
+
     def _create_sidebar(self, parent):
         """왼쪽 사이드바 생성"""
         sidebar = ttk.Frame(parent)
@@ -182,16 +186,6 @@ class MainWindow:
 
         # 초기 탭 표시
         self.tab_buttons[self.current_tab].state(['pressed'])
-
-        # 저장 버튼
-        ttk.Separator(sidebar, orient=tk.HORIZONTAL).pack(fill=tk.X, pady=15, padx=5)
-        save_btn = ttk.Button(
-            sidebar,
-            text="저장 (Ctrl+S)",
-            width=18,
-            command=self._save_all
-        )
-        save_btn.pack(pady=5, fill=tk.X, padx=5)
 
     def _create_statusbar(self):
         """상태바 생성"""

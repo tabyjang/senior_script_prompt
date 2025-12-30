@@ -58,6 +58,16 @@ class CopyPasteTab(BaseTab):
         )
         characters_radio.pack(side=tk.LEFT, padx=10)
 
+        # 대본 라디오 버튼 추가
+        scripts_radio = ttk.Radiobutton(
+            top_frame,
+            text="대본",
+            variable=self.data_type_var,
+            value="scripts",
+            command=self._on_data_type_changed
+        )
+        scripts_radio.pack(side=tk.LEFT, padx=10)
+
         # 오른쪽 버튼 영역
         button_frame = ttk.Frame(top_frame)
         button_frame.pack(side=tk.RIGHT, padx=10)
@@ -119,8 +129,12 @@ class CopyPasteTab(BaseTab):
         """화면 업데이트"""
         if self.current_data_type == "scenes":
             tsv_data = self._format_scenes_to_tsv()
-        else:
+        elif self.current_data_type == "characters":
             tsv_data = self._format_characters_to_tsv()
+        elif self.current_data_type == "scripts":
+            tsv_data = self._format_scripts_to_tsv()
+        else:
+            tsv_data = ""
 
         self.data_text.delete(1.0, tk.END)
         self.data_text.insert(1.0, tsv_data)
@@ -191,6 +205,55 @@ class CopyPasteTab(BaseTab):
                     prompt_clean = prompt_clean.replace('\n', ' ').replace('\r', ' ').replace('\t', ' ')
                     line = f"{char_name}\t{prompt_num}\t{prompt_clean}"
                     lines.append(line)
+
+        return '\n'.join(lines)
+
+    def _format_scripts_to_tsv(self) -> str:
+        """
+        대본을 TSV 형식으로 변환
+        형식: 챕터번호\t챕터제목\t글자수\t대본내용
+        """
+        chapters = self.project_data.get_chapters()
+
+        if not chapters:
+            return "대본 데이터가 없습니다."
+
+        # 헤더
+        lines = ["챕터번호\t챕터제목\t글자수\t대본내용"]
+
+        total_char_count = 0
+
+        # 각 챕터의 대본
+        for chapter in sorted(chapters, key=lambda x: x.get('chapter_number', 0)):
+            chapter_num = chapter.get('chapter_number', '')
+            chapter_title = chapter.get('title', '')
+
+            # 대본 로드 (04_scripts 파일 우선)
+            script = ""
+            try:
+                script_data = self.file_service.load_script_file(chapter_num)
+                if isinstance(script_data, dict):
+                    script = (script_data.get("script") or "").strip()
+            except Exception:
+                pass
+
+            # fallback: 챕터 파일에 저장된 script
+            if not script:
+                script = (chapter.get('script', '') or "").strip()
+
+            # 글자 수
+            char_count = len(script) if script else 0
+            total_char_count += char_count
+
+            # TSV 형식: 탭으로 구분, 줄바꿈 제거
+            chapter_title_clean = chapter_title.replace('\n', ' ').replace('\r', ' ').replace('\t', ' ')
+            script_clean = script.replace('\n', ' ').replace('\r', ' ').replace('\t', ' ')
+
+            line = f"{chapter_num}\t{chapter_title_clean}\t{char_count}\t{script_clean}"
+            lines.append(line)
+
+        # 총 글자 수 합계
+        lines.append(f"\t\t{total_char_count}\t(총 글자 수)")
 
         return '\n'.join(lines)
 
@@ -285,8 +348,13 @@ class CopyPasteTab(BaseTab):
         """전체 데이터를 클립보드에 복사"""
         try:
             data = self.data_text.get(1.0, tk.END).strip()
-            
-            if not data or data == "장면 데이터가 없습니다." or data == "인물 데이터가 없습니다.":
+
+            empty_messages = [
+                "장면 데이터가 없습니다.",
+                "인물 데이터가 없습니다.",
+                "대본 데이터가 없습니다."
+            ]
+            if not data or data in empty_messages:
                 messagebox.showwarning("경고", "복사할 데이터가 없습니다.")
                 return
 
@@ -295,7 +363,12 @@ class CopyPasteTab(BaseTab):
             self.frame.clipboard_append(data)
             self.frame.update()  # 클립보드 업데이트 확실히 하기
 
-            data_type_name = "장면 이미지 프롬프트" if self.current_data_type == "scenes" else "인물 이미지 프롬프트"
+            data_type_names = {
+                "scenes": "장면 이미지 프롬프트",
+                "characters": "인물 이미지 프롬프트",
+                "scripts": "대본"
+            }
+            data_type_name = data_type_names.get(self.current_data_type, "데이터")
             messagebox.showinfo(
                 "복사 완료",
                 f"{data_type_name} 데이터가 클립보드에 복사되었습니다.\n\n"

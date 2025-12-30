@@ -83,20 +83,9 @@ class ImagePromptsTab(BaseTab):
         paned_vertical = ttk.PanedWindow(content_frame, orient=tk.VERTICAL)
         paned_vertical.grid(row=0, column=0, sticky=(tk.W, tk.E, tk.N, tk.S))
 
-        # 상단: 뷰어 영역 (좌우 분할)
-        viewer_container = ttk.Frame(paned_vertical)
-        paned_vertical.add(viewer_container, weight=2)
-        viewer_container.columnconfigure(0, weight=1)
-        viewer_container.columnconfigure(1, weight=1)
-        viewer_container.rowconfigure(0, weight=1)
-
-        # 좌우 분할 PanedWindow
-        paned_horizontal = ttk.PanedWindow(viewer_container, orient=tk.HORIZONTAL)
-        paned_horizontal.grid(row=0, column=0, columnspan=2, sticky=(tk.W, tk.E, tk.N, tk.S))
-
-        # 왼쪽: 뷰어 영역
-        viewer_frame = ttk.LabelFrame(paned_horizontal, text="뷰어", padding=10)
-        paned_horizontal.add(viewer_frame, weight=2)
+        # 상단: 뷰어 영역
+        viewer_frame = ttk.LabelFrame(paned_vertical, text="뷰어", padding=10)
+        paned_vertical.add(viewer_frame, weight=2)
         viewer_frame.columnconfigure(0, weight=1)
         viewer_frame.rowconfigure(0, weight=1)
 
@@ -124,27 +113,6 @@ class ImagePromptsTab(BaseTab):
         # Canvas와 Scrollbar 배치
         self.canvas_viewer.grid(row=0, column=0, sticky=(tk.W, tk.E, tk.N, tk.S))
         self.scrollbar_viewer.grid(row=0, column=1, sticky=(tk.N, tk.S))
-        viewer_frame.columnconfigure(0, weight=1)
-        viewer_frame.rowconfigure(0, weight=1)
-
-        # 오른쪽: 시스템 프롬프트 편집 영역
-        system_prompt_frame = ttk.LabelFrame(paned_horizontal, text="이미지 시스템 프롬프트", padding=10)
-        paned_horizontal.add(system_prompt_frame, weight=1)
-        system_prompt_frame.columnconfigure(0, weight=1)
-        system_prompt_frame.rowconfigure(0, weight=1)
-
-        self.image_system_prompt_editor = scrolledtext.ScrolledText(
-            system_prompt_frame,
-            width=60,
-            height=40,
-            wrap=tk.WORD,
-            font=("맑은 고딕", 10)
-        )
-        self.image_system_prompt_editor.grid(row=0, column=0, sticky=(tk.W, tk.E, tk.N, tk.S))
-        self.image_system_prompt_editor.bind('<KeyRelease>', lambda e: self._on_system_prompt_edit())
-
-        # 기본 시스템 프롬프트 로드
-        self._load_image_system_prompt()
 
         # 하단: 원본 JSON 에디터
         editor_frame = ttk.LabelFrame(paned_vertical, text="원본 JSON 에디터", padding=10)
@@ -163,7 +131,6 @@ class ImagePromptsTab(BaseTab):
         self.editor.bind('<KeyRelease>', lambda e: self.mark_unsaved())
 
         # PanedWindow 참조 저장 (마우스 휠 재바인딩용)
-        self.paned_horizontal = paned_horizontal
         self.paned_vertical = paned_vertical
 
     def _bind_initial_mousewheel(self):
@@ -394,66 +361,25 @@ class ImagePromptsTab(BaseTab):
     def _rebind_mousewheel(self):
         """
         마우스 휠 이벤트 재바인딩
-        원본 _bind_mousewheel_to_image_prompts_viewer() 메서드의 로직을 완전히 이식
-
         새로 생성된 위젯들에 마우스 휠 이벤트를 다시 바인딩합니다.
-        PanedWindow 구조를 탐색하여 Canvas를 찾아 바인딩합니다.
         """
-        # PanedWindow에서 Canvas 찾기
-        if hasattr(self, 'paned_horizontal'):
-            for pane_name in self.paned_horizontal.panes():
-                pane = self.paned_horizontal.nametowidget(pane_name)
-                for pane_child in pane.winfo_children():
-                    if isinstance(pane_child, tk.Canvas):
-                        canvas = pane_child
+        def on_mousewheel(event):
+            """마우스 휠 스크롤 처리"""
+            self.canvas_viewer.yview_scroll(int(-1 * (event.delta / 120)), "units")
+            return "break"
 
-                        def on_mousewheel(event):
-                            """마우스 휠 스크롤 처리"""
-                            canvas.yview_scroll(int(-1 * (event.delta / 120)), "units")
-                            return "break"
+        def bind_to_widget(w):
+            """위젯과 모든 자식 위젯에 재귀적으로 마우스 휠 바인딩"""
+            w.bind("<MouseWheel>", on_mousewheel)
+            for c in w.winfo_children():
+                bind_to_widget(c)
 
-                        def bind_to_widget(w):
-                            """위젯과 모든 자식 위젯에 재귀적으로 마우스 휠 바인딩"""
-                            w.bind("<MouseWheel>", on_mousewheel)
-                            for c in w.winfo_children():
-                                bind_to_widget(c)
+        # Canvas에 직접 바인딩
+        self.canvas_viewer.bind("<MouseWheel>", on_mousewheel)
+        self.canvas_viewer.bind("<Enter>", lambda e: self.canvas_viewer.focus_set())
 
-                        # Canvas에 직접 바인딩
-                        canvas.bind("<MouseWheel>", on_mousewheel)
-                        canvas.bind("<Enter>", lambda e, c=canvas: c.focus_set())
-
-                        # image_prompts_viewer_frame과 모든 자식 위젯에 바인딩
-                        bind_to_widget(self.image_prompts_viewer_frame)
-                        return
-
-    def _load_image_system_prompt(self):
-        """
-        이미지 시스템 프롬프트 로드 (설정 파일 또는 기본값)
-        원본 _load_image_system_prompt() 메서드의 로직을 완전히 이식
-        """
-        # 설정 파일에서 로드 시도
-        # ConfigManager를 사용하려면 main_window에서 전달받아야 함
-        # 임시로 기본 프롬프트 사용
-        default_prompt = """당신은 이미지 생성을 위한 전문 프롬프트 엔지니어입니다.
-주어진 인물 정보를 바탕으로 동일한 인물의 동일성을 반드시 유지하며 7가지 다른 스타일의 상세한 이미지 생성 프롬프트를 영어로 작성해주세요.
-
-** 최적화 원칙**:
-1. 모든 프롬프트는 **한국인 (Korean, East Asian)** 으로 명시해야 합니다
-2. 실제 나이보다 **건강하고 젊어보이고 세련된** 외모로 표현하세요 (동양인은 더 어려보이고, 오디오북에서 젊은 이미지가 좋습니다)
-3. 모든 프롬프트에서 동일한 인물의 일관성 유지 (얼굴 특징, 체형, 머리카락 등)
-4. 각 프롬프트는 다른 각도, 포즈, 복장이지만 기본 외모는 동일해야 합니다
-5. 품질 키워드 : professional photography
-6. 카메라 설정 포함: 렌즈 타입, 조명, 구도
-7. 부정적 요소 제거: no cartoon, no anime, no distortion
-8. 반드시 JSON 형식으로만 응답해주세요"""
-
-        self.image_system_prompt_editor.delete(1.0, tk.END)
-        self.image_system_prompt_editor.insert(1.0, default_prompt)
-
-    def _on_system_prompt_edit(self):
-        """이미지 시스템 프롬프트 편집 시 호출"""
-        # TODO: 설정 파일에 저장하도록 구현
-        pass
+        # image_prompts_viewer_frame과 모든 자식 위젯에 바인딩
+        bind_to_widget(self.image_prompts_viewer_frame)
 
     def _generate_image_prompts(self):
         """
@@ -516,9 +442,6 @@ class ImagePromptsTab(BaseTab):
                 # 30세 미만은 최소값 적용
                 age_deduction = 0
             visual_age = max(25, char_age - age_deduction)
-
-            # 시스템 프롬프트 가져오기
-            system_prompt = self.image_system_prompt_editor.get(1.0, tk.END).strip()
 
             # ContentGenerator를 사용하여 프롬프트 생성
             try:

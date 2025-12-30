@@ -23,6 +23,19 @@ class ScriptsTab(BaseTab):
         self.script_viewer = None
         self.script_editor = None
 
+        # 전체 보기 모드 변수
+        self.is_full_view_mode = False
+        self.full_view_btn = None
+
+        # 챕터 탭 버튼 변수
+        self.chapter_buttons_frame = None
+        self.chapter_buttons = {}
+        self.current_chapter_num = 1
+
+        # 좌우 분할 구조 변수
+        self.chapter_listbox = None
+        self.chapter_list_data = []  # (chapter_num, title, has_script) 튜플 리스트
+
         # 부모 클래스 초기화
         super().__init__(parent, project_data, file_service, content_generator)
 
@@ -37,7 +50,7 @@ class ScriptsTab(BaseTab):
         - 하단: PanedWindow로 분할 (뷰어 | 에디터)
         """
         self.frame.columnconfigure(0, weight=1)
-        self.frame.rowconfigure(1, weight=1)
+        self.frame.rowconfigure(2, weight=1)  # 콘텐츠 영역이 row=2로 변경됨
 
         # 상단: 챕터 선택 + 대본 생성 버튼
         toolbar = ttk.Frame(self.frame)
@@ -92,30 +105,88 @@ class ScriptsTab(BaseTab):
         )
         generate_all_btn.pack(side=tk.LEFT, padx=5)
 
+        # 전체 대본 보기 버튼 (구분선 추가)
+        ttk.Separator(toolbar, orient=tk.VERTICAL).pack(side=tk.LEFT, padx=10, fill=tk.Y)
+        self.full_view_btn = ttk.Button(
+            toolbar,
+            text="📖 전체 대본 보기",
+            command=self._toggle_full_view_mode,
+            width=16
+        )
+        self.full_view_btn.pack(side=tk.LEFT, padx=5)
+
         # 글자 수 표시 라벨
         self.script_char_count_label = ttk.Label(toolbar, text="", font=("맑은 고딕", 9))
         self.script_char_count_label.pack(side=tk.LEFT, padx=10)
 
-        # 하단: 뷰어/에디터 영역
+        # 챕터 탭 버튼 프레임 (2번째 줄)
+        chapter_btn_row = ttk.Frame(self.frame)
+        chapter_btn_row.grid(row=1, column=0, sticky=(tk.W, tk.E), padx=5, pady=(0, 5))
+
+        ttk.Label(chapter_btn_row, text="챕터 바로가기:", font=("맑은 고딕", 9)).pack(side=tk.LEFT, padx=5)
+
+        self.chapter_buttons_frame = ttk.Frame(chapter_btn_row)
+        self.chapter_buttons_frame.pack(side=tk.LEFT, padx=5)
+
+        # 하단: 좌우 분할 영역 (row를 2로 변경)
         content_frame = ttk.Frame(self.frame)
-        content_frame.grid(row=1, column=0, sticky=(tk.W, tk.E, tk.N, tk.S), padx=5, pady=5)
+        content_frame.grid(row=2, column=0, sticky=(tk.W, tk.E, tk.N, tk.S), padx=5, pady=5)
         content_frame.columnconfigure(0, weight=1)
         content_frame.rowconfigure(0, weight=1)
 
-        # PanedWindow로 크기 조절 가능하게
-        paned = ttk.PanedWindow(content_frame, orient=tk.VERTICAL)
-        paned.grid(row=0, column=0, sticky=(tk.W, tk.E, tk.N, tk.S))
+        # 좌우 분할 PanedWindow
+        paned_horizontal = ttk.PanedWindow(content_frame, orient=tk.HORIZONTAL)
+        paned_horizontal.grid(row=0, column=0, sticky=(tk.W, tk.E, tk.N, tk.S))
+
+        # ===== 왼쪽: 챕터 목록 영역 =====
+        left_frame = ttk.LabelFrame(paned_horizontal, text="챕터 목록", padding=10)
+        paned_horizontal.add(left_frame, weight=1)
+        left_frame.columnconfigure(0, weight=1)
+        left_frame.rowconfigure(0, weight=1)
+
+        # 챕터 리스트박스 + 스크롤바
+        list_container = ttk.Frame(left_frame)
+        list_container.grid(row=0, column=0, sticky=(tk.W, tk.E, tk.N, tk.S))
+        list_container.columnconfigure(0, weight=1)
+        list_container.rowconfigure(0, weight=1)
+
+        self.chapter_listbox = tk.Listbox(
+            list_container,
+            font=("맑은 고딕", 11),
+            selectmode=tk.SINGLE,
+            activestyle='dotbox',
+            width=25,
+            height=20
+        )
+        self.chapter_listbox.grid(row=0, column=0, sticky=(tk.W, tk.E, tk.N, tk.S))
+
+        list_scrollbar = ttk.Scrollbar(list_container, orient=tk.VERTICAL, command=self.chapter_listbox.yview)
+        list_scrollbar.grid(row=0, column=1, sticky=(tk.N, tk.S))
+        self.chapter_listbox.config(yscrollcommand=list_scrollbar.set)
+
+        # 리스트박스 선택 이벤트
+        self.chapter_listbox.bind('<<ListboxSelect>>', self._on_listbox_select)
+
+        # ===== 오른쪽: 대본 뷰어/에디터 영역 =====
+        right_frame = ttk.Frame(paned_horizontal)
+        paned_horizontal.add(right_frame, weight=4)
+        right_frame.columnconfigure(0, weight=1)
+        right_frame.rowconfigure(0, weight=1)
+
+        # 상하 분할 PanedWindow (뷰어 | 에디터)
+        paned_vertical = ttk.PanedWindow(right_frame, orient=tk.VERTICAL)
+        paned_vertical.grid(row=0, column=0, sticky=(tk.W, tk.E, tk.N, tk.S))
 
         # 상단: 뷰어 영역 (읽기 전용)
-        viewer_frame = ttk.LabelFrame(paned, text="대본 뷰어 (TTS 복사용)", padding=10)
-        paned.add(viewer_frame, weight=1)
+        viewer_frame = ttk.LabelFrame(paned_vertical, text="대본 뷰어 (TTS 복사용)", padding=10)
+        paned_vertical.add(viewer_frame, weight=1)
         viewer_frame.columnconfigure(0, weight=1)
         viewer_frame.rowconfigure(0, weight=1)
 
         self.script_viewer = scrolledtext.ScrolledText(
             viewer_frame,
-            width=120,
-            height=20,
+            width=100,
+            height=15,
             wrap=tk.WORD,
             font=("맑은 고딕", 11),
             state=tk.DISABLED
@@ -123,15 +194,15 @@ class ScriptsTab(BaseTab):
         self.script_viewer.grid(row=0, column=0, sticky=(tk.W, tk.E, tk.N, tk.S))
 
         # 하단: 에디터 영역
-        editor_frame = ttk.LabelFrame(paned, text="대본 에디터", padding=10)
-        paned.add(editor_frame, weight=1)
+        editor_frame = ttk.LabelFrame(paned_vertical, text="대본 에디터", padding=10)
+        paned_vertical.add(editor_frame, weight=1)
         editor_frame.columnconfigure(0, weight=1)
         editor_frame.rowconfigure(0, weight=1)
 
         self.script_editor = scrolledtext.ScrolledText(
             editor_frame,
-            width=120,
-            height=20,
+            width=100,
+            height=15,
             wrap=tk.WORD,
             font=("맑은 고딕", 11)
         )
@@ -155,6 +226,176 @@ class ScriptsTab(BaseTab):
                 self.script_chapter_combo.current(0)
                 self._on_chapter_selected()
 
+        # 챕터 탭 버튼 생성/업데이트
+        self._create_chapter_buttons(chapters)
+
+        # 챕터 리스트박스 업데이트
+        self._update_chapter_listbox(chapters)
+
+    def _create_chapter_buttons(self, chapters):
+        """챕터 바로가기 버튼 생성"""
+        if not self.chapter_buttons_frame:
+            return
+
+        # 기존 버튼 제거
+        for widget in self.chapter_buttons_frame.winfo_children():
+            widget.destroy()
+        self.chapter_buttons.clear()
+
+        if not chapters:
+            ttk.Label(
+                self.chapter_buttons_frame,
+                text="(챕터 없음)",
+                font=("맑은 고딕", 9),
+                foreground="gray"
+            ).pack(side=tk.LEFT)
+            return
+
+        # 챕터별 버튼 생성
+        for ch in sorted(chapters, key=lambda x: x.get('chapter_number', 0)):
+            chapter_num = ch.get('chapter_number', 0)
+            chapter_title = ch.get('title', '')
+
+            # 버튼 텍스트: 짧은 제목 (최대 8자)
+            short_title = chapter_title[:8] + "..." if len(chapter_title) > 8 else chapter_title
+            btn_text = f"{chapter_num}. {short_title}" if short_title else f"챕터 {chapter_num}"
+
+            btn = ttk.Button(
+                self.chapter_buttons_frame,
+                text=btn_text,
+                width=12,
+                command=lambda cn=chapter_num: self._switch_to_chapter(cn)
+            )
+            btn.pack(side=tk.LEFT, padx=2)
+            self.chapter_buttons[chapter_num] = btn
+
+        # 현재 선택된 버튼 강조
+        self._update_chapter_button_state()
+
+    def _switch_to_chapter(self, chapter_num: int):
+        """챕터 버튼 클릭 시 해당 챕터로 전환"""
+        # 전체 보기 모드면 개별 보기로 전환
+        if self.is_full_view_mode:
+            self.is_full_view_mode = False
+            self.full_view_btn.config(text="📖 전체 대본 보기")
+
+        self.current_chapter_num = chapter_num
+
+        # 콤보박스도 동기화
+        chapters = self.project_data.get_chapters()
+        for i, ch in enumerate(chapters):
+            if ch.get('chapter_number') == chapter_num:
+                self.script_chapter_combo.current(i)
+                break
+
+        self._on_chapter_selected()
+        self._update_chapter_button_state()
+
+    def _update_chapter_button_state(self):
+        """현재 선택된 챕터 버튼 강조"""
+        for ch_num, btn in self.chapter_buttons.items():
+            if ch_num == self.current_chapter_num:
+                btn.state(['pressed'])
+            else:
+                btn.state(['!pressed'])
+
+    def _update_chapter_listbox(self, chapters):
+        """챕터 리스트박스 업데이트"""
+        if not self.chapter_listbox:
+            return
+
+        # 기존 항목 삭제
+        self.chapter_listbox.delete(0, tk.END)
+        self.chapter_list_data.clear()
+
+        if not chapters:
+            self.chapter_listbox.insert(tk.END, "(챕터 없음)")
+            return
+
+        # 챕터별 항목 추가
+        for ch in sorted(chapters, key=lambda x: x.get('chapter_number', 0)):
+            chapter_num = ch.get('chapter_number', 0)
+            chapter_title = ch.get('title', '제목 없음')
+
+            # 대본 존재 여부 확인
+            has_script = False
+            try:
+                script_data = self.file_service.load_script_file(chapter_num)
+                if isinstance(script_data, dict) and script_data.get("script", "").strip():
+                    has_script = True
+            except Exception:
+                pass
+
+            if not has_script:
+                has_script = bool((ch.get('script', '') or "").strip())
+
+            # 글자 수 표시
+            script_len = 0
+            if has_script:
+                try:
+                    script_data = self.file_service.load_script_file(chapter_num)
+                    if isinstance(script_data, dict):
+                        script_len = len((script_data.get("script") or "").strip())
+                except Exception:
+                    script_len = len((ch.get('script', '') or "").strip())
+
+            # 리스트 항목 텍스트
+            status_icon = "✅" if has_script else "⬜"
+            if script_len > 0:
+                display_text = f"{status_icon} {chapter_num}. {chapter_title} ({script_len:,}자)"
+            else:
+                display_text = f"{status_icon} {chapter_num}. {chapter_title}"
+
+            self.chapter_listbox.insert(tk.END, display_text)
+            self.chapter_list_data.append((chapter_num, chapter_title, has_script))
+
+        # 현재 선택된 챕터 표시
+        self._sync_listbox_selection()
+
+    def _sync_listbox_selection(self):
+        """리스트박스 선택 상태를 현재 챕터와 동기화"""
+        if not self.chapter_listbox or not self.chapter_list_data:
+            return
+
+        for i, (ch_num, _, _) in enumerate(self.chapter_list_data):
+            if ch_num == self.current_chapter_num:
+                self.chapter_listbox.selection_clear(0, tk.END)
+                self.chapter_listbox.selection_set(i)
+                self.chapter_listbox.see(i)
+                break
+
+    def _on_listbox_select(self, event):
+        """리스트박스에서 챕터 선택 시"""
+        if not self.chapter_listbox or not self.chapter_list_data:
+            return
+
+        selection = self.chapter_listbox.curselection()
+        if not selection:
+            return
+
+        index = selection[0]
+        if index >= len(self.chapter_list_data):
+            return
+
+        chapter_num, _, _ = self.chapter_list_data[index]
+
+        # 전체 보기 모드면 개별 보기로 전환
+        if self.is_full_view_mode:
+            self.is_full_view_mode = False
+            self.full_view_btn.config(text="📖 전체 대본 보기")
+
+        self.current_chapter_num = chapter_num
+
+        # 콤보박스 동기화
+        chapters = self.project_data.get_chapters()
+        for i, ch in enumerate(chapters):
+            if ch.get('chapter_number') == chapter_num:
+                self.script_chapter_combo.current(i)
+                break
+
+        self._on_chapter_selected()
+        self._update_chapter_button_state()
+
     def _on_chapter_selected(self):
         """
         챕터 선택 시 대본 로드
@@ -169,6 +410,10 @@ class ScriptsTab(BaseTab):
             chapter_num = int(selected.split(':')[0].replace('챕터', '').strip())
         except:
             return
+
+        # 현재 챕터 번호 업데이트 및 버튼 상태 갱신
+        self.current_chapter_num = chapter_num
+        self._update_chapter_button_state()
 
         # 해당 챕터 찾기
         chapters = self.project_data.get_chapters()
@@ -488,3 +733,91 @@ class ScriptsTab(BaseTab):
         except Exception as e:
             print(f"대본 저장 중 오류 발생: {e}")
             return False
+
+    def _toggle_full_view_mode(self):
+        """전체 대본 보기 모드 토글"""
+        self.is_full_view_mode = not self.is_full_view_mode
+
+        if self.is_full_view_mode:
+            # 전체 보기 모드로 전환
+            self.full_view_btn.config(text="📄 개별 챕터 보기")
+            self._show_full_scripts()
+        else:
+            # 개별 챕터 보기 모드로 복귀
+            self.full_view_btn.config(text="📖 전체 대본 보기")
+            self._on_chapter_selected()
+
+    def _show_full_scripts(self):
+        """모든 챕터의 대본을 한 화면에 표시"""
+        chapters = self.project_data.get_chapters()
+
+        if not chapters:
+            if self.script_viewer:
+                self.script_viewer.config(state=tk.NORMAL)
+                self.script_viewer.delete(1.0, tk.END)
+                self.script_viewer.insert(1.0, "챕터 정보가 없습니다.")
+                self.script_viewer.config(state=tk.DISABLED)
+            return
+
+        # 전체 대본 텍스트 생성
+        full_script_lines = []
+        total_char_count = 0
+
+        for ch in sorted(chapters, key=lambda x: x.get('chapter_number', 0)):
+            chapter_num = ch.get('chapter_number', 0)
+            chapter_title = ch.get('title', '제목 없음')
+
+            # 대본 로드 (04_scripts 파일 우선)
+            script = ""
+            try:
+                script_data = self.file_service.load_script_file(chapter_num)
+                if isinstance(script_data, dict):
+                    script = (script_data.get("script") or "").strip()
+            except Exception:
+                pass
+
+            # fallback: 챕터 파일에 저장된 script
+            if not script:
+                script = (ch.get('script', '') or "").strip()
+
+            # 구분선 및 챕터 헤더
+            full_script_lines.append("=" * 80)
+            full_script_lines.append(f"【 챕터 {chapter_num}: {chapter_title} 】")
+            if script:
+                char_count = len(script)
+                total_char_count += char_count
+                full_script_lines.append(f"(글자 수: {char_count:,}자)")
+            full_script_lines.append("=" * 80)
+            full_script_lines.append("")
+
+            # 대본 내용
+            if script:
+                full_script_lines.append(script)
+            else:
+                full_script_lines.append("(대본 없음)")
+
+            full_script_lines.append("")
+            full_script_lines.append("")
+
+        # 마지막에 총 글자 수 표시
+        full_script_lines.append("=" * 80)
+        full_script_lines.append(f"【 전체 대본 총 글자 수: {total_char_count:,}자 】")
+        full_script_lines.append("=" * 80)
+
+        full_text = "\n".join(full_script_lines)
+
+        # 뷰어에 표시
+        if self.script_viewer:
+            self.script_viewer.config(state=tk.NORMAL)
+            self.script_viewer.delete(1.0, tk.END)
+            self.script_viewer.insert(1.0, full_text)
+            self.script_viewer.config(state=tk.DISABLED)
+
+        # 에디터에도 표시 (편집 불가 안내)
+        if self.script_editor:
+            self.script_editor.delete(1.0, tk.END)
+            self.script_editor.insert(1.0, "※ 전체 보기 모드에서는 편집할 수 없습니다.\n\n'개별 챕터 보기' 버튼을 눌러 편집 모드로 전환하세요.")
+
+        # 글자 수 표시 (툴바)
+        if self.script_char_count_label:
+            self.script_char_count_label.config(text=f"📝 전체 {total_char_count:,}자")
