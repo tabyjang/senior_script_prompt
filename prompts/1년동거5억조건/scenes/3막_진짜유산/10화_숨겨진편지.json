@@ -1,0 +1,231 @@
+{
+  "metadata": {
+    "work_title": "유산5억조건은동거",
+    "act": "3막",
+    "act_title": "진짜유산",
+    "chapter": 10,
+    "chapter_title": "숨겨진편지",
+    "created_at": "2026-01-03",
+    "total_scenes": 10
+  },
+  "chapter_info": {
+    "main_location": "병원, 송변호사 사무실",
+    "time_period": "낮",
+    "characters": ["김순자", "박복순", "이말자", "최정희", "송변호사"],
+    "main_emotion": "감동, 반전, 이해"
+  },
+  "scenes": [
+    {
+      "scene_id": "s01",
+      "scene_name": "말자_병문안",
+      "description": "말자 병실에서 4인방이 모인 장면",
+      "location": "병원 병실",
+      "time": "낮",
+      "characters": ["김순자", "박복순", "이말자", "최정희"],
+      "emotion": "안도, 따뜻함",
+      "action": "병문안",
+      "main_prompt": "masterpiece, best quality, photorealistic, 4women, hospital room visit, one in bed recovering, others surrounding with care, flowers and fruits",
+      "character_prompts": {
+        "김순자": "49 year old Korean woman, sitting beside bed, peeling apple for patient, caring",
+        "박복순": "53 year old Korean woman, arranging flowers in vase, colorful dress, cheerful",
+        "이말자": "47 year old Korean woman, in hospital bed, looking better, grateful smile, touched by friends",
+        "최정희": "51 year old Korean woman, glasses, reading get-well card aloud"
+      },
+      "regional_settings": {
+        "김순자": {"start": 0, "end": 25},
+        "박복순": {"start": 25, "end": 50},
+        "이말자": {"start": 50, "end": 75},
+        "최정희": {"start": 75, "end": 100}
+      },
+      "output_folder": "scenes/3막/10화/s01_병문안",
+      "filename_prefix": "3막_10화_s01"
+    },
+    {
+      "scene_id": "s02",
+      "scene_name": "변호사_도착",
+      "description": "송변호사가 병실에 찾아오는 장면",
+      "location": "병원 병실",
+      "time": "낮",
+      "characters": ["김순자", "송변호사"],
+      "emotion": "긴장, 호기심",
+      "action": "방문",
+      "main_prompt": "masterpiece, best quality, photorealistic, 2people, lawyer visiting hospital room, holding envelope, important news",
+      "character_prompts": {
+        "김순자": "49 year old Korean woman, standing surprised, seeing lawyer at door",
+        "송변호사": "40 year old Korean man, professional suit, holding sealed envelope, respectful demeanor"
+      },
+      "regional_settings": {
+        "김순자": {"start": 0, "end": 50},
+        "송변호사": {"start": 50, "end": 100}
+      },
+      "output_folder": "scenes/3막/10화/s02_변호사도착",
+      "filename_prefix": "3막_10화_s02"
+    },
+    {
+      "scene_id": "s03",
+      "scene_name": "두번째_편지",
+      "description": "영숙의 두 번째 편지를 전달받는 장면",
+      "location": "병원 병실",
+      "time": "낮",
+      "characters": ["김순자", "박복순", "최정희", "송변호사"],
+      "emotion": "놀람, 긴장",
+      "action": "전달",
+      "main_prompt": "masterpiece, best quality, photorealistic, 4people, lawyer handing over sealed letter, women gathering around, anticipation",
+      "character_prompts": {
+        "김순자": "49 year old Korean woman, receiving envelope with trembling hands, curious",
+        "박복순": "53 year old Korean woman, leaning forward, curious expression",
+        "최정희": "51 year old Korean woman, glasses, watching intently",
+        "송변호사": "40 year old Korean man, explaining this was to be delivered at this moment"
+      },
+      "regional_settings": {
+        "김순자": {"start": 0, "end": 30},
+        "박복순": {"start": 25, "end": 55},
+        "최정희": {"start": 50, "end": 75},
+        "송변호사": {"start": 70, "end": 100}
+      },
+      "output_folder": "scenes/3막/10화/s03_편지전달",
+      "filename_prefix": "3막_10화_s03"
+    },
+    {
+      "scene_id": "s04",
+      "scene_name": "편지_개봉",
+      "description": "순자가 편지를 개봉하는 장면",
+      "location": "병원 병실",
+      "time": "낮",
+      "characters": ["김순자"],
+      "emotion": "긴장, 떨림",
+      "action": "개봉",
+      "main_prompt": "masterpiece, best quality, photorealistic, 1woman, close-up opening sealed envelope, trembling hands, emotional moment",
+      "character_prompts": {
+        "김순자": "49 year old Korean woman, carefully opening envelope, hands slightly shaking, taking deep breath"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/3막/10화/s04_개봉",
+      "filename_prefix": "3막_10화_s04"
+    },
+    {
+      "scene_id": "s05",
+      "scene_name": "편지_낭독",
+      "description": "편지 내용을 읽는 장면 - 영숙의 진심",
+      "location": "병원 병실",
+      "time": "낮",
+      "characters": ["김순자", "박복순", "이말자", "최정희"],
+      "emotion": "감동, 충격",
+      "action": "낭독",
+      "main_prompt": "masterpiece, best quality, photorealistic, 4women, one reading letter aloud, others listening tearfully, emotional revelation",
+      "character_prompts": {
+        "김순자": "49 year old Korean woman, reading letter with breaking voice, tears forming, revelation",
+        "박복순": "53 year old Korean woman, hand over mouth, crying",
+        "이말자": "47 year old Korean woman, in hospital bed, wiping tears",
+        "최정희": "51 year old Korean woman, glasses fogging with tears, deeply moved"
+      },
+      "regional_settings": {
+        "김순자": {"start": 0, "end": 30},
+        "박복순": {"start": 25, "end": 55},
+        "이말자": {"start": 50, "end": 75},
+        "최정희": {"start": 70, "end": 100}
+      },
+      "output_folder": "scenes/3막/10화/s05_낭독",
+      "filename_prefix": "3막_10화_s05"
+    },
+    {
+      "scene_id": "s06",
+      "scene_name": "편지_내용_클로즈업",
+      "description": "편지 내용 클로즈업 - 새언니에게 친구를 선물하고 싶었다",
+      "location": "병원 병실",
+      "time": "낮",
+      "characters": [],
+      "emotion": "감동",
+      "action": "보여주기",
+      "main_prompt": "masterpiece, best quality, photorealistic, close-up of handwritten letter, beautiful handwriting, emotional words visible, warm lighting",
+      "character_prompts": {},
+      "regional_settings": null,
+      "output_folder": "scenes/3막/10화/s06_편지내용",
+      "filename_prefix": "3막_10화_s06"
+    },
+    {
+      "scene_id": "s07",
+      "scene_name": "영숙_회상",
+      "description": "영숙이 이 계획을 세우던 회상",
+      "location": "회상",
+      "time": "회상",
+      "characters": ["박영숙"],
+      "emotion": "사랑, 걱정",
+      "action": "회상",
+      "main_prompt": "masterpiece, best quality, photorealistic, flashback, 1woman, writing letter at desk, looking at photos of sister-in-law, bittersweet smile, planning a gift",
+      "character_prompts": {
+        "박영숙": "52 year old Korean woman, writing heartfelt letter, looking at family photos, knowing her time is limited, wanting to give sister-in-law friends"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/3막/10화/s07_회상",
+      "filename_prefix": "3막_10화_s07"
+    },
+    {
+      "scene_id": "s08",
+      "scene_name": "눈물의_이해",
+      "description": "모든 것을 이해하고 우는 4인방",
+      "location": "병원 병실",
+      "time": "낮",
+      "characters": ["김순자", "박복순", "이말자", "최정희"],
+      "emotion": "감동, 이해",
+      "action": "울기",
+      "main_prompt": "masterpiece, best quality, photorealistic, 4women, crying together, group embrace on hospital bed, understanding finally dawning, emotional catharsis",
+      "character_prompts": {
+        "김순자": "49 year old Korean woman, sobbing, understanding Youngsook's love now, regret and gratitude",
+        "박복순": "53 year old Korean woman, crying freely, touched by the revelation",
+        "이말자": "47 year old Korean woman, in bed, reaching out to hold hands, tears streaming",
+        "최정희": "51 year old Korean woman, removing glasses to wipe tears, understanding everything"
+      },
+      "regional_settings": {
+        "김순자": {"start": 0, "end": 25},
+        "박복순": {"start": 25, "end": 50},
+        "이말자": {"start": 50, "end": 75},
+        "최정희": {"start": 75, "end": 100}
+      },
+      "output_folder": "scenes/3막/10화/s08_이해",
+      "filename_prefix": "3막_10화_s08"
+    },
+    {
+      "scene_id": "s09",
+      "scene_name": "영숙에게_감사",
+      "description": "순자가 영숙에게 감사 인사를 하는 장면",
+      "location": "병원 병실",
+      "time": "저녁",
+      "characters": ["김순자"],
+      "emotion": "감사, 화해",
+      "action": "기도",
+      "main_prompt": "masterpiece, best quality, photorealistic, 1woman, looking out hospital window, sunset, speaking to deceased sister-in-law, grateful peaceful expression",
+      "character_prompts": {
+        "김순자": "49 year old Korean woman, standing at window, sunset light on face, whispering thank you to Youngsook, tears and smile"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/3막/10화/s09_감사",
+      "filename_prefix": "3막_10화_s09"
+    },
+    {
+      "scene_id": "s10",
+      "scene_name": "새로운_다짐",
+      "description": "동거를 끝까지 하겠다는 다짐",
+      "location": "병원 병실",
+      "time": "저녁",
+      "characters": ["김순자", "박복순", "이말자", "최정희"],
+      "emotion": "결의, 연대",
+      "action": "다짐",
+      "main_prompt": "masterpiece, best quality, photorealistic, 4women, hands stacked together in pledge, hospital room, sunset light, determined expressions, new purpose",
+      "character_prompts": {
+        "김순자": "49 year old Korean woman, leading the pledge, determined eyes, we will honor Youngsook's wish",
+        "박복순": "53 year old Korean woman, hand on stack, nodding firmly",
+        "이말자": "47 year old Korean woman, reaching from bed, joining the pledge",
+        "최정희": "51 year old Korean woman, completing the stack, committed"
+      },
+      "regional_settings": {
+        "김순자": {"start": 0, "end": 25},
+        "박복순": {"start": 25, "end": 50},
+        "이말자": {"start": 50, "end": 75},
+        "최정희": {"start": 75, "end": 100}
+      },
+      "output_folder": "scenes/3막/10화/s10_다짐",
+      "filename_prefix": "3막_10화_s10"
+    }
+  ]
+}

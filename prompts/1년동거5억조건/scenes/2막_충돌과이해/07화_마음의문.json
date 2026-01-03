@@ -1,0 +1,199 @@
+{
+  "metadata": {
+    "work_title": "500 Million Won Inheritance Condition: Living Together",
+    "act": "act2",
+    "act_title": "Conflict and Understanding",
+    "chapter": 7,
+    "chapter_title": "Door of the Heart",
+    "created_at": "2026-01-03",
+    "total_scenes": 10
+  },
+  "chapter_info": {
+    "main_location": "Market, Young-sook's House",
+    "time_period": "Day",
+    "characters": ["Kim Soon-ja", "Park Bok-soon", "Lee Mal-ja", "Choi Jung-hee"],
+    "main_emotion": "Understanding, Humor, Connection"
+  },
+  "scenes": [
+    {
+      "scene_id": "s01",
+      "scene_name": "market_outing",
+      "description": "The four friends go to the market together for the first time",
+      "location": "Traditional Market Entrance",
+      "time": "Day",
+      "characters": ["Kim Soon-ja", "Park Bok-soon", "Lee Mal-ja", "Choi Jung-hee"],
+      "emotion": "Excitement, Awkwardness",
+      "action": "Walking",
+      "main_prompt": "masterpiece, best quality, photorealistic, 4women, walking into traditional Korean market, first outing together, sunny day, bustling market",
+      "character_prompts": {
+        "Kim Soon-ja": "49 year old Korean woman, walking with group, slightly awkward but smiling, casual clothes",
+        "Park Bok-soon": "53 year old Korean woman, colorful dress, leading the way enthusiastically, pointing at stalls",
+        "Lee Mal-ja": "47 year old Korean woman, tracksuit, checking her steps counter, walking briskly",
+        "Choi Jung-hee": "51 year old Korean woman, glasses, holding shopping list, organized"
+      },
+      "regional_settings": {
+        "Kim Soon-ja": {"start": 0, "end": 25},
+        "Park Bok-soon": {"start": 25, "end": 50},
+        "Lee Mal-ja": {"start": 50, "end": 75},
+        "Choi Jung-hee": {"start": 75, "end": 100}
+      },
+      "output_folder": "scenes/act2/ep07/s01_market",
+      "filename_prefix": "act2_ep07_s01"
+    },
+    {
+      "scene_id": "s02",
+      "scene_name": "market_browsing",
+      "description": "Browsing items at the market",
+      "location": "Traditional Market",
+      "time": "Day",
+      "characters": ["Kim Soon-ja", "Park Bok-soon"],
+      "emotion": "Joy",
+      "action": "Browsing",
+      "main_prompt": "masterpiece, best quality, photorealistic, 2women, browsing market stalls, pointing at goods, laughing together, vibrant market atmosphere",
+      "character_prompts": {
+        "Kim Soon-ja": "49 year old Korean woman, examining vegetables, smiling genuinely, enjoying the outing",
+        "Park Bok-soon": "53 year old Korean woman, bargaining with vendor, animated gestures, colorful dress"
+      },
+      "regional_settings": {
+        "Kim Soon-ja": {"start": 0, "end": 50},
+        "Park Bok-soon": {"start": 50, "end": 100}
+      },
+      "output_folder": "scenes/act2/ep07/s02_browsing",
+      "filename_prefix": "act2_ep07_s02"
+    },
+    {
+      "scene_id": "s03",
+      "scene_name": "malja_confession",
+      "description": "Mal-ja talks about losing a friend",
+      "location": "Market Bench",
+      "time": "Day",
+      "characters": ["Lee Mal-ja", "Kim Soon-ja"],
+      "emotion": "Sadness, Understanding",
+      "action": "Confession",
+      "main_prompt": "masterpiece, best quality, photorealistic, 2women, sitting on market bench, serious emotional conversation, one speaking tearfully",
+      "character_prompts": {
+        "Lee Mal-ja": "47 year old Korean woman, tracksuit, eyes red, telling story of losing friend to osteoporosis fall, vulnerable moment",
+        "Kim Soon-ja": "49 year old Korean woman, listening with compassion, understanding the exercise obsession now"
+      },
+      "regional_settings": {
+        "Lee Mal-ja": {"start": 0, "end": 55},
+        "Kim Soon-ja": {"start": 45, "end": 100}
+      },
+      "output_folder": "scenes/act2/ep07/s03_malja_confession",
+      "filename_prefix": "act2_ep07_s03"
+    },
+    {
+      "scene_id": "s04",
+      "scene_name": "junghee_confession",
+      "description": "Jung-hee opens up about her fear of dementia",
+      "location": "Market Cafe",
+      "time": "Day",
+      "characters": ["Choi Jung-hee", "Kim Soon-ja"],
+      "emotion": "Fear, Solidarity",
+      "action": "Confession",
+      "main_prompt": "masterpiece, best quality, photorealistic, 2women, sitting in small cafe, intimate confession, one holding coffee with trembling hands",
+      "character_prompts": {
+        "Choi Jung-hee": "51 year old Korean woman, glasses, explaining mother's dementia, fear of forgetting, language training as prevention",
+        "Kim Soon-ja": "49 year old Korean woman, holding her hand across table, understanding the grammar corrections now"
+      },
+      "regional_settings": {
+        "Choi Jung-hee": {"start": 0, "end": 55},
+        "Kim Soon-ja": {"start": 45, "end": 100}
+      },
+      "output_folder": "scenes/act2/ep07/s04_junghee_confession",
+      "filename_prefix": "act2_ep07_s04"
+    },
+    {
+      "scene_id": "s05",
+      "scene_name": "group_photo",
+      "description": "The four friends take their first photo together",
+      "location": "Market",
+      "time": "Day",
+      "characters": ["Kim Soon-ja", "Park Bok-soon", "Lee Mal-ja", "Choi Jung-hee"],
+      "emotion": "Joy, Connection",
+      "action": "Taking Photo",
+      "main_prompt": "masterpiece, best quality, photorealistic, 4women, posing for group selfie at market, smiling genuinely, first happy photo together",
+      "character_prompts": {
+        "Kim Soon-ja": "49 year old Korean woman, genuine smile, arm around friends, happy moment",
+        "Park Bok-soon": "53 year old Korean woman, making V sign, biggest smile, colorful dress",
+        "Lee Mal-ja": "47 year old Korean woman, tracksuit, rare genuine smile, relaxed",
+        "Choi Jung-hee": "51 year old Korean woman, glasses, proper smile, holding phone to take selfie"
+      },
+      "regional_settings": {
+        "Kim Soon-ja": {"start": 0, "end": 25},
+        "Park Bok-soon": {"start": 25, "end": 50},
+        "Lee Mal-ja": {"start": 50, "end": 75},
+        "Choi Jung-hee": {"start": 75, "end": 100}
+      },
+      "output_folder": "scenes/act2/ep07/s05_group_photo",
+      "filename_prefix": "act2_ep07_s05"
+    },
+    {
+      "scene_id": "s06",
+      "scene_name": "returning_home",
+      "description": "The four friends return home laughing",
+      "location": "Front of Young-sook's House",
+      "time": "Evening",
+      "characters": ["Kim Soon-ja", "Park Bok-soon", "Lee Mal-ja", "Choi Jung-hee"],
+      "emotion": "Happiness, Connection",
+      "action": "Returning Home",
+      "main_prompt": "masterpiece, best quality, photorealistic, 4women, returning home with shopping bags, laughing together, sunset light, friendship forming",
+      "character_prompts": {
+        "Kim Soon-ja": "49 year old Korean woman, carrying bags, laughing at joke, relaxed and happy",
+        "Park Bok-soon": "53 year old Korean woman, singing while walking, shopping bags swinging",
+        "Lee Mal-ja": "47 year old Korean woman, tracksuit, helping carry bags, smiling",
+        "Choi Jung-hee": "51 year old Korean woman, glasses, chuckling at Boksoon's song"
+      },
+      "regional_settings": {
+        "Kim Soon-ja": {"start": 0, "end": 25},
+        "Park Bok-soon": {"start": 25, "end": 50},
+        "Lee Mal-ja": {"start": 50, "end": 75},
+        "Choi Jung-hee": {"start": 75, "end": 100}
+      },
+      "output_folder": "scenes/act2/ep07/s06_returning_home",
+      "filename_prefix": "act2_ep07_s06"
+    },
+    {
+      "scene_id": "s07",
+      "scene_name": "first_laughter",
+      "description": "The four friends laugh together for the first time",
+      "location": "Young-sook's House Living Room",
+      "time": "Evening",
+      "characters": ["Kim Soon-ja", "Park Bok-soon", "Lee Mal-ja", "Choi Jung-hee"],
+      "emotion": "Joy, Breakthrough",
+      "action": "Laughing",
+      "main_prompt": "masterpiece, best quality, photorealistic, 4women, laughing together in living room, genuine joy, warm evening light, breakthrough moment",
+      "character_prompts": {
+        "Kim Soon-ja": "49 year old Korean woman, laughing heartily, hand on stomach, tears of joy",
+        "Park Bok-soon": "53 year old Korean woman, clapping while laughing, infectious joy",
+        "Lee Mal-ja": "47 year old Korean woman, rare belly laugh, guard completely down",
+        "Choi Jung-hee": "51 year old Korean woman, giggling behind hand, glasses askew"
+      },
+      "regional_settings": {
+        "Kim Soon-ja": {"start": 0, "end": 25},
+        "Park Bok-soon": {"start": 25, "end": 50},
+        "Lee Mal-ja": {"start": 50, "end": 75},
+        "Choi Jung-hee": {"start": 75, "end": 100}
+      },
+      "output_folder": "scenes/act2/ep07/s07_laughter",
+      "filename_prefix": "act2_ep07_s07"
+    },
+    {
+      "scene_id": "s08",
+      "scene_name": "son_phone_call",
+      "description": "A phone call from son Young-soo",
+      "location": "Young-sook's House Living Room",
+      "time": "Evening",
+      "characters": ["Kim Soon-ja"],
+      "emotion": "Surprise, Worry",
+      "action": "Answering Phone",
+      "main_prompt": "masterpiece, best quality, photorealistic, 1woman, answering phone, smile fading to concern, son calling",
+      "character_prompts": {
+        "Kim Soon-ja": "49 year old Korean woman, holding phone, smile fading as she hears son's voice, worried expression forming"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/act2/ep07/s08_son_call",
+      "filename_prefix": "act2_ep07_s08"
+    }
+  ]
+}

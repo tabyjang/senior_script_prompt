@@ -11,6 +11,13 @@ from pathlib import Path
 import argparse
 from tkinter import filedialog, messagebox
 
+# 드래그 앤 드롭 지원
+try:
+    from tkinterdnd2 import TkinterDnD
+    HAS_DND = True
+except ImportError:
+    HAS_DND = False
+
 # 모듈 import
 from config.config_manager import ConfigManager
 from models.project_data import ProjectData
@@ -114,8 +121,11 @@ def main():
     # 콘텐츠 생성 서비스 생성
     content_generator = ContentGenerator(llm_service)
 
-    # Tkinter root 생성
-    root = tk.Tk()
+    # Tkinter root 생성 (드래그 앤 드롭 지원)
+    if HAS_DND:
+        root = TkinterDnD.Tk()
+    else:
+        root = tk.Tk()
 
     # 메인 윈도우 생성
     app = MainWindow(

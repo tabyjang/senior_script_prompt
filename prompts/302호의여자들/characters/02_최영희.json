@@ -1,0 +1,150 @@
+{
+  "character_id": "char_02",
+  "character_name": "최영희",
+  "actual_age": 75,
+  "prompt_age": 60,
+  "role": "helper_strategist",
+  "personality": ["지적임", "날카로움", "유머", "카리스마"],
+  "appearance": {
+    "hair": "short neat white hair",
+    "eyes": "sharp intelligent eyes",
+    "features": "intellectual face, knowing smile"
+  },
+  "symbolic_item": {
+    "item": "wheelchair, glasses",
+    "description": "휠체어는 가짜 연기용, 안경은 지적 이미지",
+    "special_note": "전직 기자, 실제로는 걸을 수 있음"
+  },
+  "versions": [
+    {
+      "version_id": "v01",
+      "version_name": "기본_정면",
+      "category": "기본",
+      "positive": "masterpiece, best quality, photorealistic, 8k uhd, medium shot, front view, eye level, 60 year old Korean woman, intelligent face, sharp eyes, knowing smile, short neat white hair, elegant appearance, wearing sophisticated blouse, reading glasses on nose, sitting in wheelchair, hands on armrests, dignified posture, neutral gray background, soft studio lighting",
+      "negative": "worst quality, low quality, blurry, deformed, disfigured, bad anatomy, bad hands, extra fingers, missing fingers, ugly, duplicate, morbid, mutilated, out of frame, watermark, text, signature, anime, cartoon, 3d render, cgi",
+      "output_folder": "characters/최영희/v01_기본",
+      "filename_prefix": "최영희_v01_기본"
+    },
+    {
+      "version_id": "v02",
+      "version_name": "휠체어연기",
+      "category": "의상",
+      "positive": "masterpiece, best quality, photorealistic, 8k uhd, medium shot, slightly angled view, 60 year old Korean woman, feigning weakness, subtle cunning in eyes, short white hair, tired appearance on surface, wearing simple patient gown, reading glasses, sitting slumped in wheelchair, blanket on lap, nursing home common area, soft daylight, mundane atmosphere",
+      "negative": "worst quality, low quality, blurry, deformed, disfigured, bad anatomy, bad hands, extra fingers, missing fingers, ugly, duplicate, morbid, mutilated, out of frame, watermark, text, signature, anime, cartoon, 3d render, cgi",
+      "output_folder": "characters/최영희/v02_휠체어연기",
+      "filename_prefix": "최영희_v02_휠체어연기"
+    },
+    {
+      "version_id": "v03",
+      "version_name": "걷기",
+      "category": "동작",
+      "positive": "masterpiece, best quality, photorealistic, 8k uhd, full shot, dramatic reveal, 60 year old Korean woman, confident expression, triumphant smile, short white hair neatly styled, sharp intelligent eyes, wearing comfortable clothes, standing tall, walking confidently, strong posture, dim hallway, dramatic lighting, surprise moment",
+      "negative": "worst quality, low quality, blurry, deformed, disfigured, bad anatomy, bad hands, extra fingers, missing fingers, ugly, duplicate, morbid, mutilated, out of frame, watermark, text, signature, anime, cartoon, 3d render, cgi",
+      "output_folder": "characters/최영희/v03_걷기",
+      "filename_prefix": "최영희_v03_걷기"
+    },
+    {
+      "version_id": "v04",
+      "version_name": "기자",
+      "category": "의상",
+      "positive": "masterpiece, best quality, photorealistic, 8k uhd, medium shot, professional setting, 60 year old Korean woman, determined journalist expression, investigative gaze, short styled hair, professional appearance, wearing press vest, holding notepad, press badge visible, standing alert, interviewing pose, newsroom background, fluorescent lighting, professional atmosphere",
+      "negative": "worst quality, low quality, blurry, deformed, disfigured, bad anatomy, bad hands, extra fingers, missing fingers, ugly, duplicate, morbid, mutilated, out of frame, watermark, text, signature, anime, cartoon, 3d render, cgi",
+      "output_folder": "characters/최영희/v04_기자",
+      "filename_prefix": "최영희_v04_기자"
+    },
+    {
+      "version_id": "v05",
+      "version_name": "작전회의",
+      "category": "표정",
+      "positive": "masterpiece, best quality, photorealistic, 8k uhd, close-up shot, intellectual portrait, 60 year old Korean woman, scheming expression, calculating eyes, short white hair, glasses pushed up on head, wearing cardigan, leaning forward, finger on chin, thinking pose, dim room, single lamp light, conspiratorial atmosphere",
+      "negative": "worst quality, low quality, blurry, deformed, disfigured, bad anatomy, bad hands, extra fingers, missing fingers, ugly, duplicate, morbid, mutilated, out of frame, watermark, text, signature, anime, cartoon, 3d render, cgi",
+      "output_folder": "characters/최영희/v05_작전회의",
+      "filename_prefix": "최영희_v05_작전회의"
+    },
+    {
+      "version_id": "v06",
+      "version_name": "유머",
+      "category": "표정",
+      "positive": "masterpiece, best quality, photorealistic, 8k uhd, medium shot, comedic moment, 60 year old Korean woman, mischievous grin, twinkling eyes, short white hair, playful expression, wearing casual clothes, glasses askew, winking gesture, hand covering mouth laughing, bright room, warm lighting, lighthearted atmosphere",
+      "negative": "worst quality, low quality, blurry, deformed, disfigured, bad anatomy, bad hands, extra fingers, missing fingers, ugly, duplicate, morbid, mutilated, out of frame, watermark, text, signature, anime, cartoon, 3d render, cgi",
+      "output_folder": "characters/최영희/v06_유머",
+      "filename_prefix": "최영희_v06_유머"
+    },
+    {
+      "version_id": "v07",
+      "version_name": "분노",
+      "category": "표정",
+      "positive": "masterpiece, best quality, photorealistic, 8k uhd, medium shot, intense scene, 60 year old Korean woman, furious expression, piercing glare, short white hair, stern face, wearing formal clothes, pointing finger accusingly, tense posture, dramatic lighting, high contrast, confrontational atmosphere",
+      "negative": "worst quality, low quality, blurry, deformed, disfigured, bad anatomy, bad hands, extra fingers, missing fingers, ugly, duplicate, morbid, mutilated, out of frame, watermark, text, signature, anime, cartoon, 3d render, cgi",
+      "output_folder": "characters/최영희/v07_분노",
+      "filename_prefix": "최영희_v07_분노"
+    },
+    {
+      "version_id": "v08",
+      "version_name": "증거수집",
+      "category": "동작",
+      "positive": "masterpiece, best quality, photorealistic, 8k uhd, medium shot, investigative scene, 60 year old Korean woman, focused expression, detective-like concentration, short white hair, glasses on, wearing dark practical clothes, examining documents, holding magnifying glass, investigator pose, office at night, desk lamp lighting, mysterious atmosphere",
+      "negative": "worst quality, low quality, blurry, deformed, disfigured, bad anatomy, bad hands, extra fingers, missing fingers, ugly, duplicate, morbid, mutilated, out of frame, watermark, text, signature, anime, cartoon, 3d render, cgi",
+      "output_folder": "characters/최영희/v08_증거수집",
+      "filename_prefix": "최영희_v08_증거수집"
+    },
+    {
+      "version_id": "v09",
+      "version_name": "대화",
+      "category": "상호작용",
+      "positive": "masterpiece, best quality, photorealistic, 8k uhd, medium shot, group conversation, 60 year old Korean woman, explaining expression, authoritative gesture, short white hair, commanding presence, wearing comfortable nursing home clothes, gesturing strategically, explaining plan, nursing home room, nighttime, dim lamp, team atmosphere",
+      "negative": "worst quality, low quality, blurry, deformed, disfigured, bad anatomy, bad hands, extra fingers, missing fingers, ugly, duplicate, morbid, mutilated, out of frame, watermark, text, signature, anime, cartoon, 3d render, cgi",
+      "output_folder": "characters/최영희/v09_대화",
+      "filename_prefix": "최영희_v09_대화"
+    },
+    {
+      "version_id": "v10",
+      "version_name": "안경",
+      "category": "상징물",
+      "positive": "masterpiece, best quality, photorealistic, 8k uhd, close-up shot, symbolic portrait, 60 year old Korean woman, thoughtful expression, wise eyes, short white hair, distinguished appearance, elegant reading glasses prominently displayed, adjusting glasses, intellectual pose, soft window light, contemplative atmosphere",
+      "negative": "worst quality, low quality, blurry, deformed, disfigured, bad anatomy, bad hands, extra fingers, missing fingers, ugly, duplicate, morbid, mutilated, out of frame, watermark, text, signature, anime, cartoon, 3d render, cgi",
+      "output_folder": "characters/최영희/v10_안경",
+      "filename_prefix": "최영희_v10_안경"
+    },
+    {
+      "version_id": "v11",
+      "version_name": "승리",
+      "category": "표정",
+      "positive": "masterpiece, best quality, photorealistic, 8k uhd, medium shot, triumphant scene, 60 year old Korean woman, satisfied smile, victorious expression, short white hair neatly styled, radiant appearance, wearing elegant outfit, standing proudly, arms crossed confidently, bright outdoor setting, golden hour, hopeful atmosphere",
+      "negative": "worst quality, low quality, blurry, deformed, disfigured, bad anatomy, bad hands, extra fingers, missing fingers, ugly, duplicate, morbid, mutilated, out of frame, watermark, text, signature, anime, cartoon, 3d render, cgi",
+      "output_folder": "characters/최영희/v11_승리",
+      "filename_prefix": "최영희_v11_승리"
+    },
+    {
+      "version_id": "v12",
+      "version_name": "제주도",
+      "category": "동작",
+      "positive": "masterpiece, best quality, photorealistic, 8k uhd, medium shot, peaceful scene, 60 year old Korean woman, content smile, relaxed expression, short white hair, healthy glow, wearing comfortable resort wear, sun hat, standing without wheelchair, enjoying freedom, Jeju island terrace, ocean breeze, sunset lighting, serene atmosphere",
+      "negative": "worst quality, low quality, blurry, deformed, disfigured, bad anatomy, bad hands, extra fingers, missing fingers, ugly, duplicate, morbid, mutilated, out of frame, watermark, text, signature, anime, cartoon, 3d render, cgi",
+      "output_folder": "characters/최영희/v12_제주도",
+      "filename_prefix": "최영희_v12_제주도"
+    }
+  ],
+  "interactions": [
+    {
+      "interaction_id": "int_01",
+      "interaction_name": "영희_정숙_전략회의",
+      "participants": ["최영희", "한정숙"],
+      "type": "strategic",
+      "main_prompt": "masterpiece, best quality, photorealistic, 2women, strategic discussion, conspiratorial scene, nursing home room, dim lighting, secretive atmosphere",
+      "regional_settings": {
+        "최영희": {
+          "region": "0-50%",
+          "position": "left",
+          "prompt": "60 year old Korean woman, explaining expression, sharp eyes, short white hair, glasses, sitting in wheelchair, gesturing strategically, authoritative pose, facing right"
+        },
+        "한정숙": {
+          "region": "50-100%",
+          "position": "right",
+          "prompt": "57 year old Korean woman, listening intently, determined eyes, shoulder-length gray-streaked hair, pearl necklace, leaning forward, nodding, facing left"
+        }
+      },
+      "overlap": "none"
+    }
+  ]
+}

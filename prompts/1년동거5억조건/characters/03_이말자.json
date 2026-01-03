@@ -1,0 +1,62 @@
+{
+  "metadata": {
+    "work_title": "5_Billion_Inheritance_Cohabitation",
+    "character_name_kr": "이말자",
+    "character_name_en": "Lee Mal-ja",
+    "created_at": "2026-01-03",
+    "total_versions": 5
+  },
+  "character_info": {
+    "name_kr": "이말자",
+    "name_en": "Lee Mal-ja",
+    "real_age": 62,
+    "prompt_age": 47,
+    "gender": "female",
+    "role": "supporting_main",
+    "personality": ["disciplined", "health obsessed", "caring deep down", "commanding"],
+    "appearance": ["tracksuit", "short hair", "whistle"],
+    "symbolic_item": "whistle"
+  },
+  "versions": [
+    {
+      "version_id": "v01",
+      "version_name": "basic_pe_teacher",
+      "description": "PE teacher style introduction",
+      "positive": "masterpiece, best quality, photorealistic, 8k uhd, medium shot, front view, 47 year old Korean woman, short practical haircut, wearing tracksuit, whistle around neck, stern disciplined expression, athletic posture, arms crossed, studio lighting",
+      "output_folder": "characters/lee_malja/v01_basic",
+      "filename_prefix": "lee_malja_v01_basic"
+    },
+    {
+      "version_id": "v02",
+      "version_name": "exercise_coaching",
+      "description": "Coaching early morning exercise",
+      "positive": "masterpiece, best quality, photorealistic, 47 year old Korean woman, blowing whistle, commanding pose, pointing finger, strict expression, tracksuit, early morning indoor lighting, living room turned gym",
+      "output_folder": "characters/lee_malja/v02_exercise",
+      "filename_prefix": "lee_malja_v02_exercise"
+    },
+    {
+      "version_id": "v03",
+      "version_name": "dizzy_foreshadow",
+      "description": "Feeling dizzy foreshadowing scene",
+      "positive": "masterpiece, best quality, photorealistic, 47 year old Korean woman, hand on forehead, slightly dizzy expression, trying to hide discomfort, tracksuit, concerned look, indoor lighting",
+      "output_folder": "characters/lee_malja/v03_dizzy",
+      "filename_prefix": "lee_malja_v03_dizzy"
+    },
+    {
+      "version_id": "v04",
+      "version_name": "confession_sad",
+      "description": "Confessing sadness about losing friend",
+      "positive": "masterpiece, best quality, photorealistic, 47 year old Korean woman, vulnerable tearful expression, speaking emotionally, tracksuit, sitting down, soft indoor lighting, emotional confession moment",
+      "output_folder": "characters/lee_malja/v04_confession",
+      "filename_prefix": "lee_malja_v04_confession"
+    },
+    {
+      "version_id": "v05",
+      "version_name": "soft_smile",
+      "description": "Rare soft smile with friends",
+      "positive": "masterpiece, best quality, photorealistic, 47 year old Korean woman, gentle smile unusual for her, relaxed posture, warm expression, tracksuit, surrounded by friends atmosphere, soft lighting",
+      "output_folder": "characters/lee_malja/v05_smile",
+      "filename_prefix": "lee_malja_v05_smile"
+    }
+  ]
+}

@@ -1,0 +1,205 @@
+{
+  "metadata": {
+    "work_title": "5_Billion_Inheritance_Cohabitation",
+    "act": "act1",
+    "act_title": "Hell_Begins",
+    "chapter": 3,
+    "chapter_title": "First_Day_Hell_Opens",
+    "created_at": "2026-01-03",
+    "total_scenes": 10
+  },
+  "chapter_info": {
+    "main_location": "Young-sook's House",
+    "time_period": "dawn to morning",
+    "characters": ["Kim Soon-ja", "Park Bok-soon", "Lee Mal-ja", "Choi Jung-hee"],
+    "main_emotion": "annoyance, suffering, humor"
+  },
+  "scenes": [
+    {
+      "scene_id": "s01",
+      "scene_name": "5am_trot_wakeup",
+      "description": "Woken at 5am by Bok-soon's trot singing",
+      "location": "Young-sook's House Soon-ja's Room",
+      "time": "5am dawn",
+      "characters": ["Kim Soon-ja"],
+      "emotion": "annoyance, shock",
+      "action": "waking up",
+      "main_prompt": "masterpiece, best quality, photorealistic, 1woman, waking up startled, dark room early dawn, annoyed expression, sitting up in bed abruptly",
+      "character_prompts": {
+        "Kim Soon-ja": "49 year old Korean woman, just woken up, messy hair, pajamas, shocked angry expression, hearing loud trot music, dark room with dim dawn light"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/act1/ep03/s01_dawn",
+      "filename_prefix": "act1_ep03_s01"
+    },
+    {
+      "scene_id": "s02",
+      "scene_name": "boksoon_morning_song",
+      "description": "Bok-soon singing trot in kitchen",
+      "location": "Young-sook's House Kitchen",
+      "time": "5am dawn",
+      "characters": ["Park Bok-soon"],
+      "emotion": "energy, joy",
+      "action": "singing",
+      "main_prompt": "masterpiece, best quality, photorealistic, 1woman, singing loudly in kitchen, making breakfast, early morning, lights on",
+      "character_prompts": {
+        "Park Bok-soon": "53 year old Korean woman, singing passionately, cooking breakfast, colorful pajamas, red lipstick even at dawn, completely happy"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/act1/ep03/s02_boksoon_song",
+      "filename_prefix": "act1_ep03_s02"
+    },
+    {
+      "scene_id": "s03",
+      "scene_name": "6am_whistle",
+      "description": "Mal-ja blowing whistle to start exercise",
+      "location": "Young-sook's House Living Room",
+      "time": "6am dawn",
+      "characters": ["Lee Mal-ja"],
+      "emotion": "sternness, energy",
+      "action": "blowing whistle",
+      "main_prompt": "masterpiece, best quality, photorealistic, 1woman, blowing whistle loudly, standing in living room, commanding presence, morning light",
+      "character_prompts": {
+        "Lee Mal-ja": "47 year old Korean woman, short hair, tracksuit, blowing whistle with force, pointing at floor for exercise spot, strict PE teacher mode"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/act1/ep03/s03_whistle",
+      "filename_prefix": "act1_ep03_s03"
+    },
+    {
+      "scene_id": "s04",
+      "scene_name": "forced_squats",
+      "description": "Soon-ja forced to do squats",
+      "location": "Young-sook's House Living Room",
+      "time": "6am dawn",
+      "characters": ["Kim Soon-ja", "Lee Mal-ja"],
+      "emotion": "suffering, protest",
+      "action": "squatting",
+      "main_prompt": "masterpiece, best quality, photorealistic, 2women, one doing painful squats, other watching sternly, living room morning exercise",
+      "character_prompts": {
+        "Kim Soon-ja": "49 year old Korean woman, struggling with squats, painful expression, pajamas, legs shaking, clearly suffering",
+        "Lee Mal-ja": "47 year old Korean woman, tracksuit, arms crossed, watching strictly, counting reps, no mercy expression"
+      },
+      "regional_settings": {
+        "Kim Soon-ja": {"start": 0, "end": 55},
+        "Lee Mal-ja": {"start": 45, "end": 100}
+      },
+      "output_folder": "scenes/act1/ep03/s04_squats",
+      "filename_prefix": "act1_ep03_s04"
+    },
+    {
+      "scene_id": "s05",
+      "scene_name": "grammar_attack",
+      "description": "Jung-hee correcting Soon-ja during breakfast",
+      "location": "Young-sook's House Dining Table",
+      "time": "morning",
+      "characters": ["Kim Soon-ja", "Choi Jung-hee"],
+      "emotion": "annoyance, pedantry",
+      "action": "grammar correction",
+      "main_prompt": "masterpiece, best quality, photorealistic, 2women, breakfast table, one correcting other's speech, morning sunlight, Korean breakfast spread",
+      "character_prompts": {
+        "Kim Soon-ja": "49 year old Korean woman, annoyed expression, chopsticks frozen mid-air, being corrected again",
+        "Choi Jung-hee": "51 year old Korean woman, glasses, patient explaining expression, finger raised, correcting grammar mid-meal"
+      },
+      "regional_settings": {
+        "Kim Soon-ja": {"start": 0, "end": 55},
+        "Choi Jung-hee": {"start": 45, "end": 100}
+      },
+      "output_folder": "scenes/act1/ep03/s05_grammar",
+      "filename_prefix": "act1_ep03_s05"
+    },
+    {
+      "scene_id": "s06",
+      "scene_name": "triple_attack",
+      "description": "All three overwhelming Soon-ja at once",
+      "location": "Young-sook's House Living Room",
+      "time": "morning",
+      "characters": ["Kim Soon-ja", "Park Bok-soon", "Lee Mal-ja", "Choi Jung-hee"],
+      "emotion": "chaos, exhaustion",
+      "action": "simultaneous pressure",
+      "main_prompt": "masterpiece, best quality, photorealistic, 4women, living room, three surrounding one overwhelmed woman, chaotic morning scene",
+      "character_prompts": {
+        "Kim Soon-ja": "49 year old Korean woman, overwhelmed exhausted expression, sitting on sofa, surrounded by three",
+        "Park Bok-soon": "53 year old Korean woman, singing and offering food, colorful outfit",
+        "Lee Mal-ja": "47 year old Korean woman, pointing at watch, demanding more exercise",
+        "Choi Jung-hee": "51 year old Korean woman, holding newspaper, ready to start reading session"
+      },
+      "regional_settings": {
+        "Kim Soon-ja": {"start": 0, "end": 25},
+        "Park Bok-soon": {"start": 20, "end": 45},
+        "Lee Mal-ja": {"start": 40, "end": 65},
+        "Choi Jung-hee": {"start": 60, "end": 100}
+      },
+      "output_folder": "scenes/act1/ep03/s06_attack",
+      "filename_prefix": "act1_ep03_s06"
+    },
+    {
+      "scene_id": "s07",
+      "scene_name": "blanket_escape",
+      "description": "Soon-ja hiding under blanket",
+      "location": "Young-sook's House Soon-ja's Room",
+      "time": "daytime",
+      "characters": ["Kim Soon-ja"],
+      "emotion": "escape, despair",
+      "action": "hiding",
+      "main_prompt": "masterpiece, best quality, photorealistic, 1woman, hiding under blanket in bed, daylight through window, exhausted escape",
+      "character_prompts": {
+        "Kim Soon-ja": "49 year old Korean woman, pulling blanket over head, only eyes visible, desperate to hide, exhausted expression"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/act1/ep03/s07_escape",
+      "filename_prefix": "act1_ep03_s07"
+    },
+    {
+      "scene_id": "s08",
+      "scene_name": "thinking_500_million",
+      "description": "Thinking about quitting then remembering money",
+      "location": "Young-sook's House Soon-ja's Room",
+      "time": "daytime",
+      "characters": ["Kim Soon-ja"],
+      "emotion": "conflict, resolve",
+      "action": "contemplating",
+      "main_prompt": "masterpiece, best quality, photorealistic, 1woman, lying in bed staring at ceiling, deep in thought, internal conflict visible",
+      "character_prompts": {
+        "Kim Soon-ja": "49 year old Korean woman, lying in bed, conflicted expression, thinking about 500 million won, clenching fist with resolve"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/act1/ep03/s08_thinking",
+      "filename_prefix": "act1_ep03_s08"
+    },
+    {
+      "scene_id": "s09",
+      "scene_name": "daughter_call",
+      "description": "Receiving call from daughter Young-hee",
+      "location": "Young-sook's House Soon-ja's Room",
+      "time": "daytime",
+      "characters": ["Kim Soon-ja"],
+      "emotion": "tension, anxiety",
+      "action": "answering phone",
+      "main_prompt": "masterpiece, best quality, photorealistic, 1woman, looking at ringing phone, worried expression, lying in bed, incoming call",
+      "character_prompts": {
+        "Kim Soon-ja": "49 year old Korean woman, holding phone, seeing daughter's name on screen, anxious expression, sitting up in bed"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/act1/ep03/s09_phone",
+      "filename_prefix": "act1_ep03_s09"
+    },
+    {
+      "scene_id": "s10",
+      "scene_name": "hell_begins",
+      "description": "Soon-ja's expression realizing the year has begun",
+      "location": "Young-sook's House",
+      "time": "evening",
+      "characters": ["Kim Soon-ja"],
+      "emotion": "resignation, resolve",
+      "action": "determination",
+      "main_prompt": "masterpiece, best quality, photorealistic, 1woman, close-up portrait, resigned but determined expression, evening window light",
+      "character_prompts": {
+        "Kim Soon-ja": "49 year old Korean woman, exhausted but resolute expression, accepting the challenge ahead, sunset light on face, this is just the beginning look"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/act1/ep03/s10_begins",
+      "filename_prefix": "act1_ep03_s10"
+    }
+  ]
+}

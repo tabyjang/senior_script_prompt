@@ -1,0 +1,163 @@
+{
+  "metadata": {
+    "work_title": "5_Billion_Inheritance_Cohabitation",
+    "act": "act1",
+    "act_title": "Hell_Begins",
+    "chapter": 1,
+    "chapter_title": "Enemys_Funeral",
+    "created_at": "2026-01-03",
+    "total_scenes": 8
+  },
+  "chapter_info": {
+    "main_location": "Funeral Hall",
+    "time_period": "daytime",
+    "characters": ["Kim Soon-ja", "Park Young-sook"],
+    "main_emotion": "bitterness, liberation, complexity"
+  },
+  "scenes": [
+    {
+      "scene_id": "s01",
+      "scene_name": "funeral_hall_arrival",
+      "description": "Soon-ja arriving at the funeral hall",
+      "location": "Funeral Hall Entrance",
+      "time": "daytime",
+      "characters": ["Kim Soon-ja"],
+      "emotion": "complexity, bitterness",
+      "action": "walking in",
+      "main_prompt": "masterpiece, best quality, photorealistic, 1woman, Korean funeral hall entrance, walking in slowly, overcast day, solemn atmosphere, traditional funeral setting",
+      "character_prompts": {
+        "Kim Soon-ja": "49 year old Korean woman, black mourning clothes, complicated expression, hesitant steps, mixed emotions about attending"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/act1/ep01/s01_arrival",
+      "filename_prefix": "act1_ep01_s01"
+    },
+    {
+      "scene_id": "s02",
+      "scene_name": "portrait_gazing",
+      "description": "Soon-ja staring at Young-sook's funeral portrait",
+      "location": "Funeral Hall Memorial Room",
+      "time": "daytime",
+      "characters": ["Kim Soon-ja"],
+      "emotion": "complexity, reminiscence",
+      "action": "gazing at portrait",
+      "main_prompt": "masterpiece, best quality, photorealistic, 1woman, funeral altar with portrait photo, incense smoke, white chrysanthemums, somber lighting",
+      "character_prompts": {
+        "Kim Soon-ja": "49 year old Korean woman, staring at funeral portrait, black clothes, complicated emotions, 40 years of memories flashing"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/act1/ep01/s02_portrait",
+      "filename_prefix": "act1_ep01_s02"
+    },
+    {
+      "scene_id": "s03",
+      "scene_name": "40_years_flashback",
+      "description": "Flashback to wedding day first meeting with Young-sook",
+      "location": "Past Wedding Hall",
+      "time": "flashback",
+      "characters": ["Kim Soon-ja", "Park Young-sook"],
+      "emotion": "hurt, anger",
+      "action": "first meeting flashback",
+      "main_prompt": "masterpiece, best quality, photorealistic, flashback scene, dreamy sepia tone, Korean wedding venue 1980s style, two women meeting, tense atmosphere",
+      "character_prompts": {
+        "Kim Soon-ja": "24 year old Korean woman, wedding dress, innocent hopeful expression, young bride",
+        "Park Young-sook": "27 year old Korean woman, sharp critical expression, looking at bride dismissively, arms crossed"
+      },
+      "regional_settings": {
+        "Kim Soon-ja": {"start": 0, "end": 50},
+        "Park Young-sook": {"start": 50, "end": 100}
+      },
+      "output_folder": "scenes/act1/ep01/s03_flashback",
+      "filename_prefix": "act1_ep01_s03"
+    },
+    {
+      "scene_id": "s04",
+      "scene_name": "corner_seat",
+      "description": "Soon-ja sitting alone in a corner seat",
+      "location": "Funeral Hall",
+      "time": "daytime",
+      "characters": ["Kim Soon-ja"],
+      "emotion": "loneliness, complexity",
+      "action": "sitting alone",
+      "main_prompt": "masterpiece, best quality, photorealistic, 1woman, funeral hall corner seat, sitting alone, watching mourners from distance, subdued lighting",
+      "character_prompts": {
+        "Kim Soon-ja": "49 year old Korean woman, black mourning clothes, sitting in corner, isolated, contemplative expression, watching funeral from afar"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/act1/ep01/s04_corner",
+      "filename_prefix": "act1_ep01_s04"
+    },
+    {
+      "scene_id": "s05",
+      "scene_name": "old_memory_surfacing",
+      "description": "Remembering Young-sook's words at husband's 70th birthday",
+      "location": "Funeral Hall",
+      "time": "daytime/flashback",
+      "characters": ["Kim Soon-ja"],
+      "emotion": "confusion, realization",
+      "action": "lost in thought",
+      "main_prompt": "masterpiece, best quality, photorealistic, 1woman, close-up portrait, thoughtful expression, memories surfacing, soft focus background",
+      "character_prompts": {
+        "Kim Soon-ja": "49 year old Korean woman, eyes looking into distance, remembering past conversation, puzzled expression, trying to understand something"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/act1/ep01/s05_memory",
+      "filename_prefix": "act1_ep01_s05"
+    },
+    {
+      "scene_id": "s06",
+      "scene_name": "lawyer_approaches",
+      "description": "Lawyer Song approaching Soon-ja",
+      "location": "Funeral Hall",
+      "time": "daytime",
+      "characters": ["Kim Soon-ja", "Lawyer Song"],
+      "emotion": "confusion, tension",
+      "action": "meeting",
+      "main_prompt": "masterpiece, best quality, photorealistic, 2people, funeral hall, lawyer approaching woman, formal atmosphere, afternoon lighting",
+      "character_prompts": {
+        "Kim Soon-ja": "49 year old Korean woman, black mourning clothes, looking up surprised, curious expression",
+        "Lawyer Song": "40 year old Korean man, neat suit, holding business card, professional demeanor, approaching politely"
+      },
+      "regional_settings": {
+        "Kim Soon-ja": {"start": 0, "end": 50},
+        "Lawyer Song": {"start": 50, "end": 100}
+      },
+      "output_folder": "scenes/act1/ep01/s06_lawyer",
+      "filename_prefix": "act1_ep01_s06"
+    },
+    {
+      "scene_id": "s07",
+      "scene_name": "will_mentioned",
+      "description": "Lawyer mentions the will",
+      "location": "Funeral Hall",
+      "time": "daytime",
+      "characters": ["Kim Soon-ja"],
+      "emotion": "bewilderment, curiosity",
+      "action": "listening",
+      "main_prompt": "masterpiece, best quality, photorealistic, 1woman, close-up, surprised expression, receiving unexpected news, funeral hall background",
+      "character_prompts": {
+        "Kim Soon-ja": "49 year old Korean woman, eyes wide with surprise, hearing about will, confused expression, holding business card"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/act1/ep01/s07_will",
+      "filename_prefix": "act1_ep01_s07"
+    },
+    {
+      "scene_id": "s08",
+      "scene_name": "snowfall_outside",
+      "description": "Leaving funeral hall in light snowfall",
+      "location": "Outside Funeral Hall",
+      "time": "evening",
+      "characters": ["Kim Soon-ja"],
+      "emotion": "complexity, curiosity",
+      "action": "walking out",
+      "main_prompt": "masterpiece, best quality, photorealistic, 1woman, walking out of funeral hall, light snow falling, evening twilight, contemplative atmosphere",
+      "character_prompts": {
+        "Kim Soon-ja": "49 year old Korean woman, black coat, pulling collar up, looking at sky, snow flakes on shoulders, wondering expression"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/act1/ep01/s08_snowfall",
+      "filename_prefix": "act1_ep01_s08"
+    }
+  ]
+}

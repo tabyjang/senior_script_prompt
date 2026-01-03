@@ -1,0 +1,62 @@
+{
+  "metadata": {
+    "work_title": "5_Billion_Inheritance_Cohabitation",
+    "character_name_kr": "박복순",
+    "character_name_en": "Park Bok-soon",
+    "created_at": "2026-01-03",
+    "total_versions": 5
+  },
+  "character_info": {
+    "name_kr": "박복순",
+    "name_en": "Park Bok-soon",
+    "real_age": 68,
+    "prompt_age": 53,
+    "gender": "female",
+    "role": "supporting_main",
+    "personality": ["optimistic", "loud", "warm", "hearty"],
+    "appearance": ["colorful dress", "red lipstick", "large hair pin"],
+    "symbolic_item": "trot cassette tape"
+  },
+  "versions": [
+    {
+      "version_id": "v01",
+      "version_name": "basic_colorful",
+      "description": "Colorful character introduction",
+      "positive": "masterpiece, best quality, photorealistic, 8k uhd, medium shot, front view, 53 year old Korean woman, colorful floral dress, bright red lipstick, large decorative hair pin, cheerful confident smile, theatrical presence, vibrant personality, studio lighting",
+      "output_folder": "characters/park_boksoon/v01_basic",
+      "filename_prefix": "park_boksoon_v01_basic"
+    },
+    {
+      "version_id": "v02",
+      "version_name": "singing_trot",
+      "description": "Singing trot passionately",
+      "positive": "masterpiece, best quality, photorealistic, 53 year old Korean woman, singing passionately with eyes closed, one hand raised dramatically, colorful dress, red lipstick, joyful expression, living room background, warm indoor lighting",
+      "output_folder": "characters/park_boksoon/v02_singing",
+      "filename_prefix": "park_boksoon_v02_singing"
+    },
+    {
+      "version_id": "v03",
+      "version_name": "dawn_tears",
+      "description": "Crying at dawn remembering husband",
+      "positive": "masterpiece, best quality, photorealistic, 53 year old Korean woman, tears in eyes while humming, nostalgic sad smile, sitting alone in dim room, early dawn lighting, melancholic atmosphere, holding old tape recorder",
+      "output_folder": "characters/park_boksoon/v03_dawn",
+      "filename_prefix": "park_boksoon_v03_dawn"
+    },
+    {
+      "version_id": "v04",
+      "version_name": "hearty_laugh",
+      "description": "Laughing heartily with friends",
+      "positive": "masterpiece, best quality, photorealistic, 53 year old Korean woman, laughing heartily with mouth open, slapping knee, infectious joy, colorful outfit, eyes squeezed shut from laughter, warm friendly atmosphere",
+      "output_folder": "characters/park_boksoon/v04_laugh",
+      "filename_prefix": "park_boksoon_v04_laugh"
+    },
+    {
+      "version_id": "v05",
+      "version_name": "caring_friend",
+      "description": "Caring warmly for friend",
+      "positive": "masterpiece, best quality, photorealistic, 53 year old Korean woman, gentle caring expression, holding someone's hand, warm motherly comfort, colorful dress, soft lighting, supportive gesture",
+      "output_folder": "characters/park_boksoon/v05_caring",
+      "filename_prefix": "park_boksoon_v05_caring"
+    }
+  ]
+}

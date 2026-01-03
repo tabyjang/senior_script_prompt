@@ -1,0 +1,179 @@
+{
+  "character_id": "char_01",
+  "character_name": "한정숙",
+  "actual_age": 72,
+  "prompt_age": 57,
+  "role": "protagonist",
+  "personality": ["강인함", "인내", "단단함", "따뜻함"],
+  "appearance": {
+    "hair": "shoulder-length black hair with gray streaks",
+    "eyes": "warm brown eyes",
+    "features": "gentle face, subtle smile lines"
+  },
+  "symbolic_item": {
+    "item": "pearl necklace",
+    "description": "어머니 유품",
+    "habit": "힘들 때 진주 목걸이를 만지는 버릇"
+  },
+  "versions": [
+    {
+      "version_id": "v01",
+      "version_name": "기본_정면",
+      "category": "기본",
+      "positive": "masterpiece, best quality, photorealistic, 8k uhd, medium shot, front view, eye level, 57 year old Korean woman, gentle face, subtle smile lines, warm brown eyes, shoulder-length black hair with gray streaks, serene expression, wearing elegant beige cardigan, pearl necklace, standing straight, hands clasped in front, neutral gray background, soft studio lighting, warm color tone",
+      "negative": "worst quality, low quality, blurry, deformed, disfigured, bad anatomy, bad hands, extra fingers, missing fingers, ugly, duplicate, morbid, mutilated, out of frame, watermark, text, signature, anime, cartoon, 3d render, cgi",
+      "output_folder": "characters/한정숙/v01_기본",
+      "filename_prefix": "한정숙_v01_기본"
+    },
+    {
+      "version_id": "v02",
+      "version_name": "일상",
+      "category": "의상",
+      "positive": "masterpiece, best quality, photorealistic, 8k uhd, medium shot, slightly angled view, 57 year old Korean woman, gentle face, subtle smile lines, warm brown eyes, shoulder-length black hair with gray streaks, peaceful expression, soft smile, wearing comfortable home cardigan, soft knit sweater, pearl necklace, sitting on sofa, hands on lap, relaxed posture, cozy living room background, warm afternoon light through window",
+      "negative": "worst quality, low quality, blurry, deformed, disfigured, bad anatomy, bad hands, extra fingers, missing fingers, ugly, duplicate, morbid, mutilated, out of frame, watermark, text, signature, anime, cartoon, 3d render, cgi",
+      "output_folder": "characters/한정숙/v02_일상",
+      "filename_prefix": "한정숙_v02_일상"
+    },
+    {
+      "version_id": "v03",
+      "version_name": "외출",
+      "category": "의상",
+      "positive": "masterpiece, best quality, photorealistic, 8k uhd, medium shot, three-quarter view, 57 year old Korean woman, gentle face, warm brown eyes, shoulder-length black hair with gray streaks neatly styled, bright smile, wearing elegant blouse, stylish coat, pearl necklace, leather handbag, walking gracefully, confident posture, outdoor park setting, golden hour lighting, autumn atmosphere",
+      "negative": "worst quality, low quality, blurry, deformed, disfigured, bad anatomy, bad hands, extra fingers, missing fingers, ugly, duplicate, morbid, mutilated, out of frame, watermark, text, signature, anime, cartoon, 3d render, cgi",
+      "output_folder": "characters/한정숙/v03_외출",
+      "filename_prefix": "한정숙_v03_외출"
+    },
+    {
+      "version_id": "v04",
+      "version_name": "정장",
+      "category": "의상",
+      "positive": "masterpiece, best quality, photorealistic, 8k uhd, medium shot, front view, 57 year old Korean woman, determined expression, steely gaze, set jaw, shoulder-length black hair with gray streaks neatly styled, wearing formal dress suit, elegant two-piece, pearl necklace, standing straight, squared shoulders, dignified posture, press conference room background, bright media lighting",
+      "negative": "worst quality, low quality, blurry, deformed, disfigured, bad anatomy, bad hands, extra fingers, missing fingers, ugly, duplicate, morbid, mutilated, out of frame, watermark, text, signature, anime, cartoon, 3d render, cgi",
+      "output_folder": "characters/한정숙/v04_정장",
+      "filename_prefix": "한정숙_v04_정장"
+    },
+    {
+      "version_id": "v05",
+      "version_name": "슬픔",
+      "category": "표정",
+      "positive": "masterpiece, best quality, photorealistic, 8k uhd, close-up shot, emotional portrait, 57 year old Korean woman, tearful expression, glistening eyes, shoulder-length black hair with gray streaks, wearing black mourning clothes, pearl necklace, touching necklace with trembling hand, bittersweet expression, moved to tears, vulnerable moment, soft diffused lighting, melancholic atmosphere",
+      "negative": "worst quality, low quality, blurry, deformed, disfigured, bad anatomy, bad hands, extra fingers, missing fingers, ugly, duplicate, morbid, mutilated, out of frame, watermark, text, signature, anime, cartoon, 3d render, cgi",
+      "output_folder": "characters/한정숙/v05_슬픔",
+      "filename_prefix": "한정숙_v05_슬픔"
+    },
+    {
+      "version_id": "v06",
+      "version_name": "분노",
+      "category": "표정",
+      "positive": "masterpiece, best quality, photorealistic, 8k uhd, medium shot, dramatic angle, 57 year old Korean woman, angry expression, fierce determination, furrowed brows, clenched jaw, unwavering eyes, shoulder-length black hair with gray streaks, wearing cardigan, pearl necklace, confrontational stance, pointing finger, tense shoulders, dramatic lighting, high contrast, tense atmosphere",
+      "negative": "worst quality, low quality, blurry, deformed, disfigured, bad anatomy, bad hands, extra fingers, missing fingers, ugly, duplicate, morbid, mutilated, out of frame, watermark, text, signature, anime, cartoon, 3d render, cgi",
+      "output_folder": "characters/한정숙/v06_분노",
+      "filename_prefix": "한정숙_v06_분노"
+    },
+    {
+      "version_id": "v07",
+      "version_name": "탈출",
+      "category": "동작",
+      "positive": "masterpiece, best quality, photorealistic, 8k uhd, full shot, action pose, 57 year old Korean woman, determined expression, urgent movement, shoulder-length black hair with gray streaks, slightly disheveled, wearing simple patient clothes, practical attire, walking quickly, mid-stride pose, purposeful gait, nursing home hallway, dim corridor lighting, tense atmosphere",
+      "negative": "worst quality, low quality, blurry, deformed, disfigured, bad anatomy, bad hands, extra fingers, missing fingers, ugly, duplicate, morbid, mutilated, out of frame, watermark, text, signature, anime, cartoon, 3d render, cgi",
+      "output_folder": "characters/한정숙/v07_탈출",
+      "filename_prefix": "한정숙_v07_탈출"
+    },
+    {
+      "version_id": "v08",
+      "version_name": "대화",
+      "category": "상호작용",
+      "positive": "masterpiece, best quality, photorealistic, 8k uhd, medium shot, conversation scene, 57 year old Korean woman, animated expression, speaking with passion, shoulder-length black hair with gray streaks, wearing comfortable nursing home clothes, gesturing while talking, leaning forward, making eye contact, nursing home room, nighttime, dim lamp lighting, conspiratorial atmosphere",
+      "negative": "worst quality, low quality, blurry, deformed, disfigured, bad anatomy, bad hands, extra fingers, missing fingers, ugly, duplicate, morbid, mutilated, out of frame, watermark, text, signature, anime, cartoon, 3d render, cgi",
+      "output_folder": "characters/한정숙/v08_대화",
+      "filename_prefix": "한정숙_v08_대화"
+    },
+    {
+      "version_id": "v09",
+      "version_name": "포옹",
+      "category": "상호작용",
+      "positive": "masterpiece, best quality, photorealistic, 8k uhd, medium shot, emotional scene, 57 year old Korean woman, tearful smile, relieved expression, shoulder-length black hair with gray streaks, wearing elegant cardigan, pearl necklace, embracing warmly, arms wrapped around, maternal embrace, cafe interior, warm afternoon light, touching moment",
+      "negative": "worst quality, low quality, blurry, deformed, disfigured, bad anatomy, bad hands, extra fingers, missing fingers, ugly, duplicate, morbid, mutilated, out of frame, watermark, text, signature, anime, cartoon, 3d render, cgi",
+      "output_folder": "characters/한정숙/v09_포옹",
+      "filename_prefix": "한정숙_v09_포옹"
+    },
+    {
+      "version_id": "v10",
+      "version_name": "진주목걸이",
+      "category": "상징물",
+      "positive": "masterpiece, best quality, photorealistic, 8k uhd, close-up shot, symbolic portrait, 57 year old Korean woman, pensive expression, thoughtful gaze, shoulder-length black hair with gray streaks, wearing elegant clothes, pearl necklace prominently displayed, fingers gently touching pearl necklace, meaningful gesture, soft window light, nostalgic atmosphere, introspective mood",
+      "negative": "worst quality, low quality, blurry, deformed, disfigured, bad anatomy, bad hands, extra fingers, missing fingers, ugly, duplicate, morbid, mutilated, out of frame, watermark, text, signature, anime, cartoon, 3d render, cgi",
+      "output_folder": "characters/한정숙/v10_진주목걸이",
+      "filename_prefix": "한정숙_v10_진주목걸이"
+    },
+    {
+      "version_id": "v11",
+      "version_name": "승리",
+      "category": "표정",
+      "positive": "masterpiece, best quality, photorealistic, 8k uhd, medium shot, triumphant pose, 57 year old Korean woman, victorious expression, proud stance, peaceful strength, earned wisdom in eyes, content smile, shoulder-length black hair with gray streaks neatly styled, wearing formal dress suit, pearl necklace, standing tall, confident posture, dignified bearing, courtroom exterior, bright daylight, hopeful atmosphere",
+      "negative": "worst quality, low quality, blurry, deformed, disfigured, bad anatomy, bad hands, extra fingers, missing fingers, ugly, duplicate, morbid, mutilated, out of frame, watermark, text, signature, anime, cartoon, 3d render, cgi",
+      "output_folder": "characters/한정숙/v11_승리",
+      "filename_prefix": "한정숙_v11_승리"
+    },
+    {
+      "version_id": "v12",
+      "version_name": "제주도",
+      "category": "동작",
+      "positive": "masterpiece, best quality, photorealistic, 8k uhd, medium shot, peaceful scene, 57 year old Korean woman, serene smile, peaceful expression, warm kind eyes, graceful aging beauty, shoulder-length black hair with gray streaks, wearing comfortable casual clothes, pearl necklace, standing on terrace, looking at ocean, relaxed posture, Jeju island pension, ocean view, golden hour lighting, peaceful atmosphere",
+      "negative": "worst quality, low quality, blurry, deformed, disfigured, bad anatomy, bad hands, extra fingers, missing fingers, ugly, duplicate, morbid, mutilated, out of frame, watermark, text, signature, anime, cartoon, 3d render, cgi",
+      "output_folder": "characters/한정숙/v12_제주도",
+      "filename_prefix": "한정숙_v12_제주도"
+    }
+  ],
+  "interactions": [
+    {
+      "interaction_id": "int_01",
+      "interaction_name": "정숙_미라_갈등",
+      "participants": ["한정숙", "윤미라"],
+      "type": "conflict",
+      "main_prompt": "masterpiece, best quality, photorealistic, 2women, tense confrontation, dramatic scene, indoor setting, dramatic lighting, tension in air",
+      "regional_settings": {
+        "한정숙": {
+          "region": "0-45%",
+          "position": "left",
+          "prompt": "57 year old Korean woman, angry expression, confrontational stance, shoulder-length gray-streaked hair, wearing cardigan, pearl necklace, pointing finger, aggressive body language, facing right"
+        },
+        "윤미라": {
+          "region": "55-100%",
+          "position": "right",
+          "prompt": "33 year old Korean woman, defensive expression, cornered look, neat black hair, wearing elegant dress, stepped back posture, facing left"
+        }
+      },
+      "overlap": "none"
+    },
+    {
+      "interaction_id": "int_02",
+      "interaction_name": "302호_동맹_회의",
+      "participants": ["한정숙", "최영희", "이말자", "강순덕"],
+      "type": "group",
+      "main_prompt": "masterpiece, best quality, photorealistic, 4women, elderly women group, conspiratorial atmosphere, nursing home room, nighttime, dim lighting, united front",
+      "regional_settings": {
+        "한정숙": {
+          "region": "0-25%",
+          "position": "center-left",
+          "role": "리더"
+        },
+        "최영희": {
+          "region": "25-50%",
+          "position": "left",
+          "role": "전략가"
+        },
+        "이말자": {
+          "region": "50-75%",
+          "position": "right",
+          "role": "분석가"
+        },
+        "강순덕": {
+          "region": "75-100%",
+          "position": "center-right",
+          "role": "실행자"
+        }
+      }
+    }
+  ]
+}

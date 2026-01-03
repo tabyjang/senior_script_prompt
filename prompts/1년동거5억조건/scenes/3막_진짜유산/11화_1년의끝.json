@@ -1,0 +1,251 @@
+{
+  "metadata": {
+    "work_title": "유산5억조건은동거",
+    "act": "3막",
+    "act_title": "진짜유산",
+    "chapter": 11,
+    "chapter_title": "1년의끝",
+    "created_at": "2026-01-03",
+    "total_scenes": 10
+  },
+  "chapter_info": {
+    "main_location": "영숙의 집, 송변호사 사무실",
+    "time_period": "낮",
+    "characters": ["김순자", "박복순", "이말자", "최정희", "김영희", "송변호사"],
+    "main_emotion": "회고, 화해, 감격"
+  },
+  "scenes": [
+    {
+      "scene_id": "s01",
+      "scene_name": "1년_후_아침",
+      "description": "동거 1년이 지난 아침 풍경",
+      "location": "영숙의 집 거실",
+      "time": "아침",
+      "characters": ["김순자", "박복순", "이말자", "최정희"],
+      "emotion": "평화, 일상",
+      "action": "아침 식사",
+      "main_prompt": "masterpiece, best quality, photorealistic, 4women, breakfast together, one year later, comfortable domestic scene, morning light, like real family",
+      "character_prompts": {
+        "김순자": "49 year old Korean woman, serving rice, natural comfortable smile, this is now home",
+        "박복순": "53 year old Korean woman, humming while eating, colorful dress, content",
+        "이말자": "47 year old Korean woman, healthy again, light exercise after breakfast, energetic",
+        "최정희": "51 year old Korean woman, glasses, reading newspaper aloud to others, domestic"
+      },
+      "regional_settings": {
+        "김순자": {"start": 0, "end": 25},
+        "박복순": {"start": 25, "end": 50},
+        "이말자": {"start": 50, "end": 75},
+        "최정희": {"start": 75, "end": 100}
+      },
+      "output_folder": "scenes/3막/11화/s01_1년후",
+      "filename_prefix": "3막_11화_s01"
+    },
+    {
+      "scene_id": "s02",
+      "scene_name": "딸_영희_방문",
+      "description": "김순자의 딸 영희가 찾아오는 장면",
+      "location": "영숙의 집 현관",
+      "time": "낮",
+      "characters": ["김순자", "김영희"],
+      "emotion": "긴장, 기대",
+      "action": "방문",
+      "main_prompt": "masterpiece, best quality, photorealistic, 2women, adult daughter visiting mother, doorway meeting, hesitant reconciliation",
+      "character_prompts": {
+        "김순자": "49 year old Korean woman, opening door, surprised and hopeful, seeing estranged daughter",
+        "김영희": "27 year old Korean woman, standing at door, nervous but determined, holding small gift"
+      },
+      "regional_settings": {
+        "김순자": {"start": 0, "end": 50},
+        "김영희": {"start": 50, "end": 100}
+      },
+      "output_folder": "scenes/3막/11화/s02_딸방문",
+      "filename_prefix": "3막_11화_s02"
+    },
+    {
+      "scene_id": "s03",
+      "scene_name": "모녀_대화",
+      "description": "순자와 영희가 처음으로 진심 대화",
+      "location": "영숙의 집 정원",
+      "time": "낮",
+      "characters": ["김순자", "김영희"],
+      "emotion": "진심, 화해",
+      "action": "대화",
+      "main_prompt": "masterpiece, best quality, photorealistic, 2women, mother and daughter talking in garden, emotional heart-to-heart, afternoon light",
+      "character_prompts": {
+        "김순자": "49 year old Korean woman, listening to daughter, tears forming, understanding her child",
+        "김영희": "27 year old Korean woman, explaining her feelings, crying, finally opening up to mother"
+      },
+      "regional_settings": {
+        "김순자": {"start": 0, "end": 50},
+        "김영희": {"start": 50, "end": 100}
+      },
+      "output_folder": "scenes/3막/11화/s03_모녀대화",
+      "filename_prefix": "3막_11화_s03"
+    },
+    {
+      "scene_id": "s04",
+      "scene_name": "모녀_화해",
+      "description": "순자와 영희가 화해하며 포옹",
+      "location": "영숙의 집 정원",
+      "time": "낮",
+      "characters": ["김순자", "김영희"],
+      "emotion": "화해, 감동",
+      "action": "포옹",
+      "main_prompt": "masterpiece, best quality, photorealistic, 2women, mother and daughter embracing in garden, reconciliation, tears of joy, healing moment",
+      "character_prompts": {
+        "김순자": "49 year old Korean woman, hugging daughter tightly, crying with joy, finally reconnected",
+        "김영희": "27 year old Korean woman, in mother's arms, sobbing, years of distance melting away"
+      },
+      "regional_settings": {
+        "김순자": {"start": 0, "end": 50},
+        "김영희": {"start": 50, "end": 100}
+      },
+      "output_folder": "scenes/3막/11화/s04_화해",
+      "filename_prefix": "3막_11화_s04"
+    },
+    {
+      "scene_id": "s05",
+      "scene_name": "할머니들_환영",
+      "description": "할머니들이 영희를 환영하는 장면",
+      "location": "영숙의 집 거실",
+      "time": "낮",
+      "characters": ["김영희", "박복순", "이말자", "최정희"],
+      "emotion": "따뜻함, 환영",
+      "action": "환영",
+      "main_prompt": "masterpiece, best quality, photorealistic, 4women, three older women welcoming young woman, living room, warm reception, like meeting new family",
+      "character_prompts": {
+        "김영희": "27 year old Korean woman, being welcomed, slightly overwhelmed, touched by warmth",
+        "박복순": "53 year old Korean woman, hugging the young woman, motherly warmth",
+        "이말자": "47 year old Korean woman, bringing tea, approving nod",
+        "최정희": "51 year old Korean woman, glasses, patting her hand, welcoming to family"
+      },
+      "regional_settings": {
+        "김영희": {"start": 0, "end": 25},
+        "박복순": {"start": 25, "end": 50},
+        "이말자": {"start": 50, "end": 75},
+        "최정희": {"start": 75, "end": 100}
+      },
+      "output_folder": "scenes/3막/11화/s05_환영",
+      "filename_prefix": "3막_11화_s05"
+    },
+    {
+      "scene_id": "s06",
+      "scene_name": "변호사_사무실",
+      "description": "송변호사 사무실에서 1년 완료 확인",
+      "location": "송변호사 사무실",
+      "time": "낮",
+      "characters": ["김순자", "박복순", "이말자", "최정희", "송변호사"],
+      "emotion": "긴장, 기대",
+      "action": "확인",
+      "main_prompt": "masterpiece, best quality, photorealistic, 5people, four women in lawyer's office, official meeting, one year completion verification",
+      "character_prompts": {
+        "김순자": "49 year old Korean woman, sitting nervously, waiting for verdict, holding friends hands",
+        "박복순": "53 year old Korean woman, colorful dress, anxious but hopeful",
+        "이말자": "47 year old Korean woman, sitting straight, determined expression",
+        "최정희": "51 year old Korean woman, glasses, composed but tense",
+        "송변호사": "40 year old Korean man, reviewing documents, about to announce"
+      },
+      "regional_settings": {
+        "김순자": {"start": 0, "end": 20},
+        "박복순": {"start": 20, "end": 40},
+        "이말자": {"start": 40, "end": 60},
+        "최정희": {"start": 60, "end": 80},
+        "송변호사": {"start": 80, "end": 100}
+      },
+      "output_folder": "scenes/3막/11화/s06_사무실",
+      "filename_prefix": "3막_11화_s06"
+    },
+    {
+      "scene_id": "s07",
+      "scene_name": "조건_충족",
+      "description": "1년 동거 조건 충족 발표",
+      "location": "송변호사 사무실",
+      "time": "낮",
+      "characters": ["송변호사", "김순자"],
+      "emotion": "안도, 기쁨",
+      "action": "발표",
+      "main_prompt": "masterpiece, best quality, photorealistic, 2people, lawyer announcing good news, woman receiving news with relief, official setting",
+      "character_prompts": {
+        "송변호사": "40 year old Korean man, smiling warmly, congratulating, holding certificate",
+        "김순자": "49 year old Korean woman, hand on chest, relief and joy, eyes welling up"
+      },
+      "regional_settings": {
+        "송변호사": {"start": 0, "end": 50},
+        "김순자": {"start": 50, "end": 100}
+      },
+      "output_folder": "scenes/3막/11화/s07_조건충족",
+      "filename_prefix": "3막_11화_s07"
+    },
+    {
+      "scene_id": "s08",
+      "scene_name": "5억_수령",
+      "description": "5억원 유산 수령 장면",
+      "location": "송변호사 사무실",
+      "time": "낮",
+      "characters": ["김순자", "송변호사"],
+      "emotion": "감격, 완수",
+      "action": "수령",
+      "main_prompt": "masterpiece, best quality, photorealistic, 2people, woman receiving inheritance documents, signing papers, significant moment",
+      "character_prompts": {
+        "김순자": "49 year old Korean woman, signing inheritance papers, mix of emotions, thinking of Youngsook",
+        "송변호사": "40 year old Korean man, witnessing signature, handing over documents officially"
+      },
+      "regional_settings": {
+        "김순자": {"start": 0, "end": 50},
+        "송변호사": {"start": 50, "end": 100}
+      },
+      "output_folder": "scenes/3막/11화/s08_수령",
+      "filename_prefix": "3막_11화_s08"
+    },
+    {
+      "scene_id": "s09",
+      "scene_name": "4인방_축하",
+      "description": "사무실 밖에서 4인방이 축하하는 장면",
+      "location": "송변호사 사무실 앞",
+      "time": "낮",
+      "characters": ["김순자", "박복순", "이말자", "최정희"],
+      "emotion": "기쁨, 축하",
+      "action": "축하",
+      "main_prompt": "masterpiece, best quality, photorealistic, 4women, celebrating outside office building, group hug, laughing and crying, mission accomplished",
+      "character_prompts": {
+        "김순자": "49 year old Korean woman, in center of group hug, laughing through tears, we did it",
+        "박복순": "53 year old Korean woman, jumping with joy, colorful dress, celebrating loudly",
+        "이말자": "47 year old Korean woman, hugging everyone, rare show of emotion",
+        "최정희": "51 year old Korean woman, glasses askew from hugging, happy tears"
+      },
+      "regional_settings": {
+        "김순자": {"start": 0, "end": 25},
+        "박복순": {"start": 25, "end": 50},
+        "이말자": {"start": 50, "end": 75},
+        "최정희": {"start": 75, "end": 100}
+      },
+      "output_folder": "scenes/3막/11화/s09_축하",
+      "filename_prefix": "3막_11화_s09"
+    },
+    {
+      "scene_id": "s10",
+      "scene_name": "앞으로의_계획",
+      "description": "순자가 새로운 계획을 제안하는 장면",
+      "location": "카페",
+      "time": "저녁",
+      "characters": ["김순자", "박복순", "이말자", "최정희"],
+      "emotion": "희망, 기대",
+      "action": "제안",
+      "main_prompt": "masterpiece, best quality, photorealistic, 4women, in cafe, one proposing new idea, others listening intently, excited expressions, new chapter beginning",
+      "character_prompts": {
+        "김순자": "49 year old Korean woman, explaining idea excitedly, what if we open a cafe together",
+        "박복순": "53 year old Korean woman, eyes lighting up, loving the idea",
+        "이말자": "47 year old Korean woman, nodding thoughtfully, considering the plan",
+        "최정희": "51 year old Korean woman, glasses, already calculating, practical support"
+      },
+      "regional_settings": {
+        "김순자": {"start": 0, "end": 25},
+        "박복순": {"start": 25, "end": 50},
+        "이말자": {"start": 50, "end": 75},
+        "최정희": {"start": 75, "end": 100}
+      },
+      "output_folder": "scenes/3막/11화/s10_계획",
+      "filename_prefix": "3막_11화_s10"
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push)",
+      "Bash(unzip:*)",
+      "Bash(powershell -Command:*)",
+      "Bash(tree:*)",
+      "Bash(mkdir:*)",
+      "Bash(findstr:*)",
+      "Bash(pip install:*)",
+      "Bash(where:*)",
+      "Bash(pip show:*)",
+      "Bash(C:Python314python.exe -m pip install mammoth)",
+      "Bash(\"C:\\\\Python314\\\\python.exe\" -m pip install mammoth)",
+      "Bash(dir /s /b \"C:\\\\NewProject\\\\senior_contents\\\\senior_project_manager\\\\01_man\")",
+      "Bash(copy comfyui-output-format.skill comfyui-output-format.zip)",
+      "Bash(del:*)",
+      "Bash(copy:*)"
+    ]
+  }
+}

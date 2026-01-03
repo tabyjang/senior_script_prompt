@@ -1,0 +1,315 @@
+{
+  "metadata": {
+    "work_title": "302호의여자들",
+    "act": "1막",
+    "act_title": "일상과균열",
+    "chapter": 6,
+    "chapter_title": "각자의지옥",
+    "created_at": "2026-01-03",
+    "total_scenes": 16
+  },
+  "chapter_info": {
+    "main_location": "302호 병실",
+    "time_period": "밤",
+    "characters": ["한정숙", "최영희", "이말자", "강순덕"],
+    "main_emotion": "연대, 분노, 결의"
+  },
+  "scenes": [
+    {
+      "scene_id": "s01",
+      "scene_name": "며칠간의_침묵",
+      "description": "정숙이 며칠간 말 없이 창밖만 바라보는 장면",
+      "location": "302호 병실",
+      "time": "낮",
+      "characters": ["한정숙"],
+      "emotion": "우울, 무기력",
+      "action": "창밖 응시",
+      "main_prompt": "masterpiece, best quality, photorealistic, 1woman, nursing home room, sitting by window staring out, untouched food tray nearby, depressed atmosphere, soft daylight",
+      "character_prompts": {
+        "한정숙": "57 year old Korean woman, hollow empty expression, sitting motionless by window, not eating, withdrawn into herself, deep depression visible"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/1막/06화/s01_침묵",
+      "filename_prefix": "1막_06화_s01"
+    },
+    {
+      "scene_id": "s02",
+      "scene_name": "달_바라보기",
+      "description": "밤에 달을 보며 아들 생각하는 장면",
+      "location": "302호 병실 창가",
+      "time": "밤",
+      "characters": ["한정숙"],
+      "emotion": "그리움, 슬픔",
+      "action": "달 바라보기",
+      "main_prompt": "masterpiece, best quality, photorealistic, 1woman, nursing home window at night, full moon visible, moonlight on face, melancholic night scene",
+      "character_prompts": {
+        "한정숙": "57 year old Korean woman, gazing at moon through window, tears glistening in moonlight, thinking of son, profound loneliness, pearl necklace catching moonlight"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/1막/06화/s02_달",
+      "filename_prefix": "1막_06화_s02"
+    },
+    {
+      "scene_id": "s03",
+      "scene_name": "휠체어_소리",
+      "description": "자정에 이상한 휠체어 소리가 들리는 장면",
+      "location": "302호 병실",
+      "time": "자정",
+      "characters": ["한정숙"],
+      "emotion": "긴장, 호기심",
+      "action": "소리에 반응",
+      "main_prompt": "masterpiece, best quality, photorealistic, 1woman, nursing home room at midnight, hearing strange sound, dark room with moonlight, mysterious atmosphere",
+      "character_prompts": {
+        "한정숙": "57 year old Korean woman, lying in bed, eyes opening alertly, hearing creaking sound, curious tense expression, darkness around"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/1막/06화/s03_소리",
+      "filename_prefix": "1막_06화_s03"
+    },
+    {
+      "scene_id": "s04",
+      "scene_name": "순덕이_걷다",
+      "description": "휠체어의 순덕이 멀쩡히 일어나 걷는 것을 목격",
+      "location": "302호 병실",
+      "time": "자정",
+      "characters": ["한정숙", "강순덕"],
+      "emotion": "충격, 혼란",
+      "action": "목격",
+      "main_prompt": "masterpiece, best quality, photorealistic, 2women, nursing home room at night, wheelchair user walking normally, shocking revelation, moonlit room",
+      "character_prompts": {
+        "한정숙": "57 year old Korean woman, eyes wide with disbelief, rubbing eyes, witnessing impossible scene, sitting up in bed",
+        "강순덕": "57 year old Korean woman, walking normally from wheelchair, silent careful steps, looking around cautiously, perfectly healthy movement"
+      },
+      "regional_settings": {
+        "한정숙": {"start": 0, "end": 50},
+        "강순덕": {"start": 50, "end": 100}
+      },
+      "output_folder": "scenes/1막/06화/s04_걷다",
+      "filename_prefix": "1막_06화_s04"
+    },
+    {
+      "scene_id": "s05",
+      "scene_name": "쉿",
+      "description": "영희가 손가락을 입술에 대며 쉿 하는 장면",
+      "location": "302호 병실",
+      "time": "자정",
+      "characters": ["최영희"],
+      "emotion": "비밀, 공모",
+      "action": "쉿 제스처",
+      "main_prompt": "masterpiece, best quality, photorealistic, 1woman, nursing home room at night, finger on lips gesture, secretive moment, moonlight illuminating face",
+      "character_prompts": {
+        "최영희": "52 year old Korean woman, finger pressed to lips, knowing conspiratorial expression, eyes sharp and alert, whispering about CCTV being off"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/1막/06화/s05_쉿",
+      "filename_prefix": "1막_06화_s05"
+    },
+    {
+      "scene_id": "s06",
+      "scene_name": "영희_다가옴",
+      "description": "영희가 정숙 침대 옆으로 다가오는 장면",
+      "location": "302호 병실",
+      "time": "자정",
+      "characters": ["최영희", "한정숙"],
+      "emotion": "호기심, 긴장",
+      "action": "다가가기",
+      "main_prompt": "masterpiece, best quality, photorealistic, 2women, nursing home room at night, one approaching other's bed, secret midnight conversation, dim moonlight",
+      "character_prompts": {
+        "최영희": "52 year old Korean woman, approaching bedside quietly, intelligent curious expression, studying the newcomer, moving silently",
+        "한정숙": "57 year old Korean woman, sitting up in bed, wary but curious, guard slightly down, wondering what is happening"
+      },
+      "regional_settings": {
+        "최영희": {"start": 0, "end": 55},
+        "한정숙": {"start": 45, "end": 100}
+      },
+      "output_folder": "scenes/1막/06화/s06_다가옴",
+      "filename_prefix": "1막_06화_s06"
+    },
+    {
+      "scene_id": "s07",
+      "scene_name": "연기_설명",
+      "description": "영희가 아픈 척 연기하는 이유를 설명하는 장면",
+      "location": "302호 병실",
+      "time": "자정",
+      "characters": ["최영희"],
+      "emotion": "냉소, 경고",
+      "action": "설명",
+      "main_prompt": "masterpiece, best quality, photorealistic, 1woman, close-up, nursing home room night, explaining dark truth, serious warning expression, moonlit face",
+      "character_prompts": {
+        "최영희": "52 year old Korean woman, bitter knowing expression, explaining survival tactics, warning about forced medication, experienced survivor look"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/1막/06화/s07_연기",
+      "filename_prefix": "1막_06화_s07"
+    },
+    {
+      "scene_id": "s08",
+      "scene_name": "말자_소개",
+      "description": "말자가 자기 사연을 말하는 장면",
+      "location": "302호 병실",
+      "time": "자정",
+      "characters": ["이말자"],
+      "emotion": "분노, 쓴웃음",
+      "action": "자기소개",
+      "main_prompt": "masterpiece, best quality, photorealistic, 1woman, nursing home room night, bitter self-introduction, resentful expression, dim lighting",
+      "character_prompts": {
+        "이말자": "55 year old Korean woman, bitter smile, telling her betrayal story, son-in-law stole her seal, daughter chose husband over mother, resigned anger"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/1막/06화/s08_말자",
+      "filename_prefix": "1막_06화_s08"
+    },
+    {
+      "scene_id": "s09",
+      "scene_name": "순덕_소개",
+      "description": "순덕이 10년째 버려져 있다고 말하는 장면",
+      "location": "302호 병실",
+      "time": "자정",
+      "characters": ["강순덕"],
+      "emotion": "슬픔, 체념",
+      "action": "자기소개",
+      "main_prompt": "masterpiece, best quality, photorealistic, 1woman, nursing home room night, tearful confession, 10 years abandoned, sorrowful moonlit face",
+      "character_prompts": {
+        "강순덕": "57 year old Korean woman, eyes reddening with tears, telling story of three sons who abandoned her, only youngest visits secretly, decade of loneliness"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/1막/06화/s09_순덕",
+      "filename_prefix": "1막_06화_s09"
+    },
+    {
+      "scene_id": "s10",
+      "scene_name": "네여자_둘러앉음",
+      "description": "네 여자가 침대에 둘러앉아 이야기하는 장면",
+      "location": "302호 병실",
+      "time": "자정",
+      "characters": ["한정숙", "최영희", "이말자", "강순덕"],
+      "emotion": "연대, 공감",
+      "action": "둘러앉기",
+      "main_prompt": "masterpiece, best quality, photorealistic, 4women, nursing home room at night, sitting together on beds, sharing stories, intimate bonding moment, soft moonlight",
+      "character_prompts": {
+        "한정숙": "57 year old Korean woman, listening intently, tears in eyes, finding kindred spirits, no longer alone",
+        "최영희": "52 year old Korean woman, leading the conversation, sharp intelligent presence, organizing the group",
+        "이말자": "55 year old Korean woman, nodding along, bitter but engaged, snacks forgotten, focused on stories",
+        "강순덕": "57 year old Korean woman, no longer acting weak, showing real self, participating actively"
+      },
+      "regional_settings": {
+        "한정숙": {"start": 0, "end": 25},
+        "최영희": {"start": 20, "end": 50},
+        "이말자": {"start": 45, "end": 75},
+        "강순덕": {"start": 70, "end": 100}
+      },
+      "output_folder": "scenes/1막/06화/s10_둘러앉음",
+      "filename_prefix": "1막_06화_s10"
+    },
+    {
+      "scene_id": "s11",
+      "scene_name": "영희_사연",
+      "description": "영희가 기자 출신이라며 조카에게 팔렸다고 말하는 장면",
+      "location": "302호 병실",
+      "time": "자정",
+      "characters": ["최영희"],
+      "emotion": "분노, 억울함",
+      "action": "사연 말하기",
+      "main_prompt": "masterpiece, best quality, photorealistic, 1woman, nursing home room night, former journalist revealing her story, fierce determined expression, moonlight on face",
+      "character_prompts": {
+        "최영희": "52 year old Korean woman, fierce expression telling her story, 40 years as journalist, framed while investigating corruption, betrayed by nephew for money, fire in eyes"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/1막/06화/s11_영희사연",
+      "filename_prefix": "1막_06화_s11"
+    },
+    {
+      "scene_id": "s12",
+      "scene_name": "경리_횡령",
+      "description": "말자가 경리 횡령 가능성을 언급하는 장면",
+      "location": "302호 병실",
+      "time": "자정",
+      "characters": ["이말자"],
+      "emotion": "통찰, 흥분",
+      "action": "추리",
+      "main_prompt": "masterpiece, best quality, photorealistic, 1woman, nursing home room night, eyes sparkling with realization, insurance expertise showing, excited discovery expression",
+      "character_prompts": {
+        "이말자": "55 year old Korean woman, eyes lighting up, 30 years insurance experience kicking in, pointing out accountant embezzlement likelihood, strategic mind activating"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/1막/06화/s12_횡령",
+      "filename_prefix": "1막_06화_s12"
+    },
+    {
+      "scene_id": "s13",
+      "scene_name": "기자_후배",
+      "description": "영희가 기자 후배 연락처가 있다고 말하는 장면",
+      "location": "302호 병실",
+      "time": "자정",
+      "characters": ["최영희"],
+      "emotion": "희망, 계획",
+      "action": "아이디어 제시",
+      "main_prompt": "masterpiece, best quality, photorealistic, 1woman, nursing home room night, forming a plan, hope returning to eyes, strategic thinking expression",
+      "character_prompts": {
+        "최영희": "52 year old Korean woman, nodding with forming plan, mentioning journalist contact, if only we could reach outside, wheels turning in mind"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/1막/06화/s13_후배",
+      "filename_prefix": "1막_06화_s13"
+    },
+    {
+      "scene_id": "s14",
+      "scene_name": "복순_노트",
+      "description": "순덕이 복순이 남긴 노트가 있다고 말하는 장면",
+      "location": "302호 병실",
+      "time": "자정",
+      "characters": ["강순덕"],
+      "emotion": "미스터리, 긴장",
+      "action": "단서 제공",
+      "main_prompt": "masterpiece, best quality, photorealistic, 1woman, nursing home room night, revealing secret information, mysterious expression, mentioning dead roommate's notebook",
+      "character_prompts": {
+        "강순덕": "57 year old Korean woman, leaning in conspiratorially, mentioning Boksun's notebook, secrets of this place, died suddenly, ominous revelation"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/1막/06화/s14_노트",
+      "filename_prefix": "1막_06화_s14"
+    },
+    {
+      "scene_id": "s15",
+      "scene_name": "복수할거야",
+      "description": "영희가 복수할 거냐고 묻는 장면",
+      "location": "302호 병실",
+      "time": "자정",
+      "characters": ["최영희"],
+      "emotion": "결의, 도전",
+      "action": "질문",
+      "main_prompt": "masterpiece, best quality, photorealistic, 1woman, close-up, nursing home room night, challenging question, fierce determination, moonlight catching eyes",
+      "character_prompts": {
+        "최영희": "52 year old Korean woman, intense direct gaze, asking the crucial question, die here or get revenge, leader emerging, fire in eyes"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/1막/06화/s15_질문",
+      "filename_prefix": "1막_06화_s15"
+    },
+    {
+      "scene_id": "s16",
+      "scene_name": "복수하죠",
+      "description": "정숙이 처음으로 웃으며 복수하죠 라고 답하는 장면",
+      "location": "302호 병실",
+      "time": "자정",
+      "characters": ["한정숙", "최영희", "이말자", "강순덕"],
+      "emotion": "결의, 연대",
+      "action": "결심 선언",
+      "main_prompt": "masterpiece, best quality, photorealistic, 4women, nursing home room at night, moment of alliance forming, first smile from protagonist, united determination, moonlight on faces",
+      "character_prompts": {
+        "한정숙": "57 year old Korean woman, first smile since arriving, eyes now burning with purpose, answering with determination, revenge of course, transformation beginning",
+        "최영희": "52 year old Korean woman, satisfied knowing smile, alliance sealed, leader confirmed",
+        "이말자": "55 year old Korean woman, grinning with anticipation, ready for action, practical excitement",
+        "강순덕": "57 year old Korean woman, hopeful expression, no longer victim, part of something"
+      },
+      "regional_settings": {
+        "한정숙": {"start": 0, "end": 30},
+        "최영희": {"start": 25, "end": 55},
+        "이말자": {"start": 50, "end": 75},
+        "강순덕": {"start": 70, "end": 100}
+      },
+      "output_folder": "scenes/1막/06화/s16_복수",
+      "filename_prefix": "1막_06화_s16"
+    }
+  ]
+}

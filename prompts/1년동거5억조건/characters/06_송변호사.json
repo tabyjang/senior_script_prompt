@@ -1,0 +1,38 @@
+{
+  "metadata": {
+    "work_title": "5_Billion_Inheritance_Cohabitation",
+    "character_name_kr": "송변호사",
+    "character_name_en": "Lawyer Song",
+    "created_at": "2026-01-03",
+    "total_versions": 2
+  },
+  "character_info": {
+    "name_kr": "송민재",
+    "name_en": "Song Min-jae",
+    "real_age": 55,
+    "prompt_age": 40,
+    "gender": "male",
+    "role": "narrator_functional",
+    "personality": ["neat", "trustworthy", "neutral"],
+    "appearance": ["suit", "glasses", "briefcase"],
+    "symbolic_item": "will document"
+  },
+  "versions": [
+    {
+      "version_id": "v01",
+      "version_name": "basic_lawyer",
+      "description": "Lawyer reading will",
+      "positive": "masterpiece, best quality, photorealistic, 8k uhd, medium shot, 40 year old Korean man, neat suit and tie, glasses, holding legal documents, professional trustworthy expression, lawyer demeanor, office lighting",
+      "output_folder": "characters/lawyer_song/v01_basic",
+      "filename_prefix": "lawyer_song_v01_basic"
+    },
+    {
+      "version_id": "v02",
+      "version_name": "letter_delivery",
+      "description": "Delivering final letter",
+      "positive": "masterpiece, best quality, photorealistic, 40 year old Korean man, suit, holding sealed envelope, solemn respectful expression, delivering important message, soft indoor lighting",
+      "output_folder": "characters/lawyer_song/v02_letter",
+      "filename_prefix": "lawyer_song_v02_letter"
+    }
+  ]
+}

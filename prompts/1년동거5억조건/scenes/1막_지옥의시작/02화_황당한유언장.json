@@ -1,0 +1,201 @@
+{
+  "metadata": {
+    "work_title": "5_Billion_Inheritance_Cohabitation",
+    "act": "act1",
+    "act_title": "Hell_Begins",
+    "chapter": 2,
+    "chapter_title": "Absurd_Will",
+    "created_at": "2026-01-03",
+    "total_scenes": 10
+  },
+  "chapter_info": {
+    "main_location": "Young-sook's House",
+    "time_period": "daytime",
+    "characters": ["Kim Soon-ja", "Park Bok-soon", "Lee Mal-ja", "Choi Jung-hee", "Lawyer Song"],
+    "main_emotion": "absurdity, curiosity, bewilderment"
+  },
+  "scenes": [
+    {
+      "scene_id": "s01",
+      "scene_name": "arriving_house",
+      "description": "Soon-ja arriving at Young-sook's house",
+      "location": "Front of Young-sook's House",
+      "time": "daytime",
+      "characters": ["Kim Soon-ja"],
+      "emotion": "tension, curiosity",
+      "action": "looking at house",
+      "main_prompt": "masterpiece, best quality, photorealistic, 1woman, standing in front of Korean two-story house, small garden with flower pots, residential neighborhood, afternoon sunlight",
+      "character_prompts": {
+        "Kim Soon-ja": "49 year old Korean woman, looking at house with curiosity, neat casual clothes, holding purse, slightly nervous expression"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/act1/ep02/s01_arrival",
+      "filename_prefix": "act1_ep02_s01"
+    },
+    {
+      "scene_id": "s02",
+      "scene_name": "discovering_three_women",
+      "description": "First seeing the three women in living room",
+      "location": "Young-sook's House Living Room",
+      "time": "daytime",
+      "characters": ["Kim Soon-ja", "Park Bok-soon", "Lee Mal-ja", "Choi Jung-hee"],
+      "emotion": "bewilderment, curiosity",
+      "action": "first meeting",
+      "main_prompt": "masterpiece, best quality, photorealistic, 4women, Korean living room, one woman entering while three sitting on sofa, surprised meeting, bright indoor lighting",
+      "character_prompts": {
+        "Kim Soon-ja": "49 year old Korean woman, standing at entrance, shocked expression seeing strangers, casual clothes",
+        "Park Bok-soon": "53 year old Korean woman, colorful floral dress, red lipstick, waving cheerfully, big smile",
+        "Lee Mal-ja": "47 year old Korean woman, tracksuit, whistle around neck, arms crossed, stern look",
+        "Choi Jung-hee": "51 year old Korean woman, glasses, holding thick book, neat blouse, composed expression"
+      },
+      "regional_settings": {
+        "Kim Soon-ja": {"start": 0, "end": 25},
+        "Park Bok-soon": {"start": 25, "end": 50},
+        "Lee Mal-ja": {"start": 50, "end": 75},
+        "Choi Jung-hee": {"start": 75, "end": 100}
+      },
+      "output_folder": "scenes/act1/ep02/s02_first_meeting",
+      "filename_prefix": "act1_ep02_s02"
+    },
+    {
+      "scene_id": "s03",
+      "scene_name": "will_reading",
+      "description": "Lawyer Song reading the will",
+      "location": "Young-sook's House Living Room",
+      "time": "daytime",
+      "characters": ["Lawyer Song"],
+      "emotion": "tension, anticipation",
+      "action": "reading document",
+      "main_prompt": "masterpiece, best quality, photorealistic, 1man, reading legal document aloud, living room setting, formal atmosphere, focused lighting on documents",
+      "character_prompts": {
+        "Lawyer Song": "40 year old Korean man, suit, reading will document, serious professional expression, holding papers"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/act1/ep02/s03_will_reading",
+      "filename_prefix": "act1_ep02_s03"
+    },
+    {
+      "scene_id": "s04",
+      "scene_name": "500_million_shock",
+      "description": "Soon-ja shocked by 500 million won inheritance",
+      "location": "Young-sook's House Living Room",
+      "time": "daytime",
+      "characters": ["Kim Soon-ja"],
+      "emotion": "shock, disbelief",
+      "action": "shocked reaction",
+      "main_prompt": "masterpiece, best quality, photorealistic, 1woman, close-up, utterly shocked expression, jaw dropped, living room background",
+      "character_prompts": {
+        "Kim Soon-ja": "49 year old Korean woman, eyes wide open in disbelief, mouth agape, hearing impossible news about 500 million won"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/act1/ep02/s04_shock",
+      "filename_prefix": "act1_ep02_s04"
+    },
+    {
+      "scene_id": "s05",
+      "scene_name": "condition_explained",
+      "description": "Hearing the cohabitation condition",
+      "location": "Young-sook's House Living Room",
+      "time": "daytime",
+      "characters": ["Kim Soon-ja"],
+      "emotion": "absurdity, bewilderment",
+      "action": "hearing condition",
+      "main_prompt": "masterpiece, best quality, photorealistic, 1woman, dumbfounded expression, processing absurd condition, sitting on sofa edge",
+      "character_prompts": {
+        "Kim Soon-ja": "49 year old Korean woman, confused bewildered expression, hand on chest, trying to comprehend the living condition"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/act1/ep02/s05_condition",
+      "filename_prefix": "act1_ep02_s05"
+    },
+    {
+      "scene_id": "s06",
+      "scene_name": "boksoon_introduction",
+      "description": "Bok-soon energetically introducing herself",
+      "location": "Young-sook's House Living Room",
+      "time": "daytime",
+      "characters": ["Park Bok-soon"],
+      "emotion": "energy, friendliness",
+      "action": "greeting",
+      "main_prompt": "masterpiece, best quality, photorealistic, 1woman, enthusiastic wave, bright smile, colorful dress, welcoming energy",
+      "character_prompts": {
+        "Park Bok-soon": "53 year old Korean woman, colorful floral dress, red lipstick, waving energetically, big warm smile, introducing herself loudly"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/act1/ep02/s06_boksoon",
+      "filename_prefix": "act1_ep02_s06"
+    },
+    {
+      "scene_id": "s07",
+      "scene_name": "malja_exercise_warning",
+      "description": "Mal-ja warning about dawn exercise",
+      "location": "Young-sook's House Living Room",
+      "time": "daytime",
+      "characters": ["Lee Mal-ja"],
+      "emotion": "sternness, intimidation",
+      "action": "exercise announcement",
+      "main_prompt": "masterpiece, best quality, photorealistic, 1woman, stern expression, pointing finger, tracksuit, intimidating posture",
+      "character_prompts": {
+        "Lee Mal-ja": "47 year old Korean woman, short hair, tracksuit, whistle visible, stern expression, declaring 6am exercise routine"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/act1/ep02/s07_malja",
+      "filename_prefix": "act1_ep02_s07"
+    },
+    {
+      "scene_id": "s08",
+      "scene_name": "junghee_grammar_correction",
+      "description": "Jung-hee correcting grammar",
+      "location": "Young-sook's House Living Room",
+      "time": "daytime",
+      "characters": ["Choi Jung-hee", "Lee Mal-ja"],
+      "emotion": "pedantry, annoyance",
+      "action": "correcting",
+      "main_prompt": "masterpiece, best quality, photorealistic, 2women, one correcting the other's grammar, glasses woman lecturing, tracksuit woman annoyed",
+      "character_prompts": {
+        "Choi Jung-hee": "51 year old Korean woman, glasses, index finger raised, patient but firm expression, correcting grammar",
+        "Lee Mal-ja": "47 year old Korean woman, tracksuit, rolling eyes, annoyed at being corrected"
+      },
+      "regional_settings": {
+        "Choi Jung-hee": {"start": 0, "end": 55},
+        "Lee Mal-ja": {"start": 45, "end": 100}
+      },
+      "output_folder": "scenes/act1/ep02/s08_junghee",
+      "filename_prefix": "act1_ep02_s08"
+    },
+    {
+      "scene_id": "s09",
+      "scene_name": "boksoon_singing",
+      "description": "Bok-soon suddenly humming trot",
+      "location": "Young-sook's House Living Room",
+      "time": "daytime",
+      "characters": ["Park Bok-soon"],
+      "emotion": "energy, quirky",
+      "action": "singing",
+      "main_prompt": "masterpiece, best quality, photorealistic, 1woman, humming and swaying to music, eyes closed enjoying, colorful dress, living room",
+      "character_prompts": {
+        "Park Bok-soon": "53 year old Korean woman, singing trot song, hand gestures like performer, red lipstick, lost in music, colorful dress"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/act1/ep02/s09_singing",
+      "filename_prefix": "act1_ep02_s09"
+    },
+    {
+      "scene_id": "s10",
+      "scene_name": "soonja_despair",
+      "description": "Soon-ja despairing looking at the three",
+      "location": "Young-sook's House Living Room",
+      "time": "daytime",
+      "characters": ["Kim Soon-ja"],
+      "emotion": "despair, hopelessness",
+      "action": "sighing",
+      "main_prompt": "masterpiece, best quality, photorealistic, 1woman, close-up, despair on face, hand on forehead, sighing deeply",
+      "character_prompts": {
+        "Kim Soon-ja": "49 year old Korean woman, desperate expression, looking at three women with dread, hand on head, thinking this will be 1 year of hell"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/act1/ep02/s10_despair",
+      "filename_prefix": "act1_ep02_s10"
+    }
+  ]
+}

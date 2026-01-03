@@ -1,0 +1,46 @@
+{
+  "metadata": {
+    "work_title": "5_Billion_Inheritance_Cohabitation",
+    "character_name_kr": "박영숙",
+    "character_name_en": "Park Young-sook",
+    "created_at": "2026-01-03",
+    "total_versions": 3
+  },
+  "character_info": {
+    "name_kr": "박영숙",
+    "name_en": "Park Young-sook",
+    "real_age": 67,
+    "prompt_age": 52,
+    "gender": "female",
+    "role": "mystery_key",
+    "personality": ["prickly", "lonely", "hidden warmth"],
+    "appearance": ["stylish clothes", "lonely eyes", "single woman"],
+    "symbolic_item": "diary"
+  },
+  "versions": [
+    {
+      "version_id": "v01",
+      "version_name": "funeral_portrait",
+      "description": "Portrait photo for funeral",
+      "positive": "masterpiece, best quality, photorealistic, 8k uhd, portrait photo, 52 year old Korean woman, subtle smile, stylish appearance, single independent woman, hint of loneliness in eyes, professional photo quality, neutral background",
+      "output_folder": "characters/park_youngsook/v01_portrait",
+      "filename_prefix": "park_youngsook_v01_portrait"
+    },
+    {
+      "version_id": "v02",
+      "version_name": "past_flashback",
+      "description": "Past flashback scene",
+      "positive": "masterpiece, best quality, photorealistic, 52 year old Korean woman, slightly younger appearance, sharp critical expression, stylish business attire, interior designer look, arms crossed, cold defensive posture, indoor lighting",
+      "output_folder": "characters/park_youngsook/v02_past",
+      "filename_prefix": "park_youngsook_v02_past"
+    },
+    {
+      "version_id": "v03",
+      "version_name": "lonely_smile",
+      "description": "Lonely bittersweet smile",
+      "positive": "masterpiece, best quality, photorealistic, 52 year old Korean woman, bittersweet smile, lonely but accepting expression, elegant appearance, looking at family photo, soft melancholic lighting, emotional depth",
+      "output_folder": "characters/park_youngsook/v03_lonely",
+      "filename_prefix": "park_youngsook_v03_lonely"
+    }
+  ]
+}

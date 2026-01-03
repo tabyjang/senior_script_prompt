@@ -1,0 +1,281 @@
+{
+  "metadata": {
+    "work_title": "유산5억조건은동거",
+    "act": "3막",
+    "act_title": "진짜유산",
+    "chapter": 12,
+    "chapter_title": "우리는가족이다",
+    "created_at": "2026-01-03",
+    "total_scenes": 12
+  },
+  "chapter_info": {
+    "main_location": "4인방 카페, 영숙의 묘",
+    "time_period": "낮~저녁",
+    "characters": ["김순자", "박복순", "이말자", "최정희"],
+    "main_emotion": "행복, 감사, 완성"
+  },
+  "scenes": [
+    {
+      "scene_id": "s01",
+      "scene_name": "카페_오픈_준비",
+      "description": "4인방이 함께 카페 오픈을 준비하는 장면",
+      "location": "4인방 카페",
+      "time": "아침",
+      "characters": ["김순자", "박복순", "이말자", "최정희"],
+      "emotion": "설렘, 기대",
+      "action": "준비",
+      "main_prompt": "masterpiece, best quality, photorealistic, 4women, preparing new cafe for opening, cleaning and decorating, excited team effort, morning light",
+      "character_prompts": {
+        "김순자": "49 year old Korean woman, hanging sign, directing the setup, proud smile",
+        "박복순": "53 year old Korean woman, arranging flowers on tables, singing, colorful apron",
+        "이말자": "47 year old Korean woman, moving furniture, strong and capable, efficient",
+        "최정희": "51 year old Korean woman, glasses, organizing menu boards, perfect Korean grammar"
+      },
+      "regional_settings": {
+        "김순자": {"start": 0, "end": 25},
+        "박복순": {"start": 25, "end": 50},
+        "이말자": {"start": 50, "end": 75},
+        "최정희": {"start": 75, "end": 100}
+      },
+      "output_folder": "scenes/3막/12화/s01_준비",
+      "filename_prefix": "3막_12화_s01"
+    },
+    {
+      "scene_id": "s02",
+      "scene_name": "카페_간판",
+      "description": "카페 간판 클로즈업 - 영숙이네 4인방 카페",
+      "location": "4인방 카페 외부",
+      "time": "아침",
+      "characters": [],
+      "emotion": "감동",
+      "action": "보여주기",
+      "main_prompt": "masterpiece, best quality, photorealistic, close-up of cafe sign, warm wooden sign, Korean text, morning sunlight, new beginning symbol",
+      "character_prompts": {},
+      "regional_settings": null,
+      "output_folder": "scenes/3막/12화/s02_간판",
+      "filename_prefix": "3막_12화_s02"
+    },
+    {
+      "scene_id": "s03",
+      "scene_name": "그랜드_오픈",
+      "description": "카페 그랜드 오픈 장면",
+      "location": "4인방 카페",
+      "time": "낮",
+      "characters": ["김순자", "박복순", "이말자", "최정희"],
+      "emotion": "기쁨, 성취",
+      "action": "오픈",
+      "main_prompt": "masterpiece, best quality, photorealistic, 4women, grand opening ceremony, cutting ribbon, balloons and celebration, proud achievement",
+      "character_prompts": {
+        "김순자": "49 year old Korean woman, cutting ribbon with scissors, beaming with pride",
+        "박복순": "53 year old Korean woman, throwing confetti, loudest celebration",
+        "이말자": "47 year old Korean woman, clapping enthusiastically, healthy and happy",
+        "최정희": "51 year old Korean woman, taking commemorative photo, glasses reflecting joy"
+      },
+      "regional_settings": {
+        "김순자": {"start": 0, "end": 25},
+        "박복순": {"start": 25, "end": 50},
+        "이말자": {"start": 50, "end": 75},
+        "최정희": {"start": 75, "end": 100}
+      },
+      "output_folder": "scenes/3막/12화/s03_오픈",
+      "filename_prefix": "3막_12화_s03"
+    },
+    {
+      "scene_id": "s04",
+      "scene_name": "첫_손님",
+      "description": "첫 손님을 맞이하는 장면",
+      "location": "4인방 카페",
+      "time": "낮",
+      "characters": ["김순자", "박복순"],
+      "emotion": "기쁨, 설렘",
+      "action": "서빙",
+      "main_prompt": "masterpiece, best quality, photorealistic, 2women, welcoming first customer to cafe, serving coffee, proud and nervous, warm atmosphere",
+      "character_prompts": {
+        "김순자": "49 year old Korean woman, behind counter, making coffee carefully, welcoming first customer",
+        "박복순": "53 year old Korean woman, serving pastry, chatting warmly with customer, natural hospitality"
+      },
+      "regional_settings": {
+        "김순자": {"start": 0, "end": 50},
+        "박복순": {"start": 50, "end": 100}
+      },
+      "output_folder": "scenes/3막/12화/s04_첫손님",
+      "filename_prefix": "3막_12화_s04"
+    },
+    {
+      "scene_id": "s05",
+      "scene_name": "가족_방문",
+      "description": "순자의 아들, 며느리, 딸이 축하 방문",
+      "location": "4인방 카페",
+      "time": "낮",
+      "characters": ["김순자", "김영수", "박미영", "김영희"],
+      "emotion": "행복, 가족애",
+      "action": "축하",
+      "main_prompt": "masterpiece, best quality, photorealistic, 4people, family visiting mother's new cafe, flowers and congratulations, warm reunion",
+      "character_prompts": {
+        "김순자": "49 year old Korean woman, receiving family warmly, proud of herself, happy tears",
+        "김영수": "25 year old Korean man, holding flowers, proud of mother, supportive smile",
+        "박미영": "23 year old Korean woman, congratulating sincerely, genuine warmth now",
+        "김영희": "27 year old Korean woman, hugging mother, bringing celebration cake"
+      },
+      "regional_settings": {
+        "김순자": {"start": 0, "end": 25},
+        "김영수": {"start": 25, "end": 50},
+        "박미영": {"start": 50, "end": 75},
+        "김영희": {"start": 75, "end": 100}
+      },
+      "output_folder": "scenes/3막/12화/s05_가족방문",
+      "filename_prefix": "3막_12화_s05"
+    },
+    {
+      "scene_id": "s06",
+      "scene_name": "영숙_묘_방문",
+      "description": "4인방이 영숙의 묘를 방문하는 장면",
+      "location": "묘지",
+      "time": "저녁",
+      "characters": ["김순자", "박복순", "이말자", "최정희"],
+      "emotion": "감사, 그리움",
+      "action": "참배",
+      "main_prompt": "masterpiece, best quality, photorealistic, 4women, visiting grave of friend, bringing flowers, sunset cemetery, paying respects",
+      "character_prompts": {
+        "김순자": "49 year old Korean woman, placing flowers on grave, speaking to Youngsook, grateful tears",
+        "박복순": "53 year old Korean woman, pouring soju, telling grave about cafe opening",
+        "이말자": "47 year old Korean woman, bowing respectfully, quietly thankful",
+        "최정희": "51 year old Korean woman, reading poem written for Youngsook, glasses tearful"
+      },
+      "regional_settings": {
+        "김순자": {"start": 0, "end": 25},
+        "박복순": {"start": 25, "end": 50},
+        "이말자": {"start": 50, "end": 75},
+        "최정희": {"start": 75, "end": 100}
+      },
+      "output_folder": "scenes/3막/12화/s06_묘방문",
+      "filename_prefix": "3막_12화_s06"
+    },
+    {
+      "scene_id": "s07",
+      "scene_name": "영숙에게_보고",
+      "description": "순자가 영숙에게 1년을 보고하는 장면",
+      "location": "묘지",
+      "time": "저녁",
+      "characters": ["김순자"],
+      "emotion": "감사, 화해",
+      "action": "보고",
+      "main_prompt": "masterpiece, best quality, photorealistic, 1woman, speaking to gravestone, sunset light, emotional report to deceased, peace and gratitude",
+      "character_prompts": {
+        "김순자": "49 year old Korean woman, kneeling at grave, telling Youngsook everything worked out, thank you for the gift of friends, tears and smile"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/3막/12화/s07_보고",
+      "filename_prefix": "3막_12화_s07"
+    },
+    {
+      "scene_id": "s08",
+      "scene_name": "고마워_동생아",
+      "description": "순자가 처음으로 영숙을 동생이라 부르는 장면",
+      "location": "묘지",
+      "time": "저녁",
+      "characters": ["김순자"],
+      "emotion": "감동, 완성",
+      "action": "고백",
+      "main_prompt": "masterpiece, best quality, photorealistic, 1woman, close-up emotional moment at grave, speaking heartfelt words, sunset golden hour, resolution",
+      "character_prompts": {
+        "김순자": "49 year old Korean woman, touching gravestone gently, saying thank you little sister for first time, tears streaming, 40 years of hate turned to love"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/3막/12화/s08_동생아",
+      "filename_prefix": "3막_12화_s08"
+    },
+    {
+      "scene_id": "s09",
+      "scene_name": "영숙_미소_회상",
+      "description": "영숙이 웃는 회상 장면",
+      "location": "회상",
+      "time": "회상",
+      "characters": ["박영숙"],
+      "emotion": "평화, 만족",
+      "action": "회상",
+      "main_prompt": "masterpiece, best quality, photorealistic, flashback, 1woman, peaceful smile, knowing her plan worked, ethereal lighting, satisfied soul",
+      "character_prompts": {
+        "박영숙": "52 year old Korean woman, gentle smile, looking at camera like looking at sister-in-law, plan succeeded, rest in peace, ethereal glow"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/3막/12화/s09_영숙미소",
+      "filename_prefix": "3막_12화_s09"
+    },
+    {
+      "scene_id": "s10",
+      "scene_name": "돌아가는_길",
+      "description": "4인방이 팔짱 끼고 돌아가는 장면",
+      "location": "묘지 길",
+      "time": "저녁",
+      "characters": ["김순자", "박복순", "이말자", "최정희"],
+      "emotion": "연대, 가족",
+      "action": "귀가",
+      "main_prompt": "masterpiece, best quality, photorealistic, 4women, walking arm in arm, leaving cemetery, sunset silhouettes, true family, beautiful ending",
+      "character_prompts": {
+        "김순자": "49 year old Korean woman, arm linked with others, content smile, found real family",
+        "박복순": "53 year old Korean woman, humming softly, arm linked, colorful dress glowing in sunset",
+        "이말자": "47 year old Korean woman, walking confidently, healthy stride, linked arms",
+        "최정희": "51 year old Korean woman, glasses reflecting sunset, arm linked, quoting poetry about family"
+      },
+      "regional_settings": {
+        "김순자": {"start": 0, "end": 25},
+        "박복순": {"start": 25, "end": 50},
+        "이말자": {"start": 50, "end": 75},
+        "최정희": {"start": 75, "end": 100}
+      },
+      "output_folder": "scenes/3막/12화/s10_귀가",
+      "filename_prefix": "3막_12화_s10"
+    },
+    {
+      "scene_id": "s11",
+      "scene_name": "카페_저녁",
+      "description": "카페에서 함께 저녁을 먹는 4인방",
+      "location": "4인방 카페",
+      "time": "밤",
+      "characters": ["김순자", "박복순", "이말자", "최정희"],
+      "emotion": "행복, 일상",
+      "action": "저녁 식사",
+      "main_prompt": "masterpiece, best quality, photorealistic, 4women, having dinner together in their cafe, warm lighting, laughter, this is now their home",
+      "character_prompts": {
+        "김순자": "49 year old Korean woman, cooking for everyone, apron on, happy homemaker",
+        "박복순": "53 year old Korean woman, setting table while singing, domestic joy",
+        "이말자": "47 year old Korean woman, bringing dishes, healthy appetite, grateful",
+        "최정희": "51 year old Korean woman, opening wine, glasses, celebrating daily life"
+      },
+      "regional_settings": {
+        "김순자": {"start": 0, "end": 25},
+        "박복순": {"start": 25, "end": 50},
+        "이말자": {"start": 50, "end": 75},
+        "최정희": {"start": 75, "end": 100}
+      },
+      "output_folder": "scenes/3막/12화/s11_저녁",
+      "filename_prefix": "3막_12화_s11"
+    },
+    {
+      "scene_id": "s12",
+      "scene_name": "우리는_가족",
+      "description": "마지막 장면 - 4인방이 건배하는 엔딩",
+      "location": "4인방 카페",
+      "time": "밤",
+      "characters": ["김순자", "박복순", "이말자", "최정희"],
+      "emotion": "완성, 행복",
+      "action": "건배",
+      "main_prompt": "masterpiece, best quality, photorealistic, 4women, toasting together, four glasses clinking, warm cafe lighting, perfect ending, we are family now",
+      "character_prompts": {
+        "김순자": "49 year old Korean woman, raising glass, biggest smile, saying we are family now",
+        "박복순": "53 year old Korean woman, glass raised high, cheering loudly, colorful as always",
+        "이말자": "47 year old Korean woman, glass raised, rare full smile, truly happy",
+        "최정희": "51 year old Korean woman, glasses, elegant toast, quoting about found family"
+      },
+      "regional_settings": {
+        "김순자": {"start": 0, "end": 25},
+        "박복순": {"start": 25, "end": 50},
+        "이말자": {"start": 50, "end": 75},
+        "최정희": {"start": 75, "end": 100}
+      },
+      "output_folder": "scenes/3막/12화/s12_가족",
+      "filename_prefix": "3막_12화_s12"
+    }
+  ]
+}

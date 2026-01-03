@@ -1,0 +1,150 @@
+{
+  "character_id": "char_04",
+  "character_name": "강순덕",
+  "actual_age": 70,
+  "prompt_age": 55,
+  "role": "helper_executor",
+  "personality": ["순박함", "용감함", "충직함", "실행력"],
+  "appearance": {
+    "hair": "short practical hair",
+    "eyes": "sincere honest eyes",
+    "features": "healthy build, humble appearance"
+  },
+  "symbolic_item": {
+    "item": "apron, rubber gloves",
+    "description": "요양원 10년 베테랑의 상징",
+    "special_note": "시설 구조 완벽 파악"
+  },
+  "versions": [
+    {
+      "version_id": "v01",
+      "version_name": "기본_정면",
+      "category": "기본",
+      "positive": "masterpiece, best quality, photorealistic, 8k uhd, medium shot, front view, eye level, 55 year old Korean woman, honest face, sincere eyes, simple smile, short practical hair, healthy complexion, wearing simple comfortable clothes, no fancy accessories, standing straight, hands at sides, humble posture, neutral gray background, soft studio lighting",
+      "negative": "worst quality, low quality, blurry, deformed, disfigured, bad anatomy, bad hands, extra fingers, missing fingers, ugly, duplicate, morbid, mutilated, out of frame, watermark, text, signature, anime, cartoon, 3d render, cgi",
+      "output_folder": "characters/강순덕/v01_기본",
+      "filename_prefix": "강순덕_v01_기본"
+    },
+    {
+      "version_id": "v02",
+      "version_name": "청소",
+      "category": "동작",
+      "positive": "masterpiece, best quality, photorealistic, 8k uhd, medium shot, action scene, 55 year old Korean woman, hardworking expression, determined eyes, short practical hair tied back, sweating slightly, wearing apron, rubber gloves, practical work clothes, mopping floor, cleaning pose, bent over working, nursing home hallway, bright daylight, busy atmosphere",
+      "negative": "worst quality, low quality, blurry, deformed, disfigured, bad anatomy, bad hands, extra fingers, missing fingers, ugly, duplicate, morbid, mutilated, out of frame, watermark, text, signature, anime, cartoon, 3d render, cgi",
+      "output_folder": "characters/강순덕/v02_청소",
+      "filename_prefix": "강순덕_v02_청소"
+    },
+    {
+      "version_id": "v03",
+      "version_name": "안내",
+      "category": "동작",
+      "positive": "masterpiece, best quality, photorealistic, 8k uhd, medium shot, secretive scene, 55 year old Korean woman, alert expression, cautious eyes, short practical hair, serious demeanor, wearing dark practical clothes, pointing direction, guiding gesture, looking around carefully, dim storage room, single light bulb, mysterious atmosphere",
+      "negative": "worst quality, low quality, blurry, deformed, disfigured, bad anatomy, bad hands, extra fingers, missing fingers, ugly, duplicate, morbid, mutilated, out of frame, watermark, text, signature, anime, cartoon, 3d render, cgi",
+      "output_folder": "characters/강순덕/v03_안내",
+      "filename_prefix": "강순덕_v03_안내"
+    },
+    {
+      "version_id": "v04",
+      "version_name": "용감",
+      "category": "동작",
+      "positive": "masterpiece, best quality, photorealistic, 8k uhd, medium shot, brave action, 55 year old Korean woman, brave expression, fearless eyes, short practical hair, determined face, wearing simple clothes, stepping forward boldly, protective stance, shielding others, tense situation, dramatic lighting, heroic moment",
+      "negative": "worst quality, low quality, blurry, deformed, disfigured, bad anatomy, bad hands, extra fingers, missing fingers, ugly, duplicate, morbid, mutilated, out of frame, watermark, text, signature, anime, cartoon, 3d render, cgi",
+      "output_folder": "characters/강순덕/v04_용감",
+      "filename_prefix": "강순덕_v04_용감"
+    },
+    {
+      "version_id": "v05",
+      "version_name": "미소",
+      "category": "표정",
+      "positive": "masterpiece, best quality, photorealistic, 8k uhd, close-up shot, warm portrait, 55 year old Korean woman, innocent smile, kind eyes, simple joy, short practical hair, healthy glow, wearing comfortable daily clothes, genuine happy expression, crinkled eyes from smiling, warm indoor light, cozy atmosphere",
+      "negative": "worst quality, low quality, blurry, deformed, disfigured, bad anatomy, bad hands, extra fingers, missing fingers, ugly, duplicate, morbid, mutilated, out of frame, watermark, text, signature, anime, cartoon, 3d render, cgi",
+      "output_folder": "characters/강순덕/v05_미소",
+      "filename_prefix": "강순덕_v05_미소"
+    },
+    {
+      "version_id": "v06",
+      "version_name": "걱정",
+      "category": "표정",
+      "positive": "masterpiece, best quality, photorealistic, 8k uhd, medium shot, worried scene, 55 year old Korean woman, worried expression, anxious eyes, short practical hair, stressed appearance, wearing nursing home clothes, wringing hands nervously, hunched posture, dim room, tense lighting, anxious atmosphere",
+      "negative": "worst quality, low quality, blurry, deformed, disfigured, bad anatomy, bad hands, extra fingers, missing fingers, ugly, duplicate, morbid, mutilated, out of frame, watermark, text, signature, anime, cartoon, 3d render, cgi",
+      "output_folder": "characters/강순덕/v06_걱정",
+      "filename_prefix": "강순덕_v06_걱정"
+    },
+    {
+      "version_id": "v07",
+      "version_name": "요리",
+      "category": "동작",
+      "positive": "masterpiece, best quality, photorealistic, 8k uhd, medium shot, domestic scene, 55 year old Korean woman, caring expression, focused on task, short practical hair covered with cap, clean appearance, wearing apron, kitchen gloves, preparing food, stirring pot, cooking pose, nursing home kitchen, warm lighting, homely atmosphere",
+      "negative": "worst quality, low quality, blurry, deformed, disfigured, bad anatomy, bad hands, extra fingers, missing fingers, ugly, duplicate, morbid, mutilated, out of frame, watermark, text, signature, anime, cartoon, 3d render, cgi",
+      "output_folder": "characters/강순덕/v07_요리",
+      "filename_prefix": "강순덕_v07_요리"
+    },
+    {
+      "version_id": "v08",
+      "version_name": "탈출",
+      "category": "동작",
+      "positive": "masterpiece, best quality, photorealistic, 8k uhd, full shot, action scene, 55 year old Korean woman, urgent expression, determined eyes, short practical hair, athletic build, wearing practical dark clothes, running quickly, mid-stride, urgent movement, dim corridor, emergency lighting, escape atmosphere",
+      "negative": "worst quality, low quality, blurry, deformed, disfigured, bad anatomy, bad hands, extra fingers, missing fingers, ugly, duplicate, morbid, mutilated, out of frame, watermark, text, signature, anime, cartoon, 3d render, cgi",
+      "output_folder": "characters/강순덕/v08_탈출",
+      "filename_prefix": "강순덕_v08_탈출"
+    },
+    {
+      "version_id": "v09",
+      "version_name": "동료",
+      "category": "상호작용",
+      "positive": "masterpiece, best quality, photorealistic, 8k uhd, medium shot, supportive scene, 55 year old Korean woman, supportive expression, loyal eyes, short practical hair, dependable appearance, wearing simple clothes, standing beside friend, supportive posture, ready to help, nursing home room, evening light, solidarity atmosphere",
+      "negative": "worst quality, low quality, blurry, deformed, disfigured, bad anatomy, bad hands, extra fingers, missing fingers, ugly, duplicate, morbid, mutilated, out of frame, watermark, text, signature, anime, cartoon, 3d render, cgi",
+      "output_folder": "characters/강순덕/v09_동료",
+      "filename_prefix": "강순덕_v09_동료"
+    },
+    {
+      "version_id": "v10",
+      "version_name": "앞치마",
+      "category": "상징물",
+      "positive": "masterpiece, best quality, photorealistic, 8k uhd, medium shot, symbolic portrait, 55 year old Korean woman, proud worker expression, dignified look, short practical hair, clean appearance, wearing well-worn apron prominently displayed, rubber gloves in apron pocket, hands on apron, standing proudly, simple background, clean lighting, worker's dignity",
+      "negative": "worst quality, low quality, blurry, deformed, disfigured, bad anatomy, bad hands, extra fingers, missing fingers, ugly, duplicate, morbid, mutilated, out of frame, watermark, text, signature, anime, cartoon, 3d render, cgi",
+      "output_folder": "characters/강순덕/v10_앞치마",
+      "filename_prefix": "강순덕_v10_앞치마"
+    },
+    {
+      "version_id": "v11",
+      "version_name": "승리",
+      "category": "표정",
+      "positive": "masterpiece, best quality, photorealistic, 8k uhd, medium shot, joyful scene, 55 year old Korean woman, overjoyed expression, tearful smile, short practical hair, emotional appearance, wearing comfortable clothes, arms raised in celebration, jumping with joy, bright outdoor setting, sunshine, liberation atmosphere",
+      "negative": "worst quality, low quality, blurry, deformed, disfigured, bad anatomy, bad hands, extra fingers, missing fingers, ugly, duplicate, morbid, mutilated, out of frame, watermark, text, signature, anime, cartoon, 3d render, cgi",
+      "output_folder": "characters/강순덕/v11_승리",
+      "filename_prefix": "강순덕_v11_승리"
+    },
+    {
+      "version_id": "v12",
+      "version_name": "제주도",
+      "category": "동작",
+      "positive": "masterpiece, best quality, photorealistic, 8k uhd, medium shot, peaceful scene, 55 year old Korean woman, peaceful smile, content expression, short practical hair, healthy relaxed appearance, wearing casual beach clothes, straw hat, standing by ocean, arms open wide embracing freedom, Jeju island beach, ocean waves, golden hour, free atmosphere",
+      "negative": "worst quality, low quality, blurry, deformed, disfigured, bad anatomy, bad hands, extra fingers, missing fingers, ugly, duplicate, morbid, mutilated, out of frame, watermark, text, signature, anime, cartoon, 3d render, cgi",
+      "output_folder": "characters/강순덕/v12_제주도",
+      "filename_prefix": "강순덕_v12_제주도"
+    }
+  ],
+  "interactions": [
+    {
+      "interaction_id": "int_01",
+      "interaction_name": "순덕_정숙_도움",
+      "participants": ["강순덕", "한정숙"],
+      "type": "helping",
+      "main_prompt": "masterpiece, best quality, photorealistic, 2women, helping scene, supportive moment, nursing home room, warm lighting, caring atmosphere",
+      "regional_settings": {
+        "강순덕": {
+          "region": "0-50%",
+          "position": "left",
+          "prompt": "55 year old Korean woman, helpful expression, caring eyes, short practical hair, apron on, supporting arm extended, helping posture, facing right"
+        },
+        "한정숙": {
+          "region": "50-100%",
+          "position": "right",
+          "prompt": "57 year old Korean woman, grateful expression, touched eyes, shoulder-length gray-streaked hair, pearl necklace, accepting help, leaning slightly, facing left"
+        }
+      },
+      "overlap": "10%"
+    }
+  ]
+}

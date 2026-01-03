@@ -11,16 +11,36 @@ from .base_tab import BaseTab
 from utils.json_utils import format_json, safe_json_loads, extract_json_from_text
 
 
-# 이미지 타입 번호 및 제목 매핑
+# 이미지 타입 번호 및 제목 매핑 (8개 → 12개 확장)
 IMAGE_TYPE_TITLES = {
-    1: "전신샷",
-    2: "옆모습 전신샷",
-    3: "대각선 옆모습 전신샷",
-    4: "초상화",
-    5: "초상화 옆모습",
-    6: "액션",
-    7: "자연스러운 배경",
-    8: "추가 프롬프트"
+    1: "기본 정면",
+    2: "일상 의상",
+    3: "외출 의상",
+    4: "정장/격식",
+    5: "슬픔/감정",
+    6: "분노/결의",
+    7: "동작 장면",
+    8: "대화/상호작용",
+    9: "포옹/접촉",
+    10: "상징물",
+    11: "승리/만족",
+    12: "새 시작/평화"
+}
+
+# ComfyUI 프롬프트용 카테고리 매핑
+COMFYUI_CATEGORIES = {
+    1: "기본",
+    2: "의상",
+    3: "의상",
+    4: "의상",
+    5: "표정",
+    6: "표정",
+    7: "동작",
+    8: "상호작용",
+    9: "상호작용",
+    10: "상징물",
+    11: "표정",
+    12: "동작"
 }
 
 
@@ -68,10 +88,50 @@ class ImagePromptsTab(BaseTab):
         # 자동 생성 버튼
         generate_btn = ttk.Button(
             button_frame,
-            text="🔄 이미지 프롬프트 자동 생성 (7종류)",
+            text="🔄 이미지 프롬프트 자동 생성 (12종류)",
             command=self._generate_image_prompts
         )
         generate_btn.pack(side=tk.LEFT, padx=5)
+
+        # 구분선
+        ttk.Separator(button_frame, orient=tk.VERTICAL).pack(side=tk.LEFT, padx=10, fill=tk.Y)
+
+        # ComfyUI 프롬프트 폴더 선택 영역
+        comfyui_frame = ttk.Frame(button_frame)
+        comfyui_frame.pack(side=tk.LEFT, padx=5)
+
+        ttk.Label(comfyui_frame, text="📂 프롬프트 폴더:").pack(side=tk.LEFT, padx=(0, 5))
+
+        # 폴더 선택 드롭다운
+        self.prompt_folder_var = tk.StringVar()
+        self.prompt_folder_combo = ttk.Combobox(
+            comfyui_frame,
+            textvariable=self.prompt_folder_var,
+            state="readonly",
+            width=25
+        )
+        self.prompt_folder_combo.pack(side=tk.LEFT, padx=2)
+        self.prompt_folder_combo.bind("<<ComboboxSelected>>", self._on_folder_selected)
+
+        # 새로고침 버튼
+        refresh_btn = ttk.Button(
+            comfyui_frame,
+            text="🔄",
+            width=3,
+            command=self._refresh_prompt_folders
+        )
+        refresh_btn.pack(side=tk.LEFT, padx=2)
+
+        # 불러오기 버튼
+        load_comfyui_btn = ttk.Button(
+            comfyui_frame,
+            text="불러오기",
+            command=self._load_comfyui_prompts
+        )
+        load_comfyui_btn.pack(side=tk.LEFT, padx=2)
+
+        # 초기 폴더 목록 로드
+        self.frame.after(500, self._refresh_prompt_folders)
 
         # 하단: 인물별 프롬프트 편집 영역
         content_frame = ttk.Frame(self.frame)
@@ -239,8 +299,8 @@ class ImagePromptsTab(BaseTab):
         char_name = selected_char.get('name', '알 수 없음')
         prompts_obj = selected_char.get('image_generation_prompts', {})
         
-        # 각 프롬프트 1~8 추출 (에디터에서 8개 슬롯을 항상 보이도록 모두 포함)
-        for prompt_num in range(1, 9):
+        # 각 프롬프트 1~12 추출 (에디터에서 12개 슬롯을 항상 보이도록 모두 포함)
+        for prompt_num in range(1, 13):
             prompt_key = f"prompt_{prompt_num}"
             prompt_text = prompts_obj.get(prompt_key, '')
             
@@ -308,8 +368,8 @@ class ImagePromptsTab(BaseTab):
         main_frame = ttk.Frame(self.image_prompts_viewer_frame)
         main_frame.pack(fill=tk.X, padx=15, pady=10)
 
-        # 각 프롬프트 1~8 표시 (없어도 슬롯은 표시)
-        for prompt_num in range(1, 9):
+        # 각 프롬프트 1~12 표시 (없어도 슬롯은 표시)
+        for prompt_num in range(1, 13):
             prompt_key = f"prompt_{prompt_num}"
             prompt_content = prompts_obj.get(prompt_key, '')
 
@@ -398,14 +458,15 @@ class ImagePromptsTab(BaseTab):
         # 확인 대화상자
         result = messagebox.askyesno(
             "이미지 프롬프트 생성",
-            f"{len(characters)}명의 인물에 대해 각각 7가지 이미지 프롬프트를 생성하시겠습니까?\n\n"
-            f"- 전신샷 (Full Body Shot)\n"
-            f"- 옆모습 전신샷 (Side Profile Full Body Shot)\n"
-            f"- 대각선 옆모습 전신샷 (Diagonal Side Profile Full Body Shot)\n"
-            f"- 초상화 (Portrait)\n"
-            f"- 초상화 옆모습 (Side Profile)\n"
-            f"- 액션 (Action)\n"
-            f"- 자연스러운 배경에 있는 모습 (Natural Background)\n\n"
+            f"{len(characters)}명의 인물에 대해 각각 12가지 이미지 프롬프트를 생성하시겠습니까?\n\n"
+            f"[의상 버전]\n"
+            f"- 기본 정면 / 일상 의상 / 외출 의상 / 정장/격식\n\n"
+            f"[표정 버전]\n"
+            f"- 슬픔/감정 / 분노/결의 / 승리/만족\n\n"
+            f"[동작/상호작용]\n"
+            f"- 동작 장면 / 대화 / 포옹/접촉\n\n"
+            f"[기타]\n"
+            f"- 상징물 / 새 시작/평화\n\n"
             f"시놉시스와 인물 정보를 기반으로 동일한 인물의 동일성을 유지하며 생성합니다.\n"
             f"이 작업은 시간이 걸릴 수 있습니다."
         )
@@ -452,18 +513,30 @@ class ImagePromptsTab(BaseTab):
                     if 'image_generation_prompts' not in char:
                         char['image_generation_prompts'] = {}
 
-                    # 각 프롬프트 저장
-                    char['image_generation_prompts']['prompt_1'] = prompts.get("full_body_shot", "")
-                    char['image_generation_prompts']['prompt_2'] = prompts.get("side_profile_full_body_shot", "")
-                    char['image_generation_prompts']['prompt_3'] = prompts.get("diagonal_side_profile_full_body_shot", "")
-                    char['image_generation_prompts']['prompt_4'] = prompts.get("portrait", "")
-                    char['image_generation_prompts']['prompt_5'] = prompts.get("side_profile", "")
-                    char['image_generation_prompts']['prompt_6'] = prompts.get("action", "")
-                    char['image_generation_prompts']['prompt_7'] = prompts.get("natural_background", "")
+                    # 12가지 프롬프트 저장 (새로운 ComfyUI 형식)
+                    prompt_mapping = {
+                        1: "basic_front",          # 기본 정면
+                        2: "daily_outfit",         # 일상 의상
+                        3: "outing_outfit",        # 외출 의상
+                        4: "formal_outfit",        # 정장/격식
+                        5: "sad_emotion",          # 슬픔/감정
+                        6: "anger_resolve",        # 분노/결의
+                        7: "action_scene",         # 동작 장면
+                        8: "conversation",         # 대화/상호작용
+                        9: "embrace",              # 포옹/접촉
+                        10: "symbolic_item",       # 상징물
+                        11: "victory",             # 승리/만족
+                        12: "new_beginning"        # 새 시작/평화
+                    }
+
+                    for num, key in prompt_mapping.items():
+                        prompt_content = prompts.get(key, "")
+                        if prompt_content:
+                            char['image_generation_prompts'][f'prompt_{num}'] = prompt_content
 
                     # 첫 번째 프롬프트를 기본값으로도 설정
-                    if prompts.get("full_body_shot"):
-                        char['image_generation_prompt'] = prompts.get("full_body_shot")
+                    if prompts.get("basic_front"):
+                        char['image_generation_prompt'] = prompts.get("basic_front")
 
                     success_count += 1
             except Exception as e:
@@ -512,8 +585,8 @@ class ImagePromptsTab(BaseTab):
                     prompt_text = prompt_item.get('prompt', '')
                     prompt_key = f"prompt_{prompt_num}"
 
-                    # 프롬프트 번호 유효 범위 (1~8)
-                    if not isinstance(prompt_num, int) or prompt_num < 1 or prompt_num > 8:
+                    # 프롬프트 번호 유효 범위 (1~12)
+                    if not isinstance(prompt_num, int) or prompt_num < 1 or prompt_num > 12:
                         continue
 
                     # 해당 인물 찾기
@@ -538,3 +611,184 @@ class ImagePromptsTab(BaseTab):
                 self.project_data.set_characters(characters)
                 return self.file_service.save_characters(characters)
         return False
+
+    def _get_prompts_base_dir(self):
+        """prompts 기본 디렉토리 경로 반환"""
+        from pathlib import Path
+
+        project_dir = self.file_service.project_dir
+        if not project_dir:
+            return None
+
+        # editors_app 디렉토리 찾기 (prompts 폴더가 있는 위치)
+        editors_app_dir = Path(project_dir).parent.parent  # 01_man/editors_app
+        prompts_base = editors_app_dir / "prompts"
+
+        return prompts_base if prompts_base.exists() else None
+
+    def _refresh_prompt_folders(self):
+        """prompts 폴더 목록 새로고침"""
+        from pathlib import Path
+
+        prompts_base = self._get_prompts_base_dir()
+        if not prompts_base:
+            self.prompt_folder_combo['values'] = ["(prompts 폴더 없음)"]
+            self.prompt_folder_var.set("(prompts 폴더 없음)")
+            return
+
+        # prompts 폴더 내의 하위 폴더들 (이야기별 폴더) 찾기
+        folders = []
+        for item in prompts_base.iterdir():
+            if item.is_dir():
+                # characters 폴더가 있는지 확인
+                if (item / "characters").exists():
+                    folders.append(item.name)
+
+        if folders:
+            self.prompt_folder_combo['values'] = sorted(folders)
+            # 현재 값이 없거나 목록에 없으면 첫 번째 항목 선택
+            current = self.prompt_folder_var.get()
+            if not current or current not in folders:
+                self.prompt_folder_var.set(folders[0])
+        else:
+            self.prompt_folder_combo['values'] = ["(프로젝트 폴더 없음)"]
+            self.prompt_folder_var.set("(프로젝트 폴더 없음)")
+
+    def _on_folder_selected(self, event=None):
+        """폴더 선택 시 호출"""
+        selected = self.prompt_folder_var.get()
+        if selected and not selected.startswith("("):
+            print(f"[ComfyUI] 폴더 선택됨: {selected}")
+
+    def _load_comfyui_prompts(self):
+        """
+        prompts 폴더에서 ComfyUI 형식의 프롬프트를 불러오기
+        드롭다운에서 선택한 폴더의 characters/ 하위 JSON 파일들을 로드
+        """
+        import os
+        from pathlib import Path
+        from tkinter import filedialog
+
+        # 선택된 폴더 확인
+        selected_folder = self.prompt_folder_var.get()
+        if not selected_folder or selected_folder.startswith("("):
+            messagebox.showwarning("경고", "프롬프트 폴더를 선택하세요.")
+            return
+
+        prompts_base = self._get_prompts_base_dir()
+        if not prompts_base:
+            messagebox.showwarning("경고", "prompts 폴더를 찾을 수 없습니다.")
+            return
+
+        characters_dir = prompts_base / selected_folder / "characters"
+
+        if not characters_dir.exists():
+            messagebox.showwarning("경고", f"characters 폴더를 찾을 수 없습니다:\n{characters_dir}")
+            return
+
+        # JSON 파일 목록 가져오기
+        json_files = list(characters_dir.glob("*.json"))
+        if not json_files:
+            messagebox.showwarning("경고", f"JSON 파일을 찾을 수 없습니다:\n{characters_dir}")
+            return
+
+        # characters_all.json 제외
+        json_files = [f for f in json_files if f.name != "characters_all.json"]
+
+        if not json_files:
+            messagebox.showwarning("경고", "캐릭터 프롬프트 JSON 파일이 없습니다.")
+            return
+
+        # 현재 캐릭터 목록
+        characters = self.project_data.get_characters()
+        if not characters:
+            characters = self.file_service.load_characters()
+
+        loaded_count = 0
+        matched_count = 0
+
+        for json_file in json_files:
+            try:
+                with open(json_file, 'r', encoding='utf-8') as f:
+                    prompt_data = json.load(f)
+
+                if not isinstance(prompt_data, dict):
+                    continue
+
+                char_name = prompt_data.get('character_name', '')
+                versions = prompt_data.get('versions', [])
+
+                if not char_name or not versions:
+                    continue
+
+                loaded_count += 1
+
+                # 이름으로 캐릭터 찾기
+                matched_char = None
+                for char in characters:
+                    if char.get('name', '').replace(' ', '') == char_name.replace(' ', ''):
+                        matched_char = char
+                        break
+
+                if not matched_char:
+                    print(f"[ComfyUI] 캐릭터 '{char_name}'을 찾을 수 없습니다.")
+                    continue
+
+                matched_count += 1
+
+                # image_generation_prompts 초기화
+                if 'image_generation_prompts' not in matched_char:
+                    matched_char['image_generation_prompts'] = {}
+
+                # 버전별로 프롬프트 저장
+                for version in versions:
+                    version_id = version.get('version_id', '')
+                    if not version_id:
+                        continue
+
+                    # v01, v02 형식에서 숫자 추출
+                    try:
+                        prompt_num = int(version_id.replace('v', ''))
+                    except ValueError:
+                        continue
+
+                    if prompt_num < 1 or prompt_num > 12:
+                        continue
+
+                    # ComfyUI 형식의 프롬프트 구성
+                    comfyui_prompt = {
+                        "version_name": version.get('version_name', ''),
+                        "category": version.get('category', ''),
+                        "positive": version.get('positive', ''),
+                        "negative": version.get('negative', ''),
+                        "output_folder": version.get('output_folder', ''),
+                        "filename_prefix": version.get('filename_prefix', '')
+                    }
+
+                    # JSON 문자열로 저장
+                    matched_char['image_generation_prompts'][f'prompt_{prompt_num}'] = json.dumps(
+                        comfyui_prompt, ensure_ascii=False
+                    )
+
+                print(f"[ComfyUI] '{char_name}' 프롬프트 로드 완료 ({len(versions)}개 버전)")
+
+            except Exception as e:
+                print(f"[ComfyUI] 파일 로드 오류 ({json_file.name}): {e}")
+
+        # 데이터 업데이트
+        self.project_data.set_characters(characters)
+
+        # 저장
+        self.file_service.save_characters(characters)
+
+        # 화면 업데이트
+        self.update_display()
+
+        messagebox.showinfo(
+            "완료",
+            f"ComfyUI 프롬프트 불러오기 완료!\n\n"
+            f"📁 프로젝트: {selected_folder}\n"
+            f"📄 로드된 파일: {loaded_count}개\n"
+            f"👤 매칭된 캐릭터: {matched_count}명\n\n"
+            f"위치: {characters_dir}"
+        )

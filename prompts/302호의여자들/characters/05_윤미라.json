@@ -1,0 +1,150 @@
+{
+  "character_id": "char_05",
+  "character_name": "윤미라",
+  "actual_age": 48,
+  "prompt_age": 33,
+  "role": "antagonist",
+  "personality": ["교활함", "탐욕", "허영", "잔인함"],
+  "appearance": {
+    "hair": "sleek black hair neatly styled",
+    "eyes": "cold calculating eyes",
+    "features": "beautiful but cold face, heavy makeup, red lipstick"
+  },
+  "symbolic_item": {
+    "item": "luxury designer bag, jewelry",
+    "description": "부와 탐욕의 상징",
+    "special_note": "고인의 내연녀, 정숙을 요양원에 보낸 장본인"
+  },
+  "versions": [
+    {
+      "version_id": "v01",
+      "version_name": "기본_정면",
+      "category": "기본",
+      "positive": "masterpiece, best quality, photorealistic, 8k uhd, medium shot, front view, eye level, 33 year old Korean woman, cold beautiful face, calculating eyes, fake smile, sleek black hair neatly styled, heavy makeup, red lipstick, wearing expensive designer dress, diamond jewelry, standing confidently, one hand on hip, arrogant posture, neutral gray background, glamorous lighting",
+      "negative": "worst quality, low quality, blurry, deformed, disfigured, bad anatomy, bad hands, extra fingers, missing fingers, ugly, duplicate, morbid, mutilated, out of frame, watermark, text, signature, anime, cartoon, 3d render, cgi",
+      "output_folder": "characters/윤미라/v01_기본",
+      "filename_prefix": "윤미라_v01_기본"
+    },
+    {
+      "version_id": "v02",
+      "version_name": "외출",
+      "category": "의상",
+      "positive": "masterpiece, best quality, photorealistic, 8k uhd, medium shot, glamorous scene, 33 year old Korean woman, smug expression, superior look, sleek black hair professionally styled, flawless makeup, wearing luxury fur coat, designer handbag, expensive jewelry, walking confidently, strutting pose, upscale shopping district, bright daylight, wealthy atmosphere",
+      "negative": "worst quality, low quality, blurry, deformed, disfigured, bad anatomy, bad hands, extra fingers, missing fingers, ugly, duplicate, morbid, mutilated, out of frame, watermark, text, signature, anime, cartoon, 3d render, cgi",
+      "output_folder": "characters/윤미라/v02_외출",
+      "filename_prefix": "윤미라_v02_외출"
+    },
+    {
+      "version_id": "v03",
+      "version_name": "위선",
+      "category": "표정",
+      "positive": "masterpiece, best quality, photorealistic, 8k uhd, close-up shot, deceptive portrait, 33 year old Korean woman, fake sweet smile, hidden malice in eyes, neat black hair, innocent-looking makeup, wearing modest elegant outfit, hands clasped demurely, pretending innocence, soft indoor lighting, deceptively warm atmosphere",
+      "negative": "worst quality, low quality, blurry, deformed, disfigured, bad anatomy, bad hands, extra fingers, missing fingers, ugly, duplicate, morbid, mutilated, out of frame, watermark, text, signature, anime, cartoon, 3d render, cgi",
+      "output_folder": "characters/윤미라/v03_위선",
+      "filename_prefix": "윤미라_v03_위선"
+    },
+    {
+      "version_id": "v04",
+      "version_name": "잔인",
+      "category": "표정",
+      "positive": "masterpiece, best quality, photorealistic, 8k uhd, medium shot, villain reveal, 33 year old Korean woman, cruel expression, cold merciless eyes, sleek black hair, sharp makeup, wearing dark elegant dress, sneering smile, looking down at someone, contemptuous pose, dramatic low lighting, sinister atmosphere",
+      "negative": "worst quality, low quality, blurry, deformed, disfigured, bad anatomy, bad hands, extra fingers, missing fingers, ugly, duplicate, morbid, mutilated, out of frame, watermark, text, signature, anime, cartoon, 3d render, cgi",
+      "output_folder": "characters/윤미라/v04_잔인",
+      "filename_prefix": "윤미라_v04_잔인"
+    },
+    {
+      "version_id": "v05",
+      "version_name": "분노",
+      "category": "표정",
+      "positive": "masterpiece, best quality, photorealistic, 8k uhd, medium shot, rage scene, 33 year old Korean woman, furious expression, wild angry eyes, black hair disheveled, makeup smeared, wearing expensive clothes now wrinkled, screaming with rage, fists clenched, losing composure, harsh dramatic lighting, chaotic atmosphere",
+      "negative": "worst quality, low quality, blurry, deformed, disfigured, bad anatomy, bad hands, extra fingers, missing fingers, ugly, duplicate, morbid, mutilated, out of frame, watermark, text, signature, anime, cartoon, 3d render, cgi",
+      "output_folder": "characters/윤미라/v05_분노",
+      "filename_prefix": "윤미라_v05_분노"
+    },
+    {
+      "version_id": "v06",
+      "version_name": "당황",
+      "category": "표정",
+      "positive": "masterpiece, best quality, photorealistic, 8k uhd, medium shot, cornered scene, 33 year old Korean woman, panicked expression, fearful eyes, black hair slightly messy, makeup fading, wearing rumpled designer clothes, stepping backward, defensive posture, trapped look, harsh interrogation lighting, tense atmosphere",
+      "negative": "worst quality, low quality, blurry, deformed, disfigured, bad anatomy, bad hands, extra fingers, missing fingers, ugly, duplicate, morbid, mutilated, out of frame, watermark, text, signature, anime, cartoon, 3d render, cgi",
+      "output_folder": "characters/윤미라/v06_당황",
+      "filename_prefix": "윤미라_v06_당황"
+    },
+    {
+      "version_id": "v07",
+      "version_name": "기자회견",
+      "category": "의상",
+      "positive": "masterpiece, best quality, photorealistic, 8k uhd, medium shot, press conference, 33 year old Korean woman, controlled expression, rehearsed sadness, neat black hair, understated makeup, wearing conservative formal suit, dabbing fake tears, victim act, at podium, press conference room, camera flashes, media atmosphere",
+      "negative": "worst quality, low quality, blurry, deformed, disfigured, bad anatomy, bad hands, extra fingers, missing fingers, ugly, duplicate, morbid, mutilated, out of frame, watermark, text, signature, anime, cartoon, 3d render, cgi",
+      "output_folder": "characters/윤미라/v07_기자회견",
+      "filename_prefix": "윤미라_v07_기자회견"
+    },
+    {
+      "version_id": "v08",
+      "version_name": "음모",
+      "category": "동작",
+      "positive": "masterpiece, best quality, photorealistic, 8k uhd, medium shot, scheming scene, 33 year old Korean woman, scheming expression, cunning eyes, black hair, minimal makeup, wearing silk robe, on phone, whispering secretively, plotting expression, dimly lit luxury bedroom, night scene, conspiratorial atmosphere",
+      "negative": "worst quality, low quality, blurry, deformed, disfigured, bad anatomy, bad hands, extra fingers, missing fingers, ugly, duplicate, morbid, mutilated, out of frame, watermark, text, signature, anime, cartoon, 3d render, cgi",
+      "output_folder": "characters/윤미라/v08_음모",
+      "filename_prefix": "윤미라_v08_음모"
+    },
+    {
+      "version_id": "v09",
+      "version_name": "대면",
+      "category": "상호작용",
+      "positive": "masterpiece, best quality, photorealistic, 8k uhd, medium shot, confrontation scene, 33 year old Korean woman, hostile expression, threatening eyes, sleek black hair, sharp makeup, wearing power suit, threatening stance, finger pointing accusingly, aggressive posture, dramatic office lighting, hostile atmosphere",
+      "negative": "worst quality, low quality, blurry, deformed, disfigured, bad anatomy, bad hands, extra fingers, missing fingers, ugly, duplicate, morbid, mutilated, out of frame, watermark, text, signature, anime, cartoon, 3d render, cgi",
+      "output_folder": "characters/윤미라/v09_대면",
+      "filename_prefix": "윤미라_v09_대면"
+    },
+    {
+      "version_id": "v10",
+      "version_name": "명품",
+      "category": "상징물",
+      "positive": "masterpiece, best quality, photorealistic, 8k uhd, medium shot, materialistic portrait, 33 year old Korean woman, proud possessive expression, greedy eyes, sleek black hair, glamorous makeup, designer outfit, multiple luxury bags displayed, caressing designer bag lovingly, materialistic pose, luxury boutique, bright display lighting, wealthy atmosphere",
+      "negative": "worst quality, low quality, blurry, deformed, disfigured, bad anatomy, bad hands, extra fingers, missing fingers, ugly, duplicate, morbid, mutilated, out of frame, watermark, text, signature, anime, cartoon, 3d render, cgi",
+      "output_folder": "characters/윤미라/v10_명품",
+      "filename_prefix": "윤미라_v10_명품"
+    },
+    {
+      "version_id": "v11",
+      "version_name": "몰락",
+      "category": "표정",
+      "positive": "masterpiece, best quality, photorealistic, 8k uhd, medium shot, defeat scene, 33 year old Korean woman, defeated expression, hollow eyes, black hair disheveled, makeup ruined from tears, wearing wrinkled expensive clothes, handcuffed, head down, broken posture, police station, harsh fluorescent lighting, justice served atmosphere",
+      "negative": "worst quality, low quality, blurry, deformed, disfigured, bad anatomy, bad hands, extra fingers, missing fingers, ugly, duplicate, morbid, mutilated, out of frame, watermark, text, signature, anime, cartoon, 3d render, cgi",
+      "output_folder": "characters/윤미라/v11_몰락",
+      "filename_prefix": "윤미라_v11_몰락"
+    },
+    {
+      "version_id": "v12",
+      "version_name": "과거",
+      "category": "의상",
+      "positive": "masterpiece, best quality, photorealistic, 8k uhd, medium shot, flashback scene, 33 year old Korean woman, ambitious expression, hungry eyes, long black hair, youthful appearance, less makeup, wearing modest clothes, office attire, determined stance, climbing social ladder look, office setting, standard lighting, ambitious atmosphere",
+      "negative": "worst quality, low quality, blurry, deformed, disfigured, bad anatomy, bad hands, extra fingers, missing fingers, ugly, duplicate, morbid, mutilated, out of frame, watermark, text, signature, anime, cartoon, 3d render, cgi",
+      "output_folder": "characters/윤미라/v12_과거",
+      "filename_prefix": "윤미라_v12_과거"
+    }
+  ],
+  "interactions": [
+    {
+      "interaction_id": "int_01",
+      "interaction_name": "미라_정숙_대결",
+      "participants": ["윤미라", "한정숙"],
+      "type": "confrontation",
+      "main_prompt": "masterpiece, best quality, photorealistic, 2women, intense confrontation, dramatic showdown, indoor setting, dramatic lighting, climactic atmosphere",
+      "regional_settings": {
+        "윤미라": {
+          "region": "0-50%",
+          "position": "left",
+          "prompt": "33 year old Korean woman, defensive angry expression, cornered eyes, sleek black hair, expensive outfit, stepping backward, losing ground, facing right"
+        },
+        "한정숙": {
+          "region": "50-100%",
+          "position": "right",
+          "prompt": "57 year old Korean woman, triumphant expression, righteous anger, shoulder-length gray-streaked hair, pearl necklace, advancing forward, pointing accusingly, facing left"
+        }
+      },
+      "overlap": "none"
+    }
+  ]
+}

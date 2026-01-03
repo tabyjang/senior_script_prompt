@@ -1,0 +1,60 @@
+{
+  "title": "Character Name Mapping",
+  "description": "Korean to English character name mapping",
+  "characters": {
+    "김순자": {
+      "english_name": "Kim Soon-ja",
+      "role": "Protagonist",
+      "age_story": 64,
+      "age_prompt": 49
+    },
+    "박복순": {
+      "english_name": "Park Bok-soon",
+      "role": "Trot Singer Wannabe",
+      "age_story": 68,
+      "age_prompt": 53
+    },
+    "이말자": {
+      "english_name": "Lee Mal-ja",
+      "role": "PE Teacher Type",
+      "age_story": 62,
+      "age_prompt": 47
+    },
+    "최정희": {
+      "english_name": "Choi Jung-hee",
+      "role": "Korean Teacher Type",
+      "age_story": 66,
+      "age_prompt": 51
+    },
+    "박영숙": {
+      "english_name": "Park Young-sook",
+      "role": "Deceased Sister-in-law",
+      "age_story": 67,
+      "age_prompt": 52
+    },
+    "송변호사": {
+      "english_name": "Lawyer Song",
+      "role": "Estate Lawyer",
+      "age_story": 55,
+      "age_prompt": 40
+    },
+    "김영수": {
+      "english_name": "Kim Young-soo",
+      "role": "Soon-ja's Son",
+      "age_story": 40,
+      "age_prompt": 25
+    },
+    "박미영": {
+      "english_name": "Park Mi-young",
+      "role": "Soon-ja's Daughter-in-law",
+      "age_story": 38,
+      "age_prompt": 23
+    },
+    "김영희": {
+      "english_name": "Kim Young-hee",
+      "role": "Soon-ja's Daughter",
+      "age_story": 42,
+      "age_prompt": 27
+    }
+  }
+}

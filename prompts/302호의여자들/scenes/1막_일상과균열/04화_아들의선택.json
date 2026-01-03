@@ -1,0 +1,244 @@
+{
+  "metadata": {
+    "work_title": "302호의여자들",
+    "act": "1막",
+    "act_title": "일상과균열",
+    "chapter": 4,
+    "chapter_title": "아들의선택",
+    "created_at": "2026-01-03",
+    "total_scenes": 12
+  },
+  "chapter_info": {
+    "main_location": "집",
+    "time_period": "낮",
+    "characters": ["한정숙", "강민수", "수진"],
+    "main_emotion": "배신감, 절망, 체념"
+  },
+  "scenes": [
+    {
+      "scene_id": "s01",
+      "scene_name": "민수의_방문",
+      "description": "민수가 진지한 얼굴로 엄마를 찾아오는 장면",
+      "location": "집 현관",
+      "time": "낮",
+      "characters": ["한정숙", "강민수"],
+      "emotion": "불안, 긴장",
+      "action": "맞이하기",
+      "main_prompt": "masterpiece, best quality, photorealistic, 2people, Korean apartment entrance, son visiting mother, tense atmosphere, afternoon lighting",
+      "character_prompts": {
+        "한정숙": "57 year old Korean woman, anxious expression, opening door, sensing bad news, wearing comfortable home clothes, worried eyes",
+        "강민수": "25 year old Korean man, serious grave expression, standing at doorway, holding documents, reluctant but determined"
+      },
+      "regional_settings": {
+        "한정숙": {"start": 0, "end": 55},
+        "강민수": {"start": 45, "end": 100}
+      },
+      "output_folder": "scenes/1막/04화/s01_방문",
+      "filename_prefix": "1막_04화_s01"
+    },
+    {
+      "scene_id": "s02",
+      "scene_name": "요양원_제안",
+      "description": "민수가 요양원 얘기를 꺼내는 장면",
+      "location": "집 거실",
+      "time": "낮",
+      "characters": ["한정숙", "강민수"],
+      "emotion": "충격, 거부",
+      "action": "대화",
+      "main_prompt": "masterpiece, best quality, photorealistic, 2people, Korean living room, difficult conversation, tense family moment, natural daylight",
+      "character_prompts": {
+        "한정숙": "57 year old Korean woman, shocked disbelief expression, sitting on sofa, leaning back as if struck, eyes wide",
+        "강민수": "25 year old Korean man, uncomfortable guilty expression, avoiding eye contact, holding brochure, explaining reluctantly"
+      },
+      "regional_settings": {
+        "한정숙": {"start": 0, "end": 55},
+        "강민수": {"start": 45, "end": 100}
+      },
+      "output_folder": "scenes/1막/04화/s02_제안",
+      "filename_prefix": "1막_04화_s02"
+    },
+    {
+      "scene_id": "s03",
+      "scene_name": "정숙의_항변",
+      "description": "정숙이 치매 아니라고 항변하는 장면",
+      "location": "집 거실",
+      "time": "낮",
+      "characters": ["한정숙"],
+      "emotion": "억울함, 분노",
+      "action": "항변",
+      "main_prompt": "masterpiece, best quality, photorealistic, 1woman, Korean living room, desperate plea, emotional moment, dramatic lighting",
+      "character_prompts": {
+        "한정숙": "57 year old Korean woman, desperate pleading expression, hands gesturing emphatically, trying to convince son, tears forming, voice raised"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/1막/04화/s03_항변",
+      "filename_prefix": "1막_04화_s03"
+    },
+    {
+      "scene_id": "s04",
+      "scene_name": "민수의_한숨",
+      "description": "민수가 한숨을 쉬며 미라 편을 드는 장면",
+      "location": "집 거실",
+      "time": "낮",
+      "characters": ["강민수"],
+      "emotion": "갈등, 회피",
+      "action": "한숨",
+      "main_prompt": "masterpiece, best quality, photorealistic, 1man, Korean living room, conflicted son, sighing heavily, afternoon light",
+      "character_prompts": {
+        "강민수": "25 year old Korean man, sighing with closed eyes, hand on forehead, torn between duty and convenience, avoiding mother's gaze, guilty but stubborn"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/1막/04화/s04_한숨",
+      "filename_prefix": "1막_04화_s04"
+    },
+    {
+      "scene_id": "s05",
+      "scene_name": "충격의_말",
+      "description": "민수가 미라도 고생했다고 말하는 순간 정숙의 표정",
+      "location": "집 거실",
+      "time": "낮",
+      "characters": ["한정숙"],
+      "emotion": "충격, 배신감",
+      "action": "듣기",
+      "main_prompt": "masterpiece, best quality, photorealistic, 1woman, close-up, Korean living room, moment of ultimate betrayal, harsh lighting",
+      "character_prompts": {
+        "한정숙": "57 year old Korean woman, utterly shocked expression, mouth open, eyes filled with disbelief, son taking mistress side, heart breaking visibly"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/1막/04화/s05_충격",
+      "filename_prefix": "1막_04화_s05"
+    },
+    {
+      "scene_id": "s06",
+      "scene_name": "며느리의_말",
+      "description": "수진이 요양원이 좋은 방법이라고 말하는 장면",
+      "location": "집 거실",
+      "time": "낮",
+      "characters": ["한정숙", "수진"],
+      "emotion": "서운함, 고립감",
+      "action": "듣기",
+      "main_prompt": "masterpiece, best quality, photorealistic, 2women, Korean living room, daughter-in-law speaking, cold practical tone, tense atmosphere",
+      "character_prompts": {
+        "한정숙": "57 year old Korean woman, hurt isolated expression, shrinking into sofa, feeling ganged up on, alone against family",
+        "수진": "25 year old Korean woman, practical detached expression, speaking matter-of-factly, modern clothes, avoiding emotional connection"
+      },
+      "regional_settings": {
+        "한정숙": {"start": 0, "end": 55},
+        "수진": {"start": 45, "end": 100}
+      },
+      "output_folder": "scenes/1막/04화/s06_며느리",
+      "filename_prefix": "1막_04화_s06"
+    },
+    {
+      "scene_id": "s07",
+      "scene_name": "손잡고_호소",
+      "description": "정숙이 민수의 손을 잡고 호소하는 장면",
+      "location": "집 거실",
+      "time": "낮",
+      "characters": ["한정숙", "강민수"],
+      "emotion": "애원, 절박함",
+      "action": "손잡기, 호소",
+      "main_prompt": "masterpiece, best quality, photorealistic, 2people, Korean living room, mother desperately holding son's hands, emotional plea, warm but sad lighting",
+      "character_prompts": {
+        "한정숙": "57 year old Korean woman, desperately gripping son's hands, tears streaming, begging expression, on edge of sofa leaning toward son",
+        "강민수": "25 year old Korean man, conflicted pained expression, looking down at mother's hands, wanting to pull away, guilt on face"
+      },
+      "regional_settings": {
+        "한정숙": {"start": 0, "end": 60},
+        "강민수": {"start": 40, "end": 100},
+        "overlap": 20
+      },
+      "output_folder": "scenes/1막/04화/s07_호소",
+      "filename_prefix": "1막_04화_s07"
+    },
+    {
+      "scene_id": "s08",
+      "scene_name": "입학식_회상",
+      "description": "민수 초등학교 입학하던 날 회상",
+      "location": "학교 교문 (과거)",
+      "time": "회상",
+      "characters": ["한정숙"],
+      "emotion": "그리움, 슬픔",
+      "action": "회상",
+      "main_prompt": "masterpiece, best quality, photorealistic, dreamy flashback effect, Korean elementary school gate, mother and young son, warm nostalgic sepia tones, cherry blossoms",
+      "character_prompts": {
+        "한정숙": "35 year old Korean woman, young mother, loving smile, holding small child's hand, walking through school gate, proud protective expression, spring day"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/1막/04화/s08_회상",
+      "filename_prefix": "1막_04화_s08"
+    },
+    {
+      "scene_id": "s09",
+      "scene_name": "눈물",
+      "description": "정숙이 엄마를 왜 이래라고 울며 말하는 장면",
+      "location": "집 거실",
+      "time": "낮",
+      "characters": ["한정숙"],
+      "emotion": "비통함, 절망",
+      "action": "울기",
+      "main_prompt": "masterpiece, best quality, photorealistic, 1woman, close-up, Korean living room, crying desperately, emotional breakdown, soft sad lighting",
+      "character_prompts": {
+        "한정숙": "57 year old Korean woman, crying uncontrollably, tears streaming down face, asking what she did wrong, voice breaking, utter devastation"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/1막/04화/s09_눈물",
+      "filename_prefix": "1막_04화_s09"
+    },
+    {
+      "scene_id": "s10",
+      "scene_name": "펜_건넴",
+      "description": "민수가 입소 동의서와 펜을 건네는 장면",
+      "location": "집 거실",
+      "time": "낮",
+      "characters": ["한정숙", "강민수"],
+      "emotion": "체념, 냉담함",
+      "action": "서류 건넴",
+      "main_prompt": "masterpiece, best quality, photorealistic, 2people, Korean living room, son handing pen and document to mother, cold decisive moment, harsh lighting",
+      "character_prompts": {
+        "한정숙": "57 year old Korean woman, defeated hollow expression, looking at document with empty eyes, resistance crumbling",
+        "강민수": "25 year old Korean man, firm resolved expression, holding out pen, no longer wavering, businesslike demeanor"
+      },
+      "regional_settings": {
+        "한정숙": {"start": 0, "end": 55},
+        "강민수": {"start": 45, "end": 100}
+      },
+      "output_folder": "scenes/1막/04화/s10_펜",
+      "filename_prefix": "1막_04화_s10"
+    },
+    {
+      "scene_id": "s11",
+      "scene_name": "사인",
+      "description": "떨리는 손으로 사인하는 정숙",
+      "location": "집 거실",
+      "time": "낮",
+      "characters": ["한정숙"],
+      "emotion": "체념, 굴욕",
+      "action": "사인하기",
+      "main_prompt": "masterpiece, best quality, photorealistic, close-up of hands, signing document, trembling hand holding pen, dramatic lighting on paper",
+      "character_prompts": {
+        "한정숙": "57 year old Korean woman's trembling hand, signing admission form, tear drops on paper, surrendering, pen shaking"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/1막/04화/s11_사인",
+      "filename_prefix": "1막_04화_s11"
+    },
+    {
+      "scene_id": "s12",
+      "scene_name": "팔린것",
+      "description": "자식에게 버림받은 게 아니라 팔린 것임을 깨닫는 표정",
+      "location": "집 거실",
+      "time": "낮",
+      "characters": ["한정숙"],
+      "emotion": "깨달음, 분노",
+      "action": "응시",
+      "main_prompt": "masterpiece, best quality, photorealistic, 1woman, close-up portrait, Korean living room, moment of bitter realization, dramatic shadow lighting",
+      "character_prompts": {
+        "한정숙": "57 year old Korean woman, bitter realization dawning on face, eyes hardening, not abandoned but sold, quiet fury building behind tears, pearl necklace prominent"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/1막/04화/s12_깨달음",
+      "filename_prefix": "1막_04화_s12"
+    }
+  ]
+}

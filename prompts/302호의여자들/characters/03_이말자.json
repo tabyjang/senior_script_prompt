@@ -1,0 +1,150 @@
+{
+  "character_id": "char_03",
+  "character_name": "이말자",
+  "actual_age": 68,
+  "prompt_age": 53,
+  "role": "helper_analyst",
+  "personality": ["날카로움", "계산적", "실용적", "직설적"],
+  "appearance": {
+    "hair": "permed short hair",
+    "eyes": "sharp analytical eyes",
+    "features": "practical appearance, no-nonsense demeanor"
+  },
+  "symbolic_item": {
+    "item": "calculator, briefcase",
+    "description": "보험설계사 30년 경력의 상징",
+    "special_note": "사람 파악에 능함"
+  },
+  "versions": [
+    {
+      "version_id": "v01",
+      "version_name": "기본_정면",
+      "category": "기본",
+      "positive": "masterpiece, best quality, photorealistic, 8k uhd, medium shot, front view, eye level, 53 year old Korean woman, sharp analytical face, perceptive eyes, permed short hair, practical appearance, wearing simple blouse, minimal jewelry, standing with crossed arms, confident stance, neutral gray background, soft studio lighting",
+      "negative": "worst quality, low quality, blurry, deformed, disfigured, bad anatomy, bad hands, extra fingers, missing fingers, ugly, duplicate, morbid, mutilated, out of frame, watermark, text, signature, anime, cartoon, 3d render, cgi",
+      "output_folder": "characters/이말자/v01_기본",
+      "filename_prefix": "이말자_v01_기본"
+    },
+    {
+      "version_id": "v02",
+      "version_name": "보험설계사",
+      "category": "의상",
+      "positive": "masterpiece, best quality, photorealistic, 8k uhd, medium shot, professional setting, 53 year old Korean woman, persuasive expression, sharp saleswoman eyes, permed hair neatly styled, professional makeup, wearing business suit, carrying briefcase, confident sales pose, holding documents, office building lobby, bright daylight, professional atmosphere",
+      "negative": "worst quality, low quality, blurry, deformed, disfigured, bad anatomy, bad hands, extra fingers, missing fingers, ugly, duplicate, morbid, mutilated, out of frame, watermark, text, signature, anime, cartoon, 3d render, cgi",
+      "output_folder": "characters/이말자/v02_보험설계사",
+      "filename_prefix": "이말자_v02_보험설계사"
+    },
+    {
+      "version_id": "v03",
+      "version_name": "일상",
+      "category": "의상",
+      "positive": "masterpiece, best quality, photorealistic, 8k uhd, medium shot, casual scene, 53 year old Korean woman, observant expression, watchful eyes, permed hair slightly messy, natural appearance, wearing comfortable nursing home clothes, sitting alert, arms on table, analyzing surroundings, nursing home common area, afternoon light",
+      "negative": "worst quality, low quality, blurry, deformed, disfigured, bad anatomy, bad hands, extra fingers, missing fingers, ugly, duplicate, morbid, mutilated, out of frame, watermark, text, signature, anime, cartoon, 3d render, cgi",
+      "output_folder": "characters/이말자/v03_일상",
+      "filename_prefix": "이말자_v03_일상"
+    },
+    {
+      "version_id": "v04",
+      "version_name": "분석",
+      "category": "동작",
+      "positive": "masterpiece, best quality, photorealistic, 8k uhd, close-up shot, analytical portrait, 53 year old Korean woman, scrutinizing expression, narrowed eyes, permed hair, focused demeanor, wearing simple clothes, finger pointing at document, examining closely, dim room, desk lamp light, investigative atmosphere",
+      "negative": "worst quality, low quality, blurry, deformed, disfigured, bad anatomy, bad hands, extra fingers, missing fingers, ugly, duplicate, morbid, mutilated, out of frame, watermark, text, signature, anime, cartoon, 3d render, cgi",
+      "output_folder": "characters/이말자/v04_분석",
+      "filename_prefix": "이말자_v04_분석"
+    },
+    {
+      "version_id": "v05",
+      "version_name": "직설",
+      "category": "표정",
+      "positive": "masterpiece, best quality, photorealistic, 8k uhd, medium shot, direct confrontation, 53 year old Korean woman, blunt expression, frank eyes, permed hair, no-nonsense appearance, wearing practical clothes, speaking directly, hands gesturing matter-of-factly, bright room, clear lighting, honest atmosphere",
+      "negative": "worst quality, low quality, blurry, deformed, disfigured, bad anatomy, bad hands, extra fingers, missing fingers, ugly, duplicate, morbid, mutilated, out of frame, watermark, text, signature, anime, cartoon, 3d render, cgi",
+      "output_folder": "characters/이말자/v05_직설",
+      "filename_prefix": "이말자_v05_직설"
+    },
+    {
+      "version_id": "v06",
+      "version_name": "계산",
+      "category": "동작",
+      "positive": "masterpiece, best quality, photorealistic, 8k uhd, medium shot, calculating scene, 53 year old Korean woman, calculating expression, mental math visible in eyes, permed hair, concentrated face, wearing reading glasses, holding calculator, counting on fingers, deep in calculation, office-like room, focused lighting",
+      "negative": "worst quality, low quality, blurry, deformed, disfigured, bad anatomy, bad hands, extra fingers, missing fingers, ugly, duplicate, morbid, mutilated, out of frame, watermark, text, signature, anime, cartoon, 3d render, cgi",
+      "output_folder": "characters/이말자/v06_계산",
+      "filename_prefix": "이말자_v06_계산"
+    },
+    {
+      "version_id": "v07",
+      "version_name": "의심",
+      "category": "표정",
+      "positive": "masterpiece, best quality, photorealistic, 8k uhd, medium shot, suspicious scene, 53 year old Korean woman, suspicious expression, accusing eyes, permed hair, tense posture, wearing simple clothes, arms crossed defensively, confrontational stance, dramatic lighting, tense atmosphere",
+      "negative": "worst quality, low quality, blurry, deformed, disfigured, bad anatomy, bad hands, extra fingers, missing fingers, ugly, duplicate, morbid, mutilated, out of frame, watermark, text, signature, anime, cartoon, 3d render, cgi",
+      "output_folder": "characters/이말자/v07_의심",
+      "filename_prefix": "이말자_v07_의심"
+    },
+    {
+      "version_id": "v08",
+      "version_name": "작전",
+      "category": "동작",
+      "positive": "masterpiece, best quality, photorealistic, 8k uhd, medium shot, action scene, 53 year old Korean woman, determined expression, mission-ready, permed hair tied back, practical appearance, wearing dark practical clothes, sneaking quietly, alert posture, dim corridor, nighttime, covert atmosphere",
+      "negative": "worst quality, low quality, blurry, deformed, disfigured, bad anatomy, bad hands, extra fingers, missing fingers, ugly, duplicate, morbid, mutilated, out of frame, watermark, text, signature, anime, cartoon, 3d render, cgi",
+      "output_folder": "characters/이말자/v08_작전",
+      "filename_prefix": "이말자_v08_작전"
+    },
+    {
+      "version_id": "v09",
+      "version_name": "대화",
+      "category": "상호작용",
+      "positive": "masterpiece, best quality, photorealistic, 8k uhd, medium shot, conversation scene, 53 year old Korean woman, explaining expression, practical gestures, permed hair, straightforward demeanor, wearing nursing home clothes, presenting facts, logical hand movements, nursing home room, evening light, team discussion",
+      "negative": "worst quality, low quality, blurry, deformed, disfigured, bad anatomy, bad hands, extra fingers, missing fingers, ugly, duplicate, morbid, mutilated, out of frame, watermark, text, signature, anime, cartoon, 3d render, cgi",
+      "output_folder": "characters/이말자/v09_대화",
+      "filename_prefix": "이말자_v09_대화"
+    },
+    {
+      "version_id": "v10",
+      "version_name": "서류가방",
+      "category": "상징물",
+      "positive": "masterpiece, best quality, photorealistic, 8k uhd, medium shot, symbolic portrait, 53 year old Korean woman, professional expression, businesslike demeanor, permed hair neatly styled, wearing smart casual clothes, leather briefcase in hand, holding briefcase proudly, professional stance, neutral background, clean lighting",
+      "negative": "worst quality, low quality, blurry, deformed, disfigured, bad anatomy, bad hands, extra fingers, missing fingers, ugly, duplicate, morbid, mutilated, out of frame, watermark, text, signature, anime, cartoon, 3d render, cgi",
+      "output_folder": "characters/이말자/v10_서류가방",
+      "filename_prefix": "이말자_v10_서류가방"
+    },
+    {
+      "version_id": "v11",
+      "version_name": "승리",
+      "category": "표정",
+      "positive": "masterpiece, best quality, photorealistic, 8k uhd, medium shot, satisfied scene, 53 year old Korean woman, satisfied smirk, knowing expression, permed hair, relaxed appearance, wearing comfortable clothes, arms crossed contentedly, vindicated pose, bright outdoor setting, clear daylight, accomplished atmosphere",
+      "negative": "worst quality, low quality, blurry, deformed, disfigured, bad anatomy, bad hands, extra fingers, missing fingers, ugly, duplicate, morbid, mutilated, out of frame, watermark, text, signature, anime, cartoon, 3d render, cgi",
+      "output_folder": "characters/이말자/v11_승리",
+      "filename_prefix": "이말자_v11_승리"
+    },
+    {
+      "version_id": "v12",
+      "version_name": "제주도",
+      "category": "동작",
+      "positive": "masterpiece, best quality, photorealistic, 8k uhd, medium shot, peaceful scene, 53 year old Korean woman, genuine smile, relaxed expression, permed hair windswept, carefree appearance, wearing casual vacation clothes, sun visor, standing relaxed, enjoying moment, Jeju island, ocean background, golden hour, peaceful atmosphere",
+      "negative": "worst quality, low quality, blurry, deformed, disfigured, bad anatomy, bad hands, extra fingers, missing fingers, ugly, duplicate, morbid, mutilated, out of frame, watermark, text, signature, anime, cartoon, 3d render, cgi",
+      "output_folder": "characters/이말자/v12_제주도",
+      "filename_prefix": "이말자_v12_제주도"
+    }
+  ],
+  "interactions": [
+    {
+      "interaction_id": "int_01",
+      "interaction_name": "말자_순덕_정보공유",
+      "participants": ["이말자", "강순덕"],
+      "type": "information_sharing",
+      "main_prompt": "masterpiece, best quality, photorealistic, 2women, sharing information, secretive whisper, nursing home hallway, dim lighting, covert atmosphere",
+      "regional_settings": {
+        "이말자": {
+          "region": "0-50%",
+          "position": "left",
+          "prompt": "53 year old Korean woman, whispering expression, alert eyes, permed hair, practical clothes, leaning in to whisper, hand near mouth, facing right"
+        },
+        "강순덕": {
+          "region": "50-100%",
+          "position": "right",
+          "prompt": "55 year old Korean woman, listening intently, wide eyes, short practical hair, simple clothes, ear turned to listen, surprised expression, facing left"
+        }
+      },
+      "overlap": "5%"
+    }
+  ]
+}

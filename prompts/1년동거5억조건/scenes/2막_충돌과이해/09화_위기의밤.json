@@ -1,0 +1,233 @@
+{
+  "metadata": {
+    "work_title": "500 Million Won Inheritance Condition: Living Together",
+    "act": "act2",
+    "act_title": "Conflict and Understanding",
+    "chapter": 9,
+    "chapter_title": "Night of Crisis",
+    "created_at": "2026-01-03",
+    "total_scenes": 10
+  },
+  "chapter_info": {
+    "main_location": "Young-sook's House, Hospital",
+    "time_period": "Night",
+    "characters": ["Kim Soon-ja", "Park Bok-soon", "Lee Mal-ja", "Choi Jung-hee"],
+    "main_emotion": "Tension, Worry, Solidarity"
+  },
+  "scenes": [
+    {
+      "scene_id": "s01",
+      "scene_name": "ordinary_evening",
+      "description": "A peaceful evening",
+      "location": "Young-sook's House Living Room",
+      "time": "Evening",
+      "characters": ["Kim Soon-ja", "Park Bok-soon", "Lee Mal-ja", "Choi Jung-hee"],
+      "emotion": "Peace, Daily Life",
+      "action": "Watching TV",
+      "main_prompt": "masterpiece, best quality, photorealistic, 4women, watching TV together, peaceful evening, living room, warm lighting",
+      "character_prompts": {
+        "Kim Soon-ja": "49 year old Korean woman, relaxed on sofa, watching TV, content",
+        "Park Bok-soon": "53 year old Korean woman, eating snacks, laughing at show",
+        "Lee Mal-ja": "47 year old Korean woman, sitting quietly, looking slightly pale",
+        "Choi Jung-hee": "51 year old Korean woman, reading book, glasses on"
+      },
+      "regional_settings": {
+        "Kim Soon-ja": {"start": 0, "end": 25},
+        "Park Bok-soon": {"start": 25, "end": 50},
+        "Lee Mal-ja": {"start": 50, "end": 75},
+        "Choi Jung-hee": {"start": 75, "end": 100}
+      },
+      "output_folder": "scenes/act2/ep09/s01_evening",
+      "filename_prefix": "act2_ep09_s01"
+    },
+    {
+      "scene_id": "s02",
+      "scene_name": "malja_collapse",
+      "description": "Mal-ja suddenly collapses",
+      "location": "Young-sook's House Living Room",
+      "time": "Night",
+      "characters": ["Lee Mal-ja"],
+      "emotion": "Shock, Fear",
+      "action": "Collapsing",
+      "main_prompt": "masterpiece, best quality, photorealistic, 1woman, collapsing to floor, dramatic moment, reaching for support, falling",
+      "character_prompts": {
+        "Lee Mal-ja": "47 year old Korean woman, tracksuit, falling down, hand reaching out, losing consciousness"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/act2/ep09/s02_collapse",
+      "filename_prefix": "act2_ep09_s02"
+    },
+    {
+      "scene_id": "s03",
+      "scene_name": "screams_and_chaos",
+      "description": "The three friends react to finding Mal-ja collapsed",
+      "location": "Young-sook's House Living Room",
+      "time": "Night",
+      "characters": ["Kim Soon-ja", "Park Bok-soon", "Choi Jung-hee"],
+      "emotion": "Fear, Chaos",
+      "action": "Rushing Over",
+      "main_prompt": "masterpiece, best quality, photorealistic, 3women, rushing to fallen friend, panic and fear, chaotic scene, dramatic lighting",
+      "character_prompts": {
+        "Kim Soon-ja": "49 year old Korean woman, rushing over in panic, reaching for phone",
+        "Park Bok-soon": "53 year old Korean woman, screaming, colorful dress, hands on face",
+        "Choi Jung-hee": "51 year old Korean woman, kneeling beside fallen friend, checking pulse, glasses askew"
+      },
+      "regional_settings": {
+        "Kim Soon-ja": {"start": 0, "end": 35},
+        "Park Bok-soon": {"start": 30, "end": 65},
+        "Choi Jung-hee": {"start": 60, "end": 100}
+      },
+      "output_folder": "scenes/act2/ep09/s03_chaos",
+      "filename_prefix": "act2_ep09_s03"
+    },
+    {
+      "scene_id": "s04",
+      "scene_name": "emergency_call",
+      "description": "Soon-ja urgently calls 119 (emergency services)",
+      "location": "Young-sook's House Living Room",
+      "time": "Night",
+      "characters": ["Kim Soon-ja"],
+      "emotion": "Urgency, Fear",
+      "action": "Phone Call",
+      "main_prompt": "masterpiece, best quality, photorealistic, 1woman, frantically calling emergency services, phone to ear, terrified expression",
+      "character_prompts": {
+        "Kim Soon-ja": "49 year old Korean woman, phone pressed to ear, shouting address, tears in eyes, desperate"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/act2/ep09/s04_emergency_call",
+      "filename_prefix": "act2_ep09_s04"
+    },
+    {
+      "scene_id": "s05",
+      "scene_name": "emergency_room_arrival",
+      "description": "Arriving at the hospital emergency room",
+      "location": "Hospital Emergency Room",
+      "time": "Night",
+      "characters": ["Kim Soon-ja", "Park Bok-soon", "Choi Jung-hee"],
+      "emotion": "Anxiety, Worry",
+      "action": "Waiting",
+      "main_prompt": "masterpiece, best quality, photorealistic, 3women, hospital emergency waiting area, anxious worried expressions, harsh fluorescent lighting",
+      "character_prompts": {
+        "Kim Soon-ja": "49 year old Korean woman, pacing, biting nails, worried sick",
+        "Park Bok-soon": "53 year old Korean woman, crying quietly, makeup smeared, holding tissues",
+        "Choi Jung-hee": "51 year old Korean woman, sitting rigid, holding rosary, praying silently"
+      },
+      "regional_settings": {
+        "Kim Soon-ja": {"start": 0, "end": 35},
+        "Park Bok-soon": {"start": 30, "end": 65},
+        "Choi Jung-hee": {"start": 60, "end": 100}
+      },
+      "output_folder": "scenes/act2/ep09/s05_emergency_room",
+      "filename_prefix": "act2_ep09_s05"
+    },
+    {
+      "scene_id": "s06",
+      "scene_name": "all_night_vigil",
+      "description": "The three friends wait all night at the emergency room",
+      "location": "Hospital Corridor",
+      "time": "Dawn",
+      "characters": ["Kim Soon-ja", "Park Bok-soon", "Choi Jung-hee"],
+      "emotion": "Exhaustion, Worry",
+      "action": "Waiting",
+      "main_prompt": "masterpiece, best quality, photorealistic, 3women, sleeping fitfully on hospital benches, exhausted vigil, dim night lighting",
+      "character_prompts": {
+        "Kim Soon-ja": "49 year old Korean woman, dozing with head against wall, exhausted but alert",
+        "Park Bok-soon": "53 year old Korean woman, head on Junghi's shoulder, tear tracks on face",
+        "Choi Jung-hee": "51 year old Korean woman, glasses off, arm around Boksoon, protective"
+      },
+      "regional_settings": {
+        "Kim Soon-ja": {"start": 0, "end": 35},
+        "Park Bok-soon": {"start": 30, "end": 65},
+        "Choi Jung-hee": {"start": 60, "end": 100}
+      },
+      "output_folder": "scenes/act2/ep09/s06_vigil",
+      "filename_prefix": "act2_ep09_s06"
+    },
+    {
+      "scene_id": "s07",
+      "scene_name": "doctor_appears",
+      "description": "The doctor comes out to inform them of her condition",
+      "location": "Hospital Corridor",
+      "time": "Morning",
+      "characters": ["Kim Soon-ja", "Park Bok-soon", "Choi Jung-hee"],
+      "emotion": "Tension, Hope",
+      "action": "Listening",
+      "main_prompt": "masterpiece, best quality, photorealistic, 3women, standing anxiously before doctor, waiting for news, hospital hallway, morning light",
+      "character_prompts": {
+        "Kim Soon-ja": "49 year old Korean woman, gripping others hands, holding breath",
+        "Park Bok-soon": "53 year old Korean woman, eyes red and swollen, praying",
+        "Choi Jung-hee": "51 year old Korean woman, composed but pale, listening intently"
+      },
+      "regional_settings": {
+        "Kim Soon-ja": {"start": 0, "end": 35},
+        "Park Bok-soon": {"start": 30, "end": 65},
+        "Choi Jung-hee": {"start": 60, "end": 100}
+      },
+      "output_folder": "scenes/act2/ep09/s07_doctor",
+      "filename_prefix": "act2_ep09_s07"
+    },
+    {
+      "scene_id": "s08",
+      "scene_name": "tears_of_relief",
+      "description": "Relief upon hearing Mal-ja is okay",
+      "location": "Hospital Corridor",
+      "time": "Morning",
+      "characters": ["Kim Soon-ja", "Park Bok-soon", "Choi Jung-hee"],
+      "emotion": "Relief, Gratitude",
+      "action": "Crying",
+      "main_prompt": "masterpiece, best quality, photorealistic, 3women, crying with relief, hugging each other, emotional release, hospital hallway",
+      "character_prompts": {
+        "Kim Soon-ja": "49 year old Korean woman, tears of relief streaming, hand on chest",
+        "Park Bok-soon": "53 year old Korean woman, sobbing with relief, colorful dress wrinkled",
+        "Choi Jung-hee": "51 year old Korean woman, wiping tears, grateful smile"
+      },
+      "regional_settings": {
+        "Kim Soon-ja": {"start": 0, "end": 35},
+        "Park Bok-soon": {"start": 30, "end": 65},
+        "Choi Jung-hee": {"start": 60, "end": 100}
+      },
+      "output_folder": "scenes/act2/ep09/s08_relief",
+      "filename_prefix": "act2_ep09_s08"
+    },
+    {
+      "scene_id": "s09",
+      "scene_name": "holding_hands",
+      "description": "The three friends hold hands tightly in solidarity",
+      "location": "Hospital Corridor",
+      "time": "Morning",
+      "characters": ["Kim Soon-ja", "Park Bok-soon", "Choi Jung-hee"],
+      "emotion": "Solidarity, Unity",
+      "action": "Holding Hands",
+      "main_prompt": "masterpiece, best quality, photorealistic, close-up of three women's hands clasped together, circle of support, hospital setting, emotional bonding",
+      "character_prompts": {
+        "Kim Soon-ja": "49 year old Korean woman's hand, gripping tightly, we are family now",
+        "Park Bok-soon": "53 year old Korean woman's hand, holding on, never letting go",
+        "Choi Jung-hee": "51 year old Korean woman's hand, completing the circle, united"
+      },
+      "regional_settings": {
+        "Kim Soon-ja": {"start": 0, "end": 35},
+        "Park Bok-soon": {"start": 30, "end": 65},
+        "Choi Jung-hee": {"start": 60, "end": 100}
+      },
+      "output_folder": "scenes/act2/ep09/s09_holding_hands",
+      "filename_prefix": "act2_ep09_s09"
+    },
+    {
+      "scene_id": "s10",
+      "scene_name": "lawyer_phone_call",
+      "description": "A phone call from Lawyer Song",
+      "location": "Hospital Corridor",
+      "time": "Morning",
+      "characters": ["Kim Soon-ja"],
+      "emotion": "Surprise, Curiosity",
+      "action": "Answering Phone",
+      "main_prompt": "masterpiece, best quality, photorealistic, 1woman, answering phone surprised, important call from lawyer, hospital hallway background",
+      "character_prompts": {
+        "Kim Soon-ja": "49 year old Korean woman, phone to ear, surprised expression, hearing about another letter from Youngsook"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/act2/ep09/s10_lawyer_call",
+      "filename_prefix": "act2_ep09_s10"
+    }
+  ]
+}

@@ -1,0 +1,185 @@
+{
+  "metadata": {
+    "work_title": "500 Million Won Inheritance Condition: Living Together",
+    "act": "act2",
+    "act_title": "Conflict and Understanding",
+    "chapter": 8,
+    "chapter_title": "True Family",
+    "created_at": "2026-01-03",
+    "total_scenes": 8
+  },
+  "chapter_info": {
+    "main_location": "Young-sook's House",
+    "time_period": "Day",
+    "characters": ["Kim Soon-ja", "Kim Young-soo", "Park Mi-young", "Park Bok-soon", "Lee Mal-ja", "Choi Jung-hee"],
+    "main_emotion": "Heartwarming, Reconciliation"
+  },
+  "scenes": [
+    {
+      "scene_id": "s01",
+      "scene_name": "son_visit",
+      "description": "Son Young-soo comes to visit",
+      "location": "Young-sook's House Entrance",
+      "time": "Day",
+      "characters": ["Kim Soon-ja", "Kim Young-soo"],
+      "emotion": "Joy, Tension",
+      "action": "Greeting",
+      "main_prompt": "masterpiece, best quality, photorealistic, 2people, mother greeting son at doorway, Korean home entrance, afternoon light",
+      "character_prompts": {
+        "Kim Soon-ja": "49 year old Korean woman, opening door surprised, happy to see son, apron on",
+        "Kim Young-soo": "25 year old Korean man, standing at door, guilty expression, holding fruit basket"
+      },
+      "regional_settings": {
+        "Kim Soon-ja": {"start": 0, "end": 50},
+        "Kim Young-soo": {"start": 50, "end": 100}
+      },
+      "output_folder": "scenes/act2/ep08/s01_visit",
+      "filename_prefix": "act2_ep08_s01"
+    },
+    {
+      "scene_id": "s02",
+      "scene_name": "introducing_ladies",
+      "description": "Introducing the housemates to her son",
+      "location": "Young-sook's House Living Room",
+      "time": "Day",
+      "characters": ["Kim Young-soo", "Park Bok-soon", "Lee Mal-ja", "Choi Jung-hee"],
+      "emotion": "Awkwardness, Curiosity",
+      "action": "Introduction",
+      "main_prompt": "masterpiece, best quality, photorealistic, 4people, young man being introduced to three older women, living room, curious expressions",
+      "character_prompts": {
+        "Kim Young-soo": "25 year old Korean man, bowing politely, slightly overwhelmed, meeting mom's housemates",
+        "Park Bok-soon": "53 year old Korean woman, waving enthusiastically, colorful dress",
+        "Lee Mal-ja": "47 year old Korean woman, tracksuit, assessing the young man",
+        "Choi Jung-hee": "51 year old Korean woman, glasses, nodding politely"
+      },
+      "regional_settings": {
+        "Kim Young-soo": {"start": 0, "end": 25},
+        "Park Bok-soon": {"start": 25, "end": 50},
+        "Lee Mal-ja": {"start": 50, "end": 75},
+        "Choi Jung-hee": {"start": 75, "end": 100}
+      },
+      "output_folder": "scenes/act2/ep08/s02_introduction",
+      "filename_prefix": "act2_ep08_s02"
+    },
+    {
+      "scene_id": "s03",
+      "scene_name": "ladies_scolding",
+      "description": "The ladies scold the son",
+      "location": "Young-sook's House Living Room",
+      "time": "Day",
+      "characters": ["Kim Young-soo", "Park Bok-soon", "Lee Mal-ja"],
+      "emotion": "Embarrassment, Humor",
+      "action": "Scolding",
+      "main_prompt": "masterpiece, best quality, photorealistic, 3people, two older women scolding young man, living room, comedic lecturing scene",
+      "character_prompts": {
+        "Kim Young-soo": "25 year old Korean man, sitting on sofa looking small, being lectured, intimidated",
+        "Park Bok-soon": "53 year old Korean woman, wagging finger, lecturing about being better son",
+        "Lee Mal-ja": "47 year old Korean woman, arms crossed, stern expression, backing up the lecture"
+      },
+      "regional_settings": {
+        "Kim Young-soo": {"start": 0, "end": 35},
+        "Park Bok-soon": {"start": 30, "end": 65},
+        "Lee Mal-ja": {"start": 60, "end": 100}
+      },
+      "output_folder": "scenes/act2/ep08/s03_scolding",
+      "filename_prefix": "act2_ep08_s03"
+    },
+    {
+      "scene_id": "s04",
+      "scene_name": "soonja_laughter",
+      "description": "Soon-ja laughs watching her son get scolded",
+      "location": "Young-sook's House Living Room",
+      "time": "Day",
+      "characters": ["Kim Soon-ja"],
+      "emotion": "Humor, Satisfaction",
+      "action": "Laughing",
+      "main_prompt": "masterpiece, best quality, photorealistic, 1woman, watching from kitchen doorway, amused smile, enjoying son being lectured",
+      "character_prompts": {
+        "Kim Soon-ja": "49 year old Korean woman, leaning on doorframe, hand over mouth hiding laugh, enjoying watching son get scolded"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/act2/ep08/s04_laughter",
+      "filename_prefix": "act2_ep08_s04"
+    },
+    {
+      "scene_id": "s05",
+      "scene_name": "daughter_in_law_arrives",
+      "description": "Daughter-in-law Mi-young comes to pick up her husband",
+      "location": "Young-sook's House Entrance",
+      "time": "Evening",
+      "characters": ["Kim Soon-ja", "Park Mi-young"],
+      "emotion": "Awkwardness, Tension",
+      "action": "Greeting",
+      "main_prompt": "masterpiece, best quality, photorealistic, 2women, mother-in-law opening door for daughter-in-law, awkward greeting, evening light",
+      "character_prompts": {
+        "Kim Soon-ja": "49 year old Korean woman, opening door, polite but guarded expression",
+        "Park Mi-young": "23 year old Korean woman, standing at door, formal greeting, slightly uncomfortable"
+      },
+      "regional_settings": {
+        "Kim Soon-ja": {"start": 0, "end": 50},
+        "Park Mi-young": {"start": 50, "end": 100}
+      },
+      "output_folder": "scenes/act2/ep08/s05_daughter_in_law",
+      "filename_prefix": "act2_ep08_s05"
+    },
+    {
+      "scene_id": "s06",
+      "scene_name": "heartfelt_conversation",
+      "description": "Soon-ja and her daughter-in-law have their first honest conversation",
+      "location": "Young-sook's House Kitchen",
+      "time": "Evening",
+      "characters": ["Kim Soon-ja", "Park Mi-young"],
+      "emotion": "Sincerity, Reconciliation",
+      "action": "Conversation",
+      "main_prompt": "masterpiece, best quality, photorealistic, 2women, honest conversation in kitchen, making tea, emotional breakthrough, warm lighting",
+      "character_prompts": {
+        "Kim Soon-ja": "49 year old Korean woman, making tea, speaking honestly for first time, vulnerable",
+        "Park Mi-young": "23 year old Korean woman, listening intently, seeing mother-in-law differently, tears forming"
+      },
+      "regional_settings": {
+        "Kim Soon-ja": {"start": 0, "end": 50},
+        "Park Mi-young": {"start": 50, "end": 100}
+      },
+      "output_folder": "scenes/act2/ep08/s06_conversation",
+      "filename_prefix": "act2_ep08_s06"
+    },
+    {
+      "scene_id": "s07",
+      "scene_name": "reconciliation_hug",
+      "description": "Soon-ja and her daughter-in-law reconcile",
+      "location": "Young-sook's House Kitchen",
+      "time": "Evening",
+      "characters": ["Kim Soon-ja", "Park Mi-young"],
+      "emotion": "Reconciliation, Moving",
+      "action": "Hugging",
+      "main_prompt": "masterpiece, best quality, photorealistic, 2women, emotional hug in kitchen, reconciliation moment, tears of relief, warm lighting",
+      "character_prompts": {
+        "Kim Soon-ja": "49 year old Korean woman, hugging daughter-in-law, tears of joy, finally understood",
+        "Park Mi-young": "23 year old Korean woman, hugging back, crying, genuine affection forming"
+      },
+      "regional_settings": {
+        "Kim Soon-ja": {"start": 0, "end": 50},
+        "Park Mi-young": {"start": 50, "end": 100}
+      },
+      "output_folder": "scenes/act2/ep08/s07_hug",
+      "filename_prefix": "act2_ep08_s07"
+    },
+    {
+      "scene_id": "s08",
+      "scene_name": "malja_dizziness",
+      "description": "Mal-ja feels dizzy again - foreshadowing",
+      "location": "Young-sook's House Living Room",
+      "time": "Evening",
+      "characters": ["Lee Mal-ja"],
+      "emotion": "Anxiety, Concealment",
+      "action": "Dizziness",
+      "main_prompt": "masterpiece, best quality, photorealistic, 1woman, grabbing table edge for support, hiding dizziness from others, concerned expression",
+      "character_prompts": {
+        "Lee Mal-ja": "47 year old Korean woman, tracksuit, suddenly dizzy, gripping table, trying not to show weakness, worried"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/act2/ep08/s08_foreshadowing",
+      "filename_prefix": "act2_ep08_s08"
+    }
+  ]
+}

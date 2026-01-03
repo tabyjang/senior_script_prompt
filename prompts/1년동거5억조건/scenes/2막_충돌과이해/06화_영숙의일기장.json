@@ -1,0 +1,153 @@
+{
+  "metadata": {
+    "work_title": "500 Million Won Inheritance Condition: Living Together",
+    "act": "act2",
+    "act_title": "Conflict and Understanding",
+    "chapter": 6,
+    "chapter_title": "Young-sook's Diary",
+    "created_at": "2026-01-03",
+    "total_scenes": 8
+  },
+  "chapter_info": {
+    "main_location": "Young-sook's House Young-sook's Room",
+    "time_period": "Day",
+    "characters": ["Kim Soon-ja"],
+    "main_emotion": "Shock, Revelation, Melancholy"
+  },
+  "scenes": [
+    {
+      "scene_id": "s01",
+      "scene_name": "room_cleaning",
+      "description": "Soon-ja tidies up Young-sook's room",
+      "location": "Young-sook's House Young-sook's Room",
+      "time": "Day",
+      "characters": ["Kim Soon-ja"],
+      "emotion": "Mixed Feelings, Curiosity",
+      "action": "Cleaning",
+      "main_prompt": "masterpiece, best quality, photorealistic, 1woman, cleaning and organizing room, looking at deceased's belongings, afternoon light through curtains",
+      "character_prompts": {
+        "Kim Soon-ja": "49 year old Korean woman, sorting through room, mixed emotions, picking up items carefully, curious about sister-in-law's life"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/act2/ep06/s01_cleaning",
+      "filename_prefix": "act2_ep06_s01"
+    },
+    {
+      "scene_id": "s02",
+      "scene_name": "diary_discovery",
+      "description": "Discovering the diary in the drawer",
+      "location": "Young-sook's House Young-sook's Room",
+      "time": "Day",
+      "characters": ["Kim Soon-ja"],
+      "emotion": "Surprise, Curiosity",
+      "action": "Discovery",
+      "main_prompt": "masterpiece, best quality, photorealistic, 1woman, finding diary in drawer, surprised expression, holding old notebook",
+      "character_prompts": {
+        "Kim Soon-ja": "49 year old Korean woman, holding weathered diary, eyes wide with discovery, sitting by open drawer"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/act2/ep06/s02_discovery",
+      "filename_prefix": "act2_ep06_s02"
+    },
+    {
+      "scene_id": "s03",
+      "scene_name": "reading_diary_start",
+      "description": "Beginning to read the diary",
+      "location": "Young-sook's House Young-sook's Room",
+      "time": "Day",
+      "characters": ["Kim Soon-ja"],
+      "emotion": "Focus, Tension",
+      "action": "Reading",
+      "main_prompt": "masterpiece, best quality, photorealistic, 1woman, reading diary intently, sitting on bed, afternoon light, focused expression",
+      "character_prompts": {
+        "Kim Soon-ja": "49 year old Korean woman, reading diary with concentration, sitting on bed edge, lips slightly parted, engrossed"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/act2/ep06/s03_reading",
+      "filename_prefix": "act2_ep06_s03"
+    },
+    {
+      "scene_id": "s04",
+      "scene_name": "shocking_passage",
+      "description": "Reading the passage about envying her sister-in-law",
+      "location": "Young-sook's House Young-sook's Room",
+      "time": "Day",
+      "characters": ["Kim Soon-ja"],
+      "emotion": "Shock, Revelation",
+      "action": "Shock",
+      "main_prompt": "masterpiece, best quality, photorealistic, 1woman, close-up, shocked expression reading diary, jaw dropped, revelation moment",
+      "character_prompts": {
+        "Kim Soon-ja": "49 year old Korean woman, frozen in shock, eyes wide reading diary page, hand trembling, everything she knew being overturned"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/act2/ep06/s04_shock",
+      "filename_prefix": "act2_ep06_s04"
+    },
+    {
+      "scene_id": "s05",
+      "scene_name": "diary_contents",
+      "description": "Close-up of the diary page",
+      "location": "Young-sook's House Young-sook's Room",
+      "time": "Day",
+      "characters": [],
+      "emotion": "Moving, Sadness",
+      "action": "Showing",
+      "main_prompt": "masterpiece, best quality, photorealistic, close-up of old diary page, handwritten Korean text visible, afternoon light on paper, emotional artifact",
+      "character_prompts": {},
+      "regional_settings": null,
+      "output_folder": "scenes/act2/ep06/s05_diary_contents",
+      "filename_prefix": "act2_ep06_s05"
+    },
+    {
+      "scene_id": "s06",
+      "scene_name": "tears",
+      "description": "Soon-ja cries while reading the diary",
+      "location": "Young-sook's House Young-sook's Room",
+      "time": "Day",
+      "characters": ["Kim Soon-ja"],
+      "emotion": "Sadness, Regret",
+      "action": "Crying",
+      "main_prompt": "masterpiece, best quality, photorealistic, 1woman, crying while holding diary, tears streaming, emotional release, soft lighting",
+      "character_prompts": {
+        "Kim Soon-ja": "49 year old Korean woman, tears streaming down face, holding diary to chest, 40 years of misunderstanding, profound sadness and regret"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/act2/ep06/s06_tears",
+      "filename_prefix": "act2_ep06_s06"
+    },
+    {
+      "scene_id": "s07",
+      "scene_name": "past_flashback",
+      "description": "Remembering Young-sook's expression from the past",
+      "location": "Flashback",
+      "time": "Flashback",
+      "characters": ["Park Young-sook"],
+      "emotion": "New Understanding",
+      "action": "Flashback",
+      "main_prompt": "masterpiece, best quality, photorealistic, flashback, dreamy quality, 1woman at family gathering, lonely expression while others laugh, sepia tones",
+      "character_prompts": {
+        "Park Young-sook": "52 year old Korean woman, standing apart at family gathering, watching others with envy not hatred, lonely isolated figure, misunderstood"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/act2/ep06/s07_flashback",
+      "filename_prefix": "act2_ep06_s07"
+    },
+    {
+      "scene_id": "s08",
+      "scene_name": "closing_diary",
+      "description": "Soon-ja closes the diary, now understanding Young-sook",
+      "location": "Young-sook's House Young-sook's Room",
+      "time": "Evening",
+      "characters": ["Kim Soon-ja"],
+      "emotion": "Understanding, Reconciliation",
+      "action": "Closing Diary",
+      "main_prompt": "masterpiece, best quality, photorealistic, 1woman, gently closing diary, peaceful yet sad expression, sunset light, new understanding",
+      "character_prompts": {
+        "Kim Soon-ja": "49 year old Korean woman, closing diary gently, expression of understanding and forgiveness, sunset light on face, 40 years of hate dissolving"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/act2/ep06/s08_closing",
+      "filename_prefix": "act2_ep06_s08"
+    }
+  ]
+}

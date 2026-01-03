@@ -1,0 +1,170 @@
+{
+  "character_id": "char_06",
+  "character_name": "오달수",
+  "actual_age": 74,
+  "prompt_age": 59,
+  "role": "helper_romantic",
+  "personality": ["다정함", "신사적", "변함없는 사랑", "조용한 힘"],
+  "appearance": {
+    "hair": "neat white hair",
+    "eyes": "warm kind eyes",
+    "features": "distinguished gentleman face, clean-shaven, dignified"
+  },
+  "symbolic_item": {
+    "item": "old photograph, gentleman hat",
+    "description": "변함없는 사랑과 기다림의 상징",
+    "special_note": "정숙의 첫사랑, 결말부에 등장, 새 출발의 상징"
+  },
+  "versions": [
+    {
+      "version_id": "v01",
+      "version_name": "기본_정면",
+      "category": "기본",
+      "positive": "masterpiece, best quality, photorealistic, 8k uhd, medium shot, front view, eye level, 59 year old Korean man, gentle distinguished face, warm kind eyes, soft smile, neat white hair, clean-shaven, dignified appearance, wearing elegant dress shirt, vest, gentleman style, standing straight, hands clasped in front, composed posture, neutral gray background, soft studio lighting",
+      "negative": "worst quality, low quality, blurry, deformed, disfigured, bad anatomy, bad hands, extra fingers, missing fingers, ugly, duplicate, morbid, mutilated, out of frame, watermark, text, signature, anime, cartoon, 3d render, cgi",
+      "output_folder": "characters/오달수/v01_기본",
+      "filename_prefix": "오달수_v01_기본"
+    },
+    {
+      "version_id": "v02",
+      "version_name": "일상",
+      "category": "의상",
+      "positive": "masterpiece, best quality, photorealistic, 8k uhd, medium shot, relaxed scene, 59 year old Korean man, warm expression, friendly eyes, neat white hair, casual grooming, wearing comfortable cardigan, polo shirt, sitting relaxed, reading newspaper, peaceful pose, cozy living room, afternoon light, homely atmosphere",
+      "negative": "worst quality, low quality, blurry, deformed, disfigured, bad anatomy, bad hands, extra fingers, missing fingers, ugly, duplicate, morbid, mutilated, out of frame, watermark, text, signature, anime, cartoon, 3d render, cgi",
+      "output_folder": "characters/오달수/v02_일상",
+      "filename_prefix": "오달수_v02_일상"
+    },
+    {
+      "version_id": "v03",
+      "version_name": "정장",
+      "category": "의상",
+      "positive": "masterpiece, best quality, photorealistic, 8k uhd, medium shot, formal scene, 59 year old Korean man, hopeful expression, emotional eyes, neat white hair perfectly styled, well-groomed, wearing elegant formal suit, tie, gentleman hat in hand, standing tall, nervous anticipation, about to reunite, cafe entrance, golden afternoon light, romantic atmosphere",
+      "negative": "worst quality, low quality, blurry, deformed, disfigured, bad anatomy, bad hands, extra fingers, missing fingers, ugly, duplicate, morbid, mutilated, out of frame, watermark, text, signature, anime, cartoon, 3d render, cgi",
+      "output_folder": "characters/오달수/v03_정장",
+      "filename_prefix": "오달수_v03_정장"
+    },
+    {
+      "version_id": "v04",
+      "version_name": "젊은시절",
+      "category": "의상",
+      "positive": "masterpiece, best quality, photorealistic, 8k uhd, medium shot, flashback scene, 30 year old Korean man, handsome youthful face, bright hopeful eyes, neat black hair, young and vibrant, wearing 1970s style shirt, retro fashion, standing shyly, hands in pockets, youthful nervousness, vintage street scene, soft nostalgic lighting, past era atmosphere",
+      "negative": "worst quality, low quality, blurry, deformed, disfigured, bad anatomy, bad hands, extra fingers, missing fingers, ugly, duplicate, morbid, mutilated, out of frame, watermark, text, signature, anime, cartoon, 3d render, cgi",
+      "output_folder": "characters/오달수/v04_젊은시절",
+      "filename_prefix": "오달수_v04_젊은시절"
+    },
+    {
+      "version_id": "v05",
+      "version_name": "설렘",
+      "category": "표정",
+      "positive": "masterpiece, best quality, photorealistic, 8k uhd, medium shot, anticipation scene, 59 year old Korean man, expectant expression, hopeful eyes, neat white hair, freshly groomed, wearing best dress shirt, holding flowers, checking watch, looking toward door, eager pose, restaurant interior, evening ambiance, romantic anticipation",
+      "negative": "worst quality, low quality, blurry, deformed, disfigured, bad anatomy, bad hands, extra fingers, missing fingers, ugly, duplicate, morbid, mutilated, out of frame, watermark, text, signature, anime, cartoon, 3d render, cgi",
+      "output_folder": "characters/오달수/v05_설렘",
+      "filename_prefix": "오달수_v05_설렘"
+    },
+    {
+      "version_id": "v06",
+      "version_name": "감동",
+      "category": "표정",
+      "positive": "masterpiece, best quality, photorealistic, 8k uhd, close-up shot, emotional portrait, 59 year old Korean man, tearful smile, eyes glistening with emotion, white hair, moved expression, wearing formal attire, hand over heart, overwhelmed with emotion, years of waiting ended, soft blurred background, warm emotional lighting, touching moment",
+      "negative": "worst quality, low quality, blurry, deformed, disfigured, bad anatomy, bad hands, extra fingers, missing fingers, ugly, duplicate, morbid, mutilated, out of frame, watermark, text, signature, anime, cartoon, 3d render, cgi",
+      "output_folder": "characters/오달수/v06_감동",
+      "filename_prefix": "오달수_v06_감동"
+    },
+    {
+      "version_id": "v07",
+      "version_name": "보호자",
+      "category": "동작",
+      "positive": "masterpiece, best quality, photorealistic, 8k uhd, medium shot, supportive scene, 59 year old Korean man, protective expression, steady gaze, neat white hair, strong appearance, wearing casual jacket, standing supportively, arms slightly open, ready to help, courtroom exterior, daylight, supportive atmosphere",
+      "negative": "worst quality, low quality, blurry, deformed, disfigured, bad anatomy, bad hands, extra fingers, missing fingers, ugly, duplicate, morbid, mutilated, out of frame, watermark, text, signature, anime, cartoon, 3d render, cgi",
+      "output_folder": "characters/오달수/v07_보호자",
+      "filename_prefix": "오달수_v07_보호자"
+    },
+    {
+      "version_id": "v08",
+      "version_name": "산책",
+      "category": "동작",
+      "positive": "masterpiece, best quality, photorealistic, 8k uhd, full shot, walking scene, 59 year old Korean man, peaceful expression, content smile, neat white hair, healthy appearance, wearing comfortable walking clothes, gentleman hat, walking leisurely, relaxed gait, enjoying nature, park path, autumn leaves, golden hour, peaceful atmosphere",
+      "negative": "worst quality, low quality, blurry, deformed, disfigured, bad anatomy, bad hands, extra fingers, missing fingers, ugly, duplicate, morbid, mutilated, out of frame, watermark, text, signature, anime, cartoon, 3d render, cgi",
+      "output_folder": "characters/오달수/v08_산책",
+      "filename_prefix": "오달수_v08_산책"
+    },
+    {
+      "version_id": "v09",
+      "version_name": "손잡기",
+      "category": "상호작용",
+      "positive": "masterpiece, best quality, photorealistic, 8k uhd, medium shot, romantic scene, 59 year old Korean man, loving expression, devoted eyes, neat white hair, warm smile, wearing elegant casual clothes, holding hands tenderly, walking together, ocean promenade, sunset lighting, second chance at love",
+      "negative": "worst quality, low quality, blurry, deformed, disfigured, bad anatomy, bad hands, extra fingers, missing fingers, ugly, duplicate, morbid, mutilated, out of frame, watermark, text, signature, anime, cartoon, 3d render, cgi",
+      "output_folder": "characters/오달수/v09_손잡기",
+      "filename_prefix": "오달수_v09_손잡기"
+    },
+    {
+      "version_id": "v10",
+      "version_name": "사진",
+      "category": "상징물",
+      "positive": "masterpiece, best quality, photorealistic, 8k uhd, close-up shot, symbolic portrait, 59 year old Korean man, nostalgic expression, remembering eyes, neat white hair, thoughtful demeanor, wearing casual comfortable clothes, holding old photograph tenderly, looking at photo with love, soft window light, nostalgic atmosphere, decades of waiting",
+      "negative": "worst quality, low quality, blurry, deformed, disfigured, bad anatomy, bad hands, extra fingers, missing fingers, ugly, duplicate, morbid, mutilated, out of frame, watermark, text, signature, anime, cartoon, 3d render, cgi",
+      "output_folder": "characters/오달수/v10_사진",
+      "filename_prefix": "오달수_v10_사진"
+    },
+    {
+      "version_id": "v11",
+      "version_name": "행복",
+      "category": "표정",
+      "positive": "masterpiece, best quality, photorealistic, 8k uhd, medium shot, happy ending scene, 59 year old Korean man, radiantly happy expression, fulfilled smile, neat white hair, healthy glow, wearing comfortable elegant clothes, laughing genuinely, eyes crinkled with joy, Jeju island pension, ocean view, golden hour, blissful atmosphere",
+      "negative": "worst quality, low quality, blurry, deformed, disfigured, bad anatomy, bad hands, extra fingers, missing fingers, ugly, duplicate, morbid, mutilated, out of frame, watermark, text, signature, anime, cartoon, 3d render, cgi",
+      "output_folder": "characters/오달수/v11_행복",
+      "filename_prefix": "오달수_v11_행복"
+    },
+    {
+      "version_id": "v12",
+      "version_name": "제주도",
+      "category": "동작",
+      "positive": "masterpiece, best quality, photorealistic, 8k uhd, medium shot, new beginning scene, 59 year old Korean man, peaceful content expression, hopeful eyes, neat white hair, relaxed appearance, wearing casual linen clothes, sun hat, standing on terrace, looking at ocean horizon, new chapter pose, Jeju island pension, ocean panorama, morning light, fresh start atmosphere",
+      "negative": "worst quality, low quality, blurry, deformed, disfigured, bad anatomy, bad hands, extra fingers, missing fingers, ugly, duplicate, morbid, mutilated, out of frame, watermark, text, signature, anime, cartoon, 3d render, cgi",
+      "output_folder": "characters/오달수/v12_제주도",
+      "filename_prefix": "오달수_v12_제주도"
+    }
+  ],
+  "interactions": [
+    {
+      "interaction_id": "int_01",
+      "interaction_name": "달수_정숙_재회",
+      "participants": ["오달수", "한정숙"],
+      "type": "romantic_reunion",
+      "main_prompt": "masterpiece, best quality, photorealistic, 2people, elderly couple, romantic reunion, outdoor setting, golden hour, heartwarming atmosphere",
+      "regional_settings": {
+        "오달수": {
+          "region": "0-50%",
+          "position": "left",
+          "prompt": "59 year old Korean man, emotional smile, eyes glistening, neat white hair, elegant suit, holding flowers, extending hand toward her, welcoming gesture, facing right"
+        },
+        "한정숙": {
+          "region": "50-100%",
+          "position": "right",
+          "prompt": "57 year old Korean woman, tearful happy smile, moved expression, shoulder-length gray-streaked hair, pearl necklace, stepping toward him, hand reaching out, facing left"
+        }
+      },
+      "overlap": "15%"
+    },
+    {
+      "interaction_id": "int_02",
+      "interaction_name": "달수_정숙_제주도",
+      "participants": ["오달수", "한정숙"],
+      "type": "romantic_together",
+      "main_prompt": "masterpiece, best quality, photorealistic, elderly couple, romantic scene, second love, Jeju island ocean view, sunset, peaceful atmosphere",
+      "regional_settings": {
+        "오달수": {
+          "region": "0-55%",
+          "position": "left",
+          "prompt": "59 year old Korean man, content smile, loving gaze, white hair, casual elegant clothes, arm around partner, protective loving pose, facing right"
+        },
+        "한정숙": {
+          "region": "45-100%",
+          "position": "right",
+          "prompt": "57 year old Korean woman, peaceful happy smile, secure expression, gray-streaked hair, pearl necklace, casual elegant clothes, leaning into partner, comfortable intimacy, facing left"
+        }
+      },
+      "overlap": "10%"
+    }
+  ]
+}

@@ -1,0 +1,171 @@
+{
+  "metadata": {
+    "work_title": "500 Million Won Inheritance Condition: Living Together",
+    "act": "act2",
+    "act_title": "Conflict and Understanding",
+    "chapter": 5,
+    "chapter_title": "Bok-soon's Tears",
+    "created_at": "2026-01-03",
+    "total_scenes": 8
+  },
+  "chapter_info": {
+    "main_location": "Young-sook's House",
+    "time_period": "Dawn to Day",
+    "characters": ["Kim Soon-ja", "Park Bok-soon"],
+    "main_emotion": "Warmth, Empathy, First Connection"
+  },
+  "scenes": [
+    {
+      "scene_id": "s01",
+      "scene_name": "room_knock",
+      "description": "Soon-ja knocks on Bok-soon's door",
+      "location": "Young-sook's House Bok-soon's Room Doorway",
+      "time": "Dawn",
+      "characters": ["Kim Soon-ja"],
+      "emotion": "Cautious, Worried",
+      "action": "Knocking",
+      "main_prompt": "masterpiece, best quality, photorealistic, 1woman, knocking gently on door, concerned expression, dim hallway, early dawn",
+      "character_prompts": {
+        "Kim Soon-ja": "49 year old Korean woman, softly knocking on door, worried caring expression, robe, hesitant but kind"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/act2/ep05/s01_knock",
+      "filename_prefix": "act2_ep05_s01"
+    },
+    {
+      "scene_id": "s02",
+      "scene_name": "boksoon_confession",
+      "description": "Bok-soon opens up about her husband",
+      "location": "Young-sook's House Bok-soon's Room",
+      "time": "Dawn",
+      "characters": ["Park Bok-soon", "Kim Soon-ja"],
+      "emotion": "Sadness, Longing",
+      "action": "Talking",
+      "main_prompt": "masterpiece, best quality, photorealistic, 2women, sitting together on bed, intimate emotional conversation, dim lighting, photo in hand",
+      "character_prompts": {
+        "Park Bok-soon": "53 year old Korean woman, tears in eyes, holding husband's photo, explaining her story, vulnerable moment",
+        "Kim Soon-ja": "49 year old Korean woman, listening intently, sympathetic expression, sitting beside her"
+      },
+      "regional_settings": {
+        "Park Bok-soon": {"start": 0, "end": 55},
+        "Kim Soon-ja": {"start": 45, "end": 100}
+      },
+      "output_folder": "scenes/act2/ep05/s02_confession",
+      "filename_prefix": "act2_ep05_s02"
+    },
+    {
+      "scene_id": "s03",
+      "scene_name": "husband_memory",
+      "description": "Story about the song her husband loved",
+      "location": "Young-sook's House Bok-soon's Room",
+      "time": "Dawn",
+      "characters": ["Park Bok-soon"],
+      "emotion": "Longing, Love",
+      "action": "Reminiscing",
+      "main_prompt": "masterpiece, best quality, photorealistic, 1woman, nostalgic smile through tears, looking at old cassette tape, bittersweet expression",
+      "character_prompts": {
+        "Park Bok-soon": "53 year old Korean woman, holding old trot cassette tape, smiling through tears, remembering happier times, this was his favorite song"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/act2/ep05/s03_memory",
+      "filename_prefix": "act2_ep05_s03"
+    },
+    {
+      "scene_id": "s04",
+      "scene_name": "holding_hands",
+      "description": "Soon-ja holds Bok-soon's hand",
+      "location": "Young-sook's House Bok-soon's Room",
+      "time": "Dawn",
+      "characters": ["Kim Soon-ja", "Park Bok-soon"],
+      "emotion": "Solidarity, Comfort",
+      "action": "Holding Hands",
+      "main_prompt": "masterpiece, best quality, photorealistic, close-up of two women's hands clasped together, emotional support moment, soft lighting",
+      "character_prompts": {
+        "Kim Soon-ja": "49 year old Korean woman's hand, gently holding other's hand, comforting gesture",
+        "Park Bok-soon": "53 year old Korean woman's hand, accepting comfort, teardrops visible"
+      },
+      "regional_settings": {
+        "Kim Soon-ja": {"start": 0, "end": 50},
+        "Park Bok-soon": {"start": 50, "end": 100}
+      },
+      "output_folder": "scenes/act2/ep05/s04_holding_hands",
+      "filename_prefix": "act2_ep05_s04"
+    },
+    {
+      "scene_id": "s05",
+      "scene_name": "singing_together",
+      "description": "The two sing together",
+      "location": "Young-sook's House Bok-soon's Room",
+      "time": "Dawn",
+      "characters": ["Kim Soon-ja", "Park Bok-soon"],
+      "emotion": "Connection, Warmth",
+      "action": "Singing Together",
+      "main_prompt": "masterpiece, best quality, photorealistic, 2women, singing softly together, dawn light through window, emotional bonding moment",
+      "character_prompts": {
+        "Kim Soon-ja": "49 year old Korean woman, singing awkwardly but sincerely, first time joining, warm expression",
+        "Park Bok-soon": "53 year old Korean woman, singing with tears and smile, grateful for company, leaning on friend"
+      },
+      "regional_settings": {
+        "Kim Soon-ja": {"start": 0, "end": 50},
+        "Park Bok-soon": {"start": 50, "end": 100}
+      },
+      "output_folder": "scenes/act2/ep05/s05_singing_together",
+      "filename_prefix": "act2_ep05_s05"
+    },
+    {
+      "scene_id": "s06",
+      "scene_name": "morning_sunrise",
+      "description": "Sunrise through the window",
+      "location": "Young-sook's House Bok-soon's Room",
+      "time": "Sunrise",
+      "characters": ["Kim Soon-ja", "Park Bok-soon"],
+      "emotion": "Hope, New Beginning",
+      "action": "Watching Sunrise",
+      "main_prompt": "masterpiece, best quality, photorealistic, 2women, watching sunrise through window, silhouettes, golden morning light, new beginning",
+      "character_prompts": {
+        "Kim Soon-ja": "49 year old Korean woman, watching sunrise, peaceful expression, sitting beside friend",
+        "Park Bok-soon": "53 year old Korean woman, smile replacing tears, hope in eyes, sunrise on face"
+      },
+      "regional_settings": {
+        "Kim Soon-ja": {"start": 0, "end": 50},
+        "Park Bok-soon": {"start": 50, "end": 100}
+      },
+      "output_folder": "scenes/act2/ep05/s06_sunrise",
+      "filename_prefix": "act2_ep05_s06"
+    },
+    {
+      "scene_id": "s07",
+      "scene_name": "youngsook_curiosity",
+      "description": "Soon-ja wonders why Young-sook was friends with these women",
+      "location": "Young-sook's House",
+      "time": "Day",
+      "characters": ["Kim Soon-ja"],
+      "emotion": "Curiosity, Wondering",
+      "action": "Thinking",
+      "main_prompt": "masterpiece, best quality, photorealistic, 1woman, looking at closed door of Youngsook's room, curious contemplative expression",
+      "character_prompts": {
+        "Kim Soon-ja": "49 year old Korean woman, standing before Youngsook's room door, wondering about her, curious expression"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/act2/ep05/s07_curiosity",
+      "filename_prefix": "act2_ep05_s07"
+    },
+    {
+      "scene_id": "s08",
+      "scene_name": "opening_door",
+      "description": "Opening Young-sook's room door",
+      "location": "Young-sook's House Young-sook's Room",
+      "time": "Day",
+      "characters": ["Kim Soon-ja"],
+      "emotion": "Curiosity, Tension",
+      "action": "Opening Door",
+      "main_prompt": "masterpiece, best quality, photorealistic, 1woman, opening door to untouched room, light streaming in, discovering space",
+      "character_prompts": {
+        "Kim Soon-ja": "49 year old Korean woman, hand on doorknob, peering into Youngsook's room, curious and hesitant, afternoon light"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/act2/ep05/s08_opening_door",
+      "filename_prefix": "act2_ep05_s08"
+    }
+  ]
+}

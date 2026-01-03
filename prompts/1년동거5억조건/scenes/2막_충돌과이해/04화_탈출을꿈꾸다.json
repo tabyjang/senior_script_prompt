@@ -1,0 +1,155 @@
+{
+  "metadata": {
+    "work_title": "5_Billion_Inheritance_Cohabitation",
+    "act": "act2",
+    "act_title": "Conflict_And_Understanding",
+    "chapter": 4,
+    "chapter_title": "Dreaming_Of_Escape",
+    "created_at": "2026-01-03",
+    "total_scenes": 8
+  },
+  "chapter_info": {
+    "main_location": "Young-sook's House",
+    "time_period": "daytime",
+    "characters": ["Kim Soon-ja", "Park Bok-soon", "Lee Mal-ja", "Choi Jung-hee"],
+    "main_emotion": "conflict, pressure, desperation"
+  },
+  "scenes": [
+    {
+      "scene_id": "s01",
+      "scene_name": "almost_giving_up",
+      "description": "Soon-ja exhausted from cohabitation considers quitting",
+      "location": "Young-sook's House Soon-ja's Room",
+      "time": "daytime",
+      "characters": ["Kim Soon-ja"],
+      "emotion": "exhaustion, desire to quit",
+      "action": "contemplating packing",
+      "main_prompt": "masterpiece, best quality, photorealistic, 1woman, sitting on bed edge, looking at suitcase, exhausted contemplation, afternoon light",
+      "character_prompts": {
+        "Kim Soon-ja": "49 year old Korean woman, exhausted defeated posture, looking at empty suitcase, considering giving up, bags under eyes"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/act2/ep04/s01_giving_up",
+      "filename_prefix": "act2_ep04_s01"
+    },
+    {
+      "scene_id": "s02",
+      "scene_name": "daughter_angry_call",
+      "description": "Daughter Young-hee complaining about inheritance",
+      "location": "Young-sook's House",
+      "time": "daytime",
+      "characters": ["Kim Soon-ja"],
+      "emotion": "stress, hurt",
+      "action": "taking phone call",
+      "main_prompt": "masterpiece, best quality, photorealistic, 1woman, holding phone away from ear, pained expression, family conflict",
+      "character_prompts": {
+        "Kim Soon-ja": "49 year old Korean woman, phone slightly away from ear, wincing at loud voice, hurt expression, daughter complaining about inheritance"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/act2/ep04/s02_daughter_call",
+      "filename_prefix": "act2_ep04_s02"
+    },
+    {
+      "scene_id": "s03",
+      "scene_name": "son_debt_confirmed",
+      "description": "Confirming son's serious debt problem",
+      "location": "Young-sook's House",
+      "time": "daytime",
+      "characters": ["Kim Soon-ja"],
+      "emotion": "worry, resolve",
+      "action": "checking message",
+      "main_prompt": "masterpiece, best quality, photorealistic, 1woman, looking at phone screen with worry, reading bad news, indoor lighting",
+      "character_prompts": {
+        "Kim Soon-ja": "49 year old Korean woman, worried expression looking at phone, reading about son's debt, hand on chest, cannot give up"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/act2/ep04/s03_debt_confirmed",
+      "filename_prefix": "act2_ep04_s03"
+    },
+    {
+      "scene_id": "s04",
+      "scene_name": "reason_to_endure",
+      "description": "Resolving to endure for the 500 million",
+      "location": "Young-sook's House Soon-ja's Room",
+      "time": "daytime",
+      "characters": ["Kim Soon-ja"],
+      "emotion": "resolve, heaviness",
+      "action": "determination",
+      "main_prompt": "masterpiece, best quality, photorealistic, 1woman, closing suitcase with determination, steeling herself, afternoon light",
+      "character_prompts": {
+        "Kim Soon-ja": "49 year old Korean woman, determined expression, pushing suitcase aside, clenching jaw, must endure for family"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/act2/ep04/s04_resolve",
+      "filename_prefix": "act2_ep04_s04"
+    },
+    {
+      "scene_id": "s05",
+      "scene_name": "malja_dizziness",
+      "description": "Mal-ja briefly feeling dizzy - foreshadowing",
+      "location": "Young-sook's House Living Room",
+      "time": "daytime",
+      "characters": ["Lee Mal-ja"],
+      "emotion": "anxiety, hiding",
+      "action": "hiding dizziness",
+      "main_prompt": "masterpiece, best quality, photorealistic, 1woman, briefly touching wall for support, hiding dizziness, living room",
+      "character_prompts": {
+        "Lee Mal-ja": "47 year old Korean woman, tracksuit, momentarily dizzy, hand on wall, quickly composing herself, hiding weakness"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/act2/ep04/s05_foreshadow",
+      "filename_prefix": "act2_ep04_s05"
+    },
+    {
+      "scene_id": "s06",
+      "scene_name": "dawn_sobbing",
+      "description": "Hearing sobbing from Bok-soon's room at dawn",
+      "location": "Young-sook's House Hallway",
+      "time": "dawn",
+      "characters": ["Kim Soon-ja"],
+      "emotion": "curiosity, concern",
+      "action": "listening",
+      "main_prompt": "masterpiece, best quality, photorealistic, 1woman, standing in dark hallway, listening to crying from room, dim moonlight",
+      "character_prompts": {
+        "Kim Soon-ja": "49 year old Korean woman, in hallway at night, ear towards door, curious concerned expression, hearing sobbing"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/act2/ep04/s06_sobbing",
+      "filename_prefix": "act2_ep04_s06"
+    },
+    {
+      "scene_id": "s07",
+      "scene_name": "discovering_boksoon",
+      "description": "Finding Bok-soon crying while singing",
+      "location": "Young-sook's House Bok-soon's Room",
+      "time": "dawn",
+      "characters": ["Park Bok-soon"],
+      "emotion": "sadness, longing",
+      "action": "crying while singing",
+      "main_prompt": "masterpiece, best quality, photorealistic, 1woman, crying while humming song, holding old photo, dim room, emotional moment",
+      "character_prompts": {
+        "Park Bok-soon": "53 year old Korean woman, tears streaming, humming trot song, holding husband's photo, sitting on bed, moonlight through window"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/act2/ep04/s07_boksoon_found",
+      "filename_prefix": "act2_ep04_s07"
+    },
+    {
+      "scene_id": "s08",
+      "scene_name": "soonja_at_door",
+      "description": "Soon-ja frozen at the doorway",
+      "location": "Young-sook's House Hallway",
+      "time": "dawn",
+      "characters": ["Kim Soon-ja"],
+      "emotion": "compassion, understanding",
+      "action": "pausing",
+      "main_prompt": "masterpiece, best quality, photorealistic, 1woman, frozen at doorway, hand reaching for handle then stopping, emotional realization",
+      "character_prompts": {
+        "Kim Soon-ja": "49 year old Korean woman, standing at door, hand hesitating, expression softening with understanding, first glimpse of empathy"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/act2/ep04/s08_at_door",
+      "filename_prefix": "act2_ep04_s08"
+    }
+  ]
+}

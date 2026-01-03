@@ -1,0 +1,111 @@
+{
+  "project_name": "302호의여자들",
+  "project_type": "drama",
+  "total_characters": 6,
+  "created_date": "2026-01-03",
+  "age_conversion_rule": "actual_age - 15",
+  "characters": [
+    {
+      "character_id": "char_01",
+      "character_name": "한정숙",
+      "actual_age": 72,
+      "prompt_age": 57,
+      "role": "protagonist",
+      "personality": ["강인함", "인내", "단단함", "따뜻함"],
+      "symbolic_item": "pearl necklace",
+      "prompt_file": "01_한정숙.json",
+      "total_versions": 12,
+      "total_interactions": 2
+    },
+    {
+      "character_id": "char_02",
+      "character_name": "최영희",
+      "actual_age": 75,
+      "prompt_age": 60,
+      "role": "helper_strategist",
+      "personality": ["지적임", "날카로움", "유머", "카리스마"],
+      "symbolic_item": "wheelchair, glasses",
+      "prompt_file": "02_최영희.json",
+      "total_versions": 12,
+      "total_interactions": 1
+    },
+    {
+      "character_id": "char_03",
+      "character_name": "이말자",
+      "actual_age": 68,
+      "prompt_age": 53,
+      "role": "helper_analyst",
+      "personality": ["날카로움", "계산적", "실용적", "직설적"],
+      "symbolic_item": "calculator, briefcase",
+      "prompt_file": "03_이말자.json",
+      "total_versions": 12,
+      "total_interactions": 1
+    },
+    {
+      "character_id": "char_04",
+      "character_name": "강순덕",
+      "actual_age": 70,
+      "prompt_age": 55,
+      "role": "helper_executor",
+      "personality": ["순박함", "용감함", "충직함", "실행력"],
+      "symbolic_item": "apron, rubber gloves",
+      "prompt_file": "04_강순덕.json",
+      "total_versions": 12,
+      "total_interactions": 1
+    },
+    {
+      "character_id": "char_05",
+      "character_name": "윤미라",
+      "actual_age": 48,
+      "prompt_age": 33,
+      "role": "antagonist",
+      "personality": ["교활함", "탐욕", "허영", "잔인함"],
+      "symbolic_item": "luxury designer bag, jewelry",
+      "prompt_file": "05_윤미라.json",
+      "total_versions": 12,
+      "total_interactions": 1
+    },
+    {
+      "character_id": "char_06",
+      "character_name": "오달수",
+      "actual_age": 74,
+      "prompt_age": 59,
+      "role": "helper_romantic",
+      "personality": ["다정함", "신사적", "변함없는 사랑", "조용한 힘"],
+      "symbolic_item": "old photograph, gentleman hat",
+      "prompt_file": "06_오달수.json",
+      "total_versions": 12,
+      "total_interactions": 2
+    }
+  ],
+  "statistics": {
+    "total_individual_versions": 72,
+    "total_interaction_prompts": 8,
+    "roles": {
+      "protagonist": 1,
+      "antagonist": 1,
+      "helpers": 4
+    },
+    "age_range": {
+      "actual": "48-75",
+      "prompt": "33-60"
+    }
+  },
+  "n8n_batch_config": {
+    "description": "n8n에서 각 캐릭터 JSON 파일을 순차적으로 로드하여 처리",
+    "workflow_steps": [
+      "1. characters_all.json 로드",
+      "2. characters 배열 루프",
+      "3. 각 캐릭터의 prompt_file 로드",
+      "4. versions 배열 루프",
+      "5. ComfyUI API 호출",
+      "6. output_folder에 이미지 저장"
+    ],
+    "comfyui_api_endpoint": "http://localhost:8188/prompt",
+    "output_base_path": "output/302호의여자들/"
+  },
+  "folder_structure": {
+    "prompts": "prompts/302호의여자들/characters/",
+    "output": "output/302호의여자들/characters/{character_name}/{version_name}/"
+  }
+}

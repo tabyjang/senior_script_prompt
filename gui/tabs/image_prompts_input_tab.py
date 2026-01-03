@@ -389,8 +389,8 @@ class ImagePromptsInputTab(BaseTab):
 
                     prompt_number = int(prompt_num_match.group(1))
 
-                    # 프롬프트 번호 유효성 검사 (1~8)
-                    if prompt_number < 1 or prompt_number > 8:
+                    # 프롬프트 번호 유효성 검사 (1~12)
+                    if prompt_number < 1 or prompt_number > 12:
                         continue
 
                     # JSON 내용 추출 (중괄호로 시작하고 끝나는 JSON 블록)
@@ -455,7 +455,7 @@ class ImagePromptsInputTab(BaseTab):
 
             if not char_name:
                 continue
-            if not isinstance(prompt_number, int) or prompt_number < 1 or prompt_number > 8:
+            if not isinstance(prompt_number, int) or prompt_number < 1 or prompt_number > 12:
                 continue
             if not isinstance(prompt_obj, dict):
                 continue
@@ -694,8 +694,8 @@ class ImagePromptsInputTab(BaseTab):
             if not char_name or prompt_number == 0 or not prompt_json_str:
                 continue
 
-            # 프롬프트 번호 유효 범위 (1~8)
-            if prompt_number < 1 or prompt_number > 8:
+            # 프롬프트 번호 유효 범위 (1~12)
+            if prompt_number < 1 or prompt_number > 12:
                 continue
 
             if char_name in character_dict:

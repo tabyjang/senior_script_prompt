@@ -1,0 +1,62 @@
+{
+  "metadata": {
+    "work_title": "5_Billion_Inheritance_Cohabitation",
+    "character_name_kr": "최정희",
+    "character_name_en": "Choi Jung-hee",
+    "created_at": "2026-01-03",
+    "total_versions": 5
+  },
+  "character_info": {
+    "name_kr": "최정희",
+    "name_en": "Choi Jung-hee",
+    "real_age": 66,
+    "prompt_age": 51,
+    "gender": "female",
+    "role": "supporting_main",
+    "personality": ["meticulous", "strict", "warm consideration", "precise"],
+    "appearance": ["glasses", "neat blouse", "thick dictionary"],
+    "symbolic_item": "thick dictionary"
+  },
+  "versions": [
+    {
+      "version_id": "v01",
+      "version_name": "basic_intellectual",
+      "description": "Intellectual character introduction",
+      "positive": "masterpiece, best quality, photorealistic, 8k uhd, medium shot, front view, 51 year old Korean woman, wearing glasses, neat blouse, holding thick dictionary, intellectual refined expression, proper posture, studio lighting",
+      "output_folder": "characters/choi_junghee/v01_basic",
+      "filename_prefix": "choi_junghee_v01_basic"
+    },
+    {
+      "version_id": "v02",
+      "version_name": "grammar_correction",
+      "description": "Correcting grammar",
+      "positive": "masterpiece, best quality, photorealistic, 51 year old Korean woman, glasses, index finger raised in correction gesture, patient but firm expression, blouse, holding book, indoor lighting, teacher demeanor",
+      "output_folder": "characters/choi_junghee/v02_correction",
+      "filename_prefix": "choi_junghee_v02_correction"
+    },
+    {
+      "version_id": "v03",
+      "version_name": "reading_focused",
+      "description": "Focused while reading",
+      "positive": "masterpiece, best quality, photorealistic, 51 year old Korean woman, reading book intently, glasses on, concentrated expression, neat appearance, sitting by window, natural daylight, intellectual atmosphere",
+      "output_folder": "characters/choi_junghee/v03_reading",
+      "filename_prefix": "choi_junghee_v03_reading"
+    },
+    {
+      "version_id": "v04",
+      "version_name": "fear_confession",
+      "description": "Confessing fear of dementia",
+      "positive": "masterpiece, best quality, photorealistic, 51 year old Korean woman, vulnerable worried expression, glasses slightly askew, hands trembling slightly, fear in eyes, soft indoor lighting, emotional moment",
+      "output_folder": "characters/choi_junghee/v04_fear",
+      "filename_prefix": "choi_junghee_v04_fear"
+    },
+    {
+      "version_id": "v05",
+      "version_name": "relieved_smile",
+      "description": "Relaxed smile with friends",
+      "positive": "masterpiece, best quality, photorealistic, 51 year old Korean woman, warm genuine smile, glasses, relaxed happy expression, sitting with friends, comfortable atmosphere, soft warm lighting",
+      "output_folder": "characters/choi_junghee/v05_smile",
+      "filename_prefix": "choi_junghee_v05_smile"
+    }
+  ]
+}

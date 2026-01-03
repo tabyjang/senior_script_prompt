@@ -1,0 +1,70 @@
+{
+  "metadata": {
+    "work_title": "5_Billion_Inheritance_Cohabitation",
+    "character_name_kr": "김순자",
+    "character_name_en": "Kim Soon-ja",
+    "created_at": "2026-01-03",
+    "total_versions": 6
+  },
+  "character_info": {
+    "name_kr": "김순자",
+    "name_en": "Kim Soon-ja",
+    "real_age": 64,
+    "prompt_age": 49,
+    "gender": "female",
+    "role": "protagonist",
+    "personality": ["patient", "devoted", "deeply caring"],
+    "appearance": ["neat permed hair", "always wearing apron", "warm eyes"],
+    "symbolic_item": "apron"
+  },
+  "versions": [
+    {
+      "version_id": "v01",
+      "version_name": "basic_front",
+      "description": "Basic character introduction image",
+      "positive": "masterpiece, best quality, photorealistic, 8k uhd, medium shot, front view, 49 year old Korean woman, neat permed hair, warm kind eyes, gentle motherly expression, simple comfortable home clothes, apron, hands clasped in front, neutral background, soft studio lighting",
+      "output_folder": "characters/kim_soonja/v01_basic",
+      "filename_prefix": "kim_soonja_v01_basic"
+    },
+    {
+      "version_id": "v02",
+      "version_name": "mourning_dress",
+      "description": "Wearing mourning clothes at funeral",
+      "positive": "masterpiece, best quality, photorealistic, 49 year old Korean woman, wearing black mourning hanbok, neat permed hair, tired melancholic expression, mixed emotions, funeral setting atmosphere, soft diffused lighting",
+      "output_folder": "characters/kim_soonja/v02_mourning",
+      "filename_prefix": "kim_soonja_v02_mourning"
+    },
+    {
+      "version_id": "v03",
+      "version_name": "annoyed_expression",
+      "description": "Exhausted from cohabitation stress",
+      "positive": "masterpiece, best quality, photorealistic, 49 year old Korean woman, annoyed frustrated expression, hand on forehead, exhausted from stress, messy permed hair, casual home clothes, indoor morning lighting",
+      "output_folder": "characters/kim_soonja/v03_annoyed",
+      "filename_prefix": "kim_soonja_v03_annoyed"
+    },
+    {
+      "version_id": "v04",
+      "version_name": "crying_tears",
+      "description": "Crying emotional scene",
+      "positive": "masterpiece, best quality, photorealistic, 49 year old Korean woman, crying with tears streaming, emotional vulnerable expression, hand wiping tears, warm indoor lighting, close-up portrait",
+      "output_folder": "characters/kim_soonja/v04_crying",
+      "filename_prefix": "kim_soonja_v04_crying"
+    },
+    {
+      "version_id": "v05",
+      "version_name": "warm_smile",
+      "description": "Genuine warm smile",
+      "positive": "masterpiece, best quality, photorealistic, 49 year old Korean woman, warm genuine smile, kind eyes crinkling, motherly affection, neat permed hair, comfortable clothes, soft warm lighting",
+      "output_folder": "characters/kim_soonja/v05_smile",
+      "filename_prefix": "kim_soonja_v05_smile"
+    },
+    {
+      "version_id": "v06",
+      "version_name": "determined_hope",
+      "description": "Determined expression for new beginning",
+      "positive": "masterpiece, best quality, photorealistic, 49 year old Korean woman, determined hopeful expression, confident posture, eyes filled with resolve, neat appearance, bright natural lighting, looking forward",
+      "output_folder": "characters/kim_soonja/v06_determined",
+      "filename_prefix": "kim_soonja_v06_determined"
+    }
+  ]
+}
