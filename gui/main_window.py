@@ -7,22 +7,20 @@ import tkinter as tk
 from tkinter import ttk, messagebox, filedialog
 from pathlib import Path
 
-# 탭들 import
-from gui.tabs.synopsis_tab import SynopsisTab
+# 탭들 import (7개로 간소화)
 from gui.tabs.synopsis_input_tab import SynopsisInputTab
-from gui.tabs.characters_tab import CharactersTab
-from gui.tabs.character_details_input_tab import CharacterDetailsInputTab
-from gui.tabs.chapters_tab import ChaptersTab
+from gui.tabs.image_generation_tab import ImageGenerationTab
 from gui.tabs.chapter_details_input_tab import ChapterDetailsInputTab
 from gui.tabs.scripts_tab import ScriptsTab
-from gui.tabs.scenes_tab import ScenesTab
-from gui.tabs.image_prompts_tab import ImagePromptsTab
 from gui.tabs.image_prompts_input_tab import ImagePromptsInputTab
-from gui.tabs.image_generation_tab import ImageGenerationTab
-from gui.tabs.copy_paste_tab import CopyPasteTab
+from gui.tabs.comfyui_tab import ComfyUITab
+from gui.tabs.word_converter_tab import WordConverterTab
 
 # 다이얼로그 import
 from gui.dialogs.settings_dialog import SettingsDialog
+
+# 유틸리티 import
+from utils.word_converter import convert_word_to_markdown
 
 
 class MainWindow:
@@ -87,6 +85,11 @@ class MainWindow:
         file_menu.add_command(label="저장", command=self._save_all, accelerator="Ctrl+S")
         file_menu.add_separator()
         file_menu.add_command(label="종료", command=self.root.quit)
+
+        # 도구 메뉴
+        tools_menu = tk.Menu(menubar, tearoff=0)
+        menubar.add_cascade(label="도구", menu=tools_menu)
+        tools_menu.add_command(label="Word → MD 변환...", command=self._convert_word_to_md)
 
         # 설정 메뉴
         settings_menu = tk.Menu(menubar, tearoff=0)
@@ -158,20 +161,15 @@ class MainWindow:
         self.tab_buttons = {}
         self.current_tab = "synopsis"
 
-        # 탭 버튼들
+        # 탭 버튼들 (7개로 간소화)
         tab_names = [
             ("synopsis", "시놉시스"),
-            ("synopsis_input", "시놉시스 입력"),
             ("characters", "인물"),
-            ("character_details_input", "인물 세부정보 입력"),
-            ("image_prompts", "이미지 프롬프트"),
-            ("image_prompts_input", "이미지 프롬프트 입력"),
             ("chapters", "챕터"),
-            ("chapter_details_input", "챕터 세부정보 입력"),
             ("scripts", "대본"),
-            ("scenes", "장면 생성"),
-            ("image_generation", "이미지 생성"),
-            ("copy_paste", "복사/붙여넣기")
+            ("scene_prompts", "장면 프롬프트"),
+            ("comfyui", "ComfyUI 생성"),
+            ("word_converter", "Word 변환")
         ]
 
         for tab_id, tab_label in tab_names:
@@ -194,21 +192,16 @@ class MainWindow:
         statusbar.grid(row=1, column=0, sticky=(tk.W, tk.E))
 
     def _initialize_tabs(self):
-        """탭들 초기화"""
+        """탭들 초기화 (7개로 간소화)"""
         # 탭 인스턴스 생성
         self.tabs = {
-            'synopsis': SynopsisTab(self.notebook, self.project_data, self.file_service, self.content_generator),
-            'synopsis_input': SynopsisInputTab(self.notebook, self.project_data, self.file_service, self.content_generator),
-            'characters': CharactersTab(self.notebook, self.project_data, self.file_service, self.content_generator),
-            'character_details_input': CharacterDetailsInputTab(self.notebook, self.project_data, self.file_service, self.content_generator),
-            'chapters': ChaptersTab(self.notebook, self.project_data, self.file_service, self.content_generator),
-            'chapter_details_input': ChapterDetailsInputTab(self.notebook, self.project_data, self.file_service, self.content_generator),
+            'synopsis': SynopsisInputTab(self.notebook, self.project_data, self.file_service, self.content_generator),
+            'characters': ImageGenerationTab(self.notebook, self.project_data, self.file_service, self.content_generator),
+            'chapters': ChapterDetailsInputTab(self.notebook, self.project_data, self.file_service, self.content_generator),
             'scripts': ScriptsTab(self.notebook, self.project_data, self.file_service, self.content_generator),
-            'scenes': ScenesTab(self.notebook, self.project_data, self.file_service, self.content_generator),
-            'image_prompts': ImagePromptsTab(self.notebook, self.project_data, self.file_service, self.content_generator),
-            'image_prompts_input': ImagePromptsInputTab(self.notebook, self.project_data, self.file_service, self.content_generator),
-            'image_generation': ImageGenerationTab(self.notebook, self.project_data, self.file_service, self.content_generator),
-            'copy_paste': CopyPasteTab(self.notebook, self.project_data, self.file_service, self.content_generator)
+            'scene_prompts': ImagePromptsInputTab(self.notebook, self.project_data, self.file_service, self.content_generator),
+            'comfyui': ComfyUITab(self.notebook, self.project_data, self.file_service, self.content_generator),
+            'word_converter': WordConverterTab(self.notebook, self.project_data, self.file_service, self.content_generator)
         }
 
         # 모든 탭 업데이트
@@ -367,3 +360,46 @@ class MainWindow:
     def _open_settings(self):
         """설정 창 열기"""
         SettingsDialog(self.root, self.config, self.project_data, self.file_service)
+
+    def _convert_word_to_md(self):
+        """Word 파일을 Markdown으로 변환"""
+        # 파일 선택 대화상자
+        word_file = filedialog.askopenfilename(
+            title="Word 파일 선택",
+            filetypes=[
+                ("Word 문서", "*.docx"),
+                ("모든 파일", "*.*")
+            ],
+            initialdir=str(self.project_path) if self.project_path.exists() else None
+        )
+
+        if not word_file:
+            return
+
+        # 저장 위치 선택
+        default_name = Path(word_file).stem + ".md"
+        default_dir = Path(word_file).parent
+
+        save_path = filedialog.asksaveasfilename(
+            title="Markdown 파일 저장",
+            defaultextension=".md",
+            filetypes=[("Markdown 파일", "*.md")],
+            initialfile=default_name,
+            initialdir=str(default_dir)
+        )
+
+        if not save_path:
+            return
+
+        # 변환 실행
+        self.status_var.set("Word → MD 변환 중...")
+        self.root.update()
+
+        success, message, output_path = convert_word_to_markdown(word_file, save_path)
+
+        if success:
+            self.status_var.set(f"변환 완료: {Path(output_path).name}")
+            messagebox.showinfo("변환 완료", message)
+        else:
+            self.status_var.set("변환 실패")
+            messagebox.showerror("변환 오류", message)
