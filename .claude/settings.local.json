@@ -18,7 +18,10 @@
       "Bash(dir /s /b \"C:\\\\NewProject\\\\senior_contents\\\\senior_project_manager\\\\01_man\")",
       "Bash(copy comfyui-output-format.skill comfyui-output-format.zip)",
       "Bash(del:*)",
-      "Bash(copy:*)"
+      "Bash(copy:*)",
+      "WebSearch",
+      "WebFetch(domain:github.com)",
+      "Bash(dir /s /b \"C:\\\\Newproject\\\\senior-automation-project\\\\senior-story-project\\\\senior_script_prompt\\\\prompts\\\\1년동거5억조건\\\\1년동거5억조건_episodes\")"
     ]
   }
 }

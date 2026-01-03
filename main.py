@@ -6,6 +6,11 @@
 
 import os
 import sys
+
+# TensorFlow 경고 메시지 숨기기
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
+os.environ['TF_ENABLE_ONEDNN_OPTS'] = '0'
+
 import tkinter as tk
 from pathlib import Path
 import argparse

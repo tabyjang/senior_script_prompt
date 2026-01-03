@@ -16,6 +16,7 @@ from gui.tabs.image_prompts_input_tab import ImagePromptsInputTab
 from gui.tabs.comfyui_tab import ComfyUITab
 from gui.tabs.word_converter_tab import WordConverterTab
 from gui.tabs.tts_tab import TTSTab
+from gui.tabs.episode_splitter_tab import EpisodeSplitterTab
 
 # 다이얼로그 import
 from gui.dialogs.settings_dialog import SettingsDialog
@@ -171,6 +172,7 @@ class MainWindow:
             ("scene_prompts", "장면 프롬프트"),
             ("comfyui", "ComfyUI 생성"),
             ("tts", "TTS 음성"),
+            ("episode_splitter", "에피소드 분리"),
             ("word_converter", "Word 변환")
         ]
 
@@ -204,6 +206,7 @@ class MainWindow:
             'scene_prompts': ImagePromptsInputTab(self.notebook, self.project_data, self.file_service, self.content_generator),
             'comfyui': ComfyUITab(self.notebook, self.project_data, self.file_service, self.content_generator),
             'tts': TTSTab(self.notebook, self.project_data, self.file_service, self.content_generator),
+            'episode_splitter': EpisodeSplitterTab(self.notebook, self.project_data, self.file_service, self.content_generator),
             'word_converter': WordConverterTab(self.notebook, self.project_data, self.file_service, self.content_generator)
         }
 

@@ -312,147 +312,93 @@ class ElevenLabsTTSEngine(BaseTTSEngine):
 
 
 class ChatterboxTTSEngine(BaseTTSEngine):
-    """Chatterbox TTS - Local Neural TTS (Resemble AI)"""
+    """Chatterbox Turbo TTS - 최신 고품질 영어 TTS (Resemble AI)"""
 
-    name = "Chatterbox"
-    description = "Chatterbox 로컬 AI TTS (오프라인, 23개 언어, 음성복제)"
+    name = "Chatterbox Turbo"
+    description = "Chatterbox Turbo AI TTS (영어, 음성복제, 감정표현)"
     requires_internet = False
     supports_voice_cloning = True  # 음성 복제 지원
 
-    # 지원 언어
-    LANGUAGES = {
-        "[한국어] 기본": "ko",
-        "[영어] English": "en",
-        "[일본어] 日本語": "ja",
-        "[중국어] 中文": "zh",
-        "[독일어] Deutsch": "de",
-        "[프랑스어] Français": "fr",
-        "[스페인어] Español": "es",
-        "[이탈리아어] Italiano": "it",
-        "[포르투갈어] Português": "pt",
-        "[러시아어] Русский": "ru",
+    # Turbo는 영어 전용
+    VOICES = {
+        "[영어] 기본": "default",
     }
 
-    # Conda 환경 Python 경로
-    CONDA_PYTHON = r"C:\Users\USER\Miniconda3\envs\chatterbox\python.exe"
+    _model = None  # 싱글톤 모델 인스턴스
 
     def __init__(self):
-        import os
-        if not os.path.exists(self.CONDA_PYTHON):
-            raise FileNotFoundError(f"Chatterbox environment not found: {self.CONDA_PYTHON}")
+        from chatterbox.tts import ChatterboxTTS
+        self._chatterbox = ChatterboxTTS
 
     def get_voices(self) -> Dict[str, str]:
-        return self.LANGUAGES.copy()
+        return self.VOICES.copy()
+
+    def _get_model(self):
+        """모델을 lazy loading으로 가져옴 (싱글톤)"""
+        if ChatterboxTTSEngine._model is None:
+            import torch
+
+            device = 'cuda' if torch.cuda.is_available() else 'cpu'
+
+            # CPU 환경: torch.load에 map_location 패치 필요
+            if device == 'cpu':
+                _original_load = torch.load
+                def patched_load(*args, **kwargs):
+                    kwargs['map_location'] = 'cpu'
+                    return _original_load(*args, **kwargs)
+                torch.load = patched_load
+
+            print(f"Loading Chatterbox Turbo model on {device}...")
+            ChatterboxTTSEngine._model = self._chatterbox.from_pretrained(device=device)
+            print("Chatterbox Turbo model loaded!")
+        return ChatterboxTTSEngine._model
 
     def generate(self, text: str, output_path: str, voice: str,
                  rate: int = 0, volume: int = 0, pitch: int = 0,
                  speaker_wav: str = None) -> bool:
-        import subprocess
-        import tempfile
         import os
+        import subprocess
 
         try:
-            # WAV로 생성 (Chatterbox는 WAV 출력)
+            import torchaudio
+
+            # 모델 가져오기
+            model = self._get_model()
+
+            # WAV로 생성
             wav_path = output_path.replace('.mp3', '.wav')
+            os.makedirs(os.path.dirname(wav_path) if os.path.dirname(wav_path) else ".", exist_ok=True)
 
-            # 텍스트를 별도 파일로 저장 (인코딩 문제 방지)
-            with tempfile.NamedTemporaryFile(mode='w', suffix='.txt', delete=False, encoding='utf-8') as tf:
-                tf.write(text)
-                text_path = tf.name
-
-            # 참조 음성 경로 처리
-            speaker_wav_line = ""
+            # 음성 생성 (음성 복제 지원, 감정 태그 지원: [laugh], [chuckle] 등)
+            print(f"Generating speech: {text[:50]}...")
             if speaker_wav and os.path.exists(speaker_wav):
-                speaker_wav_line = f'audio_prompt_path = r"{speaker_wav}"'
+                print(f"Using voice clone from: {speaker_wav}")
+                wav = model.generate(text=text, audio_prompt_path=speaker_wav)
             else:
-                speaker_wav_line = "audio_prompt_path = None"
+                wav = model.generate(text=text)
 
-            # Python 스크립트
-            script = f'''
-import os
-import sys
-sys.stdout.reconfigure(encoding='utf-8')
+            # 저장
+            torchaudio.save(wav_path, wav.cpu(), model.sr)
+            print(f"Saved: {wav_path}")
 
-wav_path = r"{wav_path}"
-text_path = r"{text_path}"
-lang = "{voice}"
-{speaker_wav_line}
+            # MP3로 변환 시도 (ffmpeg)
+            if output_path.endswith('.mp3'):
+                try:
+                    subprocess.run(
+                        ['ffmpeg', '-y', '-i', wav_path, '-q:a', '2', output_path],
+                        capture_output=True, timeout=30
+                    )
+                    os.remove(wav_path)
+                except Exception:
+                    import shutil
+                    shutil.move(wav_path, output_path.replace('.mp3', '.wav'))
 
-os.makedirs(os.path.dirname(wav_path) if os.path.dirname(wav_path) else ".", exist_ok=True)
+            return True
 
-# 텍스트 파일에서 읽기
-with open(text_path, 'r', encoding='utf-8') as f:
-    text = f.read()
-
-# torch.load CPU 패치
-import torch
-_original_load = torch.load
-def patched_load(f, *args, **kwargs):
-    kwargs['map_location'] = 'cpu'
-    return _original_load(f, *args, **kwargs)
-torch.load = patched_load
-
-from chatterbox import ChatterboxMultilingualTTS
-import torchaudio
-
-print("Loading model...")
-model = ChatterboxMultilingualTTS.from_pretrained(device='cpu')
-print("Generating...")
-if audio_prompt_path:
-    print(f"Using voice clone from: {{audio_prompt_path}}")
-wav = model.generate(text=text, language_id=lang, audio_prompt_path=audio_prompt_path)
-torchaudio.save(wav_path, wav.cpu(), model.sr)
-print("SUCCESS")
-'''
-            with tempfile.NamedTemporaryFile(mode='w', suffix='.py', delete=False, encoding='utf-8') as f:
-                f.write(script)
-                script_path = f.name
-
-            try:
-                result = subprocess.run(
-                    [self.CONDA_PYTHON, script_path],
-                    capture_output=True,
-                    text=True,
-                    timeout=300,
-                    encoding='utf-8',
-                    errors='replace'
-                )
-
-                print(f"Chatterbox stdout: {result.stdout}")
-                if result.stderr:
-                    # 경고만 필터링
-                    errors = [l for l in result.stderr.split('\n')
-                              if 'error' in l.lower() and 'warning' not in l.lower()]
-                    if errors:
-                        print(f"Chatterbox stderr: {errors}")
-
-                if "SUCCESS" in result.stdout:
-                    if os.path.exists(wav_path):
-                        # MP3로 변환 시도 (ffmpeg)
-                        if output_path.endswith('.mp3'):
-                            try:
-                                subprocess.run(
-                                    ['ffmpeg', '-y', '-i', wav_path, '-q:a', '2', output_path],
-                                    capture_output=True, timeout=30
-                                )
-                                os.remove(wav_path)
-                            except:
-                                import shutil
-                                shutil.move(wav_path, output_path.replace('.mp3', '.wav'))
-                        return True
-                else:
-                    print(f"Chatterbox Error: {result.stderr}")
-                    return False
-            finally:
-                os.unlink(script_path)
-                if os.path.exists(text_path):
-                    os.unlink(text_path)
-
-        except subprocess.TimeoutExpired:
-            print("Chatterbox Error: Timeout")
-            return False
         except Exception as e:
-            print(f"Chatterbox Error: {e}")
+            print(f"Chatterbox Turbo Error: {e}")
+            import traceback
+            traceback.print_exc()
             return False
 
 
