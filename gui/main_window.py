@@ -15,6 +15,7 @@ from gui.tabs.scripts_tab import ScriptsTab
 from gui.tabs.image_prompts_input_tab import ImagePromptsInputTab
 from gui.tabs.comfyui_tab import ComfyUITab
 from gui.tabs.word_converter_tab import WordConverterTab
+from gui.tabs.tts_tab import TTSTab
 
 # 다이얼로그 import
 from gui.dialogs.settings_dialog import SettingsDialog
@@ -161,7 +162,7 @@ class MainWindow:
         self.tab_buttons = {}
         self.current_tab = "synopsis"
 
-        # 탭 버튼들 (7개로 간소화)
+        # 탭 버튼들
         tab_names = [
             ("synopsis", "시놉시스"),
             ("characters", "인물"),
@@ -169,6 +170,7 @@ class MainWindow:
             ("scripts", "대본"),
             ("scene_prompts", "장면 프롬프트"),
             ("comfyui", "ComfyUI 생성"),
+            ("tts", "TTS 음성"),
             ("word_converter", "Word 변환")
         ]
 
@@ -192,7 +194,7 @@ class MainWindow:
         statusbar.grid(row=1, column=0, sticky=(tk.W, tk.E))
 
     def _initialize_tabs(self):
-        """탭들 초기화 (7개로 간소화)"""
+        """탭들 초기화"""
         # 탭 인스턴스 생성
         self.tabs = {
             'synopsis': SynopsisInputTab(self.notebook, self.project_data, self.file_service, self.content_generator),
@@ -201,6 +203,7 @@ class MainWindow:
             'scripts': ScriptsTab(self.notebook, self.project_data, self.file_service, self.content_generator),
             'scene_prompts': ImagePromptsInputTab(self.notebook, self.project_data, self.file_service, self.content_generator),
             'comfyui': ComfyUITab(self.notebook, self.project_data, self.file_service, self.content_generator),
+            'tts': TTSTab(self.notebook, self.project_data, self.file_service, self.content_generator),
             'word_converter': WordConverterTab(self.notebook, self.project_data, self.file_service, self.content_generator)
         }
 
