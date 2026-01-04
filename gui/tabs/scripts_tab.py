@@ -1,33 +1,31 @@
 """
 대본 탭
 에피소드 MD 파일을 막(Act) > 에피소드 구조로 표시합니다.
+사이드바 트리뷰 구조로 깔끔하게 표시합니다.
 """
 
 import tkinter as tk
-from tkinter import ttk, scrolledtext, messagebox
+from tkinter import ttk, scrolledtext
 import re
 from typing import Optional, Dict, List, Any
 from .base_tab import BaseTab
+from utils.ui_helpers import ActEpisodeTreeView
 
 
 class ScriptsTab(BaseTab):
-    """대본 탭 클래스 - 막 > 에피소드 구조"""
+    """대본 탭 클래스 - 사이드바 트리뷰 구조"""
 
     def __init__(self, parent, project_data, file_service, content_generator):
         """초기화"""
-        # 막/에피소드 데이터
+        # 데이터
         self.episodes_by_act: Dict[str, List[Dict[str, Any]]] = {}
-        self.act_names: List[str] = []
         self.current_act: str = ""
         self.current_episode_num: int = 0
 
         # UI 요소
-        self.act_buttons_frame = None
-        self.act_buttons: Dict[str, ttk.Button] = {}
-        self.episode_buttons_frame = None
-        self.episode_buttons: Dict[int, ttk.Button] = {}
-        self.script_viewer = None
-        self.script_char_count_label = None
+        self.tree_view: Optional[ActEpisodeTreeView] = None
+        self.script_viewer: Optional[scrolledtext.ScrolledText] = None
+        self.info_label: Optional[ttk.Label] = None
 
         # 부모 클래스 초기화
         super().__init__(parent, project_data, file_service, content_generator)
@@ -36,58 +34,62 @@ class ScriptsTab(BaseTab):
         return "대본"
 
     def create_ui(self):
-        """UI 생성 - 막 > 에피소드 계층 구조"""
-        self.frame.columnconfigure(0, weight=1)
-        self.frame.rowconfigure(2, weight=1)  # 콘텐츠 영역
+        """UI 생성 - 사이드바 트리뷰 + 콘텐츠 영역"""
+        self.frame.columnconfigure(0, weight=0)  # 사이드바
+        self.frame.columnconfigure(1, weight=1)  # 콘텐츠
+        self.frame.rowconfigure(0, weight=1)
 
-        # ===== 상단: 막(Act) 선택 버튼 =====
-        act_row = ttk.Frame(self.frame)
-        act_row.grid(row=0, column=0, sticky=(tk.W, tk.E), padx=5, pady=(10, 5))
+        # ===== 왼쪽: 사이드바 트리뷰 =====
+        sidebar_frame = ttk.Frame(self.frame, padding=(5, 5, 0, 5))
+        sidebar_frame.grid(row=0, column=0, sticky=(tk.N, tk.S, tk.W, tk.E))
 
-        ttk.Label(
-            act_row,
-            text="막 선택:",
-            font=("맑은 고딕", 11, "bold")
-        ).pack(side=tk.LEFT, padx=(5, 10))
-
-        self.act_buttons_frame = ttk.Frame(act_row)
-        self.act_buttons_frame.pack(side=tk.LEFT, fill=tk.X, expand=True)
-
-        # ===== 중단: 에피소드 선택 버튼 =====
-        episode_row = ttk.Frame(self.frame)
-        episode_row.grid(row=1, column=0, sticky=(tk.W, tk.E), padx=5, pady=5)
-
-        ttk.Label(
-            episode_row,
-            text="에피소드:",
-            font=("맑은 고딕", 10)
-        ).pack(side=tk.LEFT, padx=(5, 10))
-
-        self.episode_buttons_frame = ttk.Frame(episode_row)
-        self.episode_buttons_frame.pack(side=tk.LEFT, fill=tk.X, expand=True)
-
-        # 글자 수 표시
-        self.script_char_count_label = ttk.Label(
-            episode_row,
-            text="",
-            font=("맑은 고딕", 10),
-            foreground="gray"
+        self.tree_view = ActEpisodeTreeView(
+            parent=sidebar_frame,
+            on_select_callback=self._on_episode_select,
+            on_select_all_callback=self._on_show_all,
+            width=240,
+            all_button_text="전체 대본"
         )
-        self.script_char_count_label.pack(side=tk.RIGHT, padx=10)
 
-        # ===== 하단: 대본 뷰어 =====
-        content_frame = ttk.LabelFrame(self.frame, text="대본 내용", padding=10)
-        content_frame.grid(row=2, column=0, sticky=(tk.W, tk.E, tk.N, tk.S), padx=5, pady=5)
+        # ===== 오른쪽: 콘텐츠 영역 =====
+        content_frame = ttk.Frame(self.frame, padding=5)
+        content_frame.grid(row=0, column=1, sticky=(tk.W, tk.E, tk.N, tk.S))
         content_frame.columnconfigure(0, weight=1)
-        content_frame.rowconfigure(0, weight=1)
+        content_frame.rowconfigure(1, weight=1)
+
+        # 상단: 정보 표시 + 복사 버튼
+        header_frame = ttk.Frame(content_frame)
+        header_frame.grid(row=0, column=0, sticky=(tk.W, tk.E), pady=(0, 8))
+        header_frame.columnconfigure(0, weight=1)
+
+        self.info_label = ttk.Label(
+            header_frame,
+            text="에피소드를 선택하세요",
+            font=("맑은 고딕", 11, "bold"),
+            foreground="#333"
+        )
+        self.info_label.grid(row=0, column=0, sticky=tk.W)
+
+        # 복사 버튼
+        ttk.Button(
+            header_frame,
+            text="대본 복사",
+            command=self._copy_to_clipboard
+        ).grid(row=0, column=1, sticky=tk.E)
+
+        # 대본 뷰어
+        viewer_frame = ttk.LabelFrame(content_frame, text="대본 내용", padding=8)
+        viewer_frame.grid(row=1, column=0, sticky=(tk.W, tk.E, tk.N, tk.S))
+        viewer_frame.columnconfigure(0, weight=1)
+        viewer_frame.rowconfigure(0, weight=1)
 
         self.script_viewer = scrolledtext.ScrolledText(
-            content_frame,
-            width=100,
-            height=30,
+            viewer_frame,
             wrap=tk.WORD,
             font=("맑은 고딕", 11),
-            state=tk.DISABLED
+            state=tk.DISABLED,
+            borderwidth=0,
+            highlightthickness=0
         )
         self.script_viewer.grid(row=0, column=0, sticky=(tk.W, tk.E, tk.N, tk.S))
 
@@ -97,50 +99,28 @@ class ScriptsTab(BaseTab):
         self.episodes_by_act = self.file_service.load_episode_scripts()
 
         if not self.episodes_by_act:
-            self._show_no_episodes_message()
+            self._show_no_data_message()
             return
 
-        # 막 이름 정렬 (Act1, Act2-1, Act2-2, Act3 순서)
-        self.act_names = sorted(
-            self.episodes_by_act.keys(),
-            key=lambda x: self._act_sort_key(x)
-        )
+        # 트리뷰에 데이터 로드
+        if self.tree_view:
+            self.tree_view.load_data(self.episodes_by_act)
 
-        # 막 버튼 생성
-        self._create_act_buttons()
+        # 첫 에피소드 자동 선택
+        if self.episodes_by_act:
+            first_act = list(self.episodes_by_act.keys())[0]
+            episodes = self.episodes_by_act.get(first_act, [])
+            if episodes:
+                self._on_episode_select(first_act, episodes[0])
 
-        # 첫 번째 막 자동 선택
-        if self.act_names and not self.current_act:
-            self._select_act(self.act_names[0])
+    def _show_no_data_message(self):
+        """데이터 없음 메시지"""
+        if self.tree_view:
+            self.tree_view.load_data({})
 
-    def _act_sort_key(self, act_name: str) -> tuple:
-        """막 이름 정렬 키 (Act1, Act2-1, Act2-2, Act3 순서)"""
-        match = re.search(r'Act(\d+)(?:-(\d+))?', act_name)
-        if match:
-            main_num = int(match.group(1))
-            sub_num = int(match.group(2)) if match.group(2) else 0
-            return (main_num, sub_num)
-        return (999, 0)
+        if self.info_label:
+            self.info_label.config(text="대본 파일 없음")
 
-    def _show_no_episodes_message(self):
-        """에피소드가 없을 때 메시지 표시"""
-        # 막 버튼 영역 비우기
-        if self.act_buttons_frame:
-            for widget in self.act_buttons_frame.winfo_children():
-                widget.destroy()
-            ttk.Label(
-                self.act_buttons_frame,
-                text="(대본 없음)",
-                font=("맑은 고딕", 9),
-                foreground="gray"
-            ).pack(side=tk.LEFT)
-
-        # 에피소드 버튼 영역 비우기
-        if self.episode_buttons_frame:
-            for widget in self.episode_buttons_frame.winfo_children():
-                widget.destroy()
-
-        # 뷰어에 안내 메시지
         if self.script_viewer:
             self.script_viewer.config(state=tk.NORMAL)
             self.script_viewer.delete(1.0, tk.END)
@@ -151,258 +131,87 @@ class ScriptsTab(BaseTab):
             )
             self.script_viewer.config(state=tk.DISABLED)
 
-        # 글자 수 초기화
-        if self.script_char_count_label:
-            self.script_char_count_label.config(text="")
-
-    def _create_act_buttons(self):
-        """막(Act) 선택 버튼 생성"""
-        if not self.act_buttons_frame:
-            return
-
-        # 기존 버튼 제거
-        for widget in self.act_buttons_frame.winfo_children():
-            widget.destroy()
-        self.act_buttons.clear()
-
-        if not self.act_names:
-            ttk.Label(
-                self.act_buttons_frame,
-                text="(대본 없음)",
-                font=("맑은 고딕", 9),
-                foreground="gray"
-            ).pack(side=tk.LEFT)
-            return
-
-        # 각 막별 버튼 생성
-        for act_name in self.act_names:
-            # 막 이름에서 표시용 텍스트 추출
-            display_name = self._get_act_display_name(act_name)
-            episode_count = len(self.episodes_by_act.get(act_name, []))
-
-            btn = ttk.Button(
-                self.act_buttons_frame,
-                text=f"{display_name} ({episode_count})",
-                width=15,
-                command=lambda a=act_name: self._select_act(a)
-            )
-            btn.pack(side=tk.LEFT, padx=3)
-            self.act_buttons[act_name] = btn
-
-        # "전체 보기" 버튼 추가
-        ttk.Separator(self.act_buttons_frame, orient=tk.VERTICAL).pack(side=tk.LEFT, padx=10, fill=tk.Y)
-        all_btn = ttk.Button(
-            self.act_buttons_frame,
-            text="전체 대본",
-            width=12,
-            command=self._show_all_scripts
-        )
-        all_btn.pack(side=tk.LEFT, padx=3)
-
-    def _get_act_display_name(self, act_name: str) -> str:
-        """막 이름을 표시용 텍스트로 변환"""
-        # Act1_지옥의시작 -> 1막: 지옥의시작
-        match = re.match(r'Act(\d+)(?:-(\d+))?_(.+)', act_name)
-        if match:
-            main_num = match.group(1)
-            sub_num = match.group(2)
-            title = match.group(3)
-            if sub_num:
-                return f"{main_num}-{sub_num}막"
-            else:
-                return f"{main_num}막"
-        return act_name
-
-    def _select_act(self, act_name: str):
-        """막 선택"""
+    def _on_episode_select(self, act_name: str, episode_data: Dict[str, Any]):
+        """에피소드 선택 시 콜백"""
         self.current_act = act_name
-        self.current_episode_num = 0
+        self.current_episode_num = episode_data.get("episode_num", 0)
 
-        # 막 버튼 상태 업데이트
-        self._update_act_button_state()
+        # 정보 표시
+        ep_title = episode_data.get("title", "")
+        char_count = episode_data.get("char_count", 0)
+        act_display = self._get_act_display_short(act_name)
 
-        # 에피소드 버튼 생성
-        self._create_episode_buttons()
-
-        # 첫 에피소드 자동 선택
-        episodes = self.episodes_by_act.get(act_name, [])
-        if episodes:
-            self._select_episode(episodes[0].get('episode_num', 1))
-
-    def _update_act_button_state(self):
-        """막 버튼 선택 상태 업데이트"""
-        for act_name, btn in self.act_buttons.items():
-            if act_name == self.current_act:
-                btn.state(['pressed'])
-            else:
-                btn.state(['!pressed'])
-
-    def _create_episode_buttons(self):
-        """현재 막의 에피소드 버튼 생성"""
-        if not self.episode_buttons_frame:
-            return
-
-        # 기존 버튼 제거
-        for widget in self.episode_buttons_frame.winfo_children():
-            widget.destroy()
-        self.episode_buttons.clear()
-
-        episodes = self.episodes_by_act.get(self.current_act, [])
-
-        if not episodes:
-            ttk.Label(
-                self.episode_buttons_frame,
-                text="(에피소드 없음)",
-                font=("맑은 고딕", 9),
-                foreground="gray"
-            ).pack(side=tk.LEFT)
-            return
-
-        # 각 에피소드별 버튼 생성
-        for ep in episodes:
-            ep_num = ep.get('episode_num', 0)
-            ep_title = ep.get('title', '')
-
-            # 버튼 텍스트 (번호 + 짧은 제목)
-            short_title = ep_title[:6] + ".." if len(ep_title) > 6 else ep_title
-            btn_text = f"EP{ep_num:02d}"
-
-            btn = ttk.Button(
-                self.episode_buttons_frame,
-                text=btn_text,
-                width=8,
-                command=lambda n=ep_num: self._select_episode(n)
+        if self.info_label:
+            self.info_label.config(
+                text=f"{act_display} > EP{self.current_episode_num:02d}: {ep_title}  ({char_count:,}자)"
             )
-            btn.pack(side=tk.LEFT, padx=2)
 
-            # 툴팁으로 전체 제목 표시
-            self._create_tooltip(btn, f"EP{ep_num}: {ep_title}")
-
-            self.episode_buttons[ep_num] = btn
-
-        # "막 전체" 버튼 추가
-        ttk.Separator(self.episode_buttons_frame, orient=tk.VERTICAL).pack(side=tk.LEFT, padx=8, fill=tk.Y)
-        act_all_btn = ttk.Button(
-            self.episode_buttons_frame,
-            text="막 전체",
-            width=8,
-            command=self._show_current_act_all
-        )
-        act_all_btn.pack(side=tk.LEFT, padx=2)
-
-    def _create_tooltip(self, widget, text: str):
-        """위젯에 툴팁 추가"""
-        def show_tooltip(event):
-            tooltip = tk.Toplevel(widget)
-            tooltip.wm_overrideredirect(True)
-            tooltip.wm_geometry(f"+{event.x_root+10}+{event.y_root+10}")
-            label = ttk.Label(tooltip, text=text, background="lightyellow", padding=3)
-            label.pack()
-            widget._tooltip = tooltip
-            widget.after(2000, lambda: tooltip.destroy() if tooltip.winfo_exists() else None)
-
-        def hide_tooltip(event):
-            if hasattr(widget, '_tooltip') and widget._tooltip.winfo_exists():
-                widget._tooltip.destroy()
-
-        widget.bind('<Enter>', show_tooltip)
-        widget.bind('<Leave>', hide_tooltip)
-
-    def _select_episode(self, episode_num: int):
-        """에피소드 선택"""
-        self.current_episode_num = episode_num
-
-        # 에피소드 버튼 상태 업데이트
-        self._update_episode_button_state()
-
-        # 에피소드 내용 표시
-        self._display_episode(episode_num)
-
-    def _update_episode_button_state(self):
-        """에피소드 버튼 선택 상태 업데이트"""
-        for ep_num, btn in self.episode_buttons.items():
-            if ep_num == self.current_episode_num:
-                btn.state(['pressed'])
-            else:
-                btn.state(['!pressed'])
-
-    def _display_episode(self, episode_num: int):
-        """에피소드 내용 표시"""
-        episodes = self.episodes_by_act.get(self.current_act, [])
-
-        # 해당 에피소드 찾기
-        episode = None
-        for ep in episodes:
-            if ep.get('episode_num') == episode_num:
-                episode = ep
-                break
-
-        if not episode:
-            return
-
-        content = episode.get('content', '')
-        title = episode.get('title', '')
-        char_count = episode.get('char_count', len(content))
-
-        # 뷰어에 표시
+        # 대본 내용 표시
+        content = episode_data.get("content", "")
         if self.script_viewer:
             self.script_viewer.config(state=tk.NORMAL)
             self.script_viewer.delete(1.0, tk.END)
             self.script_viewer.insert(1.0, content)
             self.script_viewer.config(state=tk.DISABLED)
-            # 스크롤을 맨 위로
             self.script_viewer.see("1.0")
 
-        # 글자 수 표시
-        if self.script_char_count_label:
-            act_display = self._get_act_display_name(self.current_act)
-            self.script_char_count_label.config(
-                text=f"{act_display} | EP{episode_num}: {title} | {char_count:,}자"
-            )
+    def _on_show_all(self, act_name: Optional[str]):
+        """
+        전체 보기 콜백
+        act_name이 None이면 전체 대본, 아니면 해당 막 전체
+        """
+        if act_name is None:
+            self._show_all_scripts()
+        else:
+            self._show_act_scripts(act_name)
 
-    def _show_current_act_all(self):
-        """현재 막의 모든 에피소드 표시"""
-        episodes = self.episodes_by_act.get(self.current_act, [])
-
+    def _show_act_scripts(self, act_name: str):
+        """특정 막의 모든 에피소드 표시"""
+        episodes = self.episodes_by_act.get(act_name, [])
         if not episodes:
             return
 
-        # 에피소드 버튼 선택 해제
+        self.current_act = act_name
         self.current_episode_num = 0
-        self._update_episode_button_state()
 
         # 전체 내용 생성
         lines = []
         total_chars = 0
+        act_display = self._get_act_display_short(act_name)
 
-        act_display = self._get_act_display_name(self.current_act)
-        lines.append("=" * 80)
-        lines.append(f"【 {act_display} 전체 대본 】")
-        lines.append("=" * 80)
+        lines.append("=" * 70)
+        lines.append(f"  {act_display} 전체 대본")
+        lines.append("=" * 70)
         lines.append("")
 
         for ep in episodes:
-            ep_num = ep.get('episode_num', 0)
-            ep_title = ep.get('title', '')
-            content = ep.get('content', '')
+            ep_num = ep.get("episode_num", 0)
+            ep_title = ep.get("title", "")
+            content = ep.get("content", "")
             char_count = len(content)
             total_chars += char_count
 
-            lines.append("-" * 60)
-            lines.append(f"▶ EP{ep_num:02d}: {ep_title} ({char_count:,}자)")
-            lines.append("-" * 60)
+            lines.append("-" * 50)
+            lines.append(f"  EP{ep_num:02d}: {ep_title} ({char_count:,}자)")
+            lines.append("-" * 50)
             lines.append("")
             lines.append(content)
             lines.append("")
             lines.append("")
 
-        lines.append("=" * 80)
-        lines.append(f"【 {act_display} 총 글자 수: {total_chars:,}자 】")
-        lines.append("=" * 80)
+        lines.append("=" * 70)
+        lines.append(f"  총 {len(episodes)}개 에피소드, {total_chars:,}자")
+        lines.append("=" * 70)
 
         full_text = "\n".join(lines)
 
-        # 뷰어에 표시
+        # 정보 표시
+        if self.info_label:
+            self.info_label.config(
+                text=f"{act_display} 전체  ({len(episodes)}개 에피소드, {total_chars:,}자)"
+            )
+
+        # 대본 표시
         if self.script_viewer:
             self.script_viewer.config(state=tk.NORMAL)
             self.script_viewer.delete(1.0, tk.END)
@@ -410,76 +219,68 @@ class ScriptsTab(BaseTab):
             self.script_viewer.config(state=tk.DISABLED)
             self.script_viewer.see("1.0")
 
-        # 글자 수 표시
-        if self.script_char_count_label:
-            self.script_char_count_label.config(
-                text=f"{act_display} 전체 | {len(episodes)}개 에피소드 | {total_chars:,}자"
-            )
-
     def _show_all_scripts(self):
-        """전체 대본 표시 (모든 막, 모든 에피소드)"""
+        """전체 대본 표시"""
         if not self.episodes_by_act:
             return
 
-        # 선택 상태 초기화
         self.current_act = ""
         self.current_episode_num = 0
-
-        # 막 버튼 선택 해제
-        for btn in self.act_buttons.values():
-            btn.state(['!pressed'])
-
-        # 에피소드 버튼 비우기
-        if self.episode_buttons_frame:
-            for widget in self.episode_buttons_frame.winfo_children():
-                widget.destroy()
 
         # 전체 내용 생성
         lines = []
         total_chars = 0
         total_episodes = 0
 
-        lines.append("=" * 80)
-        lines.append("【 전체 대본 】")
-        lines.append("=" * 80)
+        lines.append("=" * 70)
+        lines.append("  전체 대본")
+        lines.append("=" * 70)
         lines.append("")
 
-        for act_name in self.act_names:
+        # 막 정렬
+        sorted_acts = sorted(
+            self.episodes_by_act.keys(),
+            key=lambda x: self._act_sort_key(x)
+        )
+
+        for act_name in sorted_acts:
             episodes = self.episodes_by_act.get(act_name, [])
-            act_display = self._get_act_display_name(act_name)
+            act_display = self._get_act_display_short(act_name)
 
-            # 막 제목에서 부제목 추출
-            match = re.match(r'Act\d+(?:-\d+)?_(.+)', act_name)
-            act_subtitle = match.group(1) if match else ""
-
-            lines.append("=" * 80)
-            lines.append(f"【 {act_display}: {act_subtitle} 】")
-            lines.append("=" * 80)
+            lines.append("=" * 70)
+            lines.append(f"  {act_display}")
+            lines.append("=" * 70)
             lines.append("")
 
             for ep in episodes:
-                ep_num = ep.get('episode_num', 0)
-                ep_title = ep.get('title', '')
-                content = ep.get('content', '')
+                ep_num = ep.get("episode_num", 0)
+                ep_title = ep.get("title", "")
+                content = ep.get("content", "")
                 char_count = len(content)
                 total_chars += char_count
                 total_episodes += 1
 
-                lines.append("-" * 60)
-                lines.append(f"▶ EP{ep_num:02d}: {ep_title} ({char_count:,}자)")
-                lines.append("-" * 60)
+                lines.append("-" * 50)
+                lines.append(f"  EP{ep_num:02d}: {ep_title} ({char_count:,}자)")
+                lines.append("-" * 50)
                 lines.append("")
                 lines.append(content)
                 lines.append("")
                 lines.append("")
 
-        lines.append("=" * 80)
-        lines.append(f"【 전체 {len(self.act_names)}막, {total_episodes}개 에피소드, 총 {total_chars:,}자 】")
-        lines.append("=" * 80)
+        lines.append("=" * 70)
+        lines.append(f"  전체 {len(sorted_acts)}막, {total_episodes}개 에피소드, {total_chars:,}자")
+        lines.append("=" * 70)
 
         full_text = "\n".join(lines)
 
-        # 뷰어에 표시
+        # 정보 표시
+        if self.info_label:
+            self.info_label.config(
+                text=f"전체 대본  ({len(sorted_acts)}막 {total_episodes}개 에피소드, {total_chars:,}자)"
+            )
+
+        # 대본 표시
         if self.script_viewer:
             self.script_viewer.config(state=tk.NORMAL)
             self.script_viewer.delete(1.0, tk.END)
@@ -487,11 +288,49 @@ class ScriptsTab(BaseTab):
             self.script_viewer.config(state=tk.DISABLED)
             self.script_viewer.see("1.0")
 
-        # 글자 수 표시
-        if self.script_char_count_label:
-            self.script_char_count_label.config(
-                text=f"전체 대본 | {len(self.act_names)}막 {total_episodes}개 에피소드 | {total_chars:,}자"
-            )
+    def _get_act_display_short(self, act_name: str) -> str:
+        """막 이름을 짧은 표시용 텍스트로 변환"""
+        match = re.match(r'Act(\d+)(?:-(\d+))?_(.+)', act_name)
+        if match:
+            main_num = match.group(1)
+            sub_num = match.group(2)
+            title = match.group(3)
+            if sub_num:
+                return f"{main_num}-{sub_num}막: {title}"
+            else:
+                return f"{main_num}막: {title}"
+        return act_name
+
+    def _act_sort_key(self, act_name: str) -> tuple:
+        """막 이름 정렬 키"""
+        match = re.search(r'Act(\d+)(?:-(\d+))?', act_name)
+        if match:
+            main_num = int(match.group(1))
+            sub_num = int(match.group(2)) if match.group(2) else 0
+            return (main_num, sub_num)
+        return (999, 0)
+
+    def _copy_to_clipboard(self):
+        """대본 내용을 클립보드에 복사"""
+        if not self.script_viewer:
+            return
+
+        # 텍스트 가져오기
+        content = self.script_viewer.get(1.0, tk.END).strip()
+
+        if not content:
+            return
+
+        # 클립보드에 복사
+        self.frame.clipboard_clear()
+        self.frame.clipboard_append(content)
+
+        # 복사 완료 알림 (info_label에 임시 표시)
+        original_text = self.info_label.cget("text")
+        self.info_label.config(text="복사 완료!", foreground="green")
+
+        # 2초 후 원래 텍스트로 복원
+        self.frame.after(2000, lambda: self.info_label.config(text=original_text, foreground="#333"))
 
     def save(self) -> bool:
         """데이터 저장 (대본 탭은 읽기 전용이므로 항상 True)"""
