@@ -1,0 +1,366 @@
+{
+  "metadata": {
+    "work_title": "302호의여자들",
+    "act": "5막",
+    "act_title": "탈출",
+    "chapter": 17,
+    "chapter_title": "국화꽃필무렵",
+    "created_at": "2026-01-05",
+    "total_scenes": 18
+  },
+  "chapter_info": {
+    "main_location": "nursing home entire facility",
+    "time_period": "morning to evening",
+    "characters": ["한정숙", "최영희", "이말자", "강순덕", "윤미라"],
+    "main_emotion": "tension, confrontation, victory, liberation"
+  },
+  "scenes": [
+    {
+      "scene_id": "s01",
+      "scene_name": "d_day_morning",
+      "description": "요양원 가을 축제일 아침, 북적거리는 요양원과 국화꽃 장식",
+      "location": "nursing home courtyard",
+      "time": "morning",
+      "characters": [],
+      "emotion": "festival, opportunity",
+      "action": "festival preparation",
+      "main_prompt": "masterpiece, best quality, photorealistic, wide shot, Korean nursing home courtyard, autumn festival morning, chrysanthemum flower decorations everywhere, yellow and white chrysanthemums, families arriving with gifts, festive banners, food stalls being set up, cheerful busy atmosphere, warm morning sunlight",
+      "character_prompts": {},
+      "regional_settings": null,
+      "output_folder": "scenes/5막/17화/s01_축제아침",
+      "filename_prefix": "5막_17화_s01"
+    },
+    {
+      "scene_id": "s02",
+      "scene_name": "acting_normal",
+      "description": "302호의 세 여자가 평소처럼 아침을 먹으며 긴장을 숨기는 장면",
+      "location": "nursing home cafeteria",
+      "time": "morning",
+      "characters": ["한정숙", "이말자", "강순덕"],
+      "emotion": "disguise, tension",
+      "action": "acting normal, eating",
+      "main_prompt": "masterpiece, best quality, photorealistic, 3women, Korean nursing home cafeteria, breakfast scene, ordinary morning appearance, hidden tension beneath calm exterior, soft morning light through windows, other elderly residents eating",
+      "character_prompts": {
+        "한정숙": "57 year old Korean woman, gentle face with subtle smile lines, warm brown eyes, shoulder-length black hair with gray streaks, wearing patient gown, eating breakfast calmly, inner excitement hidden beneath composed exterior, slightly trembling hands holding chopsticks",
+        "이말자": "53 year old Korean woman, sharp intelligent eyes, short practical haircut, thin lips, wearing patient gown, casual demeanor while eating, sharp eyes subtly observing surroundings, analytical expression",
+        "강순덕": "55 year old Korean woman, round friendly face, warm eyes with crow's feet, short permed gray hair, wearing patient gown, cheerful facade while eating, ready for action, suppressed excitement in eyes"
+      },
+      "regional_settings": {
+        "한정숙": {"start": 0, "end": 35},
+        "이말자": {"start": 30, "end": 65},
+        "강순덕": {"start": 60, "end": 100}
+      },
+      "output_folder": "scenes/5막/17화/s02_평소처럼",
+      "filename_prefix": "5막_17화_s02"
+    },
+    {
+      "scene_id": "s03",
+      "scene_name": "key_reveal",
+      "description": "순덕이 주머니에서 마스터키를 꺼내며 '10년 동안 몰래 복제해뒀어'라고 말하는 장면",
+      "location": "room 302",
+      "time": "11am",
+      "characters": ["강순덕"],
+      "emotion": "secret reveal, pride",
+      "action": "revealing key",
+      "main_prompt": "masterpiece, best quality, photorealistic, 1woman, close-up shot, Korean nursing home room interior, dramatic reveal moment, key being pulled from pocket, triumphant expression, soft indoor lighting",
+      "character_prompts": {
+        "강순덕": "55 year old Korean woman, round friendly face, warm eyes gleaming with pride, short permed gray hair, wearing patient gown, pulling master key from pocket with proud triumphant grin, 10 years of secret preparation paying off, mischievous satisfied expression"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/5막/17화/s03_열쇠공개",
+      "filename_prefix": "5막_17화_s03"
+    },
+    {
+      "scene_id": "s04",
+      "scene_name": "solitary_liberation",
+      "description": "순덕이 독방 문을 열고 2주간 갇혀있던 영희를 구출하는 장면",
+      "location": "nursing home solitary room",
+      "time": "11am",
+      "characters": ["강순덕", "최영희"],
+      "emotion": "liberation, reunion",
+      "action": "opening door, rescue",
+      "main_prompt": "masterpiece, best quality, photorealistic, 2women, Korean nursing home solitary room, dramatic rescue moment, door opening with light flooding in, prisoner blinking at sudden brightness, emotional rescue scene, harsh contrast between dark room and bright corridor",
+      "character_prompts": {
+        "강순덕": "55 year old Korean woman, round face with determined expression, short permed gray hair, wearing patient gown, opening heavy door urgently, key in hand, hurry we have to go expression, rescuer stance",
+        "최영희": "60 year old Korean woman, dignified face showing 2 weeks of solitary confinement, elegant features, silver-gray hair disheveled, wearing wrinkled patient gown, squinting at sudden light, relief and gratitude in tired eyes, struggling to stand"
+      },
+      "regional_settings": {
+        "강순덕": {"start": 0, "end": 50},
+        "최영희": {"start": 50, "end": 100}
+      },
+      "output_folder": "scenes/5막/17화/s04_독방해방",
+      "filename_prefix": "5막_17화_s04"
+    },
+    {
+      "scene_id": "s05",
+      "scene_name": "four_women_reunited",
+      "description": "302호에서 네 여자가 다시 모여 302호 동맹 완전체가 되는 장면",
+      "location": "room 302",
+      "time": "morning",
+      "characters": ["한정숙", "최영희", "이말자", "강순덕"],
+      "emotion": "reunion, determination",
+      "action": "gathering, holding hands",
+      "main_prompt": "masterpiece, best quality, photorealistic, 4women, Korean nursing home room 302, emotional reunion moment, four elderly women gathered together, determination in all eyes, alliance reunited, chrysanthemum festival visible through window, soft hopeful lighting",
+      "character_prompts": {
+        "한정숙": "57 year old Korean woman, warm brown eyes filled with relief, shoulder-length black hair with gray streaks, wearing patient gown, relieved expression seeing friend safe, gentle grateful smile",
+        "최영희": "60 year old Korean woman, dignified face with renewed fire in eyes, silver-gray hair, wearing patient gown, back with team expression, journalist determination rekindled despite 2 weeks ordeal",
+        "이말자": "53 year old Korean woman, sharp intelligent eyes showing rare warmth, short practical haircut, wearing patient gown, nodding approval, subtle satisfied expression, band back together",
+        "강순덕": "55 year old Korean woman, round face beaming with pride, short permed gray hair, wearing patient gown, mission accomplished proud smile, holding up master key"
+      },
+      "regional_settings": {
+        "한정숙": {"start": 0, "end": 25},
+        "최영희": {"start": 25, "end": 50},
+        "이말자": {"start": 50, "end": 75},
+        "강순덕": {"start": 75, "end": 100}
+      },
+      "output_folder": "scenes/5막/17화/s05_재결합",
+      "filename_prefix": "5막_17화_s05"
+    },
+    {
+      "scene_id": "s06",
+      "scene_name": "mira_bait_text",
+      "description": "말자가 선불폰으로 미라에게 '어머님 상태 급변' 가짜 문자를 보내는 장면",
+      "location": "room 302",
+      "time": "2pm",
+      "characters": ["이말자"],
+      "emotion": "scheme, focus",
+      "action": "sending text",
+      "main_prompt": "masterpiece, best quality, photorealistic, 1woman, close-up shot, Korean nursing home room, elderly woman typing on small prepaid phone, trap message being sent, focused calculating expression, dramatic tension, soft indoor lighting",
+      "character_prompts": {
+        "이말자": "53 year old Korean woman, sharp intelligent eyes focused on small phone screen, thin lips pressed together in concentration, short practical haircut, wearing patient gown, typing trap message carefully, cold calculated expression, patient condition critical bait message"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/5막/17화/s06_유인문자",
+      "filename_prefix": "5막_17화_s06"
+    },
+    {
+      "scene_id": "s07",
+      "scene_name": "mira_arrival",
+      "description": "긴급 문자를 받고 요양원에 도착하는 미라, 함정인 줄 모르고 걸어오는 장면",
+      "location": "nursing home entrance",
+      "time": "3pm",
+      "characters": ["윤미라"],
+      "emotion": "fake concern, caution",
+      "action": "arriving, walking in",
+      "main_prompt": "masterpiece, best quality, photorealistic, 1woman, Korean nursing home entrance, autumn festival decorations, chrysanthemum flowers, elegant woman arriving urgently, unsuspecting prey walking into trap, afternoon sunlight, festive atmosphere contrasting with tense character",
+      "character_prompts": {
+        "윤미라": "33 year old Korean woman, beautiful composed face with practiced concern, sleek black hair, wearing expensive black coat, designer bag, pearl earrings, rushing in with fake worried expression, high heels clicking, walking into ambush unknowingly"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/5막/17화/s07_미라도착",
+      "filename_prefix": "5막_17화_s07"
+    },
+    {
+      "scene_id": "s08",
+      "scene_name": "room302_confrontation",
+      "description": "302호에 들어온 미라가 창가에 앉아있는 정숙과 대면하는 장면",
+      "location": "room 302",
+      "time": "afternoon",
+      "characters": ["한정숙", "윤미라"],
+      "emotion": "confrontation, tension",
+      "action": "facing, approaching",
+      "main_prompt": "masterpiece, best quality, photorealistic, 2women, Korean nursing home room 302, tense confrontation setup, elderly woman sitting calmly by window, younger woman entering with concern, predator and prey roles about to reverse, dramatic window lighting",
+      "character_prompts": {
+        "한정숙": "57 year old Korean woman, sitting calmly by window, warm brown eyes now cold and calculating, shoulder-length black hair with gray streaks, wearing patient gown, composed predator waiting, watching enemy approach with hidden intensity",
+        "윤미라": "33 year old Korean woman, entering room with fake concern, sleek black hair, wearing expensive black coat, pearl earrings, asking unnie are you sick expression, not sensing danger yet, concerned act"
+      },
+      "regional_settings": {
+        "한정숙": {"start": 0, "end": 50},
+        "윤미라": {"start": 50, "end": 100}
+      },
+      "output_folder": "scenes/5막/17화/s08_대면",
+      "filename_prefix": "5막_17화_s08"
+    },
+    {
+      "scene_id": "s09",
+      "scene_name": "dropping_the_mask",
+      "description": "정숙이 '나 치매 아니야. 40년 살림한 여자를 어떻게 감히'라며 가면을 벗는 장면",
+      "location": "room 302",
+      "time": "afternoon",
+      "characters": ["한정숙", "윤미라"],
+      "emotion": "revelation, shock",
+      "action": "revealing truth, confrontation",
+      "main_prompt": "masterpiece, best quality, photorealistic, 2women, Korean nursing home room, dramatic revelation moment, elderly woman revealing sharp clear eyes, younger woman face turning pale with shock, mask dropped, tense confrontation, harsh dramatic lighting",
+      "character_prompts": {
+        "한정숙": "57 year old Korean woman, standing up with fierce clear eyes revealed, warm brown eyes now burning with righteous anger, shoulder-length black hair with gray streaks, wearing patient gown, I am not demented declaration, how dare you lock up 40 year housewife expression, powerful dignified fury",
+        "윤미라": "33 year old Korean woman, color draining from beautiful face, sleek black hair, wearing expensive black coat, pearl earrings, impossible shocked expression, stepping backward, caught off guard completely"
+      },
+      "regional_settings": {
+        "한정숙": {"start": 0, "end": 50},
+        "윤미라": {"start": 50, "end": 100}
+      },
+      "output_folder": "scenes/5막/17화/s09_가면벗기",
+      "filename_prefix": "5막_17화_s09"
+    },
+    {
+      "scene_id": "s10",
+      "scene_name": "recording_starts",
+      "description": "정숙이 휴대폰을 꺼내 녹음 버튼을 누르며 '복순 할머니 노트 있어'라고 말하는 장면",
+      "location": "room 302",
+      "time": "afternoon",
+      "characters": ["한정숙"],
+      "emotion": "scheme, interrogation",
+      "action": "recording, mentioning evidence",
+      "main_prompt": "masterpiece, best quality, photorealistic, 1woman, close-up shot, elderly woman holding phone pressing record button, trap sprung moment, evidence collection beginning, determined calculating expression, dramatic tension",
+      "character_prompts": {
+        "한정숙": "57 year old Korean woman, holding phone with steady hand, warm brown eyes cold and focused, shoulder-length black hair with gray streaks, wearing patient gown, pressing record button, I have Boksun grandmother notebook expression, now talk demanding look"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/5막/17화/s10_녹음",
+      "filename_prefix": "5막_17화_s10"
+    },
+    {
+      "scene_id": "s11",
+      "scene_name": "mira_confession",
+      "description": "미라가 압박에 무너져 '그래요! 돈 좀 빼돌렸어요!'라고 자백하는 장면",
+      "location": "room 302",
+      "time": "afternoon",
+      "characters": ["윤미라"],
+      "emotion": "confession, anger",
+      "action": "confessing, outburst",
+      "main_prompt": "masterpiece, best quality, photorealistic, 1woman, close-up shot, younger woman breaking under pressure, cracking confession moment, defensive angry outburst, losing composure, dramatic emotional lighting",
+      "character_prompts": {
+        "윤미라": "33 year old Korean woman, beautiful face contorted with desperation, sleek black hair disheveled, wearing expensive black coat now wrinkled, pearl earrings, cracking under pressure, fine I took money outburst, he promised it all to me defensive anger, confession being recorded"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/5막/17화/s11_자백",
+      "filename_prefix": "5막_17화_s11"
+    },
+    {
+      "scene_id": "s12",
+      "scene_name": "full_confession",
+      "description": "미라가 유언장 조작과 원장 뇌물까지 모두 자백하는 장면",
+      "location": "room 302",
+      "time": "afternoon",
+      "characters": ["윤미라"],
+      "emotion": "complete confession, defeat",
+      "action": "additional confession",
+      "main_prompt": "masterpiece, best quality, photorealistic, 1woman, Korean nursing home room, complete breakdown moment, woman admitting all crimes, will forgery confession, bribery admission, defeat and desperation, harsh unflattering lighting",
+      "character_prompts": {
+        "윤미라": "33 year old Korean woman, beautiful facade crumbling, sleek black hair messy, makeup smeared, wearing expensive black coat, pearl earrings, admitting will manipulation and bribery, I modified it slightly confession, realizing she is completely trapped, desperate defeated expression"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/5막/17화/s12_완전자백",
+      "filename_prefix": "5막_17화_s12"
+    },
+    {
+      "scene_id": "s13",
+      "scene_name": "fire_alarm",
+      "description": "영희가 작동시킨 화재경보가 요양원 전체에 울리며 혼란이 시작되는 장면",
+      "location": "nursing home corridor",
+      "time": "afternoon",
+      "characters": [],
+      "emotion": "chaos, opportunity",
+      "action": "alarm sounding, evacuation",
+      "main_prompt": "masterpiece, best quality, photorealistic, wide shot, Korean nursing home corridor, fire alarm flashing red lights, blaring siren sound visualization, people running in chaos, staff directing evacuation, perfect cover for escape, dramatic red emergency lighting, chrysanthemum festival decorations visible",
+      "character_prompts": {},
+      "regional_settings": null,
+      "output_folder": "scenes/5막/17화/s13_화재경보",
+      "filename_prefix": "5막_17화_s13"
+    },
+    {
+      "scene_id": "s14",
+      "scene_name": "escape_begins",
+      "description": "정숙이 302호 문을 열고 복도로 뛰쳐나가는 장면",
+      "location": "room 302 doorway",
+      "time": "afternoon",
+      "characters": ["한정숙"],
+      "emotion": "escape, determination",
+      "action": "running, escaping",
+      "main_prompt": "masterpiece, best quality, photorealistic, 1woman, dramatic action shot, elderly woman bursting through door into corridor, running toward freedom, fire alarm lights flashing, adrenaline moment, dynamic motion blur, escape begun",
+      "character_prompts": {
+        "한정숙": "57 year old Korean woman, determined fierce expression, warm brown eyes blazing with freedom, shoulder-length black hair with gray streaks flowing with movement, wearing patient gown, bursting out of room door, running with phone secured in hand, 40 years of living for others now running for herself"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/5막/17화/s14_탈출시작",
+      "filename_prefix": "5막_17화_s14"
+    },
+    {
+      "scene_id": "s15",
+      "scene_name": "corridor_rendezvous",
+      "description": "복도에서 네 여자가 합류하여 함께 후문을 향해 뛰는 장면",
+      "location": "nursing home corridor",
+      "time": "afternoon",
+      "characters": ["한정숙", "최영희", "이말자", "강순덕"],
+      "emotion": "escape, unity",
+      "action": "running together",
+      "main_prompt": "masterpiece, best quality, photorealistic, 4women, Korean nursing home corridor, dramatic escape scene, four elderly women running together, fire alarm lights flashing red, unified escape, action movie elderly heroes, dynamic motion, chaotic background with evacuating people",
+      "character_prompts": {
+        "한정숙": "57 year old Korean woman, leading the run, determined expression, shoulder-length black hair with gray streaks, wearing patient gown, phone secured in hand with recorded confession, fierce determination",
+        "최영희": "60 year old Korean woman, running on own legs after 2 weeks solitary, dignified face with triumphant expression, silver-gray hair, wearing patient gown, no more wheelchair, journalist freed",
+        "이말자": "53 year old Korean woman, keeping pace with sharp focused eyes, short practical haircut, wearing patient gown, documents secured in pocket, calculated movements",
+        "강순덕": "55 year old Korean woman, guiding the way with key in hand, round face with excited expression, short permed gray hair, wearing patient gown, knowing all the routes after 10 years"
+      },
+      "regional_settings": {
+        "한정숙": {"start": 0, "end": 25},
+        "최영희": {"start": 25, "end": 50},
+        "이말자": {"start": 50, "end": 75},
+        "강순덕": {"start": 75, "end": 100}
+      },
+      "output_folder": "scenes/5막/17화/s15_합류",
+      "filename_prefix": "5막_17화_s15"
+    },
+    {
+      "scene_id": "s16",
+      "scene_name": "back_gate_arrival",
+      "description": "네 여자가 후문에 도착하여 대기 중인 택시를 발견하는 장면",
+      "location": "nursing home back gate",
+      "time": "afternoon",
+      "characters": ["한정숙", "최영희", "이말자", "강순덕"],
+      "emotion": "tension, hope",
+      "action": "arriving, opening gate",
+      "main_prompt": "masterpiece, best quality, photorealistic, 4women, Korean nursing home back gate, escape point reached, taxi waiting outside gate, freedom meters away, tension and hope, afternoon golden light, chrysanthemum flowers near gate",
+      "character_prompts": {
+        "한정숙": "57 year old Korean woman, seeing taxi with relief, warm brown eyes filled with hope, shoulder-length black hair with gray streaks, wearing patient gown, we made it expression, almost free",
+        "최영희": "60 year old Korean woman, pointing at waiting car, dignified face with urgent expression, silver-gray hair, wearing patient gown, there it is gesture",
+        "이말자": "53 year old Korean woman, checking surroundings for pursuers, sharp intelligent eyes scanning, short practical haircut, wearing patient gown, coast is clear assessment",
+        "강순덕": "55 year old Korean woman, unlocking gate with master key, round face focused, short permed gray hair, wearing patient gown, final door to freedom"
+      },
+      "regional_settings": {
+        "한정숙": {"start": 0, "end": 25},
+        "최영희": {"start": 25, "end": 50},
+        "이말자": {"start": 50, "end": 75},
+        "강순덕": {"start": 75, "end": 100}
+      },
+      "output_folder": "scenes/5막/17화/s16_후문",
+      "filename_prefix": "5막_17화_s16"
+    },
+    {
+      "scene_id": "s17",
+      "scene_name": "taxi_boarding",
+      "description": "수현이 보낸 택시에 네 여자가 급히 탑승하는 장면",
+      "location": "nursing home back gate exterior",
+      "time": "afternoon",
+      "characters": ["한정숙", "최영희", "이말자", "강순덕"],
+      "emotion": "escape success, urgency",
+      "action": "boarding, departing",
+      "main_prompt": "masterpiece, best quality, photorealistic, 4women, taxi waiting outside nursing home back gate, four elderly women climbing into car urgently, escape vehicle, hurry expression on all faces, freedom ride beginning, afternoon light",
+      "character_prompts": {
+        "한정숙": "57 year old Korean woman, getting into taxi front seat, warm brown eyes filled with disbelief and joy, shoulder-length black hair with gray streaks, wearing patient gown, we did it expression",
+        "최영희": "60 year old Korean woman, climbing into back seat, dignified face with relieved expression, silver-gray hair, wearing patient gown, free at last realization",
+        "이말자": "53 year old Korean woman, entering car quickly, sharp eyes still alert, short practical haircut, wearing patient gown, checking behind one last time",
+        "강순덕": "55 year old Korean woman, last one in closing door, round face beaming, short permed gray hair, wearing patient gown, slamming door shut triumphantly"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/5막/17화/s17_택시탑승",
+      "filename_prefix": "5막_17화_s17"
+    },
+    {
+      "scene_id": "s18",
+      "scene_name": "nursing_home_receding",
+      "description": "택시가 출발하고 정숙이 뒤를 돌아보며 요양원이 멀어지는 것을 바라보는 장면",
+      "location": "inside taxi",
+      "time": "afternoon",
+      "characters": ["한정숙"],
+      "emotion": "liberation, new beginning",
+      "action": "looking back, farewell",
+      "main_prompt": "masterpiece, best quality, photorealistic, 1woman, view from inside moving taxi, nursing home building getting smaller through rear window, elderly woman looking back, goodbye to prison, freedom achieved, golden afternoon sunlight, emotional liberation moment, chrysanthemum flowers blooming along the road",
+      "character_prompts": {
+        "한정숙": "57 year old Korean woman, looking back through rear window, warm brown eyes glistening with tears of relief, shoulder-length black hair with gray streaks, wearing patient gown, 2 months of imprisonment ending, 40 years of living for others now finally free, tears streaming down face, mixture of grief and liberation, first time in 40 years running for herself"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/5막/17화/s18_멀어짐",
+      "filename_prefix": "5막_17화_s18"
+    }
+  ]
+}

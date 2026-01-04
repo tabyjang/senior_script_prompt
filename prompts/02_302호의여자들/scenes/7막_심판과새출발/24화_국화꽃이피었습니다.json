@@ -1,0 +1,297 @@
+{
+  "metadata": {
+    "work_title": "302호의여자들",
+    "act": "7막",
+    "act_title": "심판과새출발",
+    "chapter": 24,
+    "chapter_title": "국화꽃이피었습니다",
+    "created_at": "2026-01-04",
+    "total_scenes": 14
+  },
+  "chapter_info": {
+    "main_location": "제주도 펜션 302호",
+    "time_period": "낮",
+    "characters": ["한정숙", "최영희", "이말자", "강순덕", "강민수", "오달수"],
+    "main_emotion": "행복, 새출발, 완성"
+  },
+  "scenes": [
+    {
+      "scene_id": "s01",
+      "scene_name": "1년후_제주도",
+      "description": "1년 후, 바다가 보이는 제주도 언덕 위 펜션",
+      "location": "제주도 펜션 302호 외관",
+      "time": "낮",
+      "characters": [],
+      "emotion": "평화, 아름다움",
+      "action": "설정",
+      "main_prompt": "masterpiece, best quality, photorealistic, beautiful Jeju Island hillside, cute pension building with ocean view, sign reading Pension 302, chrysanthemum flowers in garden, one year later, peaceful paradise",
+      "character_prompts": {},
+      "regional_settings": null,
+      "output_folder": "scenes/7막/24화/s01_펜션외관",
+      "filename_prefix": "7막_24화_s01"
+    },
+    {
+      "scene_id": "s02",
+      "scene_name": "정숙_정원일",
+      "description": "정숙이 마당에서 국화를 심고 있는 장면",
+      "location": "펜션 302호 마당",
+      "time": "낮",
+      "characters": ["한정숙"],
+      "emotion": "평화, 행복",
+      "action": "정원일",
+      "main_prompt": "masterpiece, best quality, photorealistic, pension garden with ocean view, elderly woman planting chrysanthemum flowers, peaceful happy expression, gardening gloves, beautiful sunny day, new life",
+      "character_prompts": {
+        "한정숙": "57 year old Korean woman, kneeling in garden, planting chrysanthemums, content peaceful expression, new life in Jeju, happy"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/7막/24화/s02_정원일",
+      "filename_prefix": "7막_24화_s02"
+    },
+    {
+      "scene_id": "s03",
+      "scene_name": "손주_등장",
+      "description": "'할머니!'하고 손주가 뛰어오는 장면",
+      "location": "펜션 302호 마당",
+      "time": "낮",
+      "characters": ["한정숙"],
+      "emotion": "기쁨, 가족",
+      "action": "재회",
+      "main_prompt": "masterpiece, best quality, photorealistic, pension garden, young boy running toward grandmother, grandma calling, joyful family moment, sunny day, pure happiness",
+      "character_prompts": {
+        "한정숙": "57 year old Korean woman, looking up with joy, grandson running toward her, delighted expression"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/7막/24화/s03_손주",
+      "filename_prefix": "7막_24화_s03"
+    },
+    {
+      "scene_id": "s04",
+      "scene_name": "민수가족_도착",
+      "description": "민수와 가족이 펜션에 도착하는 장면",
+      "location": "펜션 302호 마당",
+      "time": "낮",
+      "characters": ["한정숙", "강민수"],
+      "emotion": "가족, 화해",
+      "action": "방문",
+      "main_prompt": "masterpiece, best quality, photorealistic, pension entrance, son and family arriving to visit mother, reconciled family visit, warm welcoming atmosphere, Jeju Island pension",
+      "character_prompts": {
+        "한정숙": "57 year old Korean woman, standing up from garden, welcoming family, happy to see son expression",
+        "강민수": "45 year old Korean man, arriving with family, admiring pension, so beautiful mom comment"
+      },
+      "regional_settings": {
+        "한정숙": {"start": 0, "end": 55},
+        "강민수": {"start": 45, "end": 100}
+      },
+      "output_folder": "scenes/7막/24화/s04_가족도착",
+      "filename_prefix": "7막_24화_s04"
+    },
+    {
+      "scene_id": "s05",
+      "scene_name": "손주_안기",
+      "description": "정숙이 손주를 안아 올리는 장면",
+      "location": "펜션 302호 마당",
+      "time": "낮",
+      "characters": ["한정숙"],
+      "emotion": "사랑, 행복",
+      "action": "안기",
+      "main_prompt": "masterpiece, best quality, photorealistic, pension garden, grandmother lifting up young grandson, pure joy, ocean view behind, one year ago unimaginable scene, complete happiness",
+      "character_prompts": {
+        "한정숙": "57 year old Korean woman, lifting grandson in arms, look at the ocean expression, complete joy, new life happiness"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/7막/24화/s05_손주안기",
+      "filename_prefix": "7막_24화_s05"
+    },
+    {
+      "scene_id": "s06",
+      "scene_name": "세친구_도착",
+      "description": "차 소리와 함께 말자, 영희, 순덕이 도착하는 장면",
+      "location": "펜션 302호 입구",
+      "time": "낮",
+      "characters": ["최영희", "이말자", "강순덕"],
+      "emotion": "재회, 기쁨",
+      "action": "도착",
+      "main_prompt": "masterpiece, best quality, photorealistic, car arriving at Jeju pension, three elderly women getting out with luggage, we're here exclamation, excited arrival, ocean view",
+      "character_prompts": {
+        "최영희": "60 year old Korean woman, getting out of car, looking at ocean view, beautiful expression",
+        "이말자": "53 year old Korean woman, carrying bag, satisfied arrival expression",
+        "강순덕": "55 year old Korean woman, arms wide taking in sea air, wonderful expression"
+      },
+      "regional_settings": {
+        "최영희": {"start": 0, "end": 35},
+        "이말자": {"start": 30, "end": 65},
+        "강순덕": {"start": 60, "end": 100}
+      },
+      "output_folder": "scenes/7막/24화/s06_친구도착",
+      "filename_prefix": "7막_24화_s06"
+    },
+    {
+      "scene_id": "s07",
+      "scene_name": "302호_방",
+      "description": "펜션 302호 안, 침대 네 개가 있는 모습",
+      "location": "펜션 302호 방 내부",
+      "time": "낮",
+      "characters": ["한정숙", "최영희", "이말자", "강순덕"],
+      "emotion": "유머, 우정",
+      "action": "구경",
+      "main_prompt": "masterpiece, best quality, photorealistic, pension room interior, four beds arranged, ocean view window, four elderly women looking at their new home, 302 forever, warm happy atmosphere",
+      "character_prompts": {
+        "한정숙": "57 year old Korean woman, showing room to friends, four beds expression",
+        "최영희": "60 year old Korean woman, inspecting room approvingly",
+        "이말자": "53 year old Korean woman, choosing her bed",
+        "강순덕": "55 year old Korean woman, jumping on bed to test"
+      },
+      "regional_settings": {
+        "한정숙": {"start": 0, "end": 25},
+        "최영희": {"start": 25, "end": 50},
+        "이말자": {"start": 50, "end": 75},
+        "강순덕": {"start": 75, "end": 100}
+      },
+      "output_folder": "scenes/7막/24화/s07_방",
+      "filename_prefix": "7막_24화_s07"
+    },
+    {
+      "scene_id": "s08",
+      "scene_name": "테라스_모임",
+      "description": "바다가 보이는 테라스에 네 여자가 앉는 장면",
+      "location": "펜션 302호 테라스",
+      "time": "오후",
+      "characters": ["한정숙", "최영희", "이말자", "강순덕"],
+      "emotion": "평화, 우정",
+      "action": "앉기",
+      "main_prompt": "masterpiece, best quality, photorealistic, pension terrace with ocean view, four elderly women sitting together, afternoon tea, beautiful Jeju sea, peaceful retirement, golden hour light",
+      "character_prompts": {
+        "한정숙": "57 year old Korean woman, relaxed on terrace chair, ocean view expression",
+        "최영희": "60 year old Korean woman, sipping tea, content smile",
+        "이말자": "53 year old Korean woman, enjoying the view",
+        "강순덕": "55 year old Korean woman, munching snacks happily"
+      },
+      "regional_settings": {
+        "한정숙": {"start": 0, "end": 25},
+        "최영희": {"start": 25, "end": 50},
+        "이말자": {"start": 50, "end": 75},
+        "강순덕": {"start": 75, "end": 100}
+      },
+      "output_folder": "scenes/7막/24화/s08_테라스",
+      "filename_prefix": "7막_24화_s08"
+    },
+    {
+      "scene_id": "s09",
+      "scene_name": "영희의_선언",
+      "description": "영희가 '남은 시간 신나게 살자'고 말하는 장면",
+      "location": "펜션 302호 테라스",
+      "time": "오후",
+      "characters": ["최영희"],
+      "emotion": "결의, 희망",
+      "action": "선언",
+      "main_prompt": "masterpiece, best quality, photorealistic, pension terrace, elderly woman declaring new life philosophy, we could die anytime so let's live excitingly, raising glass, sunset beginning, life affirmation",
+      "character_prompts": {
+        "최영희": "60 year old Korean woman, raising tea cup, we don't know when we'll die so let's live fully declaration, journalist's wisdom, enjoying life"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/7막/24화/s09_선언",
+      "filename_prefix": "7막_24화_s09"
+    },
+    {
+      "scene_id": "s10",
+      "scene_name": "낯선남자_등장",
+      "description": "정숙이 언덕 아래에서 올라오는 낯익은 남자를 발견하는 장면",
+      "location": "펜션 302호 테라스",
+      "time": "오후",
+      "characters": ["한정숙"],
+      "emotion": "놀라움, 설렘",
+      "action": "발견",
+      "main_prompt": "masterpiece, best quality, photorealistic, pension terrace, elderly woman noticing man walking up hillside, familiar face, could it be question, heart fluttering, sunset light",
+      "character_prompts": {
+        "한정숙": "57 year old Korean woman, looking toward hillside, recognizing someone, that person expression, heart racing"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/7막/24화/s10_낯선남자",
+      "filename_prefix": "7막_24화_s10"
+    },
+    {
+      "scene_id": "s11",
+      "scene_name": "첫사랑_달수",
+      "description": "50년 전 첫사랑 오달수인지 확인하는 장면",
+      "location": "펜션 302호 테라스",
+      "time": "오후",
+      "characters": ["한정숙", "오달수"],
+      "emotion": "재회, 설렘",
+      "action": "확인",
+      "main_prompt": "masterpiece, best quality, photorealistic, pension hillside, elderly man waving as he walks up, elderly woman on terrace recognizing first love, 50 years later reunion, romantic sunset, heartwarming",
+      "character_prompts": {
+        "한정숙": "57 year old Korean woman, hand to chest, is it really him expression, heart racing",
+        "오달수": "59 year old Korean man, waving hand walking up hill, gentleman appearance, warm smile"
+      },
+      "regional_settings": {
+        "한정숙": {"start": 0, "end": 50},
+        "오달수": {"start": 50, "end": 100}
+      },
+      "output_folder": "scenes/7막/24화/s11_첫사랑",
+      "filename_prefix": "7막_24화_s11"
+    },
+    {
+      "scene_id": "s12",
+      "scene_name": "순덕의_눈치",
+      "description": "순덕이 '저 남자 누구야?'라고 묻는 장면",
+      "location": "펜션 302호 테라스",
+      "time": "오후",
+      "characters": ["강순덕", "한정숙"],
+      "emotion": "유머, 호기심",
+      "action": "질문",
+      "main_prompt": "masterpiece, best quality, photorealistic, pension terrace, elderly woman noticing friend's reaction to approaching man, who is that teasing question, mischievous knowing expression",
+      "character_prompts": {
+        "강순덕": "55 year old Korean woman, noticing friend smiling, who is that man why are you smiling question, teasing expression",
+        "한정숙": "57 year old Korean woman, blushing slightly, don't know yet response, mysterious smile"
+      },
+      "regional_settings": {
+        "강순덕": {"start": 0, "end": 55},
+        "한정숙": {"start": 45, "end": 100}
+      },
+      "output_folder": "scenes/7막/24화/s12_눈치",
+      "filename_prefix": "7막_24화_s12"
+    },
+    {
+      "scene_id": "s13",
+      "scene_name": "국화꽃_바라봄",
+      "description": "정숙이 국화꽃을 바라보는 장면",
+      "location": "펜션 302호 마당",
+      "time": "오후",
+      "characters": ["한정숙"],
+      "emotion": "회고, 평화",
+      "action": "바라보기",
+      "main_prompt": "masterpiece, best quality, photorealistic, pension garden, elderly woman looking at blooming chrysanthemum flowers, one year ago funeral grief flowers now new beginning flowers, transformation complete, peaceful expression",
+      "character_prompts": {
+        "한정숙": "57 year old Korean woman, gazing at chrysanthemums, one year ago funeral today new life expression, flowers of new beginning"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/7막/24화/s13_국화꽃",
+      "filename_prefix": "7막_24화_s13"
+    },
+    {
+      "scene_id": "s14",
+      "scene_name": "네여자_웃음",
+      "description": "바다가 보이는 마당에서 네 여자가 함께 웃는 장면",
+      "location": "펜션 302호 마당",
+      "time": "저녁",
+      "characters": ["한정숙", "최영희", "이말자", "강순덕"],
+      "emotion": "행복, 완성",
+      "action": "웃기",
+      "main_prompt": "masterpiece, best quality, photorealistic, pension garden with ocean view at sunset, four elderly women laughing together, chrysanthemum flowers blooming around them, perfect ending, we are not over yet expression, golden hour, beautiful finale",
+      "character_prompts": {
+        "한정숙": "57 year old Korean woman, genuine happy laugh, new life expression, chrysanthemum in hand",
+        "최영희": "60 year old Korean woman, laughing freely, journalist turned friend",
+        "이말자": "53 year old Korean woman, rare full smile, happiness found",
+        "강순덕": "55 year old Korean woman, laughing loudest, pure joy, 302 forever"
+      },
+      "regional_settings": {
+        "한정숙": {"start": 0, "end": 25},
+        "최영희": {"start": 25, "end": 50},
+        "이말자": {"start": 50, "end": 75},
+        "강순덕": {"start": 75, "end": 100}
+      },
+      "output_folder": "scenes/7막/24화/s14_웃음",
+      "filename_prefix": "7막_24화_s14"
+    }
+  ]
+}

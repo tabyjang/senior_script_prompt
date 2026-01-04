@@ -5,7 +5,7 @@
     "act_title": "일상과균열",
     "chapter": 5,
     "chapter_title": "302호에오신것을환영합니다",
-    "created_at": "2026-01-03",
+    "created_at": "2026-01-05",
     "total_scenes": 14
   },
   "chapter_info": {
@@ -17,13 +17,13 @@
   "scenes": [
     {
       "scene_id": "s01",
-      "scene_name": "요양원_도착",
+      "scene_name": "nursing_home_arrival",
       "description": "정숙을 태운 차가 요양원 앞에 도착하는 장면",
-      "location": "요양원 정문",
-      "time": "낮",
+      "location": "nursing home entrance",
+      "time": "daytime",
       "characters": ["한정숙"],
-      "emotion": "체념, 공허함",
-      "action": "차에서 내림",
+      "emotion": "resignation, emptiness",
+      "action": "getting out of car",
       "main_prompt": "masterpiece, best quality, photorealistic, 1woman, Korean nursing home exterior, car arriving at entrance, clean modern building, well-manicured garden, sign reading nursing home, afternoon sunlight",
       "character_prompts": {
         "한정숙": "57 year old Korean woman, hollow resigned expression, stepping out of car, looking at building with dread, small luggage beside her, defeated posture"
@@ -34,13 +34,13 @@
     },
     {
       "scene_id": "s02",
-      "scene_name": "민수의_말",
+      "scene_name": "son_farewell",
       "description": "민수가 시설 좋다고 말하지만 정숙은 대답하지 않는 장면",
-      "location": "요양원 현관",
-      "time": "낮",
+      "location": "nursing home lobby",
+      "time": "daytime",
       "characters": ["한정숙", "강민수"],
-      "emotion": "단절, 서운함",
-      "action": "걸어가기",
+      "emotion": "disconnection, resentment",
+      "action": "walking in",
       "main_prompt": "masterpiece, best quality, photorealistic, 2people, Korean nursing home lobby, son and mother walking in, bright sterile lighting, clinical atmosphere",
       "character_prompts": {
         "한정숙": "57 year old Korean woman, silent cold expression, walking stiffly, not responding to son, emotional wall up",
@@ -55,13 +55,13 @@
     },
     {
       "scene_id": "s03",
-      "scene_name": "핸드폰_압수",
+      "scene_name": "phone_confiscation",
       "description": "간호사가 핸드폰을 맡아두겠다고 하는 장면",
-      "location": "요양원 접수처",
-      "time": "낮",
+      "location": "nursing home reception",
+      "time": "daytime",
       "characters": ["한정숙"],
-      "emotion": "황당함, 분노",
-      "action": "핸드폰 건넴",
+      "emotion": "disbelief, anger",
+      "action": "handing over phone",
       "main_prompt": "masterpiece, best quality, photorealistic, 1woman, Korean nursing home reception desk, handing over phone reluctantly, losing last connection to outside, harsh fluorescent lighting",
       "character_prompts": {
         "한정숙": "57 year old Korean woman, reluctant angry expression, handing over smartphone, last lifeline being taken, eyes narrowing with distrust"
@@ -72,13 +72,13 @@
     },
     {
       "scene_id": "s04",
-      "scene_name": "원장_등장",
+      "scene_name": "director_appears",
       "description": "인상 좋지 않은 원장이 나타나는 장면",
-      "location": "요양원 로비",
-      "time": "낮",
+      "location": "nursing home lobby",
+      "time": "daytime",
       "characters": ["한정숙"],
-      "emotion": "불안, 경계",
-      "action": "마주침",
+      "emotion": "unease, alertness",
+      "action": "meeting director",
       "main_prompt": "masterpiece, best quality, photorealistic, 1woman, Korean nursing home hallway, meeting director, ominous atmosphere, cold institutional lighting",
       "character_prompts": {
         "한정숙": "57 year old Korean woman, wary suspicious expression, studying the director, sensing something wrong, guard up, pearl necklace visible"
@@ -89,13 +89,13 @@
     },
     {
       "scene_id": "s05",
-      "scene_name": "면회제한",
+      "scene_name": "visit_restriction",
       "description": "면회 제한 요청이 미라에게서 왔다는 것을 알게 되는 장면",
-      "location": "요양원 로비",
-      "time": "낮",
+      "location": "nursing home lobby",
+      "time": "daytime",
       "characters": ["한정숙"],
-      "emotion": "충격, 분노",
-      "action": "듣기",
+      "emotion": "shock, anger",
+      "action": "hearing news",
       "main_prompt": "masterpiece, best quality, photorealistic, 1woman, close-up, Korean nursing home, hearing shocking news, realization of complete isolation",
       "character_prompts": {
         "한정숙": "57 year old Korean woman, shocked horrified expression, heart sinking, realizing the trap is complete, that woman again, fists clenching"
@@ -106,13 +106,13 @@
     },
     {
       "scene_id": "s06",
-      "scene_name": "302호_문앞",
+      "scene_name": "room_302_door",
       "description": "302호 문 앞에 서있는 정숙",
-      "location": "요양원 복도",
-      "time": "낮",
+      "location": "nursing home corridor",
+      "time": "daytime",
       "characters": ["한정숙"],
-      "emotion": "두려움, 체념",
-      "action": "문 앞에 서기",
+      "emotion": "fear, resignation",
+      "action": "standing at door",
       "main_prompt": "masterpiece, best quality, photorealistic, 1woman, nursing home corridor, standing before room door numbered 302, institutional hallway, afternoon light from window",
       "character_prompts": {
         "한정숙": "57 year old Korean woman, standing before door, hesitant fearful expression, about to enter new prison, small bag in hand, lonely figure in corridor"
@@ -123,19 +123,19 @@
     },
     {
       "scene_id": "s07",
-      "scene_name": "302호_내부",
+      "scene_name": "room_302_inside",
       "description": "302호 방 안의 세 여자를 처음 보는 장면",
-      "location": "302호 병실",
-      "time": "낮",
+      "location": "room 302",
+      "time": "daytime",
       "characters": ["한정숙", "최영희", "이말자", "강순덕"],
-      "emotion": "당혹, 호기심",
-      "action": "들어가기",
+      "emotion": "bewilderment, curiosity",
+      "action": "entering room",
       "main_prompt": "masterpiece, best quality, photorealistic, 4women, nursing home shared room, new resident entering, 3 women already inside, afternoon window light, institutional room with 4 beds",
       "character_prompts": {
         "한정숙": "57 year old Korean woman, entering room cautiously, looking around at roommates, uncertain expression, holding small bag",
-        "최영희": "52 year old Korean woman, reading book by window, sharp intelligent eyes, looking up at newcomer, assessing expression, elegant even in simple clothes",
-        "이말자": "55 year old Korean woman, eating snacks watching TV, plump cheerful appearance, curious glance at door, casual comfortable clothes",
-        "강순덕": "57 year old Korean woman, sitting in wheelchair, staring blankly out window, seemingly unaware of surroundings, thin fragile appearance"
+        "최영희": "60 year old Korean woman, reading book by window, sharp intelligent eyes, looking up at newcomer, assessing expression, elegant even in simple clothes",
+        "이말자": "53 year old Korean woman, eating snacks watching TV, curious glance at door, casual comfortable clothes",
+        "강순덕": "55 year old Korean woman, sitting in wheelchair, staring blankly out window, seemingly unaware of surroundings, thin fragile appearance"
       },
       "regional_settings": {
         "한정숙": {"start": 0, "end": 25},
@@ -148,16 +148,16 @@
     },
     {
       "scene_id": "s08",
-      "scene_name": "영희의_말",
+      "scene_name": "younghee_question",
       "description": "영희가 억울하게 들어온 케이스냐고 묻는 장면",
-      "location": "302호 병실",
-      "time": "낮",
+      "location": "room 302",
+      "time": "daytime",
       "characters": ["최영희", "한정숙"],
-      "emotion": "통찰, 당혹",
-      "action": "대화",
+      "emotion": "insight, bewilderment",
+      "action": "conversation",
       "main_prompt": "masterpiece, best quality, photorealistic, 2women, nursing home room, experienced resident assessing newcomer, knowing smile, window light",
       "character_prompts": {
-        "최영희": "52 year old Korean woman, slight smirk, perceptive knowing expression, book in hand, sizing up the newcomer, been here before look",
+        "최영희": "60 year old Korean woman, slight smirk, perceptive knowing expression, book in hand, sizing up the newcomer, been here before look",
         "한정숙": "57 year old Korean woman, startled by accurate assessment, guarded expression, not responding, pride preventing admission"
       },
       "regional_settings": {
@@ -169,13 +169,13 @@
     },
     {
       "scene_id": "s09",
-      "scene_name": "나갈수있나요",
+      "scene_name": "can_i_leave",
       "description": "정숙이 나갈 수 있냐고 묻는 장면",
-      "location": "302호 병실",
-      "time": "낮",
+      "location": "room 302",
+      "time": "daytime",
       "characters": ["한정숙"],
-      "emotion": "절박함",
-      "action": "질문",
+      "emotion": "desperation",
+      "action": "asking question",
       "main_prompt": "masterpiece, best quality, photorealistic, 1woman, nursing home room, desperate question, hope for escape, urgent expression",
       "character_prompts": {
         "한정숙": "57 year old Korean woman, desperate hopeful expression, asking about leaving, last hope in eyes, standing tensely"
@@ -186,16 +186,16 @@
     },
     {
       "scene_id": "s10",
-      "scene_name": "말자의_코웃음",
+      "scene_name": "malja_scoff",
       "description": "말자가 꿈 깨라며 코웃음 치는 장면",
-      "location": "302호 병실",
-      "time": "낮",
+      "location": "room 302",
+      "time": "daytime",
       "characters": ["이말자"],
-      "emotion": "냉소, 현실",
-      "action": "코웃음",
+      "emotion": "cynicism, reality",
+      "action": "scoffing",
       "main_prompt": "masterpiece, best quality, photorealistic, 1woman, nursing home room, scoffing at naive question, eating snacks, TV in background",
       "character_prompts": {
-        "이말자": "55 year old Korean woman, scornful laugh, snorting at naive hope, snack in hand, reality check expression, been here too long look"
+        "이말자": "53 year old Korean woman, scornful laugh, snorting at naive hope, snack in hand, reality check expression, been here too long look"
       },
       "regional_settings": null,
       "output_folder": "scenes/1막/05화/s10_코웃음",
@@ -203,13 +203,13 @@
     },
     {
       "scene_id": "s11",
-      "scene_name": "문닫힘",
+      "scene_name": "door_closing",
       "description": "간호사가 나가고 문이 닫히는 장면",
-      "location": "302호 병실",
-      "time": "낮",
+      "location": "room 302",
+      "time": "daytime",
       "characters": ["한정숙"],
-      "emotion": "고립감, 절망",
-      "action": "문 바라보기",
+      "emotion": "isolation, despair",
+      "action": "watching door close",
       "main_prompt": "masterpiece, best quality, photorealistic, 1woman, nursing home room, door closing behind nurse, trapped feeling, institutional door shutting",
       "character_prompts": {
         "한정숙": "57 year old Korean woman, staring at closed door, realization of imprisonment, shoulders slumping, hope leaving with the door"
@@ -220,13 +220,13 @@
     },
     {
       "scene_id": "s12",
-      "scene_name": "창문_다가감",
+      "scene_name": "approaching_window",
       "description": "정숙이 창문으로 다가가는 장면",
-      "location": "302호 병실",
-      "time": "저녁",
+      "location": "room 302",
+      "time": "evening",
       "characters": ["한정숙"],
-      "emotion": "절망, 갇힘",
-      "action": "창문으로 걸어감",
+      "emotion": "despair, trapped",
+      "action": "walking to window",
       "main_prompt": "masterpiece, best quality, photorealistic, 1woman, nursing home room, walking toward window, checking for escape, second floor view, evening light",
       "character_prompts": {
         "한정숙": "57 year old Korean woman, walking to window with desperate hope, checking height, realizing no escape, trapped animal expression"
@@ -237,13 +237,13 @@
     },
     {
       "scene_id": "s13",
-      "scene_name": "석양_바라보기",
+      "scene_name": "watching_sunset",
       "description": "창밖 석양을 바라보는 정숙",
-      "location": "302호 병실 창가",
-      "time": "석양",
+      "location": "room 302 window",
+      "time": "sunset",
       "characters": ["한정숙"],
-      "emotion": "고독, 슬픔",
-      "action": "창밖 응시",
+      "emotion": "solitude, sadness",
+      "action": "gazing out window",
       "main_prompt": "masterpiece, best quality, photorealistic, 1woman, nursing home window, watching sunset, silhouette against orange sky, melancholic atmosphere, golden hour light",
       "character_prompts": {
         "한정숙": "57 year old Korean woman, silhouette against sunset window, hand on glass, watching freedom fade with sun, profound loneliness, pearl necklace catching light"
@@ -254,13 +254,13 @@
     },
     {
       "scene_id": "s14",
-      "scene_name": "감옥",
+      "scene_name": "prison_realization",
       "description": "처음으로 감옥에 갇힌 기분을 아는 정숙",
-      "location": "302호 병실",
-      "time": "저녁",
+      "location": "room 302",
+      "time": "evening",
       "characters": ["한정숙"],
-      "emotion": "깨달음, 분노",
-      "action": "서있기",
+      "emotion": "realization, anger",
+      "action": "standing",
       "main_prompt": "masterpiece, best quality, photorealistic, 1woman, close-up portrait, nursing home room, prison realization, dramatic twilight lighting, shadows on face",
       "character_prompts": {
         "한정숙": "57 year old Korean woman, eyes filled with cold fury, understanding this is prison, jaw set with determination, will not accept this fate, fire building in eyes"

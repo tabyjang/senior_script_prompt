@@ -5,7 +5,7 @@
     "act_title": "일상과균열",
     "chapter": 3,
     "chapter_title": "치매판정",
-    "created_at": "2026-01-03",
+    "created_at": "2026-01-05",
     "total_scenes": 10
   },
   "chapter_info": {
@@ -17,13 +17,13 @@
   "scenes": [
     {
       "scene_id": "s01",
-      "scene_name": "민수의_의심",
+      "scene_name": "son_suspicion",
       "description": "민수가 엄마에게 깜빡하는 거 많지 않냐고 묻는 장면",
-      "location": "집 거실",
-      "time": "낮",
+      "location": "home living room",
+      "time": "daytime",
       "characters": ["한정숙", "강민수"],
-      "emotion": "의아함, 걱정",
-      "action": "대화",
+      "emotion": "confusion, worry",
+      "action": "conversation",
       "main_prompt": "masterpiece, best quality, photorealistic, 2people, Korean living room, concerned son talking to mother, afternoon sunlight, casual home atmosphere",
       "character_prompts": {
         "한정숙": "57 year old Korean woman, confused defensive expression, sitting on sofa, wearing comfortable home clothes, puzzled look",
@@ -38,13 +38,13 @@
     },
     {
       "scene_id": "s02",
-      "scene_name": "병원_검사",
+      "scene_name": "hospital_exam",
       "description": "정숙이 치매 검사를 받는 장면",
-      "location": "병원 진료실",
-      "time": "낮",
+      "location": "hospital examination room",
+      "time": "daytime",
       "characters": ["한정숙"],
-      "emotion": "자신감, 불안",
-      "action": "검사 받기",
+      "emotion": "confidence, anxiety",
+      "action": "taking exam",
       "main_prompt": "masterpiece, best quality, photorealistic, 1woman, Korean hospital examination room, cognitive test scene, clinical white lighting, medical setting",
       "character_prompts": {
         "한정숙": "57 year old Korean woman, confident but slightly nervous expression, sitting at desk, answering questions, trying to prove herself competent, pearl necklace visible"
@@ -55,13 +55,13 @@
     },
     {
       "scene_id": "s03",
-      "scene_name": "검사결과_충격",
+      "scene_name": "diagnosis_shock",
       "description": "의사가 치매 의심 진단을 내리는 장면",
-      "location": "병원 진료실",
-      "time": "낮",
+      "location": "hospital doctor office",
+      "time": "daytime",
       "characters": ["한정숙"],
-      "emotion": "충격, 불신",
-      "action": "진단 듣기",
+      "emotion": "shock, disbelief",
+      "action": "hearing diagnosis",
       "main_prompt": "masterpiece, best quality, photorealistic, 1woman, Korean hospital office, receiving devastating diagnosis, harsh fluorescent lighting, clinical atmosphere",
       "character_prompts": {
         "한정숙": "57 year old Korean woman, shocked disbelief expression, face frozen, eyes wide, mouth slightly open, refusing to accept diagnosis, hands gripping chair arms"
@@ -72,13 +72,13 @@
     },
     {
       "scene_id": "s04",
-      "scene_name": "미라의_덫_깨달음",
+      "scene_name": "mira_trap_realized",
       "description": "미라가 의사에게 미리 연락했다는 것을 알게 되는 순간",
-      "location": "병원 진료실",
-      "time": "낮",
+      "location": "hospital doctor office",
+      "time": "daytime",
       "characters": ["한정숙"],
-      "emotion": "분노, 공포",
-      "action": "깨달음",
+      "emotion": "anger, fear",
+      "action": "realization",
       "main_prompt": "masterpiece, best quality, photorealistic, 1woman, close-up, hospital setting, moment of terrible realization, dramatic lighting, trap revealed",
       "character_prompts": {
         "한정숙": "57 year old Korean woman, dawning horror on face, eyes narrowing with realization, jaw clenching, understanding the conspiracy, mix of fear and anger"
@@ -89,13 +89,13 @@
     },
     {
       "scene_id": "s05",
-      "scene_name": "집으로_돌아옴",
+      "scene_name": "returning_home",
       "description": "충격받은 정숙이 집으로 돌아오는 장면",
-      "location": "집 현관",
-      "time": "저녁",
+      "location": "home entrance",
+      "time": "evening",
       "characters": ["한정숙"],
-      "emotion": "충격, 두려움",
-      "action": "귀가",
+      "emotion": "shock, fear",
+      "action": "coming home",
       "main_prompt": "masterpiece, best quality, photorealistic, 1woman, Korean home entrance, returning home in shock, dim evening lighting, lonely atmosphere",
       "character_prompts": {
         "한정숙": "57 year old Korean woman, dazed shocked expression, standing at doorway, holding medical papers, world turned upside down look, pale face"
@@ -106,13 +106,13 @@
     },
     {
       "scene_id": "s06",
-      "scene_name": "후견인_설명",
+      "scene_name": "guardian_explanation",
       "description": "민수가 후견인 제도에 대해 설명하는 장면",
-      "location": "집 거실",
-      "time": "저녁",
+      "location": "home living room",
+      "time": "evening",
       "characters": ["한정숙", "강민수"],
-      "emotion": "공포, 절망",
-      "action": "설명 듣기",
+      "emotion": "fear, despair",
+      "action": "listening to explanation",
       "main_prompt": "masterpiece, best quality, photorealistic, 2people, Korean living room evening, serious conversation, lamp lighting, tense atmosphere",
       "character_prompts": {
         "한정숙": "57 year old Korean woman, terrified realization on face, sitting on sofa, understanding the trap, hand on chest, breathing heavily",
@@ -127,13 +127,13 @@
     },
     {
       "scene_id": "s07",
-      "scene_name": "미라의_계획_파악",
+      "scene_name": "understanding_scheme",
       "description": "정숙이 미라의 진짜 계획을 완전히 이해하는 장면",
-      "location": "집 거실",
-      "time": "저녁",
+      "location": "home living room",
+      "time": "evening",
       "characters": ["한정숙"],
-      "emotion": "분노, 결의",
-      "action": "생각에 잠김",
+      "emotion": "anger, resolve",
+      "action": "deep in thought",
       "main_prompt": "masterpiece, best quality, photorealistic, 1woman, Korean living room, moment of clarity, dramatic lighting from window, determined atmosphere",
       "character_prompts": {
         "한정숙": "57 year old Korean woman, eyes sharp with understanding, jaw set firmly, connecting all the pieces, quiet fury building, determined expression forming"
@@ -144,13 +144,13 @@
     },
     {
       "scene_id": "s08",
-      "scene_name": "창밖_석양",
+      "scene_name": "sunset_gaze",
       "description": "정숙이 창밖 석양을 바라보는 장면",
-      "location": "집 거실 창가",
-      "time": "석양",
+      "location": "home living room window",
+      "time": "sunset",
       "characters": ["한정숙"],
-      "emotion": "쓸쓸함, 결의",
-      "action": "창밖 응시",
+      "emotion": "loneliness, resolve",
+      "action": "gazing out window",
       "main_prompt": "masterpiece, best quality, photorealistic, 1woman, standing at window, Korean apartment, sunset orange light streaming in, silhouette effect, contemplative atmosphere",
       "character_prompts": {
         "한정숙": "57 year old Korean woman, silhouette against sunset window, standing alone, hand on window glass, contemplating her fate, mixture of despair and determination"
@@ -161,13 +161,13 @@
     },
     {
       "scene_id": "s09",
-      "scene_name": "진단서_응시",
+      "scene_name": "staring_at_diagnosis",
       "description": "정숙이 치매 진단서를 응시하는 클로즈업",
-      "location": "집",
-      "time": "밤",
+      "location": "home",
+      "time": "night",
       "characters": ["한정숙"],
-      "emotion": "분노, 억울함",
-      "action": "서류 응시",
+      "emotion": "anger, injustice",
+      "action": "staring at document",
       "main_prompt": "masterpiece, best quality, photorealistic, 1woman, close-up, dim room, staring at medical document, single lamp lighting, emotional moment",
       "character_prompts": {
         "한정숙": "57 year old Korean woman, intense angry gaze at paper, eyes glistening, refusing to accept this fate, holding diagnosis paper, determined defiance in eyes"
@@ -178,13 +178,13 @@
     },
     {
       "scene_id": "s10",
-      "scene_name": "이건_덫이었다",
+      "scene_name": "this_was_a_trap",
       "description": "정숙이 이것이 덫임을 확신하는 표정",
-      "location": "집",
-      "time": "밤",
+      "location": "home",
+      "time": "night",
       "characters": ["한정숙"],
-      "emotion": "각성, 결의",
-      "action": "결심",
+      "emotion": "awakening, resolve",
+      "action": "determination",
       "main_prompt": "masterpiece, best quality, photorealistic, 1woman, close-up portrait, dark room with dramatic lighting, moment of resolve, powerful determination",
       "character_prompts": {
         "한정숙": "57 year old Korean woman, fierce determined expression, eyes blazing with resolve, jaw set, no longer victim but fighter, pearl necklace prominent, inner strength visible"

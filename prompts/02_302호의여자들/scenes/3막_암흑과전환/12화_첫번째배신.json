@@ -1,0 +1,287 @@
+{
+  "metadata": {
+    "work_title": "302호의여자들",
+    "act": "3막",
+    "act_title": "암흑과전환",
+    "chapter": 12,
+    "chapter_title": "첫번째배신",
+    "created_at": "2026-01-04",
+    "total_scenes": 14
+  },
+  "chapter_info": {
+    "main_location": "요양원 302호, 복도",
+    "time_period": "낮",
+    "characters": ["한정숙", "최영희", "이말자", "강순덕", "박철수"],
+    "main_emotion": "위기, 분리, 상실"
+  },
+  "scenes": [
+    {
+      "scene_id": "s01",
+      "scene_name": "strange_atmosphere",
+      "description": "요양원 분위기가 평소와 다르게 직원들이 많은 장면",
+      "location": "nursing home corridor",
+      "time": "morning",
+      "characters": [],
+      "emotion": "ominous, tension",
+      "action": "observing",
+      "main_prompt": "masterpiece, best quality, photorealistic, nursing home corridor, unusual amount of staff members, tense atmosphere, something is wrong feeling, morning light, surveillance increased",
+      "character_prompts": {},
+      "regional_settings": null,
+      "output_folder": "scenes/3막/12화/s01_이상한분위기",
+      "filename_prefix": "3막_12화_s01"
+    },
+    {
+      "scene_id": "s02",
+      "scene_name": "director_visit",
+      "description": "원장 박철수가 직접 302호를 방문하는 장면",
+      "location": "room 302",
+      "time": "noon",
+      "characters": ["한정숙", "최영희", "이말자", "강순덕"],
+      "emotion": "tension, fear",
+      "action": "confrontation",
+      "main_prompt": "masterpiece, best quality, photorealistic, nursing home room, director entering with cold expression, four elderly women tensing, confrontation moment, threatening atmosphere",
+      "character_prompts": {
+        "한정숙": "57 year old Korean woman, heart sinking expression, maintaining calm",
+        "최영희": "60 year old Korean woman, wheelchair, alert defensive posture",
+        "이말자": "53 year old Korean woman, analytical worried expression",
+        "강순덕": "55 year old Korean woman, nervous protective stance"
+      },
+      "regional_settings": {
+        "한정숙": {"start": 0, "end": 25},
+        "최영희": {"start": 25, "end": 50},
+        "이말자": {"start": 50, "end": 75},
+        "강순덕": {"start": 75, "end": 100}
+      },
+      "output_folder": "scenes/3막/12화/s02_원장방문",
+      "filename_prefix": "3막_12화_s02"
+    },
+    {
+      "scene_id": "s03",
+      "scene_name": "director_interrogation",
+      "description": "원장이 '밤에 시끄럽다고 신고가 들어왔다'고 말하는 장면",
+      "location": "room 302",
+      "time": "noon",
+      "characters": ["한정숙"],
+      "emotion": "fear, crisis",
+      "action": "listening",
+      "main_prompt": "masterpiece, best quality, photorealistic, nursing home room, elderly woman hearing accusation from director, reports about nighttime disturbance, terror hidden behind confusion, interrogation scene",
+      "character_prompts": {
+        "한정숙": "57 year old Korean woman, feigning confused innocence, heart pounding, what are you talking about expression"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/3막/12화/s03_추궁",
+      "filename_prefix": "3막_12화_s03"
+    },
+    {
+      "scene_id": "s04",
+      "scene_name": "room_search",
+      "description": "간호사들이 302호를 샅샅이 뒤지는 장면",
+      "location": "room 302",
+      "time": "noon",
+      "characters": ["한정숙", "최영희", "이말자", "강순덕"],
+      "emotion": "fear, tension",
+      "action": "being searched",
+      "main_prompt": "masterpiece, best quality, photorealistic, nursing home room, staff members searching through patients belongings, pillows drawers wardrobes, four elderly women watching anxiously, invasive search scene",
+      "character_prompts": {
+        "한정숙": "57 year old Korean woman, watching search with hidden terror, praying notebook not found",
+        "최영희": "60 year old Korean woman, maintaining composure despite fear",
+        "이말자": "53 year old Korean woman, calculating mind racing",
+        "강순덕": "55 year old Korean woman, relief that she hid it well"
+      },
+      "regional_settings": {
+        "한정숙": {"start": 0, "end": 25},
+        "최영희": {"start": 25, "end": 50},
+        "이말자": {"start": 50, "end": 75},
+        "강순덕": {"start": 75, "end": 100}
+      },
+      "output_folder": "scenes/3막/12화/s04_짐검사",
+      "filename_prefix": "3막_12화_s04"
+    },
+    {
+      "scene_id": "s05",
+      "scene_name": "not_discovered",
+      "description": "순덕이 숨겨둔 덕분에 노트가 발각되지 않는 장면",
+      "location": "room 302",
+      "time": "noon",
+      "characters": ["강순덕"],
+      "emotion": "relief, tension",
+      "action": "hiding success",
+      "main_prompt": "masterpiece, best quality, photorealistic, close-up, elderly woman hiding relief as search finds nothing, secret safe for now, subtle exhale of relief",
+      "character_prompts": {
+        "강순덕": "55 year old Korean woman, hiding immense relief, they didn't find it expression, poker face maintained"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/3막/12화/s05_안도",
+      "filename_prefix": "3막_12화_s05"
+    },
+    {
+      "scene_id": "s06",
+      "scene_name": "increased_patrol_announcement",
+      "description": "원장이 야간 순찰 강화를 선언하는 장면",
+      "location": "room 302",
+      "time": "noon",
+      "characters": [],
+      "emotion": "threat, restriction",
+      "action": "announcement",
+      "main_prompt": "masterpiece, best quality, photorealistic, nursing home room, director announcing increased night patrols, warning tone, freedom restricted, oppressive atmosphere",
+      "character_prompts": {},
+      "regional_settings": null,
+      "output_folder": "scenes/3막/12화/s06_순찰강화",
+      "filename_prefix": "3막_12화_s06"
+    },
+    {
+      "scene_id": "s07",
+      "scene_name": "younghee_solitary_transfer",
+      "description": "원장이 영희를 독방으로 옮긴다고 선언하는 장면",
+      "location": "room 302",
+      "time": "noon",
+      "characters": ["최영희", "한정숙"],
+      "emotion": "shock, separation",
+      "action": "being taken away",
+      "main_prompt": "masterpiece, best quality, photorealistic, dramatic scene, elderly woman in wheelchair being taken away, friend crying out helplessly, forced separation, emotional devastating moment",
+      "character_prompts": {
+        "최영희": "60 year old Korean woman, wheelchair, being wheeled away, looking back at friends with message in eyes, don't give up expression",
+        "한정숙": "57 year old Korean woman, reaching out helplessly, friend being taken, anguished expression"
+      },
+      "regional_settings": {
+        "최영희": {"start": 0, "end": 50},
+        "한정숙": {"start": 50, "end": 100}
+      },
+      "output_folder": "scenes/3막/12화/s07_영희이송",
+      "filename_prefix": "3막_12화_s07"
+    },
+    {
+      "scene_id": "s08",
+      "scene_name": "younghee_gaze",
+      "description": "끌려나가며 영희가 '포기하지 마'라는 눈빛을 보내는 장면",
+      "location": "room 302 doorway",
+      "time": "noon",
+      "characters": ["최영희"],
+      "emotion": "determination, communication",
+      "action": "sending message with eyes",
+      "main_prompt": "masterpiece, best quality, photorealistic, close-up, elderly woman being taken away, looking back with fierce determined eyes, don't give up message in gaze, dramatic doorway shot",
+      "character_prompts": {
+        "최영희": "60 year old Korean woman, being wheeled through doorway, head turned back, fierce encouraging eyes, silent message to friends"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/3막/12화/s08_영희눈빛",
+      "filename_prefix": "3막_12화_s08"
+    },
+    {
+      "scene_id": "s09",
+      "scene_name": "three_women_remain",
+      "description": "302호에 세 여자만 남은 쓸쓸한 장면",
+      "location": "room 302",
+      "time": "noon",
+      "characters": ["한정숙", "이말자", "강순덕"],
+      "emotion": "loss, anxiety",
+      "action": "being left behind",
+      "main_prompt": "masterpiece, best quality, photorealistic, nursing home room, three elderly women remaining, empty wheelchair space, loss of comrade, desolate atmosphere, one bed now empty",
+      "character_prompts": {
+        "한정숙": "57 year old Korean woman, staring at empty spot where friend sat, lost expression",
+        "이말자": "53 year old Korean woman, grinding teeth in frustration",
+        "강순덕": "55 year old Korean woman, determined despite loss"
+      },
+      "regional_settings": {
+        "한정숙": {"start": 0, "end": 35},
+        "이말자": {"start": 30, "end": 65},
+        "강순덕": {"start": 60, "end": 100}
+      },
+      "output_folder": "scenes/3막/12화/s09_세여자",
+      "filename_prefix": "3막_12화_s09"
+    },
+    {
+      "scene_id": "s10",
+      "scene_name": "informer_speculation",
+      "description": "순덕이 '누가 밀고했어'라고 말하는 장면",
+      "location": "room 302",
+      "time": "afternoon",
+      "characters": ["강순덕", "이말자"],
+      "emotion": "anger, betrayal",
+      "action": "conversation",
+      "main_prompt": "masterpiece, best quality, photorealistic, nursing home room, two elderly women discussing betrayal, who informed on us question, angry suspicious atmosphere",
+      "character_prompts": {
+        "강순덕": "55 year old Korean woman, angry expression, someone betrayed us, grinding teeth",
+        "이말자": "53 year old Korean woman, recalling suspicious nurse, analytical deduction"
+      },
+      "regional_settings": {
+        "강순덕": {"start": 0, "end": 50},
+        "이말자": {"start": 50, "end": 100}
+      },
+      "output_folder": "scenes/3막/12화/s10_밀고자",
+      "filename_prefix": "3막_12화_s10"
+    },
+    {
+      "scene_id": "s11",
+      "scene_name": "necklace_confiscation",
+      "description": "원장이 정숙의 진주 목걸이를 압수하는 장면",
+      "location": "room 302",
+      "time": "afternoon",
+      "characters": ["한정숙"],
+      "emotion": "humiliation, loss",
+      "action": "being taken from",
+      "main_prompt": "masterpiece, best quality, photorealistic, dramatic scene, elderly woman having pearl necklace confiscated, mother's keepsake being taken, ultimate humiliation, devastating loss moment",
+      "character_prompts": {
+        "한정숙": "57 year old Korean woman, pearl necklace being removed from neck, devastated helpless expression, last dignity stripped away, tears forming"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/3막/12화/s11_목걸이압수",
+      "filename_prefix": "3막_12화_s11"
+    },
+    {
+      "scene_id": "s12",
+      "scene_name": "touching_bare_neck",
+      "description": "정숙이 목걸이가 사라진 빈 목을 만지는 장면",
+      "location": "room 302",
+      "time": "afternoon",
+      "characters": ["한정숙"],
+      "emotion": "loss, anger",
+      "action": "touching bare neck",
+      "main_prompt": "masterpiece, best quality, photorealistic, close-up, elderly woman touching bare neck where necklace used to be, 40 years of companion gone, profound loss and anger, empty space on chest",
+      "character_prompts": {
+        "한정숙": "57 year old Korean woman, hand touching bare neck, empty space where pearl necklace was, mixture of grief and burning anger"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/3막/12화/s12_빈목",
+      "filename_prefix": "3막_12화_s12"
+    },
+    {
+      "scene_id": "s13",
+      "scene_name": "soondeok_resolve",
+      "description": "순덕이 정숙 손을 잡고 '영희 없이도 해야 해'라고 말하는 장면",
+      "location": "room 302",
+      "time": "evening",
+      "characters": ["강순덕", "한정숙"],
+      "emotion": "determination, solidarity",
+      "action": "holding hands, vowing",
+      "main_prompt": "masterpiece, best quality, photorealistic, nursing home room evening, elderly woman grasping friend's hand firmly, we continue without her determination, solidarity despite loss, sunset light",
+      "character_prompts": {
+        "강순덕": "55 year old Korean woman, gripping friend's hand, fierce loyal expression, we must rescue her too",
+        "한정숙": "57 year old Korean woman, drawing strength from friend, resolve returning"
+      },
+      "regional_settings": {
+        "강순덕": {"start": 0, "end": 55},
+        "한정숙": {"start": 45, "end": 100}
+      },
+      "output_folder": "scenes/3막/12화/s13_다짐",
+      "filename_prefix": "3막_12화_s13"
+    },
+    {
+      "scene_id": "s14",
+      "scene_name": "sunset_window",
+      "description": "정숙이 해지는 창밖을 바라보는 장면",
+      "location": "room 302",
+      "time": "evening",
+      "characters": ["한정숙"],
+      "emotion": "determination, hope in darkness",
+      "action": "gazing out window",
+      "main_prompt": "masterpiece, best quality, photorealistic, nursing home room, elderly woman silhouette against sunset window, darkest hour before dawn, determination in darkness, dramatic golden hour lighting fading to dusk",
+      "character_prompts": {
+        "한정숙": "57 year old Korean woman, silhouette against dying light, touching bare neck, resolve hardening, this is not over expression"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/3막/12화/s14_해지는창",
+      "filename_prefix": "3막_12화_s14"
+    }
+  ]
+}

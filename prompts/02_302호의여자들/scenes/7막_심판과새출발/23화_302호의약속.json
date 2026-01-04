@@ -1,0 +1,256 @@
+{
+  "metadata": {
+    "work_title": "302호의여자들",
+    "act": "7막",
+    "act_title": "심판과새출발",
+    "chapter": 23,
+    "chapter_title": "302호의약속",
+    "created_at": "2026-01-04",
+    "total_scenes": 12
+  },
+  "chapter_info": {
+    "main_location": "various Seoul locations, Jeongsuk's house",
+    "time_period": "daytime",
+    "characters": ["한정숙", "최영희", "이말자", "강순덕"],
+    "main_emotion": "closure, reconciliation, new beginning"
+  },
+  "scenes": [
+    {
+      "scene_id": "s01",
+      "scene_name": "malja_and_daughter",
+      "description": "재판 후 한 달, 말자의 집에 딸이 찾아오는 장면",
+      "location": "Malja's house",
+      "time": "daytime",
+      "characters": ["이말자"],
+      "emotion": "reconciliation, forgiveness",
+      "action": "reunion",
+      "main_prompt": "masterpiece, best quality, photorealistic, apartment entrance, elderly woman opening door to tearful daughter, one month after trial, reconciliation beginning, emotional doorway moment",
+      "character_prompts": {
+        "이말자": "53 year old Korean woman, opening door to see daughter, cautious but hopeful expression"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/7막/23화/s01_말자딸",
+      "filename_prefix": "7막_23화_s01"
+    },
+    {
+      "scene_id": "s02",
+      "scene_name": "daughter_apology",
+      "description": "딸이 울며 '엄마 미안해'라고 사과하는 장면",
+      "location": "Malja's house",
+      "time": "daytime",
+      "characters": ["이말자"],
+      "emotion": "apology, forgiveness",
+      "action": "embracing",
+      "main_prompt": "masterpiece, best quality, photorealistic, living room, mother and daughter embracing, tearful apology, I was a fool to trust him confession, years of separation ending",
+      "character_prompts": {
+        "이말자": "53 year old Korean woman, hugging crying daughter, it's okay now that you know expression, maternal forgiveness"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/7막/23화/s02_딸사과",
+      "filename_prefix": "7막_23화_s02"
+    },
+    {
+      "scene_id": "s03",
+      "scene_name": "malja_refusal",
+      "description": "말자가 딸의 동거 제안을 거절하고 친구들과 살겠다고 하는 장면",
+      "location": "Malja's house",
+      "time": "daytime",
+      "characters": ["이말자"],
+      "emotion": "independence, choice",
+      "action": "refusing",
+      "main_prompt": "masterpiece, best quality, photorealistic, living room conversation, elderly woman declining daughter's offer to live together, I'll live with my friends decision, choosing independence and friendship",
+      "character_prompts": {
+        "이말자": "53 year old Korean woman, gentle but firm refusal, I'll live with my friends statement, choosing 302 alliance"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/7막/23화/s03_거절",
+      "filename_prefix": "7막_23화_s03"
+    },
+    {
+      "scene_id": "s04",
+      "scene_name": "younghee_article",
+      "description": "영희가 마지막 기사를 쓰는 장면",
+      "location": "Younghee's house",
+      "time": "daytime",
+      "characters": ["최영희"],
+      "emotion": "completion, return",
+      "action": "writing",
+      "main_prompt": "masterpiece, best quality, photorealistic, home office, elderly journalist woman typing on computer, final article about nursing home forced admission, 75 year old last story, journalist career capstone",
+      "character_prompts": {
+        "최영희": "60 year old Korean woman, typing at computer, article about modern day abandonment of elderly, 75 years old last article pride, journalist to the end"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/7막/23화/s04_기사",
+      "filename_prefix": "7막_23화_s04"
+    },
+    {
+      "scene_id": "s05",
+      "scene_name": "soondeok_youngest_son",
+      "description": "순덕의 막내아들이 찾아와 모시겠다고 하는 장면",
+      "location": "Soondeok's temporary residence",
+      "time": "daytime",
+      "characters": ["강순덕"],
+      "emotion": "reconciliation, refusal",
+      "action": "talking",
+      "main_prompt": "masterpiece, best quality, photorealistic, modest room, elderly woman receiving youngest son, I'll take care of you now offer, touched but firm expression",
+      "character_prompts": {
+        "강순덕": "55 year old Korean woman, patting son's head, thank you but no expression, choosing friends over family guilt"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/7막/23화/s05_막내아들",
+      "filename_prefix": "7막_23화_s05"
+    },
+    {
+      "scene_id": "s06",
+      "scene_name": "soondeok_answer",
+      "description": "순덕이 '친구들이랑 살기로 했어. 제주도에서'라고 말하는 장면",
+      "location": "Soondeok's temporary residence",
+      "time": "daytime",
+      "characters": ["강순덕"],
+      "emotion": "choice, freedom",
+      "action": "declaring",
+      "main_prompt": "masterpiece, best quality, photorealistic, modest room, elderly woman announcing Jeju Island plan to surprised son, living with friends in Jeju decision, new adventure at 70, excited expression",
+      "character_prompts": {
+        "강순덕": "55 year old Korean woman, excited grin, Jeju with my friends announcement, new chapter beginning"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/7막/23화/s06_제주도",
+      "filename_prefix": "7막_23화_s06"
+    },
+    {
+      "scene_id": "s07",
+      "scene_name": "jeongsuk_house_gathering",
+      "description": "정숙의 집에 네 여자가 모이는 장면",
+      "location": "Jeongsuk's house living room",
+      "time": "afternoon",
+      "characters": ["한정숙", "최영희", "이말자", "강순덕"],
+      "emotion": "reunion, planning",
+      "action": "gathering",
+      "main_prompt": "masterpiece, best quality, photorealistic, comfortable living room, four elderly women gathered for tea, victory meeting one month later, warm afternoon light, friendship",
+      "character_prompts": {
+        "한정숙": "57 year old Korean woman, serving tea to friends, my house finally expression",
+        "최영희": "60 year old Korean woman, relaxed in armchair, content expression",
+        "이말자": "53 year old Korean woman, comfortable on sofa",
+        "강순덕": "55 year old Korean woman, eating snacks happily"
+      },
+      "regional_settings": {
+        "한정숙": {"start": 0, "end": 25},
+        "최영희": {"start": 25, "end": 50},
+        "이말자": {"start": 50, "end": 75},
+        "강순덕": {"start": 75, "end": 100}
+      },
+      "output_folder": "scenes/7막/23화/s07_모임",
+      "filename_prefix": "7막_23화_s07"
+    },
+    {
+      "scene_id": "s08",
+      "scene_name": "pension_proposal",
+      "description": "정숙이 '제주도에 펜션 하나 살까 해'라고 제안하는 장면",
+      "location": "Jeongsuk's house living room",
+      "time": "afternoon",
+      "characters": ["한정숙"],
+      "emotion": "proposal, anticipation",
+      "action": "proposing",
+      "main_prompt": "masterpiece, best quality, photorealistic, living room, elderly woman making exciting proposal, Jeju pension plan, shall we live together question, new dream presenting",
+      "character_prompts": {
+        "한정숙": "57 year old Korean woman, excited proposal expression, how about we buy a pension in Jeju suggestion, eyes sparkling with plan"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/7막/23화/s08_펜션제안",
+      "filename_prefix": "7막_23화_s08"
+    },
+    {
+      "scene_id": "s09",
+      "scene_name": "lets_live_together",
+      "description": "정숙이 '우리 같이 살면 안 될까?'라고 묻는 장면",
+      "location": "Jeongsuk's house living room",
+      "time": "afternoon",
+      "characters": ["한정숙", "최영희", "이말자", "강순덕"],
+      "emotion": "hope, anticipation",
+      "action": "asking",
+      "main_prompt": "masterpiece, best quality, photorealistic, living room, elderly woman asking friends to live together, 302 forever proposal, hopeful vulnerable question, friends considering",
+      "character_prompts": {
+        "한정숙": "57 year old Korean woman, hopeful expression, won't you all live with me question, vulnerable hope",
+        "최영희": "60 year old Korean woman, thoughtful considering expression",
+        "이말자": "53 year old Korean woman, surprised but interested",
+        "강순덕": "55 year old Korean woman, already nodding yes"
+      },
+      "regional_settings": {
+        "한정숙": {"start": 0, "end": 30},
+        "최영희": {"start": 25, "end": 50},
+        "이말자": {"start": 45, "end": 70},
+        "강순덕": {"start": 65, "end": 100}
+      },
+      "output_folder": "scenes/7막/23화/s09_같이살자",
+      "filename_prefix": "7막_23화_s09"
+    },
+    {
+      "scene_id": "s10",
+      "scene_name": "everyone_agrees",
+      "description": "세 여자가 모두 동의하는 장면",
+      "location": "Jeongsuk's house living room",
+      "time": "afternoon",
+      "characters": ["최영희", "이말자", "강순덕"],
+      "emotion": "agreement, joy",
+      "action": "agreeing",
+      "main_prompt": "masterpiece, best quality, photorealistic, living room, three elderly women agreeing to proposal, I'm in declarations, excited nodding, new family forming",
+      "character_prompts": {
+        "최영희": "60 year old Korean woman, nodding with smile, why not agreement",
+        "이말자": "53 year old Korean woman, I agree nod, rare enthusiasm",
+        "강순덕": "55 year old Korean woman, clapping hands, let's do it excitement"
+      },
+      "regional_settings": {
+        "최영희": {"start": 0, "end": 35},
+        "이말자": {"start": 30, "end": 65},
+        "강순덕": {"start": 60, "end": 100}
+      },
+      "output_folder": "scenes/7막/23화/s10_동의",
+      "filename_prefix": "7막_23화_s10"
+    },
+    {
+      "scene_id": "s11",
+      "scene_name": "hands_clasped",
+      "description": "네 개의 손이 맞잡히는 장면",
+      "location": "Jeongsuk's house living room",
+      "time": "afternoon",
+      "characters": ["한정숙", "최영희", "이말자", "강순덕"],
+      "emotion": "promise, unity",
+      "action": "clasping hands",
+      "main_prompt": "masterpiece, best quality, photorealistic, close-up, four elderly women hands clasped together, new beginning pact, from nursing home 302 to Jeju pension 302, friendship oath, warm afternoon light",
+      "character_prompts": {
+        "한정숙": "57 year old Korean woman hand",
+        "최영희": "60 year old Korean woman hand",
+        "이말자": "53 year old Korean woman hand",
+        "강순덕": "55 year old Korean woman hand"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/7막/23화/s11_손맞잡음",
+      "filename_prefix": "7막_23화_s11"
+    },
+    {
+      "scene_id": "s12",
+      "scene_name": "room_302_continues",
+      "description": "요양원 302호에서 시작된 인연이 새로운 302호로 이어지는 순간",
+      "location": "Jeongsuk's house living room",
+      "time": "afternoon",
+      "characters": ["한정숙", "최영희", "이말자", "강순덕"],
+      "emotion": "new beginning, hope",
+      "action": "smiling",
+      "main_prompt": "masterpiece, best quality, photorealistic, living room golden hour, four elderly women smiling together, nursing home 302 becoming Jeju pension 302, new chapter beginning, beautiful afternoon light, hopeful atmosphere",
+      "character_prompts": {
+        "한정숙": "57 year old Korean woman, content smile, new dream expression",
+        "최영희": "60 year old Korean woman, journalist's satisfied smile",
+        "이말자": "53 year old Korean woman, rare warm smile",
+        "강순덕": "55 year old Korean woman, beaming happily"
+      },
+      "regional_settings": {
+        "한정숙": {"start": 0, "end": 25},
+        "최영희": {"start": 25, "end": 50},
+        "이말자": {"start": 50, "end": 75},
+        "강순덕": {"start": 75, "end": 100}
+      },
+      "output_folder": "scenes/7막/23화/s12_이어짐",
+      "filename_prefix": "7막_23화_s12"
+    }
+  ]
+}

@@ -1,0 +1,216 @@
+{
+  "metadata": {
+    "work_title": "302호의여자들",
+    "act": "5막",
+    "act_title": "탈출",
+    "chapter": 18,
+    "chapter_title": "자유의공기",
+    "created_at": "2026-01-04",
+    "total_scenes": 10
+  },
+  "chapter_info": {
+    "main_location": "inside taxi, motel",
+    "time_period": "evening",
+    "characters": ["한정숙", "최영희", "이말자", "강순덕"],
+    "main_emotion": "liberation, joy, determination"
+  },
+  "scenes": [
+    {
+      "scene_id": "s01",
+      "scene_name": "taxi_silence",
+      "description": "택시 안에서 네 여자가 한동안 말없이 숨을 고르는 장면",
+      "location": "inside taxi",
+      "time": "evening",
+      "characters": ["한정숙", "최영희", "이말자", "강순덕"],
+      "emotion": "relief, realization",
+      "action": "catching breath",
+      "main_prompt": "masterpiece, best quality, photorealistic, taxi interior, four elderly women catching breath, post-escape silence, processing freedom, sunset light through windows",
+      "character_prompts": {
+        "한정숙": "57 year old Korean woman, breathing deeply, it's real expression",
+        "최영희": "60 year old Korean woman, looking out window, processing freedom",
+        "이말자": "53 year old Korean woman, quiet exhale, we did it realization",
+        "강순덕": "55 year old Korean woman, starting to grin"
+      },
+      "regional_settings": {
+        "한정숙": {"start": 0, "end": 25},
+        "최영희": {"start": 25, "end": 50},
+        "이말자": {"start": 50, "end": 75},
+        "강순덕": {"start": 75, "end": 100}
+      },
+      "output_folder": "scenes/5막/18화/s01_침묵",
+      "filename_prefix": "5막_18화_s01"
+    },
+    {
+      "scene_id": "s02",
+      "scene_name": "soondeok_celebration",
+      "description": "순덕이 먼저 '해냈어!'라고 환호하는 장면",
+      "location": "inside taxi",
+      "time": "evening",
+      "characters": ["강순덕"],
+      "emotion": "joy, victory",
+      "action": "celebrating",
+      "main_prompt": "masterpiece, best quality, photorealistic, taxi interior, elderly woman bursting into celebration, we did it exclamation, joyful outburst, breaking tension",
+      "character_prompts": {
+        "강순덕": "55 year old Korean woman, fist pump, huge smile, we actually did it celebration"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/5막/18화/s02_환호",
+      "filename_prefix": "5막_18화_s02"
+    },
+    {
+      "scene_id": "s03",
+      "scene_name": "four_laughing",
+      "description": "네 여자가 함께 웃음을 터뜨리는 장면",
+      "location": "inside taxi",
+      "time": "evening",
+      "characters": ["한정숙", "최영희", "이말자", "강순덕"],
+      "emotion": "joy, liberation",
+      "action": "laughing",
+      "main_prompt": "masterpiece, best quality, photorealistic, taxi interior, four elderly women laughing together, we're crazy expression, relief and joy, golden sunset light",
+      "character_prompts": {
+        "한정숙": "57 year old Korean woman, laughing with relief, tears of joy",
+        "최영희": "60 year old Korean woman, genuine laugh, journalist spirit alive",
+        "이말자": "53 year old Korean woman, rare full smile, we actually pulled it off",
+        "강순덕": "55 year old Korean woman, laughing loudest, pure joy"
+      },
+      "regional_settings": {
+        "한정숙": {"start": 0, "end": 25},
+        "최영희": {"start": 25, "end": 50},
+        "이말자": {"start": 50, "end": 75},
+        "강순덕": {"start": 75, "end": 100}
+      },
+      "output_folder": "scenes/5막/18화/s03_웃음",
+      "filename_prefix": "5막_18화_s03"
+    },
+    {
+      "scene_id": "s04",
+      "scene_name": "younghee_window",
+      "description": "영희가 창밖을 보며 '얼마 만에 보는 바깥 풍경이야'라고 말하는 장면",
+      "location": "inside taxi",
+      "time": "evening",
+      "characters": ["최영희"],
+      "emotion": "reflection, liberation",
+      "action": "looking out window",
+      "main_prompt": "masterpiece, best quality, photorealistic, taxi window view, elderly woman gazing at passing scenery, how long since I've seen outside, emotional moment, trees and buildings passing",
+      "character_prompts": {
+        "최영희": "60 year old Korean woman, face pressed to window, watching world go by, how long has it been expression, savoring freedom"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/5막/18화/s04_창밖",
+      "filename_prefix": "5막_18화_s04"
+    },
+    {
+      "scene_id": "s05",
+      "scene_name": "opening_window",
+      "description": "정숙이 창문을 열어 바람을 맞는 장면",
+      "location": "inside taxi",
+      "time": "evening",
+      "characters": ["한정숙"],
+      "emotion": "freedom, liberation",
+      "action": "opening window",
+      "main_prompt": "masterpiece, best quality, photorealistic, taxi window opening, elderly woman letting wind hit face, fresh air of freedom, hair blowing, eyes closed in bliss, golden hour light",
+      "character_prompts": {
+        "한정숙": "57 year old Korean woman, face in wind, eyes closed, breathing deeply, this is freedom expression, emotional liberation"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/5막/18화/s05_창문열기",
+      "filename_prefix": "5막_18화_s05"
+    },
+    {
+      "scene_id": "s06",
+      "scene_name": "air_of_freedom",
+      "description": "정숙이 '이게 자유의 공기구나'라고 말하는 장면",
+      "location": "inside taxi",
+      "time": "evening",
+      "characters": ["한정숙"],
+      "emotion": "realization, emotion",
+      "action": "feeling",
+      "main_prompt": "masterpiece, best quality, photorealistic, close-up, elderly woman with wind in face, this is the air of freedom realization, tears and smile, profound moment of liberation",
+      "character_prompts": {
+        "한정숙": "57 year old Korean woman, wind-swept face, tears of joy, this is what freedom feels like expression"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/5막/18화/s06_자유공기",
+      "filename_prefix": "5막_18화_s06"
+    },
+    {
+      "scene_id": "s07",
+      "scene_name": "motel_arrival",
+      "description": "택시가 서울 외곽 모텔에 도착하는 장면",
+      "location": "motel exterior",
+      "time": "evening",
+      "characters": ["한정숙", "최영희", "이말자", "강순덕"],
+      "emotion": "hiding, planning",
+      "action": "arriving",
+      "main_prompt": "masterpiece, best quality, photorealistic, taxi stopping at motel, four elderly women getting out, temporary hideout, Seoul outskirts at dusk, laying low",
+      "character_prompts": {
+        "한정숙": "57 year old Korean woman, surveying surroundings, safe for now",
+        "최영희": "60 year old Korean woman, walking on own feet, no wheelchair",
+        "이말자": "53 year old Korean woman, practical assessment of location",
+        "강순덕": "55 year old Korean woman, carrying small bag"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/5막/18화/s07_모텔도착",
+      "filename_prefix": "5막_18화_s07"
+    },
+    {
+      "scene_id": "s08",
+      "scene_name": "recording_check",
+      "description": "모텔 방에서 녹음 파일을 확인하는 장면",
+      "location": "motel room",
+      "time": "night",
+      "characters": ["한정숙", "최영희", "이말자", "강순덕"],
+      "emotion": "verification, triumph",
+      "action": "playing recording",
+      "main_prompt": "masterpiece, best quality, photorealistic, motel room, four elderly women gathered around phone, playing recording of confession, we got her evidence, triumphant moment",
+      "character_prompts": {
+        "한정숙": "57 year old Korean woman, pressing play, here it is expression",
+        "최영희": "60 year old Korean woman, listening intently, journalist approving",
+        "이말자": "53 year old Korean woman, nodding at clear evidence",
+        "강순덕": "55 year old Korean woman, clenching fist in victory"
+      },
+      "regional_settings": {
+        "한정숙": {"start": 0, "end": 30},
+        "최영희": {"start": 25, "end": 50},
+        "이말자": {"start": 45, "end": 70},
+        "강순덕": {"start": 65, "end": 100}
+      },
+      "output_folder": "scenes/5막/18화/s08_녹음확인",
+      "filename_prefix": "5막_18화_s08"
+    },
+    {
+      "scene_id": "s09",
+      "scene_name": "more_evidence_needed",
+      "description": "영희가 '이것만으론 부족해, 원본 장부가 필요해'라고 말하는 장면",
+      "location": "motel room",
+      "time": "night",
+      "characters": ["최영희"],
+      "emotion": "analysis, planning",
+      "action": "explaining",
+      "main_prompt": "masterpiece, best quality, photorealistic, motel room, elderly journalist explaining need for more evidence, recording not enough for court, original ledger needed, strategic planning",
+      "character_prompts": {
+        "최영희": "60 year old Korean woman, serious journalist expression, we need more explanation, court needs physical evidence"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/5막/18화/s09_더필요",
+      "filename_prefix": "5막_18화_s09"
+    },
+    {
+      "scene_id": "s10",
+      "scene_name": "mira_house_operation",
+      "description": "정숙이 '내일 밤, 미라 집에 들어간다'고 결심하는 장면",
+      "location": "motel room",
+      "time": "night",
+      "characters": ["한정숙"],
+      "emotion": "resolve, preparation",
+      "action": "declaring",
+      "main_prompt": "masterpiece, best quality, photorealistic, motel room night, elderly woman declaring infiltration plan, tomorrow night Mira's house, determined leader, new mission begins, dramatic low lighting",
+      "character_prompts": {
+        "한정숙": "57 year old Korean woman, standing with determination, we break into her place declaration, leader taking charge"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/5막/18화/s10_작전선언",
+      "filename_prefix": "5막_18화_s10"
+    }
+  ]
+}

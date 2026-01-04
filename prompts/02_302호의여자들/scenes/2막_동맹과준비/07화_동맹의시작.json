@@ -1,0 +1,263 @@
+{
+  "metadata": {
+    "work_title": "302호의여자들",
+    "act": "2막",
+    "act_title": "동맹과준비",
+    "chapter": 7,
+    "chapter_title": "동맹의시작",
+    "created_at": "2026-01-04",
+    "total_scenes": 12
+  },
+  "chapter_info": {
+    "main_location": "요양원 302호",
+    "time_period": "낮/밤",
+    "characters": ["한정숙", "최영희", "이말자", "강순덕"],
+    "main_emotion": "결의, 희망, 긴장"
+  },
+  "scenes": [
+    {
+      "scene_id": "s01",
+      "scene_name": "ordinary_morning",
+      "description": "302호의 네 여자가 평소처럼 행동하며 식당에서 밥을 먹는 장면",
+      "location": "nursing home cafeteria",
+      "time": "morning",
+      "characters": ["한정숙", "최영희", "이말자", "강순덕"],
+      "emotion": "calm facade, inner tension",
+      "action": "eating breakfast, acting normal",
+      "main_prompt": "masterpiece, best quality, photorealistic, 4women, nursing home cafeteria interior, elderly women eating breakfast, morning light through windows, calm everyday atmosphere, soft natural lighting",
+      "character_prompts": {
+        "한정숙": "57 year old Korean woman, gentle face, black hair with gray streaks, plain nursing home clothes, eating quietly, observant eyes while appearing absent-minded",
+        "최영희": "60 year old Korean woman, intellectual appearance, glasses, wheelchair, eating slowly, sharp eyes behind calm facade",
+        "이말자": "53 year old Korean woman, sharp features, calculating expression, eating while observing surroundings",
+        "강순덕": "55 year old Korean woman, round friendly face, eating heartily, casual demeanor"
+      },
+      "regional_settings": {
+        "한정숙": {"start": 0, "end": 25},
+        "최영희": {"start": 25, "end": 50},
+        "이말자": {"start": 50, "end": 75},
+        "강순덕": {"start": 75, "end": 100}
+      },
+      "output_folder": "scenes/2막/07화/s01_평범한아침",
+      "filename_prefix": "2막_07화_s01"
+    },
+    {
+      "scene_id": "s02",
+      "scene_name": "soondeok_reconnaissance",
+      "description": "순덕이 요양원 곳곳을 돌아다니며 CCTV 위치를 파악하는 장면",
+      "location": "nursing home corridor",
+      "time": "daytime",
+      "characters": ["강순덕"],
+      "emotion": "focused, secretive",
+      "action": "walking, observing",
+      "main_prompt": "masterpiece, best quality, photorealistic, 1woman, nursing home corridor, elderly woman walking casually, observing surroundings, soft indoor lighting, surveillance mission disguised as stroll",
+      "character_prompts": {
+        "강순덕": "55 year old Korean woman, round friendly face, plain nursing home clothes, walking casually, eyes glancing at ceiling corners where cameras might be, subtle determination"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/2막/07화/s02_순덕정찰",
+      "filename_prefix": "2막_07화_s02"
+    },
+    {
+      "scene_id": "s03",
+      "scene_name": "malja_office_surveillance",
+      "description": "말자가 행정실 근처를 서성거리며 서류 위치를 파악하는 장면",
+      "location": "near nursing home administrative office",
+      "time": "daytime",
+      "characters": ["이말자"],
+      "emotion": "focused, calculating",
+      "action": "lingering, observing",
+      "main_prompt": "masterpiece, best quality, photorealistic, 1woman, nursing home office area, elderly woman lingering near administrative office, calculating observation, soft indoor lighting",
+      "character_prompts": {
+        "이말자": "53 year old Korean woman, sharp intelligent features, glasses, plain clothes, pretending to be lost while observing office interior, sharp analytical eyes"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/2막/07화/s03_말자관찰",
+      "filename_prefix": "2막_07화_s03"
+    },
+    {
+      "scene_id": "s04",
+      "scene_name": "younghee_by_window",
+      "description": "영희가 휠체어에서 멍하니 창밖을 보지만 모든 걸 기록하는 장면",
+      "location": "nursing home lounge",
+      "time": "daytime",
+      "characters": ["최영희"],
+      "emotion": "observing, memorizing",
+      "action": "gazing out window",
+      "main_prompt": "masterpiece, best quality, photorealistic, 1woman, nursing home lounge, elderly woman in wheelchair by window, appearing vacant but eyes recording everything, soft afternoon light",
+      "character_prompts": {
+        "최영희": "60 year old Korean woman, intellectual face, glasses, silver gray hair, wheelchair, staring out window with seemingly empty expression but sharp observant eyes, subtle intensity"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/2막/07화/s04_영희창가",
+      "filename_prefix": "2막_07화_s04"
+    },
+    {
+      "scene_id": "s05",
+      "scene_name": "jeongsuk_dementia_act",
+      "description": "정숙이 복도를 돌아다니며 아들을 찾는 척 치매 연기를 하는 장면",
+      "location": "nursing home corridor",
+      "time": "daytime",
+      "characters": ["한정숙"],
+      "emotion": "acting, inner anger",
+      "action": "wandering, calling out",
+      "main_prompt": "masterpiece, best quality, photorealistic, 1woman, nursing home corridor, elderly woman wandering confused calling for son, dementia acting performance, nurses in background clicking tongues, soft fluorescent lighting",
+      "character_prompts": {
+        "한정숙": "57 year old Korean woman, gentle face appearing confused, black hair with gray, plain nursing home clothes, wandering with lost expression, calling out, convincing dementia performance but eyes occasionally showing clarity"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/2막/07화/s05_치매연기",
+      "filename_prefix": "2막_07화_s05"
+    },
+    {
+      "scene_id": "s06",
+      "scene_name": "nurses_reaction",
+      "description": "간호사들이 정숙을 보며 혀를 차는 장면",
+      "location": "nursing home corridor",
+      "time": "daytime",
+      "characters": ["한정숙"],
+      "emotion": "sympathy, guard lowered",
+      "action": "being observed",
+      "main_prompt": "masterpiece, best quality, photorealistic, nursing home corridor scene, nurses observing wandering elderly patient, sympathetic but dismissive expressions, lowering guard, soft indoor lighting",
+      "character_prompts": {
+        "한정숙": "57 year old Korean woman, confused wandering appearance, being watched by nurses who click tongues sympathetically, successful deception"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/2막/07화/s06_간호사반응",
+      "filename_prefix": "2막_07화_s06"
+    },
+    {
+      "scene_id": "s07",
+      "scene_name": "midnight_meeting",
+      "description": "자정, CCTV가 꺼지는 시간에 네 여자가 침대에 둘러앉는 장면",
+      "location": "room 302",
+      "time": "midnight",
+      "characters": ["한정숙", "최영희", "이말자", "강순덕"],
+      "emotion": "tension, determination",
+      "action": "gathering, meeting",
+      "main_prompt": "masterpiece, best quality, photorealistic, 4women, nursing home room at night, elderly women gathered around bed in secret meeting, dim moonlight through window, tense conspiratorial atmosphere, low key lighting",
+      "character_prompts": {
+        "한정숙": "57 year old Korean woman, alert focused expression, sitting on bed, leaning in for secret discussion",
+        "최영희": "60 year old Korean woman, intellectual sharp eyes, wheelchair beside bed, leading the discussion",
+        "이말자": "53 year old Korean woman, analytical expression, sitting attentively, processing information",
+        "강순덕": "55 year old Korean woman, eager excited expression, ready to share discoveries"
+      },
+      "regional_settings": {
+        "한정숙": {"start": 0, "end": 25},
+        "최영희": {"start": 25, "end": 50},
+        "이말자": {"start": 50, "end": 75},
+        "강순덕": {"start": 75, "end": 100}
+      },
+      "output_folder": "scenes/2막/07화/s07_자정회의",
+      "filename_prefix": "2막_07화_s07"
+    },
+    {
+      "scene_id": "s08",
+      "scene_name": "soondeok_report",
+      "description": "순덕이 공중전화와 후문에 대해 보고하는 장면",
+      "location": "room 302",
+      "time": "night",
+      "characters": ["강순덕", "최영희"],
+      "emotion": "excitement, hope",
+      "action": "reporting, listening",
+      "main_prompt": "masterpiece, best quality, photorealistic, 2women, nursing home room night scene, elderly woman reporting findings excitedly, another listening intently, secretive atmosphere, dim lighting",
+      "character_prompts": {
+        "강순덕": "55 year old Korean woman, excited expression, gesturing while explaining escape routes, proud smile",
+        "최영희": "60 year old Korean woman, thoughtful expression, listening carefully, nodding"
+      },
+      "regional_settings": {
+        "강순덕": {"start": 0, "end": 55},
+        "최영희": {"start": 45, "end": 100}
+      },
+      "output_folder": "scenes/2막/07화/s08_순덕보고",
+      "filename_prefix": "2막_07화_s08"
+    },
+    {
+      "scene_id": "s09",
+      "scene_name": "soondeok_secret_pocket",
+      "description": "정숙이 순덕의 주머니에 뭔가 있음을 눈치채는 장면",
+      "location": "room 302",
+      "time": "night",
+      "characters": ["한정숙", "강순덕"],
+      "emotion": "curiosity, secrecy",
+      "action": "noticing, hiding",
+      "main_prompt": "masterpiece, best quality, photorealistic, 2women, nursing home room, elderly woman noticing another touching pocket secretively, curious suspicious moment, dim night lighting",
+      "character_prompts": {
+        "한정숙": "57 year old Korean woman, curious observant expression, noticing something",
+        "강순덕": "55 year old Korean woman, touching left pocket unconsciously, mysterious smile when caught, keeping secret"
+      },
+      "regional_settings": {
+        "한정숙": {"start": 0, "end": 50},
+        "강순덕": {"start": 50, "end": 100}
+      },
+      "output_folder": "scenes/2막/07화/s09_비밀주머니",
+      "filename_prefix": "2막_07화_s09"
+    },
+    {
+      "scene_id": "s10",
+      "scene_name": "operation_naming",
+      "description": "영희가 창밖의 국화를 보며 작전명을 정하는 장면",
+      "location": "room 302",
+      "time": "night",
+      "characters": ["최영희"],
+      "emotion": "determination, poetic",
+      "action": "gazing out window, suggesting name",
+      "main_prompt": "masterpiece, best quality, photorealistic, 1woman, nursing home room, elderly woman in wheelchair looking at chrysanthemum flowers through window, moonlit scene, poetic moment of naming operation, soft blue night lighting",
+      "character_prompts": {
+        "최영희": "60 year old Korean woman, intellectual thoughtful expression, wheelchair, gazing at chrysanthemum through window, inspired expression, naming the operation"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/2막/07화/s10_작전명",
+      "filename_prefix": "2막_07화_s10"
+    },
+    {
+      "scene_id": "s11",
+      "scene_name": "when_chrysanthemums_bloom",
+      "description": "영희가 '국화꽃 필 무렵'이라고 작전명을 발표하는 장면",
+      "location": "room 302",
+      "time": "night",
+      "characters": ["최영희", "한정숙", "이말자", "강순덕"],
+      "emotion": "determination, unity",
+      "action": "announcing operation name",
+      "main_prompt": "masterpiece, best quality, photorealistic, 4women, nursing home room at night, elderly woman announcing operation name to group, determined atmosphere, moonlight and chrysanthemum visible, dramatic moment",
+      "character_prompts": {
+        "최영희": "60 year old Korean woman, proud determined expression, announcing operation name",
+        "한정숙": "57 year old Korean woman, moved expression, eyes meeting others",
+        "이말자": "53 year old Korean woman, approving nod, ready for action",
+        "강순덕": "55 year old Korean woman, excited smile, pumped up"
+      },
+      "regional_settings": {
+        "최영희": {"start": 0, "end": 30},
+        "한정숙": {"start": 25, "end": 50},
+        "이말자": {"start": 45, "end": 70},
+        "강순덕": {"start": 65, "end": 100}
+      },
+      "output_folder": "scenes/2막/07화/s11_국화꽃필무렵",
+      "filename_prefix": "2막_07화_s11"
+    },
+    {
+      "scene_id": "s12",
+      "scene_name": "alliance_eye_contact",
+      "description": "네 여자의 눈이 마주치며 302호 동맹이 시작되는 장면",
+      "location": "room 302",
+      "time": "night",
+      "characters": ["한정숙", "최영희", "이말자", "강순덕"],
+      "emotion": "determination, unity, beginning",
+      "action": "making eye contact",
+      "main_prompt": "masterpiece, best quality, photorealistic, close-up, 4women, nursing home room, four elderly women making eye contact with determination, alliance forming moment, dramatic moonlit atmosphere, beginning of rebellion",
+      "character_prompts": {
+        "한정숙": "57 year old Korean woman, determined fierce eyes, ready for battle",
+        "최영희": "60 year old Korean woman, sharp intelligent gaze, strategic mind",
+        "이말자": "53 year old Korean woman, calculating determined look",
+        "강순덕": "55 year old Korean woman, loyal determined expression"
+      },
+      "regional_settings": {
+        "한정숙": {"start": 0, "end": 25},
+        "최영희": {"start": 25, "end": 50},
+        "이말자": {"start": 50, "end": 75},
+        "강순덕": {"start": 75, "end": 100}
+      },
+      "output_folder": "scenes/2막/07화/s12_동맹시작",
+      "filename_prefix": "2막_07화_s12"
+    }
+  ]
+}

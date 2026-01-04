@@ -1,0 +1,239 @@
+{
+  "metadata": {
+    "work_title": "302호의여자들",
+    "act": "5막",
+    "act_title": "탈출",
+    "chapter": 16,
+    "chapter_title": "수현의결단",
+    "created_at": "2026-01-04",
+    "total_scenes": 12
+  },
+  "chapter_info": {
+    "main_location": "nursing home visiting room, room 302",
+    "time_period": "daytime",
+    "characters": ["한정숙", "정수현", "강순덕"],
+    "main_emotion": "reunion, emotion, hope"
+  },
+  "scenes": [
+    {
+      "scene_id": "s01",
+      "scene_name": "visitor_notification_2",
+      "description": "간호사가 정숙에게 면회객이 왔다고 알리는 장면",
+      "location": "room 302",
+      "time": "daytime",
+      "characters": ["한정숙"],
+      "emotion": "caution, tension",
+      "action": "receiving notification",
+      "main_prompt": "masterpiece, best quality, photorealistic, nursing home room, elderly woman receiving visitor notice, tense anticipation, is it that woman again worry, afternoon light",
+      "character_prompts": {
+        "한정숙": "57 year old Korean woman, wary expression, another visit anxiety, preparing for enemy"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/5막/16화/s01_면회알림",
+      "filename_prefix": "5막_16화_s01"
+    },
+    {
+      "scene_id": "s02",
+      "scene_name": "sister_discovery",
+      "description": "면회실에서 15년 만에 동생 수현을 발견하는 장면",
+      "location": "nursing home visiting room",
+      "time": "daytime",
+      "characters": ["한정숙", "정수현"],
+      "emotion": "shock, emotion",
+      "action": "reunion",
+      "main_prompt": "masterpiece, best quality, photorealistic, nursing home visiting room, elderly woman seeing younger sister after 15 years, emotional reunion, tears of surprise and joy, warm afternoon light",
+      "character_prompts": {
+        "한정숙": "57 year old Korean woman, shocked recognition, sister expression, 15 years melting away",
+        "정수현": "55 year old Korean woman, standing up rushing toward sister, tears already falling, unni expression"
+      },
+      "regional_settings": {
+        "한정숙": {"start": 0, "end": 50},
+        "정수현": {"start": 50, "end": 100}
+      },
+      "output_folder": "scenes/5막/16화/s02_동생발견",
+      "filename_prefix": "5막_16화_s02"
+    },
+    {
+      "scene_id": "s03",
+      "scene_name": "suhyeon_apology",
+      "description": "수현이 달려와 '미안해, 늦었어'라고 사과하는 장면",
+      "location": "nursing home visiting room",
+      "time": "daytime",
+      "characters": ["정수현", "한정숙"],
+      "emotion": "apology, forgiveness",
+      "action": "embracing",
+      "main_prompt": "masterpiece, best quality, photorealistic, nursing home visiting room, emotional reunion between sisters, younger apologizing with tears, 15 years of guilt, tight embrace",
+      "character_prompts": {
+        "정수현": "55 year old Korean woman, crying, hugging sister, I'm sorry I'm late apology, guilt released",
+        "한정숙": "57 year old Korean woman, moved to tears, forgiving embrace, sisterly love"
+      },
+      "regional_settings": {
+        "정수현": {"start": 0, "end": 55},
+        "한정숙": {"start": 45, "end": 100}
+      },
+      "output_folder": "scenes/5막/16화/s03_사과",
+      "filename_prefix": "5막_16화_s03"
+    },
+    {
+      "scene_id": "s04",
+      "scene_name": "handkerchief_delivery",
+      "description": "수현이 손수건 안에 메모를 숨겨서 전달하는 장면",
+      "location": "nursing home visiting room",
+      "time": "daytime",
+      "characters": ["정수현", "한정숙"],
+      "emotion": "secrecy, cooperation",
+      "action": "delivering",
+      "main_prompt": "masterpiece, best quality, photorealistic, nursing home visiting room, woman handing handkerchief with hidden note inside, covert exchange under nurse surveillance, sisterly conspiracy",
+      "character_prompts": {
+        "정수현": "55 year old Korean woman, casual handkerchief offer, secret message inside, helping sister",
+        "한정숙": "57 year old Korean woman, accepting handkerchief smoothly, feeling note inside, sister is ally"
+      },
+      "regional_settings": {
+        "정수현": {"start": 0, "end": 55},
+        "한정숙": {"start": 45, "end": 100}
+      },
+      "output_folder": "scenes/5막/16화/s04_손수건",
+      "filename_prefix": "5막_16화_s04"
+    },
+    {
+      "scene_id": "s05",
+      "scene_name": "note_confirmation",
+      "description": "302호로 돌아와 메모를 확인하는 장면",
+      "location": "room 302",
+      "time": "daytime",
+      "characters": ["한정숙"],
+      "emotion": "hope, emotion",
+      "action": "reading",
+      "main_prompt": "masterpiece, best quality, photorealistic, nursing home room, elderly woman reading secret note from sister, will help you message, tears of hope, ally in outside world",
+      "character_prompts": {
+        "한정숙": "57 year old Korean woman, reading note with trembling hands, sister will help, tears of relief and hope"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/5막/16화/s05_메모확인",
+      "filename_prefix": "5막_16화_s05"
+    },
+    {
+      "scene_id": "s06",
+      "scene_name": "report_to_soondeok",
+      "description": "정숙이 순덕에게 동생이 왔다고 말하는 장면",
+      "location": "room 302",
+      "time": "daytime",
+      "characters": ["한정숙", "강순덕"],
+      "emotion": "hope, solidarity",
+      "action": "reporting",
+      "main_prompt": "masterpiece, best quality, photorealistic, nursing home room, elderly woman reporting sister's visit to companion, ally outside secured, hopeful atmosphere, plan progressing",
+      "character_prompts": {
+        "한정숙": "57 year old Korean woman, hopeful expression, my sister came, 15 years but she came",
+        "강순덕": "55 year old Korean woman, excited expression, outside ally acquired"
+      },
+      "regional_settings": {
+        "한정숙": {"start": 0, "end": 55},
+        "강순덕": {"start": 45, "end": 100}
+      },
+      "output_folder": "scenes/5막/16화/s06_보고",
+      "filename_prefix": "5막_16화_s06"
+    },
+    {
+      "scene_id": "s07",
+      "scene_name": "reply_writing",
+      "description": "정숙이 '돈, 차, 가을 축제 날'이라고 답장을 쓰는 장면",
+      "location": "room 302",
+      "time": "daytime",
+      "characters": ["한정숙"],
+      "emotion": "planning, hope",
+      "action": "writing",
+      "main_prompt": "masterpiece, best quality, photorealistic, nursing home room, elderly woman writing response note, money car festival day request, escape plan details, focused writing",
+      "character_prompts": {
+        "한정숙": "57 year old Korean woman, writing carefully on small paper, specific requests for escape, determined focus"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/5막/16화/s07_답장",
+      "filename_prefix": "5막_16화_s07"
+    },
+    {
+      "scene_id": "s08",
+      "scene_name": "envelope_arrival",
+      "description": "며칠 후 수현에게서 현금 500만 원이 담긴 봉투가 도착하는 장면",
+      "location": "room 302",
+      "time": "daytime",
+      "characters": ["한정숙"],
+      "emotion": "emotion, preparation complete",
+      "action": "receiving",
+      "main_prompt": "masterpiece, best quality, photorealistic, nursing home room, elderly woman receiving envelope with cash, 5 million won escape fund, sister delivered, plan can proceed",
+      "character_prompts": {
+        "한정숙": "57 year old Korean woman, opening envelope carefully, seeing cash and photograph, overwhelmed with gratitude"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/5막/16화/s08_봉투",
+      "filename_prefix": "5막_16화_s08"
+    },
+    {
+      "scene_id": "s09",
+      "scene_name": "old_photograph",
+      "description": "봉투 안에서 50년 전 자매 사진을 발견하는 장면",
+      "location": "room 302",
+      "time": "daytime",
+      "characters": ["한정숙"],
+      "emotion": "emotion, nostalgia",
+      "action": "discovering",
+      "main_prompt": "masterpiece, best quality, photorealistic, close-up, old photograph, two young girls holding hands, 50 years ago, faded but precious, nostalgic sepia tones",
+      "character_prompts": {
+        "한정숙": "57 year old Korean woman, holding old photograph, childhood memory, sisters together, tears flowing"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/5막/16화/s09_오래된사진",
+      "filename_prefix": "5막_16화_s09"
+    },
+    {
+      "scene_id": "s10",
+      "scene_name": "photo_back_message",
+      "description": "'언니, 이번엔 내가 손 잡을게'라는 메시지를 읽는 장면",
+      "location": "room 302",
+      "time": "daytime",
+      "characters": ["한정숙"],
+      "emotion": "emotion, tears",
+      "action": "reading",
+      "main_prompt": "masterpiece, best quality, photorealistic, close-up, back of photograph with handwritten message, this time I'll hold your hand promise, elderly woman reading through tears, sisterly love message",
+      "character_prompts": {
+        "한정숙": "57 year old Korean woman, reading message on photo back, sobbing with emotion, sister's promise, decades of love"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/5막/16화/s10_사진뒷면",
+      "filename_prefix": "5막_16화_s10"
+    },
+    {
+      "scene_id": "s11",
+      "scene_name": "tearful_smile",
+      "description": "정숙이 눈물 흘리며 미소 짓는 장면",
+      "location": "room 302",
+      "time": "daytime",
+      "characters": ["한정숙"],
+      "emotion": "emotion, hope",
+      "action": "crying and smiling",
+      "main_prompt": "masterpiece, best quality, photorealistic, close-up, elderly woman smiling through tears, holding photograph and message, hope renewed, not alone anymore, beautiful emotional portrait",
+      "character_prompts": {
+        "한정숙": "57 year old Korean woman, tears streaming but smiling, clutching photo to chest, I'm not alone anymore expression"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/5막/16화/s11_눈물미소",
+      "filename_prefix": "5막_16화_s11"
+    },
+    {
+      "scene_id": "s12",
+      "scene_name": "holding_photo_to_heart",
+      "description": "정숙이 사진을 가슴에 품는 장면",
+      "location": "room 302",
+      "time": "daytime",
+      "characters": ["한정숙"],
+      "emotion": "love, determination",
+      "action": "embracing",
+      "main_prompt": "masterpiece, best quality, photorealistic, nursing home room, elderly woman pressing photograph to heart, sisterly bond, new strength for battle ahead, warm afternoon light, emotional powerful moment",
+      "character_prompts": {
+        "한정숙": "57 year old Korean woman, photograph pressed to heart, eyes closed in gratitude, sister's love giving strength, ready for fight"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/5막/16화/s12_품기",
+      "filename_prefix": "5막_16화_s12"
+    }
+  ]
+}

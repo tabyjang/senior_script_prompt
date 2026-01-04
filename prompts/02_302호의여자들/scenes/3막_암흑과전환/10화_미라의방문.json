@@ -1,0 +1,243 @@
+{
+  "metadata": {
+    "work_title": "302호의여자들",
+    "act": "3막",
+    "act_title": "암흑과전환",
+    "chapter": 10,
+    "chapter_title": "미라의방문",
+    "created_at": "2026-01-04",
+    "total_scenes": 12
+  },
+  "chapter_info": {
+    "main_location": "요양원 면회실, 302호",
+    "time_period": "오후",
+    "characters": ["한정숙", "윤미라", "강순덕", "이말자", "최영희"],
+    "main_emotion": "긴장, 분노, 위기"
+  },
+  "scenes": [
+    {
+      "scene_id": "s01",
+      "scene_name": "visitor_notification",
+      "description": "간호사가 정숙에게 면회객이 왔다고 알리는 장면",
+      "location": "room 302",
+      "time": "afternoon",
+      "characters": ["한정숙"],
+      "emotion": "expectation, tension",
+      "action": "receiving notification",
+      "main_prompt": "masterpiece, best quality, photorealistic, nursing home room, elderly woman receiving visitor notification from nurse, hopeful expectation son might visit, afternoon light",
+      "character_prompts": {
+        "한정숙": "57 year old Korean woman, hopeful expression turning to anticipation, is it my son expression, heart racing"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/3막/10화/s01_면회알림",
+      "filename_prefix": "3막_10화_s01"
+    },
+    {
+      "scene_id": "s02",
+      "scene_name": "visiting_room_arrival",
+      "description": "면회실에 도착한 정숙이 미라를 발견하는 장면",
+      "location": "nursing home visiting room",
+      "time": "afternoon",
+      "characters": ["한정숙", "윤미라"],
+      "emotion": "shock, anger, disguise",
+      "action": "discovering, hiding reaction",
+      "main_prompt": "masterpiece, best quality, photorealistic, nursing home visiting room, elderly woman seeing her enemy sitting with fruit basket and smile, shock hidden behind vacant expression, tense confrontation setup",
+      "character_prompts": {
+        "한정숙": "57 year old Korean woman, clenching teeth internally, must maintain dementia act, seeing enemy",
+        "윤미라": "33 year old Korean woman, bright false smile, elegant black dress, pearl earrings, fruit basket, confident relaxed posture"
+      },
+      "regional_settings": {
+        "한정숙": {"start": 0, "end": 50},
+        "윤미라": {"start": 50, "end": 100}
+      },
+      "output_folder": "scenes/3막/10화/s02_면회실도착",
+      "filename_prefix": "3막_10화_s02"
+    },
+    {
+      "scene_id": "s03",
+      "scene_name": "dementia_act_begins",
+      "description": "정숙이 '누구세요?'라며 치매 연기를 시작하는 장면",
+      "location": "nursing home visiting room",
+      "time": "afternoon",
+      "characters": ["한정숙", "윤미라"],
+      "emotion": "acting, testing",
+      "action": "dementia acting",
+      "main_prompt": "masterpiece, best quality, photorealistic, nursing home visiting room, elderly woman feigning dementia asking who visitor is, younger woman relieved by confusion, test of acting skill",
+      "character_prompts": {
+        "한정숙": "57 year old Korean woman, blank vacant expression, who are you look, perfect dementia acting",
+        "윤미라": "33 year old Korean woman, relief flashing in eyes, shaking head sympathetically, got worse expression"
+      },
+      "regional_settings": {
+        "한정숙": {"start": 0, "end": 50},
+        "윤미라": {"start": 50, "end": 100}
+      },
+      "output_folder": "scenes/3막/10화/s03_치매연기",
+      "filename_prefix": "3막_10화_s03"
+    },
+    {
+      "scene_id": "s04",
+      "scene_name": "mira_observing",
+      "description": "미라가 과일을 깎으며 정숙이 진짜 치매인지 살피는 장면",
+      "location": "nursing home visiting room",
+      "time": "afternoon",
+      "characters": ["윤미라", "한정숙"],
+      "emotion": "suspicion, verification",
+      "action": "observing",
+      "main_prompt": "masterpiece, best quality, photorealistic, nursing home visiting room, younger woman peeling fruit while observing elderly woman for signs of clarity, suspicious verification, tense atmosphere",
+      "character_prompts": {
+        "윤미라": "33 year old Korean woman, peeling apple, eyes watching patient carefully, checking for deception",
+        "한정숙": "57 year old Korean woman, staring blankly at wall, repeating son's name, convincing performance"
+      },
+      "regional_settings": {
+        "윤미라": {"start": 0, "end": 55},
+        "한정숙": {"start": 45, "end": 100}
+      },
+      "output_folder": "scenes/3막/10화/s04_미라관찰",
+      "filename_prefix": "3막_10화_s04"
+    },
+    {
+      "scene_id": "s05",
+      "scene_name": "mira_smile",
+      "description": "미라가 안심하며 미소 짓는 장면",
+      "location": "nursing home visiting room",
+      "time": "afternoon",
+      "characters": ["윤미라"],
+      "emotion": "relief, sense of victory",
+      "action": "smiling",
+      "main_prompt": "masterpiece, best quality, photorealistic, close-up, younger woman satisfied smile, enemy neutralized expression, cruel relief, afternoon light",
+      "character_prompts": {
+        "윤미라": "33 year old Korean woman, satisfied relieved smile, she's really gone expression, cruel victory look hidden behind sympathy"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/3막/10화/s05_미라미소",
+      "filename_prefix": "3막_10화_s05"
+    },
+    {
+      "scene_id": "s06",
+      "scene_name": "increase_medication_request",
+      "description": "미라가 나가면서 간호사에게 약을 늘려달라고 속삭이는 장면",
+      "location": "nursing home visiting room exit",
+      "time": "afternoon",
+      "characters": ["윤미라"],
+      "emotion": "conspiracy, malice",
+      "action": "giving instructions",
+      "main_prompt": "masterpiece, best quality, photorealistic, nursing home corridor, young woman whispering to nurse at doorway, requesting increased medication, sinister request disguised as concern, dramatic side lighting",
+      "character_prompts": {
+        "윤미라": "33 year old Korean woman, leaning toward nurse, whispering with concerned expression masking cruel intent, increase the drugs request"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/3막/10화/s06_약늘려달라",
+      "filename_prefix": "3막_10화_s06"
+    },
+    {
+      "scene_id": "s07",
+      "scene_name": "jeongsuk_chills",
+      "description": "정숙이 미라의 말을 듣고 등에 소름이 돋는 장면",
+      "location": "nursing home visiting room",
+      "time": "afternoon",
+      "characters": ["한정숙"],
+      "emotion": "fear, anger",
+      "action": "listening, suppressing reaction",
+      "main_prompt": "masterpiece, best quality, photorealistic, close-up, elderly woman overhearing sinister conversation, chills running down spine, maintaining blank expression despite horror, dramatic lighting",
+      "character_prompts": {
+        "한정숙": "57 year old Korean woman, goosebumps visible, horrified eyes behind vacant mask, she wants to destroy me expression"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/3막/10화/s07_소름",
+      "filename_prefix": "3막_10화_s07"
+    },
+    {
+      "scene_id": "s08",
+      "scene_name": "return_to_302",
+      "description": "정숙이 302호로 돌아와 동료들에게 말하는 장면",
+      "location": "room 302",
+      "time": "afternoon",
+      "characters": ["한정숙", "강순덕"],
+      "emotion": "warning, crisis",
+      "action": "reporting",
+      "main_prompt": "masterpiece, best quality, photorealistic, nursing home room, shaken elderly woman reporting to companion, alarming news about medication, urgent atmosphere",
+      "character_prompts": {
+        "한정숙": "57 year old Korean woman, shaken expression, reporting enemy's sinister plan",
+        "강순덕": "55 year old Korean woman, face darkening with concern, realizing danger"
+      },
+      "regional_settings": {
+        "한정숙": {"start": 0, "end": 55},
+        "강순덕": {"start": 45, "end": 100}
+      },
+      "output_folder": "scenes/3막/10화/s08_귀환보고",
+      "filename_prefix": "3막_10화_s08"
+    },
+    {
+      "scene_id": "s09",
+      "scene_name": "soondeok_warning",
+      "description": "순덕이 수면제에 대해 경고하며 복순도 그랬다고 말하는 장면",
+      "location": "room 302",
+      "time": "afternoon",
+      "characters": ["강순덕"],
+      "emotion": "warning, fear",
+      "action": "explaining",
+      "main_prompt": "masterpiece, best quality, photorealistic, close-up, elderly woman warning about sleeping pills, reference to deceased resident, dark serious expression, they'll make you really crazy warning",
+      "character_prompts": {
+        "강순덕": "55 year old Korean woman, grave serious expression, warning about medication dangers, this is how they killed Boksun expression"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/3막/10화/s09_순덕경고",
+      "filename_prefix": "3막_10화_s09"
+    },
+    {
+      "scene_id": "s10",
+      "scene_name": "malja_rage",
+      "description": "말자가 이를 갈며 분노하는 장면",
+      "location": "room 302",
+      "time": "afternoon",
+      "characters": ["이말자"],
+      "emotion": "anger, determination",
+      "action": "raging",
+      "main_prompt": "masterpiece, best quality, photorealistic, close-up, elderly woman grinding teeth in anger, realizing enemy's intent to destroy friend, furious determined expression",
+      "character_prompts": {
+        "이말자": "53 year old Korean woman, teeth grinding, eyes blazing with anger, that woman wants to destroy you expression"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/3막/10화/s10_말자분노",
+      "filename_prefix": "3막_10화_s10"
+    },
+    {
+      "scene_id": "s11",
+      "scene_name": "younghee_urging",
+      "description": "영희가 정숙의 손을 잡으며 '빨리 나가야 해'라고 말하는 장면",
+      "location": "room 302",
+      "time": "afternoon",
+      "characters": ["최영희", "한정숙"],
+      "emotion": "urgency, solidarity",
+      "action": "holding hands, urging",
+      "main_prompt": "masterpiece, best quality, photorealistic, 2women, nursing home room, elderly woman in wheelchair grasping friend's hand urgently, time running out warning, desperate solidarity",
+      "character_prompts": {
+        "최영희": "60 year old Korean woman, wheelchair, gripping friend's hand, urgent expression, we need to escape now warning",
+        "한정숙": "57 year old Korean woman, accepting urgency, determined nod"
+      },
+      "regional_settings": {
+        "최영희": {"start": 0, "end": 55},
+        "한정숙": {"start": 45, "end": 100}
+      },
+      "output_folder": "scenes/3막/10화/s11_촉구",
+      "filename_prefix": "3막_10화_s11"
+    },
+    {
+      "scene_id": "s12",
+      "scene_name": "resolve_at_window",
+      "description": "정숙이 창밖을 바라보며 '저 여자 반드시 무너뜨린다'고 다짐하는 장면",
+      "location": "room 302",
+      "time": "evening",
+      "characters": ["한정숙"],
+      "emotion": "determination, vengeance",
+      "action": "gazing out window, vowing",
+      "main_prompt": "masterpiece, best quality, photorealistic, 1woman, nursing home room sunset, elderly woman standing at window, sunset colors, vowing revenge against enemy, fierce determination, dramatic golden hour lighting",
+      "character_prompts": {
+        "한정숙": "57 year old Korean woman, silhouette against sunset, fierce determined expression, I will bring her down vow, clenched fists"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/3막/10화/s12_결의",
+      "filename_prefix": "3막_10화_s12"
+    }
+  ]
+}

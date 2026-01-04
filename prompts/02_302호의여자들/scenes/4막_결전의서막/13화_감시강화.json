@@ -1,0 +1,199 @@
+{
+  "metadata": {
+    "work_title": "302호의여자들",
+    "act": "4막",
+    "act_title": "결전의서막",
+    "chapter": 13,
+    "chapter_title": "감시강화",
+    "created_at": "2026-01-04",
+    "total_scenes": 10
+  },
+  "chapter_info": {
+    "main_location": "요양원 302호, 독방, 원장실",
+    "time_period": "낮/밤",
+    "characters": ["한정숙", "이말자", "강순덕", "최영희"],
+    "main_emotion": "억압, 인내, 희망"
+  },
+  "scenes": [
+    {
+      "scene_id": "s01",
+      "scene_name": "night_patrol",
+      "description": "밤마다 두 시간 간격으로 직원이 방문을 열고 확인하는 장면",
+      "location": "room 302",
+      "time": "night",
+      "characters": ["한정숙", "이말자", "강순덕"],
+      "emotion": "being watched, oppression",
+      "action": "pretending to sleep",
+      "main_prompt": "masterpiece, best quality, photorealistic, nursing home room at night, door opening with flashlight beam, elderly women pretending to sleep, oppressive surveillance, midnight check, harsh flashlight against darkness",
+      "character_prompts": {
+        "한정숙": "57 year old Korean woman, eyes closed pretending sleep, tension in body",
+        "이말자": "53 year old Korean woman, feigning deep sleep, alert under closed eyelids",
+        "강순덕": "55 year old Korean woman, snoring convincingly, actually awake"
+      },
+      "regional_settings": {
+        "한정숙": {"start": 0, "end": 35},
+        "이말자": {"start": 30, "end": 65},
+        "강순덕": {"start": 60, "end": 100}
+      },
+      "output_folder": "scenes/4막/13화/s01_야간순찰",
+      "filename_prefix": "4막_13화_s01"
+    },
+    {
+      "scene_id": "s02",
+      "scene_name": "jeongsuk_continuing_dementia_act",
+      "description": "정숙이 낮에도 계속 치매 연기를 하며 복도를 돌아다니는 장면",
+      "location": "nursing home corridor",
+      "time": "daytime",
+      "characters": ["한정숙"],
+      "emotion": "acting, disguise",
+      "action": "wandering",
+      "main_prompt": "masterpiece, best quality, photorealistic, nursing home corridor, elderly woman wandering and calling for son, convincing dementia performance, staff whispering about her condition, daylight",
+      "character_prompts": {
+        "한정숙": "57 year old Korean woman, shuffling confused walk, calling out for son repeatedly, perfect dementia acting, lowering enemy's guard"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/4막/13화/s02_치매연기",
+      "filename_prefix": "4막_13화_s02"
+    },
+    {
+      "scene_id": "s03",
+      "scene_name": "director_office_document_burning",
+      "description": "정숙이 원장실 근처를 지나다가 원장이 서류를 태우는 것을 목격하는 장면",
+      "location": "corridor near director's office",
+      "time": "afternoon",
+      "characters": ["한정숙"],
+      "emotion": "discovery, suspicion",
+      "action": "witnessing",
+      "main_prompt": "masterpiece, best quality, photorealistic, nursing home corridor, elderly woman glimpsing through office door, director burning documents in waste bin, evidence destruction witnessed, suspicious activity, afternoon light",
+      "character_prompts": {
+        "한정숙": "57 year old Korean woman, passing by while pretending confusion, eyes catching glimpse of document burning, they're destroying evidence realization"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/4막/13화/s03_서류소각",
+      "filename_prefix": "4막_13화_s03"
+    },
+    {
+      "scene_id": "s04",
+      "scene_name": "report_to_302",
+      "description": "정숙이 302호로 돌아와 원장의 서류 소각을 보고하는 장면",
+      "location": "room 302",
+      "time": "afternoon",
+      "characters": ["한정숙", "강순덕", "이말자"],
+      "emotion": "tension, warning",
+      "action": "reporting",
+      "main_prompt": "masterpiece, best quality, photorealistic, nursing home room, elderly woman reporting witness account to companions, director destroying evidence, urgent atmosphere, they know something is wrong",
+      "character_prompts": {
+        "한정숙": "57 year old Korean woman, urgent whispered report, saw something important expression",
+        "강순덕": "55 year old Korean woman, alarmed expression, they're panicking",
+        "이말자": "53 year old Korean woman, analytical frown, he's rushing for a reason"
+      },
+      "regional_settings": {
+        "한정숙": {"start": 0, "end": 40},
+        "강순덕": {"start": 35, "end": 70},
+        "이말자": {"start": 65, "end": 100}
+      },
+      "output_folder": "scenes/4막/13화/s04_보고",
+      "filename_prefix": "4막_13화_s04"
+    },
+    {
+      "scene_id": "s05",
+      "scene_name": "younghee_solitary",
+      "description": "독방에 갇힌 영희의 좁은 방 모습",
+      "location": "nursing home solitary room",
+      "time": "daytime",
+      "characters": ["최영희"],
+      "emotion": "confinement, isolation",
+      "action": "being confined",
+      "main_prompt": "masterpiece, best quality, photorealistic, small solitary room, single bed, barred window, elderly woman confined, prison-like nursing home isolation, harsh cold lighting, oppressive small space",
+      "character_prompts": {
+        "최영희": "60 year old Korean woman, sitting on narrow bed, looking at barred window, isolated but unbroken spirit"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/4막/13화/s05_독방",
+      "filename_prefix": "4막_13화_s05"
+    },
+    {
+      "scene_id": "s06",
+      "scene_name": "light_through_window",
+      "description": "영희가 창틈으로 들어오는 빛을 보며 버티는 장면",
+      "location": "nursing home solitary room",
+      "time": "daytime",
+      "characters": ["최영희"],
+      "emotion": "endurance, hope",
+      "action": "looking at light",
+      "main_prompt": "masterpiece, best quality, photorealistic, small room, elderly woman looking at light streaming through barred window, hope in darkness, enduring spirit, beam of light on face, resilience",
+      "character_prompts": {
+        "최영희": "60 year old Korean woman, face illuminated by window light, peaceful defiant expression, they cannot break me look"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/4막/13화/s06_창틈빛",
+      "filename_prefix": "4막_13화_s06"
+    },
+    {
+      "scene_id": "s07",
+      "scene_name": "chrysanthemums_outside",
+      "description": "영희가 작은 창으로 마당의 국화꽃을 보는 장면",
+      "location": "nursing home solitary room",
+      "time": "daytime",
+      "characters": ["최영희"],
+      "emotion": "hope, waiting",
+      "action": "looking outside window",
+      "main_prompt": "masterpiece, best quality, photorealistic, view through barred window, chrysanthemum flowers blooming in courtyard below, elderly woman watching, autumn festival approaching, hope blooming like flowers",
+      "character_prompts": {
+        "최영희": "60 year old Korean woman, pressing face near window bars, watching chrysanthemums bloom, operation chrysanthemum approaches, small smile of hope"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/4막/13화/s07_국화",
+      "filename_prefix": "4막_13화_s07"
+    },
+    {
+      "scene_id": "s08",
+      "scene_name": "autumn_festival_approaching",
+      "description": "가을 축제 준비가 시작되는 요양원 마당 모습",
+      "location": "nursing home courtyard",
+      "time": "daytime",
+      "characters": [],
+      "emotion": "anticipation, preparation",
+      "action": "festival preparation",
+      "main_prompt": "masterpiece, best quality, photorealistic, nursing home courtyard, autumn festival preparations, staff setting up decorations, chrysanthemum flowers everywhere, families visiting soon, hopeful atmosphere",
+      "character_prompts": {},
+      "regional_settings": null,
+      "output_folder": "scenes/4막/13화/s08_축제준비",
+      "filename_prefix": "4막_13화_s08"
+    },
+    {
+      "scene_id": "s09",
+      "scene_name": "younghee_murmuring",
+      "description": "영희가 '아직 안 끝났어'라고 중얼거리는 장면",
+      "location": "nursing home solitary room",
+      "time": "daytime",
+      "characters": ["최영희"],
+      "emotion": "determination, indomitable",
+      "action": "murmuring",
+      "main_prompt": "masterpiece, best quality, photorealistic, close-up, elderly woman in solitary room, murmuring determination, it's not over yet expression, unbreakable spirit, light on face",
+      "character_prompts": {
+        "최영희": "60 year old Korean woman, lips moving in quiet determination, fierce eyes despite imprisonment, not over yet murmur, journalist's spirit unbroken"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/4막/13화/s09_중얼거림",
+      "filename_prefix": "4막_13화_s09"
+    },
+    {
+      "scene_id": "s10",
+      "scene_name": "solitary_resolve",
+      "description": "영희가 창틈의 빛을 보며 결의를 다지는 장면",
+      "location": "nursing home solitary room",
+      "time": "daytime",
+      "characters": ["최영희"],
+      "emotion": "determination, hope",
+      "action": "resolving",
+      "main_prompt": "masterpiece, best quality, photorealistic, dramatic shot, elderly woman in solitary confinement, beam of light through bars on face, prison cannot contain spirit, determination in isolation, powerful portrait",
+      "character_prompts": {
+        "최영희": "60 year old Korean woman, half face illuminated by window light, other half in shadow, fierce determination despite imprisonment, I will survive this expression"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/4막/13화/s10_결의",
+      "filename_prefix": "4막_13화_s10"
+    }
+  ]
+}

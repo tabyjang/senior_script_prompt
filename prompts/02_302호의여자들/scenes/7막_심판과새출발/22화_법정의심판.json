@@ -1,0 +1,262 @@
+{
+  "metadata": {
+    "work_title": "302호의여자들",
+    "act": "7막",
+    "act_title": "심판과새출발",
+    "chapter": 22,
+    "chapter_title": "법정의심판",
+    "created_at": "2026-01-04",
+    "total_scenes": 14
+  },
+  "chapter_info": {
+    "main_location": "Seoul Central District Court",
+    "time_period": "daytime",
+    "characters": ["한정숙", "윤미라", "최영희", "이말자", "강순덕", "강민수"],
+    "main_emotion": "judgment, justice, victory"
+  },
+  "scenes": [
+    {
+      "scene_id": "s01",
+      "scene_name": "court_arrival",
+      "description": "6개월 후, 재판일 서울중앙지방법원 도착",
+      "location": "Seoul Central District Court exterior",
+      "time": "morning",
+      "characters": ["한정숙"],
+      "emotion": "resolve, tension",
+      "action": "arriving",
+      "main_prompt": "masterpiece, best quality, photorealistic, Seoul Central District Court building exterior, elderly woman arriving for trial, 6 months later, day of judgment, imposing courthouse steps, media gathered",
+      "character_prompts": {
+        "한정숙": "57 year old Korean woman, walking up courthouse steps, determined composed expression, day of reckoning, dressed formally"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/7막/22화/s01_법원도착",
+      "filename_prefix": "7막_22화_s01"
+    },
+    {
+      "scene_id": "s02",
+      "scene_name": "packed_courtroom",
+      "description": "방청객과 기자들로 가득 찬 재판정",
+      "location": "Seoul Central District Court courtroom",
+      "time": "morning",
+      "characters": [],
+      "emotion": "attention, tension",
+      "action": "setting",
+      "main_prompt": "masterpiece, best quality, photorealistic, packed courtroom, spectators and journalists filling seats, high-profile elder abuse case, tense anticipation, formal court atmosphere",
+      "character_prompts": {},
+      "regional_settings": null,
+      "output_folder": "scenes/7막/22화/s02_재판정",
+      "filename_prefix": "7막_22화_s02"
+    },
+    {
+      "scene_id": "s03",
+      "scene_name": "plaintiff_defendant_seating",
+      "description": "원고 정숙과 피고 미라가 마주보고 앉는 장면",
+      "location": "Seoul Central District Court courtroom",
+      "time": "morning",
+      "characters": ["한정숙", "윤미라"],
+      "emotion": "confrontation, tension",
+      "action": "seating",
+      "main_prompt": "masterpiece, best quality, photorealistic, courtroom, plaintiff elderly woman and defendant younger woman facing each other, final confrontation, contrast between composed dignity and haggard fear, dramatic lighting",
+      "character_prompts": {
+        "한정숙": "57 year old Korean woman, composed dignified expression, sitting with lawyer, justice will be done confidence",
+        "윤미라": "33 year old Korean woman, haggard pale appearance, anxious shifting, 6 months of pressure showing"
+      },
+      "regional_settings": {
+        "한정숙": {"start": 0, "end": 50},
+        "윤미라": {"start": 50, "end": 100}
+      },
+      "output_folder": "scenes/7막/22화/s03_대결",
+      "filename_prefix": "7막_22화_s03"
+    },
+    {
+      "scene_id": "s04",
+      "scene_name": "evidence_presentation",
+      "description": "검찰이 USB 장부, 유언장 조작, 복순 노트 등 증거를 제출하는 장면",
+      "location": "Seoul Central District Court courtroom",
+      "time": "morning",
+      "characters": [],
+      "emotion": "proving, proceeding",
+      "action": "presenting evidence",
+      "main_prompt": "masterpiece, best quality, photorealistic, courtroom, prosecutor presenting evidence to judge, USB drive ledger will forgery Boksun notebook displayed, building case against defendant, formal legal proceeding",
+      "character_prompts": {},
+      "regional_settings": null,
+      "output_folder": "scenes/7막/22화/s04_증거제출",
+      "filename_prefix": "7막_22화_s04"
+    },
+    {
+      "scene_id": "s05",
+      "scene_name": "defense_rebuttal",
+      "description": "미라 측 변호사가 증거의 불법 취득을 주장하는 장면",
+      "location": "Seoul Central District Court courtroom",
+      "time": "morning",
+      "characters": [],
+      "emotion": "defense, argument",
+      "action": "rebutting",
+      "main_prompt": "masterpiece, best quality, photorealistic, courtroom, defense lawyer arguing evidence was illegally obtained, desperate defense attempt, judge listening, legal battle",
+      "character_prompts": {},
+      "regional_settings": null,
+      "output_folder": "scenes/7막/22화/s05_반박",
+      "filename_prefix": "7막_22화_s05"
+    },
+    {
+      "scene_id": "s06",
+      "scene_name": "director_testimony",
+      "description": "원장 박철수가 증인으로 나와 진실을 증언하는 장면",
+      "location": "Seoul Central District Court courtroom",
+      "time": "morning",
+      "characters": [],
+      "emotion": "betrayal, truth",
+      "action": "testifying",
+      "main_prompt": "masterpiece, best quality, photorealistic, courtroom witness stand, nursing home director testifying, revealing bribery scheme, monthly payments to imprison patient, key testimony moment",
+      "character_prompts": {},
+      "regional_settings": null,
+      "output_folder": "scenes/7막/22화/s06_원장증언",
+      "filename_prefix": "7막_22화_s06"
+    },
+    {
+      "scene_id": "s07",
+      "scene_name": "bribery_amount",
+      "description": "원장이 '3년간 1억 5천만 원'이라고 증언하는 장면",
+      "location": "Seoul Central District Court courtroom",
+      "time": "morning",
+      "characters": ["윤미라"],
+      "emotion": "exposure, shock",
+      "action": "testifying",
+      "main_prompt": "masterpiece, best quality, photorealistic, courtroom scene, shocking testimony about 150 million won bribery, defendant turning pale, courtroom gasping, devastating evidence",
+      "character_prompts": {
+        "윤미라": "33 year old Korean woman, face draining of color, devastating testimony, walls closing in expression"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/7막/22화/s07_뇌물금액",
+      "filename_prefix": "7막_22화_s07"
+    },
+    {
+      "scene_id": "s08",
+      "scene_name": "medication_testimony",
+      "description": "원장이 '약을 늘려달라고 했다'고 증언하는 장면",
+      "location": "Seoul Central District Court courtroom",
+      "time": "morning",
+      "characters": ["한정숙"],
+      "emotion": "confirmation, anger",
+      "action": "listening",
+      "main_prompt": "masterpiece, best quality, photorealistic, courtroom, witness revealing medication abuse request, increase drugs to make her really demented, plaintiff clenching fist in vindication, attempted murder suggestion",
+      "character_prompts": {
+        "한정숙": "57 year old Korean woman, clenching fist as truth confirmed, they tried to destroy my mind revelation, righteous anger"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/7막/22화/s08_약물증언",
+      "filename_prefix": "7막_22화_s08"
+    },
+    {
+      "scene_id": "s09",
+      "scene_name": "mira_outburst",
+      "description": "미라가 벌떡 일어나 '거짓말이에요!'라고 소리치는 장면",
+      "location": "Seoul Central District Court courtroom",
+      "time": "morning",
+      "characters": ["윤미라"],
+      "emotion": "despair, rage",
+      "action": "shouting",
+      "main_prompt": "masterpiece, best quality, photorealistic, courtroom outburst, defendant jumping up shouting it's all lies, judge calling for order, losing control moment, desperation",
+      "character_prompts": {
+        "윤미라": "33 year old Korean woman, standing abruptly, shouting in court, he's the one who extorted me deflection, losing composure completely"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/7막/22화/s09_미라폭발",
+      "filename_prefix": "7막_22화_s09"
+    },
+    {
+      "scene_id": "s10",
+      "scene_name": "verdict_announcement",
+      "description": "재판장이 판결을 선고하는 장면",
+      "location": "Seoul Central District Court courtroom",
+      "time": "afternoon",
+      "characters": [],
+      "emotion": "judgment, justice",
+      "action": "sentencing",
+      "main_prompt": "masterpiece, best quality, photorealistic, courtroom, judge reading verdict, will declared void embezzlement 3 years prison property restored dementia ruling cancelled, justice delivered, dramatic moment",
+      "character_prompts": {},
+      "regional_settings": null,
+      "output_folder": "scenes/7막/22화/s10_판결",
+      "filename_prefix": "7막_22화_s10"
+    },
+    {
+      "scene_id": "s11",
+      "scene_name": "mira_taken_away",
+      "description": "미라가 끌려나가며 '끝난 거 아니야!'라고 소리치는 장면",
+      "location": "Seoul Central District Court courtroom",
+      "time": "afternoon",
+      "characters": ["윤미라", "한정숙"],
+      "emotion": "defeat, rage",
+      "action": "being taken away",
+      "main_prompt": "masterpiece, best quality, photorealistic, courtroom, convicted woman being led away by guards, shouting this isn't over at plaintiff, defiant to the end, justice served",
+      "character_prompts": {
+        "윤미라": "33 year old Korean woman, being led away in handcuffs, shouting threats, you haven't won screaming",
+        "한정숙": "57 year old Korean woman, calm response, I didn't win I just got back what's mine statement"
+      },
+      "regional_settings": {
+        "윤미라": {"start": 0, "end": 50},
+        "한정숙": {"start": 50, "end": 100}
+      },
+      "output_folder": "scenes/7막/22화/s11_끌려감",
+      "filename_prefix": "7막_22화_s11"
+    },
+    {
+      "scene_id": "s12",
+      "scene_name": "courthouse_embrace",
+      "description": "법정 밖에서 네 여자가 포옹하는 장면",
+      "location": "Seoul Central District Court corridor",
+      "time": "afternoon",
+      "characters": ["한정숙", "최영희", "이말자", "강순덕"],
+      "emotion": "victory, friendship",
+      "action": "embracing",
+      "main_prompt": "masterpiece, best quality, photorealistic, courthouse corridor, four elderly women in group embrace, victory hug, tears of joy, 302 Alliance triumphant, emotional celebration",
+      "character_prompts": {
+        "한정숙": "57 year old Korean woman, embracing friends, we did it expression",
+        "최영희": "60 year old Korean woman, proud tearful smile",
+        "이말자": "53 year old Korean woman, rare emotional display",
+        "강순덕": "55 year old Korean woman, laughing and crying"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/7막/22화/s12_포옹",
+      "filename_prefix": "7막_22화_s12"
+    },
+    {
+      "scene_id": "s13",
+      "scene_name": "minsu_congratulation",
+      "description": "민수가 달려와 엄마를 축하하는 장면",
+      "location": "Seoul Central District Court corridor",
+      "time": "afternoon",
+      "characters": ["한정숙", "강민수"],
+      "emotion": "reconciliation, celebration",
+      "action": "embracing",
+      "main_prompt": "masterpiece, best quality, photorealistic, courthouse corridor, son rushing to embrace victorious mother, congratulations mom moment, family reconciled, emotional reunion",
+      "character_prompts": {
+        "한정숙": "57 year old Korean woman, embracing son, thank you for standing by me expression",
+        "강민수": "45 year old Korean man, hugging mother tightly, proud of you mom expression"
+      },
+      "regional_settings": {
+        "한정숙": {"start": 0, "end": 55},
+        "강민수": {"start": 45, "end": 100}
+      },
+      "output_folder": "scenes/7막/22화/s13_민수축하",
+      "filename_prefix": "7막_22화_s13"
+    },
+    {
+      "scene_id": "s14",
+      "scene_name": "light_steps",
+      "description": "법원을 나서는 정숙의 가벼운 발걸음",
+      "location": "Seoul Central District Court steps",
+      "time": "afternoon",
+      "characters": ["한정숙"],
+      "emotion": "liberation, new beginning",
+      "action": "walking out",
+      "main_prompt": "masterpiece, best quality, photorealistic, courthouse steps, elderly woman descending with light steps, 72 years and finally standing in own name, liberation walk, afternoon golden light, triumphant exit",
+      "character_prompts": {
+        "한정숙": "57 year old Korean woman, walking down courthouse steps, light free stride, 72 years of life and finally standing as myself expression, dignified triumph"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/7막/22화/s14_발걸음",
+      "filename_prefix": "7막_22화_s14"
+    }
+  ]
+}

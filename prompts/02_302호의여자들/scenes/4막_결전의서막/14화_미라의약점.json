@@ -1,0 +1,195 @@
+{
+  "metadata": {
+    "work_title": "302호의여자들",
+    "act": "4막",
+    "act_title": "결전의서막",
+    "chapter": 14,
+    "chapter_title": "미라의약점",
+    "created_at": "2026-01-04",
+    "total_scenes": 10
+  },
+  "chapter_info": {
+    "main_location": "Seoul newspaper office, room 302",
+    "time_period": "daytime",
+    "characters": ["박준호", "한정숙", "이말자", "강순덕"],
+    "main_emotion": "discovery, hope, determination"
+  },
+  "scenes": [
+    {
+      "scene_id": "s01",
+      "scene_name": "junho_investigation",
+      "description": "기자 준호가 컴퓨터 앞에서 강태준 회사 자료를 조사하는 장면",
+      "location": "Seoul newspaper office",
+      "time": "daytime",
+      "characters": ["박준호"],
+      "emotion": "focus, investigation",
+      "action": "investigating",
+      "main_prompt": "masterpiece, best quality, photorealistic, newspaper office, male journalist at computer researching financial records, company documents on screen, investigative journalism, office fluorescent lighting",
+      "character_prompts": {
+        "박준호": "40 year old Korean man, journalist appearance, intense focus on computer screen, scrolling through financial data, for my mentor expression"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/4막/14화/s01_조사",
+      "filename_prefix": "4막_14화_s01"
+    },
+    {
+      "scene_id": "s02",
+      "scene_name": "embezzlement_discovery",
+      "description": "준호가 8년간 3억 원의 사용처 불명 자금을 발견하는 장면",
+      "location": "Seoul newspaper office",
+      "time": "daytime",
+      "characters": ["박준호"],
+      "emotion": "discovery, conviction",
+      "action": "analyzing",
+      "main_prompt": "masterpiece, best quality, photorealistic, close-up, journalist eyes narrowing at screen, spreadsheet showing suspicious financial discrepancies, 8 years of embezzlement evidence, eureka moment",
+      "character_prompts": {
+        "박준호": "40 year old Korean man, eyes narrowing at financial data, found it expression, 300 million won unaccounted for"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/4막/14화/s02_횡령발견",
+      "filename_prefix": "4막_14화_s02"
+    },
+    {
+      "scene_id": "s03",
+      "scene_name": "singapore_records",
+      "description": "준호가 미라의 싱가포르 출입국 기록을 확인하는 장면",
+      "location": "Seoul newspaper office",
+      "time": "daytime",
+      "characters": ["박준호"],
+      "emotion": "connection, deduction",
+      "action": "verifying",
+      "main_prompt": "masterpiece, best quality, photorealistic, newspaper office, journalist checking travel records on computer, multiple Singapore trips highlighted, offshore account suspicion, connecting dots",
+      "character_prompts": {
+        "박준호": "40 year old Korean man, leaning toward screen, Singapore trips discovery, offshore accounts speculation, pieces fitting together"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/4막/14화/s03_싱가포르",
+      "filename_prefix": "4막_14화_s03"
+    },
+    {
+      "scene_id": "s04",
+      "scene_name": "writing_letter",
+      "description": "준호가 영희 선배에게 보낼 편지를 쓰는 장면",
+      "location": "Seoul newspaper office",
+      "time": "daytime",
+      "characters": ["박준호"],
+      "emotion": "hope, connection",
+      "action": "writing letter",
+      "main_prompt": "masterpiece, best quality, photorealistic, office desk, journalist writing letter by hand, message to imprisoned mentor, secret correspondence, determination",
+      "character_prompts": {
+        "박준호": "40 year old Korean man, writing letter carefully, encoding message for nursing home delivery, hold on senior expression"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/4막/14화/s04_편지작성",
+      "filename_prefix": "4막_14화_s04"
+    },
+    {
+      "scene_id": "s05",
+      "scene_name": "letter_arrival",
+      "description": "302호에 순덕의 아들을 통해 편지가 도착하는 장면",
+      "location": "room 302",
+      "time": "daytime",
+      "characters": ["강순덕"],
+      "emotion": "hope, connection",
+      "action": "receiving letter",
+      "main_prompt": "masterpiece, best quality, photorealistic, nursing home room, elderly woman receiving secret letter, underground mail system working, relief and anticipation, holding envelope carefully",
+      "character_prompts": {
+        "강순덕": "55 year old Korean woman, receiving envelope covertly, it worked expression, my son came through pride"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/4막/14화/s05_편지도착",
+      "filename_prefix": "4막_14화_s05"
+    },
+    {
+      "scene_id": "s06",
+      "scene_name": "letter_contents",
+      "description": "말자가 편지를 읽으며 횡령 3억, 해외계좌 의심 내용을 확인하는 장면",
+      "location": "room 302",
+      "time": "daytime",
+      "characters": ["이말자", "한정숙", "강순덕"],
+      "emotion": "confirmation, excitement",
+      "action": "reading",
+      "main_prompt": "masterpiece, best quality, photorealistic, nursing home room, elderly woman reading letter aloud to companions, embezzlement confirmation, 300 million won proof coming, excited atmosphere",
+      "character_prompts": {
+        "이말자": "53 year old Korean woman, reading letter with insurance expert eyes, confirming suspicions, numbers match expression",
+        "한정숙": "57 year old Korean woman, eyes lighting up with confirmation, we have them",
+        "강순덕": "55 year old Korean woman, excited nodding, told you so expression"
+      },
+      "regional_settings": {
+        "이말자": {"start": 0, "end": 40},
+        "한정숙": {"start": 35, "end": 70},
+        "강순덕": {"start": 65, "end": 100}
+      },
+      "output_folder": "scenes/4막/14화/s06_편지내용",
+      "filename_prefix": "4막_14화_s06"
+    },
+    {
+      "scene_id": "s07",
+      "scene_name": "jeongsuk_burning_eyes",
+      "description": "정숙이 '증거만 있으면 이길 수 있어'라며 눈에 불이 붙는 장면",
+      "location": "room 302",
+      "time": "daytime",
+      "characters": ["한정숙"],
+      "emotion": "conviction, determination",
+      "action": "declaring",
+      "main_prompt": "masterpiece, best quality, photorealistic, close-up, elderly woman with fire in eyes, we can win with evidence declaration, determination burning, victorious future glimpsed",
+      "character_prompts": {
+        "한정숙": "57 year old Korean woman, eyes ablaze with determination, if we have evidence we win expression, transformation from victim to warrior"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/4막/14화/s07_불타는눈",
+      "filename_prefix": "4막_14화_s07"
+    },
+    {
+      "scene_id": "s08",
+      "scene_name": "original_ledger_needed",
+      "description": "말자가 '원본 장부가 필요해, 미라가 갖고 있을 거야'라고 말하는 장면",
+      "location": "room 302",
+      "time": "daytime",
+      "characters": ["이말자"],
+      "emotion": "analysis, planning",
+      "action": "explaining",
+      "main_prompt": "masterpiece, best quality, photorealistic, nursing home room, elderly woman explaining need for original records, insurance expert assessment, enemy has the evidence, strategic planning",
+      "character_prompts": {
+        "이말자": "53 year old Korean woman, analytical serious expression, we need the original ledger, Mira has it statement"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/4막/14화/s08_원본필요",
+      "filename_prefix": "4막_14화_s08"
+    },
+    {
+      "scene_id": "s09",
+      "scene_name": "soondeok_proposal",
+      "description": "순덕이 '그럼 나가서 찾아야지'라고 말하는 장면",
+      "location": "room 302",
+      "time": "daytime",
+      "characters": ["강순덕"],
+      "emotion": "straightforward, determination",
+      "action": "suggesting",
+      "main_prompt": "masterpiece, best quality, photorealistic, nursing home room, elderly woman with simple determined proposal, then we go out and find it suggestion, bold straightforward solution",
+      "character_prompts": {
+        "강순덕": "55 year old Korean woman, matter-of-fact expression, simple solution statement, we escape and get it ourselves"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/4막/14화/s09_순덕제안",
+      "filename_prefix": "4막_14화_s09"
+    },
+    {
+      "scene_id": "s10",
+      "scene_name": "jeongsuk_resolve",
+      "description": "정숙이 '나가서 직접 찾는다'고 결심하는 장면",
+      "location": "room 302",
+      "time": "daytime",
+      "characters": ["한정숙"],
+      "emotion": "resolve, preparation",
+      "action": "resolving",
+      "main_prompt": "masterpiece, best quality, photorealistic, nursing home room, elderly woman making decisive statement, we escape and find it ourselves, transformation complete, warrior ready for battle",
+      "character_prompts": {
+        "한정숙": "57 year old Korean woman, standing tall with determination, I'll go out and find it myself declaration, leader emerging"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/4막/14화/s10_결심",
+      "filename_prefix": "4막_14화_s10"
+    }
+  ]
+}

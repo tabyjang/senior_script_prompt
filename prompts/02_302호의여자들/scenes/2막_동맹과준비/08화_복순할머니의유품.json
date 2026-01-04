@@ -1,0 +1,213 @@
+{
+  "metadata": {
+    "work_title": "302호의여자들",
+    "act": "2막",
+    "act_title": "동맹과준비",
+    "chapter": 8,
+    "chapter_title": "복순할머니의유품",
+    "created_at": "2026-01-04",
+    "total_scenes": 10
+  },
+  "chapter_info": {
+    "main_location": "요양원 지하창고, 302호",
+    "time_period": "낮/밤",
+    "characters": ["한정숙", "최영희", "이말자", "강순덕"],
+    "main_emotion": "발견, 충격, 결의"
+  },
+  "scenes": [
+    {
+      "scene_id": "s01",
+      "scene_name": "moving_to_basement",
+      "description": "순덕이 정숙을 불러 지하 창고로 데려가는 장면",
+      "location": "nursing home basement stairs",
+      "time": "daytime",
+      "characters": ["강순덕", "한정숙"],
+      "emotion": "secrecy, tension",
+      "action": "moving, guiding",
+      "main_prompt": "masterpiece, best quality, photorealistic, 2women, nursing home basement stairs, elderly women descending secretly, dim lighting, mysterious atmosphere, covert mission",
+      "character_prompts": {
+        "강순덕": "55 year old Korean woman, leading the way, finger on lips signaling quiet, knowing expression",
+        "한정숙": "57 year old Korean woman, following cautiously, curious worried expression"
+      },
+      "regional_settings": {
+        "강순덕": {"start": 0, "end": 50},
+        "한정숙": {"start": 50, "end": 100}
+      },
+      "output_folder": "scenes/2막/08화/s01_지하이동",
+      "filename_prefix": "2막_08화_s01"
+    },
+    {
+      "scene_id": "s02",
+      "scene_name": "belongings_storage",
+      "description": "오래된 물건들이 쌓여있는 지하 창고 모습",
+      "location": "nursing home basement storage",
+      "time": "daytime",
+      "characters": ["강순덕", "한정숙"],
+      "emotion": "dusty sadness, abandoned memories",
+      "action": "looking around",
+      "main_prompt": "masterpiece, best quality, photorealistic, nursing home basement storage, dusty boxes stacked, abandoned belongings of deceased residents, dim single lightbulb, melancholy atmosphere",
+      "character_prompts": {
+        "강순덕": "55 year old Korean woman, pointing to boxes, explaining storage purpose",
+        "한정숙": "57 year old Korean woman, looking around sadly, touching dusty surfaces"
+      },
+      "regional_settings": {
+        "강순덕": {"start": 0, "end": 50},
+        "한정숙": {"start": 50, "end": 100}
+      },
+      "output_folder": "scenes/2막/08화/s02_유품보관소",
+      "filename_prefix": "2막_08화_s02"
+    },
+    {
+      "scene_id": "s03",
+      "scene_name": "boksun_box",
+      "description": "순덕이 '김복순'이라고 적힌 박스를 꺼내는 장면",
+      "location": "nursing home basement storage",
+      "time": "daytime",
+      "characters": ["강순덕"],
+      "emotion": "memorial, secrecy",
+      "action": "retrieving box",
+      "main_prompt": "masterpiece, best quality, photorealistic, 1woman, basement storage, elderly woman pulling out dusty box labeled with Korean name, reverent careful handling, single light source, dust particles in air",
+      "character_prompts": {
+        "강순덕": "55 year old Korean woman, carefully retrieving box, sad respectful expression, handling deceased friend's belongings"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/2막/08화/s03_복순상자",
+      "filename_prefix": "2막_08화_s03"
+    },
+    {
+      "scene_id": "s04",
+      "scene_name": "opening_box",
+      "description": "상자를 열어 안경, 빗, 사진, 노트가 나오는 장면",
+      "location": "nursing home basement storage",
+      "time": "daytime",
+      "characters": ["강순덕", "한정숙"],
+      "emotion": "memorial, discovery",
+      "action": "opening box, checking belongings",
+      "main_prompt": "masterpiece, best quality, photorealistic, close-up, old cardboard box being opened, revealing deceased elderly woman possessions, old glasses spectacles, comb, photographs, small notebook, dust motes in light, emotional discovery",
+      "character_prompts": {
+        "강순덕": "55 year old Korean woman, opening box carefully, picking up notebook",
+        "한정숙": "57 year old Korean woman, watching intently, emotional reaction"
+      },
+      "regional_settings": {
+        "강순덕": {"start": 0, "end": 55},
+        "한정숙": {"start": 45, "end": 100}
+      },
+      "output_folder": "scenes/2막/08화/s04_상자열기",
+      "filename_prefix": "2막_08화_s04"
+    },
+    {
+      "scene_id": "s05",
+      "scene_name": "notebook_discovery",
+      "description": "순덕이 복순의 노트를 꺼내 보여주는 장면",
+      "location": "nursing home basement storage",
+      "time": "daytime",
+      "characters": ["강순덕"],
+      "emotion": "important discovery",
+      "action": "showing notebook",
+      "main_prompt": "masterpiece, best quality, photorealistic, 1woman, basement, elderly woman holding small worn notebook, important discovery moment, dim dramatic lighting",
+      "character_prompts": {
+        "강순덕": "55 year old Korean woman, holding up old notebook with significant expression, this is important look"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/2막/08화/s05_노트발견",
+      "filename_prefix": "2막_08화_s05"
+    },
+    {
+      "scene_id": "s06",
+      "scene_name": "notebook_contents",
+      "description": "노트를 펼쳐 날짜와 숫자가 적힌 내용을 보는 장면",
+      "location": "room 302",
+      "time": "night",
+      "characters": ["한정숙", "최영희", "이말자", "강순덕"],
+      "emotion": "analysis, concentration",
+      "action": "analyzing notebook",
+      "main_prompt": "masterpiece, best quality, photorealistic, close-up, old notebook pages with dates and numbers, handwritten records, 4 elderly women examining carefully, dim bedside lamp light, investigative atmosphere",
+      "character_prompts": {
+        "이말자": "53 year old Korean woman, insurance expert eyes analyzing numbers, focused concentration",
+        "최영희": "60 year old Korean woman, journalist instinct activated, leaning in to read",
+        "한정숙": "57 year old Korean woman, anxious hopeful expression",
+        "강순덕": "55 year old Korean woman, watching others analyze"
+      },
+      "regional_settings": {
+        "이말자": {"start": 0, "end": 30},
+        "최영희": {"start": 25, "end": 50},
+        "한정숙": {"start": 45, "end": 70},
+        "강순덕": {"start": 65, "end": 100}
+      },
+      "output_folder": "scenes/2막/08화/s06_노트내용",
+      "filename_prefix": "2막_08화_s06"
+    },
+    {
+      "scene_id": "s07",
+      "scene_name": "malja_analysis",
+      "description": "말자가 보험회사 경력으로 노트의 규칙을 발견하는 장면",
+      "location": "room 302",
+      "time": "night",
+      "characters": ["이말자"],
+      "emotion": "analysis, certainty",
+      "action": "explaining",
+      "main_prompt": "masterpiece, best quality, photorealistic, 1woman, nursing home room night, elderly woman with sharp analytical eyes explaining pattern discovery, professional expertise moment, focused lighting on face",
+      "character_prompts": {
+        "이말자": "53 year old Korean woman, sharp intelligent expression, pointing at notebook, explaining patterns with insurance expert confidence, eyes narrowed in analysis"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/2막/08화/s07_말자분석",
+      "filename_prefix": "2막_08화_s07"
+    },
+    {
+      "scene_id": "s08",
+      "scene_name": "back_page_memo",
+      "description": "영희가 노트 뒷장을 넘겨 '윤-박 거래' 메모를 발견하는 장면",
+      "location": "room 302",
+      "time": "night",
+      "characters": ["최영희"],
+      "emotion": "shocking discovery",
+      "action": "discovering, reading",
+      "main_prompt": "masterpiece, best quality, photorealistic, extreme close-up, old notebook back page, handwritten memo in Korean, shocking revelation moment, dramatic lighting on text",
+      "character_prompts": {
+        "최영희": "60 year old Korean woman, eyes widening in shock as she reads secret memo, journalist instinct confirmed"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/2막/08화/s08_메모발견",
+      "filename_prefix": "2막_08화_s08"
+    },
+    {
+      "scene_id": "s09",
+      "scene_name": "bribery_confirmed",
+      "description": "영희가 '뇌물'이라고 단언하며 미라와 원장의 거래를 설명하는 장면",
+      "location": "room 302",
+      "time": "night",
+      "characters": ["최영희", "한정숙"],
+      "emotion": "anger, shock",
+      "action": "explaining, reacting",
+      "main_prompt": "masterpiece, best quality, photorealistic, 2women, nursing home room night scene, elderly woman explaining bribery scheme to shocked listener, revelation moment, tense dramatic atmosphere",
+      "character_prompts": {
+        "최영희": "60 year old Korean woman, determined angry expression, explaining corruption, pointing at evidence",
+        "한정숙": "57 year old Korean woman, face hardening with anger and betrayal, clenching fists"
+      },
+      "regional_settings": {
+        "최영희": {"start": 0, "end": 50},
+        "한정숙": {"start": 50, "end": 100}
+      },
+      "output_folder": "scenes/2막/08화/s09_뇌물확인",
+      "filename_prefix": "2막_08화_s09"
+    },
+    {
+      "scene_id": "s10",
+      "scene_name": "jeongsuk_gripping_notebook",
+      "description": "정숙이 노트를 꼭 쥐며 복수를 다짐하는 장면",
+      "location": "room 302",
+      "time": "night",
+      "characters": ["한정숙"],
+      "emotion": "determination, vengeance",
+      "action": "gripping notebook, resolving",
+      "main_prompt": "masterpiece, best quality, photorealistic, 1woman, nursing home room, elderly woman gripping old notebook tightly, determined fierce expression, key to revenge, dramatic moonlight, resolution moment",
+      "character_prompts": {
+        "한정숙": "57 year old Korean woman, fierce determined expression, gripping notebook like weapon, eyes burning with resolve, this is the key expression"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/2막/08화/s10_결의",
+      "filename_prefix": "2막_08화_s10"
+    }
+  ]
+}

@@ -1,0 +1,275 @@
+{
+  "metadata": {
+    "work_title": "302호의여자들",
+    "act": "6막",
+    "act_title": "복수",
+    "chapter": 21,
+    "chapter_title": "기자회견",
+    "created_at": "2026-01-04",
+    "total_scenes": 14
+  },
+  "chapter_info": {
+    "main_location": "Seoul Press Center",
+    "time_period": "daytime",
+    "characters": ["한정숙", "최영희", "이말자", "강순덕"],
+    "main_emotion": "revelation, victory, liberation"
+  },
+  "scenes": [
+    {
+      "scene_id": "s01",
+      "scene_name": "press_center_arrival",
+      "description": "일주일 후, 기자회견장에 도착하는 장면",
+      "location": "Seoul Press Center exterior",
+      "time": "daytime",
+      "characters": ["한정숙", "최영희", "이말자", "강순덕"],
+      "emotion": "determination, tension",
+      "action": "arriving",
+      "main_prompt": "masterpiece, best quality, photorealistic, Seoul Press Center building exterior, four elderly women arriving for press conference, determined expressions, day of reckoning, media vans visible",
+      "character_prompts": {
+        "한정숙": "57 year old Korean woman, walking toward building entrance, this is it expression",
+        "최영희": "60 year old Korean woman, journalist returning to press center, full circle moment",
+        "이말자": "53 year old Korean woman, calm analytical expression",
+        "강순덕": "55 year old Korean woman, excited nervous energy"
+      },
+      "regional_settings": {
+        "한정숙": {"start": 0, "end": 25},
+        "최영희": {"start": 25, "end": 50},
+        "이말자": {"start": 50, "end": 75},
+        "강순덕": {"start": 75, "end": 100}
+      },
+      "output_folder": "scenes/6막/21화/s01_도착",
+      "filename_prefix": "6막_21화_s01"
+    },
+    {
+      "scene_id": "s02",
+      "scene_name": "press_conference_room",
+      "description": "기자들로 가득 찬 회견장 모습",
+      "location": "Press Center conference room",
+      "time": "daytime",
+      "characters": [],
+      "emotion": "attention, anticipation",
+      "action": "setting",
+      "main_prompt": "masterpiece, best quality, photorealistic, press conference room packed with journalists, cameras and microphones ready, banner reading 40 Year Wife Imprisoned by Mistress, media frenzy atmosphere",
+      "character_prompts": {},
+      "regional_settings": null,
+      "output_folder": "scenes/6막/21화/s02_회견장",
+      "filename_prefix": "6막_21화_s02"
+    },
+    {
+      "scene_id": "s03",
+      "scene_name": "podium_seating",
+      "description": "네 여자가 단상에 나란히 앉는 장면",
+      "location": "Press Center conference room podium",
+      "time": "daytime",
+      "characters": ["한정숙", "최영희", "이말자", "강순덕"],
+      "emotion": "resolute, united",
+      "action": "seating",
+      "main_prompt": "masterpiece, best quality, photorealistic, press conference stage, four elderly women sitting together at table, microphones before them, cameras flashing, 302 Alliance facing the world",
+      "character_prompts": {
+        "한정숙": "57 year old Korean woman, center position, calm determined expression",
+        "최영희": "60 year old Korean woman, journalist at press table now, returning to her world",
+        "이말자": "53 year old Korean woman, composed professional demeanor",
+        "강순덕": "55 year old Korean woman, proud supportive presence"
+      },
+      "regional_settings": {
+        "한정숙": {"start": 0, "end": 30},
+        "최영희": {"start": 25, "end": 50},
+        "이말자": {"start": 45, "end": 70},
+        "강순덕": {"start": 65, "end": 100}
+      },
+      "output_folder": "scenes/6막/21화/s03_착석",
+      "filename_prefix": "6막_21화_s03"
+    },
+    {
+      "scene_id": "s04",
+      "scene_name": "jeongsuk_begins",
+      "description": "정숙이 마이크를 잡고 자기소개를 시작하는 장면",
+      "location": "Press Center conference room",
+      "time": "daytime",
+      "characters": ["한정숙"],
+      "emotion": "resolute, beginning",
+      "action": "starting speech",
+      "main_prompt": "masterpiece, best quality, photorealistic, press conference, elderly woman gripping microphone with trembling but determined hand, I am 72 year old Han Jeongsuk introduction, all cameras focused",
+      "character_prompts": {
+        "한정숙": "57 year old Korean woman, hands slightly trembling but voice strong, beginning her story, 40 years of housewifery statement"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/6막/21화/s04_시작",
+      "filename_prefix": "6막_21화_s04"
+    },
+    {
+      "scene_id": "s05",
+      "scene_name": "40_year_story",
+      "description": "정숙이 40년간의 내조와 배신을 이야기하는 장면",
+      "location": "Press Center conference room",
+      "time": "daytime",
+      "characters": ["한정숙"],
+      "emotion": "revelation, confession",
+      "action": "speaking",
+      "main_prompt": "masterpiece, best quality, photorealistic, press conference, elderly woman telling story of 40 years marriage and betrayal, forced dementia diagnosis revelation, journalists listening intently, emotional testimony",
+      "character_prompts": {
+        "한정숙": "57 year old Korean woman, speaking with conviction, sold parents land saved husband business raised son, then was labeled demented and imprisoned, righteous indignation"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/6막/21화/s05_40년이야기",
+      "filename_prefix": "6막_21화_s05"
+    },
+    {
+      "scene_id": "s06",
+      "scene_name": "usb_presentation",
+      "description": "정숙이 USB를 들어 보이며 증거를 제시하는 장면",
+      "location": "Press Center conference room",
+      "time": "daytime",
+      "characters": ["한정숙"],
+      "emotion": "evidence presentation, victory",
+      "action": "showing evidence",
+      "main_prompt": "masterpiece, best quality, photorealistic, press conference dramatic moment, elderly woman holding up USB drive, here is the evidence declaration, cameras flashing, proof of 300 million embezzlement and will forgery",
+      "character_prompts": {
+        "한정숙": "57 year old Korean woman, holding USB high, this contains 8 years of embezzlement records statement, triumphant moment"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/6막/21화/s06_USB제시",
+      "filename_prefix": "6막_21화_s06"
+    },
+    {
+      "scene_id": "s07",
+      "scene_name": "younghee_statement",
+      "description": "영희가 마이크를 받아 자신의 이야기를 하는 장면",
+      "location": "Press Center conference room",
+      "time": "daytime",
+      "characters": ["최영희"],
+      "emotion": "revelation, return",
+      "action": "speaking",
+      "main_prompt": "masterpiece, best quality, photorealistic, press conference, elderly female journalist speaking at podium, 40 years reporter imprisoned by nephew as demented, journalist exposing nursing home corruption, powerful moment",
+      "character_prompts": {
+        "최영희": "60 year old Korean woman, journalist speaking to journalists, I'm Choi Yeonghee 40 year journalist statement, not demented but imprisoned, professional addressing colleagues"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/6막/21화/s07_영희발언",
+      "filename_prefix": "6막_21화_s07"
+    },
+    {
+      "scene_id": "s08",
+      "scene_name": "malja_statement",
+      "description": "말자가 자신의 이야기를 하는 장면",
+      "location": "Press Center conference room",
+      "time": "daytime",
+      "characters": ["이말자"],
+      "emotion": "revelation, anger",
+      "action": "speaking",
+      "main_prompt": "masterpiece, best quality, photorealistic, press conference, elderly woman telling story of betrayal by son-in-law, 30 year insurance career stamp stolen, daughter sided with husband, abandoned story",
+      "character_prompts": {
+        "이말자": "53 year old Korean woman, controlled anger, son-in-law stole my seal for loan guarantee, daughter took his side and dumped me statement"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/6막/21화/s08_말자발언",
+      "filename_prefix": "6막_21화_s08"
+    },
+    {
+      "scene_id": "s09",
+      "scene_name": "soondeok_statement",
+      "description": "순덕이 자신의 이야기를 하는 장면",
+      "location": "Press Center conference room",
+      "time": "daytime",
+      "characters": ["강순덕"],
+      "emotion": "revelation, sadness",
+      "action": "speaking",
+      "main_prompt": "masterpiece, best quality, photorealistic, press conference, elderly woman telling story of abandonment, raised 3 sons thrown into nursing home 10 years ago, none wanted to take her, heartbreaking testimony",
+      "character_prompts": {
+        "강순덕": "55 year old Korean woman, simple direct words, raised three sons but they fought over not taking me, been here 10 years statement, pure heartbreak"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/6막/21화/s09_순덕발언",
+      "filename_prefix": "6막_21화_s09"
+    },
+    {
+      "scene_id": "s10",
+      "scene_name": "recording_playback",
+      "description": "미라의 자백 녹음이 회견장에 울려 퍼지는 장면",
+      "location": "Press Center conference room",
+      "time": "daytime",
+      "characters": [],
+      "emotion": "evidence, shock",
+      "action": "playback",
+      "main_prompt": "masterpiece, best quality, photorealistic, press conference room, audio playing through speakers, Mira confession echoing in hall, journalists reacting with shock, yes I took money recording, damning evidence",
+      "character_prompts": {},
+      "regional_settings": null,
+      "output_folder": "scenes/6막/21화/s10_녹음재생",
+      "filename_prefix": "6막_21화_s10"
+    },
+    {
+      "scene_id": "s11",
+      "scene_name": "journalists_reaction",
+      "description": "기자들이 웅성거리며 반응하는 장면",
+      "location": "Press Center conference room",
+      "time": "daytime",
+      "characters": [],
+      "emotion": "shock, interest",
+      "action": "reacting",
+      "main_prompt": "masterpiece, best quality, photorealistic, press conference room, journalists murmuring in amazement, 70 year old grandmothers escaped question, like a movie comment, cameras clicking frantically",
+      "character_prompts": {},
+      "regional_settings": null,
+      "output_folder": "scenes/6막/21화/s11_기자반응",
+      "filename_prefix": "6막_21화_s11"
+    },
+    {
+      "scene_id": "s12",
+      "scene_name": "mira_side_interruption",
+      "description": "미라 측 변호사가 난입하는 장면",
+      "location": "Press Center conference room",
+      "time": "daytime",
+      "characters": ["한정숙"],
+      "emotion": "interference, response",
+      "action": "responding",
+      "main_prompt": "masterpiece, best quality, photorealistic, press conference disruption, lawyer entering from back shouting it's all fabricated, elderly woman calmly responding we'll see in court, confident rebuttal",
+      "character_prompts": {
+        "한정숙": "57 year old Korean woman, calm unshaken response, then let the court decide statement, confident in evidence"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/6막/21화/s12_난입",
+      "filename_prefix": "6막_21화_s12"
+    },
+    {
+      "scene_id": "s13",
+      "scene_name": "how_do_you_feel",
+      "description": "기자가 '지금 기분이 어떠세요?'라고 묻는 장면",
+      "location": "Press Center conference room",
+      "time": "daytime",
+      "characters": ["한정숙"],
+      "emotion": "liberation, victory",
+      "action": "answering",
+      "main_prompt": "masterpiece, best quality, photorealistic, press conference, journalist asking how she feels, elderly woman smiling, lived 40 years holding breath now finally spoke, liberating answer, cameras capturing triumph",
+      "character_prompts": {
+        "한정숙": "57 year old Korean woman, genuine smile, 40 years of silence now speaking, refreshing liberation answer, first time using own voice expression"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/6막/21화/s13_기분",
+      "filename_prefix": "6막_21화_s13"
+    },
+    {
+      "scene_id": "s14",
+      "scene_name": "proud_exit",
+      "description": "정숙이 기자회견장을 나서며 가슴을 펴는 장면",
+      "location": "Press Center conference room exit",
+      "time": "daytime",
+      "characters": ["한정숙", "최영희", "이말자", "강순덕"],
+      "emotion": "victory, pride",
+      "action": "exiting",
+      "main_prompt": "masterpiece, best quality, photorealistic, press conference exit, four elderly women walking out heads held high, chest out proud stride, cameras following, victorious departure, 40 years of silence ended",
+      "character_prompts": {
+        "한정숙": "57 year old Korean woman, walking tall for first time, chest out proud, finally spoke expression",
+        "최영희": "60 year old Korean woman, satisfied journalist smile",
+        "이말자": "53 year old Korean woman, dignified stride",
+        "강순덕": "55 year old Korean woman, beaming with pride"
+      },
+      "regional_settings": {
+        "한정숙": {"start": 0, "end": 30},
+        "최영희": {"start": 25, "end": 50},
+        "이말자": {"start": 45, "end": 70},
+        "강순덕": {"start": 65, "end": 100}
+      },
+      "output_folder": "scenes/6막/21화/s14_퇴장",
+      "filename_prefix": "6막_21화_s14"
+    }
+  ]
+}

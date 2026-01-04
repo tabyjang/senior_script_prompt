@@ -5,7 +5,7 @@
     "act_title": "일상과균열",
     "chapter": 2,
     "chapter_title": "40년의배신",
-    "created_at": "2026-01-03",
+    "created_at": "2026-01-05",
     "total_scenes": 12
   },
   "chapter_info": {
@@ -17,13 +17,13 @@
   "scenes": [
     {
       "scene_id": "s01",
-      "scene_name": "법률사무소_대치",
+      "scene_name": "law_office_standoff",
       "description": "정숙과 미라가 법률사무소에서 마주 앉아있는 장면",
-      "location": "법률사무소 회의실",
-      "time": "낮",
+      "location": "law office conference room",
+      "time": "daytime",
       "characters": ["한정숙", "윤미라", "강민수"],
-      "emotion": "긴장, 대립",
-      "action": "앉아서 대치",
+      "emotion": "tension, confrontation",
+      "action": "seated standoff",
       "main_prompt": "masterpiece, best quality, photorealistic, 3people, Korean law office conference room, tense meeting, formal setting, bright office lighting, legal documents on table",
       "character_prompts": {
         "한정숙": "57 year old Korean woman, tense dignified expression, black formal attire, pearl necklace, sitting stiffly, guarded posture, wary eyes",
@@ -40,13 +40,13 @@
     },
     {
       "scene_id": "s02",
-      "scene_name": "유언장_공개",
+      "scene_name": "will_reading",
       "description": "변호사가 유언장을 읽는 장면",
-      "location": "법률사무소 회의실",
-      "time": "낮",
+      "location": "law office conference room",
+      "time": "daytime",
       "characters": ["한정숙"],
-      "emotion": "불안, 긴장",
-      "action": "유언장 듣기",
+      "emotion": "anxiety, tension",
+      "action": "listening to will",
       "main_prompt": "masterpiece, best quality, photorealistic, 1woman, Korean law office, hearing will reading, dramatic moment, harsh fluorescent lighting",
       "character_prompts": {
         "한정숙": "57 year old Korean woman, anxious expression, heart racing visible in eyes, hands clasped tightly, leaning forward slightly, dreading the words"
@@ -57,13 +57,13 @@
     },
     {
       "scene_id": "s03",
-      "scene_name": "정숙_얼굴_굳어짐",
+      "scene_name": "jeongsuk_frozen",
       "description": "회사 지분 60% 상속 소식에 정숙의 얼굴이 굳어지는 클로즈업",
-      "location": "법률사무소 회의실",
-      "time": "낮",
+      "location": "law office conference room",
+      "time": "daytime",
       "characters": ["한정숙"],
-      "emotion": "충격, 배신감",
-      "action": "얼굴 굳어짐",
+      "emotion": "shock, betrayal",
+      "action": "face freezing",
       "main_prompt": "masterpiece, best quality, photorealistic, 1woman, close-up shot, office background blurred, moment of devastating news, dramatic lighting",
       "character_prompts": {
         "한정숙": "57 year old Korean woman, face freezing in shock, color draining from face, eyes widening in disbelief, jaw tightening, betrayal dawning on face"
@@ -74,13 +74,13 @@
     },
     {
       "scene_id": "s04",
-      "scene_name": "미라의_미소",
+      "scene_name": "mira_smirk",
       "description": "미라의 입가에 미세한 미소가 스치는 장면",
-      "location": "법률사무소 회의실",
-      "time": "낮",
+      "location": "law office conference room",
+      "time": "daytime",
       "characters": ["윤미라"],
-      "emotion": "승리감(숨긴)",
-      "action": "미세한 미소",
+      "emotion": "hidden triumph",
+      "action": "subtle smile",
       "main_prompt": "masterpiece, best quality, photorealistic, 1woman, close-up shot, office setting, subtle victorious moment, cold lighting",
       "character_prompts": {
         "윤미라": "33 year old Korean woman, subtle satisfied smirk, controlled expression, cold calculating eyes, pearl earrings catching light, hiding triumph behind composed facade"
@@ -91,13 +91,13 @@
     },
     {
       "scene_id": "s05",
-      "scene_name": "친정땅_회상",
+      "scene_name": "parents_land_flashback",
       "description": "정숙이 30년 전 친정 땅 팔던 기억을 떠올리는 회상",
-      "location": "추상적 배경/과거 시골",
-      "time": "회상",
+      "location": "abstract background, rural past",
+      "time": "flashback",
       "characters": ["한정숙"],
-      "emotion": "비통함, 억울함",
-      "action": "회상",
+      "emotion": "sorrow, injustice",
+      "action": "reminiscing",
       "main_prompt": "masterpiece, best quality, photorealistic, 1woman, dreamy flashback effect, Korean countryside, sepia warm tones, nostalgic painful memory, soft focus",
       "character_prompts": {
         "한정숙": "35 year old Korean woman, younger version, signing documents with heavy heart, tearful eyes, sacrificing for husband, traditional Korean countryside home in background"
@@ -108,13 +108,13 @@
     },
     {
       "scene_id": "s06",
-      "scene_name": "정숙_항의",
+      "scene_name": "jeongsuk_protest",
       "description": "정숙이 친정 땅 이야기를 꺼내며 항의하는 장면",
-      "location": "법률사무소 회의실",
-      "time": "낮",
+      "location": "law office conference room",
+      "time": "daytime",
       "characters": ["한정숙"],
-      "emotion": "억울함, 분노",
-      "action": "항의, 말하기",
+      "emotion": "injustice, anger",
+      "action": "protesting, speaking",
       "main_prompt": "masterpiece, best quality, photorealistic, 1woman, Korean law office, emotional protest, dramatic moment, harsh lighting emphasizing emotion",
       "character_prompts": {
         "한정숙": "57 year old Korean woman, emotional pleading expression, voice trembling, eyes glistening with unshed tears, gesturing while speaking, pearl necklace, desperate dignity"
@@ -125,13 +125,13 @@
     },
     {
       "scene_id": "s07",
-      "scene_name": "미라의_가식",
+      "scene_name": "mira_crocodile_tears",
       "description": "미라가 '언니'라고 부르며 가짜 눈물을 보이는 장면",
-      "location": "법률사무소 회의실",
-      "time": "낮",
+      "location": "law office conference room",
+      "time": "daytime",
       "characters": ["윤미라"],
-      "emotion": "위선, 가식",
-      "action": "가짜 울기",
+      "emotion": "hypocrisy, pretense",
+      "action": "fake crying",
       "main_prompt": "masterpiece, best quality, photorealistic, 1woman, Korean law office, fake emotional display, performative tears, soft lighting",
       "character_prompts": {
         "윤미라": "33 year old Korean woman, fake tearful expression, crocodile tears glistening, dabbing eyes delicately, black dress, pearl earrings, calculating eyes behind sad facade"
@@ -142,13 +142,13 @@
     },
     {
       "scene_id": "s08",
-      "scene_name": "닥쳐요",
+      "scene_name": "shut_up_outburst",
       "description": "정숙이 처음으로 소리 지르는 장면",
-      "location": "법률사무소 회의실",
-      "time": "낮",
+      "location": "law office conference room",
+      "time": "daytime",
       "characters": ["한정숙"],
-      "emotion": "폭발, 분노",
-      "action": "소리 지르기",
+      "emotion": "explosion, rage",
+      "action": "shouting",
       "main_prompt": "masterpiece, best quality, photorealistic, 1woman, Korean law office, emotional explosion, dramatic confrontation moment, harsh dramatic lighting",
       "character_prompts": {
         "한정숙": "57 year old Korean woman, shouting with rage, tears streaming down, standing up from chair, finger pointing, years of suppressed anger exploding, dignified woman losing control"
@@ -159,13 +159,13 @@
     },
     {
       "scene_id": "s09",
-      "scene_name": "40년_절규",
+      "scene_name": "40_years_cry",
       "description": "40년이에요 라고 절규하는 정숙",
-      "location": "법률사무소 회의실",
-      "time": "낮",
+      "location": "law office conference room",
+      "time": "daytime",
       "characters": ["한정숙"],
-      "emotion": "비통함, 절규",
-      "action": "울며 말하기",
+      "emotion": "anguish, desperation",
+      "action": "crying and speaking",
       "main_prompt": "masterpiece, best quality, photorealistic, 1woman, close-up, Korean law office, emotional breakdown, tears flowing, dramatic lighting",
       "character_prompts": {
         "한정숙": "57 year old Korean woman, crying desperately, shouting through tears, 40 years of devotion crumbling, raw emotion on face, makeup smeared by tears, pearl necklace prominent"
@@ -176,13 +176,13 @@
     },
     {
       "scene_id": "s10",
-      "scene_name": "민수_부축",
+      "scene_name": "son_supporting",
       "description": "민수가 엄마를 부축해 나가는 장면",
-      "location": "법률사무소",
-      "time": "낮",
+      "location": "law office hallway",
+      "time": "daytime",
       "characters": ["한정숙", "강민수"],
-      "emotion": "걱정, 슬픔",
-      "action": "부축하기",
+      "emotion": "worry, sadness",
+      "action": "supporting, walking out",
       "main_prompt": "masterpiece, best quality, photorealistic, 2people, Korean law office hallway, son supporting devastated mother, emotional exit, soft corridor lighting",
       "character_prompts": {
         "한정숙": "57 year old Korean woman, completely devastated, leaning on son, tears on face, stumbling walk, broken posture",
@@ -197,13 +197,13 @@
     },
     {
       "scene_id": "s11",
-      "scene_name": "사진_내려놓기",
+      "scene_name": "photo_removal",
       "description": "집에서 남편 사진을 벽에서 내리는 장면",
-      "location": "집 거실",
-      "time": "밤",
+      "location": "home living room",
+      "time": "night",
       "characters": ["한정숙"],
-      "emotion": "쓸쓸함, 결의",
-      "action": "사진 내리기",
+      "emotion": "loneliness, resolve",
+      "action": "removing photo",
       "main_prompt": "masterpiece, best quality, photorealistic, 1woman, Korean living room at night, taking down husband photo from wall, dim lamp lighting, lonely atmosphere",
       "character_prompts": {
         "한정숙": "57 year old Korean woman, resolved sad expression, holding framed photo, looking at husband image with mixture of love and betrayal, tears dried on face, standing alone"
@@ -214,13 +214,13 @@
     },
     {
       "scene_id": "s12",
-      "scene_name": "홀로_앉아있기",
+      "scene_name": "sitting_alone",
       "description": "어두운 거실에 홀로 앉아있는 정숙",
-      "location": "집 거실",
-      "time": "밤",
+      "location": "home living room",
+      "time": "night",
       "characters": ["한정숙"],
-      "emotion": "고독, 결의",
-      "action": "앉아있기",
+      "emotion": "solitude, determination",
+      "action": "sitting alone",
       "main_prompt": "masterpiece, best quality, photorealistic, 1woman, dark Korean living room, sitting alone in darkness, single lamp light, melancholic atmosphere, long night ahead",
       "character_prompts": {
         "한정숙": "57 year old Korean woman, sitting alone on sofa, staring into darkness, tear-stained face dried, pearl necklace in hand, contemplating 40 years, quiet determination forming"

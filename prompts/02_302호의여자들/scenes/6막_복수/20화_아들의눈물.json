@@ -1,0 +1,293 @@
+{
+  "metadata": {
+    "work_title": "302호의여자들",
+    "act": "6막",
+    "act_title": "복수",
+    "chapter": 20,
+    "chapter_title": "아들의눈물",
+    "created_at": "2026-01-04",
+    "total_scenes": 14
+  },
+  "chapter_info": {
+    "main_location": "Seoul Jongno cafe",
+    "time_period": "afternoon",
+    "characters": ["한정숙", "강민수"],
+    "main_emotion": "confrontation, forgiveness, reconciliation"
+  },
+  "scenes": [
+    {
+      "scene_id": "s01",
+      "scene_name": "cafe_waiting",
+      "description": "정숙이 카페에서 먼저 도착해 떨리는 마음으로 기다리는 장면",
+      "location": "Seoul Jongno cafe",
+      "time": "afternoon",
+      "characters": ["한정숙"],
+      "emotion": "tension, anticipation",
+      "action": "waiting",
+      "main_prompt": "masterpiece, best quality, photorealistic, cozy Seoul cafe, elderly woman waiting at table nervously, anticipating reunion with son, afternoon light through window, emotional anticipation",
+      "character_prompts": {
+        "한정숙": "57 year old Korean woman, sitting alone at cafe table, fidgeting with hands, waiting for son, nervous hopeful expression"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/6막/20화/s01_카페대기",
+      "filename_prefix": "6막_20화_s01"
+    },
+    {
+      "scene_id": "s02",
+      "scene_name": "minsu_arrival",
+      "description": "문이 열리고 민수가 들어오는 장면",
+      "location": "Seoul Jongno cafe",
+      "time": "afternoon",
+      "characters": ["한정숙", "강민수"],
+      "emotion": "reunion, tension",
+      "action": "arriving",
+      "main_prompt": "masterpiece, best quality, photorealistic, cafe entrance, middle-aged son entering looking for mother, pale worried face, mother at table looking up, loaded reunion moment",
+      "character_prompts": {
+        "한정숙": "57 year old Korean woman, looking up as son enters, complex emotions",
+        "강민수": "45 year old Korean man, pale expression, entering cafe, searching for mother, guilt visible"
+      },
+      "regional_settings": {
+        "한정숙": {"start": 0, "end": 50},
+        "강민수": {"start": 50, "end": 100}
+      },
+      "output_folder": "scenes/6막/20화/s02_민수도착",
+      "filename_prefix": "6막_20화_s02"
+    },
+    {
+      "scene_id": "s03",
+      "scene_name": "evidence_reveal",
+      "description": "정숙이 노트북에 USB를 꽂고 이중장부를 보여주는 장면",
+      "location": "Seoul Jongno cafe",
+      "time": "afternoon",
+      "characters": ["한정숙", "강민수"],
+      "emotion": "revelation, shock",
+      "action": "showing",
+      "main_prompt": "masterpiece, best quality, photorealistic, cafe table with laptop, elderly woman showing spreadsheet on screen to shocked son, embezzlement evidence revealed, 300 million won misappropriated, devastating truth",
+      "character_prompts": {
+        "한정숙": "57 year old Korean woman, pointing at laptop screen, this is what she did expression",
+        "강민수": "45 year old Korean man, eyes widening at financial records, can't believe it expression"
+      },
+      "regional_settings": {
+        "한정숙": {"start": 0, "end": 55},
+        "강민수": {"start": 45, "end": 100}
+      },
+      "output_folder": "scenes/6막/20화/s03_증거공개",
+      "filename_prefix": "6막_20화_s03"
+    },
+    {
+      "scene_id": "s04",
+      "scene_name": "will_forgery_evidence",
+      "description": "유언장 초안을 보여주며 조작을 증명하는 장면",
+      "location": "Seoul Jongno cafe",
+      "time": "afternoon",
+      "characters": ["한정숙", "강민수"],
+      "emotion": "revelation, confirmation",
+      "action": "showing",
+      "main_prompt": "masterpiece, best quality, photorealistic, cafe table, elderly woman showing will draft document on screen, forged will evidence, not father's handwriting, son examining closely",
+      "character_prompts": {
+        "한정숙": "57 year old Korean woman, showing forged document, this is not your father's writing",
+        "강민수": "45 year old Korean man, leaning in to examine, recognizing the forgery, it's true expression"
+      },
+      "regional_settings": {
+        "한정숙": {"start": 0, "end": 55},
+        "강민수": {"start": 45, "end": 100}
+      },
+      "output_folder": "scenes/6막/20화/s04_유언장증거",
+      "filename_prefix": "6막_20화_s04"
+    },
+    {
+      "scene_id": "s05",
+      "scene_name": "recording_playback",
+      "description": "미라의 자백 녹음을 재생하는 장면",
+      "location": "Seoul Jongno cafe",
+      "time": "afternoon",
+      "characters": ["한정숙", "강민수"],
+      "emotion": "evidence, shock",
+      "action": "listening",
+      "main_prompt": "masterpiece, best quality, photorealistic, cafe table, phone playing audio recording, Mira's voice confessing embezzlement, son's face distorting with realization, everything was a lie moment",
+      "character_prompts": {
+        "한정숙": "57 year old Korean woman, playing recording, watching son's reaction",
+        "강민수": "45 year old Korean man, face crumbling as he hears Mira's confession, I was deceived expression"
+      },
+      "regional_settings": {
+        "한정숙": {"start": 0, "end": 50},
+        "강민수": {"start": 50, "end": 100}
+      },
+      "output_folder": "scenes/6막/20화/s05_녹음재생",
+      "filename_prefix": "6막_20화_s05"
+    },
+    {
+      "scene_id": "s06",
+      "scene_name": "debt_question",
+      "description": "정숙이 '넌 미라한테 돈 빌렸지?'라고 묻는 장면",
+      "location": "Seoul Jongno cafe",
+      "time": "afternoon",
+      "characters": ["한정숙", "강민수"],
+      "emotion": "interrogation, shame",
+      "action": "questioning",
+      "main_prompt": "masterpiece, best quality, photorealistic, cafe confrontation, elderly mother asking direct question about debt, son freezing with shame, you borrowed money from her question, moment of truth",
+      "character_prompts": {
+        "한정숙": "57 year old Korean woman, direct gaze, you owe her money question",
+        "강민수": "45 year old Korean man, shoulders hunching with shame, how did you know expression"
+      },
+      "regional_settings": {
+        "한정숙": {"start": 0, "end": 50},
+        "강민수": {"start": 50, "end": 100}
+      },
+      "output_folder": "scenes/6막/20화/s06_빚질문",
+      "filename_prefix": "6막_20화_s06"
+    },
+    {
+      "scene_id": "s07",
+      "scene_name": "minsu_confession",
+      "description": "민수가 5천만 원을 빌렸다고 고백하는 장면",
+      "location": "Seoul Jongno cafe",
+      "time": "afternoon",
+      "characters": ["강민수"],
+      "emotion": "shame, confession",
+      "action": "confessing",
+      "main_prompt": "masterpiece, best quality, photorealistic, close-up, middle-aged man confessing financial trouble, 50 million won debt to stepmother, business failure shame, guilty confession",
+      "character_prompts": {
+        "강민수": "45 year old Korean man, head bowing in shame, confessing 50 million won debt, she offered it without interest excuse, realizing he was manipulated"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/6막/20화/s07_고백",
+      "filename_prefix": "6막_20화_s07"
+    },
+    {
+      "scene_id": "s08",
+      "scene_name": "manipulation_truth",
+      "description": "정숙이 '그 돈으로 널 조종한 거야'라고 말하는 장면",
+      "location": "Seoul Jongno cafe",
+      "time": "afternoon",
+      "characters": ["한정숙"],
+      "emotion": "revelation, anger",
+      "action": "explaining",
+      "main_prompt": "masterpiece, best quality, photorealistic, cafe scene, elderly mother explaining manipulation scheme, she controlled you with that money revelation, puppet strings exposed, sad anger",
+      "character_prompts": {
+        "한정숙": "57 year old Korean woman, explaining bitter truth, she used money to control you, forcing you to send me away"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/6막/20화/s08_조종진실",
+      "filename_prefix": "6막_20화_s08"
+    },
+    {
+      "scene_id": "s09",
+      "scene_name": "minsu_kneeling",
+      "description": "민수가 카페에서 무릎을 꿇고 용서를 구하는 장면",
+      "location": "Seoul Jongno cafe",
+      "time": "afternoon",
+      "characters": ["강민수", "한정숙"],
+      "emotion": "repentance, forgiveness",
+      "action": "kneeling",
+      "main_prompt": "masterpiece, best quality, photorealistic, dramatic cafe scene, middle-aged son kneeling before mother, begging forgiveness, other customers looking, tearful apology, public repentance",
+      "character_prompts": {
+        "강민수": "45 year old Korean man, on knees in public cafe, tears streaming, please forgive me mother, I was a fool confession",
+        "한정숙": "57 year old Korean woman, looking down at kneeling son, complex emotions"
+      },
+      "regional_settings": {
+        "강민수": {"start": 0, "end": 55},
+        "한정숙": {"start": 45, "end": 100}
+      },
+      "output_folder": "scenes/6막/20화/s09_무릎꿇음",
+      "filename_prefix": "6막_20화_s09"
+    },
+    {
+      "scene_id": "s10",
+      "scene_name": "elementary_school_flashback",
+      "description": "정숙이 민수 초등학교 입학 때를 떠올리는 장면",
+      "location": "flashback - elementary school",
+      "time": "flashback",
+      "characters": ["한정숙"],
+      "emotion": "memory, motherhood",
+      "action": "reminiscing",
+      "main_prompt": "masterpiece, best quality, photorealistic, flashback scene, soft sepia tones, young mother holding small child's hand at school gate, don't let go mommy memory, nostalgic warm atmosphere, fading edges",
+      "character_prompts": {
+        "한정숙": "32 year old Korean woman in flashback, young mother, holding small hand, I'll never let go promise, loving protective expression"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/6막/20화/s10_회상",
+      "filename_prefix": "6막_20화_s10"
+    },
+    {
+      "scene_id": "s11",
+      "scene_name": "mother_embrace",
+      "description": "정숙이 일어나 아들을 안아주는 장면",
+      "location": "Seoul Jongno cafe",
+      "time": "afternoon",
+      "characters": ["한정숙", "강민수"],
+      "emotion": "forgiveness, reconciliation",
+      "action": "embracing",
+      "main_prompt": "masterpiece, best quality, photorealistic, emotional cafe scene, elderly mother standing and embracing kneeling son, forgiveness moment, 72 years of life longest hug, tears and reconciliation, warm light",
+      "character_prompts": {
+        "한정숙": "57 year old Korean woman, embracing son, it's okay now expression, maternal forgiveness",
+        "강민수": "45 year old Korean man, being held by mother, sobbing into shoulder, like a child again"
+      },
+      "regional_settings": {
+        "한정숙": {"start": 0, "end": 55},
+        "강민수": {"start": 45, "end": 100}
+      },
+      "output_folder": "scenes/6막/20화/s11_포옹",
+      "filename_prefix": "6막_20화_s11"
+    },
+    {
+      "scene_id": "s12",
+      "scene_name": "words_of_forgiveness",
+      "description": "정숙이 '이제라도 알았으니 됐어'라고 말하는 장면",
+      "location": "Seoul Jongno cafe",
+      "time": "afternoon",
+      "characters": ["한정숙"],
+      "emotion": "forgiveness, peace",
+      "action": "forgiving",
+      "main_prompt": "masterpiece, best quality, photorealistic, close-up, elderly mother's face, tears but peaceful smile, now you know that's enough forgiveness, maternal love transcending betrayal",
+      "character_prompts": {
+        "한정숙": "57 year old Korean woman, tearful but smiling, you know now and that's what matters expression, mother's unconditional love"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/6막/20화/s12_용서",
+      "filename_prefix": "6막_20화_s12"
+    },
+    {
+      "scene_id": "s13",
+      "scene_name": "help_request",
+      "description": "정숙이 '엄마 좀 도와줘'라고 말하고 민수가 동의하는 장면",
+      "location": "Seoul Jongno cafe",
+      "time": "afternoon",
+      "characters": ["한정숙", "강민수"],
+      "emotion": "unity, determination",
+      "action": "requesting",
+      "main_prompt": "masterpiece, best quality, photorealistic, cafe scene, mother asking son for help, will you stand with me question, son nodding firmly, family reunited against common enemy",
+      "character_prompts": {
+        "한정숙": "57 year old Korean woman, looking at son directly, help me expression, trusting again",
+        "강민수": "45 year old Korean man, wiping tears, firm nod, I'll do anything determination"
+      },
+      "regional_settings": {
+        "한정숙": {"start": 0, "end": 50},
+        "강민수": {"start": 50, "end": 100}
+      },
+      "output_folder": "scenes/6막/20화/s13_도움요청",
+      "filename_prefix": "6막_20화_s13"
+    },
+    {
+      "scene_id": "s14",
+      "scene_name": "press_conference_declaration",
+      "description": "정숙이 '기자회견 할 거야. 옆에 서줘'라고 말하는 장면",
+      "location": "Seoul Jongno cafe",
+      "time": "afternoon",
+      "characters": ["한정숙", "강민수"],
+      "emotion": "determination, preparation",
+      "action": "declaring",
+      "main_prompt": "masterpiece, best quality, photorealistic, cafe scene, mother announcing press conference plan, stand with me request, son agreeing firmly, family alliance formed, final battle preparation",
+      "character_prompts": {
+        "한정숙": "57 year old Korean woman, determined announcement, press conference declaration, stand by me request",
+        "강민수": "45 year old Korean man, nodding firmly, of course I will commitment, ready to fight together"
+      },
+      "regional_settings": {
+        "한정숙": {"start": 0, "end": 55},
+        "강민수": {"start": 45, "end": 100}
+      },
+      "output_folder": "scenes/6막/20화/s14_기자회견선언",
+      "filename_prefix": "6막_20화_s14"
+    }
+  ]
+}

@@ -1,0 +1,189 @@
+{
+  "metadata": {
+    "work_title": "302호의여자들",
+    "act": "3막",
+    "act_title": "암흑과전환",
+    "chapter": 11,
+    "chapter_title": "여동생의죄책감",
+    "created_at": "2026-01-04",
+    "total_scenes": 10
+  },
+  "chapter_info": {
+    "main_location": "서울 아파트",
+    "time_period": "낮",
+    "characters": ["정수현"],
+    "main_emotion": "죄책감, 후회, 결심"
+  },
+  "scenes": [
+    {
+      "scene_id": "s01",
+      "scene_name": "suhyeon_living_room",
+      "description": "정수현이 거실 소파에서 TV를 보고 있는 장면",
+      "location": "Seoul apartment living room",
+      "time": "daytime",
+      "characters": ["정수현"],
+      "emotion": "everyday, indifference",
+      "action": "watching TV",
+      "main_prompt": "masterpiece, best quality, photorealistic, 1woman, Seoul apartment living room, middle-aged woman watching TV on sofa, ordinary afternoon, modern Korean apartment interior, natural daylight",
+      "character_prompts": {
+        "정수현": "55 year old Korean woman, comfortable home clothes, relaxed posture on sofa, watching TV absentmindedly"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/3막/11화/s01_수현거실",
+      "filename_prefix": "3막_11화_s01"
+    },
+    {
+      "scene_id": "s02",
+      "scene_name": "neighbor_news",
+      "description": "옆집 이웃이 언니가 요양원에 갔다는 소식을 전하는 장면",
+      "location": "Seoul apartment entrance",
+      "time": "daytime",
+      "characters": ["정수현"],
+      "emotion": "shock, confusion",
+      "action": "hearing news",
+      "main_prompt": "masterpiece, best quality, photorealistic, apartment doorway scene, middle-aged woman receiving shocking news from neighbor, sister in nursing home revelation, stunned expression",
+      "character_prompts": {
+        "정수현": "55 year old Korean woman, shock spreading across face, what about my sister expression, gripping door frame"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/3막/11화/s02_소식",
+      "filename_prefix": "3막_11화_s02"
+    },
+    {
+      "scene_id": "s03",
+      "scene_name": "calling_minsu",
+      "description": "수현이 조카 민수에게 전화하지만 받지 않는 장면",
+      "location": "Seoul apartment living room",
+      "time": "daytime",
+      "characters": ["정수현"],
+      "emotion": "anxiety, unease",
+      "action": "making phone call",
+      "main_prompt": "masterpiece, best quality, photorealistic, 1woman, apartment living room, middle-aged woman making urgent phone calls, no answer frustration, worried anxious expression, repeated dialing",
+      "character_prompts": {
+        "정수현": "55 year old Korean woman, phone pressed to ear, frustrated worried expression, why won't he answer, calling repeatedly"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/3막/11화/s03_전화시도",
+      "filename_prefix": "3막_11화_s03"
+    },
+    {
+      "scene_id": "s04",
+      "scene_name": "collapsing_on_sofa",
+      "description": "수현이 소파에 주저앉으며 과거를 떠올리는 장면",
+      "location": "Seoul apartment living room",
+      "time": "daytime",
+      "characters": ["정수현"],
+      "emotion": "despair, reminiscing",
+      "action": "collapsing",
+      "main_prompt": "masterpiece, best quality, photorealistic, 1woman, apartment living room, middle-aged woman collapsing onto sofa, overwhelmed with guilt and memories, 15 years of distance with sister, emotional breakdown beginning",
+      "character_prompts": {
+        "정수현": "55 year old Korean woman, slumped on sofa, hand covering face, memories flooding back, guilt overwhelming"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/3막/11화/s04_주저앉음",
+      "filename_prefix": "3막_11화_s04"
+    },
+    {
+      "scene_id": "s05",
+      "scene_name": "15_years_ago_flashback",
+      "description": "수현이 형부에게 돈을 빌리던 15년 전을 회상하는 장면",
+      "location": "flashback - office",
+      "time": "flashback",
+      "characters": ["정수현"],
+      "emotion": "regret, shame",
+      "action": "reminiscing",
+      "main_prompt": "masterpiece, best quality, photorealistic, flashback scene, dreamy sepia tones, younger woman asking brother-in-law for loan, business funding request, secret from sister, shameful memory visualization",
+      "character_prompts": {
+        "정수현": "40 year old Korean woman in flashback, younger appearance, pleading expression, asking for money secretly, please don't tell my sister"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/3막/11화/s05_회상",
+      "filename_prefix": "3막_11화_s05"
+    },
+    {
+      "scene_id": "s06",
+      "scene_name": "unpaid_debt",
+      "description": "돈을 갚지 못하고 언니를 피해온 기억을 떠올리는 장면",
+      "location": "Seoul apartment living room",
+      "time": "daytime",
+      "characters": ["정수현"],
+      "emotion": "guilt, regret",
+      "action": "reminiscing, self-blame",
+      "main_prompt": "masterpiece, best quality, photorealistic, close-up, middle-aged woman with tears, remembering unpaid debt and years of avoiding sister, deep regret, guilt consuming expression",
+      "character_prompts": {
+        "정수현": "55 year old Korean woman, tears forming, I couldn't face her expression, years of shame and avoidance"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/3막/11화/s06_미갚은빚",
+      "filename_prefix": "3막_11화_s06"
+    },
+    {
+      "scene_id": "s07",
+      "scene_name": "wiping_tears",
+      "description": "수현이 눈물을 닦는 장면",
+      "location": "Seoul apartment living room",
+      "time": "daytime",
+      "characters": ["정수현"],
+      "emotion": "determination, awakening",
+      "action": "wiping tears",
+      "main_prompt": "masterpiece, best quality, photorealistic, 1woman, apartment living room, middle-aged woman wiping tears, determination forming, this is not right realization, emotional turning point",
+      "character_prompts": {
+        "정수현": "55 year old Korean woman, wiping tears with determination, no more running expression, decision forming"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/3막/11화/s07_눈물닦기",
+      "filename_prefix": "3막_11화_s07"
+    },
+    {
+      "scene_id": "s08",
+      "scene_name": "calling_nursing_home",
+      "description": "수현이 요양원에 전화해 면회를 요청하는 장면",
+      "location": "Seoul apartment living room",
+      "time": "daytime",
+      "characters": ["정수현"],
+      "emotion": "determination, frustration",
+      "action": "making phone call",
+      "main_prompt": "masterpiece, best quality, photorealistic, 1woman, apartment living room, middle-aged woman calling nursing home, requesting visit to sister, being refused, frustrated determined expression",
+      "character_prompts": {
+        "정수현": "55 year old Korean woman, phone to ear, I'm her sister explaining, frustrated by refusal, this is wrong anger"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/3막/11화/s08_요양원전화",
+      "filename_prefix": "3막_11화_s08"
+    },
+    {
+      "scene_id": "s09",
+      "scene_name": "visit_refused",
+      "description": "면회 제한 때문에 거절당한 후 전화가 끊기는 장면",
+      "location": "Seoul apartment living room",
+      "time": "daytime",
+      "characters": ["정수현"],
+      "emotion": "anger, suspicion",
+      "action": "hanging up phone",
+      "main_prompt": "masterpiece, best quality, photorealistic, 1woman, apartment living room, middle-aged woman staring at disconnected phone, visitor restrictions something wrong, suspicious angry expression",
+      "character_prompts": {
+        "정수현": "55 year old Korean woman, holding phone after being hung up on, something is very wrong expression, fist clenching"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/3막/11화/s09_면회거절",
+      "filename_prefix": "3막_11화_s09"
+    },
+    {
+      "scene_id": "s10",
+      "scene_name": "going_myself",
+      "description": "수현이 주먹을 쥐며 '직접 가봐야겠어'라고 결심하는 장면",
+      "location": "Seoul apartment living room",
+      "time": "daytime",
+      "characters": ["정수현"],
+      "emotion": "determination, resolve",
+      "action": "making decision",
+      "main_prompt": "masterpiece, best quality, photorealistic, 1woman, apartment living room, middle-aged woman with clenched fist, determined to visit sister in person, I'll go myself decision, protective sister awakening",
+      "character_prompts": {
+        "정수현": "55 year old Korean woman, clenched fist, determined fierce expression, 15 years of distance ending today, I must see my sister vow"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/3막/11화/s10_결심",
+      "filename_prefix": "3막_11화_s10"
+    }
+  ]
+}

@@ -1,0 +1,290 @@
+{
+  "metadata": {
+    "work_title": "302호의여자들",
+    "act": "6막",
+    "act_title": "복수",
+    "chapter": 19,
+    "chapter_title": "미라의집",
+    "created_at": "2026-01-04",
+    "total_scenes": 14
+  },
+  "chapter_info": {
+    "main_location": "Gangnam officetel",
+    "time_period": "night",
+    "characters": ["한정숙", "최영희", "이말자", "강순덕"],
+    "main_emotion": "tension, infiltration, discovery"
+  },
+  "scenes": [
+    {
+      "scene_id": "s01",
+      "scene_name": "officetel_entrance",
+      "description": "자정, 네 여자가 검은 옷을 입고 오피스텔 앞에 서있는 장면",
+      "location": "Gangnam officetel exterior",
+      "time": "midnight",
+      "characters": ["한정숙", "최영희", "이말자", "강순덕"],
+      "emotion": "tension, determination",
+      "action": "standing by",
+      "main_prompt": "masterpiece, best quality, photorealistic, midnight scene, four elderly women in dark clothes and caps standing before high-rise building, heist team assembled, noir atmosphere, city lights",
+      "character_prompts": {
+        "한정숙": "57 year old Korean woman, dark clothes, cap, looking up at building",
+        "최영희": "60 year old Korean woman, dark outfit, reconnaissance mode",
+        "이말자": "53 year old Korean woman, practical dark clothes, ready",
+        "강순덕": "55 year old Korean woman, dark clothing, confident grin"
+      },
+      "regional_settings": {
+        "한정숙": {"start": 0, "end": 25},
+        "최영희": {"start": 25, "end": 50},
+        "이말자": {"start": 50, "end": 75},
+        "강순덕": {"start": 75, "end": 100}
+      },
+      "output_folder": "scenes/6막/19화/s01_오피스텔앞",
+      "filename_prefix": "6막_19화_s01"
+    },
+    {
+      "scene_id": "s02",
+      "scene_name": "security_bypass",
+      "description": "졸고 있는 경비 아저씨를 피해 로비를 지나는 장면",
+      "location": "officetel lobby",
+      "time": "midnight",
+      "characters": ["한정숙", "최영희", "이말자", "강순덕"],
+      "emotion": "tension, stealth",
+      "action": "sneaking past",
+      "main_prompt": "masterpiece, best quality, photorealistic, building lobby at night, four elderly women sneaking past sleeping security guard, TV playing baseball in background, stealth mission, suspenseful",
+      "character_prompts": {
+        "한정숙": "57 year old Korean woman, tiptoeing past security desk, holding breath",
+        "최영희": "60 year old Korean woman, moving silently, experienced stealth",
+        "이말자": "53 year old Korean woman, careful quiet steps",
+        "강순덕": "55 year old Korean woman, leading the way, knows how to move unseen"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/6막/19화/s02_경비통과",
+      "filename_prefix": "6막_19화_s02"
+    },
+    {
+      "scene_id": "s03",
+      "scene_name": "elevator_ride",
+      "description": "엘리베이터를 타고 15층으로 올라가는 장면",
+      "location": "officetel elevator",
+      "time": "midnight",
+      "characters": ["한정숙", "최영희", "이말자", "강순덕"],
+      "emotion": "tension, anticipation",
+      "action": "ascending",
+      "main_prompt": "masterpiece, best quality, photorealistic, elevator interior, four elderly women riding up, floor numbers changing, tense anticipation, fluorescent elevator light",
+      "character_prompts": {
+        "한정숙": "57 year old Korean woman, watching floor numbers, approaching target",
+        "최영희": "60 year old Korean woman, focused ahead",
+        "이말자": "53 year old Korean woman, reviewing plan mentally",
+        "강순덕": "55 year old Korean woman, ready for action"
+      },
+      "regional_settings": {
+        "한정숙": {"start": 0, "end": 25},
+        "최영희": {"start": 25, "end": 50},
+        "이말자": {"start": 50, "end": 75},
+        "강순덕": {"start": 75, "end": 100}
+      },
+      "output_folder": "scenes/6막/19화/s03_엘리베이터",
+      "filename_prefix": "6막_19화_s03"
+    },
+    {
+      "scene_id": "s04",
+      "scene_name": "door_arrival",
+      "description": "1502호 문 앞에 도착하는 장면",
+      "location": "officetel 15th floor corridor",
+      "time": "midnight",
+      "characters": ["한정숙", "최영희", "이말자", "강순덕"],
+      "emotion": "tension, challenge",
+      "action": "arriving",
+      "main_prompt": "masterpiece, best quality, photorealistic, apartment corridor at night, four elderly women at door 1502, target reached, password panel visible, moment of truth",
+      "character_prompts": {
+        "한정숙": "57 year old Korean woman, facing the door, this is it expression",
+        "최영희": "60 year old Korean woman, checking surroundings",
+        "이말자": "53 year old Korean woman, worried about password",
+        "강순덕": "55 year old Korean woman, watching corridor"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/6막/19화/s04_문앞",
+      "filename_prefix": "6막_19화_s04"
+    },
+    {
+      "scene_id": "s05",
+      "scene_name": "password_entry",
+      "description": "영희가 미라 생일로 비밀번호를 입력하는 장면",
+      "location": "unit 1502 door",
+      "time": "midnight",
+      "characters": ["최영희"],
+      "emotion": "tension, anticipation",
+      "action": "entering password",
+      "main_prompt": "masterpiece, best quality, photorealistic, close-up, elderly woman fingers on door keypad, entering birthday password 0408, please work tension, digital lock",
+      "character_prompts": {
+        "최영희": "60 year old Korean woman, carefully pressing buttons, journalist's research paying off, please open expression"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/6막/19화/s05_비밀번호",
+      "filename_prefix": "6막_19화_s05"
+    },
+    {
+      "scene_id": "s06",
+      "scene_name": "door_opens",
+      "description": "문이 열리며 안으로 들어가는 장면",
+      "location": "unit 1502 entrance",
+      "time": "midnight",
+      "characters": ["한정숙", "최영희", "이말자", "강순덕"],
+      "emotion": "success, infiltration",
+      "action": "entering",
+      "main_prompt": "masterpiece, best quality, photorealistic, apartment door opening, four elderly women entering enemy territory, clean modern apartment interior, infiltration successful, dim night lighting",
+      "character_prompts": {
+        "한정숙": "57 year old Korean woman, stepping inside carefully",
+        "최영희": "60 year old Korean woman, following, eyes scanning",
+        "이말자": "53 year old Korean woman, entering cautiously",
+        "강순덕": "55 year old Korean woman, closing door quietly"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/6막/19화/s06_문열림",
+      "filename_prefix": "6막_19화_s06"
+    },
+    {
+      "scene_id": "s07",
+      "scene_name": "study_search",
+      "description": "서재를 찾아 책상과 책장을 뒤지는 장면",
+      "location": "Mira's officetel study",
+      "time": "midnight",
+      "characters": ["한정숙", "이말자"],
+      "emotion": "searching, urgency",
+      "action": "searching",
+      "main_prompt": "masterpiece, best quality, photorealistic, home office at night, two elderly women searching desk and bookshelf, looking for evidence, small flashlights, urgent search",
+      "character_prompts": {
+        "한정숙": "57 year old Korean woman, searching through desk drawers, looking for ledger",
+        "이말자": "53 year old Korean woman, examining bookshelf, insurance expert search"
+      },
+      "regional_settings": {
+        "한정숙": {"start": 0, "end": 55},
+        "이말자": {"start": 45, "end": 100}
+      },
+      "output_folder": "scenes/6막/19화/s07_서재탐색",
+      "filename_prefix": "6막_19화_s07"
+    },
+    {
+      "scene_id": "s08",
+      "scene_name": "wall_tapping",
+      "description": "순덕이 벽을 두드리며 금고를 찾는 장면",
+      "location": "Mira's officetel study",
+      "time": "midnight",
+      "characters": ["강순덕"],
+      "emotion": "searching, experience",
+      "action": "tapping",
+      "main_prompt": "masterpiece, best quality, photorealistic, home office, elderly woman tapping walls listening for hollow sound, finding hidden safe, experienced search technique, concentrated listening",
+      "character_prompts": {
+        "강순덕": "55 year old Korean woman, ear to wall, knocking systematically, there must be a safe expression, cleaning lady knowledge"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/6막/19화/s08_벽두드리기",
+      "filename_prefix": "6막_19화_s08"
+    },
+    {
+      "scene_id": "s09",
+      "scene_name": "memo_behind_frame",
+      "description": "영희가 액자 뒤에서 금고 비밀번호 메모를 발견하는 장면",
+      "location": "Mira's officetel study",
+      "time": "midnight",
+      "characters": ["최영희"],
+      "emotion": "discovery, excitement",
+      "action": "discovering",
+      "main_prompt": "masterpiece, best quality, photorealistic, close-up, elderly woman lifting family photo frame, revealing hidden note with numbers 7749 behind it, password found, eureka moment",
+      "character_prompts": {
+        "최영희": "60 year old Korean woman, holding up frame, finding hidden note, journalist instinct rewarded, found it expression"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/6막/19화/s09_메모발견",
+      "filename_prefix": "6막_19화_s09"
+    },
+    {
+      "scene_id": "s10",
+      "scene_name": "safe_discovery",
+      "description": "벽 일부가 열리며 숨겨진 금고가 나타나는 장면",
+      "location": "Mira's officetel study",
+      "time": "midnight",
+      "characters": ["최영희"],
+      "emotion": "discovery, tension",
+      "action": "opening safe",
+      "main_prompt": "masterpiece, best quality, photorealistic, wall panel opening to reveal hidden safe, elderly woman entering code 7749, dramatic reveal, treasure chest of evidence, suspenseful lighting",
+      "character_prompts": {
+        "최영희": "60 year old Korean woman, entering code on safe keypad, please work expression, evidence awaits"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/6막/19화/s10_금고발견",
+      "filename_prefix": "6막_19화_s10"
+    },
+    {
+      "scene_id": "s11",
+      "scene_name": "evidence_discovery",
+      "description": "금고 안에서 USB와 유언장 초안을 발견하는 장면",
+      "location": "Mira's officetel study",
+      "time": "midnight",
+      "characters": ["한정숙", "이말자"],
+      "emotion": "victory, conviction",
+      "action": "discovering",
+      "main_prompt": "masterpiece, best quality, photorealistic, open safe interior, USB drive and documents visible, elderly women reaching for evidence, 40 years of revenge in small items, triumphant moment",
+      "character_prompts": {
+        "한정숙": "57 year old Korean woman, picking up USB drive, this is the ledger expression, hands trembling",
+        "이말자": "53 year old Korean woman, examining will draft, this is forged confirmation, insurance expert verification"
+      },
+      "regional_settings": {
+        "한정숙": {"start": 0, "end": 55},
+        "이말자": {"start": 45, "end": 100}
+      },
+      "output_folder": "scenes/6막/19화/s11_증거발견",
+      "filename_prefix": "6막_19화_s11"
+    },
+    {
+      "scene_id": "s12",
+      "scene_name": "jeongsuk_trembling",
+      "description": "정숙이 손이 떨리며 '찾았어, 드디어'라고 말하는 장면",
+      "location": "Mira's officetel study",
+      "time": "midnight",
+      "characters": ["한정숙"],
+      "emotion": "emotion, victory",
+      "action": "gripping evidence",
+      "main_prompt": "masterpiece, best quality, photorealistic, close-up, elderly woman's trembling hands holding USB drive, we found it finally declaration, 40 years of suffering ends, emotional triumph",
+      "character_prompts": {
+        "한정숙": "57 year old Korean woman, trembling hands with evidence, tears forming, finally found it expression, victory at hand"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/6막/19화/s12_떨림",
+      "filename_prefix": "6막_19화_s12"
+    },
+    {
+      "scene_id": "s13",
+      "scene_name": "security_wakes",
+      "description": "로비에서 경비가 깨어나 수상한 노인들에게 묻는 장면",
+      "location": "officetel lobby",
+      "time": "dawn",
+      "characters": ["강순덕"],
+      "emotion": "crisis, wit",
+      "action": "handling situation",
+      "main_prompt": "masterpiece, best quality, photorealistic, building lobby, security guard awake confronting elderly women, quick thinking excuse needed, who are you at this hour, tense moment",
+      "character_prompts": {
+        "강순덕": "55 year old Korean woman, bowing apologetically, excuse prepared, we visited our daughter lie, innocent old lady act"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/6막/19화/s13_경비",
+      "filename_prefix": "6막_19화_s13"
+    },
+    {
+      "scene_id": "s14",
+      "scene_name": "gripping_usb",
+      "description": "택시에서 정숙이 USB를 꽉 쥐며 '이제 싸울 수 있어'라고 말하는 장면",
+      "location": "inside taxi",
+      "time": "dawn",
+      "characters": ["한정숙"],
+      "emotion": "determination, ready",
+      "action": "gripping",
+      "main_prompt": "masterpiece, best quality, photorealistic, taxi interior at dawn, elderly woman gripping USB drive tightly, now we can fight declaration, weapon secured, predawn light, determined face",
+      "character_prompts": {
+        "한정숙": "57 year old Korean woman, USB tight in hand, now we can fight expression, 40 years of revenge in palm, ready for war"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/6막/19화/s14_USB쥐기",
+      "filename_prefix": "6막_19화_s14"
+    }
+  ]
+}

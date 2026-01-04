@@ -5,7 +5,7 @@
     "act_title": "일상과균열",
     "chapter": 1,
     "chapter_title": "장례식장의낯선여자",
-    "created_at": "2026-01-03",
+    "created_at": "2026-01-05",
     "total_scenes": 10
   },
   "chapter_info": {
@@ -17,13 +17,13 @@
   "scenes": [
     {
       "scene_id": "s01",
-      "scene_name": "상주석의_정숙",
+      "scene_name": "chief_mourner_seat",
       "description": "정숙이 상주석에서 조문객을 맞이하며 진주목걸이를 만지는 장면",
-      "location": "장례식장 빈소",
-      "time": "낮",
+      "location": "funeral hall",
+      "time": "daytime",
       "characters": ["한정숙"],
-      "emotion": "슬픔, 공허함",
-      "action": "조문객 맞이, 목걸이 만지기",
+      "emotion": "grief, emptiness",
+      "action": "receiving mourners, touching necklace",
       "main_prompt": "masterpiece, best quality, photorealistic, 1woman, Korean funeral hall interior, chrysanthemum flowers everywhere, solemn atmosphere, soft diffused lighting, traditional Korean funeral setting",
       "character_prompts": {
         "한정숙": "57 year old Korean woman, gentle face with subtle smile lines, warm brown eyes, shoulder-length black hair with gray streaks, wearing black mourning clothes, sitting in chief mourner position, touching pearl necklace with trembling hand, dignified grief expression, exhausted but composed"
@@ -34,13 +34,13 @@
     },
     {
       "scene_id": "s02",
-      "scene_name": "아들의_위로",
+      "scene_name": "son_comfort",
       "description": "민수가 엄마에게 물을 건네는 장면",
-      "location": "장례식장 빈소",
-      "time": "낮",
+      "location": "funeral hall",
+      "time": "daytime",
       "characters": ["한정숙", "강민수"],
-      "emotion": "걱정, 애틋함",
-      "action": "물컵 건네기",
+      "emotion": "worry, affection",
+      "action": "offering water",
       "main_prompt": "masterpiece, best quality, photorealistic, 2people, Korean funeral hall, mother and son moment, warm family bond despite grief, soft indoor lighting",
       "character_prompts": {
         "한정숙": "57 year old Korean woman, exhausted expression, black mourning clothes, sitting weakly, receiving water cup, grateful but distant eyes",
@@ -55,16 +55,16 @@
     },
     {
       "scene_id": "s03",
-      "scene_name": "낯선여자_등장",
+      "scene_name": "stranger_entrance",
       "description": "미라가 두 아이와 함께 장례식장에 등장하는 장면",
-      "location": "장례식장 입구",
-      "time": "낮",
+      "location": "funeral hall entrance",
+      "time": "daytime",
       "characters": ["윤미라", "강서연", "강서준"],
-      "emotion": "당당함, 슬픔(가장)",
-      "action": "입장, 걸어옴",
+      "emotion": "confidence, feigned grief",
+      "action": "entering, walking in",
       "main_prompt": "masterpiece, best quality, photorealistic, 3people, Korean funeral hall entrance, dramatic entrance moment, tense atmosphere, onlookers watching, soft indoor lighting",
       "character_prompts": {
-        "윤미라": "33 year old Korean woman, composed elegant appearance, black dress, pearl earrings, confident walk, holding children's hands, subtle determination in eyes, polished appearance",
+        "윤미라": "33 year old Korean woman, composed elegant appearance, sleek black hair, black dress, pearl earrings, confident walk, holding children hands, subtle determination in eyes, polished appearance",
         "강서연": "20 year old Korean woman, tearful expression, black mourning dress, walking beside mother, emotional face",
         "강서준": "17 year old Korean boy, sad expression, black suit, walking beside mother, looking down"
       },
@@ -78,13 +78,13 @@
     },
     {
       "scene_id": "s04",
-      "scene_name": "영정앞_무릎꿇음",
+      "scene_name": "kneeling_before_portrait",
       "description": "미라의 아이들이 영정 앞에 무릎 꿇고 우는 장면",
-      "location": "장례식장 빈소 영정 앞",
-      "time": "낮",
+      "location": "funeral altar",
+      "time": "daytime",
       "characters": ["강서연", "강서준"],
-      "emotion": "슬픔, 충격(주변인)",
-      "action": "무릎 꿇기, 울기",
+      "emotion": "grief, shock from onlookers",
+      "action": "kneeling, crying",
       "main_prompt": "masterpiece, best quality, photorealistic, 2people, Korean funeral altar, portrait photo with chrysanthemum flowers, dramatic emotional moment, shocked onlookers in background, tense atmosphere",
       "character_prompts": {
         "강서연": "20 year old Korean woman, kneeling before portrait, crying desperately, hands clasped, black dress, emotional breakdown, tears streaming",
@@ -99,13 +99,13 @@
     },
     {
       "scene_id": "s05",
-      "scene_name": "정숙의_충격",
+      "scene_name": "jeongsuk_shock",
       "description": "정숙이 상황을 깨닫고 충격받는 클로즈업",
-      "location": "장례식장 빈소",
-      "time": "낮",
+      "location": "funeral hall",
+      "time": "daytime",
       "characters": ["한정숙"],
-      "emotion": "충격, 혼란, 배신감",
-      "action": "얼어붙음, 진주목걸이 움켜쥠",
+      "emotion": "shock, confusion, betrayal",
+      "action": "freezing, gripping pearl necklace",
       "main_prompt": "masterpiece, best quality, photorealistic, 1woman, close-up shot, Korean funeral hall background blurred, dramatic realization moment, harsh emotional lighting",
       "character_prompts": {
         "한정숙": "57 year old Korean woman, shocked frozen expression, wide eyes, pale face, hand gripping pearl necklace tightly, trembling, world crumbling expression, betrayed look, tears forming"
@@ -116,17 +116,17 @@
     },
     {
       "scene_id": "s06",
-      "scene_name": "눈맞춤",
+      "scene_name": "eye_contact",
       "description": "정숙과 미라가 처음 눈을 마주치는 장면",
-      "location": "장례식장 빈소",
-      "time": "낮",
+      "location": "funeral hall",
+      "time": "daytime",
       "characters": ["한정숙", "윤미라"],
-      "emotion": "대립, 긴장",
-      "action": "눈 마주침",
+      "emotion": "confrontation, tension",
+      "action": "making eye contact",
       "main_prompt": "masterpiece, best quality, photorealistic, 2women, Korean funeral hall, intense eye contact moment, tense confrontation, dramatic lighting, silent tension",
       "character_prompts": {
         "한정숙": "57 year old Korean woman, shocked pained expression, sitting in mourner seat, gripping pearl necklace, devastated eyes, trembling",
-        "윤미라": "33 year old Korean woman, composed confident expression, standing, black dress, pearl earrings, subtle defiance in eyes, unapologetic stance"
+        "윤미라": "33 year old Korean woman, composed confident expression, standing, sleek black hair, black dress, pearl earrings, subtle defiance in eyes, unapologetic stance"
       },
       "regional_settings": {
         "한정숙": {"start": 0, "end": 50},
@@ -137,13 +137,13 @@
     },
     {
       "scene_id": "s07",
-      "scene_name": "직원의_귓속말",
+      "scene_name": "whispered_truth",
       "description": "회사 직원이 정숙에게 미라의 정체를 알려주는 장면",
-      "location": "장례식장 빈소",
-      "time": "낮",
+      "location": "funeral hall",
+      "time": "daytime",
       "characters": ["한정숙"],
-      "emotion": "충격 심화",
-      "action": "귓속말 듣기",
+      "emotion": "deepening shock",
+      "action": "hearing whisper",
       "main_prompt": "masterpiece, best quality, photorealistic, 1woman, Korean funeral hall, receiving whispered news, moment of terrible realization, dramatic side lighting",
       "character_prompts": {
         "한정숙": "57 year old Korean woman, listening with growing horror, face draining of color, eyes widening in disbelief, hand frozen on pearl necklace, world shattering expression"
@@ -154,13 +154,13 @@
     },
     {
       "scene_id": "s08",
-      "scene_name": "40년_회상",
+      "scene_name": "40_years_flashback",
       "description": "정숙이 40년 결혼생활을 떠올리는 회상 장면",
-      "location": "추상적 배경",
-      "time": "회상",
+      "location": "abstract background",
+      "time": "flashback",
       "characters": ["한정숙"],
-      "emotion": "비통함, 허무함",
-      "action": "회상, 생각에 잠김",
+      "emotion": "sorrow, emptiness",
+      "action": "reminiscing, lost in thought",
       "main_prompt": "masterpiece, best quality, photorealistic, 1woman, dreamy soft focus, memory visualization, nostalgic but painful atmosphere, warm sepia tones fading to cold",
       "character_prompts": {
         "한정숙": "57 year old Korean woman, contemplative pained expression, looking into distance, memories flashing in eyes, mixture of love and betrayal on face, pearl necklace prominent"
@@ -171,39 +171,38 @@
     },
     {
       "scene_id": "s09",
-      "scene_name": "민수가_손잡음",
+      "scene_name": "son_holding_hand",
       "description": "민수가 충격받은 엄마의 손을 잡아주는 장면",
-      "location": "장례식장 빈소",
-      "time": "낮",
+      "location": "funeral hall",
+      "time": "daytime",
       "characters": ["한정숙", "강민수"],
-      "emotion": "위로, 걱정",
-      "action": "손잡기",
+      "emotion": "comfort, worry",
+      "action": "holding hands",
       "main_prompt": "masterpiece, best quality, photorealistic, 2people, Korean funeral hall, son comforting mother, tender family moment amid crisis, soft warm lighting",
       "character_prompts": {
-        "한정숙": "57 year old Korean woman, devastated expression, tears in eyes, trembling, receiving son's comfort, vulnerable moment",
-        "강민수": "25 year old Korean man, worried protective expression, holding mother's hand gently, black suit, trying to be strong for her"
+        "한정숙": "57 year old Korean woman, devastated expression, tears in eyes, trembling, receiving son comfort, vulnerable moment",
+        "강민수": "25 year old Korean man, worried protective expression, holding mother hand gently, black suit, trying to be strong for her"
       },
       "regional_settings": {
         "한정숙": {"start": 0, "end": 55},
-        "강민수": {"start": 45, "end": 100},
-        "overlap": 10
+        "강민수": {"start": 45, "end": 100}
       },
       "output_folder": "scenes/1막/01화/s09_손잡음",
       "filename_prefix": "1막_01화_s09"
     },
     {
       "scene_id": "s10",
-      "scene_name": "장례식장_전경",
+      "scene_name": "funeral_hall_wide",
       "description": "술렁이는 장례식장 전경, 조문객들의 수군거림",
-      "location": "장례식장 빈소",
-      "time": "낮",
+      "location": "funeral hall",
+      "time": "daytime",
       "characters": ["한정숙", "윤미라"],
-      "emotion": "긴장, 수치심",
-      "action": "대치 상황",
-      "main_prompt": "masterpiece, best quality, photorealistic, wide shot, Korean funeral hall interior, tense atmosphere, two women at opposite sides, whisering onlookers, chrysanthemum flowers, dramatic lighting",
+      "emotion": "tension, shame",
+      "action": "standoff",
+      "main_prompt": "masterpiece, best quality, photorealistic, wide shot, Korean funeral hall interior, tense atmosphere, two women at opposite sides, whispering onlookers, chrysanthemum flowers, dramatic lighting",
       "character_prompts": {
         "한정숙": "57 year old Korean woman, humiliated pained expression, sitting alone at mourner seat, isolated, dignified suffering",
-        "윤미라": "33 year old Korean woman, composed standing with children, confident presence, contrast to the wife"
+        "윤미라": "33 year old Korean woman, composed standing with children, sleek black hair, confident presence, contrast to the wife"
       },
       "regional_settings": {
         "한정숙": {"start": 0, "end": 40},

@@ -1,0 +1,236 @@
+{
+  "metadata": {
+    "work_title": "302호의여자들",
+    "act": "2막",
+    "act_title": "동맹과준비",
+    "chapter": 9,
+    "chapter_title": "바깥세계와의연결",
+    "created_at": "2026-01-04",
+    "total_scenes": 12
+  },
+  "chapter_info": {
+    "main_location": "요양원 1층 휴게실, 302호",
+    "time_period": "낮",
+    "characters": ["최영희", "한정숙", "이말자", "강순덕"],
+    "main_emotion": "긴장, 희망, 연결"
+  },
+  "scenes": [
+    {
+      "scene_id": "s01",
+      "scene_name": "operation_day",
+      "description": "영희가 휠체어를 타고 1층 휴게실로 가는 장면",
+      "location": "nursing home corridor",
+      "time": "daytime",
+      "characters": ["최영희"],
+      "emotion": "tension, determination",
+      "action": "wheelchair movement",
+      "main_prompt": "masterpiece, best quality, photorealistic, 1woman, nursing home corridor, elderly woman in wheelchair moving purposefully, tense determination hidden behind vacant expression, mission in progress, soft indoor lighting",
+      "character_prompts": {
+        "최영희": "60 year old Korean woman, wheelchair, vacant dementia expression masking sharp determined eyes, moving toward objective"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/2막/09화/s01_작전실행",
+      "filename_prefix": "2막_09화_s01"
+    },
+    {
+      "scene_id": "s02",
+      "scene_name": "nurse_conversation",
+      "description": "간호사가 영희에게 어디 가냐고 묻고 영희가 치매 연기를 하는 장면",
+      "location": "nursing home corridor",
+      "time": "daytime",
+      "characters": ["최영희"],
+      "emotion": "acting, deception",
+      "action": "dementia acting",
+      "main_prompt": "masterpiece, best quality, photorealistic, nursing home scene, elderly woman in wheelchair pretending dementia to nurse, vacant confused expression, deceptive performance, natural lighting",
+      "character_prompts": {
+        "최영희": "60 year old Korean woman, wheelchair, masterful dementia acting, confused vacant expression, mumbling about bathroom"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/2막/09화/s02_간호사대화",
+      "filename_prefix": "2막_09화_s02"
+    },
+    {
+      "scene_id": "s03",
+      "scene_name": "nurse_leaves",
+      "description": "간호사가 화장실 앞에 영희를 두고 약 가지러 가는 장면",
+      "location": "nursing home 1st floor bathroom area",
+      "time": "daytime",
+      "characters": ["최영희"],
+      "emotion": "seizing opportunity",
+      "action": "waiting",
+      "main_prompt": "masterpiece, best quality, photorealistic, nursing home bathroom area, elderly woman in wheelchair left alone by departing nurse, moment of opportunity, anticipation, indoor lighting",
+      "character_prompts": {
+        "최영희": "60 year old Korean woman, wheelchair, watching nurse leave, alert expression replacing vacant one, opportunity seized"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/2막/09화/s03_간호사떠남",
+      "filename_prefix": "2막_09화_s03"
+    },
+    {
+      "scene_id": "s04",
+      "scene_name": "rising_from_wheelchair",
+      "description": "영희가 휠체어에서 일어나 멀쩡한 두 다리로 걷는 장면",
+      "location": "nursing home 1st floor",
+      "time": "daytime",
+      "characters": ["최영희"],
+      "emotion": "liberation, determination",
+      "action": "standing up, walking",
+      "main_prompt": "masterpiece, best quality, photorealistic, dramatic moment, elderly woman rising from wheelchair, walking on perfectly functional legs, fake disability revealed, determined powerful stride toward payphone, dramatic lighting",
+      "character_prompts": {
+        "최영희": "60 year old Korean woman, standing up from wheelchair, walking normally with determination, deception revealed, powerful purposeful stride"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/2막/09화/s04_일어남",
+      "filename_prefix": "2막_09화_s04"
+    },
+    {
+      "scene_id": "s05",
+      "scene_name": "at_payphone",
+      "description": "영희가 떨리는 손으로 공중전화 번호를 누르는 장면",
+      "location": "nursing home 1st floor lounge",
+      "time": "daytime",
+      "characters": ["최영희"],
+      "emotion": "tension, hope",
+      "action": "making phone call",
+      "main_prompt": "masterpiece, best quality, photorealistic, 1woman, nursing home payphone, elderly woman with trembling hands dialing number, critical phone call moment, tense atmosphere, hope and fear, soft lighting",
+      "character_prompts": {
+        "최영희": "60 year old Korean woman, trembling hands on payphone buttons, dialing memorized number, eyes wet with hope, 10 years of waiting expression"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/2막/09화/s05_공중전화",
+      "filename_prefix": "2막_09화_s05"
+    },
+    {
+      "scene_id": "s06",
+      "scene_name": "call_connected",
+      "description": "전화가 연결되어 준호의 목소리가 들리는 장면",
+      "location": "nursing home 1st floor lounge",
+      "time": "daytime",
+      "characters": ["최영희"],
+      "emotion": "joy, hope",
+      "action": "talking on phone",
+      "main_prompt": "masterpiece, best quality, photorealistic, close-up, elderly woman on payphone, tears forming in eyes as call connects, emotional breakthrough moment, relief and hope, soft lighting on face",
+      "character_prompts": {
+        "최영희": "60 year old Korean woman, holding payphone receiver, tears of relief forming, calling out to her journalist junior, emotional reconnection after years"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/2막/09화/s06_전화연결",
+      "filename_prefix": "2막_09화_s06"
+    },
+    {
+      "scene_id": "s07",
+      "scene_name": "proving_identity",
+      "description": "영희가 2007년 일화를 말하며 정체를 증명하는 장면",
+      "location": "nursing home 1st floor lounge",
+      "time": "daytime",
+      "characters": ["최영희"],
+      "emotion": "desperation, conviction",
+      "action": "persuading",
+      "main_prompt": "masterpiece, best quality, photorealistic, 1woman, nursing home payphone, elderly woman speaking urgently into receiver, proving identity with shared memory, desperate persuasion, intense expression",
+      "character_prompts": {
+        "최영희": "60 year old Korean woman, gripping phone tightly, recounting shared memory to prove identity, fierce determination, journalist spirit alive"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/2막/09화/s07_정체증명",
+      "filename_prefix": "2막_09화_s07"
+    },
+    {
+      "scene_id": "s08",
+      "scene_name": "approaching_footsteps",
+      "description": "복도에서 간호사 발소리가 들리며 긴장하는 장면",
+      "location": "nursing home 1st floor lounge",
+      "time": "daytime",
+      "characters": ["최영희"],
+      "emotion": "crisis, tension",
+      "action": "urgent phone call",
+      "main_prompt": "masterpiece, best quality, photorealistic, tense scene, elderly woman on payphone hearing approaching footsteps, urgent whispered instructions, race against time, dramatic tension",
+      "character_prompts": {
+        "최영희": "60 year old Korean woman, speaking rapidly into phone, glancing toward approaching footsteps, urgency and fear, giving critical information quickly"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/2막/09화/s08_발소리",
+      "filename_prefix": "2막_09화_s08"
+    },
+    {
+      "scene_id": "s09",
+      "scene_name": "hanging_up",
+      "description": "영희가 급히 전화를 끊고 휠체어로 돌아가는 장면",
+      "location": "nursing home 1st floor",
+      "time": "daytime",
+      "characters": ["최영희"],
+      "emotion": "urgency, relief",
+      "action": "hanging up, moving",
+      "main_prompt": "masterpiece, best quality, photorealistic, tense scene, elderly woman hastily returning to wheelchair after urgent call, just in time escape, close call moment, adrenaline",
+      "character_prompts": {
+        "최영희": "60 year old Korean woman, quickly sitting back in wheelchair, composing vacant expression just as nurse returns, heart pounding, narrow escape"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/2막/09화/s09_전화끊기",
+      "filename_prefix": "2막_09화_s09"
+    },
+    {
+      "scene_id": "s10",
+      "scene_name": "nurse_returns",
+      "description": "간호사가 돌아와 영희에게 말을 거는 장면",
+      "location": "nursing home 1st floor bathroom area",
+      "time": "daytime",
+      "characters": ["최영희"],
+      "emotion": "acting, relief",
+      "action": "responding",
+      "main_prompt": "masterpiece, best quality, photorealistic, nursing home scene, elderly woman back in wheelchair, nurse returning to check on patient, successful deception, relief hidden behind vacant expression",
+      "character_prompts": {
+        "최영희": "60 year old Korean woman, wheelchair, perfectly composed vacant expression, responding to nurse with mumbled words, mission accomplished"
+      },
+      "regional_settings": null,
+      "output_folder": "scenes/2막/09화/s10_간호사귀환",
+      "filename_prefix": "2막_09화_s10"
+    },
+    {
+      "scene_id": "s11",
+      "scene_name": "room302_report",
+      "description": "302호로 돌아온 영희가 '연결됐어'라고 말하는 장면",
+      "location": "room 302",
+      "time": "daytime",
+      "characters": ["최영희", "한정숙", "이말자", "강순덕"],
+      "emotion": "triumph, hope",
+      "action": "reporting",
+      "main_prompt": "masterpiece, best quality, photorealistic, nursing home room, elderly woman announcing successful contact to three companions, triumph moment, connected to outside world, hopeful atmosphere",
+      "character_prompts": {
+        "최영희": "60 year old Korean woman, proud smile, announcing success, connected expression",
+        "한정숙": "57 year old Korean woman, relieved grateful expression, reaching out to hold hands",
+        "이말자": "53 year old Korean woman, approving nod, plan working",
+        "강순덕": "55 year old Korean woman, excited celebratory expression"
+      },
+      "regional_settings": {
+        "최영희": {"start": 0, "end": 30},
+        "한정숙": {"start": 25, "end": 50},
+        "이말자": {"start": 45, "end": 70},
+        "강순덕": {"start": 65, "end": 100}
+      },
+      "output_folder": "scenes/2막/09화/s11_연결성공",
+      "filename_prefix": "2막_09화_s11"
+    },
+    {
+      "scene_id": "s12",
+      "scene_name": "holding_hands",
+      "description": "정숙이 영희의 손을 잡으며 '고마워'라고 말하는 장면",
+      "location": "room 302",
+      "time": "daytime",
+      "characters": ["한정숙", "최영희"],
+      "emotion": "gratitude, friendship",
+      "action": "holding hands",
+      "main_prompt": "masterpiece, best quality, photorealistic, close-up, two elderly women holding hands, emotional gratitude moment, friendship and alliance, warm lighting, touching scene",
+      "character_prompts": {
+        "한정숙": "57 year old Korean woman, grateful tearful expression, holding friend's hand tightly, thank you expression",
+        "최영희": "60 year old Korean woman, warm smile, this is just the beginning expression, squeezing back"
+      },
+      "regional_settings": {
+        "한정숙": {"start": 0, "end": 55},
+        "최영희": {"start": 45, "end": 100},
+        "overlap": 10
+      },
+      "output_folder": "scenes/2막/09화/s12_손잡기",
+      "filename_prefix": "2막_09화_s12"
+    }
+  ]
+}
