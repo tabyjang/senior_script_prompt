@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 프로젝트 뷰어/에디터 - 메인 진입점
-모듈화된 안전하고 튼튼한 구조로 재작성된 버전
+prompts 폴더 기반 프로젝트 선택 시스템
 """
 
 import os
@@ -14,7 +14,6 @@ os.environ['TF_ENABLE_ONEDNN_OPTS'] = '0'
 import tkinter as tk
 from pathlib import Path
 import argparse
-from tkinter import filedialog, messagebox
 
 # 드래그 앤 드롭 지원
 try:
@@ -32,93 +31,63 @@ from services.content_generator import ContentGenerator
 from gui.main_window import MainWindow
 
 
+def find_prompts_folder() -> Path:
+    """prompts 폴더 찾기"""
+    # 현재 스크립트 위치 기준으로 prompts 폴더 찾기
+    current_file = Path(__file__).resolve()
+    current_dir = current_file.parent
+
+    # 1. 현재 폴더에 prompts가 있는 경우
+    prompts_here = current_dir / "prompts"
+    if prompts_here.exists():
+        return prompts_here
+
+    # 2. 상위 폴더에서 찾기
+    for parent in current_dir.parents:
+        prompts_in_parent = parent / "prompts"
+        if prompts_in_parent.exists():
+            return prompts_in_parent
+
+    # 3. 현재 작업 디렉토리에서 찾기
+    cwd_prompts = Path.cwd() / "prompts"
+    if cwd_prompts.exists():
+        return cwd_prompts
+
+    # 찾지 못하면 현재 폴더에 prompts 폴더 생성
+    prompts_here.mkdir(parents=True, exist_ok=True)
+    return prompts_here
+
+
 def main():
     """메인 함수"""
     # 명령줄 인자 파싱
-    parser = argparse.ArgumentParser(description="프로젝트 뷰어/에디터")
+    parser = argparse.ArgumentParser(description="시니어 콘텐츠 에디터")
     parser.add_argument(
-        '--project',
+        '--prompts',
         default=None,
-        help='프로젝트 경로 (지정하지 않으면 마지막 프로젝트 또는 기본값 사용)'
+        help='prompts 폴더 경로 (지정하지 않으면 자동 탐색)'
     )
     args = parser.parse_args()
 
     # 설정 관리자 생성
     config_manager = ConfigManager()
 
-    # 프로젝트 경로 결정
-    project_path = None
-    
-    # 1. 명령줄 인자로 프로젝트 경로가 지정된 경우
-    if args.project:
-        project_path = Path(args.project)
+    # prompts 폴더 경로 결정
+    if args.prompts:
+        prompts_path = Path(args.prompts)
     else:
-        # 2. 설정 파일에서 마지막 프로젝트 경로 읽기
-        last_project_path = config_manager.get_last_project_path()
-        if last_project_path:
-            last_path = Path(last_project_path)
-            if last_path.exists() and (last_path / "synopsis.json").exists():
-                project_path = last_path
-                print(f"[프로젝트 로드] 마지막 프로젝트 자동 로드: {project_path}")
-    
-    # 3. 프로젝트 경로가 없거나 유효하지 않은 경우 기본값 사용
-    # 3. 프로젝트 경로가 없거나 유효하지 않은 경우:
-    #    더 이상 임의의 기본 폴더로 저장하지 않고, 사용자가 프로젝트 폴더를 선택하도록 강제
-    if project_path is None or not project_path.exists():
-        # Tk 초기화(폴더 선택 다이얼로그용)
-        picker_root = tk.Tk()
-        picker_root.withdraw()
-        picker_root.update_idletasks()
+        prompts_path = find_prompts_folder()
 
-        messagebox.showinfo(
-            "프로젝트 선택",
-            "작업할 프로젝트 폴더를 선택해주세요.\n\n"
-            "선택한 폴더 안에서만 저장/로딩이 수행됩니다."
-        )
+    print(f"[시작] prompts 폴더: {prompts_path}")
 
-        # 처음 폴더 로딩 시 기본 위치를 01_man 폴더로 설정
-        initial_dir = None
-        try:
-            last_project_path = config_manager.get_last_project_path()
-            if last_project_path and Path(last_project_path).exists():
-                # 마지막 프로젝트가 있으면 그 부모(대개 01_man)로
-                initial_dir = str(Path(last_project_path).resolve().parent)
-        except Exception:
-            initial_dir = None
-
-        if not initial_dir:
-            try:
-                # editors_app/main.py 기준: .../01_man/editors_app/main.py -> parent of editors_app is 01_man
-                candidate = Path(__file__).resolve().parent.parent
-                if candidate.exists():
-                    initial_dir = str(candidate)
-            except Exception:
-                initial_dir = None
-
-        selected_dir = filedialog.askdirectory(
-            title="프로젝트 폴더 선택",
-            initialdir=initial_dir
-        )
-        picker_root.destroy()
-
-        if not selected_dir:
-            print("[프로젝트 로드] 프로젝트 선택이 취소되었습니다. 종료합니다.")
-            return
-
-        project_path = Path(selected_dir)
-        print(f"[프로젝트 로드] 사용자 선택 프로젝트: {project_path}")
-        # 다음 실행을 위해 저장
-        config_manager.set_last_project_path(str(project_path))
-    
-    # 프로젝트 경로를 절대 경로로 변환
-    if not project_path.is_absolute():
-        project_path = (Path(os.getcwd()) / project_path).resolve()
+    # 초기 프로젝트 경로 (빈 경로로 시작, MainWindow에서 선택)
+    initial_project_path = prompts_path
 
     # 프로젝트 데이터 모델 생성
-    project_data = ProjectData(str(project_path))
+    project_data = ProjectData(str(initial_project_path))
 
     # 파일 서비스 생성
-    file_service = FileService(project_path)
+    file_service = FileService(initial_project_path)
 
     # LLM 서비스 생성
     llm_service = LLMService(config_manager)
@@ -135,7 +104,7 @@ def main():
     # 메인 윈도우 생성
     app = MainWindow(
         root,
-        project_path,
+        prompts_path,  # prompts 폴더 경로 전달
         config_manager,
         project_data,
         file_service,

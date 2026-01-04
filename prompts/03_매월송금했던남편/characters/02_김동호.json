@@ -1,0 +1,116 @@
+{
+  "metadata": {
+    "work_title": "마지막송금",
+    "character_name": "김동호",
+    "created_at": "2026-01-04",
+    "total_versions": 12
+  },
+  "character_info": {
+    "name": "김동호",
+    "real_age": 65,
+    "prompt_age": 50,
+    "gender": "male",
+    "role": "husband",
+    "personality": ["성실함", "과묵함", "깊은 죄책감"],
+    "appearance": ["진중한 인상", "깊은 눈빛", "근심 어린 얼굴"],
+    "symbolic_item": "손목시계, 일기장"
+  },
+  "versions": [
+    {
+      "version_id": "v01",
+      "version_name": "기본_정면",
+      "description": "캐릭터 소개용 기본 이미지",
+      "positive": "masterpiece, best quality, photorealistic, 8k uhd, medium shot, front view, eye level, 50 year old Korean man, solemn face, deep brown eyes, short gray-streaked hair neatly combed, serious expression, wearing neat dress shirt, wristwatch visible, standing straight, hands at sides, neutral gray background, soft studio lighting, muted color tone",
+      "output_folder": "characters/김동호/v01_기본",
+      "filename_prefix": "김동호_v01_기본"
+    },
+    {
+      "version_id": "v02",
+      "version_name": "일상_아침",
+      "description": "아침 식탁 일상",
+      "positive": "masterpiece, best quality, photorealistic, 8k uhd, medium shot, morning scene, 50 year old Korean man, gentle smile, reading newspaper, short gray-streaked hair, relaxed expression, wearing comfortable home clothes, reading glasses, sitting at breakfast table, coffee cup nearby, cozy kitchen background, warm morning light",
+      "output_folder": "characters/김동호/v02_일상",
+      "filename_prefix": "김동호_v02_일상"
+    },
+    {
+      "version_id": "v03",
+      "version_name": "산책_과묵",
+      "description": "저녁 산책 과묵한 모습",
+      "positive": "masterpiece, best quality, photorealistic, 8k uhd, full shot, evening walk, 50 year old Korean man, pensive expression, distant gaze, short gray hair, wearing casual jacket, walking alone, hands in pockets, contemplative posture, park pathway, golden hour lighting, melancholic atmosphere",
+      "output_folder": "characters/김동호/v03_산책",
+      "filename_prefix": "김동호_v03_산책"
+    },
+    {
+      "version_id": "v04",
+      "version_name": "속죄_술",
+      "description": "혼자 술 마시며 비밀의 무게",
+      "positive": "masterpiece, best quality, photorealistic, 8k uhd, medium shot, emotional scene, 50 year old Korean man, tearful expression, guilt-ridden face, reddened eyes, trembling chin, deep sorrow, wearing home clothes, sitting alone, holding soju glass, dim study room, single lamp light, lonely atmosphere, weight of secret visible",
+      "output_folder": "characters/김동호/v04_속죄",
+      "filename_prefix": "김동호_v04_속죄"
+    },
+    {
+      "version_id": "v05",
+      "version_name": "젊은시절_사고",
+      "description": "회상 - 사고 직후 젊은 시절",
+      "positive": "masterpiece, best quality, photorealistic, 8k uhd, medium shot, flashback scene, 35 year old Korean man, devastated expression, shock and guilt, dark hair, pale face, trembling, wearing disheveled clothes, police station background, head in hands, crying, dramatic lighting, vintage photo filter, memory sequence",
+      "output_folder": "characters/김동호/v05_젊은시절",
+      "filename_prefix": "김동호_v05_젊은시절"
+    },
+    {
+      "version_id": "v06",
+      "version_name": "서랍잠금",
+      "description": "서랍 잠그기 떡밥 장면",
+      "positive": "masterpiece, best quality, photorealistic, 8k uhd, close-up shot, subtle scene, 50 year old Korean man, guarded expression, careful movement, short gray hair, wearing home clothes, locking desk drawer, secretive gesture, study room, evening light, mysterious atmosphere",
+      "output_folder": "characters/김동호/v06_서랍",
+      "filename_prefix": "김동호_v06_서랍"
+    },
+    {
+      "version_id": "v07",
+      "version_name": "부부_평화",
+      "description": "부부 함께 평화로운 순간",
+      "positive": "masterpiece, best quality, photorealistic, 8k uhd, medium shot, couple scene, 50 year old Korean man, warm smile, loving gaze, short gray-streaked hair, neat casual clothes, sitting next to wife, holding hands gently, living room sofa, warm evening light, peaceful atmosphere",
+      "output_folder": "characters/김동호/v07_부부",
+      "filename_prefix": "김동호_v07_부부"
+    },
+    {
+      "version_id": "v08",
+      "version_name": "영정사진",
+      "description": "영정 사진용",
+      "positive": "masterpiece, best quality, photorealistic, 8k uhd, portrait shot, memorial photo style, 50 year old Korean man, serene gentle smile, short gray-streaked hair neatly styled, wearing formal suit, tie, dignified appearance, neutral background, soft studio lighting, portrait quality, timeless memorial image",
+      "output_folder": "characters/김동호/v08_영정",
+      "filename_prefix": "김동호_v08_영정"
+    },
+    {
+      "version_id": "v09",
+      "version_name": "송금",
+      "description": "송금하는 모습 상상/회상",
+      "positive": "masterpiece, best quality, photorealistic, 8k uhd, medium shot, bank scene, 50 year old Korean man, solemn expression, determined look, short gray hair, wearing neat clothes, filling out bank form, pen in hand, bank interior, bright fluorescent light, routine guilt",
+      "output_folder": "characters/김동호/v09_송금",
+      "filename_prefix": "김동호_v09_송금"
+    },
+    {
+      "version_id": "v10",
+      "version_name": "일기쓰기",
+      "description": "일기 쓰는 모습",
+      "positive": "masterpiece, best quality, photorealistic, 8k uhd, close-up shot, intimate scene, 50 year old Korean man, pensive expression, writing, short gray hair, reading glasses on, writing in diary, alone at desk, study room, warm desk lamp, late night atmosphere",
+      "output_folder": "characters/김동호/v10_일기",
+      "filename_prefix": "김동호_v10_일기"
+    },
+    {
+      "version_id": "v11",
+      "version_name": "결혼식_젊은",
+      "description": "회상 - 결혼식 젊은 모습",
+      "positive": "masterpiece, best quality, photorealistic, 8k uhd, medium shot, wedding scene, 32 year old Korean man, happy smile, proud expression, dark hair, wearing traditional hanbok or suit, standing with bride, holding hands, wedding venue, bright joyful lighting, hopeful atmosphere",
+      "output_folder": "characters/김동호/v11_결혼식",
+      "filename_prefix": "김동호_v11_결혼식"
+    },
+    {
+      "version_id": "v12",
+      "version_name": "사고현장",
+      "description": "회상 - 사고 현장",
+      "positive": "masterpiece, best quality, photorealistic, 8k uhd, dramatic shot, accident aftermath, 30 year old Korean man, horrified expression, covered in blood, dark disheveled hair, shaking, crying, kneeling on road, car accident background, night scene, flashing lights, traumatic moment, sepia tone, memory flashback effect",
+      "output_folder": "characters/김동호/v12_사고",
+      "filename_prefix": "김동호_v12_사고"
+    }
+  ]
+}

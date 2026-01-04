@@ -1,0 +1,136 @@
+{
+  "metadata": {
+    "work_title": "마지막송금",
+    "project_folder": "03_매월송금했던남편",
+    "created_at": "2026-01-04",
+    "total_acts": 4,
+    "total_episodes": 12,
+    "total_scenes": 98
+  },
+  "structure": {
+    "acts": [
+      {
+        "act_id": "1막",
+        "act_title": "일상의 붕괴",
+        "episodes": [
+          {
+            "episode": 1,
+            "title": "갑작스러운 이별",
+            "scenes": 8,
+            "emotion": "평화 → 충격, 슬픔",
+            "json_file": "scenes/1막_일상의붕괴/EP01_갑작스러운이별.json"
+          },
+          {
+            "episode": 2,
+            "title": "텅 빈 집",
+            "scenes": 8,
+            "emotion": "슬픔, 공허, 그리움",
+            "json_file": "scenes/1막_일상의붕괴/EP02_텅빈집.json"
+          },
+          {
+            "episode": 3,
+            "title": "서랍 속 비밀",
+            "scenes": 10,
+            "emotion": "평온 → 충격, 분노",
+            "json_file": "scenes/1막_일상의붕괴/EP03_서랍속비밀.json"
+          }
+        ]
+      },
+      {
+        "act_id": "2막 전반",
+        "act_title": "추적과 의심",
+        "episodes": [
+          {
+            "episode": 4,
+            "title": "30년의 기록",
+            "scenes": 7,
+            "emotion": "배신감, 분노",
+            "json_file": "scenes/2막전반_추적과의심/EP04_30년의기록.json"
+          },
+          {
+            "episode": 5,
+            "title": "옥자의 수사",
+            "scenes": 7,
+            "emotion": "긴장, 복수심, 유머",
+            "json_file": "scenes/2막전반_추적과의심/EP05_옥자의수사.json"
+          },
+          {
+            "episode": 6,
+            "title": "그 여자를 찾아서",
+            "scenes": 8,
+            "emotion": "결의, 두려움",
+            "json_file": "scenes/2막전반_추적과의심/EP06_그여자를찾아서.json"
+          }
+        ]
+      },
+      {
+        "act_id": "2막 후반",
+        "act_title": "진실의 문",
+        "episodes": [
+          {
+            "episode": 7,
+            "title": "허름한 분식집",
+            "scenes": 8,
+            "emotion": "혼란, 동요",
+            "json_file": "scenes/2막후반_진실의문/EP07_허름한분식집.json"
+          },
+          {
+            "episode": 8,
+            "title": "은인이라 불린 남자",
+            "scenes": 7,
+            "emotion": "충격, 분노, 혼란",
+            "json_file": "scenes/2막후반_진실의문/EP08_은인이라불린남자.json"
+          },
+          {
+            "episode": 9,
+            "title": "35년 전 그날",
+            "scenes": 8,
+            "emotion": "충격, 슬픔 (감정 최고조)",
+            "json_file": "scenes/2막후반_진실의문/EP09_35년전그날.json"
+          }
+        ]
+      },
+      {
+        "act_id": "3막",
+        "act_title": "이해와 용서",
+        "episodes": [
+          {
+            "episode": 10,
+            "title": "평생의 짐",
+            "scenes": 8,
+            "emotion": "이해, 슬픔",
+            "json_file": "scenes/3막_이해와용서/EP10_평생의짐.json"
+          },
+          {
+            "episode": 11,
+            "title": "남편의 일기",
+            "scenes": 8,
+            "emotion": "오열, 용서",
+            "json_file": "scenes/3막_이해와용서/EP11_남편의일기.json"
+          },
+          {
+            "episode": 12,
+            "title": "마지막 송금",
+            "scenes": 11,
+            "emotion": "감동, 희망, 여운",
+            "json_file": "scenes/3막_이해와용서/EP12_마지막송금.json"
+          }
+        ]
+      }
+    ]
+  },
+  "main_characters": ["박순애", "김동호", "김미영", "한옥자"],
+  "supporting_characters": ["박준호", "이수진", "김영수"],
+  "key_locations": [
+    {"location": "순애 집", "episodes": [1, 2, 3, 4, 5, 6, 11, 12]},
+    {"location": "미영분식집", "episodes": [7, 8, 9, 10, 12]},
+    {"location": "장례식장", "episodes": [1, 2]},
+    {"location": "병원", "episodes": [1]}
+  ],
+  "emotional_arc": {
+    "1막": "일상 → 충격 → 배신감",
+    "2막전반": "분노 → 추적 → 대면",
+    "2막후반": "혼란 → 진실 → 충격",
+    "3막": "이해 → 용서 → 화해"
+  }
+}

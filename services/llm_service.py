@@ -1,33 +1,52 @@
 """
 LLM 서비스
 Gemini, OpenAI, Anthropic API 호출을 통합 관리합니다.
+Lazy Import 방식으로 프로그램 시작 시간 최적화
 """
 
 import os
 from typing import Optional
 
-# LLM 관련 import (선택적)
-GEMINI_AVAILABLE = False
-OPENAI_AVAILABLE = False
-ANTHROPIC_AVAILABLE = False
+# LLM 모듈 참조 (lazy import)
+_genai = None
+_openai = None
+_anthropic = None
 
-try:
-    import google.generativeai as genai
-    GEMINI_AVAILABLE = True
-except ImportError:
-    pass
 
-try:
-    import openai
-    OPENAI_AVAILABLE = True
-except ImportError:
-    pass
+def _import_genai():
+    """google.generativeai lazy import"""
+    global _genai
+    if _genai is None:
+        try:
+            import google.generativeai as genai
+            _genai = genai
+        except ImportError:
+            _genai = False
+    return _genai if _genai is not False else None
 
-try:
-    import anthropic
-    ANTHROPIC_AVAILABLE = True
-except ImportError:
-    pass
+
+def _import_openai():
+    """openai lazy import"""
+    global _openai
+    if _openai is None:
+        try:
+            import openai
+            _openai = openai
+        except ImportError:
+            _openai = False
+    return _openai if _openai is not False else None
+
+
+def _import_anthropic():
+    """anthropic lazy import"""
+    global _anthropic
+    if _anthropic is None:
+        try:
+            import anthropic
+            _anthropic = anthropic
+        except ImportError:
+            _anthropic = False
+    return _anthropic if _anthropic is not False else None
 
 
 class LLMService:
@@ -64,7 +83,8 @@ class LLMService:
 
     def _call_gemini(self, prompt: str, system_prompt: str = None) -> Optional[str]:
         """Gemini API 호출"""
-        if not GEMINI_AVAILABLE:
+        genai = _import_genai()
+        if genai is None:
             raise ImportError("google-generativeai 패키지가 설치되지 않았습니다.\n설치: pip install google-generativeai")
 
         api_key = self.config.get("api_key", "").strip()
@@ -106,7 +126,8 @@ class LLMService:
 
     def _call_openai(self, prompt: str, system_prompt: str = None) -> Optional[str]:
         """OpenAI API 호출"""
-        if not OPENAI_AVAILABLE:
+        openai = _import_openai()
+        if openai is None:
             raise ImportError("openai 패키지가 설치되지 않았습니다.\n설치: pip install openai")
 
         api_key = self.config.get("openai_api_key", "").strip()
@@ -158,7 +179,8 @@ class LLMService:
 
     def _call_anthropic(self, prompt: str, system_prompt: str = None) -> Optional[str]:
         """Anthropic API 호출"""
-        if not ANTHROPIC_AVAILABLE:
+        anthropic = _import_anthropic()
+        if anthropic is None:
             raise ImportError("anthropic 패키지가 설치되지 않았습니다.\n설치: pip install anthropic")
 
         api_key = self.config.get("anthropic_api_key", "").strip()
@@ -200,9 +222,9 @@ class LLMService:
             사용 가능 여부
         """
         if provider == "gemini":
-            return GEMINI_AVAILABLE
+            return _import_genai() is not None
         elif provider == "openai":
-            return OPENAI_AVAILABLE
+            return _import_openai() is not None
         elif provider == "anthropic":
-            return ANTHROPIC_AVAILABLE
+            return _import_anthropic() is not None
         return False

@@ -1,0 +1,161 @@
+{
+  "metadata": {
+    "work_title": "마지막송금",
+    "act": "2막 전반",
+    "act_title": "추적과 의심",
+    "episode": 4,
+    "episode_title": "30년의 기록",
+    "created_at": "2026-01-04",
+    "total_scenes": 7
+  },
+  "episode_info": {
+    "main_locations": ["집 식탁", "거실"],
+    "characters": ["박순애", "한옥자"],
+    "core_emotion": "배신감, 분노"
+  },
+  "scenes": [
+    {
+      "scene_id": "s01",
+      "scene_name": "밤새 통장 들여다보기",
+      "location": "집 식탁",
+      "time": "심야",
+      "characters": ["순애"],
+      "emotion": "집착, 고통",
+      "action": "통장 분석",
+      "main_prompt": "masterpiece, best quality, photorealistic, 1woman, sleepless night, kitchen table, single lamp light, obsessive examination",
+      "character_prompts": [
+        {
+          "character": "순애",
+          "region": "full",
+          "positive": "48 year old Korean woman, exhausted haunted expression, disheveled hair, dark circles under eyes, poring over bankbook pages, kitchen table covered with papers, midnight darkness around"
+        }
+      ],
+      "output_folder": "scenes/2막전반/04화/s01_밤새분석",
+      "filename_prefix": "EP04_s01_밤새분석"
+    },
+    {
+      "scene_id": "s02",
+      "scene_name": "계산기로 금액 계산",
+      "location": "집 식탁",
+      "time": "새벽",
+      "characters": ["순애"],
+      "emotion": "충격, 분노",
+      "action": "총액 계산",
+      "main_prompt": "masterpiece, best quality, photorealistic, close-up shot, calculator scene, shocking total, early morning light, devastating math",
+      "character_prompts": [
+        {
+          "character": "순애",
+          "region": "full",
+          "positive": "48 year old Korean woman, disbelief expression, trembling fingers on calculator, staring at display showing large number, 2억 5천만원 realization"
+        }
+      ],
+      "output_folder": "scenes/2막전반/04화/s02_계산",
+      "filename_prefix": "EP04_s02_계산"
+    },
+    {
+      "scene_id": "s03",
+      "scene_name": "옥자에게 전화",
+      "location": "집 거실",
+      "time": "아침",
+      "characters": ["순애"],
+      "emotion": "절박함, 분노",
+      "action": "친구 호출",
+      "main_prompt": "masterpiece, best quality, photorealistic, 1woman, urgent phone call, morning desperation, living room, natural morning light",
+      "character_prompts": [
+        {
+          "character": "순애",
+          "region": "full",
+          "positive": "48 year old Korean woman, desperate expression, holding phone, speaking urgently, still in yesterday clothes, uncombed hair, pleading friend to come quickly"
+        }
+      ],
+      "output_folder": "scenes/2막전반/04화/s03_전화",
+      "filename_prefix": "EP04_s03_전화"
+    },
+    {
+      "scene_id": "s04",
+      "scene_name": "옥자 도착 - 충격 반응",
+      "location": "집 현관/식탁",
+      "time": "오전",
+      "characters": ["순애", "옥자"],
+      "emotion": "충격, 분노 공유",
+      "action": "통장 보여주기",
+      "main_prompt": "masterpiece, best quality, photorealistic, 2women, shocking revelation, kitchen table, morning light, disbelief shared",
+      "character_prompts": [
+        {
+          "character": "순애",
+          "region": "0-45%",
+          "positive": "48 year old Korean woman, exhausted bitter expression, showing bankbook, pointing at entries, betrayed wife posture"
+        },
+        {
+          "character": "옥자",
+          "region": "55-100%",
+          "positive": "49 year old Korean woman, jaw dropped, shocked, reading bankbook, hand over mouth, wide eyes, disbelief expression"
+        }
+      ],
+      "output_folder": "scenes/2막전반/04화/s04_옥자충격",
+      "filename_prefix": "EP04_s04_옥자충격"
+    },
+    {
+      "scene_id": "s05",
+      "scene_name": "30년을 바보로 산 거야",
+      "location": "집 식탁",
+      "time": "오전",
+      "characters": ["순애"],
+      "emotion": "자괴감, 분노",
+      "action": "감정 폭발",
+      "main_prompt": "masterpiece, best quality, photorealistic, 2women, emotional outburst, kitchen, intense moment, raw emotion",
+      "character_prompts": [
+        {
+          "character": "순애",
+          "region": "full",
+          "positive": "48 year old Korean woman, crying with rage, pounding table, anguished expression, feeling foolish and betrayed, years of trust shattered"
+        }
+      ],
+      "output_folder": "scenes/2막전반/04화/s05_감정폭발",
+      "filename_prefix": "EP04_s05_감정폭발"
+    },
+    {
+      "scene_id": "s06",
+      "scene_name": "옥자 내가 계산기 좀",
+      "location": "집 식탁",
+      "time": "오전",
+      "characters": ["옥자"],
+      "emotion": "유머, 현실적",
+      "action": "계산기 들기",
+      "main_prompt": "masterpiece, best quality, photorealistic, 1woman, comic relief moment, practical friend, kitchen table, slight humor in tragedy",
+      "character_prompts": [
+        {
+          "character": "옥자",
+          "region": "full",
+          "positive": "49 year old Korean woman, serious but practical expression, holding calculator, doing math, muttering about total amount, real estate agent instincts kicking in"
+        }
+      ],
+      "output_folder": "scenes/2막전반/04화/s06_계산기유머",
+      "filename_prefix": "EP04_s06_계산기유머"
+    },
+    {
+      "scene_id": "s07",
+      "scene_name": "두 여자 심각하게 논의",
+      "location": "집 거실",
+      "time": "낮",
+      "characters": ["순애", "옥자"],
+      "emotion": "결의, 분노",
+      "action": "대책 논의",
+      "main_prompt": "masterpiece, best quality, photorealistic, 2women, serious discussion, living room, afternoon light, planning confrontation",
+      "character_prompts": [
+        {
+          "character": "순애",
+          "region": "0-45%",
+          "positive": "48 year old Korean woman, determined expression, sitting forward, intense eyes, planning to find this woman"
+        },
+        {
+          "character": "옥자",
+          "region": "55-100%",
+          "positive": "49 year old Korean woman, supportive fierce expression, nodding agreement, ready to help, friend united in mission"
+        }
+      ],
+      "output_folder": "scenes/2막전반/04화/s07_대책논의",
+      "filename_prefix": "EP04_s07_대책논의"
+    }
+  ]
+}

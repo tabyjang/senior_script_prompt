@@ -1,13 +1,14 @@
 """
 메인 윈도우
 프로젝트 뷰어/에디터의 메인 GUI 윈도우입니다.
+prompts 폴더 기반 프로젝트 선택 시스템
 """
 
 import tkinter as tk
 from tkinter import ttk, messagebox, filedialog
 from pathlib import Path
 
-# 탭들 import (7개로 간소화)
+# 탭들 import
 from gui.tabs.synopsis_input_tab import SynopsisInputTab
 from gui.tabs.image_generation_tab import ImageGenerationTab
 from gui.tabs.chapter_details_input_tab import ChapterDetailsInputTab
@@ -32,21 +33,27 @@ class MainWindow:
         """
         Args:
             root: Tkinter root
-            project_path: 프로젝트 경로
+            project_path: 프로젝트 경로 (prompts 폴더)
             config_manager: ConfigManager 인스턴스
             project_data: ProjectData 인스턴스
             file_service: FileService 인스턴스
             content_generator: ContentGenerator 인스턴스
         """
         self.root = root
-        self.project_path = project_path
+        self.prompts_path = self._find_prompts_folder(project_path)
+        self.project_path = None  # 선택된 프로젝트 경로
         self.config = config_manager
         self.project_data = project_data
         self.file_service = file_service
         self.content_generator = content_generator
 
+        # 프로젝트 목록
+        self.project_list = []
+        self.project_var = None
+        self.project_combo = None
+
         # 윈도우 설정
-        self.root.title("프로젝트 뷰어/에디터")
+        self.root.title("시니어 콘텐츠 에디터")
         self._setup_window()
 
         # 메뉴바 생성
@@ -58,11 +65,47 @@ class MainWindow:
         # 상태바 생성
         self._create_statusbar()
 
-        # 데이터 로드
-        self._load_project_data()
+        # 프로젝트 목록 로드
+        self._load_project_list()
 
         # 탭들 초기화
         self._initialize_tabs()
+
+        # 마지막 프로젝트 자동 선택
+        self._select_last_project()
+
+    def _find_prompts_folder(self, project_path: Path) -> Path:
+        """prompts 폴더 찾기"""
+        if project_path is None:
+            # 기본 경로 시도
+            default_paths = [
+                Path(__file__).parent.parent / "prompts",
+                Path.cwd() / "prompts",
+            ]
+            for p in default_paths:
+                if p.exists():
+                    return p
+            return Path(__file__).parent.parent / "prompts"
+
+        # project_path가 prompts 폴더인 경우
+        if project_path.name == "prompts" and project_path.exists():
+            return project_path
+
+        # project_path 내에 prompts 폴더가 있는 경우
+        prompts_in_path = project_path / "prompts"
+        if prompts_in_path.exists():
+            return prompts_in_path
+
+        # project_path의 상위 폴더에서 prompts 찾기
+        parent = project_path.parent
+        for _ in range(3):  # 최대 3단계 상위까지
+            prompts_in_parent = parent / "prompts"
+            if prompts_in_parent.exists():
+                return prompts_in_parent
+            parent = parent.parent
+
+        # 찾지 못하면 기본값
+        return Path(__file__).parent.parent / "prompts"
 
     def _setup_window(self):
         """윈도우 설정"""
@@ -82,7 +125,7 @@ class MainWindow:
         # 파일 메뉴
         file_menu = tk.Menu(menubar, tearoff=0)
         menubar.add_cascade(label="파일", menu=file_menu)
-        file_menu.add_command(label="프로젝트 열기...", command=self._open_project)
+        file_menu.add_command(label="새로고침", command=self._refresh_project_list, accelerator="F5")
         file_menu.add_separator()
         file_menu.add_command(label="저장", command=self._save_all, accelerator="Ctrl+S")
         file_menu.add_separator()
@@ -100,6 +143,7 @@ class MainWindow:
 
         # 단축키
         self.root.bind('<Control-s>', lambda e: self._save_all())
+        self.root.bind('<F5>', lambda e: self._refresh_project_list())
 
     def _create_main_frame(self):
         """메인 프레임 생성"""
@@ -114,29 +158,42 @@ class MainWindow:
         # 상단 툴바
         toolbar = ttk.Frame(main_frame)
         toolbar.grid(row=0, column=0, columnspan=2, sticky=(tk.W, tk.E), pady=(0, 10))
-        toolbar.columnconfigure(0, weight=1)
+        toolbar.columnconfigure(1, weight=1)
 
-        # 프로젝트 표시(왼쪽) - 현재 작업 폴더명/경로를 항상 보여줌
-        self.project_title_var = tk.StringVar(value="")
-        project_title = ttk.Label(
-            toolbar,
-            textvariable=self.project_title_var,
+        # 프로젝트 선택 영역
+        project_frame = ttk.Frame(toolbar)
+        project_frame.grid(row=0, column=0, sticky=tk.W)
+
+        ttk.Label(
+            project_frame,
+            text="프로젝트:",
             font=("맑은 고딕", 11, "bold")
+        ).pack(side=tk.LEFT, padx=(5, 10))
+
+        # 프로젝트 드롭다운
+        self.project_var = tk.StringVar()
+        self.project_combo = ttk.Combobox(
+            project_frame,
+            textvariable=self.project_var,
+            width=50,
+            state='readonly',
+            font=("맑은 고딕", 10)
         )
-        project_title.grid(row=0, column=0, sticky=tk.W, padx=(5, 10))
+        self.project_combo.pack(side=tk.LEFT, padx=5)
+        self.project_combo.bind('<<ComboboxSelected>>', lambda e: self._on_project_selected())
+
+        # 새로고침 버튼
+        refresh_btn = ttk.Button(
+            project_frame,
+            text="🔄",
+            command=self._refresh_project_list,
+            width=3
+        )
+        refresh_btn.pack(side=tk.LEFT, padx=2)
 
         # 버튼 프레임 (오른쪽 정렬)
         button_frame = ttk.Frame(toolbar)
         button_frame.grid(row=0, column=1, sticky=tk.E)
-
-        # 프로젝트 열기 버튼
-        open_project_btn = ttk.Button(
-            button_frame,
-            text="📁 프로젝트 열기",
-            command=self._open_project,
-            width=18
-        )
-        open_project_btn.pack(side=tk.LEFT, padx=(0, 5))
 
         # 설정 버튼
         settings_btn = ttk.Button(button_frame, text="⚙ 설정", command=self._open_settings, width=12)
@@ -149,9 +206,11 @@ class MainWindow:
         self.notebook = ttk.Notebook(main_frame)
         self.notebook.grid(row=1, column=1, sticky=(tk.W, tk.E, tk.N, tk.S))
 
-        # Notebook 탭 헤더 숨기기 (왼쪽 사이드바로 탭 전환)
+        # 메인 Notebook 탭 헤더만 숨기기 (왼쪽 사이드바로 탭 전환)
         style = ttk.Style()
-        style.layout("TNotebook.Tab", [])  # 탭 헤더 제거
+        # 메인 탭용 커스텀 스타일 (헤더 숨김)
+        style.layout("Hidden.TNotebook.Tab", [])
+        self.notebook.configure(style="Hidden.TNotebook")
 
     def _create_sidebar(self, parent):
         """왼쪽 사이드바 생성"""
@@ -191,9 +250,96 @@ class MainWindow:
 
     def _create_statusbar(self):
         """상태바 생성"""
-        self.status_var = tk.StringVar(value="준비")
+        self.status_var = tk.StringVar(value="프로젝트를 선택해주세요")
         statusbar = ttk.Label(self.root, textvariable=self.status_var, relief=tk.SUNKEN)
         statusbar.grid(row=1, column=0, sticky=(tk.W, tk.E))
+
+    def _load_project_list(self):
+        """프로젝트 목록 로드 (prompts 폴더의 하위 폴더들)"""
+        self.project_list = []
+
+        if not self.prompts_path.exists():
+            print(f"[경고] prompts 폴더를 찾을 수 없습니다: {self.prompts_path}")
+            return
+
+        try:
+            # prompts 폴더 내의 하위 폴더들을 프로젝트로 인식
+            for item in sorted(self.prompts_path.iterdir()):
+                if item.is_dir() and not item.name.startswith('.') and not item.name.startswith('_'):
+                    # workflows 같은 특수 폴더 제외
+                    if item.name.lower() not in ['workflows', 'templates', 'temp', 'output']:
+                        self.project_list.append(item.name)
+
+            # 콤보박스 업데이트
+            if self.project_combo:
+                self.project_combo['values'] = self.project_list
+
+        except Exception as e:
+            print(f"프로젝트 목록 로드 오류: {e}")
+
+    def _refresh_project_list(self):
+        """프로젝트 목록 새로고침"""
+        current_selection = self.project_var.get() if self.project_var else None
+        self._load_project_list()
+
+        if current_selection and current_selection in self.project_list:
+            self.project_var.set(current_selection)
+
+        self.status_var.set(f"프로젝트 목록 새로고침 완료 ({len(self.project_list)}개)")
+
+    def _select_last_project(self):
+        """마지막으로 사용한 프로젝트 자동 선택"""
+        last_path = self.config.get_last_project_path()
+
+        if last_path:
+            last_project_name = Path(last_path).name
+            if last_project_name in self.project_list:
+                self.project_var.set(last_project_name)
+                self._on_project_selected()
+                return
+
+        # 마지막 프로젝트가 없으면 첫 번째 프로젝트 선택
+        if self.project_list:
+            self.project_var.set(self.project_list[0])
+            self._on_project_selected()
+
+    def _on_project_selected(self):
+        """프로젝트 선택 시 호출"""
+        selected_project = self.project_var.get()
+        if not selected_project:
+            return
+
+        # 프로젝트 경로 설정
+        self.project_path = self.prompts_path / selected_project
+
+        # 파일 서비스 경로 업데이트
+        self.file_service.project_path = self.project_path
+        self.project_data.project_path = self.project_path
+
+        # 설정에 저장
+        self.config.set_last_project_path(str(self.project_path))
+
+        # 프로젝트 데이터 로드
+        self._load_project_data()
+
+        # 모든 탭에 dirty 플래그 설정 (다음 탭 전환 시 업데이트 필요)
+        if hasattr(self, 'tabs'):
+            for tab in self.tabs.values():
+                tab._needs_update = True
+
+            # 현재 탭만 즉시 업데이트
+            if self.current_tab in self.tabs:
+                try:
+                    self.tabs[self.current_tab].update_display()
+                    self.tabs[self.current_tab]._needs_update = False
+                except Exception as e:
+                    print(f"탭 업데이트 오류: {e}")
+
+        # 상태바 업데이트
+        self.status_var.set(f"프로젝트: {selected_project} | 경로: {self.project_path}")
+
+        # 윈도우 제목 업데이트
+        self.root.title(f"시니어 콘텐츠 에디터 - {selected_project}")
 
     def _initialize_tabs(self):
         """탭들 초기화"""
@@ -210,10 +356,6 @@ class MainWindow:
             'word_converter': WordConverterTab(self.notebook, self.project_data, self.file_service, self.content_generator)
         }
 
-        # 모든 탭 업데이트
-        for tab in self.tabs.values():
-            tab.update_display()
-
     def _switch_tab(self, tab_id):
         """탭 전환"""
         # 이전 탭 버튼 상태 해제
@@ -227,38 +369,34 @@ class MainWindow:
         tab_index = list(self.tabs.keys()).index(tab_id)
         self.notebook.select(tab_index)
 
-        # 탭 업데이트
-        self.tabs[tab_id].update_display()
+        # 탭 업데이트 (dirty 플래그가 있을 때만)
+        tab = self.tabs[tab_id]
+        if getattr(tab, '_needs_update', True):
+            tab.update_display()
+            tab._needs_update = False
 
     def _load_project_data(self):
         """프로젝트 데이터 로드"""
         try:
-            # 프로젝트 폴더 존재 확인
-            if not self.project_path.exists():
-                self.status_var.set(f"프로젝트 폴더가 존재하지 않습니다: {self.project_path}")
+            if self.project_path is None or not self.project_path.exists():
+                self.status_var.set("프로젝트를 선택해주세요")
                 return
 
             # 모든 데이터 로드
             data = self.file_service.load_all_data()
             self.project_data.data = data
-            
+
             # 프로젝트 경로 업데이트
             self.project_data.project_path = self.project_path
-            
+
             # 상태바에 프로젝트 정보 표시
             char_count = len(data.get('characters', []))
-            chapter_count = len(data.get('chapters', []))
-            synopsis_title = data.get('synopsis', {}).get('title', '제목 없음')
             self.status_var.set(
-                f"프로젝트: {synopsis_title} | 캐릭터: {char_count}명, 챕터: {chapter_count}개 | 경로: {self.project_path}"
+                f"프로젝트: {self.project_path.name} | 캐릭터: {char_count}명 | 경로: {self.project_path}"
             )
 
-            # 상단 툴바에 현재 작업 폴더 표시 (폴더명 + 전체 경로)
-            folder_name = self.project_path.name
-            self.project_title_var.set(f"📁 {folder_name}   ({self.project_path})")
         except Exception as e:
             error_msg = f"데이터 로드 실패: {e}"
-            messagebox.showerror("오류", error_msg)
             self.status_var.set(f"오류: {e}")
             print(f"[프로젝트 로드 오류] {error_msg}")
             import traceback
@@ -303,66 +441,6 @@ class MainWindow:
             messagebox.showerror("저장 오류", f"저장 중 오류가 발생했습니다: {e}")
             self.status_var.set(f"저장 오류: {e}")
 
-    def _open_project(self):
-        """프로젝트 열기"""
-        # 초기 디렉토리 설정 (마지막 프로젝트 경로 또는 현재 프로젝트 경로)
-        initial_dir = None
-        last_path = self.config.get_last_project_path()
-        if last_path and Path(last_path).exists():
-            initial_dir = str(Path(last_path).parent)
-        elif self.project_path.exists():
-            initial_dir = str(self.project_path.parent)
-        
-        project_dir = filedialog.askdirectory(
-            title="프로젝트 폴더 선택",
-            initialdir=initial_dir
-        )
-        
-        if project_dir:
-            project_path = Path(project_dir).resolve()
-            
-            # 프로젝트 폴더 유효성 확인 (synopsis.json이 있는지 확인)
-            synopsis_file = project_path / "synopsis.json"
-            if not synopsis_file.exists():
-                # synopsis.json이 없어도 경고만 표시하고 계속 진행
-                response = messagebox.askyesno(
-                    "경고",
-                    f"선택한 폴더에 synopsis.json 파일이 없습니다.\n"
-                    f"계속 진행하시겠습니까?\n\n"
-                    f"경로: {project_path}"
-                )
-                if not response:
-                    return
-            
-            # 프로젝트 경로 업데이트
-            self.project_path = project_path
-            self.file_service.project_path = project_path
-            self.project_data.project_path = project_path
-            
-            # 마지막 프로젝트 경로를 설정 파일에 저장
-            self.config.set_last_project_path(str(project_path))
-            
-            # 데이터 로드
-            self._load_project_data()
-
-            # 모든 탭 업데이트
-            for tab in self.tabs.values():
-                tab.update_display()
-            
-            # 윈도우 제목 업데이트
-            synopsis = self.project_data.get_synopsis()
-            title = synopsis.get('title', '제목 없음') if synopsis else '제목 없음'
-            self.root.title(f"프로젝트 뷰어/에디터 - {title}")
-
-            # 상단 툴바 표시도 갱신
-            try:
-                folder_name = self.project_path.name
-                self.project_title_var.set(f"📁 {folder_name}   ({self.project_path})")
-            except Exception:
-                pass
-            
-            messagebox.showinfo("프로젝트 열기", f"프로젝트를 성공적으로 불러왔습니다.\n\n{project_path}")
-
     def _open_settings(self):
         """설정 창 열기"""
         SettingsDialog(self.root, self.config, self.project_data, self.file_service)
@@ -370,13 +448,15 @@ class MainWindow:
     def _convert_word_to_md(self):
         """Word 파일을 Markdown으로 변환"""
         # 파일 선택 대화상자
+        initial_dir = str(self.project_path) if self.project_path and self.project_path.exists() else None
+
         word_file = filedialog.askopenfilename(
             title="Word 파일 선택",
             filetypes=[
                 ("Word 문서", "*.docx"),
                 ("모든 파일", "*.*")
             ],
-            initialdir=str(self.project_path) if self.project_path.exists() else None
+            initialdir=initial_dir
         )
 
         if not word_file:

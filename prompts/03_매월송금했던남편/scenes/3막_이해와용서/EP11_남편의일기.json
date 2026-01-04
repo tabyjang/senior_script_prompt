@@ -1,0 +1,175 @@
+{
+  "metadata": {
+    "work_title": "마지막송금",
+    "act": "3막",
+    "act_title": "이해와 용서",
+    "episode": 11,
+    "episode_title": "남편의 일기",
+    "created_at": "2026-01-04",
+    "total_scenes": 8
+  },
+  "episode_info": {
+    "main_locations": ["순애 집 서재", "안방"],
+    "characters": ["박순애", "박준호"],
+    "core_emotion": "오열, 용서"
+  },
+  "scenes": [
+    {
+      "scene_id": "s01",
+      "scene_name": "집으로 돌아온 순애",
+      "location": "순애 집 현관",
+      "time": "밤",
+      "characters": ["순애"],
+      "emotion": "혼란, 피로",
+      "action": "귀가",
+      "main_prompt": "masterpiece, best quality, photorealistic, 1woman, returning home, entrance, exhausted emotional, night arrival",
+      "character_prompts": [
+        {
+          "character": "순애",
+          "region": "full",
+          "positive": "48 year old Korean woman, drained expression, taking off shoes slowly, mind full of new information, emotionally exhausted, stumbling inside"
+        }
+      ],
+      "output_folder": "scenes/3막/11화/s01_귀가",
+      "filename_prefix": "EP11_s01_귀가"
+    },
+    {
+      "scene_id": "s02",
+      "scene_name": "서재 다시 뒤지기",
+      "location": "서재",
+      "time": "밤",
+      "characters": ["순애"],
+      "emotion": "결심, 탐색",
+      "action": "서랍 뒤지기",
+      "main_prompt": "masterpiece, best quality, photorealistic, 1woman, searching study, night, desperate search, finding more secrets",
+      "character_prompts": [
+        {
+          "character": "순애",
+          "region": "full",
+          "positive": "48 year old Korean woman, determined expression, going through drawers again, looking for more evidence, needing to understand more"
+        }
+      ],
+      "output_folder": "scenes/3막/11화/s02_서재탐색",
+      "filename_prefix": "EP11_s02_서재탐색"
+    },
+    {
+      "scene_id": "s03",
+      "scene_name": "일기장 발견",
+      "location": "서재",
+      "time": "밤",
+      "characters": ["순애"],
+      "emotion": "발견",
+      "action": "일기장 찾기",
+      "main_prompt": "masterpiece, best quality, photorealistic, 1woman, finding diary, study, crucial discovery, hidden journal",
+      "character_prompts": [
+        {
+          "character": "순애",
+          "region": "full",
+          "positive": "48 year old Korean woman, surprised expression, pulling out old diary from drawer, recognizing husband handwriting, heart pounding"
+        }
+      ],
+      "output_folder": "scenes/3막/11화/s03_일기발견",
+      "filename_prefix": "EP11_s03_일기발견"
+    },
+    {
+      "scene_id": "s04",
+      "scene_name": "일기장 읽기 시작",
+      "location": "서재 (책상 앞)",
+      "time": "밤",
+      "characters": ["순애"],
+      "emotion": "긴장, 두려움",
+      "action": "첫 페이지 열기",
+      "main_prompt": "masterpiece, best quality, photorealistic, 1woman, opening diary, desk, beginning to read, lamp light",
+      "character_prompts": [
+        {
+          "character": "순애",
+          "region": "full",
+          "positive": "48 year old Korean woman, apprehensive expression, opening old diary carefully, beginning to read first entry, single lamp illuminating pages"
+        }
+      ],
+      "output_folder": "scenes/3막/11화/s04_읽기시작",
+      "filename_prefix": "EP11_s04_읽기시작"
+    },
+    {
+      "scene_id": "s05",
+      "scene_name": "일기 내용 - 죄책감",
+      "location": "서재",
+      "time": "밤",
+      "characters": ["순애"],
+      "emotion": "충격",
+      "action": "읽기",
+      "main_prompt": "masterpiece, best quality, photorealistic, close-up shot, reading diary, emotional, husband secret thoughts revealed",
+      "character_prompts": [
+        {
+          "character": "순애",
+          "region": "full",
+          "positive": "48 year old Korean woman, tears beginning, reading husband guilt entries, processing husband inner torment"
+        }
+      ],
+      "output_folder": "scenes/3막/11화/s05_죄책감내용",
+      "filename_prefix": "EP11_s05_죄책감내용"
+    },
+    {
+      "scene_id": "s06",
+      "scene_name": "순애야 미안하다 구절",
+      "location": "서재",
+      "time": "밤",
+      "characters": ["순애"],
+      "emotion": "감정 폭발",
+      "action": "오열 시작",
+      "main_prompt": "masterpiece, best quality, photorealistic, 1woman, emotional breakdown, study, reading apology, sobbing",
+      "character_prompts": [
+        {
+          "character": "순애",
+          "region": "full",
+          "positive": "48 year old Korean woman, sobbing uncontrollably, reading apology passage, hand over mouth, crying loudly, husband love finally understood"
+        }
+      ],
+      "output_folder": "scenes/3막/11화/s06_미안하다",
+      "filename_prefix": "EP11_s06_미안하다"
+    },
+    {
+      "scene_id": "s07",
+      "scene_name": "침대에서 일기 껴안고 오열",
+      "location": "안방 침대",
+      "time": "심야",
+      "characters": ["순애"],
+      "emotion": "완전한 용서",
+      "action": "통곡",
+      "main_prompt": "masterpiece, best quality, photorealistic, 1woman, crying on bed, bedroom, clutching diary, cathartic release",
+      "character_prompts": [
+        {
+          "character": "순애",
+          "region": "full",
+          "positive": "48 year old Korean woman, sobbing on bed, hugging diary to chest, complete emotional release, understanding and forgiving husband"
+        }
+      ],
+      "output_folder": "scenes/3막/11화/s07_침대오열",
+      "filename_prefix": "EP11_s07_침대오열"
+    },
+    {
+      "scene_id": "s08",
+      "scene_name": "준호 등장 - 함께 울음",
+      "location": "안방",
+      "time": "심야",
+      "characters": ["순애", "준호"],
+      "emotion": "가족 슬픔 공유",
+      "action": "함께 울기",
+      "main_prompt": "masterpiece, best quality, photorealistic, 2people, mother son crying together, bedroom, shared grief, family healing",
+      "character_prompts": [
+        {
+          "character": "순애",
+          "region": "0-50%",
+          "positive": "48 year old Korean woman, crying, explaining to son, showing diary, finally sharing burden"
+        },
+        {
+          "character": "준호",
+          "region": "50-100%",
+          "positive": "23 year old Korean man, crying with mother, learning father secret, shocked and sad, holding mother, both grieving"
+        }
+      ],
+      "output_folder": "scenes/3막/11화/s08_함께울음",
+      "filename_prefix": "EP11_s08_함께울음"
+    }
+  ]
+}

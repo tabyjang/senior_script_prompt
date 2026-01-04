@@ -1,0 +1,116 @@
+{
+  "metadata": {
+    "work_title": "마지막송금",
+    "character_name": "김미영",
+    "created_at": "2026-01-04",
+    "total_versions": 12
+  },
+  "character_info": {
+    "name": "김미영",
+    "real_age": 58,
+    "prompt_age": 43,
+    "gender": "female",
+    "role": "victim",
+    "personality": ["강인함", "외로움", "체념을 넘어선 평화"],
+    "appearance": ["수수한 인상", "다리를 절음", "검소한 차림"],
+    "symbolic_item": "분식집 간판, 앞치마"
+  },
+  "versions": [
+    {
+      "version_id": "v01",
+      "version_name": "기본_정면",
+      "description": "캐릭터 소개용 기본 이미지",
+      "positive": "masterpiece, best quality, photorealistic, 8k uhd, medium shot, front view, eye level, 43 year old Korean woman, plain face, tired but kind eyes, simple hairstyle tied back, modest appearance, wearing simple blouse, apron, standing straight, humble posture, neutral gray background, soft studio lighting, muted warm tone",
+      "output_folder": "characters/김미영/v01_기본",
+      "filename_prefix": "김미영_v01_기본"
+    },
+    {
+      "version_id": "v02",
+      "version_name": "일상_일하기",
+      "description": "분식집에서 일하는 모습",
+      "positive": "masterpiece, best quality, photorealistic, 8k uhd, medium shot, working scene, 43 year old Korean woman, focused expression, experienced hands, hair tied back with headband, wearing apron, cooking at stove, stirring pot, small restaurant kitchen, warm steam, busy atmosphere",
+      "output_folder": "characters/김미영/v02_일상",
+      "filename_prefix": "김미영_v02_일상"
+    },
+    {
+      "version_id": "v03",
+      "version_name": "걷기_절뚝",
+      "description": "다리를 절며 걷는 모습",
+      "positive": "masterpiece, best quality, photorealistic, 8k uhd, full shot, walking scene, 43 year old Korean woman, limping gait, slight pain expression, simple clothes, practical shoes, walking with difficulty, one leg shorter, restaurant interior, natural lighting, everyday struggle visible",
+      "output_folder": "characters/김미영/v03_걷기",
+      "filename_prefix": "김미영_v03_걷기"
+    },
+    {
+      "version_id": "v04",
+      "version_name": "첫대면",
+      "description": "순애 첫 대면 맞이",
+      "positive": "masterpiece, best quality, photorealistic, 8k uhd, medium shot, meeting scene, 43 year old Korean woman, cautious expression, recognizing look, hair tied back, wearing apron over simple clothes, standing behind counter, wiping hands on apron, small restaurant, fluorescent lighting, tense moment",
+      "output_folder": "characters/김미영/v04_첫대면",
+      "filename_prefix": "김미영_v04_첫대면"
+    },
+    {
+      "version_id": "v05",
+      "version_name": "고백_감정",
+      "description": "과거 이야기 감정적 고백",
+      "positive": "masterpiece, best quality, photorealistic, 8k uhd, close-up shot, emotional storytelling, 43 year old Korean woman, tearful expression, painful memories, eyes glistening, voice breaking, sitting at restaurant table, hands clasped, dim restaurant lighting, intimate confession atmosphere",
+      "output_folder": "characters/김미영/v05_고백",
+      "filename_prefix": "김미영_v05_고백"
+    },
+    {
+      "version_id": "v06",
+      "version_name": "존경_은인",
+      "description": "은인 언급 존경 표정",
+      "positive": "masterpiece, best quality, photorealistic, 8k uhd, medium shot, grateful expression, 43 year old Korean woman, respectful smile, teary eyes, speaking of benefactor, touched expression, wearing simple clothes, humble posture, restaurant interior, soft lighting, gratitude visible",
+      "output_folder": "characters/김미영/v06_존경",
+      "filename_prefix": "김미영_v06_존경"
+    },
+    {
+      "version_id": "v07",
+      "version_name": "젊은시절_병원",
+      "description": "회상 - 사고 직후 병원",
+      "positive": "masterpiece, best quality, photorealistic, 8k uhd, dramatic shot, hospital scene, 23 year old Korean woman, bandaged leg, crying, hospital gown, IV attached, grief-stricken, lying in hospital bed, alone, hospital room, harsh lighting, traumatic memory, sepia tone, flashback effect",
+      "output_folder": "characters/김미영/v07_젊은시절",
+      "filename_prefix": "김미영_v07_젊은시절"
+    },
+    {
+      "version_id": "v08",
+      "version_name": "분식집_간판",
+      "description": "분식집 앞 간판과 함께",
+      "positive": "masterpiece, best quality, photorealistic, 8k uhd, full shot, establishing scene, 43 year old Korean woman, standing at restaurant entrance, wearing apron, proud but humble expression, small neighborhood restaurant, 미영분식 sign visible, daytime, ordinary neighborhood, modest livelihood",
+      "output_folder": "characters/김미영/v08_분식집",
+      "filename_prefix": "김미영_v08_분식집"
+    },
+    {
+      "version_id": "v09",
+      "version_name": "화해",
+      "description": "순애와 화해 장면",
+      "positive": "masterpiece, best quality, photorealistic, 8k uhd, medium shot, reconciliation scene, 43 year old Korean woman, grateful tears, accepting expression, simple clothes, sitting at restaurant table, receiving watch from woman, emotional moment, restaurant interior, warm lighting, healing atmosphere",
+      "output_folder": "characters/김미영/v09_화해",
+      "filename_prefix": "김미영_v09_화해"
+    },
+    {
+      "version_id": "v10",
+      "version_name": "외로움",
+      "description": "혼자 밥 먹기 외로움",
+      "positive": "masterpiece, best quality, photorealistic, 8k uhd, medium shot, solitary meal, 43 year old Korean woman, lonely expression, quiet eating, simple clothes, sitting alone at small table, eating simple meal, empty restaurant after closing, dim evening light, melancholic atmosphere",
+      "output_folder": "characters/김미영/v10_외로움",
+      "filename_prefix": "김미영_v10_외로움"
+    },
+    {
+      "version_id": "v11",
+      "version_name": "떡볶이_서빙",
+      "description": "떡볶이 내오기 서빙",
+      "positive": "masterpiece, best quality, photorealistic, 8k uhd, medium shot, serving scene, 43 year old Korean woman, modest smile, serving food, hair tied back, wearing apron, placing tteokbokki plate on table, careful hands, restaurant interior, steam rising, warm connection moment",
+      "output_folder": "characters/김미영/v11_떡볶이",
+      "filename_prefix": "김미영_v11_떡볶이"
+    },
+    {
+      "version_id": "v12",
+      "version_name": "명절_송금확인",
+      "description": "명절 혼자 송금 확인",
+      "positive": "masterpiece, best quality, photorealistic, 8k uhd, close-up shot, emotional moment, 43 year old Korean woman, tearful grateful expression, looking at phone banking notification, sitting in closed restaurant, holiday decorations sparse, quiet evening, bittersweet atmosphere, touched by kindness",
+      "output_folder": "characters/김미영/v12_명절",
+      "filename_prefix": "김미영_v12_명절"
+    }
+  ]
+}

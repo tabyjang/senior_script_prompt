@@ -1,0 +1,45 @@
+{
+  "work_title": "마지막송금",
+  "project_folder": "03_매월송금했던남편",
+  "created_at": "2026-01-04",
+  "total_acts": 4,
+  "total_episodes": 12,
+  "acts": [
+    {
+      "act_id": "Act1",
+      "act_title": "일상의 붕괴",
+      "folder": "Act1_일상의붕괴",
+      "episodes": [1, 2, 3],
+      "episode_count": 3,
+      "emotional_arc": "일상 → 충격 → 배신감",
+      "description": "평범한 일상에서 남편의 갑작스러운 죽음, 그리고 숨겨진 비밀의 발견"
+    },
+    {
+      "act_id": "Act2-1",
+      "act_title": "추적과 의심",
+      "folder": "Act2-1_추적과의심",
+      "episodes": [4, 5, 6],
+      "episode_count": 3,
+      "emotional_arc": "분노 → 추적 → 대면",
+      "description": "30년간의 송금 기록을 추적하고 그 여자를 찾아나서는 과정"
+    },
+    {
+      "act_id": "Act2-2",
+      "act_title": "진실의 문",
+      "folder": "Act2-2_진실의문",
+      "episodes": [7, 8, 9],
+      "episode_count": 3,
+      "emotional_arc": "혼란 → 진실 → 충격",
+      "description": "미영분식에서 밝혀지는 35년 전 사고의 진실"
+    },
+    {
+      "act_id": "Act3",
+      "act_title": "이해와 용서",
+      "folder": "Act3_이해와용서",
+      "episodes": [10, 11, 12],
+      "episode_count": 3,
+      "emotional_arc": "이해 → 용서 → 화해",
+      "description": "남편의 일기를 통한 이해, 대리 사과, 그리고 진정한 용서"
+    }
+  ]
+}

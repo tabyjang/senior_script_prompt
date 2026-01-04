@@ -1,0 +1,156 @@
+{
+  "metadata": {
+    "work_title": "마지막송금",
+    "act": "2막 후반",
+    "act_title": "진실의 문",
+    "episode": 8,
+    "episode_title": "은인이라 불린 남자",
+    "created_at": "2026-01-04",
+    "total_scenes": 7
+  },
+  "episode_info": {
+    "main_locations": ["미영분식집"],
+    "characters": ["박순애", "김미영"],
+    "core_emotion": "충격, 분노, 혼란"
+  },
+  "scenes": [
+    {
+      "scene_id": "s01",
+      "scene_name": "순애 신분 공개",
+      "location": "미영분식",
+      "time": "낮",
+      "characters": ["순애"],
+      "emotion": "결의, 대결",
+      "action": "신분 밝히기",
+      "main_prompt": "masterpiece, best quality, photorealistic, 2women, confrontation moment, restaurant, dramatic revelation, tense atmosphere",
+      "character_prompts": [
+        {
+          "character": "순애",
+          "region": "full",
+          "positive": "48 year old Korean woman, firm expression, standing up from seat, confronting owner, declaring identity, voice strong"
+        }
+      ],
+      "output_folder": "scenes/2막후반/08화/s01_신분공개",
+      "filename_prefix": "EP08_s01_신분공개"
+    },
+    {
+      "scene_id": "s02",
+      "scene_name": "미영 얼굴 굳어짐",
+      "location": "미영분식",
+      "time": "낮",
+      "characters": ["미영"],
+      "emotion": "충격, 슬픔",
+      "action": "반응",
+      "main_prompt": "masterpiece, best quality, photorealistic, close-up shot, woman freezing, restaurant, devastating news received, silent shock",
+      "character_prompts": [
+        {
+          "character": "미영",
+          "region": "full",
+          "positive": "43 year old Korean woman, face going pale, expression freezing, recognition dawning, stepping back slightly, processing information, silence before tears"
+        }
+      ],
+      "output_folder": "scenes/2막후반/08화/s02_미영충격",
+      "filename_prefix": "EP08_s02_미영충격"
+    },
+    {
+      "scene_id": "s03",
+      "scene_name": "그분 돌아가셨군요",
+      "location": "미영분식",
+      "time": "낮",
+      "characters": ["미영"],
+      "emotion": "슬픔, 감사",
+      "action": "눈물 흘리기",
+      "main_prompt": "masterpiece, best quality, photorealistic, 1woman, tearful realization, restaurant, grief for benefactor, unexpected mourning",
+      "character_prompts": [
+        {
+          "character": "미영",
+          "region": "full",
+          "positive": "43 year old Korean woman, tears welling up, whispering about his passing, hand over heart, genuine grief, surprising the visitor with emotion"
+        }
+      ],
+      "output_folder": "scenes/2막후반/08화/s03_돌아가셨군요",
+      "filename_prefix": "EP08_s03_돌아가셨군요"
+    },
+    {
+      "scene_id": "s04",
+      "scene_name": "제 은인이셨어요",
+      "location": "미영분식",
+      "time": "낮",
+      "characters": ["미영"],
+      "emotion": "감사, 존경",
+      "action": "은인 언급",
+      "main_prompt": "masterpiece, best quality, photorealistic, 1woman, speaking with reverence, restaurant, calling him benefactor, emotional confession",
+      "character_prompts": [
+        {
+          "character": "미영",
+          "region": "full",
+          "positive": "43 year old Korean woman, tearful grateful expression, speaking of Dong-ho as savior, hands clasped, sincere emotion, 은인 benefactor revealed"
+        }
+      ],
+      "output_folder": "scenes/2막후반/08화/s04_은인",
+      "filename_prefix": "EP08_s04_은인"
+    },
+    {
+      "scene_id": "s05",
+      "scene_name": "순애 분노 폭발",
+      "location": "미영분식",
+      "time": "낮",
+      "characters": ["순애"],
+      "emotion": "분노, 혼란",
+      "action": "소리치기",
+      "main_prompt": "masterpiece, best quality, photorealistic, 1woman, angry outburst, restaurant, demanding explanation, fury unleashed",
+      "character_prompts": [
+        {
+          "character": "순애",
+          "region": "full",
+          "positive": "48 year old Korean woman, enraged expression, shouting in confusion, pointing finger, demanding answers, table shaking from impact"
+        }
+      ],
+      "output_folder": "scenes/2막후반/08화/s05_분노폭발",
+      "filename_prefix": "EP08_s05_분노폭발"
+    },
+    {
+      "scene_id": "s06",
+      "scene_name": "왜 은인이에요 대치",
+      "location": "미영분식",
+      "time": "낮",
+      "characters": ["순애", "미영"],
+      "emotion": "대립, 긴장",
+      "action": "대치",
+      "main_prompt": "masterpiece, best quality, photorealistic, 2women, tense standoff, restaurant, demanding answers, dramatic confrontation",
+      "character_prompts": [
+        {
+          "character": "순애",
+          "region": "0-50%",
+          "positive": "48 year old Korean woman, furious demanding expression, leaning forward aggressively, why is my husband your benefactor"
+        },
+        {
+          "character": "미영",
+          "region": "50-100%",
+          "positive": "43 year old Korean woman, calm sad expression, not fighting back, preparing to tell truth, resigned acceptance"
+        }
+      ],
+      "output_folder": "scenes/2막후반/08화/s06_대치",
+      "filename_prefix": "EP08_s06_대치"
+    },
+    {
+      "scene_id": "s07",
+      "scene_name": "미영 조용히 입 열기",
+      "location": "미영분식",
+      "time": "낮",
+      "characters": ["미영"],
+      "emotion": "결심, 고통",
+      "action": "진실 시작",
+      "main_prompt": "masterpiece, best quality, photorealistic, close-up shot, woman about to speak, restaurant, painful truth coming, cliffhanger moment",
+      "character_prompts": [
+        {
+          "character": "미영",
+          "region": "full",
+          "positive": "43 year old Korean woman, pained expression, taking deep breath, opening mouth, about to reveal devastating secret"
+        }
+      ],
+      "output_folder": "scenes/2막후반/08화/s07_클리프행어",
+      "filename_prefix": "EP08_s07_클리프행어"
+    }
+  ]
+}

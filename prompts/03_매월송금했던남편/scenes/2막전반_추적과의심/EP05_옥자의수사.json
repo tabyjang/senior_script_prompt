@@ -1,0 +1,161 @@
+{
+  "metadata": {
+    "work_title": "마지막송금",
+    "act": "2막 전반",
+    "act_title": "추적과 의심",
+    "episode": 5,
+    "episode_title": "옥자의 수사",
+    "created_at": "2026-01-04",
+    "total_scenes": 7
+  },
+  "episode_info": {
+    "main_locations": ["옥자 사무실", "카페", "순애 집"],
+    "characters": ["박순애", "한옥자", "박준호"],
+    "core_emotion": "긴장, 복수심, 유머"
+  },
+  "scenes": [
+    {
+      "scene_id": "s01",
+      "scene_name": "옥자 부동산 인맥 동원",
+      "location": "옥자 사무실",
+      "time": "오전",
+      "characters": ["옥자"],
+      "emotion": "결의, 자신감",
+      "action": "여러 통화",
+      "main_prompt": "masterpiece, best quality, photorealistic, 1woman, office scene, phone calls, real estate office, busy investigation",
+      "character_prompts": [
+        {
+          "character": "옥자",
+          "region": "full",
+          "positive": "49 year old Korean woman, determined expression, holding phone, writing notes, multiple phones on desk, calling contacts, detective mode"
+        }
+      ],
+      "output_folder": "scenes/2막전반/05화/s01_인맥동원",
+      "filename_prefix": "EP05_s01_인맥동원"
+    },
+    {
+      "scene_id": "s02",
+      "scene_name": "인맥이 재산이야",
+      "location": "카페",
+      "time": "점심",
+      "characters": ["옥자", "순애"],
+      "emotion": "유머, 기대",
+      "action": "정보 공유",
+      "main_prompt": "masterpiece, best quality, photorealistic, 2women, cafe meeting, intelligence gathering, cafe interior, conspiratorial atmosphere",
+      "character_prompts": [
+        {
+          "character": "옥자",
+          "region": "0-45%",
+          "positive": "49 year old Korean woman, proud expression, waving notebook, confident smile, bragging about connections, showing off investigation skills"
+        },
+        {
+          "character": "순애",
+          "region": "55-100%",
+          "positive": "48 year old Korean woman, slightly exasperated but grateful, listening to friend, hopeful expression, coffee untouched, focused on information"
+        }
+      ],
+      "output_folder": "scenes/2막전반/05화/s02_인맥자랑",
+      "filename_prefix": "EP05_s02_인맥자랑"
+    },
+    {
+      "scene_id": "s03",
+      "scene_name": "김미영 정보 발견",
+      "location": "카페",
+      "time": "오후",
+      "characters": ["순애"],
+      "emotion": "긴장, 호기심",
+      "action": "정보 읽기",
+      "main_prompt": "masterpiece, best quality, photorealistic, 2women, cafe, reading documents, important discovery, tense moment",
+      "character_prompts": [
+        {
+          "character": "순애",
+          "region": "full",
+          "positive": "48 year old Korean woman, intense focus, reading paper, eyes scanning, 58세 미혼 분식집 운영 information"
+        }
+      ],
+      "output_folder": "scenes/2막전반/05화/s03_정보발견",
+      "filename_prefix": "EP05_s03_정보발견"
+    },
+    {
+      "scene_id": "s04",
+      "scene_name": "옥자 추리",
+      "location": "카페",
+      "time": "오후",
+      "characters": ["옥자"],
+      "emotion": "분석적",
+      "action": "추리",
+      "main_prompt": "masterpiece, best quality, photorealistic, 1woman, detective thinking pose, cafe, analytical expression, reasoning out loud",
+      "character_prompts": [
+        {
+          "character": "옥자",
+          "region": "full",
+          "positive": "49 year old Korean woman, thoughtful expression, tapping chin, calculating age, explaining logic, amateur detective moment, papers spread on table"
+        }
+      ],
+      "output_folder": "scenes/2막전반/05화/s04_추리",
+      "filename_prefix": "EP05_s04_추리"
+    },
+    {
+      "scene_id": "s05",
+      "scene_name": "순애 결심",
+      "location": "카페",
+      "time": "오후",
+      "characters": ["순애"],
+      "emotion": "결의",
+      "action": "결심 표명",
+      "main_prompt": "masterpiece, best quality, photorealistic, 1woman, determined declaration, cafe, resolution moment, brave decision",
+      "character_prompts": [
+        {
+          "character": "순애",
+          "region": "full",
+          "positive": "48 year old Korean woman, resolute expression, jaw set firmly, eyes burning, fist on table, making decision, ready to confront the mystery"
+        }
+      ],
+      "output_folder": "scenes/2막전반/05화/s05_결심",
+      "filename_prefix": "EP05_s05_결심"
+    },
+    {
+      "scene_id": "s06",
+      "scene_name": "준호에게 들킬 뻔",
+      "location": "순애 집",
+      "time": "저녁",
+      "characters": ["순애", "준호"],
+      "emotion": "긴장, 위기",
+      "action": "서류 숨기기",
+      "main_prompt": "masterpiece, best quality, photorealistic, 2people, close call moment, living room, son unexpected visit, hiding evidence",
+      "character_prompts": [
+        {
+          "character": "순애",
+          "region": "0-50%",
+          "positive": "48 year old Korean woman, startled expression, quickly hiding papers, casual pretense, caught off guard, covering up"
+        },
+        {
+          "character": "준호",
+          "region": "55-100%",
+          "positive": "23 year old Korean man, suspicious curious expression, entering room, noticing mother acting strange, asking what she is doing"
+        }
+      ],
+      "output_folder": "scenes/2막전반/05화/s06_들킬뻔",
+      "filename_prefix": "EP05_s06_들킬뻔"
+    },
+    {
+      "scene_id": "s07",
+      "scene_name": "위기 모면",
+      "location": "순애 집",
+      "time": "저녁",
+      "characters": ["순애"],
+      "emotion": "안도, 거짓말",
+      "action": "변명하기",
+      "main_prompt": "masterpiece, best quality, photorealistic, 2people, mother son scene, living room, white lie moment, protecting secret",
+      "character_prompts": [
+        {
+          "character": "순애",
+          "region": "full",
+          "positive": "48 year old Korean woman, forced casual smile, waving off concern, pretending to clean, natural acting, hiding truth from son"
+        }
+      ],
+      "output_folder": "scenes/2막전반/05화/s07_위기모면",
+      "filename_prefix": "EP05_s07_위기모면"
+    }
+  ]
+}

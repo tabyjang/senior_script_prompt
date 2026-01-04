@@ -1,0 +1,185 @@
+{
+  "metadata": {
+    "work_title": "마지막송금",
+    "act": "1막",
+    "act_title": "일상의 붕괴",
+    "episode": 2,
+    "episode_title": "텅 빈 집",
+    "created_at": "2026-01-04",
+    "total_scenes": 8
+  },
+  "episode_info": {
+    "main_locations": ["장례식장", "집"],
+    "characters": ["박순애", "한옥자", "박준호", "이수진"],
+    "core_emotion": "슬픔, 공허, 그리움"
+  },
+  "scenes": [
+    {
+      "scene_id": "s01",
+      "scene_name": "장례식장 상주석",
+      "location": "장례식장 빈소",
+      "time": "낮",
+      "characters": ["순애"],
+      "emotion": "슬픔, 멍함",
+      "action": "조문객 인사 받기",
+      "main_prompt": "masterpiece, best quality, photorealistic, funeral hall interior, Korean funeral setting, chrysanthemum flowers, solemn atmosphere, soft diffused lighting, mourning scene",
+      "character_prompts": [
+        {
+          "character": "순애",
+          "region": "full",
+          "positive": "48 year old Korean woman, black mourning clothes, blank exhausted expression, bowing slightly, sitting in chief mourner position, receiving condolences, hollow eyes, going through motions"
+        }
+      ],
+      "output_folder": "scenes/1막/02화/s01_상주석",
+      "filename_prefix": "EP02_s01_상주석"
+    },
+    {
+      "scene_id": "s02",
+      "scene_name": "영정 사진 앞",
+      "location": "장례식장 빈소",
+      "time": "낮",
+      "characters": ["순애"],
+      "emotion": "그리움, 슬픔",
+      "action": "영정 바라보기",
+      "main_prompt": "masterpiece, best quality, photorealistic, funeral altar, portrait photo display, white chrysanthemums, incense burning, respectful somber atmosphere",
+      "character_prompts": [
+        {
+          "character": "순애",
+          "region": "full",
+          "positive": "48 year old Korean woman, tearful gaze, black mourning dress, looking at portrait, standing before memorial photo, touching photo frame gently"
+        }
+      ],
+      "output_folder": "scenes/1막/02화/s02_영정앞",
+      "filename_prefix": "EP02_s02_영정앞"
+    },
+    {
+      "scene_id": "s03",
+      "scene_name": "아들 준호와 대화",
+      "location": "장례식장 대기실",
+      "time": "낮",
+      "characters": ["순애", "준호", "수진"],
+      "emotion": "걱정, 고집",
+      "action": "준호가 함께 가자고 설득",
+      "main_prompt": "masterpiece, best quality, photorealistic, 3people, funeral waiting room, family concern, subdued lighting, worried family conversation",
+      "character_prompts": [
+        {
+          "character": "준호",
+          "region": "0-30%",
+          "positive": "23 year old Korean man, worried expression, black suit, pleading with mother, concerned posture, trying to convince"
+        },
+        {
+          "character": "순애",
+          "region": "30-70%",
+          "positive": "48 year old Korean woman, stubborn expression, black mourning clothes, shaking head, refusing offer, determined to stay alone"
+        },
+        {
+          "character": "수진",
+          "region": "70-100%",
+          "positive": "20 year old Korean woman, sympathetic expression, black dress, standing beside husband, supportive posture, watching mother-in-law"
+        }
+      ],
+      "output_folder": "scenes/1막/02화/s03_가족대화",
+      "filename_prefix": "EP02_s03_가족대화"
+    },
+    {
+      "scene_id": "s04",
+      "scene_name": "텅 빈 거실",
+      "location": "집 거실",
+      "time": "저녁",
+      "characters": ["순애"],
+      "emotion": "공허, 외로움",
+      "action": "빈 소파 바라보기",
+      "main_prompt": "masterpiece, best quality, photorealistic, 1woman, empty living room, loneliness, evening dim lighting, absence felt, grief",
+      "character_prompts": [
+        {
+          "character": "순애",
+          "region": "full",
+          "positive": "48 year old Korean woman, lost expression, casual mourning clothes, sitting on sofa edge, staring at empty spot beside her, husband's usual seat vacant"
+        }
+      ],
+      "output_folder": "scenes/1막/02화/s04_빈거실",
+      "filename_prefix": "EP02_s04_빈거실"
+    },
+    {
+      "scene_id": "s05",
+      "scene_name": "냉장고 된장찌개",
+      "location": "집 부엌",
+      "time": "밤",
+      "characters": ["순애"],
+      "emotion": "슬픔, 회한",
+      "action": "된장찌개 바라보기",
+      "main_prompt": "masterpiece, best quality, photorealistic, 1woman, kitchen scene, emotional moment, refrigerator light, night kitchen, sorrow",
+      "character_prompts": [
+        {
+          "character": "순애",
+          "region": "full",
+          "positive": "48 year old Korean woman, tearful expression, standing before open refrigerator, staring at pot of soybean stew, untouched food, memories flooding back"
+        }
+      ],
+      "output_folder": "scenes/1막/02화/s05_된장찌개",
+      "filename_prefix": "EP02_s05_된장찌개"
+    },
+    {
+      "scene_id": "s06",
+      "scene_name": "옥자의 위로 방문",
+      "location": "집",
+      "time": "낮",
+      "characters": ["순애", "옥자"],
+      "emotion": "슬픔, 위로",
+      "action": "옥자가 밥 차려주기",
+      "main_prompt": "masterpiece, best quality, photorealistic, 2women, home visit, supportive friend, warm kitchen lighting, caring atmosphere",
+      "character_prompts": [
+        {
+          "character": "순애",
+          "region": "0-45%",
+          "positive": "48 year old Korean woman, exhausted expression, casual clothes, sitting at table, barely eating, picking at food"
+        },
+        {
+          "character": "옥자",
+          "region": "55-100%",
+          "positive": "49 year old Korean woman, concerned expression, colorful blouse, serving food, pushing bowl toward friend, worried look"
+        }
+      ],
+      "output_folder": "scenes/1막/02화/s06_옥자위로",
+      "filename_prefix": "EP02_s06_옥자위로"
+    },
+    {
+      "scene_id": "s07",
+      "scene_name": "남편 옷장 앞",
+      "location": "안방 옷장",
+      "time": "밤",
+      "characters": ["순애"],
+      "emotion": "그리움, 슬픔",
+      "action": "남편 옷에 얼굴 묻기",
+      "main_prompt": "masterpiece, best quality, photorealistic, 1woman, closet scene, overwhelming grief, dim bedroom light, intimate sorrow",
+      "character_prompts": [
+        {
+          "character": "순애",
+          "region": "full",
+          "positive": "48 year old Korean woman, crying, burying face in husband clothes, holding old suit jacket, inhaling scent, sobbing quietly"
+        }
+      ],
+      "output_folder": "scenes/1막/02화/s07_옷장",
+      "filename_prefix": "EP02_s07_옷장"
+    },
+    {
+      "scene_id": "s08",
+      "scene_name": "빈 침대 옆자리",
+      "location": "안방 침대",
+      "time": "새벽",
+      "characters": ["순애"],
+      "emotion": "외로움, 두려움",
+      "action": "남편 베개 껴안기",
+      "main_prompt": "masterpiece, best quality, photorealistic, 1woman, bedroom scene, sleepless night, moonlight through window, lonely bed",
+      "character_prompts": [
+        {
+          "character": "순애",
+          "region": "full",
+          "positive": "48 year old Korean woman, tearstained face, lying in bed, hugging husband pillow, empty space beside her, wide awake, lonely darkness"
+        }
+      ],
+      "output_folder": "scenes/1막/02화/s08_빈침대",
+      "filename_prefix": "EP02_s08_빈침대"
+    }
+  ]
+}

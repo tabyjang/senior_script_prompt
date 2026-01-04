@@ -1,0 +1,68 @@
+{
+  "metadata": {
+    "work_title": "마지막송금",
+    "character_name": "박준호",
+    "created_at": "2026-01-04",
+    "total_versions": 6
+  },
+  "character_info": {
+    "name": "박준호",
+    "real_age": 38,
+    "prompt_age": 23,
+    "gender": "male",
+    "role": "son",
+    "personality": ["현실적", "엄마 걱정", "빨리 정리하길 원함"],
+    "appearance": ["단정한 직장인 스타일", "아버지 닮은 인상"],
+    "symbolic_item": "정장, 차 열쇠"
+  },
+  "versions": [
+    {
+      "version_id": "v01",
+      "version_name": "기본_정면",
+      "description": "캐릭터 소개용 기본 이미지",
+      "positive": "masterpiece, best quality, photorealistic, 8k uhd, medium shot, front view, eye level, 23 year old Korean man, neat appearance, serious expression, short black hair neatly styled, clean-shaven, wearing business casual shirt and slacks, standing straight, professional posture, neutral gray background, soft studio lighting",
+      "output_folder": "characters/박준호/v01_기본",
+      "filename_prefix": "박준호_v01_기본"
+    },
+    {
+      "version_id": "v02",
+      "version_name": "상복_장례식",
+      "description": "장례식 상복 차림",
+      "positive": "masterpiece, best quality, photorealistic, 8k uhd, medium shot, funeral scene, 23 year old Korean man, grief expression, holding back tears, short black hair, wearing black suit, standing at funeral, solemn posture, funeral hall background, soft diffused lighting",
+      "output_folder": "characters/박준호/v02_상복",
+      "filename_prefix": "박준호_v02_상복"
+    },
+    {
+      "version_id": "v03",
+      "version_name": "설득_걱정",
+      "description": "엄마 설득 걱정 표정",
+      "positive": "masterpiece, best quality, photorealistic, 8k uhd, medium shot, conversation scene, 23 year old Korean man, worried expression, pleading eyes, short black hair, wearing casual clothes, talking to mother, hand gestures, living room setting, evening light, concerned atmosphere",
+      "output_folder": "characters/박준호/v03_설득",
+      "filename_prefix": "박준호_v03_설득"
+    },
+    {
+      "version_id": "v04",
+      "version_name": "답답함",
+      "description": "엄마 행동에 답답함",
+      "positive": "masterpiece, best quality, photorealistic, 8k uhd, medium shot, frustrated expression, 23 year old Korean man, exasperated look, sighing, short black hair, loosened tie, running hand through hair, stressed posture, home setting, evening, tense atmosphere",
+      "output_folder": "characters/박준호/v04_답답함",
+      "filename_prefix": "박준호_v04_답답함"
+    },
+    {
+      "version_id": "v05",
+      "version_name": "눈물_진실후",
+      "description": "진실 알게 된 후 눈물",
+      "positive": "masterpiece, best quality, photorealistic, 8k uhd, close-up shot, emotional revelation, 23 year old Korean man, crying, understanding dawning, teary eyes, trembling lips, holding father diary, shocked and moved, home study, dim lighting, emotional breakthrough",
+      "output_folder": "characters/박준호/v05_눈물",
+      "filename_prefix": "박준호_v05_눈물"
+    },
+    {
+      "version_id": "v06",
+      "version_name": "영정앞",
+      "description": "아버지 영정 앞",
+      "positive": "masterpiece, best quality, photorealistic, 8k uhd, medium shot, memorial scene, 23 year old Korean man, respectful posture, bowing, wearing formal clothes, solemn expression, standing before father portrait, home altar setting, soft lighting, reverent atmosphere",
+      "output_folder": "characters/박준호/v06_영정",
+      "filename_prefix": "박준호_v06_영정"
+    }
+  ]
+}

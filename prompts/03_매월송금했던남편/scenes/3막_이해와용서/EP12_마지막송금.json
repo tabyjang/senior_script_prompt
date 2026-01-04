@@ -1,0 +1,243 @@
+{
+  "metadata": {
+    "work_title": "마지막송금",
+    "act": "3막",
+    "act_title": "이해와 용서",
+    "episode": 12,
+    "episode_title": "마지막 송금",
+    "created_at": "2026-01-04",
+    "total_scenes": 11
+  },
+  "episode_info": {
+    "main_locations": ["미영분식집"],
+    "characters": ["박순애", "김미영"],
+    "core_emotion": "감동, 희망, 여운"
+  },
+  "scenes": [
+    {
+      "scene_id": "s01",
+      "scene_name": "며칠 후 - 순애 외출 준비",
+      "location": "순애 집",
+      "time": "아침",
+      "characters": ["순애"],
+      "emotion": "결심, 평화",
+      "action": "외출 준비",
+      "main_prompt": "masterpiece, best quality, photorealistic, 1woman, morning preparation, home, peaceful resolve, new mission",
+      "character_prompts": [
+        {
+          "character": "순애",
+          "region": "full",
+          "positive": "48 year old Korean woman, peaceful expression, putting on nice clothes, looking in mirror, holding husband wristwatch, ready for important visit"
+        }
+      ],
+      "output_folder": "scenes/3막/12화/s01_외출준비",
+      "filename_prefix": "EP12_s01_외출준비"
+    },
+    {
+      "scene_id": "s02",
+      "scene_name": "손목시계 들고 가기",
+      "location": "순애 집",
+      "time": "아침",
+      "characters": ["순애"],
+      "emotion": "결의",
+      "action": "시계 챙기기",
+      "main_prompt": "masterpiece, best quality, photorealistic, close-up shot, holding wristwatch, symbolic, husband memento, gift to give",
+      "character_prompts": [
+        {
+          "character": "순애",
+          "region": "full",
+          "positive": "48 year old Korean woman, tender expression, holding husband old wristwatch, meaningful object, about to give away, touching it gently"
+        }
+      ],
+      "output_folder": "scenes/3막/12화/s02_시계",
+      "filename_prefix": "EP12_s02_시계"
+    },
+    {
+      "scene_id": "s03",
+      "scene_name": "미영분식 재방문",
+      "location": "미영분식 앞",
+      "time": "낮",
+      "characters": ["순애"],
+      "emotion": "평화",
+      "action": "문 열기",
+      "main_prompt": "masterpiece, best quality, photorealistic, 1woman, returning to restaurant, exterior, different mood this time, peaceful visit",
+      "character_prompts": [
+        {
+          "character": "순애",
+          "region": "full",
+          "positive": "48 year old Korean woman, calm smile, entering restaurant confidently, no anger this time, coming as friend, warmth in expression"
+        }
+      ],
+      "output_folder": "scenes/3막/12화/s03_재방문",
+      "filename_prefix": "EP12_s03_재방문"
+    },
+    {
+      "scene_id": "s04",
+      "scene_name": "미영에게 시계 건네기",
+      "location": "미영분식 내부",
+      "time": "낮",
+      "characters": ["순애", "미영"],
+      "emotion": "화해, 연결",
+      "action": "시계 전달",
+      "main_prompt": "masterpiece, best quality, photorealistic, 2women, gift exchange, restaurant, meaningful gesture, reconciliation moment",
+      "character_prompts": [
+        {
+          "character": "순애",
+          "region": "0-50%",
+          "positive": "48 year old Korean woman, gentle smile, offering wristwatch to Mi-young, giving husband keepsake"
+        },
+        {
+          "character": "미영",
+          "region": "50-100%",
+          "positive": "43 year old Korean woman, surprised touched expression, hands reaching out, then withdrawing, trying to refuse, overwhelmed"
+        }
+      ],
+      "output_folder": "scenes/3막/12화/s04_시계전달",
+      "filename_prefix": "EP12_s04_시계전달"
+    },
+    {
+      "scene_id": "s05",
+      "scene_name": "미영 거절, 순애 고집",
+      "location": "미영분식",
+      "time": "낮",
+      "characters": ["순애"],
+      "emotion": "밀고 당기기",
+      "action": "설득",
+      "main_prompt": "masterpiece, best quality, photorealistic, 2women, gentle persuasion, restaurant, insisting on gift, caring exchange",
+      "character_prompts": [
+        {
+          "character": "순애",
+          "region": "full",
+          "positive": "48 year old Korean woman, insistent gentle expression, pushing watch toward Mi-young, not taking no for answer, warmth and determination combined"
+        }
+      ],
+      "output_folder": "scenes/3막/12화/s05_고집",
+      "filename_prefix": "EP12_s05_고집"
+    },
+    {
+      "scene_id": "s06",
+      "scene_name": "두 여자 손 맞잡음",
+      "location": "미영분식",
+      "time": "낮",
+      "characters": ["순애", "미영"],
+      "emotion": "화해, 연대",
+      "action": "손 잡기",
+      "main_prompt": "masterpiece, best quality, photorealistic, 2women, holding hands, restaurant table, reconciliation complete, new bond formed",
+      "character_prompts": [
+        {
+          "character": "손 클로즈업",
+          "region": "full",
+          "positive": "two women hands clasped together, wristwatch between them, tears falling on joined hands, powerful connection moment"
+        }
+      ],
+      "output_folder": "scenes/3막/12화/s06_손맞잡음",
+      "filename_prefix": "EP12_s06_손맞잡음"
+    },
+    {
+      "scene_id": "s07",
+      "scene_name": "앞으로는 내가 올게요",
+      "location": "미영분식",
+      "time": "낮",
+      "characters": ["순애"],
+      "emotion": "결심, 약속",
+      "action": "약속하기",
+      "main_prompt": "masterpiece, best quality, photorealistic, 1woman, making promise, restaurant, taking over husband mission, vow",
+      "character_prompts": [
+        {
+          "character": "순애",
+          "region": "full",
+          "positive": "48 year old Korean woman, determined loving expression, promising to continue husband work, new purpose found"
+        }
+      ],
+      "output_folder": "scenes/3막/12화/s07_약속",
+      "filename_prefix": "EP12_s07_약속"
+    },
+    {
+      "scene_id": "s08",
+      "scene_name": "에필로그 - 1년 후 단골",
+      "location": "미영분식",
+      "time": "낮 (봄)",
+      "characters": ["순애", "미영"],
+      "emotion": "평화, 우정",
+      "action": "함께 식사",
+      "main_prompt": "masterpiece, best quality, photorealistic, 2women, friendly meal together, restaurant, one year later, established friendship, spring sunlight, warm atmosphere",
+      "character_prompts": [
+        {
+          "character": "순애",
+          "region": "0-45%",
+          "positive": "48 year old Korean woman, content smile, eating tteokbokki comfortably, regular customer now, friendship formed"
+        },
+        {
+          "character": "미영",
+          "region": "55-100%",
+          "positive": "43 year old Korean woman, happy smile, sitting across from friend, no longer alone, companionship"
+        }
+      ],
+      "output_folder": "scenes/3막/12화/s08_1년후",
+      "filename_prefix": "EP12_s08_1년후"
+    },
+    {
+      "scene_id": "s09",
+      "scene_name": "오늘 날씨 좋네요",
+      "location": "미영분식 창가",
+      "time": "낮 (봄)",
+      "characters": ["순애", "미영"],
+      "emotion": "평화, 일상",
+      "action": "일상 대화",
+      "main_prompt": "masterpiece, best quality, photorealistic, 2women, casual conversation, restaurant window, spring day, ordinary beautiful moment",
+      "character_prompts": [
+        {
+          "character": "순애, 미영",
+          "region": "full",
+          "positive": "two middle-aged Korean women, exchanging simple pleasantries, comfortable silence between them, spring sunlight on faces"
+        }
+      ],
+      "output_folder": "scenes/3막/12화/s09_날씨좋네요",
+      "filename_prefix": "EP12_s09_날씨좋네요"
+    },
+    {
+      "scene_id": "s10",
+      "scene_name": "송금 알림 (마지막 장면)",
+      "location": "미영분식",
+      "time": "낮",
+      "characters": ["순애"],
+      "emotion": "감동, 여운",
+      "action": "폰 확인",
+      "main_prompt": "masterpiece, best quality, photorealistic, close-up shot, phone notification, final scene, continuing husband legacy, hopeful ending",
+      "character_prompts": [
+        {
+          "character": "순애",
+          "region": "full",
+          "positive": "48 year old Korean woman, gentle knowing smile, looking at phone notification, husband promise now hers, peaceful satisfied expression"
+        }
+      ],
+      "output_folder": "scenes/3막/12화/s10_마지막송금",
+      "filename_prefix": "EP12_s10_마지막송금"
+    },
+    {
+      "scene_id": "s11",
+      "scene_name": "엔딩 - 창가 두 여자 실루엣",
+      "location": "미영분식 창가",
+      "time": "저녁",
+      "characters": ["순애", "미영"],
+      "emotion": "희망, 평화",
+      "action": "엔딩 크레딧",
+      "main_prompt": "masterpiece, best quality, photorealistic, 2women silhouettes, restaurant window, spring afternoon golden light, peaceful ending, hope for future, warm sunset colors, emotional finale",
+      "character_prompts": [
+        {
+          "character": "순애, 미영 실루엣",
+          "region": "full",
+          "positive": "two women silhouettes against window, golden hour light, peaceful friendship, new beginning after tragedy"
+        }
+      ],
+      "output_folder": "scenes/3막/12화/s11_엔딩",
+      "filename_prefix": "EP12_s11_엔딩"
+    }
+  ],
+  "key_objects": [
+    {"object": "손목시계", "symbol": "속죄의 이어받기", "scenes": ["s02", "s04", "s05", "s06"]},
+    {"object": "떡볶이", "symbol": "연결, 일상", "scenes": ["s08"]},
+    {"object": "폰 알림", "symbol": "약속의 지속", "scenes": ["s10"]},
+    {"object": "봄 햇살", "symbol": "희망, 새 시작", "scenes": ["s08", "s09", "s10", "s11"]}
+  ]
+}

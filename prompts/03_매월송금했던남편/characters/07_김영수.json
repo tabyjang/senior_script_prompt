@@ -1,0 +1,76 @@
+{
+  "metadata": {
+    "work_title": "마지막송금",
+    "character_name": "김영수",
+    "created_at": "2026-01-04",
+    "total_versions": 7
+  },
+  "character_info": {
+    "name": "김영수",
+    "real_age": 60,
+    "prompt_age": 45,
+    "gender": "male",
+    "role": "brother",
+    "personality": ["누나 지켜온 사람", "동호에 대한 복잡한 감정"],
+    "appearance": ["투박한 인상", "강한 체격", "보호자 느낌"],
+    "symbolic_item": "작업복, 거친 손"
+  },
+  "versions": [
+    {
+      "version_id": "v01",
+      "version_name": "기본_정면",
+      "description": "캐릭터 소개용 기본 이미지",
+      "positive": "masterpiece, best quality, photorealistic, 8k uhd, medium shot, front view, eye level, 45 year old Korean man, weathered face, serious expression, short graying hair, rugged appearance, wearing simple work clothes, standing with arms crossed, protective posture, neutral gray background, natural lighting",
+      "output_folder": "characters/김영수/v01_기본",
+      "filename_prefix": "김영수_v01_기본"
+    },
+    {
+      "version_id": "v02",
+      "version_name": "가게_도움",
+      "description": "누나 가게에서 도움",
+      "positive": "masterpiece, best quality, photorealistic, 8k uhd, medium shot, helping scene, 45 year old Korean man, focused expression, working hands, short graying hair, wearing work clothes, helping in restaurant, carrying supplies, small restaurant, daytime, brotherly support",
+      "output_folder": "characters/김영수/v02_가게",
+      "filename_prefix": "김영수_v02_가게"
+    },
+    {
+      "version_id": "v03",
+      "version_name": "대립_쫓아내기",
+      "description": "옥자 쫓아내기",
+      "positive": "masterpiece, best quality, photorealistic, 8k uhd, medium shot, confrontational scene, 45 year old Korean man, angry expression, protective stance, short graying hair, wearing casual clothes, pointing finger, aggressive posture, street outside restaurant, daytime, defensive moment",
+      "output_folder": "characters/김영수/v03_대립",
+      "filename_prefix": "김영수_v03_대립"
+    },
+    {
+      "version_id": "v04",
+      "version_name": "갈등_복잡한감정",
+      "description": "동호에 대한 복잡한 감정",
+      "positive": "masterpiece, best quality, photorealistic, 8k uhd, close-up shot, conflicted expression, 45 year old Korean man, mixed emotions, furrowed brow, short graying hair, weathered face, looking down, hands clenched, quiet moment, soft lighting, internal conflict visible",
+      "output_folder": "characters/김영수/v04_갈등",
+      "filename_prefix": "김영수_v04_갈등"
+    },
+    {
+      "version_id": "v05",
+      "version_name": "경계_순애",
+      "description": "순애 경계하기",
+      "positive": "masterpiece, best quality, photorealistic, 8k uhd, medium shot, guarded scene, 45 year old Korean man, suspicious expression, wary eyes, short graying hair, arms crossed, blocking restaurant entrance, protective of sister, restaurant doorway, natural lighting, tense moment",
+      "output_folder": "characters/김영수/v05_경계",
+      "filename_prefix": "김영수_v05_경계"
+    },
+    {
+      "version_id": "v06",
+      "version_name": "화해_이해",
+      "description": "화해 후 이해",
+      "positive": "masterpiece, best quality, photorealistic, 8k uhd, medium shot, acceptance scene, 45 year old Korean man, softened expression, understanding eyes, short graying hair, relaxed posture, nodding to visitor, guard let down, restaurant interior, warm lighting, reconciliation moment",
+      "output_folder": "characters/김영수/v06_화해",
+      "filename_prefix": "김영수_v06_화해"
+    },
+    {
+      "version_id": "v07",
+      "version_name": "남매_함께",
+      "description": "누나와 함께",
+      "positive": "masterpiece, best quality, photorealistic, 8k uhd, medium shot, sibling scene, 45 year old Korean man, caring expression, protective stance, standing beside sister, arm on her shoulder, restaurant setting, evening after closing, warm lighting, sibling bond visible",
+      "output_folder": "characters/김영수/v07_남매",
+      "filename_prefix": "김영수_v07_남매"
+    }
+  ]
+}

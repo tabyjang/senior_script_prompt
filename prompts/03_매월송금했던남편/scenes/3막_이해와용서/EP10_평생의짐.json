@@ -1,0 +1,175 @@
+{
+  "metadata": {
+    "work_title": "마지막송금",
+    "act": "3막",
+    "act_title": "이해와 용서",
+    "episode": 10,
+    "episode_title": "평생의 짐",
+    "created_at": "2026-01-04",
+    "total_scenes": 8
+  },
+  "episode_info": {
+    "main_locations": ["미영분식집"],
+    "characters": ["박순애", "김미영"],
+    "core_emotion": "이해, 슬픔"
+  },
+  "scenes": [
+    {
+      "scene_id": "s01",
+      "scene_name": "미영이 말하는 30년간의 동호",
+      "location": "미영분식",
+      "time": "낮~저녁",
+      "characters": ["미영"],
+      "emotion": "감사, 회상",
+      "action": "이야기",
+      "main_prompt": "masterpiece, best quality, photorealistic, 1woman, storytelling scene, restaurant, explaining 30 years, grateful remembrance",
+      "character_prompts": [
+        {
+          "character": "미영",
+          "region": "full",
+          "positive": "43 year old Korean woman, thoughtful expression, explaining monthly transfers, hands gesturing, telling story of support, bittersweet gratitude visible"
+        }
+      ],
+      "output_folder": "scenes/3막/10화/s01_30년이야기",
+      "filename_prefix": "EP10_s01_30년이야기"
+    },
+    {
+      "scene_id": "s02",
+      "scene_name": "출소 후 첫 송금",
+      "location": "미영분식 (설명 중)",
+      "time": "낮",
+      "characters": ["미영"],
+      "emotion": "놀람, 거부",
+      "action": "첫 송금 이야기",
+      "main_prompt": "masterpiece, best quality, photorealistic, 1woman, recounting first transfer, restaurant, memory of surprise, mixed feelings",
+      "character_prompts": [
+        {
+          "character": "미영",
+          "region": "full",
+          "positive": "43 year old Korean woman, remembering expression, describing first unexpected money, tried to refuse, kept coming"
+        }
+      ],
+      "output_folder": "scenes/3막/10화/s02_첫송금",
+      "filename_prefix": "EP10_s02_첫송금"
+    },
+    {
+      "scene_id": "s03",
+      "scene_name": "명절 두 배 에피소드",
+      "location": "미영분식",
+      "time": "낮",
+      "characters": ["미영"],
+      "emotion": "감동",
+      "action": "명절 이야기",
+      "main_prompt": "masterpiece, best quality, photorealistic, 1woman, touching memory, restaurant, holiday kindness story, emotional",
+      "character_prompts": [
+        {
+          "character": "미영",
+          "region": "full",
+          "positive": "43 year old Korean woman, tearful smile, telling holiday double transfer story, 잘 지내요 memo memory, crying from kindness"
+        }
+      ],
+      "output_folder": "scenes/3막/10화/s03_명절두배",
+      "filename_prefix": "EP10_s03_명절두배"
+    },
+    {
+      "scene_id": "s04",
+      "scene_name": "병원비 대납 에피소드",
+      "location": "미영분식",
+      "time": "낮",
+      "characters": ["미영"],
+      "emotion": "놀라움, 감사",
+      "action": "수술비 이야기",
+      "main_prompt": "masterpiece, best quality, photorealistic, 1woman, telling miracle story, restaurant, anonymous benefactor revelation",
+      "character_prompts": [
+        {
+          "character": "미영",
+          "region": "full",
+          "positive": "43 year old Korean woman, amazed grateful expression, describing hospital bill already paid, anonymous donor realization, overwhelming gratitude"
+        }
+      ],
+      "output_folder": "scenes/3막/10화/s04_병원비",
+      "filename_prefix": "EP10_s04_병원비"
+    },
+    {
+      "scene_id": "s05",
+      "scene_name": "용서가 아니에요",
+      "location": "미영분식",
+      "time": "저녁",
+      "characters": ["미영"],
+      "emotion": "체념을 넘어선 평화",
+      "action": "진심 고백",
+      "main_prompt": "masterpiece, best quality, photorealistic, 1woman, philosophical acceptance, restaurant, beyond hatred, peaceful resignation",
+      "character_prompts": [
+        {
+          "character": "미영",
+          "region": "full",
+          "positive": "43 year old Korean woman, serene sad expression, explaining not forgiveness, just stopped hating, 30 years of complicated feelings"
+        }
+      ],
+      "output_folder": "scenes/3막/10화/s05_용서가아니에요",
+      "filename_prefix": "EP10_s05_용서가아니에요"
+    },
+    {
+      "scene_id": "s06",
+      "scene_name": "순애 말없이 눈물",
+      "location": "미영분식",
+      "time": "저녁",
+      "characters": ["순애"],
+      "emotion": "이해, 슬픔",
+      "action": "조용히 울기",
+      "main_prompt": "masterpiece, best quality, photorealistic, 1woman, silent tears, restaurant, understanding husband finally, grief",
+      "character_prompts": [
+        {
+          "character": "순애",
+          "region": "full",
+          "positive": "48 year old Korean woman, silently crying, listening without words, understanding husband burden, tears flowing freely"
+        }
+      ],
+      "output_folder": "scenes/3막/10화/s06_순애눈물",
+      "filename_prefix": "EP10_s06_순애눈물"
+    },
+    {
+      "scene_id": "s07",
+      "scene_name": "평생을 지옥에서 사신 거예요",
+      "location": "미영분식",
+      "time": "저녁",
+      "characters": ["미영"],
+      "emotion": "이해, 연민",
+      "action": "핵심 통찰",
+      "main_prompt": "masterpiece, best quality, photorealistic, 1woman, profound statement, restaurant, victim understanding perpetrator, wisdom",
+      "character_prompts": [
+        {
+          "character": "미영",
+          "region": "full",
+          "positive": "43 year old Korean woman, compassionate expression, explaining husband lived in hell, 30년 동안 단 한 번도 안 빠졌어요, that is living hell"
+        }
+      ],
+      "output_folder": "scenes/3막/10화/s07_지옥",
+      "filename_prefix": "EP10_s07_지옥"
+    },
+    {
+      "scene_id": "s08",
+      "scene_name": "두 여자 마주보기",
+      "location": "미영분식",
+      "time": "저녁",
+      "characters": ["순애", "미영"],
+      "emotion": "이해, 연결",
+      "action": "눈 마주침",
+      "main_prompt": "masterpiece, best quality, photorealistic, 2women, moment of understanding, restaurant, former enemies connecting, evening light",
+      "character_prompts": [
+        {
+          "character": "순애",
+          "region": "0-45%",
+          "positive": "48 year old Korean woman, understanding expression, looking at Mi-young differently now, anger replaced by comprehension"
+        },
+        {
+          "character": "미영",
+          "region": "55-100%",
+          "positive": "43 year old Korean woman, gentle expression, meeting wife eyes, shared pain, two women bound by one man"
+        }
+      ],
+      "output_folder": "scenes/3막/10화/s08_마주보기",
+      "filename_prefix": "EP10_s08_마주보기"
+    }
+  ]
+}

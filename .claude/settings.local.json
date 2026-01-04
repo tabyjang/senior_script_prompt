@@ -21,7 +21,13 @@
       "Bash(copy:*)",
       "WebSearch",
       "WebFetch(domain:github.com)",
-      "Bash(dir /s /b \"C:\\\\Newproject\\\\senior-automation-project\\\\senior-story-project\\\\senior_script_prompt\\\\prompts\\\\1년동거5억조건\\\\1년동거5억조건_episodes\")"
+      "Bash(dir /s /b \"C:\\\\Newproject\\\\senior-automation-project\\\\senior-story-project\\\\senior_script_prompt\\\\prompts\\\\1년동거5억조건\\\\1년동거5억조건_episodes\")",
+      "Bash(dir /b \"C:\\\\Newproject\\\\senior-automation-project\\\\senior-story-project\\\\senior_script_prompt\")",
+      "Bash(dir /b \"C:\\\\Newproject\\\\senior-automation-project\\\\senior-story-project\\\\senior_script_prompt\\\\prompts\")",
+      "Bash(dir /b \"C:\\\\Newproject\\\\senior-automation-project\\\\senior-story-project\\\\senior_script_prompt\\\\prompts\\\\01_1년동거5억조건\")",
+      "Bash(dir /s /b \"C:\\\\Newproject\\\\senior-automation-project\\\\senior-story-project\\\\senior_script_prompt\\\\prompts\\\\03_매월송금했던남편\\\\characters\")",
+      "Bash(dir /b \"C:\\\\Newproject\\\\senior-automation-project\\\\senior-story-project\\\\senior_script_prompt\\\\prompts\\\\03_매월송금했던남편\\\\scenes\")",
+      "Bash(dir /s /b \"C:\\\\Newproject\\\\senior-automation-project\\\\senior-story-project\\\\senior_script_prompt\\\\prompts\\\\03_매월송금했던남편\\\\scenes\")"
     ]
   }
 }

@@ -1,0 +1,175 @@
+{
+  "metadata": {
+    "work_title": "마지막송금",
+    "act": "2막 전반",
+    "act_title": "추적과 의심",
+    "episode": 6,
+    "episode_title": "그 여자를 찾아서",
+    "created_at": "2026-01-04",
+    "total_scenes": 8
+  },
+  "episode_info": {
+    "main_locations": ["집", "버스", "분식집 앞"],
+    "characters": ["박순애", "한옥자"],
+    "core_emotion": "결의, 두려움"
+  },
+  "scenes": [
+    {
+      "scene_id": "s01",
+      "scene_name": "주소 확보",
+      "location": "옥자 사무실",
+      "time": "오전",
+      "characters": ["옥자"],
+      "emotion": "긴장, 기대",
+      "action": "주소 확인",
+      "main_prompt": "masterpiece, best quality, photorealistic, 2women, office scene, mission briefing, real estate office, important information",
+      "character_prompts": [
+        {
+          "character": "옥자",
+          "region": "full",
+          "positive": "49 year old Korean woman, triumphant expression, holding paper with address, pointing at location, mission accomplished"
+        }
+      ],
+      "output_folder": "scenes/2막전반/06화/s01_주소확보",
+      "filename_prefix": "EP06_s01_주소확보"
+    },
+    {
+      "scene_id": "s02",
+      "scene_name": "전날 밤 고민",
+      "location": "순애 안방",
+      "time": "밤",
+      "characters": ["순애"],
+      "emotion": "두려움, 갈등",
+      "action": "침대에서 고민",
+      "main_prompt": "masterpiece, best quality, photorealistic, 1woman, sleepless night, bedroom, moonlight, internal struggle, anticipation",
+      "character_prompts": [
+        {
+          "character": "순애",
+          "region": "full",
+          "positive": "48 year old Korean woman, worried expression, lying in bed awake, staring at ceiling, hands clasped on chest, dreading tomorrow, can't sleep"
+        }
+      ],
+      "output_folder": "scenes/2막전반/06화/s02_밤고민",
+      "filename_prefix": "EP06_s02_밤고민"
+    },
+    {
+      "scene_id": "s03",
+      "scene_name": "남편 사진 보며 독백",
+      "location": "순애 안방",
+      "time": "밤",
+      "characters": ["순애"],
+      "emotion": "분노, 슬픔",
+      "action": "사진에 말하기",
+      "main_prompt": "masterpiece, best quality, photorealistic, 1woman, talking to photo, bedroom night, emotional monologue, confronting memory",
+      "character_prompts": [
+        {
+          "character": "순애",
+          "region": "full",
+          "positive": "48 year old Korean woman, tearful angry expression, holding husband wedding photo, speaking to picture, demanding answers, dim lamp light, intimate moment"
+        }
+      ],
+      "output_folder": "scenes/2막전반/06화/s03_사진독백",
+      "filename_prefix": "EP06_s03_사진독백"
+    },
+    {
+      "scene_id": "s04",
+      "scene_name": "아침 출발 준비",
+      "location": "순애 집 현관",
+      "time": "아침",
+      "characters": ["순애"],
+      "emotion": "결의",
+      "action": "외출 준비",
+      "main_prompt": "masterpiece, best quality, photorealistic, 1woman, morning departure, home entrance, determined journey beginning, mission start",
+      "character_prompts": [
+        {
+          "character": "순애",
+          "region": "full",
+          "positive": "48 year old Korean woman, steely expression, putting on coat, checking bag, deep breath before leaving, about to face truth"
+        }
+      ],
+      "output_folder": "scenes/2막전반/06화/s04_출발준비",
+      "filename_prefix": "EP06_s04_출발준비"
+    },
+    {
+      "scene_id": "s05",
+      "scene_name": "옥자와 함께 이동",
+      "location": "버스/지하철 안",
+      "time": "오전",
+      "characters": ["순애", "옥자"],
+      "emotion": "긴장, 결의",
+      "action": "이동 중 대화",
+      "main_prompt": "masterpiece, best quality, photorealistic, 2women, public transit, journey to confront, bus interior, supportive friendship",
+      "character_prompts": [
+        {
+          "character": "순애",
+          "region": "0-45%",
+          "positive": "48 year old Korean woman, tense expression, sitting rigidly, clutching bag, staring out window, gathering courage"
+        },
+        {
+          "character": "옥자",
+          "region": "55-100%",
+          "positive": "49 year old Korean woman, encouraging expression, holding friend hand, supportive posture, whispering reassurance"
+        }
+      ],
+      "output_folder": "scenes/2막전반/06화/s05_이동중",
+      "filename_prefix": "EP06_s05_이동중"
+    },
+    {
+      "scene_id": "s06",
+      "scene_name": "분식집 거리 도착",
+      "location": "동네 골목",
+      "time": "낮",
+      "characters": ["순애"],
+      "emotion": "긴장, 기대",
+      "action": "주변 관찰",
+      "main_prompt": "masterpiece, best quality, photorealistic, 2women, neighborhood street, target location, modest area, arriving at destination",
+      "character_prompts": [
+        {
+          "character": "순애",
+          "region": "full",
+          "positive": "48 year old Korean woman, apprehensive expression, looking around neighborhood, searching for restaurant, heart pounding"
+        }
+      ],
+      "output_folder": "scenes/2막전반/06화/s06_거리도착",
+      "filename_prefix": "EP06_s06_거리도착"
+    },
+    {
+      "scene_id": "s07",
+      "scene_name": "분식집 간판 발견",
+      "location": "분식집 앞",
+      "time": "낮",
+      "characters": ["순애"],
+      "emotion": "긴장감 최고조",
+      "action": "간판 읽기",
+      "main_prompt": "masterpiece, best quality, photorealistic, 2women, restaurant exterior, moment of truth, small restaurant sign, tension peak",
+      "character_prompts": [
+        {
+          "character": "순애",
+          "region": "full",
+          "positive": "48 year old Korean woman, frozen expression, staring at sign reading 미영분식, legs frozen, moment before confrontation"
+        }
+      ],
+      "output_folder": "scenes/2막전반/06화/s07_간판발견",
+      "filename_prefix": "EP06_s07_간판발견"
+    },
+    {
+      "scene_id": "s08",
+      "scene_name": "문 앞 망설임",
+      "location": "분식집 문 앞",
+      "time": "낮",
+      "characters": ["순애"],
+      "emotion": "두려움, 결의",
+      "action": "문 밀기 직전",
+      "main_prompt": "masterpiece, best quality, photorealistic, 1woman, restaurant entrance, decisive moment, hand on door, about to enter truth",
+      "character_prompts": [
+        {
+          "character": "순애",
+          "region": "full",
+          "positive": "48 year old Korean woman, trembling determination, hand reaching for door handle, deep breath, about to push open, back view, moment of courage"
+        }
+      ],
+      "output_folder": "scenes/2막전반/06화/s08_문앞망설임",
+      "filename_prefix": "EP06_s08_문앞망설임"
+    }
+  ]
+}

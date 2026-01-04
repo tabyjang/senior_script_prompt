@@ -1,0 +1,180 @@
+{
+  "metadata": {
+    "work_title": "마지막송금",
+    "act": "2막 후반",
+    "act_title": "진실의 문",
+    "episode": 9,
+    "episode_title": "35년 전 그날",
+    "created_at": "2026-01-04",
+    "total_scenes": 8
+  },
+  "episode_info": {
+    "main_locations": ["미영분식집", "회상 장면들"],
+    "characters": ["박순애", "김미영", "젊은 김동호(회상)", "젊은 김미영(회상)"],
+    "core_emotion": "충격, 슬픔 (감정 최고조)"
+  },
+  "scenes": [
+    {
+      "scene_id": "s01",
+      "scene_name": "미영 과거 이야기 시작",
+      "location": "미영분식",
+      "time": "낮",
+      "characters": ["미영"],
+      "emotion": "고통, 회상",
+      "action": "과거 얘기 시작",
+      "main_prompt": "masterpiece, best quality, photorealistic, 2women, storytelling scene, restaurant, painful past beginning to unfold",
+      "character_prompts": [
+        {
+          "character": "미영",
+          "region": "full",
+          "positive": "43 year old Korean woman, distant painful expression, sitting across from visitor, beginning to tell old story, eyes looking into past"
+        }
+      ],
+      "output_folder": "scenes/2막후반/09화/s01_이야기시작",
+      "filename_prefix": "EP09_s01_이야기시작"
+    },
+    {
+      "scene_id": "s02",
+      "scene_name": "회상 - 젊은 미영 행복한 가족",
+      "location": "옛날 집 (회상)",
+      "time": "35년 전, 낮",
+      "characters": ["젊은 미영"],
+      "emotion": "행복",
+      "action": "가족 시간",
+      "main_prompt": "masterpiece, best quality, photorealistic, flashback scene, happy family, 1988, warm family home, sepia tone, nostalgic",
+      "character_prompts": [
+        {
+          "character": "젊은 미영",
+          "region": "full",
+          "positive": "23 year old Korean woman, bright happy smile, sitting with parents, laughing, whole healthy body, before tragedy, youthful innocence, family warmth"
+        }
+      ],
+      "output_folder": "scenes/2막후반/09화/s02_행복한과거",
+      "filename_prefix": "EP09_s02_행복한과거"
+    },
+    {
+      "scene_id": "s03",
+      "scene_name": "회상 - 그날 밤 교통사고",
+      "location": "밤길 (회상)",
+      "time": "35년 전, 밤",
+      "characters": ["젊은 동호"],
+      "emotion": "충격, 공포",
+      "action": "사고 순간",
+      "main_prompt": "masterpiece, best quality, photorealistic, flashback scene, car accident night, dramatic crash moment, headlights, darkness, tragic night, sepia/dark tone",
+      "character_prompts": [
+        {
+          "character": "젊은 동호",
+          "region": "full",
+          "positive": "30 year old Korean man, horrified expression, drunk driver moment of impact, hands on steering wheel, terror, realizing what he has done"
+        }
+      ],
+      "output_folder": "scenes/2막후반/09화/s03_사고순간",
+      "filename_prefix": "EP09_s03_사고순간"
+    },
+    {
+      "scene_id": "s04",
+      "scene_name": "회상 - 병원 미영",
+      "location": "병원 (회상)",
+      "time": "35년 전",
+      "characters": ["젊은 미영"],
+      "emotion": "절망",
+      "action": "비보 받기",
+      "main_prompt": "masterpiece, best quality, photorealistic, flashback scene, hospital ward, devastating news, young woman destroyed, sepia tone",
+      "character_prompts": [
+        {
+          "character": "젊은 미영",
+          "region": "full",
+          "positive": "23 year old Korean woman, screaming crying, hospital bed, leg in cast, learning parents died, utter devastation, life shattered moment"
+        }
+      ],
+      "output_folder": "scenes/2막후반/09화/s04_병원비보",
+      "filename_prefix": "EP09_s04_병원비보"
+    },
+    {
+      "scene_id": "s05",
+      "scene_name": "회상 - 법정 동호 무릎 꿇음",
+      "location": "법정 (회상)",
+      "time": "35년 전",
+      "characters": ["젊은 동호", "젊은 미영"],
+      "emotion": "죄책감, 간청",
+      "action": "무릎 꿇고 빌기",
+      "main_prompt": "masterpiece, best quality, photorealistic, flashback scene, courtroom, dramatic plea, defendant begging forgiveness, sepia tone",
+      "character_prompts": [
+        {
+          "character": "젊은 동호",
+          "region": "0-50%",
+          "positive": "30 year old Korean man, on knees crying, begging victim for forgiveness, pleading, total remorse, broken man, desperate atonement offer"
+        },
+        {
+          "character": "젊은 미영",
+          "region": "50-100%",
+          "positive": "23 year old Korean woman, hateful tears, looking down at man who killed parents, wheelchair bound, fury and grief"
+        }
+      ],
+      "output_folder": "scenes/2막후반/09화/s05_법정무릎",
+      "filename_prefix": "EP09_s05_법정무릎"
+    },
+    {
+      "scene_id": "s06",
+      "scene_name": "처음엔 죽여버리고 싶었어요",
+      "location": "미영분식 (현재)",
+      "time": "낮",
+      "characters": ["미영"],
+      "emotion": "솔직한 분노",
+      "action": "과거 감정 고백",
+      "main_prompt": "masterpiece, best quality, photorealistic, 1woman, honest confession, restaurant, admitting past hatred, raw emotion",
+      "character_prompts": [
+        {
+          "character": "미영",
+          "region": "full",
+          "positive": "43 year old Korean woman, bitter expression, admitting murderous thoughts, hands clenched, old anger surfacing"
+        }
+      ],
+      "output_folder": "scenes/2막후반/09화/s06_죽이고싶었다",
+      "filename_prefix": "EP09_s06_죽이고싶었다"
+    },
+    {
+      "scene_id": "s07",
+      "scene_name": "순애 충격으로 얼어붙음",
+      "location": "미영분식 (현재)",
+      "time": "낮",
+      "characters": ["순애"],
+      "emotion": "완전한 충격",
+      "action": "정지",
+      "main_prompt": "masterpiece, best quality, photorealistic, 1woman, frozen in shock, restaurant, world view destroyed, devastating revelation",
+      "character_prompts": [
+        {
+          "character": "순애",
+          "region": "full",
+          "positive": "48 year old Korean woman, completely frozen, unable to move or speak, learning husband was killer, everything she knew is false, pale white face, trembling"
+        }
+      ],
+      "output_folder": "scenes/2막후반/09화/s07_순애충격",
+      "filename_prefix": "EP09_s07_순애충격"
+    },
+    {
+      "scene_id": "s08",
+      "scene_name": "두 여자 마주보며 눈물",
+      "location": "미영분식",
+      "time": "낮",
+      "characters": ["순애", "미영"],
+      "emotion": "공유된 슬픔",
+      "action": "함께 울기",
+      "main_prompt": "masterpiece, best quality, photorealistic, 2women, shared grief, restaurant, crying together, unexpected connection",
+      "character_prompts": [
+        {
+          "character": "순애",
+          "region": "0-45%",
+          "positive": "48 year old Korean woman, tears streaming, processing husband secret life, grief and shock combined"
+        },
+        {
+          "character": "미영",
+          "region": "55-100%",
+          "positive": "43 year old Korean woman, crying, relieving old trauma, cathartic release of 35 years"
+        }
+      ],
+      "output_folder": "scenes/2막후반/09화/s08_함께눈물",
+      "filename_prefix": "EP09_s08_함께눈물"
+    }
+  ]
+}

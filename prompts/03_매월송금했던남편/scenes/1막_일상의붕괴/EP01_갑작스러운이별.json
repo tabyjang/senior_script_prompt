@@ -1,0 +1,186 @@
+{
+  "metadata": {
+    "work_title": "마지막송금",
+    "act": "1막",
+    "act_title": "일상의 붕괴",
+    "episode": 1,
+    "episode_title": "갑작스러운 이별",
+    "created_at": "2026-01-04",
+    "total_scenes": 8
+  },
+  "episode_info": {
+    "main_locations": ["집", "공원", "병원 응급실", "영안실"],
+    "characters": ["박순애", "김동호"],
+    "core_emotion": "평화 → 충격, 슬픔"
+  },
+  "scenes": [
+    {
+      "scene_id": "s01",
+      "scene_name": "평화로운 아침 식탁",
+      "location": "집 부엌/식탁",
+      "time": "아침 6시",
+      "characters": ["순애", "동호"],
+      "emotion": "평화, 일상",
+      "action": "아침 식사",
+      "main_prompt": "masterpiece, best quality, photorealistic, 2people elderly Korean couple, peaceful breakfast scene, cozy kitchen interior, warm morning light through window, autumn morning atmosphere, domestic harmony",
+      "character_prompts": [
+        {
+          "character": "순애",
+          "region": "0-45%",
+          "positive": "48 year old Korean woman, gentle smile, serving food, shoulder-length gray-streaked hair, wearing apron, placing dishes on table, warm expression"
+        },
+        {
+          "character": "동호",
+          "region": "55-100%",
+          "positive": "50 year old Korean man, reading newspaper, relaxed expression, short gray hair, wearing comfortable home clothes, sitting at table, coffee cup nearby"
+        }
+      ],
+      "output_folder": "scenes/1막/01화/s01_아침식탁",
+      "filename_prefix": "EP01_s01_아침식탁"
+    },
+    {
+      "scene_id": "s02",
+      "scene_name": "동호 서재 서랍 잠그기",
+      "location": "집 서재",
+      "time": "오후",
+      "characters": ["동호"],
+      "emotion": "비밀스러움",
+      "action": "서랍 잠그기",
+      "main_prompt": "masterpiece, best quality, photorealistic, 1man, secretive moment, study room interior, subtle tension, afternoon light, mysterious atmosphere",
+      "character_prompts": [
+        {
+          "character": "동호",
+          "region": "full",
+          "positive": "50 year old Korean man, guarded expression, careful movement, short gray hair, wearing casual clothes, locking desk drawer, looking over shoulder, quiet secretive gesture"
+        }
+      ],
+      "output_folder": "scenes/1막/01화/s02_서랍잠금",
+      "filename_prefix": "EP01_s02_서랍잠금"
+    },
+    {
+      "scene_id": "s03",
+      "scene_name": "동호 저녁 산책 출발",
+      "location": "집 현관",
+      "time": "저녁 6시",
+      "characters": ["동호"],
+      "emotion": "평온",
+      "action": "산책 나가기",
+      "main_prompt": "masterpiece, best quality, photorealistic, 1man, evening walk departure, home entrance, golden hour lighting, peaceful routine, autumn evening",
+      "character_prompts": [
+        {
+          "character": "동호",
+          "region": "full",
+          "positive": "50 year old Korean man, serene expression, putting on jacket, short gray hair, neat casual clothes, stepping out door, peaceful demeanor, waving goodbye, routine moment"
+        }
+      ],
+      "output_folder": "scenes/1막/01화/s03_산책출발",
+      "filename_prefix": "EP01_s03_산책출발"
+    },
+    {
+      "scene_id": "s04",
+      "scene_name": "순애 혼자 저녁 준비",
+      "location": "집 부엌",
+      "time": "저녁 7시",
+      "characters": ["순애"],
+      "emotion": "평온, 약간의 걱정",
+      "action": "요리하며 시간 확인",
+      "main_prompt": "masterpiece, best quality, photorealistic, 1woman, cooking alone, kitchen interior, evening indoor lighting, domestic scene, growing concern",
+      "character_prompts": [
+        {
+          "character": "순애",
+          "region": "full",
+          "positive": "48 year old Korean woman, slightly worried expression, shoulder-length gray-streaked hair, wearing apron, cooking at stove, glancing at clock, stirring pot, waiting for husband"
+        }
+      ],
+      "output_folder": "scenes/1막/01화/s04_저녁준비",
+      "filename_prefix": "EP01_s04_저녁준비"
+    },
+    {
+      "scene_id": "s05",
+      "scene_name": "병원 전화 받는 순간",
+      "location": "집 거실",
+      "time": "저녁 8시",
+      "characters": ["순애"],
+      "emotion": "충격, 공포",
+      "action": "전화 받기",
+      "main_prompt": "masterpiece, best quality, photorealistic, 1woman, receiving phone call, living room, dramatic lighting, world-shattering moment, tension",
+      "character_prompts": [
+        {
+          "character": "순애",
+          "region": "full",
+          "positive": "48 year old Korean woman, frozen expression, holding phone, shoulder-length gray-streaked hair, pale face, standing still, shock spreading across face, trembling hand, phone pressed to ear"
+        }
+      ],
+      "output_folder": "scenes/1막/01화/s05_전화충격",
+      "filename_prefix": "EP01_s05_전화충격"
+    },
+    {
+      "scene_id": "s06",
+      "scene_name": "응급실 도착",
+      "location": "병원 응급실 복도",
+      "time": "밤",
+      "characters": ["순애", "의사"],
+      "emotion": "두려움, 절박함",
+      "action": "의사와 대화",
+      "main_prompt": "masterpiece, best quality, photorealistic, 2people, hospital emergency room, tense atmosphere, harsh fluorescent lighting, medical setting, devastating news",
+      "character_prompts": [
+        {
+          "character": "순애",
+          "region": "0-55%",
+          "positive": "48 year old Korean woman, devastated expression, trembling, disheveled hair, wearing hastily grabbed coat, clutching bag, desperate eyes, facing doctor"
+        },
+        {
+          "character": "의사",
+          "region": "55-100%",
+          "positive": "40 year old Korean man, solemn professional expression, wearing white coat, holding clipboard, delivering bad news, sympathetic but clinical"
+        }
+      ],
+      "output_folder": "scenes/1막/01화/s06_응급실",
+      "filename_prefix": "EP01_s06_응급실"
+    },
+    {
+      "scene_id": "s07",
+      "scene_name": "영안실 - 남편 얼굴 확인",
+      "location": "병원 영안실",
+      "time": "밤",
+      "characters": ["순애"],
+      "emotion": "충격, 멍함",
+      "action": "남편 시신 확인",
+      "main_prompt": "masterpiece, best quality, photorealistic, 1woman, morgue scene, somber atmosphere, cold blue lighting, grief-stricken moment, loss",
+      "character_prompts": [
+        {
+          "character": "순애",
+          "region": "full",
+          "positive": "48 year old Korean woman, frozen blank expression, tears forming, standing beside covered body, hand reaching out, unable to speak, shock and disbelief, white sheet visible, sterile hospital room"
+        }
+      ],
+      "output_folder": "scenes/1막/01화/s07_영안실",
+      "filename_prefix": "EP01_s07_영안실"
+    },
+    {
+      "scene_id": "s08",
+      "scene_name": "순애 멍하니 서있기",
+      "location": "병원 영안실",
+      "time": "밤",
+      "characters": ["순애"],
+      "emotion": "공허, 믿을 수 없음",
+      "action": "중얼거리기",
+      "main_prompt": "masterpiece, best quality, photorealistic, 1woman, emotional breakdown, hospital morgue, dim cold lighting, devastating loss, final words",
+      "character_prompts": [
+        {
+          "character": "순애",
+          "region": "full",
+          "positive": "48 year old Korean woman, broken expression, whispering, tears streaming down cheeks, pale face, lips moving, speaking to deceased husband, hollow eyes, completely shattered"
+        }
+      ],
+      "output_folder": "scenes/1막/01화/s08_마지막말",
+      "filename_prefix": "EP01_s08_마지막말"
+    }
+  ],
+  "key_objects": [
+    {"object": "된장찌개", "symbol": "일상, 마지막 대화", "scenes": ["s01", "s04"]},
+    {"object": "서랍 열쇠", "symbol": "비밀", "scenes": ["s02"]},
+    {"object": "전화기", "symbol": "비보 전달", "scenes": ["s05"]},
+    {"object": "하얀 천", "symbol": "죽음", "scenes": ["s07"]}
+  ]
+}

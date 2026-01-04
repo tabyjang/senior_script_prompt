@@ -1,0 +1,68 @@
+{
+  "metadata": {
+    "work_title": "마지막송금",
+    "character_name": "이수진",
+    "created_at": "2026-01-04",
+    "total_versions": 6
+  },
+  "character_info": {
+    "name": "이수진",
+    "real_age": 35,
+    "prompt_age": 20,
+    "gender": "female",
+    "role": "daughter_in_law",
+    "personality": ["다정함", "속마음 모름", "눈치 봄"],
+    "appearance": ["깔끔하고 세련된 인상", "현대적 스타일"],
+    "symbolic_item": "핸드백, 깔끔한 옷차림"
+  },
+  "versions": [
+    {
+      "version_id": "v01",
+      "version_name": "기본_정면",
+      "description": "캐릭터 소개용 기본 이미지",
+      "positive": "masterpiece, best quality, photorealistic, 8k uhd, medium shot, front view, eye level, 20 year old Korean woman, pretty face, polite expression, long black hair neatly styled, modern appearance, wearing neat blouse and cardigan, standing gracefully, pleasant posture, neutral gray background, soft studio lighting",
+      "output_folder": "characters/이수진/v01_기본",
+      "filename_prefix": "이수진_v01_기본"
+    },
+    {
+      "version_id": "v02",
+      "version_name": "상복_장례식",
+      "description": "장례식 상복 차림",
+      "positive": "masterpiece, best quality, photorealistic, 8k uhd, medium shot, funeral scene, 20 year old Korean woman, solemn expression, respectful, long black hair tied back, wearing black dress, standing beside husband, supportive posture, funeral hall background, soft diffused lighting",
+      "output_folder": "characters/이수진/v02_상복",
+      "filename_prefix": "이수진_v02_상복"
+    },
+    {
+      "version_id": "v03",
+      "version_name": "위로_시어머니",
+      "description": "시어머니 위로",
+      "positive": "masterpiece, best quality, photorealistic, 8k uhd, medium shot, comforting scene, 20 year old Korean woman, caring expression, gentle touch, long black hair, wearing casual clothes, patting mother-in-law arm, supportive posture, home setting, warm lighting, caring atmosphere",
+      "output_folder": "characters/이수진/v03_위로",
+      "filename_prefix": "이수진_v03_위로"
+    },
+    {
+      "version_id": "v04",
+      "version_name": "눈치_중간입장",
+      "description": "남편 눈치 보기",
+      "positive": "masterpiece, best quality, photorealistic, 8k uhd, medium shot, awkward scene, 20 year old Korean woman, uncertain expression, glancing sideways, long black hair, wearing home clothes, looking between husband and mother-in-law, living room, evening light, tense family moment",
+      "output_folder": "characters/이수진/v04_눈치",
+      "filename_prefix": "이수진_v04_눈치"
+    },
+    {
+      "version_id": "v05",
+      "version_name": "지지_시어머니편",
+      "description": "시어머니 편 들기",
+      "positive": "masterpiece, best quality, photorealistic, 8k uhd, medium shot, supportive scene, 20 year old Korean woman, understanding expression, nodding, long black hair, neat appearance, listening to mother-in-law, sympathetic posture, kitchen or living room, daytime, supportive atmosphere",
+      "output_folder": "characters/이수진/v05_지지",
+      "filename_prefix": "이수진_v05_지지"
+    },
+    {
+      "version_id": "v06",
+      "version_name": "감동_진실후",
+      "description": "진실 알게 된 후 감동",
+      "positive": "masterpiece, best quality, photorealistic, 8k uhd, close-up shot, emotional realization, 20 year old Korean woman, tearful eyes, touched expression, long black hair, emotional moment, listening to story, hands clasped, home setting, soft lighting, moved atmosphere",
+      "output_folder": "characters/이수진/v06_감동",
+      "filename_prefix": "이수진_v06_감동"
+    }
+  ]
+}

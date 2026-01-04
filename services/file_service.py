@@ -29,6 +29,62 @@ class FileService:
     def __init__(self, project_path: Path):
         self.project_path = project_path
 
+    def get_characters_dir(self) -> Path:
+        """
+        캐릭터 폴더 경로 반환
+        characters/ (새 구조) 우선, 없으면 02_characters/ (구 구조)
+        """
+        new_dir = self.project_path / "characters"
+        old_dir = self.project_path / "02_characters"
+
+        if new_dir.exists():
+            return new_dir
+        elif old_dir.exists():
+            return old_dir
+        else:
+            # 기본적으로 characters/ 폴더 사용
+            return new_dir
+
+    def find_project_md_file(self) -> Optional[Path]:
+        """
+        프로젝트 폴더에서 메인 MD 파일 찾기
+        1. 프로젝트명과 같은 MD 파일 (01_제목 -> 제목.md)
+        2. 가장 큰 MD 파일
+        """
+        try:
+            if not self.project_path or not self.project_path.exists():
+                return None
+
+            project_name = self.project_path.name
+
+            # 1. 프로젝트명에서 번호 제거 후 매칭 시도
+            # 예: 01_1년동거5억조건 -> 1년동거5억조건.md
+            if '_' in project_name:
+                name_without_number = '_'.join(project_name.split('_')[1:])
+                potential_md = self.project_path / f"{name_without_number}.md"
+                if potential_md.exists():
+                    return potential_md
+
+            # 2. 프로젝트명 그대로 매칭
+            project_md = self.project_path / f"{project_name}.md"
+            if project_md.exists():
+                return project_md
+
+            # 3. synopsis.md 찾기
+            synopsis_md = self.project_path / "synopsis.md"
+            if synopsis_md.exists():
+                return synopsis_md
+
+            # 4. 가장 큰 MD 파일 찾기
+            md_files = list(self.project_path.glob("*.md"))
+            if md_files:
+                return max(md_files, key=lambda f: f.stat().st_size)
+
+            return None
+        except Exception as e:
+            print(f"MD 파일 찾기 오류: {e}")
+            return None
+
     def load_synopsis(self) -> Dict[str, Any]:
         """시놉시스 파일 로드"""
         synopsis_path = self.project_path / "synopsis.json"
@@ -51,10 +107,97 @@ class FileService:
             print(f"시놉시스 저장 오류: {e}")
             return False
 
+    def _normalize_character_data(self, char_data: Dict[str, Any]) -> Dict[str, Any]:
+        """
+        다양한 구조의 캐릭터 데이터를 통합된 형태로 변환
+        지원 구조:
+        - 01/03: character_info + metadata + versions
+        - 02: character_name + actual_age + versions (루트 레벨)
+        - 구: name + age 등 (기존 구조)
+        """
+        versions = char_data.get("versions", [])
+
+        # 구조 1: character_info가 있는 경우 (01, 03 프로젝트)
+        if "character_info" in char_data:
+            info = char_data.get("character_info", {})
+            metadata = char_data.get("metadata", {})
+
+            char_name = (
+                info.get("name") or
+                info.get("name_kr") or
+                metadata.get("character_name") or
+                metadata.get("character_name_kr") or
+                ""
+            )
+
+            # appearance가 객체인 경우 배열로 변환
+            appearance = info.get("appearance", [])
+            if isinstance(appearance, dict):
+                appearance = list(appearance.values())
+
+            normalized = {
+                "_filename": char_data.get("_filename", ""),
+                "_original_structure": "new",
+                "name": char_name,
+                "name_en": info.get("name_en", metadata.get("character_name_en", "")),
+                "age": info.get("real_age", ""),
+                "prompt_age": info.get("prompt_age", ""),
+                "gender": info.get("gender", ""),
+                "role": info.get("role", ""),
+                "personality": info.get("personality", []),
+                "appearance": appearance,
+                "symbolic_item": info.get("symbolic_item", ""),
+                "work_title": metadata.get("work_title", ""),
+                "versions": versions,
+                "image_generation_prompts": {},
+            }
+
+        # 구조 2: character_name이 루트에 있는 경우 (02 프로젝트)
+        elif "character_name" in char_data:
+            char_name = char_data.get("character_name", "")
+
+            # appearance가 객체인 경우 배열로 변환
+            appearance = char_data.get("appearance", [])
+            if isinstance(appearance, dict):
+                appearance = list(appearance.values())
+
+            # symbolic_item이 객체인 경우 문자열로 변환
+            symbolic = char_data.get("symbolic_item", "")
+            if isinstance(symbolic, dict):
+                symbolic = symbolic.get("item", "") or symbolic.get("description", "")
+
+            normalized = {
+                "_filename": char_data.get("_filename", ""),
+                "_original_structure": "new",
+                "name": char_name,
+                "name_en": char_data.get("character_name_en", ""),
+                "age": char_data.get("actual_age") or char_data.get("real_age", ""),
+                "prompt_age": char_data.get("prompt_age", ""),
+                "gender": char_data.get("gender", ""),
+                "role": char_data.get("role", ""),
+                "personality": char_data.get("personality", []),
+                "appearance": appearance,
+                "symbolic_item": symbolic,
+                "work_title": char_data.get("work_title", ""),
+                "versions": versions,
+                "image_generation_prompts": {},
+            }
+
+        # 구조 3: 구 구조 그대로 반환
+        else:
+            return char_data
+
+        # versions를 image_generation_prompts로 변환
+        for i, version in enumerate(versions, start=1):
+            if isinstance(version, dict) and version.get("positive"):
+                normalized["image_generation_prompts"][f"prompt_{i}"] = version.get("positive", "")
+
+        return normalized
+
     def load_characters(self) -> List[Dict[str, Any]]:
-        """캐릭터 파일들 로드"""
+        """캐릭터 파일들 로드 (새 구조 및 구 구조 모두 지원)"""
         characters: List[Dict[str, Any]] = []
-        characters_dir = self.project_path / "02_characters"
+        characters_dir = self.get_characters_dir()
 
         if characters_dir.exists():
             merged_by_key: Dict[str, Dict[str, Any]] = {}
@@ -63,8 +206,11 @@ class FileService:
             for idx, char_file in enumerate(sorted(characters_dir.glob("*.json")), start=1):
                 try:
                     with open(char_file, 'r', encoding='utf-8') as f:
-                        char_data = json.load(f)
-                        char_data['_filename'] = char_file.name
+                        raw_data = json.load(f)
+                        raw_data['_filename'] = char_file.name
+
+                        # 새 구조/구 구조 통합 처리
+                        char_data = self._normalize_character_data(raw_data)
 
                         # name 정규화: 공백 제거(예: "김회장" == "김 회장")
                         raw_name = char_data.get("name", "")
@@ -89,10 +235,12 @@ class FileService:
                             char_data["image_generation_prompts"] = {}
 
                         # image_prompts 파일이 있으면 프로필에 복원(누락된 prompt만 채움)
-                        try:
-                            self._sync_image_prompts_into_profile_from_file(char_data, character_index=idx)
-                        except Exception as e:
-                            print(f"이미지 프롬프트 동기화 오류 ({char_file.name}): {e}")
+                        # 새 구조는 이미 versions에서 가져왔으므로 스킵
+                        if char_data.get("_original_structure") != "new":
+                            try:
+                                self._sync_image_prompts_into_profile_from_file(char_data, character_index=idx)
+                            except Exception as e:
+                                print(f"이미지 프롬프트 동기화 오류 ({char_file.name}): {e}")
 
                         # 중복(공백만 다른 이름 등) 병합: 첫 항목 유지 + 빈 값만 채우기
                         key = normalize_character_name(char_data.get("name", ""))
@@ -129,7 +277,8 @@ class FileService:
 
             # (자동 정리) 공백 정규화/중복 병합이 발생한 경우 파일을 즉시 정리하여
             # 다음 실행부터 "김 회장" 같은 중복 파일이 다시 안 생기도록 한다.
-            if needs_cleanup:
+            # 새 구조는 자동 정리하지 않음
+            if needs_cleanup and characters and characters[0].get("_original_structure") != "new":
                 try:
                     self.save_characters(characters)
                 except Exception as e:
@@ -554,10 +703,11 @@ class FileService:
             return False
 
     def load_chapters(self) -> List[Dict[str, Any]]:
-        """챕터 파일들 로드"""
+        """챕터/에피소드 파일들 로드 (03_chapters 또는 scenes 폴더 지원)"""
         chapters = []
-        chapters_dir = self.project_path / "03_chapters"
 
+        # 1. 먼저 03_chapters 폴더 확인 (기존 구조)
+        chapters_dir = self.project_path / "03_chapters"
         if chapters_dir.exists():
             for chapter_file in sorted(chapters_dir.glob("chapter_*.json")):
                 try:
@@ -568,7 +718,100 @@ class FileService:
                 except Exception as e:
                     print(f"챕터 파일 로드 오류 ({chapter_file.name}): {e}")
 
+        # 2. 03_chapters가 비어있으면 scenes 폴더 확인 (새 구조)
+        if not chapters:
+            scenes_dir = self.project_path / "scenes"
+            if scenes_dir.exists():
+                chapters = self._load_episodes_from_scenes(scenes_dir)
+
         return chapters
+
+    def _load_episodes_from_scenes(self, scenes_dir: Path) -> List[Dict[str, Any]]:
+        """
+        scenes 폴더에서 에피소드 파일들 로드
+        지원 파일명: EP01_제목.json, 01화_제목.json
+        지원 JSON 구조: episode/episode_info 또는 chapter/chapter_info
+        """
+        import re
+        episodes = []
+
+        try:
+            # scenes 폴더 내의 모든 하위 폴더(막별) 검색
+            for act_folder in sorted(scenes_dir.iterdir()):
+                if not act_folder.is_dir():
+                    continue
+
+                # 각 막 폴더 내의 모든 JSON 파일 검색
+                all_json_files = list(act_folder.glob("*.json"))
+
+                for ep_file in sorted(all_json_files, key=lambda f: f.name):
+                    try:
+                        with open(ep_file, 'r', encoding='utf-8') as f:
+                            ep_data = json.load(f)
+
+                        metadata = ep_data.get('metadata', {})
+                        scenes = ep_data.get('scenes', [])
+
+                        # 에피소드 정보 (신버전: episode_info, 구버전: chapter_info)
+                        episode_info = ep_data.get('episode_info', {}) or ep_data.get('chapter_info', {})
+
+                        # 에피소드 번호 추출 (다양한 키 지원)
+                        ep_num = metadata.get('episode') or metadata.get('chapter') or 0
+                        if not ep_num:
+                            # 파일명에서 번호 추출: EP01, 01화 등
+                            match = re.search(r'(?:EP)?(\d+)', ep_file.stem)
+                            if match:
+                                ep_num = int(match.group(1))
+
+                        # 제목 추출 (다양한 키 지원)
+                        ep_title = metadata.get('episode_title') or metadata.get('chapter_title') or ''
+                        if not ep_title:
+                            # 파일명에서 제목 추출: EP01_제목 또는 01화_제목 -> 제목
+                            title_match = re.search(r'(?:EP\d+_|\d+화_)(.+)$', ep_file.stem)
+                            if title_match:
+                                ep_title = title_match.group(1)
+                            else:
+                                ep_title = ep_file.stem
+
+                        # 장소 정보 (다양한 키 지원)
+                        locations = episode_info.get('main_locations') or []
+                        if not locations:
+                            main_loc = episode_info.get('main_location', '')
+                            if main_loc:
+                                locations = [main_loc]
+
+                        # 감정 정보 (다양한 키 지원)
+                        emotion = episode_info.get('core_emotion') or episode_info.get('main_emotion', '')
+
+                        chapter_data = {
+                            '_filename': ep_file.name,
+                            '_folder': act_folder.name,
+                            '_source': 'scenes',
+                            'chapter_number': ep_num,
+                            'title': ep_title,
+                            'act': metadata.get('act', ''),
+                            'act_title': metadata.get('act_title', ''),
+                            'work_title': metadata.get('work_title', ''),
+                            'main_locations': locations,
+                            'characters': episode_info.get('characters', []),
+                            'core_emotion': emotion,
+                            'scenes': scenes,
+                            'total_scenes': metadata.get('total_scenes', len(scenes)),
+                            'key_objects': ep_data.get('key_objects', [])
+                        }
+
+                        episodes.append(chapter_data)
+
+                    except Exception as e:
+                        pass  # 개별 파일 오류는 조용히 무시
+
+            # 에피소드 번호로 정렬
+            episodes.sort(key=lambda x: x.get('chapter_number', 0))
+
+        except Exception as e:
+            pass  # 폴더 오류도 조용히 무시
+
+        return episodes
 
     def save_chapters(self, chapters: List[Dict[str, Any]]) -> bool:
         """챕터 파일들 저장"""
@@ -934,7 +1177,7 @@ class FileService:
         """
         장면 정보를 대본 파일에 추가/업데이트
         대본 파일이 없으면 생성합니다.
-        
+
         Args:
             chapter_number: 챕터 번호
             scenes: 장면 리스트
@@ -943,7 +1186,7 @@ class FileService:
         """
         # 기존 대본 파일 로드
         script_data = self.load_script_file(chapter_number)
-        
+
         if script_data is None:
             # 대본 파일이 없으면 빈 대본으로 생성
             script_data = {
@@ -952,17 +1195,17 @@ class FileService:
                 "script_length": 0,
                 "script_generated_at": datetime.now().isoformat()
             }
-        
+
         # 장면 정보 업데이트
         script_data["scenes"] = scenes
         script_data["scenes_generated_at"] = datetime.now().isoformat()
-        
+
         # 저장
         scripts_dir = self.project_path / "04_scripts"
         scripts_dir.mkdir(parents=True, exist_ok=True)
         filename = f"chapter_{chapter_number:02d}_script.json"
         script_path = scripts_dir / filename
-        
+
         try:
             with open(script_path, 'w', encoding='utf-8') as f:
                 json.dump(script_data, f, ensure_ascii=False, indent=2)
@@ -970,3 +1213,95 @@ class FileService:
         except Exception as e:
             print(f"장면 정보 저장 오류: {e}")
             return False
+
+    def load_episode_scripts(self) -> Dict[str, List[Dict[str, Any]]]:
+        """
+        *_episodes 폴더에서 MD 파일들을 막(Act)별로 그룹화하여 로드
+
+        Returns:
+            막별 에피소드 리스트 딕셔너리
+            {
+                "Act1_지옥의시작": [
+                    {"episode_num": 1, "title": "원수의장례식", "content": "...", "file_path": "..."},
+                    ...
+                ],
+                ...
+            }
+        """
+        import re
+
+        episodes_by_act: Dict[str, List[Dict[str, Any]]] = {}
+
+        try:
+            # *_episodes 폴더 찾기 (여러 패턴 지원)
+            episodes_folder = None
+            for folder in self.project_path.iterdir():
+                if folder.is_dir() and '_episodes' in folder.name:
+                    episodes_folder = folder
+                    break
+
+            if not episodes_folder or not episodes_folder.exists():
+                return episodes_by_act
+
+            # 각 Act 폴더 검색
+            for act_folder in sorted(episodes_folder.iterdir()):
+                if not act_folder.is_dir():
+                    continue
+
+                act_name = act_folder.name  # 예: "Act1_지옥의시작", "Act2-1_충돌과균열"
+                episodes_list: List[Dict[str, Any]] = []
+
+                # 각 MD 파일 로드
+                for md_file in sorted(act_folder.glob("*.md")):
+                    try:
+                        # 에피소드 번호 추출 (EP01, EP02, ...)
+                        ep_match = re.search(r'EP(\d+)', md_file.stem)
+                        ep_num = int(ep_match.group(1)) if ep_match else 0
+
+                        # 제목 추출 (EP01_제목.md -> 제목)
+                        title_match = re.search(r'EP\d+_(.+)$', md_file.stem)
+                        ep_title = title_match.group(1) if title_match else md_file.stem
+
+                        # 파일 내용 로드
+                        with open(md_file, 'r', encoding='utf-8') as f:
+                            content = f.read()
+
+                        episode_data = {
+                            "episode_num": ep_num,
+                            "title": ep_title,
+                            "content": content,
+                            "file_path": str(md_file),
+                            "filename": md_file.name,
+                            "char_count": len(content)
+                        }
+
+                        episodes_list.append(episode_data)
+
+                    except Exception as e:
+                        pass  # 개별 파일 오류는 무시
+
+                # 에피소드 번호로 정렬
+                episodes_list.sort(key=lambda x: x.get('episode_num', 0))
+
+                if episodes_list:
+                    episodes_by_act[act_name] = episodes_list
+
+        except Exception as e:
+            pass  # 폴더 오류는 무시
+
+        return episodes_by_act
+
+    def get_episodes_folder(self) -> Optional[Path]:
+        """
+        프로젝트의 *_episodes 폴더 경로 반환
+
+        Returns:
+            episodes 폴더 경로 또는 None
+        """
+        try:
+            for folder in self.project_path.iterdir():
+                if folder.is_dir() and '_episodes' in folder.name:
+                    return folder
+        except Exception:
+            pass
+        return None

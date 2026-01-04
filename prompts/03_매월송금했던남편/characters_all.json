@@ -1,0 +1,102 @@
+{
+  "metadata": {
+    "work_title": "마지막송금",
+    "project_folder": "03_매월송금했던남편",
+    "created_at": "2026-01-04",
+    "total_characters": 7,
+    "total_versions": 61
+  },
+  "characters": [
+    {
+      "id": "01",
+      "name": "박순애",
+      "real_age": 63,
+      "prompt_age": 48,
+      "gender": "female",
+      "role": "protagonist",
+      "personality": ["다정함", "속 깊은 걱정쟁이", "정이 많음"],
+      "appearance": ["따뜻한 눈빛", "부드러운 인상", "단정한 머리"],
+      "symbolic_item": "남편의 손목시계, 앞치마",
+      "total_versions": 12,
+      "json_file": "characters/01_박순애.json"
+    },
+    {
+      "id": "02",
+      "name": "김동호",
+      "real_age": 65,
+      "prompt_age": 50,
+      "gender": "male",
+      "role": "husband",
+      "personality": ["성실함", "과묵함", "깊은 죄책감"],
+      "appearance": ["진중한 인상", "깊은 눈빛", "근심 어린 얼굴"],
+      "symbolic_item": "손목시계, 일기장",
+      "total_versions": 12,
+      "json_file": "characters/02_김동호.json"
+    },
+    {
+      "id": "03",
+      "name": "김미영",
+      "real_age": 58,
+      "prompt_age": 43,
+      "gender": "female",
+      "role": "victim",
+      "personality": ["강인함", "외로움", "체념을 넘어선 평화"],
+      "appearance": ["수수한 인상", "다리를 절음", "검소한 차림"],
+      "symbolic_item": "분식집 간판, 앞치마",
+      "total_versions": 12,
+      "json_file": "characters/03_김미영.json"
+    },
+    {
+      "id": "04",
+      "name": "한옥자",
+      "real_age": 64,
+      "prompt_age": 49,
+      "gender": "female",
+      "role": "best_friend",
+      "personality": ["수다쟁이", "오지랖", "의리 넘침"],
+      "appearance": ["화려한 옷차림", "펌 머리", "활기찬 인상"],
+      "symbolic_item": "안경, 핸드폰, 부동산 명함",
+      "total_versions": 12,
+      "json_file": "characters/04_한옥자.json"
+    },
+    {
+      "id": "05",
+      "name": "박준호",
+      "real_age": 38,
+      "prompt_age": 23,
+      "gender": "male",
+      "role": "son",
+      "personality": ["현실적", "엄마 걱정", "빨리 정리하길 원함"],
+      "appearance": ["단정한 직장인 스타일", "아버지 닮은 인상"],
+      "symbolic_item": "정장, 차 열쇠",
+      "total_versions": 6,
+      "json_file": "characters/05_박준호.json"
+    },
+    {
+      "id": "06",
+      "name": "이수진",
+      "real_age": 35,
+      "prompt_age": 20,
+      "gender": "female",
+      "role": "daughter_in_law",
+      "personality": ["다정함", "속마음 모름", "눈치 봄"],
+      "appearance": ["깔끔하고 세련된 인상", "현대적 스타일"],
+      "symbolic_item": "핸드백, 깔끔한 옷차림",
+      "total_versions": 6,
+      "json_file": "characters/06_이수진.json"
+    },
+    {
+      "id": "07",
+      "name": "김영수",
+      "real_age": 60,
+      "prompt_age": 45,
+      "gender": "male",
+      "role": "brother",
+      "personality": ["누나 지켜온 사람", "동호에 대한 복잡한 감정"],
+      "appearance": ["투박한 인상", "강한 체격", "보호자 느낌"],
+      "symbolic_item": "작업복, 거친 손",
+      "total_versions": 7,
+      "json_file": "characters/07_김영수.json"
+    }
+  ]
+}

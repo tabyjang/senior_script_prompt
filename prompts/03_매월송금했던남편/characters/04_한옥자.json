@@ -1,0 +1,116 @@
+{
+  "metadata": {
+    "work_title": "마지막송금",
+    "character_name": "한옥자",
+    "created_at": "2026-01-04",
+    "total_versions": 12
+  },
+  "character_info": {
+    "name": "한옥자",
+    "real_age": 64,
+    "prompt_age": 49,
+    "gender": "female",
+    "role": "best_friend",
+    "personality": ["수다쟁이", "오지랖", "의리 넘침"],
+    "appearance": ["화려한 옷차림", "펌 머리", "활기찬 인상"],
+    "symbolic_item": "안경, 핸드폰, 부동산 명함"
+  },
+  "versions": [
+    {
+      "version_id": "v01",
+      "version_name": "기본_정면",
+      "description": "캐릭터 소개용 기본 이미지",
+      "positive": "masterpiece, best quality, photorealistic, 8k uhd, medium shot, front view, eye level, 49 year old Korean woman, lively expression, bright eyes, short permed hair with slight color, energetic appearance, wearing colorful blouse, reading glasses on head, confident stance, hands on hips, neutral gray background, bright studio lighting, warm tone",
+      "output_folder": "characters/한옥자/v01_기본",
+      "filename_prefix": "한옥자_v01_기본"
+    },
+    {
+      "version_id": "v02",
+      "version_name": "부동산_사무실",
+      "description": "부동산 사무실에서 일하는 모습",
+      "positive": "masterpiece, best quality, photorealistic, 8k uhd, medium shot, professional scene, 49 year old Korean woman, business-like expression, on phone, short permed hair, wearing smart casual blazer, sitting at desk, papers and phone around, real estate office background, bright office lighting, busy atmosphere",
+      "output_folder": "characters/한옥자/v02_사무실",
+      "filename_prefix": "한옥자_v02_사무실"
+    },
+    {
+      "version_id": "v03",
+      "version_name": "위로",
+      "description": "순애 위로 장례 후",
+      "positive": "masterpiece, best quality, photorealistic, 8k uhd, medium shot, comforting scene, 49 year old Korean woman, concerned expression, supportive posture, short permed hair, wearing subdued colors, hugging friend, patting back, living room setting, soft lighting, supportive atmosphere",
+      "output_folder": "characters/한옥자/v03_위로",
+      "filename_prefix": "한옥자_v03_위로"
+    },
+    {
+      "version_id": "v04",
+      "version_name": "충격_통장발견",
+      "description": "통장 발견 충격 반응",
+      "positive": "masterpiece, best quality, photorealistic, 8k uhd, medium shot, shocked reaction, 49 year old Korean woman, jaw dropped, wide eyes, short permed hair, wearing home visit clothes, grabbing friend arm, dramatic gesture, living room, evening light, shocked atmosphere",
+      "output_folder": "characters/한옥자/v04_충격",
+      "filename_prefix": "한옥자_v04_충격"
+    },
+    {
+      "version_id": "v05",
+      "version_name": "수사_정보수집",
+      "description": "수사 모드 정보 수집",
+      "positive": "masterpiece, best quality, photorealistic, 8k uhd, medium shot, detective mode, 49 year old Korean woman, serious focused expression, reading glasses on, looking at documents, short permed hair, wearing casual jacket, cafe table, papers spread out, investigative atmosphere",
+      "output_folder": "characters/한옥자/v05_수사",
+      "filename_prefix": "한옥자_v05_수사"
+    },
+    {
+      "version_id": "v06",
+      "version_name": "잠복_코믹",
+      "description": "코믹 잠복 근무",
+      "positive": "masterpiece, best quality, photorealistic, 8k uhd, full shot, comedic scene, 49 year old Korean woman, hiding expression, peeking, wearing sunglasses and hat disguise, crouching behind car, obvious amateur surveillance, street near restaurant, daytime, humorous atmosphere",
+      "output_folder": "characters/한옥자/v06_잠복",
+      "filename_prefix": "한옥자_v06_잠복"
+    },
+    {
+      "version_id": "v07",
+      "version_name": "들킴_쫓겨남",
+      "description": "영수에게 들켜서 쫓겨남",
+      "positive": "masterpiece, best quality, photorealistic, 8k uhd, medium shot, embarrassed scene, 49 year old Korean woman, caught expression, backing away, sunglasses askew, flustered look, hands up defensively, stepping backwards, street scene, daytime, comedic relief moment",
+      "output_folder": "characters/한옥자/v07_들킴",
+      "filename_prefix": "한옥자_v07_들킴"
+    },
+    {
+      "version_id": "v08",
+      "version_name": "결의_함께가자",
+      "description": "함께 가자 결의 표정",
+      "positive": "masterpiece, best quality, photorealistic, 8k uhd, medium shot, determined pose, 49 year old Korean woman, resolute expression, supportive stance, short permed hair, wearing practical clothes, arm around friend, ready to go together, apartment entrance, morning light, solidarity atmosphere",
+      "output_folder": "characters/한옥자/v08_결의",
+      "filename_prefix": "한옥자_v08_결의"
+    },
+    {
+      "version_id": "v09",
+      "version_name": "감동_진실후",
+      "description": "진실 들은 후 감동",
+      "positive": "masterpiece, best quality, photorealistic, 8k uhd, close-up shot, emotional reaction, 49 year old Korean woman, teary eyes, touched expression, listening intently, hand on chest, sitting in restaurant, dim lighting, moved atmosphere",
+      "output_folder": "characters/한옥자/v09_감동",
+      "filename_prefix": "한옥자_v09_감동"
+    },
+    {
+      "version_id": "v10",
+      "version_name": "계산_분석",
+      "description": "계산기 들고 분석 중",
+      "positive": "masterpiece, best quality, photorealistic, 8k uhd, close-up shot, calculating scene, 49 year old Korean woman, focused expression, doing math, reading glasses on, holding calculator, short permed hair, practical expression, table setting, paper and calculator, analytical moment",
+      "output_folder": "characters/한옥자/v10_계산",
+      "filename_prefix": "한옥자_v10_계산"
+    },
+    {
+      "version_id": "v11",
+      "version_name": "카페_대화",
+      "description": "순애와 카페에서 대화",
+      "positive": "masterpiece, best quality, photorealistic, 8k uhd, medium shot, friend conversation, 49 year old Korean woman, animated talking, gesturing, short permed hair, colorful blouse, coffee cup in hand, leaning forward, cafe interior, warm afternoon light, intimate friendship",
+      "output_folder": "characters/한옥자/v11_카페",
+      "filename_prefix": "한옥자_v11_카페"
+    },
+    {
+      "version_id": "v12",
+      "version_name": "인맥_전화중",
+      "description": "인맥 자랑하며 전화 중",
+      "positive": "masterpiece, best quality, photorealistic, 8k uhd, medium shot, phone call scene, 49 year old Korean woman, confident expression, talking on phone, short permed hair, wearing business casual, one hand gesturing, proud posture, office or cafe, daytime, networking atmosphere",
+      "output_folder": "characters/한옥자/v12_인맥",
+      "filename_prefix": "한옥자_v12_인맥"
+    }
+  ]
+}

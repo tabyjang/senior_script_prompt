@@ -1,0 +1,116 @@
+{
+  "metadata": {
+    "work_title": "마지막송금",
+    "character_name": "박순애",
+    "created_at": "2026-01-04",
+    "total_versions": 12
+  },
+  "character_info": {
+    "name": "박순애",
+    "real_age": 63,
+    "prompt_age": 48,
+    "gender": "female",
+    "role": "protagonist",
+    "personality": ["다정함", "속 깊은 걱정쟁이", "정이 많음"],
+    "appearance": ["따뜻한 눈빛", "부드러운 인상", "단정한 머리"],
+    "symbolic_item": "남편의 손목시계, 앞치마"
+  },
+  "versions": [
+    {
+      "version_id": "v01",
+      "version_name": "기본_정면",
+      "description": "캐릭터 소개용 기본 이미지",
+      "positive": "masterpiece, best quality, photorealistic, 8k uhd, medium shot, front view, eye level, 48 year old Korean woman, gentle face, warm brown eyes, soft smile lines, shoulder-length black hair with subtle gray streaks, serene expression, wearing comfortable beige cardigan, simple pearl earrings, standing straight, hands clasped in front, neutral gray background, soft studio lighting, warm color tone",
+      "output_folder": "characters/박순애/v01_기본",
+      "filename_prefix": "박순애_v01_기본"
+    },
+    {
+      "version_id": "v02",
+      "version_name": "일상_평온",
+      "description": "집에서 일상 의상, 평온한 표정",
+      "positive": "masterpiece, best quality, photorealistic, 8k uhd, medium shot, slightly angled view, 48 year old Korean woman, gentle face, warm brown eyes, shoulder-length black hair with gray streaks, peaceful expression, soft smile, wearing house dress with apron, comfortable home clothes, standing in kitchen, hands on apron, relaxed posture, cozy kitchen background, warm morning light through window",
+      "output_folder": "characters/박순애/v02_일상",
+      "filename_prefix": "박순애_v02_일상"
+    },
+    {
+      "version_id": "v03",
+      "version_name": "외출_밝은",
+      "description": "외출 의상, 밝은 표정",
+      "positive": "masterpiece, best quality, photorealistic, 8k uhd, medium shot, three-quarter view, 48 year old Korean woman, gentle face, warm brown eyes, shoulder-length black hair with gray streaks neatly styled, pleasant smile, wearing elegant blouse, light jacket, simple accessories, walking gracefully, carrying shopping bag, outdoor market setting, bright daylight, cheerful atmosphere",
+      "output_folder": "characters/박순애/v03_외출",
+      "filename_prefix": "박순애_v03_외출"
+    },
+    {
+      "version_id": "v04",
+      "version_name": "상복_슬픔",
+      "description": "장례식 상복, 슬픔",
+      "positive": "masterpiece, best quality, photorealistic, 8k uhd, medium shot, front view, 48 year old Korean woman, grief-stricken expression, red-rimmed eyes, shoulder-length black hair, tears on cheeks, pale face, wearing black mourning clothes, black dress, no accessories, standing at funeral, tissue in hand, hunched shoulders, funeral hall background, soft diffused lighting, somber atmosphere",
+      "output_folder": "characters/박순애/v04_상복",
+      "filename_prefix": "박순애_v04_상복"
+    },
+    {
+      "version_id": "v05",
+      "version_name": "충격_분노",
+      "description": "비밀 발견 충격/분노 표정",
+      "positive": "masterpiece, best quality, photorealistic, 8k uhd, close-up shot, emotional portrait, 48 year old Korean woman, shocked expression, wide eyes, trembling lips, pale face, betrayed look, shoulder-length black hair with gray streaks, wearing home cardigan, clutching bankbook in hands, dimly lit study room, dramatic side lighting, tense atmosphere",
+      "output_folder": "characters/박순애/v05_충격",
+      "filename_prefix": "박순애_v05_충격"
+    },
+    {
+      "version_id": "v06",
+      "version_name": "결의_단호",
+      "description": "진실 추적 결의/단호한 표정",
+      "positive": "masterpiece, best quality, photorealistic, 8k uhd, medium shot, determined pose, 48 year old Korean woman, resolute expression, steely gaze, jaw set firmly, focused eyes, shoulder-length black hair with gray streaks neatly styled, wearing practical jacket, carrying bag, standing at bus stop, morning light, determined atmosphere",
+      "output_folder": "characters/박순애/v06_결의",
+      "filename_prefix": "박순애_v06_결의"
+    },
+    {
+      "version_id": "v07",
+      "version_name": "혼란",
+      "description": "미영 첫 대면 혼란 표정",
+      "positive": "masterpiece, best quality, photorealistic, 8k uhd, medium shot, confused expression, 48 year old Korean woman, bewildered look, furrowed brows, uncertain eyes, slightly open mouth, shoulder-length black hair with gray streaks, wearing outdoor clothes, standing frozen, small restaurant interior, fluorescent lighting, tense moment",
+      "output_folder": "characters/박순애/v07_혼란",
+      "filename_prefix": "박순애_v07_혼란"
+    },
+    {
+      "version_id": "v08",
+      "version_name": "오열_감동",
+      "description": "일기장 발견 오열/감동",
+      "positive": "masterpiece, best quality, photorealistic, 8k uhd, close-up shot, emotional breakdown, 48 year old Korean woman, crying uncontrollably, tears streaming, red puffy eyes, trembling chin, raw emotion, shoulder-length black hair disheveled, wearing pajamas, holding old diary, sitting on bed, bedroom at night, dim lamp light, cathartic moment",
+      "output_folder": "characters/박순애/v08_오열",
+      "filename_prefix": "박순애_v08_오열"
+    },
+    {
+      "version_id": "v09",
+      "version_name": "화해_평화",
+      "description": "용서/평화 화해 장면",
+      "positive": "masterpiece, best quality, photorealistic, 8k uhd, medium shot, peaceful expression, 48 year old Korean woman, gentle smile, tearful but serene, understanding eyes, acceptance in face, shoulder-length black hair with gray streaks, wearing elegant cardigan, holding watch, restaurant interior, warm afternoon light, hopeful atmosphere",
+      "output_folder": "characters/박순애/v09_화해",
+      "filename_prefix": "박순애_v09_화해"
+    },
+    {
+      "version_id": "v10",
+      "version_name": "옥자대화",
+      "description": "옥자와 상호작용 대화",
+      "positive": "masterpiece, best quality, photorealistic, 8k uhd, medium shot, conversation scene, 48 year old Korean woman, animated expression, speaking earnestly, shoulder-length black hair with gray streaks, wearing casual home clothes, gesturing while talking, leaning toward friend, living room setting, warm lighting, intimate atmosphere",
+      "output_folder": "characters/박순애/v10_옥자대화",
+      "filename_prefix": "박순애_v10_옥자대화"
+    },
+    {
+      "version_id": "v11",
+      "version_name": "아들대화",
+      "description": "아들 준호와 상호작용",
+      "positive": "masterpiece, best quality, photorealistic, 8k uhd, medium shot, maternal scene, 48 year old Korean woman, worried expression, loving eyes, shoulder-length black hair with gray streaks, wearing house cardigan, holding son arm, concerned posture, home living room, evening light, family atmosphere",
+      "output_folder": "characters/박순애/v11_아들대화",
+      "filename_prefix": "박순애_v11_아들대화"
+    },
+    {
+      "version_id": "v12",
+      "version_name": "통장소품",
+      "description": "상징적 소품 - 통장과 함께",
+      "positive": "masterpiece, best quality, photorealistic, 8k uhd, close-up shot, symbolic portrait, 48 year old Korean woman, pensive expression, troubled gaze, shoulder-length black hair with gray streaks, wearing simple home clothes, fingers gripping old bankbook, trembling hands, study room, soft desk lamp light, introspective mood",
+      "output_folder": "characters/박순애/v12_통장",
+      "filename_prefix": "박순애_v12_통장"
+    }
+  ]
+}
