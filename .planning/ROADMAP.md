@@ -26,12 +26,11 @@ None (Python/tkinter 표준 패턴 사용)
 **Goal**: LLM API 호출을 비동기로 전환하여 생성 중 GUI 멈춤 해결
 **Depends on**: Nothing (first phase)
 **Research**: Unlikely (표준 threading 패턴)
-**Plans**: TBD
+**Plans**: 2 plans
 
-핵심 작업:
-- threading.Thread를 사용한 LLM 호출 래핑
-- 진행 표시기 UI 추가
-- 콜백 기반 결과 처리
+Plans:
+- [ ] 01-01: Async 인프라 (AsyncLLMWrapper, ProgressDialog, ContentGenerator async 메서드)
+- [ ] 01-02: 탭 업데이트 (chapters_tab, scenes_tab, image_prompts_tab)
 
 ### Phase 2: Undo/Redo
 **Goal**: 편집 작업에 대한 실행 취소/재실행 기능 제공
@@ -84,7 +83,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Async LLM | 0/? | Not started | - |
+| 1. Async LLM | 0/2 | Not started | - |
 | 2. Undo/Redo | 0/? | Not started | - |
 | 3. Auto-save | 0/? | Not started | - |
 | 4. LLM Caching | 0/? | Not started | - |
