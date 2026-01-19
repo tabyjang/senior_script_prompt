@@ -1,31 +1,31 @@
-# Codebase Structure
+# 코드베이스 구조
 
-**Analysis Date:** 2026-01-19
+**분석일:** 2026-01-19
 
-## Directory Layout
+## 디렉토리 레이아웃
 
 ```
 script_editors_app/
-├── main.py                     # Application entry point
-├── requirements.txt            # Python dependencies
-├── config/                     # Configuration management
+├── main.py                     # 애플리케이션 진입점
+├── requirements.txt            # Python 의존성
+├── config/                     # 설정 관리
 │   ├── __init__.py
 │   └── config_manager.py
-├── models/                     # Data models
+├── models/                     # 데이터 모델
 │   ├── __init__.py
 │   ├── project_data.py
-│   └── piper/                  # TTS model files (optional)
-├── services/                   # Business logic services
+│   └── piper/                  # TTS 모델 파일 (선택사항)
+├── services/                   # 비즈니스 로직 서비스
 │   ├── __init__.py
 │   ├── llm_service.py
 │   ├── file_service.py
 │   ├── content_generator.py
 │   ├── comfyui_service.py
 │   └── google_sheets_service.py
-├── gui/                        # User interface
+├── gui/                        # 사용자 인터페이스
 │   ├── __init__.py
 │   ├── main_window.py
-│   ├── tabs/                   # Feature tabs
+│   ├── tabs/                   # 기능 탭
 │   │   ├── base_tab.py
 │   │   ├── synopsis_input_tab.py
 │   │   ├── characters_tab.py
@@ -41,157 +41,157 @@ script_editors_app/
 │   └── dialogs/
 │       ├── __init__.py
 │       └── settings_dialog.py
-├── utils/                      # Utility functions
+├── utils/                      # 유틸리티 함수
 │   ├── __init__.py
 │   ├── json_utils.py
 │   ├── ui_helpers.py
 │   ├── file_utils.py
 │   └── word_converter.py
-├── prompts/                    # Project data storage
+├── prompts/                    # 프로젝트 데이터 저장
 │   └── {project_name}/
 │       ├── characters/
 │       ├── scenes/
 │       ├── mappings/
 │       └── *_episodes/
-├── output/                     # Generated outputs
-│   └── tts/                    # TTS audio files
-├── comfyui_api_server.py      # ComfyUI API server
-└── comfyui_character_generator.py  # Character image generation
+├── output/                     # 생성된 출력
+│   └── tts/                    # TTS 오디오 파일
+├── comfyui_api_server.py      # ComfyUI API 서버
+└── comfyui_character_generator.py  # 캐릭터 이미지 생성
 ```
 
-## Directory Purposes
+## 디렉토리 목적
 
 **config/**
-- Purpose: Application configuration management
-- Contains: ConfigManager class for API keys, LLM provider settings
-- Key files: `config_manager.py`
-- Subdirectories: None
+- 목적: 애플리케이션 설정 관리
+- 포함: API 키, LLM 제공자 설정을 위한 ConfigManager 클래스
+- 주요 파일: `config_manager.py`
+- 하위 디렉토리: 없음
 
 **models/**
-- Purpose: Data models and domain objects
-- Contains: ProjectData model, TTS models (optional)
-- Key files: `project_data.py`
-- Subdirectories: `piper/` (TTS model files)
+- 목적: 데이터 모델 및 도메인 객체
+- 포함: ProjectData 모델, TTS 모델 (선택사항)
+- 주요 파일: `project_data.py`
+- 하위 디렉토리: `piper/` (TTS 모델 파일)
 
 **services/**
-- Purpose: Business logic and external service integration
-- Contains: LLM service, file service, content generator, ComfyUI service
-- Key files: `llm_service.py` (LLM integration), `content_generator.py` (content creation), `comfyui_service.py` (image generation)
-- Subdirectories: None
+- 목적: 비즈니스 로직 및 외부 서비스 통합
+- 포함: LLM 서비스, 파일 서비스, 콘텐츠 생성기, ComfyUI 서비스
+- 주요 파일: `llm_service.py` (LLM 통합), `content_generator.py` (콘텐츠 생성), `comfyui_service.py` (이미지 생성)
+- 하위 디렉토리: 없음
 
 **gui/**
-- Purpose: User interface components
-- Contains: Main window, tabs, dialogs
-- Key files: `main_window.py` (main application window)
-- Subdirectories: `tabs/` (feature tabs), `dialogs/` (settings dialog)
+- 목적: 사용자 인터페이스 컴포넌트
+- 포함: 메인 윈도우, 탭, 다이얼로그
+- 주요 파일: `main_window.py` (메인 애플리케이션 윈도우)
+- 하위 디렉토리: `tabs/` (기능 탭), `dialogs/` (설정 다이얼로그)
 
 **gui/tabs/**
-- Purpose: Individual feature tabs
-- Contains: BaseTab abstract class and concrete tab implementations
-- Key files: `base_tab.py` (abstract base), `synopsis_input_tab.py`, `scripts_tab.py`, `scenes_tab.py`, etc.
-- Subdirectories: None
+- 목적: 개별 기능 탭
+- 포함: BaseTab 추상 클래스 및 구체적인 탭 구현
+- 주요 파일: `base_tab.py` (추상 베이스), `synopsis_input_tab.py`, `scripts_tab.py`, `scenes_tab.py` 등
+- 하위 디렉토리: 없음
 
 **utils/**
-- Purpose: Shared utility functions
-- Contains: JSON utilities, UI helpers, file utilities, Word converter
-- Key files: `json_utils.py`, `ui_helpers.py`, `word_converter.py`
-- Subdirectories: None
+- 목적: 공유 유틸리티 함수
+- 포함: JSON 유틸리티, UI 헬퍼, 파일 유틸리티, Word 변환기
+- 주요 파일: `json_utils.py`, `ui_helpers.py`, `word_converter.py`
+- 하위 디렉토리: 없음
 
 **prompts/**
-- Purpose: Project data storage (file-based database)
-- Contains: Project folders with characters, scenes, scripts, mappings
-- Structure: `{project_name}/characters/*.json`, `{project_name}/scenes/**/*.json`, `{project_name}/*_episodes/**/*.md`
-- Subdirectories: One per project
+- 목적: 프로젝트 데이터 저장 (파일 기반 데이터베이스)
+- 포함: 캐릭터, 장면, 대본, 매핑이 있는 프로젝트 폴더
+- 구조: `{project_name}/characters/*.json`, `{project_name}/scenes/**/*.json`, `{project_name}/*_episodes/**/*.md`
+- 하위 디렉토리: 프로젝트당 하나
 
 **output/**
-- Purpose: Generated files (TTS audio, images)
-- Contains: TTS audio files
-- Subdirectories: `tts/`
+- 목적: 생성된 파일 (TTS 오디오, 이미지)
+- 포함: TTS 오디오 파일
+- 하위 디렉토리: `tts/`
 
-## Key File Locations
+## 주요 파일 위치
 
-**Entry Points:**
-- `main.py` - Application entry point, service initialization
-- `comfyui_api_server.py` - Flask API server for ComfyUI integration
+**진입점:**
+- `main.py` - 애플리케이션 진입점, 서비스 초기화
+- `comfyui_api_server.py` - ComfyUI 통합을 위한 Flask API 서버
 
-**Configuration:**
-- `config/config_manager.py` - Settings management
-- `requirements.txt` - Python dependencies
+**설정:**
+- `config/config_manager.py` - 설정 관리
+- `requirements.txt` - Python 의존성
 
-**Core Logic:**
-- `services/llm_service.py` - LLM API integration (Gemini, OpenAI, Anthropic)
-- `services/content_generator.py` - Content generation orchestration
-- `services/file_service.py` - File I/O operations
-- `gui/main_window.py` - Main window and tab management
+**핵심 로직:**
+- `services/llm_service.py` - LLM API 통합 (Gemini, OpenAI, Anthropic)
+- `services/content_generator.py` - 콘텐츠 생성 오케스트레이션
+- `services/file_service.py` - 파일 I/O 작업
+- `gui/main_window.py` - 메인 윈도우 및 탭 관리
 
-**Testing:**
-- `test_comfyui.py` - ComfyUI integration test
-- No dedicated test directory
+**테스팅:**
+- `test_comfyui.py` - ComfyUI 통합 테스트
+- 전용 테스트 디렉토리 없음
 
-**Documentation:**
-- `README.md` - Project overview and setup instructions
-- `*_TAB_IMPLEMENTATION.md` - Tab implementation docs
-- `STORAGE_FORMAT.md` - Data storage format documentation
+**문서:**
+- `README.md` - 프로젝트 개요 및 설치 지침
+- `*_TAB_IMPLEMENTATION.md` - 탭 구현 문서
+- `STORAGE_FORMAT.md` - 데이터 저장 형식 문서
 
-## Naming Conventions
+## 네이밍 규칙
 
-**Files:**
-- snake_case.py for all Python modules
-- {feature}_tab.py for GUI tabs
-- {feature}_service.py for service classes
-- PascalCase class names inside files
+**파일:**
+- 모든 Python 모듈에 snake_case.py
+- GUI 탭에 {feature}_tab.py
+- 서비스 클래스에 {feature}_service.py
+- 파일 내부의 클래스 이름은 PascalCase
 
-**Directories:**
-- snake_case for all directories
-- Plural for collections: tabs/, dialogs/, services/, utils/
+**디렉토리:**
+- 모든 디렉토리에 snake_case
+- 컬렉션에 복수형: tabs/, dialogs/, services/, utils/
 
-**Special Patterns:**
-- __init__.py for Python package markers
-- __pycache__/ for compiled Python bytecode (gitignored)
+**특수 패턴:**
+- Python 패키지 마커를 위한 __init__.py
+- 컴파일된 Python 바이트코드를 위한 __pycache__/ (gitignore됨)
 
-## Where to Add New Code
+## 새 코드 추가 위치
 
-**New Feature Tab:**
-- Primary code: `gui/tabs/{feature}_tab.py`
-- Base class: Extend `gui/tabs/base_tab.py`
-- Registration: Add to `gui/main_window.py` `_initialize_tabs()`
+**새 기능 탭:**
+- 주 코드: `gui/tabs/{feature}_tab.py`
+- 베이스 클래스: `gui/tabs/base_tab.py` 확장
+- 등록: `gui/main_window.py`의 `_initialize_tabs()`에 추가
 
-**New Service:**
-- Implementation: `services/{service_name}_service.py`
-- Initialization: Add to `main.py` service initialization
-- Usage: Inject into MainWindow or tabs as needed
+**새 서비스:**
+- 구현: `services/{service_name}_service.py`
+- 초기화: `main.py` 서비스 초기화에 추가
+- 사용: 필요에 따라 MainWindow 또는 탭에 주입
 
-**New Utility:**
-- Implementation: `utils/{utility_name}.py`
-- Import from any layer
+**새 유틸리티:**
+- 구현: `utils/{utility_name}.py`
+- 모든 레이어에서 임포트
 
-**New Dialog:**
-- Implementation: `gui/dialogs/{dialog_name}_dialog.py`
-- Usage: Call from main_window.py or tabs
+**새 다이얼로그:**
+- 구현: `gui/dialogs/{dialog_name}_dialog.py`
+- 사용: main_window.py 또는 탭에서 호출
 
-## Special Directories
+## 특수 디렉토리
 
 **prompts/**
-- Purpose: User project data (not committed to git, user-generated)
-- Source: Created and managed by application
-- Committed: Structure documented, actual data not committed
+- 목적: 사용자 프로젝트 데이터 (git에 커밋되지 않음, 사용자 생성)
+- 출처: 애플리케이션에 의해 생성 및 관리
+- 커밋됨: 구조는 문서화됨, 실제 데이터는 커밋되지 않음
 
 **output/**
-- Purpose: Generated files (TTS audio, images)
-- Source: Created by application
-- Committed: No (output files not committed)
+- 목적: 생성된 파일 (TTS 오디오, 이미지)
+- 출처: 애플리케이션에 의해 생성
+- 커밋됨: 아니오 (출력 파일은 커밋되지 않음)
 
 **models/piper/**
-- Purpose: TTS model files
-- Source: Downloaded separately
-- Committed: No (large binary files)
+- 목적: TTS 모델 파일
+- 출처: 별도로 다운로드
+- 커밋됨: 아니오 (큰 바이너리 파일)
 
 **__pycache__/**
-- Purpose: Python compiled bytecode
-- Source: Auto-generated by Python interpreter
-- Committed: No (.gitignored)
+- 목적: Python 컴파일 바이트코드
+- 출처: Python 인터프리터에 의해 자동 생성
+- 커밋됨: 아니오 (.gitignore됨)
 
 ---
 
-*Structure analysis: 2026-01-19*
-*Update when directory structure changes*
+*구조 분석: 2026-01-19*
+*디렉토리 구조 변경 시 업데이트*

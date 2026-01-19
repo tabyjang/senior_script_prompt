@@ -1,141 +1,141 @@
-# Architecture
+# 아키텍처
 
-**Analysis Date:** 2026-01-19
+**분석일:** 2026-01-19
 
-## Pattern Overview
+## 패턴 개요
 
-**Overall:** Modular Desktop GUI Application with Service Layer
+**전체:** 서비스 레이어를 갖춘 모듈화된 데스크톱 GUI 애플리케이션
 
-**Key Characteristics:**
-- Desktop application with tkinter GUI
-- Service-oriented architecture (config, models, services, GUI)
-- File-based data persistence
-- Event-driven GUI interactions
-- Lazy loading for optional dependencies
+**주요 특징:**
+- tkinter GUI를 사용하는 데스크톱 애플리케이션
+- 서비스 지향 아키텍처 (config, models, services, GUI)
+- 파일 기반 데이터 영속성
+- 이벤트 기반 GUI 상호작용
+- 선택적 의존성에 대한 지연 로딩
 
-## Layers
+## 레이어
 
-**GUI Layer:**
-- Purpose: User interface and interaction handling
-- Contains: Main window, tabs (synopsis, characters, scripts, scenes, etc.), dialogs
-- Location: `gui/main_window.py`, `gui/tabs/*.py`, `gui/dialogs/*.py`
-- Depends on: Services layer, models layer, utils
-- Used by: User interactions
+**GUI 레이어:**
+- 목적: 사용자 인터페이스 및 상호작용 처리
+- 포함: 메인 윈도우, 탭 (시놉시스, 캐릭터, 대본, 장면 등), 다이얼로그
+- 위치: `gui/main_window.py`, `gui/tabs/*.py`, `gui/dialogs/*.py`
+- 의존: Services 레이어, models 레이어, utils
+- 사용처: 사용자 상호작용
 
-**Services Layer:**
-- Purpose: Business logic and external service integration
-- Contains: LLM integration, file I/O, content generation, ComfyUI integration
-- Location: `services/llm_service.py`, `services/file_service.py`, `services/content_generator.py`, `services/comfyui_service.py`
-- Depends on: Config layer, external APIs
-- Used by: GUI layer
+**Services 레이어:**
+- 목적: 비즈니스 로직 및 외부 서비스 통합
+- 포함: LLM 통합, 파일 I/O, 콘텐츠 생성, ComfyUI 통합
+- 위치: `services/llm_service.py`, `services/file_service.py`, `services/content_generator.py`, `services/comfyui_service.py`
+- 의존: Config 레이어, 외부 API
+- 사용처: GUI 레이어
 
-**Models Layer:**
-- Purpose: Data structures and domain models
-- Contains: ProjectData model
-- Location: `models/project_data.py`
-- Depends on: Nothing (pure data structures)
-- Used by: Services layer, GUI layer
+**Models 레이어:**
+- 목적: 데이터 구조 및 도메인 모델
+- 포함: ProjectData 모델
+- 위치: `models/project_data.py`
+- 의존: 없음 (순수 데이터 구조)
+- 사용처: Services 레이어, GUI 레이어
 
-**Config Layer:**
-- Purpose: Application configuration and settings management
-- Contains: ConfigManager for API keys, provider selection
-- Location: `config/config_manager.py`
-- Depends on: File system
-- Used by: Services layer
+**Config 레이어:**
+- 목적: 애플리케이션 설정 및 세팅 관리
+- 포함: API 키, 제공자 선택을 위한 ConfigManager
+- 위치: `config/config_manager.py`
+- 의존: 파일 시스템
+- 사용처: Services 레이어
 
-**Utils Layer:**
-- Purpose: Shared utilities and helper functions
-- Contains: JSON utilities, UI helpers, file converters
-- Location: `utils/json_utils.py`, `utils/ui_helpers.py`, `utils/word_converter.py`
-- Depends on: Nothing (pure functions)
-- Used by: All layers
+**Utils 레이어:**
+- 목적: 공유 유틸리티 및 헬퍼 함수
+- 포함: JSON 유틸리티, UI 헬퍼, 파일 변환기
+- 위치: `utils/json_utils.py`, `utils/ui_helpers.py`, `utils/word_converter.py`
+- 의존: 없음 (순수 함수)
+- 사용처: 모든 레이어
 
-## Data Flow
+## 데이터 흐름
 
-**Application Startup:**
+**애플리케이션 시작:**
 
-1. User runs: `python main.py [--prompts path]`
-2. `main.py` initializes all services (ConfigManager, ProjectData, FileService, LLMService, ContentGenerator)
-3. Creates tkinter root window
-4. MainWindow initializes with services
-5. MainWindow loads project list from prompts folder
-6. User selects project from dropdown
-7. Tabs load and display project data
+1. 사용자 실행: `python main.py [--prompts path]`
+2. `main.py`가 모든 서비스 초기화 (ConfigManager, ProjectData, FileService, LLMService, ContentGenerator)
+3. tkinter 루트 윈도우 생성
+4. 서비스와 함께 MainWindow 초기화
+5. MainWindow가 prompts 폴더에서 프로젝트 목록 로드
+6. 사용자가 드롭다운에서 프로젝트 선택
+7. 탭이 프로젝트 데이터 로드 및 표시
 
-**Content Generation Flow:**
+**콘텐츠 생성 흐름:**
 
-1. User clicks "생성" (Generate) button in a tab
-2. Tab calls `content_generator.generate_*()` method
-3. ContentGenerator prepares prompt with system instructions
-4. LLMService routes to appropriate provider (Gemini/OpenAI/Anthropic)
-5. API call made with prompt
-6. Response parsed and returned
-7. Tab updates UI with generated content
-8. FileService saves data to JSON/Markdown files
+1. 사용자가 탭에서 "생성" 버튼 클릭
+2. 탭이 `content_generator.generate_*()` 메서드 호출
+3. ContentGenerator가 시스템 지시사항과 함께 프롬프트 준비
+4. LLMService가 적절한 제공자로 라우팅 (Gemini/OpenAI/Anthropic)
+5. 프롬프트로 API 호출
+6. 응답 파싱 및 반환
+7. 탭이 생성된 콘텐츠로 UI 업데이트
+8. FileService가 JSON/Markdown 파일에 데이터 저장
 
-**State Management:**
-- File-based: All state persisted to `prompts/` folder
-- ProjectData model holds current project state in memory
-- Each tab manages its own UI state
-- No global state beyond services singleton-style instances
+**상태 관리:**
+- 파일 기반: 모든 상태가 `prompts/` 폴더에 영속화
+- ProjectData 모델이 현재 프로젝트 상태를 메모리에 보관
+- 각 탭이 자체 UI 상태 관리
+- 서비스 싱글톤 스타일 인스턴스를 넘어서는 전역 상태 없음
 
-## Key Abstractions
+## 주요 추상화
 
 **BaseTab:**
-- Purpose: Abstract base class for all GUI tabs
-- Location: `gui/tabs/base_tab.py`
-- Pattern: Template Method pattern
-- Provides: `get_tab_name()`, `create_ui()`, `update_display()`, `save()` methods
+- 목적: 모든 GUI 탭을 위한 추상 베이스 클래스
+- 위치: `gui/tabs/base_tab.py`
+- 패턴: 템플릿 메서드 패턴
+- 제공: `get_tab_name()`, `create_ui()`, `update_display()`, `save()` 메서드
 
-**Service Classes:**
-- Purpose: Encapsulate business logic domains
-- Examples: `services/llm_service.py`, `services/file_service.py`, `services/content_generator.py`
-- Pattern: Service Layer pattern
-- Each service manages one domain (LLM calls, files, content generation)
+**Service 클래스:**
+- 목적: 비즈니스 로직 도메인 캡슐화
+- 예시: `services/llm_service.py`, `services/file_service.py`, `services/content_generator.py`
+- 패턴: 서비스 레이어 패턴
+- 각 서비스가 하나의 도메인 관리 (LLM 호출, 파일, 콘텐츠 생성)
 
 **ConfigManager:**
-- Purpose: Centralized configuration management
-- Location: `config/config_manager.py`
-- Pattern: Singleton-style (one instance passed around)
+- 목적: 중앙 집중식 설정 관리
+- 위치: `config/config_manager.py`
+- 패턴: 싱글톤 스타일 (하나의 인스턴스가 전달됨)
 
-## Entry Points
+## 진입점
 
-**CLI Entry:**
-- Location: `main.py`
-- Triggers: User runs `python main.py`
-- Responsibilities: Initialize services, create GUI, start event loop
+**CLI 진입점:**
+- 위치: `main.py`
+- 트리거: 사용자가 `python main.py` 실행
+- 책임: 서비스 초기화, GUI 생성, 이벤트 루프 시작
 
-**GUI Event Loop:**
-- Location: `gui/main_window.py` → `root.mainloop()`
-- Triggers: After application initialization
-- Responsibilities: Handle user interactions, button clicks, tab switches
+**GUI 이벤트 루프:**
+- 위치: `gui/main_window.py` → `root.mainloop()`
+- 트리거: 애플리케이션 초기화 후
+- 책임: 사용자 상호작용, 버튼 클릭, 탭 전환 처리
 
-## Error Handling
+## 오류 처리
 
-**Strategy:** Try/catch at service boundaries with user-facing error messages
+**전략:** 사용자 대면 오류 메시지와 함께 서비스 경계에서 Try/catch
 
-**Patterns:**
-- LLM calls wrapped in try/except blocks
-- Errors displayed via `tkinter.messagebox`
-- Lazy imports for optional dependencies (google-generativeai, openai, anthropic)
-- ImportError raised with user-friendly install instructions
+**패턴:**
+- try/except 블록으로 래핑된 LLM 호출
+- `tkinter.messagebox`를 통해 표시되는 오류
+- 선택적 의존성에 대한 지연 임포트 (google-generativeai, openai, anthropic)
+- 사용자 친화적인 설치 지침과 함께 발생하는 ImportError
 
-## Cross-Cutting Concerns
+## 횡단 관심사
 
-**Logging:**
-- Console output via `print()` statements
-- TensorFlow warnings suppressed via environment variables
+**로깅:**
+- `print()` 문을 통한 콘솔 출력
+- 환경 변수를 통해 억제되는 TensorFlow 경고
 
-**Validation:**
-- API key validation in LLMService
-- File path validation in FileService
-- JSON schema validation (implicit)
+**유효성 검사:**
+- LLMService의 API 키 유효성 검사
+- FileService의 파일 경로 유효성 검사
+- JSON 스키마 유효성 검사 (암시적)
 
-**Error Messages:**
-- User-friendly error dialogs via tkinter messagebox
-- Korean language UI messages
+**오류 메시지:**
+- tkinter messagebox를 통한 사용자 친화적인 오류 다이얼로그
+- 한국어 UI 메시지
 
 ---
 
-*Architecture analysis: 2026-01-19*
-*Update when major patterns change*
+*아키텍처 분석: 2026-01-19*
+*주요 패턴 변경 시 업데이트*

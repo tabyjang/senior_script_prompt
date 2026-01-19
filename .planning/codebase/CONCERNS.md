@@ -1,141 +1,141 @@
-# Codebase Concerns
+# 코드베이스 우려사항
 
-**Analysis Date:** 2026-01-19
+**분석일:** 2026-01-19
 
-## Tech Debt
+## 기술 부채
 
-**No automated testing:**
-- Issue: Application has no automated test suite (only manual testing)
-- Files: Entire codebase lacks tests
-- Why: Rapid prototyping phase, GUI-heavy application
-- Impact: Refactoring risk, no regression detection, manual QA required
-- Fix approach: Add pytest framework, start with service layer tests (`services/llm_service.py`, `services/content_generator.py`)
+**자동화된 테스팅 없음:**
+- 문제: 애플리케이션에 자동화된 테스트 스위트 없음 (수동 테스트만)
+- 파일: 전체 코드베이스에 테스트 없음
+- 이유: 빠른 프로토타이핑 단계, GUI 중심 애플리케이션
+- 영향: 리팩토링 위험, 회귀 감지 없음, 수동 QA 필요
+- 해결 방법: pytest 프레임워크 추가, 서비스 레이어 테스트부터 시작 (`services/llm_service.py`, `services/content_generator.py`)
 
-**Lazy import pattern inconsistency:**
-- Issue: Only LLM packages use lazy import, other optional dependencies don't
-- File: `services/llm_service.py` (has lazy imports), `main.py` (tkinterdnd2 has fallback but not lazy)
-- Why: LLM packages added later with optimization consideration
-- Impact: Inconsistent startup performance, some optional deps cause import errors
-- Fix approach: Standardize optional dependency handling across codebase
+**지연 import 패턴 불일치:**
+- 문제: LLM 패키지만 지연 import 사용, 다른 선택적 의존성은 사용 안함
+- 파일: `services/llm_service.py` (지연 import 있음), `main.py` (tkinterdnd2는 fallback 있지만 지연 아님)
+- 이유: LLM 패키지가 나중에 최적화 고려와 함께 추가됨
+- 영향: 일관성 없는 시작 성능, 일부 선택적 deps가 import 오류 발생
+- 해결 방법: 코드베이스 전체에서 선택적 의존성 처리 표준화
 
-**No error logging framework:**
-- Issue: Only print() statements for logging, no structured logging
-- Files: All service files use print() for status messages
-- Why: Simple console output sufficient during development
-- Impact: No log persistence, hard to debug production issues, no log levels
-- Fix approach: Add Python logging module with file handler and levels
+**오류 로깅 프레임워크 없음:**
+- 문제: 로깅을 위한 print() 문만, 구조화된 로깅 없음
+- 파일: 모든 서비스 파일이 상태 메시지에 print() 사용
+- 이유: 개발 중 간단한 콘솔 출력으로 충분
+- 영향: 로그 지속성 없음, 프로덕션 문제 디버그 어려움, 로그 레벨 없음
+- 해결 방법: 파일 핸들러 및 레벨과 함께 Python logging 모듈 추가
 
-## Known Bugs
+## 알려진 버그
 
-**No known bugs documented:**
-- No TODO, FIXME, or bug comments detected
-- README shows features as "구현 완료" (implementation complete)
+**문서화된 알려진 버그 없음:**
+- TODO, FIXME 또는 버그 주석 감지 안됨
+- README는 "구현 완료"로 기능 표시
 
-## Security Considerations
+## 보안 고려사항
 
-**API keys in config:**
-- Risk: API keys stored in config file without encryption
-- Files: `config/config_manager.py` manages keys
-- Current mitigation: Config file should be gitignored (verify .gitignore)
-- Recommendations: Use environment variables or secure keychain storage, encrypt config file
+**config의 API 키:**
+- 위험: 암호화 없이 config 파일에 저장된 API 키
+- 파일: `config/config_manager.py`가 키 관리
+- 현재 완화: Config 파일은 gitignore되어야 함 (.gitignore 확인)
+- 권장사항: 환경 변수 또는 보안 키체인 저장소 사용, config 파일 암호화
 
-**No input validation on LLM prompts:**
-- Risk: User input passed directly to LLM without sanitization
-- Files: `services/content_generator.py`, tab files that call LLM
-- Current mitigation: None detected
-- Recommendations: Add input length limits, sanitize special characters, rate limiting
+**LLM 프롬프트에 입력 유효성 검사 없음:**
+- 위험: 사용자 입력이 정제 없이 LLM에 직접 전달됨
+- 파일: `services/content_generator.py`, LLM을 호출하는 탭 파일
+- 현재 완화: 감지 안됨
+- 권장사항: 입력 길이 제한 추가, 특수 문자 정제, 속도 제한
 
-## Performance Bottlenecks
+## 성능 병목
 
-**Synchronous LLM calls block GUI:**
-- Problem: LLM API calls made synchronously, freezing GUI during generation
-- Files: `services/llm_service.py` calls, `gui/tabs/*.py` generation buttons
-- Measurement: 5-30 second freeze during content generation
-- Cause: No threading for API calls
-- Improvement path: Use threading.Thread or asyncio for LLM calls, add progress indicators
+**동기식 LLM 호출이 GUI 차단:**
+- 문제: LLM API 호출이 동기적으로 이루어져 생성 중 GUI가 멈춤
+- 파일: `services/llm_service.py` 호출, `gui/tabs/*.py` 생성 버튼
+- 측정: 콘텐츠 생성 중 5-30초 멈춤
+- 원인: API 호출에 스레딩 없음
+- 개선 방법: LLM 호출에 threading.Thread 또는 asyncio 사용, 진행 표시기 추가
 
-**No caching for repeated LLM calls:**
-- Problem: Same prompts generate new API calls every time
-- Files: `services/content_generator.py`
-- Measurement: Multiple API calls for similar content
-- Cause: No caching layer
-- Improvement path: Add simple file-based or memory cache for prompt/response pairs
+**반복되는 LLM 호출에 캐싱 없음:**
+- 문제: 같은 프롬프트가 매번 새로운 API 호출 생성
+- 파일: `services/content_generator.py`
+- 측정: 유사한 콘텐츠에 대한 여러 API 호출
+- 원인: 캐싱 레이어 없음
+- 개선 방법: 프롬프트/응답 쌍을 위한 간단한 파일 기반 또는 메모리 캐시 추가
 
-## Fragile Areas
+## 취약한 영역
 
-**File path handling:**
-- Why fragile: Multiple ways to find prompts folder (`main.py`, `gui/main_window.py`)
-- Files: `main.py` `find_prompts_folder()`, `gui/main_window.py` `_find_prompts_folder()`
-- Common failures: Incorrect project path when running from different directories
-- Safe modification: Consolidate path finding logic to one location
-- Test coverage: None
+**파일 경로 처리:**
+- 취약한 이유: prompts 폴더를 찾는 여러 방법 (`main.py`, `gui/main_window.py`)
+- 파일: `main.py` `find_prompts_folder()`, `gui/main_window.py` `_find_prompts_folder()`
+- 일반적인 실패: 다른 디렉토리에서 실행할 때 잘못된 프로젝트 경로
+- 안전한 수정: 경로 찾기 로직을 한 곳으로 통합
+- 테스트 커버리지: 없음
 
-**Tab initialization order:**
-- Why fragile: Tabs depend on services initialized in specific order
-- Files: `main.py` service initialization, `gui/main_window.py` `_initialize_tabs()`
-- Common failures: NoneType errors if service initialization fails
-- Safe modification: Add validation that all services initialized before creating tabs
-- Test coverage: None
+**탭 초기화 순서:**
+- 취약한 이유: 탭이 특정 순서로 초기화된 서비스에 의존
+- 파일: `main.py` 서비스 초기화, `gui/main_window.py` `_initialize_tabs()`
+- 일반적인 실패: 서비스 초기화 실패 시 NoneType 오류
+- 안전한 수정: 탭 생성 전 모든 서비스 초기화 검증 추가
+- 테스트 커버리지: 없음
 
-## Scaling Limits
+## 스케일링 제한
 
-**Local file storage:**
-- Current capacity: Limited by disk space, no practical limit
-- Limit: Large projects with many scenes/episodes may have slow file I/O
-- Symptoms at limit: Slow project loading, lag when switching projects
-- Scaling path: Add project indexing, lazy load project data, consider SQLite for structured data
+**로컬 파일 저장:**
+- 현재 용량: 디스크 공간으로 제한, 실질적 제한 없음
+- 제한: 많은 장면/에피소드가 있는 큰 프로젝트는 느린 파일 I/O 가능
+- 제한 시 증상: 느린 프로젝트 로딩, 프로젝트 전환 시 지연
+- 스케일링 방법: 프로젝트 인덱싱 추가, 프로젝트 데이터 지연 로드, 구조화된 데이터를 위한 SQLite 고려
 
-**LLM API rate limits:**
-- Current capacity: Depends on API tier (Gemini free tier: 15 RPM)
-- Limit: Batch operations hit rate limits
-- Symptoms at limit: API errors during bulk generation
-- Scaling path: Add rate limiting with queue, retry logic with backoff
+**LLM API 속도 제한:**
+- 현재 용량: API 티어에 따라 다름 (Gemini 무료 티어: 15 RPM)
+- 제한: 일괄 작업이 속도 제한에 도달
+- 제한 시 증상: 대량 생성 중 API 오류
+- 스케일링 방법: 큐와 함께 속도 제한 추가, backoff와 함께 재시도 로직
 
-## Dependencies at Risk
+## 위험한 의존성
 
 **tkinterdnd2:**
-- Risk: Optional dependency, may not work on all platforms
-- Impact: Drag-and-drop feature disabled if not installed
-- Files: `main.py` tries import with fallback
-- Migration plan: Already has fallback to standard tk.Tk()
+- 위험: 선택적 의존성, 모든 플랫폼에서 작동하지 않을 수 있음
+- 영향: 설치되지 않으면 드래그 앤 드롭 기능 비활성화
+- 파일: `main.py`가 fallback과 함께 import 시도
+- 마이그레이션 계획: 이미 표준 tk.Tk()에 대한 fallback 있음
 
-## Missing Critical Features
+## 누락된 중요 기능
 
-**Undo/Redo functionality:**
-- Problem: No undo for edits or content generation
-- Current workaround: Manual file backups, OS-level file recovery
-- Blocks: User confidence in editing, accidental data loss risk
-- Implementation complexity: Medium (need history tracking per tab)
+**Undo/Redo 기능:**
+- 문제: 편집 또는 콘텐츠 생성에 대한 실행 취소 없음
+- 현재 해결방법: 수동 파일 백업, OS 수준 파일 복구
+- 차단: 편집에 대한 사용자 신뢰, 우발적 데이터 손실 위험
+- 구현 복잡도: 중간 (탭당 이력 추적 필요)
 
-**Auto-save:**
-- Problem: No auto-save, changes lost if application crashes
-- Current workaround: Manual save, README mentions "자동 저장" but unclear if implemented
-- Blocks: Data loss on crashes
-- Implementation complexity: Low (periodic save timer + dirty flag tracking)
+**자동 저장:**
+- 문제: 자동 저장 없음, 애플리케이션 충돌 시 변경사항 손실
+- 현재 해결방법: 수동 저장, README는 "자동 저장"을 언급하지만 구현 여부 불명확
+- 차단: 충돌 시 데이터 손실
+- 구현 복잡도: 낮음 (주기적 저장 타이머 + dirty flag 추적)
 
-**Search/Filter functionality:**
-- Problem: No search across projects, characters, scenes
-- Current workaround: Manual browsing through UI
-- Blocks: Hard to find specific content in large projects
-- Implementation complexity: Medium (need indexing + search UI)
+**검색/필터 기능:**
+- 문제: 프로젝트, 캐릭터, 장면 전체 검색 없음
+- 현재 해결방법: UI를 통한 수동 탐색
+- 차단: 큰 프로젝트에서 특정 콘텐츠 찾기 어려움
+- 구현 복잡도: 중간 (인덱싱 + 검색 UI 필요)
 
-## Test Coverage Gaps
+## 테스트 커버리지 갭
 
-**Service layer completely untested:**
-- What's not tested: LLM integration, content generation, file operations
-- Files: `services/llm_service.py`, `services/content_generator.py`, `services/file_service.py`
-- Risk: Breaking changes undetected, API integration failures
-- Priority: High
-- Difficulty to test: Medium (need to mock external APIs)
+**서비스 레이어 완전히 테스트되지 않음:**
+- 테스트되지 않은 것: LLM 통합, 콘텐츠 생성, 파일 작업
+- 파일: `services/llm_service.py`, `services/content_generator.py`, `services/file_service.py`
+- 위험: 감지되지 않은 변경사항, API 통합 실패
+- 우선순위: 높음
+- 테스트 난이도: 중간 (외부 API Mock 필요)
 
-**GUI layer untested:**
-- What's not tested: All tab functionality, dialogs, main window
-- Files: `gui/**/*.py`
-- Risk: UI regressions, broken button handlers
-- Priority: Medium
-- Difficulty to test: High (requires GUI testing framework like pytest-qt)
+**GUI 레이어 테스트되지 않음:**
+- 테스트되지 않은 것: 모든 탭 기능, 다이얼로그, 메인 윈도우
+- 파일: `gui/**/*.py`
+- 위험: UI 회귀, 버튼 핸들러 손상
+- 우선순위: 중간
+- 테스트 난이도: 높음 (pytest-qt 같은 GUI 테스팅 프레임워크 필요)
 
 ---
 
-*Concerns audit: 2026-01-19*
-*Update as issues are fixed or new ones discovered*
+*우려사항 감사: 2026-01-19*
+*문제가 수정되거나 새로운 문제가 발견되면 업데이트*

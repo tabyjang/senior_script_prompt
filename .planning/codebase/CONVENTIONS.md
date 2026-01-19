@@ -1,142 +1,142 @@
-# Coding Conventions
+# 코딩 규칙
 
-**Analysis Date:** 2026-01-19
+**분석일:** 2026-01-19
 
-## Naming Patterns
+## 네이밍 패턴
 
-**Files:**
-- snake_case for all Python files (main.py, config_manager.py, llm_service.py)
-- Descriptive names with category suffix: *_service.py, *_tab.py, *_dialog.py
-- Test files: test_*.py (e.g., test_comfyui.py)
+**파일:**
+- 모든 Python 파일에 snake_case (main.py, config_manager.py, llm_service.py)
+- 카테고리 접미사가 있는 설명적 이름: *_service.py, *_tab.py, *_dialog.py
+- 테스트 파일: test_*.py (예: test_comfyui.py)
 
-**Functions:**
-- snake_case for all functions
-- Private methods: _leading_underscore (e.g., `_call_gemini`, `_setup_window`)
-- Descriptive names: get_*, set_*, create_*, load_*, save_*
-- Korean language names in prompts/comments for domain-specific terms
+**함수:**
+- 모든 함수에 snake_case
+- Private 메서드: _leading_underscore (예: `_call_gemini`, `_setup_window`)
+- 설명적 이름: get_*, set_*, create_*, load_*, save_*
+- 도메인 특정 용어를 위한 프롬프트/주석에 한국어 이름
 
-**Variables:**
-- snake_case for variables
-- Descriptive names: project_path, config_manager, file_service
-- No single-letter variables except loop counters
-- Korean variable names for UI labels
+**변수:**
+- 변수에 snake_case
+- 설명적 이름: project_path, config_manager, file_service
+- 루프 카운터를 제외하고 단일 문자 변수 없음
+- UI 레이블에 한국어 변수 이름
 
-**Classes:**
-- PascalCase for class names (ConfigManager, LLMService, BaseTab)
-- Descriptive suffixes: *Service, *Tab, *Dialog, *Manager
-- No prefix conventions (no I for interfaces)
+**클래스:**
+- 클래스 이름에 PascalCase (ConfigManager, LLMService, BaseTab)
+- 설명적 접미사: *Service, *Tab, *Dialog, *Manager
+- 접두사 규칙 없음 (인터페이스에 I 없음)
 
-**Types:**
-- Python type hints used: Optional[str], Path, bool
-- Not extensively used throughout codebase
+**타입:**
+- Python 타입 힌트 사용: Optional[str], Path, bool
+- 코드베이스 전체에 광범위하게 사용되지 않음
 
-## Code Style
+## 코드 스타일
 
-**Formatting:**
-- 4-space indentation (Python standard)
-- No formatter config detected (.prettierrc, .black, etc.)
-- Mixed line lengths (no strict limit enforced)
+**포매팅:**
+- 4칸 들여쓰기 (Python 표준)
+- 포맷터 설정 감지 안됨 (.prettierrc, .black 등)
+- 혼합된 줄 길이 (엄격한 제한 없음)
 
-**Linting:**
-- No linter config detected (.pylintrc, .flake8, etc.)
+**린팅:**
+- 린터 설정 감지 안됨 (.pylintrc, .flake8 등)
 
-**Docstrings:**
-- Triple-quoted docstrings for modules and classes
-- Function docstrings present but not consistent
-- Korean language used in comments and docstrings
-- Args/Returns format used in some docstrings
+**Docstring:**
+- 모듈 및 클래스에 삼중 따옴표 docstring
+- 함수 docstring은 있지만 일관성 없음
+- 주석 및 docstring에 한국어 사용
+- 일부 docstring에서 Args/Returns 형식 사용
 
-## Import Organization
+## Import 구성
 
-**Order:**
-1. Standard library imports (os, sys, pathlib, argparse)
-2. Third-party packages (tkinter, flask)
-3. Local application imports (config, models, services, gui, utils)
+**순서:**
+1. 표준 라이브러리 import (os, sys, pathlib, argparse)
+2. 서드파티 패키지 (tkinter, flask)
+3. 로컬 애플리케이션 import (config, models, services, gui, utils)
 
-**Grouping:**
-- Blank lines between import groups
-- Relative imports from local packages: `from config.config_manager import ConfigManager`
-- Absolute imports for standard library
+**그룹핑:**
+- import 그룹 간 빈 줄
+- 로컬 패키지에서 상대 import: `from config.config_manager import ConfigManager`
+- 표준 라이브러리에 절대 import
 
-**Path Handling:**
-- pathlib.Path preferred over os.path
-- Path objects used consistently
+**경로 처리:**
+- os.path보다 pathlib.Path 선호
+- Path 객체를 일관되게 사용
 
-## Error Handling
+## 오류 처리
 
-**Patterns:**
-- Try/except blocks at service boundaries
-- User-friendly error messages in Korean
-- messagebox for GUI error display
-- ImportError for missing optional dependencies with install instructions
+**패턴:**
+- 서비스 경계에서 Try/except 블록
+- 한국어로 된 사용자 친화적 오류 메시지
+- GUI 오류 표시를 위한 messagebox
+- 설치 지침과 함께 누락된 선택적 의존성에 대한 ImportError
 
-**Error Types:**
-- ValueError for invalid configuration
-- ImportError for missing packages
-- General Exception catching in GUI event handlers
+**오류 타입:**
+- 잘못된 설정에 대한 ValueError
+- 누락된 패키지에 대한 ImportError
+- GUI 이벤트 핸들러에서 일반 Exception 캐칭
 
-**Lazy Imports:**
-- Optional dependencies imported lazily in `services/llm_service.py`
-- Global module references with lazy initialization pattern
+**지연 Import:**
+- `services/llm_service.py`에서 지연 임포트된 선택적 의존성
+- 지연 초기화 패턴을 사용한 전역 모듈 참조
 
-## Logging
+## 로깅
 
-**Framework:**
-- print() statements for console output
-- No structured logging framework
+**프레임워크:**
+- 콘솔 출력을 위한 print() 문
+- 구조화된 로깅 프레임워크 없음
 
-**Patterns:**
-- Korean language messages: `print(f"[시작] prompts 폴더: {prompts_path}")`
-- Status messages for major operations
-- No log levels (debug, info, warn, error)
+**패턴:**
+- 한국어 메시지: `print(f"[시작] prompts 폴더: {prompts_path}")`
+- 주요 작업에 대한 상태 메시지
+- 로그 레벨 없음 (debug, info, warn, error)
 
-## Comments
+## 주석
 
-**When to Comment:**
-- Module-level docstrings explain purpose
-- Korean language comments for business logic
-- English comments for technical details
-- Comments explain "why" for non-obvious code
+**주석 시기:**
+- 목적을 설명하는 모듈 수준 docstring
+- 비즈니스 로직에 한국어 주석
+- 기술적 세부사항에 영어 주석
+- 명확하지 않은 코드에 대한 "왜"를 설명하는 주석
 
-**Docstrings:**
-- Module docstrings at top of file
-- Class docstrings describe purpose
-- Method docstrings use Args/Returns format (not consistent)
-- Korean language used for domain-specific descriptions
+**Docstring:**
+- 파일 상단의 모듈 docstring
+- 목적을 설명하는 클래스 docstring
+- Args/Returns 형식을 사용하는 메서드 docstring (일관성 없음)
+- 도메인 특정 설명에 한국어 사용
 
-**TODO Comments:**
-- Not observed in codebase
-- Implementation status tracked in README.md
+**TODO 주석:**
+- 코드베이스에서 관찰되지 않음
+- README.md에서 추적되는 구현 상태
 
-## Function Design
+## 함수 디자인
 
-**Size:**
-- Functions range from 10-100+ lines
-- Large functions present (not strictly limited)
-- Helper methods extracted with _ prefix
+**크기:**
+- 함수 범위 10-100+ 줄
+- 큰 함수 존재 (엄격하게 제한되지 않음)
+- _ 접두사로 추출된 헬퍼 메서드
 
-**Parameters:**
-- Multiple parameters common (5-8 parameters)
-- Dependency injection used (config_manager, file_service passed in)
-- Type hints used inconsistently
+**매개변수:**
+- 여러 매개변수가 일반적 (5-8개 매개변수)
+- 의존성 주입 사용 (config_manager, file_service 전달됨)
+- 타입 힌트가 일관성 없이 사용됨
 
-**Return Values:**
-- Optional[str] for functions that may fail
-- bool for save/validation methods
-- Explicit return statements
+**반환 값:**
+- 실패할 수 있는 함수에 Optional[str]
+- save/유효성 검사 메서드에 bool
+- 명시적 return 문
 
-## Module Design
+## 모듈 디자인
 
-**Exports:**
-- Classes imported directly: `from gui.main_window import MainWindow`
-- No __all__ declarations
-- Public API not formally defined
+**Export:**
+- 직접 임포트되는 클래스: `from gui.main_window import MainWindow`
+- __all__ 선언 없음
+- 공식적으로 정의된 공개 API 없음
 
-**Package Structure:**
-- __init__.py files present but empty
-- No barrel file pattern
+**패키지 구조:**
+- __init__.py 파일이 있지만 비어 있음
+- 배럴 파일 패턴 없음
 
 ---
 
-*Convention analysis: 2026-01-19*
-*Update when patterns change*
+*규칙 분석: 2026-01-19*
+*패턴 변경 시 업데이트*

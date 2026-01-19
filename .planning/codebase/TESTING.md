@@ -1,116 +1,116 @@
-# Testing Patterns
+# 테스팅 패턴
 
-**Analysis Date:** 2026-01-19
+**분석일:** 2026-01-19
 
-## Test Framework
+## 테스트 프레임워크
 
-**Runner:**
-- No test framework detected
-- No test configuration files (pytest.ini, setup.cfg, tox.ini)
+**러너:**
+- 테스트 프레임워크 감지 안됨
+- 테스트 설정 파일 없음 (pytest.ini, setup.cfg, tox.ini)
 
-**Assertion Library:**
-- Not applicable
+**Assertion 라이브러리:**
+- 해당 없음
 
-**Run Commands:**
+**실행 명령:**
 ```bash
-# No test commands configured
+# 테스트 명령 설정 안됨
 ```
 
-## Test File Organization
+## 테스트 파일 구성
 
-**Location:**
-- One test file detected: `test_comfyui.py`
-- No dedicated test directory
-- Tests not co-located with source files
+**위치:**
+- 하나의 테스트 파일 감지: `test_comfyui.py`
+- 전용 테스트 디렉토리 없음
+- 소스 파일과 함께 배치된 테스트 없음
 
-**Naming:**
-- test_*.py pattern (test_comfyui.py)
+**네이밍:**
+- test_*.py 패턴 (test_comfyui.py)
 
-**Structure:**
+**구조:**
 ```
 script_editors_app/
-├── test_comfyui.py         # ComfyUI integration test
-└── (no other tests)
+├── test_comfyui.py         # ComfyUI 통합 테스트
+└── (다른 테스트 없음)
 ```
 
-## Test Structure
+## 테스트 구조
 
-**Suite Organization:**
-- Not applicable (no test framework)
+**Suite 구성:**
+- 해당 없음 (테스트 프레임워크 없음)
 
-**Patterns:**
-- Manual testing only
-- No automated test suite
+**패턴:**
+- 수동 테스트만
+- 자동화된 테스트 스위트 없음
 
 ## Mocking
 
-**Framework:**
-- Not applicable
+**프레임워크:**
+- 해당 없음
 
-**Patterns:**
-- No mocking detected
+**패턴:**
+- Mocking 감지 안됨
 
-## Fixtures and Factories
+## Fixture 및 Factory
 
-**Test Data:**
-- No test fixtures detected
-- Sample project data in `prompts/` folder used for manual testing
+**테스트 데이터:**
+- 테스트 fixture 감지 안됨
+- 수동 테스트에 사용되는 `prompts/` 폴더의 샘플 프로젝트 데이터
 
-**Location:**
-- Not applicable
+**위치:**
+- 해당 없음
 
-## Coverage
+## 커버리지
 
-**Requirements:**
-- No coverage requirements
-- No coverage tracking
+**요구사항:**
+- 커버리지 요구사항 없음
+- 커버리지 추적 없음
 
-**Configuration:**
-- No coverage configuration
+**설정:**
+- 커버리지 설정 없음
 
-**View Coverage:**
-- Not applicable
+**커버리지 보기:**
+- 해당 없음
 
-## Test Types
+## 테스트 타입
 
-**Unit Tests:**
-- Not detected
+**유닛 테스트:**
+- 감지 안됨
 
-**Integration Tests:**
-- Manual: `test_comfyui.py` tests ComfyUI integration
-- No automated integration tests
+**통합 테스트:**
+- 수동: `test_comfyui.py`가 ComfyUI 통합 테스트
+- 자동화된 통합 테스트 없음
 
-**E2E Tests:**
-- Manual testing via GUI
-- No automated E2E tests
+**E2E 테스트:**
+- GUI를 통한 수동 테스트
+- 자동화된 E2E 테스트 없음
 
-## Common Patterns
+## 공통 패턴
 
-**Manual Testing:**
-- Application run manually: `python main.py`
-- GUI interactions tested manually
-- LLM integrations tested via UI
+**수동 테스트:**
+- 수동으로 애플리케이션 실행: `python main.py`
+- 수동으로 GUI 상호작용 테스트
+- UI를 통한 LLM 통합 테스트
 
-**Development Testing:**
-- `test_comfyui.py` - Manual script to test ComfyUI API integration
-- Ad-hoc testing during development
+**개발 테스트:**
+- `test_comfyui.py` - ComfyUI API 통합을 테스트하는 수동 스크립트
+- 개발 중 임시 테스트
 
-## Testing Status
+## 테스팅 상태
 
-**Current State:**
-- No automated test framework
-- No test coverage
-- Manual testing only
-- One integration test script for ComfyUI
+**현재 상태:**
+- 자동화된 테스트 프레임워크 없음
+- 테스트 커버리지 없음
+- 수동 테스트만
+- ComfyUI를 위한 하나의 통합 테스트 스크립트
 
-**Recommendations:**
-- Add pytest framework
-- Create unit tests for services (llm_service, file_service, content_generator)
-- Add integration tests for LLM API calls
-- Mock external API calls for faster testing
-- Test GUI components with pytest-qt or similar
+**권장사항:**
+- pytest 프레임워크 추가
+- 서비스에 대한 유닛 테스트 생성 (llm_service, file_service, content_generator)
+- LLM API 호출에 대한 통합 테스트 추가
+- 더 빠른 테스트를 위해 외부 API 호출 Mock
+- pytest-qt 또는 유사한 도구로 GUI 컴포넌트 테스트
 
 ---
 
-*Testing analysis: 2026-01-19*
-*Update when test patterns change*
+*테스팅 분석: 2026-01-19*
+*테스트 패턴 변경 시 업데이트*
